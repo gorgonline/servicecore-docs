@@ -10,10 +10,13 @@
    ============================================================ */
 
 :root {
-  /* ---- Marka ---- */
-  --sc-brand: #0070f3;              /* ana vurgu rengi — istenirse Servicecore markasıyla değiştirilebilir */
-  --sc-brand-foreground: #ffffff;
-  --sc-brand-soft: rgba(0, 112, 243, 0.08); /* çok hafif marka tonu (inline kod, seçili durum) */
+  /* ---- Marka ----
+     Not: Bu tonlar WCAG AA (4.5:1) sağlayacak şekilde seçilmiştir. Marka
+     rengini değiştirirken kontrastı doğrulayın; hover/seçili durumlar
+     saydamlıkla açıldığı için sınırda bir renk AA'nın altına düşer. */
+  --sc-brand: #0057c2;              /* beyaz üzerinde 6.68:1 */
+  --sc-brand-foreground: #ffffff;   /* marka zemin üzerinde 6.68:1 */
+  --sc-brand-soft: rgba(0, 87, 194, 0.08); /* seçili/hafif vurgu zemini */
 
   /* ---- Nötr skala (Geist, açık tema) ---- */
   --sc-bg: #ffffff;                 /* sayfa zemini */
@@ -52,13 +55,14 @@
 
 .dark {
   /* ---- Nötr skala (Geist, koyu tema) ---- */
-  --sc-brand: #3b82f6;
-  --sc-brand-soft: rgba(59, 130, 246, 0.14);
+  --sc-brand: #60a5fa;              /* koyu zemin üzerinde 7.79:1 */
+  --sc-brand-foreground: #0a0a0a;   /* marka zemin üzerinde 7.79:1 (beyaz 2.5:1 kalırdı) */
+  --sc-brand-soft: rgba(96, 165, 250, 0.14);
   --sc-bg: #0a0a0a;
   --sc-fg: #ededed;
   --sc-surface: #0f0f0f;
   --sc-surface-2: #1a1a1a;
-  --sc-muted-fg: #9b9b9b;
+  --sc-muted-fg: #a1a1a1;           /* koyu zemin üzerinde 7.66:1 */
   --sc-border: rgba(255, 255, 255, 0.10);
   --sc-overlay: rgba(0, 0, 0, 0.6);
 

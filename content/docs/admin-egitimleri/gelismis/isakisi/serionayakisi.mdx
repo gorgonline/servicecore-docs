@@ -1,13 +1,13 @@
 ---
 title: "Seri Onay Akışları"
-description: "ServiceCore iş akışları, açılan kayıtların belirli bir süreç üzerinden otomatik ilerlemesini sağlar. Temel mantık: Kayıt açılır → Durum güncellenir →…"
+description: "ServiceCore iş akışları, açılan kayıtların belirli bir süreç üzerinden otomatik ilerlemesini sağlar."
 ---
 
 <iframe src="https://www.youtube.com/embed/s_mcQHcKQio?si=7_pSo_Q8D0JiaI6Y" title="YouTube video player" className="w-full aspect-video rounded-xl border" allowFullScreen />
 
 ServiceCore iş akışları, açılan kayıtların belirli bir süreç üzerinden otomatik ilerlemesini sağlar. Temel mantık: Kayıt açılır → Durum güncellenir → Onay mekanizması çalışır → İşlem tamamlanır → Akış sonlanır.
 
-### Değişiklik (Change) Akışı Üzerinden Örnek Tasarım 
+## Değişiklik (Change) Akışı Üzerinden Örnek Tasarım 
 
 1. Kayıt açılır ve akış tetiklenir.
 2. Kayıt “Onay Bekliyor” durumuna alınır.
@@ -19,7 +19,7 @@ ServiceCore iş akışları, açılan kayıtların belirli bir süreç üzerinde
 5. Durum “Onaylandı” olarak güncellenir.
 6. Akış sonlanır.
 
-### Entegrasyon ve Zorunluluklar (HTTP Response) 
+## Entegrasyon ve Zorunluluklar (HTTP Response) 
 
 HTTP Request adımı kullanılıyorsa:
 
@@ -27,7 +27,7 @@ HTTP Request adımı kullanılıyorsa:
 - Dönen response doğru formatta olmalıdır.
 - Yanlış ya da olmayan response akışın takılmasına neden olur.
 
-### Dikkat Edilmesi Gereken Noktalar (Best Practice) 
+## Dikkat Edilmesi Gereken Noktalar (Best Practice) 
 
 - Akış iskeleti korunmalıdır.
 - Gereksiz paralel yapılar kullanılmamalıdır.

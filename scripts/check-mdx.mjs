@@ -68,14 +68,25 @@ for (const file of mdxFiles) {
     errors.push(`${rel}: MDX hatası — ${String(e.message).split('\n')[0]}`);
   }
 
+  // Kod blokları ve satır içi kod örnek metindir; içindeki yol/bağlantı
+  // benzeri diziler gerçek referans değildir — denetim dışı bırakılır.
+  const prose = body
+    .replace(/^ {0,3}(```|~~~)[\s\S]*?^ {0,3}\1\s*$/gm, '')
+    .replace(/`[^`\n]*`/g, '');
+
   // --- görseller ---
-  for (const m of body.matchAll(/!\[[^\]]*\]\((\/[^)\s]+)\)/g)) {
-    if (!existsSync(join(PUBLIC, m[1]))) errors.push(`${rel}: görsel yok — ${m[1]}`);
+  for (const m of prose.matchAll(/!\[[^\]]*\]\((\/[^)\s]+)\)/g)) {
+    if (!existsSync(join(PUBLIC, decodeURIComponent(m[1]))))
+      errors.push(`${rel}: görsel yok — ${m[1]}`);
   }
 
-  // --- iç bağlantılar ---
-  for (const m of body.matchAll(/\]\((\/docs[^)\s#]*)/g)) {
-    const target = m[1].replace(/\/$/, '');
+  // --- iç bağlantılar (markdown bağlantıları + Card/href bileşenleri) ---
+  const targets = [
+    ...[...prose.matchAll(/\]\((\/docs[^)\s#]*)/g)].map((m) => m[1]),
+    ...[...prose.matchAll(/href=["'](\/docs[^"'#]*)/g)].map((m) => m[1]),
+  ];
+  for (const t of targets) {
+    const target = t.replace(/\/$/, '');
     if (!knownUrls.has(target)) errors.push(`${rel}: kırık iç bağlantı — ${target}`);
   }
 }
@@ -92,8 +103,14 @@ for (const file of metaFiles) {
   }
   const dir = dirname(file);
   for (const name of meta.pages ?? []) {
-    const isPage = existsSync(join(dir, `${name}.mdx`));
-    const isDir = existsSync(join(dir, name)) && statSync(join(dir, name)).isDirectory();
+    // Fumadocs meta sözdizimi: "---Ayraç---" başlık ayracı, "..." kalan
+    // sayfalar, "!gizli" hariç tutma, "[Etiket](/yol)" harici bağlantı.
+    if (/^---.*---$/.test(name) || name === '...' || name === 'z...' ||
+        name.startsWith('!') || name.startsWith('['))
+      continue;
+    const bare = name.replace(/^\.\.\./, '');
+    const isPage = existsSync(join(dir, `${bare}.mdx`));
+    const isDir = existsSync(join(dir, bare)) && statSync(join(dir, bare)).isDirectory();
     if (!isPage && !isDir) errors.push(`${rel}: "${name}" adında sayfa/klasör yok`);
   }
   // meta'da sayılmayan sayfalar

@@ -1,35 +1,35 @@
 ---
 title: "Akış Örneği"
-description: "Oluşturulan iş akışı, bir geliş sinyali ile başlatılır. Bu sinyal, değişiklik kaydının iş akışına girdiği ilk noktayı temsil eder. Akış bu sinyal ile…"
+description: "Oluşturulan iş akışı, bir geliş sinyali ile başlatılır. Bu sinyal, değişiklik kaydının iş akışına girdiği ilk noktayı temsil eder."
 ---
 
 <iframe src="https://www.youtube.com/embed/5kffe0Kt53s?si=ICkekByVLx4rj36W" title="YouTube video player" className="w-full aspect-video rounded-xl border" allowFullScreen />
 
-### Akışın Başlangıcı ve Geliş Sinyali 
+## Akışın Başlangıcı ve Geliş Sinyali 
 
 Oluşturulan iş akışı, bir geliş sinyali ile başlatılır. Bu sinyal, değişiklik kaydının iş akışına girdiği ilk noktayı temsil eder. Akış bu sinyal ile birlikte çalışmaya başlar ve ilgili kontroller bu noktadan sonra devreye girer. \
  Geliş sinyalinin hemen ardından, kayıt henüz onay sürecine girmiş olduğu için değişiklik kaydının durumu otomatik olarak Onay Bekleniyor olarak güncellenir. Bu sayede kayıt liste ekranlarında ve raporlarda net bir şekilde ayırt edilebilir.
 
-### Öncelik Kontrolü ve Koşullu Yönlendirme 
+## Öncelik Kontrolü ve Koşullu Yönlendirme 
 
 Akış içerisinde, değişiklik kaydının öncelik bilgisi kontrol edilir. Bu kontrol, koşul (condition) yapısı kullanılarak gerçekleştirilir. Eğer kaydın önceliği Çok Yüksek ise akış, üst seviye onay sürecine yönlendirilir. Öncelik çok yüksek değilse veya öncelik seçilmemişse alternatif onay süreci devreye girer. Bu yapı sayesinde tek bir akış içerisinde farklı senaryolar yönetilebilir ve kayıtlar doğru onay mercilerine otomatik olarak iletilir.
 
-### Tekil Onay Süreci 
+## Tekil Onay Süreci 
 
 Öncelik kontrolü sonrasında kayıt, belirlenen kullanıcıya onay için gönderilir. Bu aşamada onaycı, ister ServiceCore portalı üzerinden ister e-posta bildirimi aracılığıyla onay veya ret işlemini gerçekleştirebilir. Onay süreci devam ederken kayıt, iş akışı üzerinde bekleme durumunda kalır. Onay veya ret kararı verilene kadar bir sonraki aşamaya geçilmez. Onay zaman çizelgesi üzerinden; onayın kime gittiği, ne zaman gönderildiği ve karar durumu sistem tarafından kayıt altına alınır.
 
-### Onay ve Ret Sonuçlarının Yönetimi 
+## Onay ve Ret Sonuçlarının Yönetimi 
 
 Onaycı tarafından karar verildiğinde akış aşağıdaki şekilde ilerler: Onay verilmesi durumunda, kayıt durumu Uygulama aşamasına alınır ve değişiklik süreci bir sonraki faza taşınır. Ret verilmesi durumunda ise kayıt durumu Reddedildi olarak güncellenir ve süreç sonlandırılır. Bu aşamada durum değişiklikleri tamamen iş akışı aksiyonları ile yönetilir ve manuel müdahaleye ihtiyaç duyulmaz.
 
-### Grup Onayı ile Seri Onay Yapısı 
+## Grup Onayı ile Seri Onay Yapısı 
 
 İş akışına, tekil onaydan sonra çalışacak şekilde bir grup onayı eklenebilir. Bu yapı, seri bağlı onay senaryoları için kullanılır. Grup onayında, kayıt belirlenen bir gruba gönderilir. Gruptaki kullanıcıların tamamının onay vermesi gerekmez. Gruptaki herhangi bir kullanıcının onay vermesi, sürecin ilerlemesi için yeterlidir. Grup içerisindeki bir kullanıcı onay verdiğinde, diğer grup üyeleri için onay süreci otomatik olarak tamamlanmış kabul edilir. Grup onayının reddedilmesi durumunda ise akış doğrudan reddedilme sürecine yönlendirilir.
 
-### Otomasyon ile Akışın Tetiklenmesi 
+## Otomasyon ile Akışın Tetiklenmesi 
 
 Oluşturulan iş akışı, otomasyon yönetimi üzerinden tanımlanan bir kural ile tetiklenir. Bu otomasyon, değişiklik kaydı oluşturulduğu anda devreye girer. Otomasyon kurallarına isteğe bağlı olarak koşullar eklenebilir. Örneğin, sadece belirli bir değişiklik türünde olan kayıtların bu akışı çalıştırması sağlanabilir. Koşul sağlanmadığı durumlarda değişiklik kaydı iş akışına girmez ve varsayılan durumda açık olarak kalır.
 
-### İş Akışı Versiyonlama Yapısı 
+## İş Akışı Versiyonlama Yapısı 
 
 İş akışında yapılan her değişiklik, yeni bir sürüm olarak kaydedilir. Yayınlanan her sürüm sistem tarafından saklanır ve önceki sürümlere geri dönülebilir. Bu sayede hatalı bir akış değişikliği yapıldığında, önceki çalışan sürüme güvenli şekilde dönüş sağlanabilir. Versiyonlama, iş akışlarının canlı sistemlerde kontrollü şekilde yönetilmesini mümkün kılar.

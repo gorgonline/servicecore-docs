@@ -57,6 +57,13 @@ export default function Layout({ children }: LayoutProps<'/'>) {
       suppressHydrationWarning
     >
       <body className="flex flex-col min-h-screen">
+        {/* Klavye kullanıcıları kenar çubuğunu atlayıp içeriğe geçebilsin */}
+        <a
+          href="#nd-page"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:rounded-lg focus:bg-fd-primary focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-fd-primary-foreground"
+        >
+          İçeriğe atla
+        </a>
         <RootProvider i18n={{ locale: 'tr', translations: trTranslations }}>
           {children}
         </RootProvider>

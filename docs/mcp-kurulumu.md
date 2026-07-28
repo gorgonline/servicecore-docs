@@ -31,10 +31,9 @@ kurmaya, bakım yapmaya gerek yok.
 
 1. GitHub hesabınızın Servicecore organizasyonunda ve bu depoda **yazma**
    yetkisi olmalı (yöneticinizden isteyin).
-2. Aşağıdaki yollardan biriyle kimlik doğrulayın:
-   - **OAuth (kolay):** Sunucuyu ekledikten sonra asistanınız tarayıcıda giriş açar.
-   - **Fine-grained token (kontrollü):** GitHub → Settings → Developer settings →
-     Personal access tokens → Fine-grained tokens → **Generate new token**
+2. Bir **fine-grained personal access token** üretin (önerilen ve her istemcide
+   çalışan yöntem): GitHub → Settings → Developer settings →
+   Personal access tokens → Fine-grained tokens → **Generate new token**
      - Repository access: **yalnızca bu depo**
      - İzinler: `Contents: Read and write`, `Pull requests: Read and write`
      - Süre: 90 gün (dolduğunda yenileyin)
@@ -49,18 +48,15 @@ kurmaya, bakım yapmaya gerek yok.
 ### Claude Code (terminal veya VS Code)
 
 ```bash
-claude mcp add --transport http github https://api.githubcopilot.com/mcp/
-```
-
-Ardından Claude Code içinde `/mcp` yazıp **github** sunucusunu seçin ve
-**Authenticate** ile tarayıcıdan giriş yapın.
-
-Token ile bağlanmayı tercih ederseniz:
-
-```bash
 claude mcp add --transport http github https://api.githubcopilot.com/mcp/ \
   --header "Authorization: Bearer <TOKEN>"
 ```
+
+`<TOKEN>` yerine ürettiğiniz fine-grained token'ı yazın.
+
+İstemciniz tarayıcı tabanlı oturum açmayı destekliyorsa sunucuyu header'sız
+ekleyip `/mcp` menüsünden **Authenticate** ile de bağlanmayı deneyebilirsiniz;
+desteklenmiyorsa yukarıdaki token yöntemi her durumda çalışır.
 
 Bağlantıyı doğrulayın:
 
@@ -72,7 +68,10 @@ claude mcp list
 
 1. **Ayarlar → Connectors → Add custom connector**
 2. Ad: `GitHub`, adres: `https://api.githubcopilot.com/mcp/`
-3. **Connect** deyip tarayıcıdan GitHub girişini tamamlayın.
+3. **Connect** deyip istemcinin yönlendirdiği kimlik doğrulama adımını tamamlayın.
+
+> Claude Desktop'ın özel bağlayıcıları tarayıcı tabanlı kimlik doğrulama bekler.
+> Bağlantı kurulamazsa Claude Code (terminal) üzerinden token'lı yöntemi kullanın.
 
 ### Cursor
 
@@ -134,7 +133,9 @@ PR açıldığında otomatik olarak:
 1. **CI** çalışır — MDX sözdizimi, kırık görsel/bağlantı, `meta.json` tutarlılığı
    ve derleme kontrol edilir.
 2. **Vercel** o PR'a özel bir önizleme adresi üretir.
-3. **Bölüm sahibi** inceler ve onaylar.
+3. **Bölüm sahibi** inceler ve onaylar. (Otomatik inceleyici ataması için
+   `.github/CODEOWNERS` dosyasının doldurulmuş olması gerekir; henüz
+   doldurulmadıysa PR'a inceleyiciyi elle ekleyin.)
 
 ---
 

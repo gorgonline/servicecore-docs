@@ -1335,16 +1335,6 @@
     "permanent": true
   },
   {
-    "source": "/docs/teknisyenkullanımkilavuzu/raporlar/baslangicr",
-    "destination": "/docs/teknisyen/raporlar/baslangicr",
-    "permanent": true
-  },
-  {
-    "source": "/docs/teknisyenkullan%C4%B1mkilavuzu/raporlar/baslangicr",
-    "destination": "/docs/teknisyen/raporlar/baslangicr",
-    "permanent": true
-  },
-  {
     "source": "/docs/teknisyenkullanımkilavuzu/raporlar/dokum",
     "destination": "/docs/teknisyen/raporlar/dokum",
     "permanent": true
@@ -1917,6 +1907,16 @@
   {
     "source": "/docs/CSSMAAdmin/baslangic",
     "destination": "/docs/admin-egitimleri/baslangic",
+    "permanent": true
+  },
+  {
+    "source": "/docs/teknisyenkullanımkilavuzu/raporlar/baslangicr",
+    "destination": "/docs/teknisyen/raporlar/baslangic",
+    "permanent": true
+  },
+  {
+    "source": "/docs/teknisyenkullan%C4%B1mkilavuzu/raporlar/baslangicr",
+    "destination": "/docs/teknisyen/raporlar/baslangic",
     "permanent": true
   }
 ]

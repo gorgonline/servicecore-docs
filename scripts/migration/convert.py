@@ -61,6 +61,8 @@ SECTION_ORDER = ['teknisyen', 'kullanici', 'yonetici', 'entegrasyonlar',
 ARCHIVED_SECTIONS = {
     'cssma-admin/genel-panel-ayarlari': 'admin-egitimleri/genel-panel-ayarlari',
     'cssma-admin': 'admin-egitimleri',
+    # Sitemap'te olmayan, baslangic'in tek görsel farkıyla kopyası olan sayfa
+    'teknisyen/raporlar/baslangicr': 'teknisyen/raporlar/baslangic',
 }
 
 ADMONITION_TYPE = {'info': 'info', 'note': 'info', 'tip': 'info',
@@ -387,6 +389,10 @@ class Converter:
             return self.block(c, depth)
         if name in ('hr',):
             return '---\n\n'
+        if name == 'br':
+            # Blok düzeyindeki <br> yalnızca boşluk amaçlı; markdown karşılığı
+            # ('\') sayfada görünür bir ters bölü bırakırdı.
+            return ''
         if name in ('script', 'style', 'button', 'svg', 'nav'):
             return ''
         # bilinmeyen blok: inline_one ile işle ki <b>/<code> gibi
@@ -406,6 +412,10 @@ class Converter:
             if items:
                 return '\n'.join(f'- {i}' for i in items) + '\n\n'
         text = re.sub(r'(\\\n\s*)+$', '', text)  # sondaki br'leri temizle
+        # Yalnızca <br> içeren paragraflar geriye tek bir '\' bırakır ve
+        # sayfada görünür bir ters bölü olarak render edilir — tamamen at.
+        if not text.replace('\\', '').strip():
+            return ''
         # paragraf içine gömülü görselleri kendi bloklarına ayır (okunabilirlik)
         text = re.sub(r'\s*(?<!\[)(!\[[^\]]*\]\([^)\s]+\))\s*',
                       r'\n\n\1\n\n', text).strip()
@@ -676,8 +686,17 @@ def main():
         elif is_stub:
             warn(f'kısa/boş sayfa: {url} ({len(body)} kr)')
 
+        # Başlık seviyelerini normalize et: sayfadaki en üst seviye '##' olsun
+        # (kaynakta bazı sayfalar doğrudan h3/h4/h5 ile başlıyor).
+        levels = [len(m.group(1)) for m in re.finditer(r'^(#{2,6}) ', body, re.M)]
+        if levels and min(levels) > 2:
+            shift = min(levels) - 2
+            body = re.sub(r'^(#{2,6}) ',
+                          lambda m: '#' * (len(m.group(1)) - shift) + ' ',
+                          body, flags=re.M)
+
         # description: ilk anlamlı düz paragraftan üret (arama + SEO + kartlar)
-        desc = ''
+        desc, desc_line = '', None
         for line in body.split('\n'):
             s = line.strip()
             if (not s or s.startswith(('#', '!', '<', '-', '>', '|', '```'))
@@ -688,8 +707,23 @@ def main():
             s = re.sub(r'[*`\\]', '', s).strip()                 # biçim işaretleri
             s = re.sub(r'\s+', ' ', s)
             if len(s) >= 25:
-                desc = s if len(s) <= 155 else s[:152].rsplit(' ', 1)[0] + '…'
+                if len(s) <= 155:
+                    desc, desc_line = s, line
+                else:
+                    # cümle sınırında kes; yoksa kelime sınırında
+                    cut = s[:155]
+                    m = re.search(r'^(.{60,}?[.!?])(?:\s|$)', cut)
+                    desc = (m.group(1) if m
+                            else cut.rsplit(' ', 1)[0].rstrip(',;:') + '…')
                 break
+
+        # Açıklama, gövdenin ilk paragrafının TAMAMI ise sayfa başlığının hemen
+        # altında aynı cümle iki kez görünür; bu durumda paragrafı gövdeden
+        # çıkar (kısaltılmış açıklamalarda paragraf yerinde kalır).
+        if desc_line is not None:
+            first = next((l for l in body.split('\n') if l.strip()), None)
+            if first == desc_line:
+                body = body.replace(desc_line, '', 1).lstrip('\n')
         if not desc:
             # Metni çok az olan sayfalar (çoğu video dersi): başlıktan üret
             sec_title = SECTION_MAP.get(url.split('/')[2], ('', ''))[1]
@@ -821,9 +855,11 @@ def main():
                          f'  <Card title="{ct}" href="{href}" />')
         if not cards:
             return
+        # Kart başlıkları h3 olarak render edilir; önüne h2 koyularak
+        # başlık sırası (h1 -> h2 -> h3) korunur (WCAG 1.3.1).
         page = (f'---\ntitle: "{title}"\ndescription: "{title} bölümündeki '
-                f'sayfalar"\n---\n\n<Cards>\n' + '\n'.join(cards) +
-                '\n</Cards>\n')
+                f'sayfalar"\n---\n\n## Bu bölümdeki sayfalar\n\n<Cards>\n'
+                + '\n'.join(cards) + '\n</Cards>\n')
         (folder / 'index.mdx').write_text(page)
         report['generated_index_pages'] = report.get('generated_index_pages', 0) + 1
 
@@ -856,7 +892,7 @@ def main():
             'Servicecore hizmet yönetimi platformunun tüm kılavuzları, eğitim '
             'videoları ve kurulum dokümanları burada. Aradığınız konuyu sol '
             'menüden bulabilir veya üstteki arama kutusunu kullanabilirsiniz.\n\n'
-            '<Cards>\n' + '\n'.join(cards) + '\n</Cards>\n\n'
+            '## Kılavuzlar\n\n<Cards>\n' + '\n'.join(cards) + '\n</Cards>\n\n'
             '## Yazılımın Yapısı\n\n' + (img + '\n' if img else ''))
 
     # ------------------------------------------------ eski URL yönlendirmeleri

@@ -140,22 +140,24 @@
 /* ============================================================
    KARTLAR — bölüm giriş sayfalarındaki gezinme ızgarası
    ============================================================ */
-#nd-page .prose .grid:has(> [data-card]) {
+/* DİKKAT: fumadocs başlık çapa bağlantılarına da data-card veriyor (değeri boş).
+   Kart kuralları yalnızca [data-card="true"] ile hedeflenmelidir. */
+#nd-page .prose .grid:has(> [data-card='true']) {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
   gap: 0.75rem;
 }
-#nd-page .prose [data-card] {
+#nd-page .prose [data-card='true'] {
   border-radius: var(--sc-radius-lg);
   transition: border-color 0.2s ease, box-shadow 0.2s ease,
     background-color 0.2s ease;
 }
-#nd-page .prose [data-card]:hover {
+#nd-page .prose [data-card='true']:hover {
   border-color: color-mix(in srgb, var(--sc-brand) 45%, var(--sc-border));
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04), 0 6px 20px rgba(0, 0, 0, 0.06);
 }
 /* kart içi tipografi biraz daha sıkı */
-#nd-page .prose [data-card] p {
+#nd-page .prose [data-card='true'] p {
   margin: 0.25rem 0 0;
   font-size: 0.875rem;
   line-height: 1.5;
@@ -164,13 +166,18 @@
 /* ============================================================
    BAĞLANTILAR
    ============================================================ */
-#nd-page .prose a {
-  text-decoration-color: color-mix(in srgb, var(--sc-brand) 40%, transparent);
+/* Yalnızca metin içi bağlantılar: başlık çapaları ve kartlar hariç
+   (aksi halde başlıkların font ağırlığı eziliyor). */
+#nd-page .prose a:not([data-card]):not(:where(h1, h2, h3, h4, h5, h6) a) {
+  text-decoration-color: color-mix(in srgb, var(--sc-brand) 45%, transparent);
   text-underline-offset: 3px;
   font-weight: 500;
 }
-#nd-page .prose a:hover {
+#nd-page .prose a:not([data-card]):not(:where(h1, h2, h3, h4, h5, h6) a):hover {
   text-decoration-color: var(--sc-brand);
+  /* fumadocs hover'da opaklık düşürüyor; kontrastı korumak için geri al */
+  opacity: 1;
+  color: var(--sc-brand);
 }
 
 /* ============================================================

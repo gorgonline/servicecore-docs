@@ -1,5 +1,9 @@
 # Bölüm sahipleri — PR açıldığında otomatik inceleme ister.
-# GitHub organizasyonu ve ekipler oluşturulunca @takim-adi değerlerini doldurun.
+#
+# DİKKAT: Bu dosyadaki kurallar şu an YORUM satırıdır; hiçbir inceleyici
+# atanmaz. GitHub organizasyonu ve ekipler oluşturulduktan sonra
+# @org/ekip değerlerini doldurup ilgili satırların başındaki '#' işaretini
+# kaldırın. Bkz. README → "Yayına alma".
 
 # Varsayılan: dokümantasyon ekibi
 # *                                   @servicecore/dokumantasyon

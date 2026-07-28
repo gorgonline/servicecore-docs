@@ -29,6 +29,36 @@ npm run dev          # http://localhost:3000
 
 ---
 
+## Yayına alma (tek seferlik kurulum)
+
+Bu depo yereldedir; katkı akışının çalışması için önce GitHub'a ve Vercel'e
+bağlanması gerekir. Sırasıyla:
+
+```bash
+# 1) GitHub deposunu oluştur ve gönder (gh CLI ile)
+gh repo create <org>/servicecore-docs --private --source=. --push
+
+# 2) main dalını koru: doğrudan push kapalı, PR + CI zorunlu
+gh api -X PUT repos/<org>/servicecore-docs/branches/main/protection \
+  -f 'required_pull_request_reviews[required_approving_review_count]=1' \
+  -f 'required_status_checks[strict]=true' \
+  -f 'required_status_checks[contexts][]=İçerik ve derleme kontrolü' \
+  -f 'enforce_admins=false' -f 'restrictions=null'
+```
+
+3. **Vercel**: [vercel.com/new](https://vercel.com/new) → depoyu içe aktar →
+   framework otomatik algılanır → Deploy. Ardından Settings → Domains'ten
+   `docs.servicecore.app` alan adını bağlayın.
+4. **Depo adını koda yazın**: `src/lib/shared.ts` içindeki `gitConfig.user` ve
+   `gitConfig.repo` değerlerini gerçek org/repo ile güncelleyin (sayfa altındaki
+   "GitHub'da Düzenle" bağlantıları buradan üretilir). Alternatif olarak Vercel'de
+   `NEXT_PUBLIC_GITHUB_USER` ve `NEXT_PUBLIC_GITHUB_REPO` ortam değişkenlerini tanımlayın.
+5. **İnceleyicileri atayın**: `.github/CODEOWNERS` dosyasındaki örnek satırları
+   gerçek GitHub ekipleriyle doldurup yorumdan çıkarın — PR'lara otomatik
+   inceleyici ataması ancak bundan sonra çalışır.
+
+---
+
 ## Dokümantasyon nasıl güncellenir?
 
 Üç yol var; hangisi size uygunsa:

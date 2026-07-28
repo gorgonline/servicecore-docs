@@ -24,7 +24,6 @@ content/docs/              ← TÜM dokümantasyon içeriği (.mdx). Yalnızca b
   esm/                       ESM Kılavuzu
   admin-egitimleri/          CSSM-A admin eğitim videoları
   teknisyen-egitimleri/      CSSM-P teknisyen eğitim videoları
-  cssma-admin/               CSSM-A arşiv (videoları taşınmayı bekliyor)
 
 public/img/<bölüm>/        ← ekran görüntüleri, bölüm klasörüne göre ayrılmış
 src/                       ← site kodu (tasarım/altyapı; içerik katkısında dokunulmaz)
@@ -103,14 +102,16 @@ Her klasörde bir `meta.json` vardır:
 ```json
 {
   "title": "Yönetici Kılavuzu",
-  "pages": ["index", "baslangic", "genel", "organizasyon"]
+  "pages": ["baslangic", "genel", "organizasyon"]
 }
 ```
 
 - `pages` dizisi **sıralamayı belirler**; dosya adları uzantısız yazılır.
 - Alt klasörler de aynı dizide klasör adıyla yer alır.
 - **Yeni sayfa eklerken `meta.json`'a da eklemeyi unutmayın**, yoksa sıralamanın sonunda kalır.
-- `index` her zaman ilk sırada olur (klasörün giriş sayfası).
+- Klasörün `index.mdx` dosyası `pages` dizisine **YAZILMAZ**. Fumadocs klasör
+  başlığını zaten giriş sayfasına bağlar; listelenirse kenar çubuğunda bölüm
+  adı iki kez görünür (`npm run check:mdx` bunu uyarı olarak yakalar).
 
 ---
 
@@ -123,7 +124,7 @@ Her klasörde bir `meta.json` vardır:
 3. **Düzenle** — yalnızca ilgili `.mdx` dosyalarını ve gerekiyorsa `meta.json`'u değiştir.
 4. **PR aç** — başlık Türkçe ve açıklayıcı olsun; PR açıklamasında *ne değişti, neden* yaz.
 5. **Önizle** — Vercel her PR için otomatik önizleme adresi üretir; değişikliği orada gör.
-6. **Onay** — ilgili bölüm sahibi onayladıktan sonra birleştirilir; birleşince otomatik yayınlanır.
+6. **Onay** — bir inceleyici onayladıktan sonra birleştirilir; birleşince otomatik yayınlanır. (Bölüm sahipleri `.github/CODEOWNERS`'ta tanımlıysa otomatik atanır.)
 
 **Asla:** doğrudan `main`'e commit, `content/docs` dışında içerik değişikliği,
 mevcut sayfaların toplu yeniden yazımı, kaynağı belirsiz bilgi ekleme.
@@ -135,9 +136,13 @@ mevcut sayfaların toplu yeniden yazımı, kaynağı belirsiz bilgi ekleme.
 Değişiklikten sonra mümkünse çalıştırın (CI zaten çalıştırır):
 
 ```bash
-npm run build       # içerik + MDX sözdizimi + link bütünlüğü
-npm run check:mdx   # yalnızca MDX sözdizimi (hızlı)
+npm run check:mdx   # hızlı: frontmatter, MDX sözdizimi, görseller, bağlantılar, meta.json
+npm run build       # tam derleme (arama indeksi, yönlendirmeler, tüm sayfalar)
 ```
+
+`npm run check:mdx` saniyeler sürer ve içerik hatalarının neredeyse tamamını
+yakalar; her değişiklikten sonra çalıştırın. `npm run build` yalnızca daha
+büyük değişikliklerde gerekir.
 
 Sık hatalar:
 - MDX'te `<` ve `{` özel karakterdir; düz metinde geçiyorsa `\<` şeklinde kaçırın veya `` ` `` içine alın.

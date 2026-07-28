@@ -6,9 +6,15 @@ const withMDX = createMDX();
 // Eski Docusaurus sitesinin (docs.servicecore.app) URL'leri indekslenmiş
 // durumda; migration sırasında üretilen harita ile kalıcı olarak yeni
 // adreslere yönlendirilir. Harita: scripts/migration/convert.py üretir.
-const oldUrlRedirects = JSON.parse(
-  readFileSync(new URL('./redirects.json', import.meta.url), 'utf8'),
-);
+let oldUrlRedirects = [];
+try {
+  oldUrlRedirects = JSON.parse(
+    readFileSync(new URL('./redirects.json', import.meta.url), 'utf8'),
+  );
+} catch (err) {
+  // Dosya yoksa/bozuksa site yine derlenir; yalnızca eski URL'ler yönlenmez.
+  console.warn('[next.config] redirects.json okunamadı:', err.message);
+}
 
 /** @type {import('next').NextConfig} */
 const config = {
