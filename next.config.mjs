@@ -21,6 +21,8 @@ const config = {
       // Eski blog (Docusaurus şablon içeriği) kaldırıldı
       { source: '/blog/:slug*', destination: '/docs', permanent: true },
       { source: '/markdown-page', destination: '/docs', permanent: true },
+      // Eski ayrı arama sayfası — arama artık üst çubukta
+      { source: '/search', destination: '/docs', permanent: true },
     ];
   },
 };

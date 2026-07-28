@@ -97,11 +97,16 @@ for (const file of metaFiles) {
     if (!isPage && !isDir) errors.push(`${rel}: "${name}" adında sayfa/klasör yok`);
   }
   // meta'da sayılmayan sayfalar
+  // (index.mdx bilinçli olarak listelenmez — Fumadocs klasör başlığını
+  //  doğrudan giriş sayfasına bağlar; listelenirse menüde tekrar eder)
   const listed = new Set(meta.pages ?? []);
   for (const f of readdirSync(dir)) {
-    if (f.endsWith('.mdx') && !listed.has(f.replace(/\.mdx$/, '')))
+    const name = f.replace(/\.mdx$/, '');
+    if (f.endsWith('.mdx') && name !== 'index' && !listed.has(name))
       warnings.push(`${rel}: "${f}" meta.json'da listelenmemiş (sırada sona düşer)`);
   }
+  if (dir !== DOCS && (meta.pages ?? []).includes('index'))
+    warnings.push(`${rel}: "index" listelenmiş — kenar çubuğunda bölüm adı iki kez görünür`);
 }
 
 // --- rapor ---

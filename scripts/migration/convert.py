@@ -16,7 +16,7 @@ import shutil
 import unicodedata
 from collections import defaultdict
 from pathlib import Path
-from urllib.parse import unquote, urlparse
+from urllib.parse import quote, unquote, urlparse
 
 from bs4 import BeautifulSoup, NavigableString, Tag
 
@@ -706,9 +706,9 @@ def main():
                  [(n, 'cat') for n in children_dirs])
         items.sort(key=lambda x: sort_key(x[0], x[1]))
         pages_list = [n for n, _ in items]
-        # klasörün giriş sayfası her zaman ilk sırada
-        if (folder / 'index.mdx').exists():
-            pages_list = ['index'] + pages_list
+        # NOT: klasörün index.mdx'i meta.json'da LİSTELENMEZ. Fumadocs bu
+        # durumda klasör başlığını doğrudan giriş sayfasına bağlar; listelenirse
+        # kenar çubuğunda bölüm adı iki kez görünür.
 
         meta = {}
         title = folder_titles.get(rel)
@@ -793,11 +793,6 @@ def main():
                 '\n</Cards>\n')
         (folder / 'index.mdx').write_text(page)
         report['generated_index_pages'] = report.get('generated_index_pages', 0) + 1
-        # index'i meta.json'un başına ekle
-        meta['pages'] = ['index'] + [p for p in meta.get('pages', [])
-                                     if p != 'index']
-        (folder / 'meta.json').write_text(
-            json.dumps(meta, ensure_ascii=False, indent=2) + '\n')
 
     write_index(CONTENT)
 
@@ -834,28 +829,51 @@ def main():
     # ------------------------------------------------ eski URL yönlendirmeleri
     # Eski site (docs.servicecore.app) indekslenmiş durumda; tüm eski yollar
     # yeni karşılıklarına kalıcı (308) yönlendirilir. next.config'e beslenir.
+    # Next.js yolları büyük/küçük harf duyarsız eşleştirir: kaynağı yeni bir
+    # sayfa adresiyle çakışan kural ya sonsuz döngü yaratır ya da gerçek
+    # sayfayı gölgeler. Bu yüzden çakışanlar atlanır (o adresler zaten
+    # doğru sayfaya düşer).
+    live_urls = set()
+    for p in link_map.values():
+        u = '/docs' if p == 'index' else f'/docs/{p}'
+        live_urls.add(u.lower())
+        # klasör giriş sayfaları da canlı adrestir (write_index üretir)
+        parts = u.split('/')
+        for i in range(3, len(parts)):
+            live_urls.add('/'.join(parts[:i]).lower())
+
     redirects = []
     seen_src = set()
+
+    def add_redirect(src, dest):
+        low = src.lower()
+        if src in seen_src or low == dest.lower() or low in live_urls:
+            report.setdefault('redirects_skipped', []).append(src)
+            return
+        seen_src.add(src)
+        redirects.append({'source': src, 'destination': dest,
+                          'permanent': True})
+        # Tarayıcılar Türkçe karakterleri yüzde-kodlu gönderir; Next.js
+        # eşleştirmesi kodlanmış yol üzerinden yapılır. Ayrıca eski site
+        # macOS'ta üretildiği için yollar ayrık (NFD) biçimde; tarayıcılar
+        # ise birleşik (NFC) gönderir. Her iki kodlanmış biçim de eklenir.
+        for form in ('NFC', 'NFD'):
+            enc = quote(unicodedata.normalize(form, src), safe='/')
+            if enc != src and not any(r['source'] == enc for r in redirects):
+                redirects.append({'source': enc, 'destination': dest,
+                                  'permanent': True})
+
     for k, newp in sorted(link_map.items()):
         dest = '/docs' if newp == 'index' else f'/docs/{newp}'
         for src_url in pages:
-            if norm_key(src_url) != k:
-                continue
-            if src_url in seen_src or src_url == dest:
-                continue
-            seen_src.add(src_url)
-            redirects.append({'source': src_url, 'destination': dest,
-                              'permanent': True})
+            if norm_key(src_url) == k:
+                add_redirect(src_url, dest)
     # unicode-varyant kopya klasörler de yönlendirilsin
     for var in report['skipped_variants']:
         k = norm_key(var)
-        if k in link_map and var not in seen_src:
+        if k in link_map:
             newp = link_map[k]
-            dest = '/docs' if newp == 'index' else f'/docs/{newp}'
-            if var != dest:
-                seen_src.add(var)
-                redirects.append({'source': var, 'destination': dest,
-                                  'permanent': True})
+            add_redirect(var, '/docs' if newp == 'index' else f'/docs/{newp}')
     (OUT / 'redirects.json').write_text(
         json.dumps(redirects, ensure_ascii=False, indent=2) + '\n')
     report['redirects'] = len(redirects)

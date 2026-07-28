@@ -1,7 +1,6 @@
 {
   "title": "Kurulum Kılavuzu",
   "pages": [
-    "index",
     "standartmimari",
     "standartapi",
     "failover",

@@ -1,7 +1,6 @@
 {
   "title": "Genel Panel Ayarlar",
   "pages": [
-    "index",
     "genelayarlar",
     "sistemayarlari",
     "bildirimsablonlari",
