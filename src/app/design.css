@@ -9,10 +9,24 @@
 /* ---- Sayfa yerleşimi: içeriği geniş alanda ortala, ferah üst boşluk ---- */
 #nd-page {
   align-items: center;
+  min-width: 0; /* grid hücresinin içeriğe göre genişlemesini engeller */
 }
 #nd-page > * {
   width: 100%;
   max-width: var(--sc-content-width);
+  min-width: 0;
+}
+
+/* Geniş içerik (tablo, kod) sayfayı yatay kaydırmaya zorlamasın */
+#nd-page .prose table,
+#nd-page .prose pre {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+}
+/* Dar ekranlarda uzun kesintisiz metin (URL, kod, ürün adı) taşmasın */
+#nd-page .prose {
+  overflow-wrap: anywhere;
 }
 
 /* İçindekiler (TOC) olmayan sayfalarda sağ sütunu tamamen kapat */

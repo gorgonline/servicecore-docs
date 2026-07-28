@@ -41,7 +41,9 @@
 
   /* ---- Ölçü / genişlik ---- */
   --sc-content-width: 60rem;  /* içerik sütunu — okunaklı premium genişlik; tam genişlik için 100% */
-  --sc-layout-width: 100vw;   /* tüm site kabuğu — kutulamak için ör. 1400px */
+  /* Tüm site kabuğu. 100vw KULLANMAYIN: kaydırma çubuğu genişliğini de sayar
+     ve mobilde yatay taşma yaratır. Kutulamak için ör. 1400px verin. */
+  --sc-layout-width: 100%;
 
   /* ---- Tipografi (next/font değişkenleri layout.tsx'ten gelir) ---- */
   --sc-font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
