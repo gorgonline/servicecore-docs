@@ -1,11 +1,21 @@
 #!/usr/bin/env python3
-"""docs-eski (Docusaurus build çıktısı) → Fumadocs MDX kaynak ağacı dönüştürücü.
+"""Eski Docusaurus sitesinin derlenmiş HTML çıktısını Fumadocs MDX'e çevirir.
 
-Girdi : /Users/leventusta/Desktop/docs/docs-eski  (522 HTML build çıktısı)
-Çıktı : /Users/leventusta/Desktop/docs/servicecore-docs-content/
-          content/docs/**/*.mdx  + meta.json'lar
-          public/img/**          (base64 çözümü + hash'i kırpılmış kopyalar)
-          report.json            (istatistik + uyarılar)
+Bu araç migration için bir kez çalıştırıldı; arşiv amacıyla saklanıyor.
+İçeriği güncellemek için kullanılmaz — content/docs altındaki .mdx dosyaları
+doğrudan düzenlenir (bkz. CLAUDE.md). Yeniden çalıştırmak elle yapılan tüm
+içerik düzenlemelerinin ÜZERİNE YAZAR.
+
+Girdi  : ../docs-eski            (DOCS_ESKI ile değiştirilebilir)
+Çıktı  : depo kökü               (DOCS_OUT ile değiştirilebilir)
+           content/docs/**/*.mdx + meta.json
+           public/img/**         (base64 çözümü + hash'i kırpılmış kopyalar)
+           redirects.json        (eski URL -> yeni URL, next.config okur)
+           report.json           (istatistik + uyarılar)
+
+Kullanım:
+    python3 -m venv .venv && .venv/bin/pip install beautifulsoup4 lxml
+    .venv/bin/python scripts/migration/convert.py
 """
 import base64
 import os
