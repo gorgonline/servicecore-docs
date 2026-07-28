@@ -520,121 +520,6 @@
     "permanent": true
   },
   {
-    "source": "/docs/CSSMAAdmin/baslangic",
-    "destination": "/docs/cssma-admin/baslangic",
-    "permanent": true
-  },
-  {
-    "source": "/docs/CSSMAAdmin/Genel Panel Ayarları/altsirketler",
-    "destination": "/docs/cssma-admin/genel-panel-ayarlari/altsirketler",
-    "permanent": true
-  },
-  {
-    "source": "/docs/CSSMAAdmin/Genel%20Panel%20Ayarlar%C4%B1/altsirketler",
-    "destination": "/docs/cssma-admin/genel-panel-ayarlari/altsirketler",
-    "permanent": true
-  },
-  {
-    "source": "/docs/CSSMAAdmin/Genel Panel Ayarları/bildirimsablonlari",
-    "destination": "/docs/cssma-admin/genel-panel-ayarlari/bildirimsablonlari",
-    "permanent": true
-  },
-  {
-    "source": "/docs/CSSMAAdmin/Genel%20Panel%20Ayarlar%C4%B1/bildirimsablonlari",
-    "destination": "/docs/cssma-admin/genel-panel-ayarlari/bildirimsablonlari",
-    "permanent": true
-  },
-  {
-    "source": "/docs/CSSMAAdmin/Genel Panel Ayarları/duyurular",
-    "destination": "/docs/cssma-admin/genel-panel-ayarlari/duyurular",
-    "permanent": true
-  },
-  {
-    "source": "/docs/CSSMAAdmin/Genel%20Panel%20Ayarlar%C4%B1/duyurular",
-    "destination": "/docs/cssma-admin/genel-panel-ayarlari/duyurular",
-    "permanent": true
-  },
-  {
-    "source": "/docs/CSSMAAdmin/Genel Panel Ayarları/genelayarlar",
-    "destination": "/docs/cssma-admin/genel-panel-ayarlari/genelayarlar",
-    "permanent": true
-  },
-  {
-    "source": "/docs/CSSMAAdmin/Genel%20Panel%20Ayarlar%C4%B1/genelayarlar",
-    "destination": "/docs/cssma-admin/genel-panel-ayarlari/genelayarlar",
-    "permanent": true
-  },
-  {
-    "source": "/docs/CSSMAAdmin/Genel Panel Ayarları/hakkinda",
-    "destination": "/docs/cssma-admin/genel-panel-ayarlari/hakkinda",
-    "permanent": true
-  },
-  {
-    "source": "/docs/CSSMAAdmin/Genel%20Panel%20Ayarlar%C4%B1/hakkinda",
-    "destination": "/docs/cssma-admin/genel-panel-ayarlari/hakkinda",
-    "permanent": true
-  },
-  {
-    "source": "/docs/CSSMAAdmin/Genel Panel Ayarları/hazircevaplar",
-    "destination": "/docs/cssma-admin/genel-panel-ayarlari/hazircevaplar",
-    "permanent": true
-  },
-  {
-    "source": "/docs/CSSMAAdmin/Genel%20Panel%20Ayarlar%C4%B1/hazircevaplar",
-    "destination": "/docs/cssma-admin/genel-panel-ayarlari/hazircevaplar",
-    "permanent": true
-  },
-  {
-    "source": "/docs/CSSMAAdmin/Genel Panel Ayarları/issaatleri",
-    "destination": "/docs/cssma-admin/genel-panel-ayarlari/issaatleri",
-    "permanent": true
-  },
-  {
-    "source": "/docs/CSSMAAdmin/Genel%20Panel%20Ayarlar%C4%B1/issaatleri",
-    "destination": "/docs/cssma-admin/genel-panel-ayarlari/issaatleri",
-    "permanent": true
-  },
-  {
-    "source": "/docs/CSSMAAdmin/Genel Panel Ayarları/kurumkonumları",
-    "destination": "/docs/cssma-admin/genel-panel-ayarlari/kurumkonumlari",
-    "permanent": true
-  },
-  {
-    "source": "/docs/CSSMAAdmin/Genel%20Panel%20Ayarlar%C4%B1/kurumkonumlar%C4%B1",
-    "destination": "/docs/cssma-admin/genel-panel-ayarlari/kurumkonumlari",
-    "permanent": true
-  },
-  {
-    "source": "/docs/CSSMAAdmin/Genel Panel Ayarları/sistemayarlari",
-    "destination": "/docs/cssma-admin/genel-panel-ayarlari/sistemayarlari",
-    "permanent": true
-  },
-  {
-    "source": "/docs/CSSMAAdmin/Genel%20Panel%20Ayarlar%C4%B1/sistemayarlari",
-    "destination": "/docs/cssma-admin/genel-panel-ayarlari/sistemayarlari",
-    "permanent": true
-  },
-  {
-    "source": "/docs/CSSMAAdmin/Genel Panel Ayarları/surecsablonlari",
-    "destination": "/docs/cssma-admin/genel-panel-ayarlari/surecsablonlari",
-    "permanent": true
-  },
-  {
-    "source": "/docs/CSSMAAdmin/Genel%20Panel%20Ayarlar%C4%B1/surecsablonlari",
-    "destination": "/docs/cssma-admin/genel-panel-ayarlari/surecsablonlari",
-    "permanent": true
-  },
-  {
-    "source": "/docs/CSSMAAdmin/Genel Panel Ayarları/validasyonayarlari",
-    "destination": "/docs/cssma-admin/genel-panel-ayarlari/validasyonayarlari",
-    "permanent": true
-  },
-  {
-    "source": "/docs/CSSMAAdmin/Genel%20Panel%20Ayarlar%C4%B1/validasyonayarlari",
-    "destination": "/docs/cssma-admin/genel-panel-ayarlari/validasyonayarlari",
-    "permanent": true
-  },
-  {
     "source": "/docs/enduser",
     "destination": "/docs/kullanici",
     "permanent": true
@@ -1765,16 +1650,6 @@
     "permanent": true
   },
   {
-    "source": "/docs/CSSMAAdmin/Genel Panel Ayarları/hakkında",
-    "destination": "/docs/cssma-admin/genel-panel-ayarlari/hakkinda",
-    "permanent": true
-  },
-  {
-    "source": "/docs/CSSMAAdmin/Genel%20Panel%20Ayarlar%C4%B1/hakk%C4%B1nda",
-    "destination": "/docs/cssma-admin/genel-panel-ayarlari/hakkinda",
-    "permanent": true
-  },
-  {
     "source": "/docs/Esm/kiraciYönetimi",
     "destination": "/docs/esm/kiraciyonetimi",
     "permanent": true
@@ -1927,6 +1802,121 @@
   {
     "source": "/docs/teknisyenkullanımkilavuzu/moduller/Sözleşmeler/sozlesmeler2",
     "destination": "/docs/teknisyen/moduller/sozlesmeler/sozlesmeler2",
+    "permanent": true
+  },
+  {
+    "source": "/docs/CSSMAAdmin/Genel Panel Ayarları/altsirketler",
+    "destination": "/docs/admin-egitimleri/genel-panel-ayarlari/altsirketler",
+    "permanent": true
+  },
+  {
+    "source": "/docs/CSSMAAdmin/Genel%20Panel%20Ayarlar%C4%B1/altsirketler",
+    "destination": "/docs/admin-egitimleri/genel-panel-ayarlari/altsirketler",
+    "permanent": true
+  },
+  {
+    "source": "/docs/CSSMAAdmin/Genel Panel Ayarları/bildirimsablonlari",
+    "destination": "/docs/admin-egitimleri/genel-panel-ayarlari/bildirimsablonlari",
+    "permanent": true
+  },
+  {
+    "source": "/docs/CSSMAAdmin/Genel%20Panel%20Ayarlar%C4%B1/bildirimsablonlari",
+    "destination": "/docs/admin-egitimleri/genel-panel-ayarlari/bildirimsablonlari",
+    "permanent": true
+  },
+  {
+    "source": "/docs/CSSMAAdmin/Genel Panel Ayarları/duyurular",
+    "destination": "/docs/admin-egitimleri/genel-panel-ayarlari/duyurular",
+    "permanent": true
+  },
+  {
+    "source": "/docs/CSSMAAdmin/Genel%20Panel%20Ayarlar%C4%B1/duyurular",
+    "destination": "/docs/admin-egitimleri/genel-panel-ayarlari/duyurular",
+    "permanent": true
+  },
+  {
+    "source": "/docs/CSSMAAdmin/Genel Panel Ayarları/genelayarlar",
+    "destination": "/docs/admin-egitimleri/genel-panel-ayarlari/genelayarlar",
+    "permanent": true
+  },
+  {
+    "source": "/docs/CSSMAAdmin/Genel%20Panel%20Ayarlar%C4%B1/genelayarlar",
+    "destination": "/docs/admin-egitimleri/genel-panel-ayarlari/genelayarlar",
+    "permanent": true
+  },
+  {
+    "source": "/docs/CSSMAAdmin/Genel Panel Ayarları/hakkinda",
+    "destination": "/docs/admin-egitimleri/genel-panel-ayarlari/hakkinda",
+    "permanent": true
+  },
+  {
+    "source": "/docs/CSSMAAdmin/Genel%20Panel%20Ayarlar%C4%B1/hakkinda",
+    "destination": "/docs/admin-egitimleri/genel-panel-ayarlari/hakkinda",
+    "permanent": true
+  },
+  {
+    "source": "/docs/CSSMAAdmin/Genel Panel Ayarları/hazircevaplar",
+    "destination": "/docs/admin-egitimleri/genel-panel-ayarlari/hazircevaplar",
+    "permanent": true
+  },
+  {
+    "source": "/docs/CSSMAAdmin/Genel%20Panel%20Ayarlar%C4%B1/hazircevaplar",
+    "destination": "/docs/admin-egitimleri/genel-panel-ayarlari/hazircevaplar",
+    "permanent": true
+  },
+  {
+    "source": "/docs/CSSMAAdmin/Genel Panel Ayarları/issaatleri",
+    "destination": "/docs/admin-egitimleri/genel-panel-ayarlari/issaatleri",
+    "permanent": true
+  },
+  {
+    "source": "/docs/CSSMAAdmin/Genel%20Panel%20Ayarlar%C4%B1/issaatleri",
+    "destination": "/docs/admin-egitimleri/genel-panel-ayarlari/issaatleri",
+    "permanent": true
+  },
+  {
+    "source": "/docs/CSSMAAdmin/Genel Panel Ayarları/kurumkonumları",
+    "destination": "/docs/admin-egitimleri/genel-panel-ayarlari/kurumkonumlari",
+    "permanent": true
+  },
+  {
+    "source": "/docs/CSSMAAdmin/Genel%20Panel%20Ayarlar%C4%B1/kurumkonumlar%C4%B1",
+    "destination": "/docs/admin-egitimleri/genel-panel-ayarlari/kurumkonumlari",
+    "permanent": true
+  },
+  {
+    "source": "/docs/CSSMAAdmin/Genel Panel Ayarları/sistemayarlari",
+    "destination": "/docs/admin-egitimleri/genel-panel-ayarlari/sistemayarlari",
+    "permanent": true
+  },
+  {
+    "source": "/docs/CSSMAAdmin/Genel%20Panel%20Ayarlar%C4%B1/sistemayarlari",
+    "destination": "/docs/admin-egitimleri/genel-panel-ayarlari/sistemayarlari",
+    "permanent": true
+  },
+  {
+    "source": "/docs/CSSMAAdmin/Genel Panel Ayarları/surecsablonlari",
+    "destination": "/docs/admin-egitimleri/genel-panel-ayarlari/surecsablonlari",
+    "permanent": true
+  },
+  {
+    "source": "/docs/CSSMAAdmin/Genel%20Panel%20Ayarlar%C4%B1/surecsablonlari",
+    "destination": "/docs/admin-egitimleri/genel-panel-ayarlari/surecsablonlari",
+    "permanent": true
+  },
+  {
+    "source": "/docs/CSSMAAdmin/Genel Panel Ayarları/validasyonayarlari",
+    "destination": "/docs/admin-egitimleri/genel-panel-ayarlari/validasyonayarlari",
+    "permanent": true
+  },
+  {
+    "source": "/docs/CSSMAAdmin/Genel%20Panel%20Ayarlar%C4%B1/validasyonayarlari",
+    "destination": "/docs/admin-egitimleri/genel-panel-ayarlari/validasyonayarlari",
+    "permanent": true
+  },
+  {
+    "source": "/docs/CSSMAAdmin/baslangic",
+    "destination": "/docs/admin-egitimleri/baslangic",
     "permanent": true
   }
 ]

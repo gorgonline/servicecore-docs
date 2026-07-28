@@ -8,7 +8,7 @@ dosyalarında tutulur; personel kendi AI asistanı üzerinden MCP ile güncelley
 | Framework | [Fumadocs](https://fumadocs.dev) 16 + Next.js 16 |
 | Arama | Orama (Türkçe tokenizer, derleme anında indekslenir) |
 | Barındırma | Vercel — `main` dalına birleşince otomatik yayınlanır |
-| İçerik | `content/docs/**` — 210 sayfa, 647 görsel |
+| İçerik | `content/docs/**` — 196 sayfa, 647 görsel |
 
 ---
 
@@ -78,7 +78,7 @@ src/lib/site.ts        Site adı, adres, dış bağlantılar
 src/lib/i18n-tr.ts     Arayüz metinlerinin Türkçe çevirileri
 scripts/check-mdx.mjs  İçerik doğrulayıcı (CI kullanır)
 scripts/migration/     Eski Docusaurus sitesinden dönüştürme aracı (arşiv)
-redirects.json         Eski URL → yeni URL haritası (235 kalıcı yönlendirme)
+redirects.json         Eski URL → yeni URL haritası (384 kalıcı yönlendirme)
 ```
 
 ---
@@ -113,10 +113,17 @@ adreslerine kalıcı (308) yönlendirilir — arama motoru sıralaması korunur.
 
 Bu site, eski Docusaurus sitesinin derlenmiş HTML çıktısından
 (`scripts/migration/convert.py`) otomatik olarak üretilmiştir. Kaynak Markdown
-dosyaları elde olmadığı için 522 HTML sayfası ayrıştırılmış; 183 içerik sayfası,
-647 görsel (169'u sayfa içine gömülü base64'ten çıkarılmış), 27 bölüm giriş
-sayfası ve kenar çubuğu sıralaması geri kazanılmıştır.
+dosyaları elde olmadığı için 522 HTML sayfası ayrıştırılmış; 171 içerik sayfası,
+647 görsel (169'u sayfa içine gömülü base64'ten çıkarılmış), 25 bölüm giriş
+sayfası ve kenar çubuğu sıralaması geri kazanılmıştır. Kaynakta hiç `##` başlık
+kullanılmadığı için bölüm başlıkları (`<p><strong>…</strong>`) gerçek başlıklara
+çevrilmiştir — sayfa içi gezinme listesi bu sayede çalışır.
 
-Bekleyen tek iş: **CSSM-A Admin (Arşiv)** bölümündeki 11 eğitim videosu.
-Videolar (~2,4 GB) depoya konulamayacağı için YouTube'a yüklenip sayfalara
-gömülmelidir; ilgili sayfalarda bunu belirten bir uyarı kutusu bulunur.
+Eski sitedeki **CSSMAAdmin** bölümü yayınlanmamıştır: aynı 12 konu
+`admin-egitimleri/genel-panel-ayarlari` altında çalışan YouTube videoları ve
+açıklama metniyle zaten mevcuttur (CSSMAAdmin sürümünün videoları istemci
+tarafında yükleniyordu, statik çıktıda adresleri yoktu). Bu bölümün eski
+URL'leri çalışan karşılıklarına yönlendirilir.
+
+Doğrulama: eski sitenin 207 URL'sinin tamamı yeni sitede çalışan bir sayfaya
+ulaşır; 197 yayınlanan adresin tamamı 200 döner, 648 görselin tamamı çözülür.

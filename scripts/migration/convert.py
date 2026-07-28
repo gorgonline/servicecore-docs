@@ -42,7 +42,16 @@ SECTION_MAP = {
 }
 SECTION_ORDER = ['teknisyen', 'kullanici', 'yonetici', 'entegrasyonlar',
                  'migration', 'kurulum', 'esm', 'admin-egitimleri',
-                 'teknisyen-egitimleri', 'cssma-admin']
+                 'teknisyen-egitimleri']
+
+# Yayınlanmayan bölümler: sayfaları üretilmez, URL'leri karşılığına yönlendirilir.
+# CSSMAAdmin, Adminegitimi/Genel Panel Ayarları'nın eski bir kopyasıdır —
+# aynı 12 konu orada çalışan YouTube videoları ve açıklama metniyle mevcut.
+# Bu bölümün videoları client-side yükleniyordu, statik HTML'de URL'leri yok.
+ARCHIVED_SECTIONS = {
+    'cssma-admin/genel-panel-ayarlari': 'admin-egitimleri/genel-panel-ayarlari',
+    'cssma-admin': 'admin-egitimleri',
+}
 
 ADMONITION_TYPE = {'info': 'info', 'note': 'info', 'tip': 'info',
                    'warning': 'warn', 'caution': 'warn', 'danger': 'error'}
@@ -465,7 +474,21 @@ def main():
     CONTENT.mkdir(parents=True)
     (PUBLIC / 'img').mkdir(parents=True)
 
-    pages = discover_pages()
+    all_pages = discover_pages()
+
+    def archived_target(newp):
+        """Arşiv bölümündeki bir yolun yayınlanan karşılığını döndürür."""
+        for old_pref, new_pref in ARCHIVED_SECTIONS.items():
+            if newp == old_pref or newp.startswith(old_pref + '/'):
+                return new_pref + newp[len(old_pref):]
+        return None
+
+    # Arşiv bölümlerinin sayfaları üretilmez; URL'leri sonra yönlendirilir.
+    pages, archived = [], []
+    for u in all_pages:
+        (archived if archived_target(new_path_for(u)) else pages).append(u)
+    report['archived_pages'] = len(archived)
+
     # eski url (norm) -> yeni yol haritası (link yeniden yazımı için)
     link_map = {norm_key(u): new_path_for(u) for u in pages}
 
@@ -874,6 +897,15 @@ def main():
         if k in link_map:
             newp = link_map[k]
             add_redirect(var, '/docs' if newp == 'index' else f'/docs/{newp}')
+
+    # arşiv bölümlerinin URL'leri yayınlanan karşılıklarına
+    published = {p for p in link_map.values()}
+    for u in archived:
+        tgt = archived_target(new_path_for(u))
+        if tgt not in published:
+            # karşılığı yoksa bölüm giriş sayfasına düşür
+            tgt = tgt.split('/')[0]
+        add_redirect(u, f'/docs/{tgt}')
     (OUT / 'redirects.json').write_text(
         json.dumps(redirects, ensure_ascii=False, indent=2) + '\n')
     report['redirects'] = len(redirects)
