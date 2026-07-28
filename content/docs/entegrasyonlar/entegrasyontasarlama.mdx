@@ -1,0 +1,44 @@
+---
+title: "Entegrasyon Tasarlama"
+description: "Entegrasyon Tasarımına Giriş"
+---
+
+Entegrasyon Tasarımına Giriş
+
+Servicecore restapi kullanan tüm uygulamalarla tek yönlü veya karşılıklı entegre olabilme kabiliyetine sahiptir. Bu entegrasyonu sağlamak için belirli ayarların yapılması gerekir.
+
+Servicecore Ayarlar ekranından "Entegrasyonlar" sayfasına gidilir.
+
+![Entegrasyon](/img/entegrasyonlar/entegrasyontasarlama-g1.png)
+
+Entegrasyonlar sayfasında Servicecore'un default entegre olabileceği uygulamalar arasından entegrasyon yapılacak uygulama seçilir.
+
+![Entegrasyon](/img/entegrasyonlar/defaultentegrasyonlar.png)
+
+Sağ üstte bulunan "+ Yeni Entegrasyon" butonu ile yeni entegrasyon ekleme sayfasına gidilir.
+
+![Entegrasyon](/img/entegrasyonlar/entegrasyontasarlama-g2.png)
+
+Açılan sayfada entegrasyon için isim, http metodu ve istek yapılacak Url ayarları girilir.
+
+![Entegrasyon](/img/entegrasyonlar/entegrasyontasarlama-g3.png)
+
+Yapılacak istek için kimlik doğrulama türü, entegrasyonun yapılacağı Servicecore modülü, basit doğrulama metodu seçildiyse kimlik bilgileri doldurulur.
+
+![Entegrasyon](/img/entegrasyonlar/settingsintegration2.png)
+
+URL ve başlık params alanlarında entegrasyonun url'sinde veya başlığında bir parametre kullanılacaksa key ile Servicecore değeri belirlenen bir değişkene eşitlenir.
+
+![Entegrasyon](/img/entegrasyonlar/params1.png)
+
+Gövde paramsta ise istek ile gönderilecek gövde JSON formatında girilir. Bu alanda "@" işareti kullanılarak seçilen modüldeki alanlar gövdeye eklenilebilir.
+
+![Entegrasyon](/img/entegrasyonlar/govdeparams.png)
+
+Sonuç değer işaretleme alanında istek gönderildiğinde dönen cevaptaki alanların Servicecore alanlarıyla eşleştirilmesi yapılır.
+
+![Entegrasyon](/img/entegrasyonlar/integrationmapper.png)
+
+Tüm adımlar tamamlandıktan sonra en sonda bulunan "Kaydet" butonu ile entegrasyon kaydedilir.
+
+![Entegrasyon](/img/entegrasyonlar/entegrasyontasarlama-g4.png)

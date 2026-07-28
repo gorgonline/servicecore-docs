@@ -1,0 +1,22 @@
+---
+title: "Servicecore Sürekli Dağıtım"
+description: "Sürekli Dağıtım (Continuous Delivery), Servicecore güncelleme sürecinde hızlı, güvenli ve sürekli olarak Servicecore’un güncel sürümünün kullanıma…"
+---
+
+Servicecore ve Devops
+
+## Servicecore Sürekli Dağıtım Mimarisi
+
+![admin](/img/yonetici/devops.png)
+
+## Servicecore Sürekli Dağıtım Aşamaları
+
+Sürekli Dağıtım (Continuous Delivery), Servicecore güncelleme sürecinde hızlı, güvenli ve sürekli olarak Servicecore’un güncel sürümünün kullanıma sunulmasını sağlayan bir yaklaşımdır. Servicecore’da sürekli dağıtım adımları şu şekildedir:
+
+1. Versiyon Kontrolü: Yazılımın sürüm numaralandırması ve sürüm geçişlerinin düzenli bir şekilde yapılması, sürekli dağıtım sürecinde bütünlüğü sağlar.
+2. Otomatik Derleme: Servicecore otomatik olarak derlenerek kullanıcı hatası minimum düzeye indirilir.
+3. Otomatik Testler: Dağıtım yapılmadan ya da yapıldıktan sonra çeşitli test scriptleriyle otomatik testler yapılır.
+4. Otomatik Dağıtım: Yazılımın test aşamalarını başarıyla geçmesi durumunda, otomatik olarak canlı ortama dağıtım süreci başlar. Bu aşamada devops ile kullanıcı hatası minimum düzeye indirilir.
+5. Ortam Bağımsız Yapılandırma: Sürekli dağıtım sayesinde test sunucusunuz ile canlı sunucunuz arasında paralellik sağlanır.
+6. İzleme ve Geri Bildirim: Canlı ortama dağıtılan yazılımın performansını ve durumunu izlemek için sürekli dağıtım kullanılır.
+7. Güvenlik Testleri: Yazılımın güvenliğini sağlamak adına düzenli güvenlik testleri gerçekleştirilir. Bu adım, yazılımın canlı ortama dağıtılmadan önce güvenlik açıklarının tespit edilmesine yardımcı olur.

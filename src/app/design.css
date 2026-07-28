@@ -1,0 +1,155 @@
+/* ============================================================
+   SERVICECORE DESIGN LAYER
+   ------------------------------------------------------------
+   İçerik sunumunun görsel cilası. Renkler/ölçüler yalnızca
+   tokens.css'teki --sc-* değişkenlerinden okunur; burada
+   hardcode renk yoktur.
+   ============================================================ */
+
+/* ---- Sayfa yerleşimi: içeriği geniş alanda ortala, ferah üst boşluk ---- */
+#nd-page {
+  align-items: center;
+}
+#nd-page > * {
+  width: 100%;
+  max-width: var(--sc-content-width);
+}
+
+/* İçindekiler (TOC) olmayan sayfalarda sağ sütunu tamamen kapat */
+#nd-notebook-layout:not(:has(#nd-toc)) {
+  --fd-toc-width: 0px !important;
+}
+#nd-notebook-layout {
+  --fd-layout-width: var(--sc-layout-width);
+}
+
+/* ============================================================
+   TİPOGRAFİ
+   ============================================================ */
+#nd-page .prose {
+  font-size: 1.0625rem;   /* 17px — rahat okuma */
+  line-height: 1.75;
+  letter-spacing: -0.003em;
+}
+
+/* Sayfa başlığı: daha iri ve sıkı */
+#nd-page h1 {
+  font-size: clamp(2rem, 1.6rem + 1.4vw, 2.6rem);
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  font-weight: 700;
+}
+
+/* Bölüm başlıkları (h2): üstte ince ayraç, ferah boşluk */
+#nd-page .prose h2 {
+  font-size: 1.5rem;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  font-weight: 650;
+  margin-top: 3rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--sc-border);
+}
+#nd-page .prose h3 {
+  font-size: 1.2rem;
+  letter-spacing: -0.015em;
+  font-weight: 620;
+  margin-top: 2.25rem;
+}
+
+/* İçeriğin '**Kalın**' sözde-başlıkları: nefes alanı ver */
+#nd-page .prose p > strong:only-child {
+  display: inline-block;
+  margin-top: 0.75rem;
+  font-size: 1.05rem;
+  letter-spacing: -0.01em;
+}
+
+/* ============================================================
+   İNLINE KOD — içerikte çok yoğun; sakin, zarif kutucuk
+   ============================================================ */
+#nd-page .prose :not(pre) > code {
+  background: var(--sc-code-bg);
+  color: var(--sc-code-fg);
+  border: 1px solid var(--sc-code-border);
+  border-radius: 6px;
+  padding: 0.12em 0.4em;
+  font-size: 0.86em;
+  font-weight: 450;
+  font-family: var(--sc-font-mono);
+  white-space: normal;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+/* fumadocs'un default `code` süslerini sıfırla */
+#nd-page .prose :not(pre) > code::before,
+#nd-page .prose :not(pre) > code::after {
+  content: none;
+}
+
+/* ============================================================
+   FİGÜRLER — ekran görüntüleri artık çerçeveli, gölgeli, ortalı
+   ============================================================ */
+#nd-page .prose img:not([data-nimg='1'] *),
+#nd-page .prose img {
+  display: block;
+  margin: 1.75rem auto;
+  max-width: 100%;
+  height: auto;
+  border: 1px solid var(--sc-figure-border);
+  border-radius: var(--sc-radius-lg);
+  background: var(--sc-figure-bg);
+  box-shadow: var(--sc-figure-shadow);
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+#nd-page .prose img:hover {
+  box-shadow: var(--sc-figure-shadow-hover);
+}
+
+/* next/image sarmalayıcısını da ortala ve genişliğini serbest bırak */
+#nd-page .prose span[data-nimg],
+#nd-page .prose > span:has(> img) {
+  display: block !important;
+  margin-inline: auto;
+}
+
+/* Iframe (YouTube) videoları: figür diliyle uyumlu */
+#nd-page .prose iframe {
+  display: block;
+  margin: 1.75rem auto;
+  border: 1px solid var(--sc-figure-border);
+  border-radius: var(--sc-radius-lg);
+  box-shadow: var(--sc-figure-shadow);
+  max-width: 100%;
+}
+
+/* ============================================================
+   BAĞLANTILAR
+   ============================================================ */
+#nd-page .prose a {
+  text-decoration-color: color-mix(in srgb, var(--sc-brand) 40%, transparent);
+  text-underline-offset: 3px;
+  font-weight: 500;
+}
+#nd-page .prose a:hover {
+  text-decoration-color: var(--sc-brand);
+}
+
+/* ============================================================
+   LİSTELER — daha okunaklı aralık ve işaret rengi
+   ============================================================ */
+#nd-page .prose ul > li::marker {
+  color: var(--sc-brand);
+}
+#nd-page .prose li {
+  margin-block: 0.35rem;
+}
+
+/* ============================================================
+   KENAR ÇUBUĞU — daha yumuşak seçili/hover durumu
+   ============================================================ */
+#nd-sidebar a[data-active='true'] {
+  background: var(--sc-brand-soft);
+  color: var(--sc-brand);
+  font-weight: 550;
+}

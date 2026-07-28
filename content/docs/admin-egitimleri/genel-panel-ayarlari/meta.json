@@ -1,0 +1,18 @@
+{
+  "title": "Genel Panel Ayarlar",
+  "pages": [
+    "index",
+    "genelayarlar",
+    "sistemayarlari",
+    "bildirimsablonlari",
+    "surecsablonlari",
+    "hazircevaplar",
+    "validasyonayarlari",
+    "duyurular",
+    "issaatleri",
+    "form-lowcode-gelistirmeleri",
+    "kurumkonumlari",
+    "altsirketler",
+    "hakkinda"
+  ]
+}

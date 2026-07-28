@@ -1,0 +1,19 @@
+# Bölüm sahipleri — PR açıldığında otomatik inceleme ister.
+# GitHub organizasyonu ve ekipler oluşturulunca @takim-adi değerlerini doldurun.
+
+# Varsayılan: dokümantasyon ekibi
+# *                                   @servicecore/dokumantasyon
+
+# Bölüm bazlı sahiplik (örnek — ekipler tanımlanınca aktifleştirin)
+# /content/docs/teknisyen/            @servicecore/destek
+# /content/docs/kullanici/            @servicecore/destek
+# /content/docs/yonetici/             @servicecore/urun
+# /content/docs/entegrasyonlar/       @servicecore/entegrasyon
+# /content/docs/kurulum/              @servicecore/implementasyon
+# /content/docs/esm/                  @servicecore/urun
+
+# Site kodu ve altyapı — her zaman teknik inceleme
+# /src/                               @servicecore/web
+# /scripts/                           @servicecore/web
+# /.github/                           @servicecore/web
+# /next.config.mjs                    @servicecore/web

@@ -1,0 +1,81 @@
+---
+title: "Çağrı İşlem Adımları"
+description: "Sisteme tanımlı olan mail adreslerinden mail geldiğinde ya da bir çağrı açıldığında “Çağrılar” modülüne gelmektedir."
+---
+
+Sisteme tanımlı olan mail adreslerinden mail geldiğinde ya da bir çağrı açıldığında `“Çağrılar”` modülüne gelmektedir.
+
+Gelen çağrının olay mı? istek mi? geliştirme mi? olduğunun ayırt edilmesi ve butonlar yardımıyla dönüştürülmesi gerekmektedir.
+
+Olay
+```md
+Bir müşteri veya kullanıcı çağrısının durumu gözden geçirildikten sonra, sorunun ilgisiz bir arama, bir servis talebi veya bir olay olup olmadığına karar verilir.
+
+Bu noktada çağrı, olay yönetimi süreci ile takip edilmesi gereken bir konu ise tek bir tıklama ile olay dönüşümü hızlı bir şekilde yapılır.
+```
+
+İstek
+```md
+Müşterilerden ve kullanıcılardan e-posta, portal veya sohbet yoluyla yapılan aramalar bazen imkânsız istekler olabilir. Bu durumlarda, kullanıcılar kataloğa dahil olmayan ve sunulamayan isteklerde bulunmuş olabilir.
+
+Bu nedenle, bu çağrıların doğrudan istek modülünde otomatik kayıt oluşturmaması, bu etkileşim ara katmanında değerlendirilmeleri önemlidir.
+
+Çağrı gerçekten olası bir talepse, tek bir tıklama ile talep yönetimi sürecine hızlı bir şekilde aktarılabilir.
+```
+
+İyileştirme
+```md
+Müşterilerden ve kullanıcılardan var olan bir durumun içerisinde geliştirme istemeleri (güncelleme) iyileştirme olarak geçer.
+
+Çağrı gerçekten iyileştirme ise, tek bir tıklama ile iyileştirme yönetimi sürecine hızlı bir şekilde aktarılabilir.
+```
+
+<Callout type="info" title="CEVAPLA VE KAPAT ÖRNEĞİ">
+Şirket içerisinde yer alan ama destek verilmeyen konular için `cevapla ve kapat` yapılabilir.
+</Callout>
+
+<Callout type="info" title="KAPAT ÖRNEĞİ">
+Şirket içi bir bilgilendirme vs. geldiğinde `kapatılabilir`.
+</Callout>
+
+<Callout type="info" title="SİL ÖRNEĞİ">
+Kampanya mesajları ve spam’e düşenler vs. `silinebilir`.
+</Callout>
+
+![Çağrılar Modülü](/img/teknisyen/cagrilar1.png)
+
+Bir kayıt `Olaya` çevrildiğinde aşağıdaki pencere açılmaktadır.
+
+![Çağrılar Modülü](/img/teknisyen/cagrilar10.png)
+
+- Önceden tanımlanmış şablonlar şablonda kullanılmaktadır.
+
+- Dönüştürme açıklaması içerisine girilmektedir.
+
+- Olayın gideceği teknisyen grubu, teknisyen seçilebilmektedir.
+
+- Aciliyet, Kategori, Kaynak seçilmektedir. Kaynak olarak belirtilen e-posta, chat, phone olabilir.
+
+Kaydı `İsteğe` çevrildiğinde aşağıdaki pencere açılmaktadır.
+
+![Çağrılar Modülü](/img/teknisyen/cagrilar11.png)
+
+- İstek kısmında katalogdaki başlıklar gözükecektir.
+
+- Konu ve açıklama alanları yazılır.
+
+`Ek Alanlar` başlığına tıklandığında aşağıdaki pencere açılacaktır.
+
+![Çağrılar Modülü](/img/teknisyen/cagrilar12.png)
+
+- Dönüştürme açıklaması girilmektedir.
+
+- Teknisyen grubu ve teknisyen ataması yapılmaktadır.
+
+- Aciliyet, İş etkisi ve Kaynak seçilmektedir.
+
+Kayıt `İyileştirmeye` çevrildiğinde aşağıdaki pencere açılacaktır.
+
+![Çağrılar Modülü](/img/teknisyen/cagrilar13.png)
+
+- Teknisyen grubu, teknisyen, aciliyet, kategori ve kaynak seçilmektedir.

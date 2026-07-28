@@ -1,0 +1,67 @@
+---
+title: "Yeni SI (Sürekli İyileştirme) Oluşturma ve Filtreler"
+description: "Sürekli hedeflerle uyum, durum tespiti, zayıflıkların tespit edilip giderilmesi için görevlendirmeler ve iyileştirmelerin sürekli devam ettirilmesi…"
+---
+
+Sürekli hedeflerle uyum, durum tespiti, zayıflıkların tespit edilip giderilmesi için görevlendirmeler ve iyileştirmelerin sürekli devam ettirilmesi için gerekli inisiyatiflerin kayıt ve takip mekanizması CI modülünde geliştirilmiştir. Sürekli iyileştirme kayıtları (CI Register) ortamı olarak CI modülü, CI inisiyatiflerinin baştan sona takibi için gerekli altyapıyı sağlamaktadır.
+
+Süreç ve servis raporlarından gelen sonuçların yanı sıra, tüm teknik ekip ve kullanıcılardan gelecek iyileştirme önerileri de çağrı katmanında yakalanıp iyileştirme fırsatları olarak CI modülünde takip edilmektedir.
+
+![iyi](/img/teknisyen/iyi1.png)
+
+Sol tarafta bulunan kutucuklara işaretleme yapıldığında `toplu işlemler` butonları gelmektedir.
+
+Toplu işlem kısmında seçilen iyileştirme kayıtlarının istenilen filtrelerde toplu güncelleme sağlanabilmektedir.
+
+Veya yine kayıtlar seçili iken `kapatma`, `silme` ve direk `bana ata` diyerek işlemleri hızlı bir şekilde sağlanabilmektedir.
+
+![iyi](/img/teknisyen/iyi2.png)
+
+Sağ tarafta bulunan seçenekler ile de kayıtlarınıza kolay ulaşmak için çeşitli `filtreleme seçenekleri` uygulanabilmektedir.
+
+Sağ üst yeni iyileştirme butonundan `yeni CI kaydı` açılışı yapılabilmektedir.
+
+![iyi](/img/teknisyen/iyi3.png)
+
+Bu alanda İyileştirme adı zorunludur.
+
+Açıklama, teknisyen, kullanıcı adı, öncelik, departman gibi bilgileri de eklenebilmektedir.
+
+![iyi](/img/teknisyen/iyi4.png)
+
+İşaretli alanlarda:
+
+Öncelik
+```md
+İyileştirme ile ilgili ön plana alma veya arka planda kalması için seçilecek ilgili alan.
+```
+
+Kategori
+```md
+İyileştirme için kategori belirlendi ise burada konumlandırılır.
+```
+
+Teknisyen
+```md
+İyileştirmeyi yapacak olan kişi.
+```
+
+Kullanıcı
+```md
+İyileştirmeyi açan kişi.
+```
+
+Aciliyet
+```md
+İyileştirme ile ilgili durum bilgisi belirtilir.
+```
+
+Kayıt içine girmeden de kısa bilgiler ile durumu görülebilmektedir.
+
+![iyi](/img/teknisyen/iyi5.png)
+
+Konunun `aciliyet` durumunu gösterir.
+
+Konunun `kategorisi`ni gösterir.
+
+Konunun `tarihi`ni gösterir.

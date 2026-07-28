@@ -1,0 +1,37 @@
+---
+title: "Seri Onay Akışları"
+description: "ServiceCore iş akışları, açılan kayıtların belirli bir süreç üzerinden otomatik ilerlemesini sağlar. Temel mantık: Kayıt açılır → Durum güncellenir →…"
+---
+
+<iframe src="https://www.youtube.com/embed/s_mcQHcKQio?si=7_pSo_Q8D0JiaI6Y" title="YouTube video player" className="w-full aspect-video rounded-xl border" allowFullScreen />
+
+ServiceCore iş akışları, açılan kayıtların belirli bir süreç üzerinden otomatik ilerlemesini sağlar. Temel mantık: Kayıt açılır → Durum güncellenir → Onay mekanizması çalışır → İşlem tamamlanır → Akış sonlanır.
+
+### Değişiklik (Change) Akışı Üzerinden Örnek Tasarım 
+
+1. Kayıt açılır ve akış tetiklenir.
+2. Kayıt “Onay Bekliyor” durumuna alınır.
+3. Fork ile üç onay tipi paralel başlatılır: \
+3.1 Teknisyen Grubu Onayı (Group Approval)\
+3.2 CAB Onayı (CAB Approval)\
+3.3 CAB Onayı (CAB Approval)Tekil Onay (Single Approval)
+4. Onay geldiğinde akış birleşir.
+5. Durum “Onaylandı” olarak güncellenir.
+6. Akış sonlanır.
+
+### Entegrasyon ve Zorunluluklar (HTTP Response) 
+
+HTTP Request adımı kullanılıyorsa:
+
+- Akış yanıt bekleyen moda geçebilir.
+- Dönen response doğru formatta olmalıdır.
+- Yanlış ya da olmayan response akışın takılmasına neden olur.
+
+### Dikkat Edilmesi Gereken Noktalar (Best Practice) 
+
+- Akış iskeleti korunmalıdır.
+- Gereksiz paralel yapılar kullanılmamalıdır.
+- Onay tipleri doğru amaçla kullanılmalıdır.
+- HTTP adımları için response zorunluluğu unutulmamalıdır.
+- Durum güncellemeleri tutarlı olmalıdır.
+- Akış basit, okunabilir ve takip edilebilir olmalıdır.

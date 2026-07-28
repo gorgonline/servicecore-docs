@@ -1,0 +1,80 @@
+---
+title: "Onay Akışı Tanımlama"
+description: "Servicecore İş Onay Akışı Tanımlama"
+---
+
+Servicecore İş Onay Akışı Tanımlama
+
+## İş Onay Akışı Tanımlama
+
+Servicecore'da Yeni bir iş onay akışı tanımlamak için sağ üstte admin paneline gidilir.
+
+![admin](/img/yonetici/isakistanimlama-g1.png)
+
+Admin panelinde onay iş akışı sayfasına geçilir.
+
+![admin](/img/yonetici/isakistanimlama-g2.png)
+
+Yeni bir iş akışı eklemek için sağ üstte bulunan **+ Yeni İş Akışı Ekle** seçeneği kullanılır.
+
+![admin](/img/yonetici/isakistanimlama-g3.png)
+
+Açılan sayfada eklenilecek iş akışına bir isim ve açıklama girilerek `Start` butonuyla akış başlatılır.
+
+![admin](/img/yonetici/isakistanimlama-g4.png)
+
+Akış başlangıcında ve cevap çatalların uçlarında daima `Signal Received` olmadılır. Aksi taktirse sistem onay akışını kaydetmeye izin vermeyecektir.
+
+![admin](/img/yonetici/isakistanimlama-g5.png)
+
+Ekleme modalında `Common` sekmesinde bulunan `Display Name` alanı iş akışı oluşturulduğunda ilgili aşamanın görünür ismi olarak kabul edilecektir. Böylece daha sonrasında bir isteğin içersinden kontrol ederken hangi aşamada kaldığını kolaylıkla takip edebilirsiniz.
+
+![admin](/img/yonetici/displayname.png)
+
+Daha öncesinde eklemiş olduğunuz düğümlere yeni bir aşama eklemek isterseniz düğümlerde bulunan `+` simgesini kullanabilirsiniz.
+
+![admin](/img/yonetici/plus.png)
+
+"SignalReceived" ekledikten sonra `+` düğmesine tıkladığınızda, seçebileceğiniz kayıtlı etkinliklerin bulunduğu bir pop-up penceresi açılır. Bu etkinlikler kategorilere ayrılmıştır ve istediğiniz belirli bir etkinliği bulmak için arama işlevini kullanabilirsiniz. Bu sayede, iş akışınıza en uygun etkinliği hızlı ve kolay bir şekilde seçebilirsiniz. Her bir etkinliğe tıkladığınızda, belirli etkinlik seçenekleri görüntülenir. Seçenekleri ayarladıktan sonra, "Kaydet" düğmesine tıklayarak etkinliği tasarımcıya eklersiniz.
+
+![admin](/img/yonetici/addmodal.png)
+
+![admin](/img/yonetici/common.png)
+
+#### Ad: 
+
+İş akışının adı, bir görüntü adı belirlemediyseniz iş akışı tanımları listesinde görünür. Bu adı ayrıca API aracılığıyla iş akışı tanımlarını sorgulamak için de kullanabilirsiniz.
+
+#### Görüntülenen Ad: 
+
+Görüntülenen ad, iş akışı tanımları listesinde görünecek olan adı belirtir ve iş akışınız için daha açıklayıcı bir ad kullanabilirsiniz. Ad ve görüntülenen ad arasındaki fark, adın iş akışlarını sorgulamak için kullanılabilmesi, görüntülenen adın ise iş akışı listelerinde görünen ad olmasıdır.
+
+#### Açıklama: 
+
+Açıklama alanı, iş akışınız hakkında notlar yazmanıza olanak tanır, işlevlerini ve niyetlerini içerir. Gelecekteki referanslar için düşüncelerinizi belgelemek için kullanışlı bir yerdir.
+
+Properties tabı altında listelenen başlıklar:
+
+![admin](/img/yonetici/properties.png)
+
+#### Ticket Type: 
+
+Bu alana hangi modülün iş akışına dahil olacağını seçtiğimiz alandır. Oluşturduğunuz iş akışlarını Değişiklik ve İstek modüllerinde kullanabilirsiniz. Ticket Type alanı da bu modüllerin seçildiği alandır.
+
+#### Column: 
+
+Bu alanda Global Durumlar altından belirlediğimiz modül durumları veya teknisyen grupları için seçim işlemi yapabilirsiniz.
+
+#### Value: 
+
+Bu alan Column tarafında seçmiş olduğunuz değere göre şekillenecektir. Sizler hangi alanı seçmiş iseniz atanacak durum veya teknisyen gruplarını belirleyebilirsiniz.
+
+![admin](/img/yonetici/propertiesdurum.png)
+
+Ekli iki düğümü birbirine bağlama için klavyenizde bulunan `Shift` tuşuna basılı tutarak önce bağlayacağınız düğümün `+` işaretine sonrasında ise bağlayacağınız düğüme tıklayabilirsiniz. `+` işaretine basarken simge yeşil gözükecektir.
+
+![admin](/img/yonetici/connection.png)
+
+İstenilen onay akışı tasarlandıktan sonra sağ üstte bulunan `✓ Yayınla` butonuyla kaydedilir. İş akışını yayınlamak, iş akışının yeni bir sürümünü oluşturur ve yürütülmek üzere kullanılabilir hale getirir. Bu, iş akışının canlıya geçmeden önceki son adımdır. Bir iş akışını yayınladığınızda, ona yeni bir sürüm numarası atanır ve yürütülmek üzere kullanılabilir hale gelir. İş akışınızı yayınlamadan önce, tüm gerekli özellikleri ayarladığınızdan emin olun. Yayınlamaya hazır olduğunuzda, iş akışı tasarımcısının sağ alt köşesindeki "Yayınla" düğmesine tıklayın. Yayınladıktan sonra, iş akışı yürütülebilir ve izlenebilir hale gelir. İş akışında değişiklik yaparsanız, değişikliklerin etkili olması için yeni bir sürüm yayınlamanız gerekir.
+
+![admin](/img/yonetici/isakistanimlama-g6.png)

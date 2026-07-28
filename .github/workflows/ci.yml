@@ -1,0 +1,35 @@
+name: Doküman Kontrolü
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    name: İçerik ve derleme kontrolü
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Bağımlılıkları kur
+        run: npm ci
+
+      - name: İçerik kontrolü (frontmatter, MDX, görseller, bağlantılar)
+        run: npm run check:mdx
+
+      - name: Tip kontrolü
+        run: npm run types:check
+
+      - name: Siteyi derle
+        run: npm run build

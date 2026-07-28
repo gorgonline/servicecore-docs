@@ -1,0 +1,115 @@
+---
+title: "Genel Bakış"
+description: "ServiceCore’da iş akışları üç farklı modülde kullanılabilir:"
+---
+
+<iframe src="https://www.youtube.com/embed/hRUJeXxXoEM?si=uxcbJKT1YS5YdxRr" title="YouTube video player" className="w-full aspect-video rounded-xl border" allowFullScreen />
+
+### İş Akışlarının Konumu ve Erişimi 
+
+ServiceCore’da iş akışları üç farklı modülde kullanılabilir:
+
+- İstek (Service Request)
+- Değişiklik (Change)
+- Sürekli İyileştirme (Continual Improvement) Bu üç modülün iş akışı yetenekleri aynıdır. Yeni Bir İş Akışı Oluşturma “Yeni İş Akışı Ekle” seçildiğinde açıklayıcı bir ad ve açıklama girilir. Modül seçimi yapılır ve iş akışı ekranı açılır.
+
+### Aksiyonlar (Actions) 
+
+Bu kategoride kayıt üzerinde değişiklik yapılır:
+
+- Durum güncelleme (Örn: Onay Bekliyor → Onaylandı)
+- Teknisyen grup değişikliği
+
+## Onay Süreçleri ve Koşullar 
+
+### Manager Approval by Condition: 
+
+Adımı çalıştıran kişinin değil, onun bir üst yöneticisinin değerine bakarak koşul uygulanır.
+
+### If Else Condition: 
+
+C# veya JavaScript ile daha karmaşık koşullar yazılabilir.
+
+## Paralel Yapılar: Fork – Join – Switch 
+
+### Fork: 
+
+Süreci iki veya daha fazla dala ayırır.
+
+### Join: 
+
+Ayrılan dalları tekrar birleştirir.
+
+### Switch: 
+
+Birden fazla koşulu bir noktada değerlendirir ve uygun dala yönlendirir.
+
+## E-posta ve Bildirim Süreçleri 
+
+### Email Approval: 
+
+Kullanıcıya e-posta üzerinden onay isteği gönderir.
+
+### Email Notification: 
+
+Sistemin bildirim motoru ile tetiklenen e-posta, SMS, web veya Teams bildirimi gönderir.
+
+## Onay Mekanizmaları 
+
+### Manager Approval: 
+
+Talebi açan kişinin üst yöneticisine gönderir.
+
+### Group Approval: 
+
+Teknisyen grubundaki herhangi bir kişinin onayı ile süreç devam eder.
+
+### Requester Company Manager Approval: 
+
+Şirket yöneticisine gönderim yapar.
+
+### Cab Group Approval: 
+
+ServisCore içindeki dinamik onay gruplarına gönderim yapılır.
+
+## Based on Organization Level Approval: 
+
+Organizasyon şemasındaki belirli seviyeye kadar otomatik onay akışı oluşturur.
+
+### Requester Approval: 
+
+Süreç sonunda talep sahibine geri döner.
+
+### Agent Approval: 
+
+Talebi üzerindeki teknisyenin onaylamasını sağlar.
+
+## Entegrasyon: HTTP, HDP ve Diğerleri 
+
+### HTTP Request: 
+
+Dış sistemlere API çağrısı gönderir.
+
+### Değişken Yönetimi 
+
+Set Variable ile değer saklanabilir, alt akışlarda veya API çağrılarında kullanılabilir.
+
+## Alt Akışlar (Subflows) 
+
+### Run workflow: 
+
+Ana akıştan bağımsız başka bir iş akışını tetikler. Alt akış tamamlandığında ana akışa dönüş yapılır.
+
+### Sinyal (Signal) 
+
+Onay dönüşleri, alt akış senkronizasyonları ve HTTP süreçleri için gereklidir.
+
+## Break Flow / Finish Flow 
+
+### Break Flow: 
+
+Akışı durdurur.
+
+### Finish Flow: 
+
+Akışı sonlandırır.

@@ -1,0 +1,1177 @@
+[
+  {
+    "source": "/docs/Adminegitimi/baslangic",
+    "destination": "/docs/admin-egitimleri/baslangic",
+    "permanent": true
+  },
+  {
+    "source": "/docs/Adminegitimi/Gelismis/anketler",
+    "destination": "/docs/admin-egitimleri/gelismis/anketler",
+    "permanent": true
+  },
+  {
+    "source": "/docs/Adminegitimi/Gelismis/dilkaynagiayar",
+    "destination": "/docs/admin-egitimleri/gelismis/dilkaynagiayar",
+    "permanent": true
+  },
+  {
+    "source": "/docs/Adminegitimi/Gelismis/entegrasyonlar",
+    "destination": "/docs/admin-egitimleri/gelismis/entegrasyonlar",
+    "permanent": true
+  },
+  {
+    "source": "/docs/Adminegitimi/Gelismis/globaldurumlar",
+    "destination": "/docs/admin-egitimleri/gelismis/globaldurumlar",
+    "permanent": true
+  },
+  {
+    "source": "/docs/Adminegitimi/Gelismis/isakisi",
+    "destination": "/docs/admin-egitimleri/gelismis/isakisi",
+    "permanent": true
+  },
+  {
+    "source": "/docs/Adminegitimi/Gelismis/isakisi/altakis",
+    "destination": "/docs/admin-egitimleri/gelismis/isakisi/altakis",
+    "permanent": true
+  },
+  {
+    "source": "/docs/Adminegitimi/Gelismis/isakisi/genelbakis",
+    "destination": "/docs/admin-egitimleri/gelismis/isakisi/genelbakis",
+    "permanent": true
+  },
+  {
+    "source": "/docs/Adminegitimi/Gelismis/isakisi/paralelonay",
+    "destination": "/docs/admin-egitimleri/gelismis/isakisi/paralelonay",
+    "permanent": true
+  },
+  {
+    "source": "/docs/Adminegitimi/Gelismis/isakisi/serionayakisi",
+    "destination": "/docs/admin-egitimleri/gelismis/isakisi/serionayakisi",
+    "permanent": true
+  },
+  {
+    "source": "/docs/Adminegitimi/Gelismis/isakisi/uygulama",
+    "destination": "/docs/admin-egitimleri/gelismis/isakisi/uygulama",
+    "permanent": true
+  },
+  {
+    "source": "/docs/Adminegitimi/Gelismis/kapatmakurallari",
+    "destination": "/docs/admin-egitimleri/gelismis/kapatmakurallari",
+    "permanent": true
+  },
+  {
+    "source": "/docs/Adminegitimi/Gelismis/ortakalanlariyonet",
+    "destination": "/docs/admin-egitimleri/gelismis/ortakalanlariyonet",
+    "permanent": true
+  },
+  {
+    "source": "/docs/Adminegitimi/Gelismis/otomasyon",
+    "destination": "/docs/admin-egitimleri/gelismis/otomasyon",
+    "permanent": true
+  },
+  {
+    "source": "/docs/Adminegitimi/Gelismis/otomatikteknisyenatama",
+    "destination": "/docs/admin-egitimleri/gelismis/otomatikteknisyenatama",
+    "permanent": true
+  },
+  {
+    "source": "/docs/Adminegitimi/Gelismis/ozelekalanlar",
+    "destination": "/docs/admin-egitimleri/gelismis/ozelekalanlar",
+    "permanent": true
+  },
+  {
+    "source": "/docs/Adminegitimi/Gelismis/sistemegenelbakis",
+    "destination": "/docs/admin-egitimleri/gelismis/sistemegenelbakis",
+    "permanent": true
+  },
+  {
+    "source": "/docs/Adminegitimi/Gelismis/slapolitikalari",
+    "destination": "/docs/admin-egitimleri/gelismis/slapolitikalari",
+    "permanent": true
+  },
+  {
+    "source": "/docs/Adminegitimi/Gelismis/zamanlanmisolayistek",
+    "destination": "/docs/admin-egitimleri/gelismis/zamanlanmisolayistek",
+    "permanent": true
+  },
+  {
+    "source": "/docs/Adminegitimi/Genel Panel Ayarları/altsirketler",
+    "destination": "/docs/admin-egitimleri/genel-panel-ayarlari/altsirketler",
+    "permanent": true
+  },
+  {
+    "source": "/docs/Adminegitimi/Genel Panel Ayarları/bildirimsablonlari",
+    "destination": "/docs/admin-egitimleri/genel-panel-ayarlari/bildirimsablonlari",
+    "permanent": true
+  },
+  {
+    "source": "/docs/Adminegitimi/Genel Panel Ayarları/duyurular",
+    "destination": "/docs/admin-egitimleri/genel-panel-ayarlari/duyurular",
+    "permanent": true
+  },
+  {
+    "source": "/docs/Adminegitimi/Genel Panel Ayarları/Form-Lowcode Geliştirmeleri/formkullanimi",
+    "destination": "/docs/admin-egitimleri/genel-panel-ayarlari/form-lowcode-gelistirmeleri/formkullanimi",
+    "permanent": true
+  },
+  {
+    "source": "/docs/Adminegitimi/Genel Panel Ayarları/Form-Lowcode Geliştirmeleri/formtasarimi",
+    "destination": "/docs/admin-egitimleri/genel-panel-ayarlari/form-lowcode-gelistirmeleri/formtasarimi",
+    "permanent": true
+  },
+  {
+    "source": "/docs/Adminegitimi/Genel Panel Ayarları/Form-Lowcode Geliştirmeleri/Genelbakis",
+    "destination": "/docs/admin-egitimleri/genel-panel-ayarlari/form-lowcode-gelistirmeleri/genelbakis",
+    "permanent": true
+  },
+  {
+    "source": "/docs/Adminegitimi/Genel Panel Ayarları/genelayarlar",
+    "destination": "/docs/admin-egitimleri/genel-panel-ayarlari/genelayarlar",
+    "permanent": true
+  },
+  {
+    "source": "/docs/Adminegitimi/Genel Panel Ayarları/hakkinda",
+    "destination": "/docs/admin-egitimleri/genel-panel-ayarlari/hakkinda",
+    "permanent": true
+  },
+  {
+    "source": "/docs/Adminegitimi/Genel Panel Ayarları/hazircevaplar",
+    "destination": "/docs/admin-egitimleri/genel-panel-ayarlari/hazircevaplar",
+    "permanent": true
+  },
+  {
+    "source": "/docs/Adminegitimi/Genel Panel Ayarları/issaatleri",
+    "destination": "/docs/admin-egitimleri/genel-panel-ayarlari/issaatleri",
+    "permanent": true
+  },
+  {
+    "source": "/docs/Adminegitimi/Genel Panel Ayarları/kurumkonumlari",
+    "destination": "/docs/admin-egitimleri/genel-panel-ayarlari/kurumkonumlari",
+    "permanent": true
+  },
+  {
+    "source": "/docs/Adminegitimi/Genel Panel Ayarları/sistemayarlari",
+    "destination": "/docs/admin-egitimleri/genel-panel-ayarlari/sistemayarlari",
+    "permanent": true
+  },
+  {
+    "source": "/docs/Adminegitimi/Genel Panel Ayarları/surecsablonlari",
+    "destination": "/docs/admin-egitimleri/genel-panel-ayarlari/surecsablonlari",
+    "permanent": true
+  },
+  {
+    "source": "/docs/Adminegitimi/Genel Panel Ayarları/validasyonayarlari",
+    "destination": "/docs/admin-egitimleri/genel-panel-ayarlari/validasyonayarlari",
+    "permanent": true
+  },
+  {
+    "source": "/docs/Adminegitimi/hizmet",
+    "destination": "/docs/admin-egitimleri/hizmet",
+    "permanent": true
+  },
+  {
+    "source": "/docs/Adminegitimi/Organizasyon",
+    "destination": "/docs/admin-egitimleri/organizasyon",
+    "permanent": true
+  },
+  {
+    "source": "/docs/Adminegitimi/Organizasyon/departmanlar",
+    "destination": "/docs/admin-egitimleri/organizasyon/departmanlar",
+    "permanent": true
+  },
+  {
+    "source": "/docs/Adminegitimi/Organizasyon/kullanicigruplari",
+    "destination": "/docs/admin-egitimleri/organizasyon/kullanicigruplari",
+    "permanent": true
+  },
+  {
+    "source": "/docs/Adminegitimi/Organizasyon/kullanicilar",
+    "destination": "/docs/admin-egitimleri/organizasyon/kullanicilar",
+    "permanent": true
+  },
+  {
+    "source": "/docs/Adminegitimi/Organizasyon/Onaylayan",
+    "destination": "/docs/admin-egitimleri/organizasyon/onaylayan",
+    "permanent": true
+  },
+  {
+    "source": "/docs/Adminegitimi/Organizasyon/roller",
+    "destination": "/docs/admin-egitimleri/organizasyon/roller",
+    "permanent": true
+  },
+  {
+    "source": "/docs/Adminegitimi/Organizasyon/teknisyengruplari",
+    "destination": "/docs/admin-egitimleri/organizasyon/teknisyengruplari",
+    "permanent": true
+  },
+  {
+    "source": "/docs/Adminegitimi/Organizasyon/teknisyenler",
+    "destination": "/docs/admin-egitimleri/organizasyon/teknisyenler",
+    "permanent": true
+  },
+  {
+    "source": "/docs/Adminegitimi/Varlık ve Konfigurasyon/iliskitürleri",
+    "destination": "/docs/admin-egitimleri/varlik-ve-konfigurasyon/iliskiturleri",
+    "permanent": true
+  },
+  {
+    "source": "/docs/Adminegitimi/Varlık ve Konfigurasyon/kullanimmodelleri",
+    "destination": "/docs/admin-egitimleri/varlik-ve-konfigurasyon/kullanimmodelleri",
+    "permanent": true
+  },
+  {
+    "source": "/docs/Adminegitimi/Varlık ve Konfigurasyon/kurumicidesteksozlesme",
+    "destination": "/docs/admin-egitimleri/varlik-ve-konfigurasyon/kurumicidesteksozlesme",
+    "permanent": true
+  },
+  {
+    "source": "/docs/Adminegitimi/Varlık ve Konfigurasyon/sozlesmeturleri",
+    "destination": "/docs/admin-egitimleri/varlik-ve-konfigurasyon/sozlesmeturleri",
+    "permanent": true
+  },
+  {
+    "source": "/docs/Adminegitimi/Varlık ve Konfigurasyon/tedarikciler",
+    "destination": "/docs/admin-egitimleri/varlik-ve-konfigurasyon/tedarikciler",
+    "permanent": true
+  },
+  {
+    "source": "/docs/Adminegitimi/Varlık ve Konfigurasyon/tedarikcisozlesme",
+    "destination": "/docs/admin-egitimleri/varlik-ve-konfigurasyon/tedarikcisozlesme",
+    "permanent": true
+  },
+  {
+    "source": "/docs/Adminegitimi/Varlık ve Konfigurasyon/üreticiler",
+    "destination": "/docs/admin-egitimleri/varlik-ve-konfigurasyon/ureticiler",
+    "permanent": true
+  },
+  {
+    "source": "/docs/Adminegitimi/Varlık ve Konfigurasyon/varlikdurumu",
+    "destination": "/docs/admin-egitimleri/varlik-ve-konfigurasyon/varlikdurumu",
+    "permanent": true
+  },
+  {
+    "source": "/docs/Adminegitimi/Varlık ve Konfigurasyon/varlıkkonumlari",
+    "destination": "/docs/admin-egitimleri/varlik-ve-konfigurasyon/varlikkonumlari",
+    "permanent": true
+  },
+  {
+    "source": "/docs/Adminegitimi/Varlık ve Konfigurasyon/varliksirketi",
+    "destination": "/docs/admin-egitimleri/varlik-ve-konfigurasyon/varliksirketi",
+    "permanent": true
+  },
+  {
+    "source": "/docs/Adminegitimi/Varlık ve Konfigurasyon/varliktürleri",
+    "destination": "/docs/admin-egitimleri/varlik-ve-konfigurasyon/varlikturleri",
+    "permanent": true
+  },
+  {
+    "source": "/docs/adminpaneli/baslangic",
+    "destination": "/docs/yonetici/baslangic",
+    "permanent": true
+  },
+  {
+    "source": "/docs/adminpaneli/Devops",
+    "destination": "/docs/yonetici/devops",
+    "permanent": true
+  },
+  {
+    "source": "/docs/adminpaneli/gelismis",
+    "destination": "/docs/yonetici/gelismis",
+    "permanent": true
+  },
+  {
+    "source": "/docs/adminpaneli/genel",
+    "destination": "/docs/yonetici/genel",
+    "permanent": true
+  },
+  {
+    "source": "/docs/adminpaneli/hizmetiliskileri",
+    "destination": "/docs/yonetici/hizmetiliskileri",
+    "permanent": true
+  },
+  {
+    "source": "/docs/adminpaneli/isAkisi/degisiklikisakisiekleme",
+    "destination": "/docs/yonetici/isakisi/degisiklikisakisiekleme",
+    "permanent": true
+  },
+  {
+    "source": "/docs/adminpaneli/isAkisi/isAkisBaslangic",
+    "destination": "/docs/yonetici/isakisi/isakisbaslangic",
+    "permanent": true
+  },
+  {
+    "source": "/docs/adminpaneli/isAkisi/isAkisornek/cmisakisi",
+    "destination": "/docs/yonetici/isakisi/isakisornek/cmisakisi",
+    "permanent": true
+  },
+  {
+    "source": "/docs/adminpaneli/isAkisi/isAkisornek/istekteknisyenatama",
+    "destination": "/docs/yonetici/isakisi/isakisornek/istekteknisyenatama",
+    "permanent": true
+  },
+  {
+    "source": "/docs/adminpaneli/isAkisi/isAkisornek/otomatikteknisyenatama",
+    "destination": "/docs/yonetici/isakisi/isakisornek/otomatikteknisyenatama",
+    "permanent": true
+  },
+  {
+    "source": "/docs/adminpaneli/isAkisi/isAkisornek/yoneticionayliakis",
+    "destination": "/docs/yonetici/isakisi/isakisornek/yoneticionayliakis",
+    "permanent": true
+  },
+  {
+    "source": "/docs/adminpaneli/isAkisi/isakısornekleri",
+    "destination": "/docs/yonetici/isakisi/isakisornekleri",
+    "permanent": true
+  },
+  {
+    "source": "/docs/adminpaneli/isAkisi/isAkisTanimlama",
+    "destination": "/docs/yonetici/isakisi/isakistanimlama",
+    "permanent": true
+  },
+  {
+    "source": "/docs/adminpaneli/isAkisi/katalogAkisTanimlama",
+    "destination": "/docs/yonetici/isakisi/katalogakistanimlama",
+    "permanent": true
+  },
+  {
+    "source": "/docs/adminpaneli/lowCode/baslangic",
+    "destination": "/docs/yonetici/lowcode/baslangic",
+    "permanent": true
+  },
+  {
+    "source": "/docs/adminpaneli/lowCode/formDuzenleme",
+    "destination": "/docs/yonetici/lowcode/formduzenleme",
+    "permanent": true
+  },
+  {
+    "source": "/docs/adminpaneli/lowCode/formEkleme",
+    "destination": "/docs/yonetici/lowcode/formekleme",
+    "permanent": true
+  },
+  {
+    "source": "/docs/adminpaneli/organizasyon",
+    "destination": "/docs/yonetici/organizasyon",
+    "permanent": true
+  },
+  {
+    "source": "/docs/adminpaneli/varlikvekonfig",
+    "destination": "/docs/yonetici/varlikvekonfig",
+    "permanent": true
+  },
+  {
+    "source": "/docs/CSSMAAdmin/baslangic",
+    "destination": "/docs/cssma-admin/baslangic",
+    "permanent": true
+  },
+  {
+    "source": "/docs/CSSMAAdmin/Genel Panel Ayarları/altsirketler",
+    "destination": "/docs/cssma-admin/genel-panel-ayarlari/altsirketler",
+    "permanent": true
+  },
+  {
+    "source": "/docs/CSSMAAdmin/Genel Panel Ayarları/bildirimsablonlari",
+    "destination": "/docs/cssma-admin/genel-panel-ayarlari/bildirimsablonlari",
+    "permanent": true
+  },
+  {
+    "source": "/docs/CSSMAAdmin/Genel Panel Ayarları/duyurular",
+    "destination": "/docs/cssma-admin/genel-panel-ayarlari/duyurular",
+    "permanent": true
+  },
+  {
+    "source": "/docs/CSSMAAdmin/Genel Panel Ayarları/genelayarlar",
+    "destination": "/docs/cssma-admin/genel-panel-ayarlari/genelayarlar",
+    "permanent": true
+  },
+  {
+    "source": "/docs/CSSMAAdmin/Genel Panel Ayarları/hakkinda",
+    "destination": "/docs/cssma-admin/genel-panel-ayarlari/hakkinda",
+    "permanent": true
+  },
+  {
+    "source": "/docs/CSSMAAdmin/Genel Panel Ayarları/hazircevaplar",
+    "destination": "/docs/cssma-admin/genel-panel-ayarlari/hazircevaplar",
+    "permanent": true
+  },
+  {
+    "source": "/docs/CSSMAAdmin/Genel Panel Ayarları/issaatleri",
+    "destination": "/docs/cssma-admin/genel-panel-ayarlari/issaatleri",
+    "permanent": true
+  },
+  {
+    "source": "/docs/CSSMAAdmin/Genel Panel Ayarları/kurumkonumları",
+    "destination": "/docs/cssma-admin/genel-panel-ayarlari/kurumkonumlari",
+    "permanent": true
+  },
+  {
+    "source": "/docs/CSSMAAdmin/Genel Panel Ayarları/sistemayarlari",
+    "destination": "/docs/cssma-admin/genel-panel-ayarlari/sistemayarlari",
+    "permanent": true
+  },
+  {
+    "source": "/docs/CSSMAAdmin/Genel Panel Ayarları/surecsablonlari",
+    "destination": "/docs/cssma-admin/genel-panel-ayarlari/surecsablonlari",
+    "permanent": true
+  },
+  {
+    "source": "/docs/CSSMAAdmin/Genel Panel Ayarları/validasyonayarlari",
+    "destination": "/docs/cssma-admin/genel-panel-ayarlari/validasyonayarlari",
+    "permanent": true
+  },
+  {
+    "source": "/docs/enduser",
+    "destination": "/docs/kullanici",
+    "permanent": true
+  },
+  {
+    "source": "/docs/enduser/enduser1",
+    "destination": "/docs/kullanici/enduser1",
+    "permanent": true
+  },
+  {
+    "source": "/docs/enduser/enduser10",
+    "destination": "/docs/kullanici/enduser10",
+    "permanent": true
+  },
+  {
+    "source": "/docs/enduser/enduser11",
+    "destination": "/docs/kullanici/enduser11",
+    "permanent": true
+  },
+  {
+    "source": "/docs/enduser/enduser2",
+    "destination": "/docs/kullanici/enduser2",
+    "permanent": true
+  },
+  {
+    "source": "/docs/enduser/enduser3",
+    "destination": "/docs/kullanici/enduser3",
+    "permanent": true
+  },
+  {
+    "source": "/docs/enduser/enduser4",
+    "destination": "/docs/kullanici/enduser4",
+    "permanent": true
+  },
+  {
+    "source": "/docs/enduser/enduser5",
+    "destination": "/docs/kullanici/enduser5",
+    "permanent": true
+  },
+  {
+    "source": "/docs/enduser/enduser6",
+    "destination": "/docs/kullanici/enduser6",
+    "permanent": true
+  },
+  {
+    "source": "/docs/enduser/enduser7",
+    "destination": "/docs/kullanici/enduser7",
+    "permanent": true
+  },
+  {
+    "source": "/docs/enduser/enduser8",
+    "destination": "/docs/kullanici/enduser8",
+    "permanent": true
+  },
+  {
+    "source": "/docs/enduser/enduser9",
+    "destination": "/docs/kullanici/enduser9",
+    "permanent": true
+  },
+  {
+    "source": "/docs/enduser/flexiportal",
+    "destination": "/docs/kullanici/flexiportal",
+    "permanent": true
+  },
+  {
+    "source": "/docs/entegrasyonlar/entegrasyonCalistirma",
+    "destination": "/docs/entegrasyonlar/entegrasyoncalistirma",
+    "permanent": true
+  },
+  {
+    "source": "/docs/entegrasyonlar/entegrasyonTasarlama",
+    "destination": "/docs/entegrasyonlar/entegrasyontasarlama",
+    "permanent": true
+  },
+  {
+    "source": "/docs/Esm/baslangic",
+    "destination": "/docs/esm/baslangic",
+    "permanent": true
+  },
+  {
+    "source": "/docs/Esm/esmkatalog",
+    "destination": "/docs/esm/esmkatalog",
+    "permanent": true
+  },
+  {
+    "source": "/docs/Esm/esmYonetimi",
+    "destination": "/docs/esm/esmyonetimi",
+    "permanent": true
+  },
+  {
+    "source": "/docs/Esm/kiraciDetayları",
+    "destination": "/docs/esm/kiracidetaylari",
+    "permanent": true
+  },
+  {
+    "source": "/docs/Esm/kiraciEkleme",
+    "destination": "/docs/esm/kiraciekleme",
+    "permanent": true
+  },
+  {
+    "source": "/docs/Esm/kiraciYönetimi",
+    "destination": "/docs/esm/kiraciyonetimi",
+    "permanent": true
+  },
+  {
+    "source": "/docs/intro",
+    "destination": "/docs",
+    "permanent": true
+  },
+  {
+    "source": "/docs/kurulumkilavuzu/failover",
+    "destination": "/docs/kurulum/failover",
+    "permanent": true
+  },
+  {
+    "source": "/docs/kurulumkilavuzu/failoverapi",
+    "destination": "/docs/kurulum/failoverapi",
+    "permanent": true
+  },
+  {
+    "source": "/docs/kurulumkilavuzu/implementasyonadimlari",
+    "destination": "/docs/kurulum/implementasyonadimlari",
+    "permanent": true
+  },
+  {
+    "source": "/docs/kurulumkilavuzu/kurulumgereksinimleri",
+    "destination": "/docs/kurulum/kurulumgereksinimleri",
+    "permanent": true
+  },
+  {
+    "source": "/docs/kurulumkilavuzu/sandbox",
+    "destination": "/docs/kurulum/sandbox",
+    "permanent": true
+  },
+  {
+    "source": "/docs/kurulumkilavuzu/serviskatalog",
+    "destination": "/docs/kurulum/serviskatalog",
+    "permanent": true
+  },
+  {
+    "source": "/docs/kurulumkilavuzu/setupadimlari",
+    "destination": "/docs/kurulum/setupadimlari",
+    "permanent": true
+  },
+  {
+    "source": "/docs/kurulumkilavuzu/standartapi",
+    "destination": "/docs/kurulum/standartapi",
+    "permanent": true
+  },
+  {
+    "source": "/docs/kurulumkilavuzu/standartMimari",
+    "destination": "/docs/kurulum/standartmimari",
+    "permanent": true
+  },
+  {
+    "source": "/docs/kurulumkilavuzu/sürecveurunrolleri",
+    "destination": "/docs/kurulum/surecveurunrolleri",
+    "permanent": true
+  },
+  {
+    "source": "/docs/kurulumkilavuzu/teknikgorev",
+    "destination": "/docs/kurulum/teknikgorev",
+    "permanent": true
+  },
+  {
+    "source": "/docs/Teknisyen/bilgibankası",
+    "destination": "/docs/teknisyen-egitimleri/bilgibankasi",
+    "permanent": true
+  },
+  {
+    "source": "/docs/Teknisyen/cagri",
+    "destination": "/docs/teknisyen-egitimleri/cagri",
+    "permanent": true
+  },
+  {
+    "source": "/docs/Teknisyen/cmdb",
+    "destination": "/docs/teknisyen-egitimleri/cmdb",
+    "permanent": true
+  },
+  {
+    "source": "/docs/Teknisyen/cssm-pders",
+    "destination": "/docs/teknisyen-egitimleri/cssm-pders",
+    "permanent": true
+  },
+  {
+    "source": "/docs/Teknisyen/degisiklikveiyilestirme",
+    "destination": "/docs/teknisyen-egitimleri/degisiklikveiyilestirme",
+    "permanent": true
+  },
+  {
+    "source": "/docs/Teknisyen/gorev",
+    "destination": "/docs/teknisyen-egitimleri/gorev",
+    "permanent": true
+  },
+  {
+    "source": "/docs/Teknisyen/istek",
+    "destination": "/docs/teknisyen-egitimleri/istek",
+    "permanent": true
+  },
+  {
+    "source": "/docs/Teknisyen/olay",
+    "destination": "/docs/teknisyen-egitimleri/olay",
+    "permanent": true
+  },
+  {
+    "source": "/docs/Teknisyen/pano",
+    "destination": "/docs/teknisyen-egitimleri/pano",
+    "permanent": true
+  },
+  {
+    "source": "/docs/Teknisyen/problem",
+    "destination": "/docs/teknisyen-egitimleri/problem",
+    "permanent": true
+  },
+  {
+    "source": "/docs/Teknisyen/proje",
+    "destination": "/docs/teknisyen-egitimleri/proje",
+    "permanent": true
+  },
+  {
+    "source": "/docs/Teknisyen/raporlar",
+    "destination": "/docs/teknisyen-egitimleri/raporlar",
+    "permanent": true
+  },
+  {
+    "source": "/docs/Teknisyen/sonkullanici",
+    "destination": "/docs/teknisyen-egitimleri/sonkullanici",
+    "permanent": true
+  },
+  {
+    "source": "/docs/Teknisyen/sozlesme",
+    "destination": "/docs/teknisyen-egitimleri/sozlesme",
+    "permanent": true
+  },
+  {
+    "source": "/docs/teknisyenkullanımkilavuzu/moduller/Bilgi Bankası/bilgibankasi",
+    "destination": "/docs/teknisyen/moduller/bilgi-bankasi/bilgibankasi",
+    "permanent": true
+  },
+  {
+    "source": "/docs/teknisyenkullanımkilavuzu/moduller/Bilgi Bankası/bilgibankasi2",
+    "destination": "/docs/teknisyen/moduller/bilgi-bankasi/bilgibankasi2",
+    "permanent": true
+  },
+  {
+    "source": "/docs/teknisyenkullanımkilavuzu/moduller/Bilgi Bankası/bilgibankasi4",
+    "destination": "/docs/teknisyen/moduller/bilgi-bankasi/bilgibankasi4",
+    "permanent": true
+  },
+  {
+    "source": "/docs/teknisyenkullanımkilavuzu/moduller/Çağrılar/cagrilar",
+    "destination": "/docs/teknisyen/moduller/cagrilar/cagrilar",
+    "permanent": true
+  },
+  {
+    "source": "/docs/teknisyenkullanımkilavuzu/moduller/Çağrılar/cagrilar2",
+    "destination": "/docs/teknisyen/moduller/cagrilar/cagrilar2",
+    "permanent": true
+  },
+  {
+    "source": "/docs/teknisyenkullanımkilavuzu/moduller/Çağrılar/cagrilar3",
+    "destination": "/docs/teknisyen/moduller/cagrilar/cagrilar3",
+    "permanent": true
+  },
+  {
+    "source": "/docs/teknisyenkullanımkilavuzu/moduller/Çağrılar/cagrilar5",
+    "destination": "/docs/teknisyen/moduller/cagrilar/cagrilar5",
+    "permanent": true
+  },
+  {
+    "source": "/docs/teknisyenkullanımkilavuzu/moduller/Cmdb",
+    "destination": "/docs/teknisyen/moduller/cmdb",
+    "permanent": true
+  },
+  {
+    "source": "/docs/teknisyenkullanımkilavuzu/moduller/Cmdb/cmdb1",
+    "destination": "/docs/teknisyen/moduller/cmdb/cmdb1",
+    "permanent": true
+  },
+  {
+    "source": "/docs/teknisyenkullanımkilavuzu/moduller/Cmdb/cmdb3",
+    "destination": "/docs/teknisyen/moduller/cmdb/cmdb3",
+    "permanent": true
+  },
+  {
+    "source": "/docs/teknisyenkullanımkilavuzu/moduller/Değişiklikler/degisiklikler",
+    "destination": "/docs/teknisyen/moduller/degisiklikler/degisiklikler",
+    "permanent": true
+  },
+  {
+    "source": "/docs/teknisyenkullanımkilavuzu/moduller/Değişiklikler/degisiklikler1",
+    "destination": "/docs/teknisyen/moduller/degisiklikler/degisiklikler1",
+    "permanent": true
+  },
+  {
+    "source": "/docs/teknisyenkullanımkilavuzu/moduller/Değişiklikler/degisiklikler2",
+    "destination": "/docs/teknisyen/moduller/degisiklikler/degisiklikler2",
+    "permanent": true
+  },
+  {
+    "source": "/docs/teknisyenkullanımkilavuzu/moduller/Değişiklikler/degisiklikler4",
+    "destination": "/docs/teknisyen/moduller/degisiklikler/degisiklikler4",
+    "permanent": true
+  },
+  {
+    "source": "/docs/teknisyenkullanımkilavuzu/moduller/Görevler/gorevler",
+    "destination": "/docs/teknisyen/moduller/gorevler/gorevler",
+    "permanent": true
+  },
+  {
+    "source": "/docs/teknisyenkullanımkilavuzu/moduller/Görevler/gorevler2",
+    "destination": "/docs/teknisyen/moduller/gorevler/gorevler2",
+    "permanent": true
+  },
+  {
+    "source": "/docs/teknisyenkullanımkilavuzu/moduller/Görevler/gorevler3",
+    "destination": "/docs/teknisyen/moduller/gorevler/gorevler3",
+    "permanent": true
+  },
+  {
+    "source": "/docs/teknisyenkullanımkilavuzu/moduller/Görevler/gorevler5",
+    "destination": "/docs/teknisyen/moduller/gorevler/gorevler5",
+    "permanent": true
+  },
+  {
+    "source": "/docs/teknisyenkullanımkilavuzu/moduller/Gösterge Paneli/DashboardOrnek/aylikolayacilmatrendi",
+    "destination": "/docs/teknisyen/moduller/gosterge-paneli/dashboardornek/aylikolayacilmatrendi",
+    "permanent": true
+  },
+  {
+    "source": "/docs/teknisyenkullanımkilavuzu/moduller/Gösterge Paneli/DashboardOrnek/istekacilmatrendi",
+    "destination": "/docs/teknisyen/moduller/gosterge-paneli/dashboardornek/istekacilmatrendi",
+    "permanent": true
+  },
+  {
+    "source": "/docs/teknisyenkullanımkilavuzu/moduller/Gösterge Paneli/gostergepaneli4",
+    "destination": "/docs/teknisyen/moduller/gosterge-paneli/gostergepaneli4",
+    "permanent": true
+  },
+  {
+    "source": "/docs/teknisyenkullanımkilavuzu/moduller/Gösterge Paneli/gostergepaneli5",
+    "destination": "/docs/teknisyen/moduller/gosterge-paneli/gostergepaneli5",
+    "permanent": true
+  },
+  {
+    "source": "/docs/teknisyenkullanımkilavuzu/moduller/Gösterge Paneli/gostergepaneli6",
+    "destination": "/docs/teknisyen/moduller/gosterge-paneli/gostergepaneli6",
+    "permanent": true
+  },
+  {
+    "source": "/docs/teknisyenkullanımkilavuzu/moduller/Gösterge Paneli/gostergepaneli8",
+    "destination": "/docs/teknisyen/moduller/gosterge-paneli/gostergepaneli8",
+    "permanent": true
+  },
+  {
+    "source": "/docs/teknisyenkullanımkilavuzu/moduller/Iyileştirme/iyilestirme",
+    "destination": "/docs/teknisyen/moduller/iyilestirme/iyilestirme",
+    "permanent": true
+  },
+  {
+    "source": "/docs/teknisyenkullanımkilavuzu/moduller/Iyileştirme/iyilestirme1",
+    "destination": "/docs/teknisyen/moduller/iyilestirme/iyilestirme1",
+    "permanent": true
+  },
+  {
+    "source": "/docs/teknisyenkullanımkilavuzu/moduller/Iyileştirme/iyilestirme3",
+    "destination": "/docs/teknisyen/moduller/iyilestirme/iyilestirme3",
+    "permanent": true
+  },
+  {
+    "source": "/docs/teknisyenkullanımkilavuzu/moduller/Katalog",
+    "destination": "/docs/teknisyen/moduller/katalog",
+    "permanent": true
+  },
+  {
+    "source": "/docs/teknisyenkullanımkilavuzu/moduller/Katalog/katalog2",
+    "destination": "/docs/teknisyen/moduller/katalog/katalog2",
+    "permanent": true
+  },
+  {
+    "source": "/docs/teknisyenkullanımkilavuzu/moduller/Olaylar",
+    "destination": "/docs/teknisyen/moduller/olaylar",
+    "permanent": true
+  },
+  {
+    "source": "/docs/teknisyenkullanımkilavuzu/moduller/Olaylar/olaylar1",
+    "destination": "/docs/teknisyen/moduller/olaylar/olaylar1",
+    "permanent": true
+  },
+  {
+    "source": "/docs/teknisyenkullanımkilavuzu/moduller/Olaylar/olaylar2",
+    "destination": "/docs/teknisyen/moduller/olaylar/olaylar2",
+    "permanent": true
+  },
+  {
+    "source": "/docs/teknisyenkullanımkilavuzu/moduller/Olaylar/olaylar4",
+    "destination": "/docs/teknisyen/moduller/olaylar/olaylar4",
+    "permanent": true
+  },
+  {
+    "source": "/docs/teknisyenkullanımkilavuzu/moduller/Problemler",
+    "destination": "/docs/teknisyen/moduller/problemler",
+    "permanent": true
+  },
+  {
+    "source": "/docs/teknisyenkullanımkilavuzu/moduller/Problemler/problemler1",
+    "destination": "/docs/teknisyen/moduller/problemler/problemler1",
+    "permanent": true
+  },
+  {
+    "source": "/docs/teknisyenkullanımkilavuzu/moduller/Problemler/problemler2",
+    "destination": "/docs/teknisyen/moduller/problemler/problemler2",
+    "permanent": true
+  },
+  {
+    "source": "/docs/teknisyenkullanımkilavuzu/moduller/Problemler/problemler4",
+    "destination": "/docs/teknisyen/moduller/problemler/problemler4",
+    "permanent": true
+  },
+  {
+    "source": "/docs/teknisyenkullanımkilavuzu/moduller/Projeler",
+    "destination": "/docs/teknisyen/moduller/projeler",
+    "permanent": true
+  },
+  {
+    "source": "/docs/teknisyenkullanımkilavuzu/moduller/Projeler/projeler1",
+    "destination": "/docs/teknisyen/moduller/projeler/projeler1",
+    "permanent": true
+  },
+  {
+    "source": "/docs/teknisyenkullanımkilavuzu/moduller/Projeler/projeler3",
+    "destination": "/docs/teknisyen/moduller/projeler/projeler3",
+    "permanent": true
+  },
+  {
+    "source": "/docs/teknisyenkullanımkilavuzu/moduller/Sözleşmeler/sozlesmeler",
+    "destination": "/docs/teknisyen/moduller/sozlesmeler/sozlesmeler",
+    "permanent": true
+  },
+  {
+    "source": "/docs/teknisyenkullanımkilavuzu/moduller/Sözleşmeler/sozlesmeler2",
+    "destination": "/docs/teknisyen/moduller/sozlesmeler/sozlesmeler2",
+    "permanent": true
+  },
+  {
+    "source": "/docs/teknisyenkullanımkilavuzu/moduller/Talepler/istekler",
+    "destination": "/docs/teknisyen/moduller/talepler/istekler",
+    "permanent": true
+  },
+  {
+    "source": "/docs/teknisyenkullanımkilavuzu/moduller/Talepler/istekler2",
+    "destination": "/docs/teknisyen/moduller/talepler/istekler2",
+    "permanent": true
+  },
+  {
+    "source": "/docs/teknisyenkullanımkilavuzu/moduller/Talepler/istekler3",
+    "destination": "/docs/teknisyen/moduller/talepler/istekler3",
+    "permanent": true
+  },
+  {
+    "source": "/docs/teknisyenkullanımkilavuzu/moduller/Talepler/istekler5",
+    "destination": "/docs/teknisyen/moduller/talepler/istekler5",
+    "permanent": true
+  },
+  {
+    "source": "/docs/teknisyenkullanımkilavuzu/raporlar/baslangic",
+    "destination": "/docs/teknisyen/raporlar/baslangic",
+    "permanent": true
+  },
+  {
+    "source": "/docs/teknisyenkullanımkilavuzu/raporlar/baslangicr",
+    "destination": "/docs/teknisyen/raporlar/baslangicr",
+    "permanent": true
+  },
+  {
+    "source": "/docs/teknisyenkullanımkilavuzu/raporlar/dokum",
+    "destination": "/docs/teknisyen/raporlar/dokum",
+    "permanent": true
+  },
+  {
+    "source": "/docs/teknisyenkullanımkilavuzu/servicecore1",
+    "destination": "/docs/teknisyen/servicecore1",
+    "permanent": true
+  },
+  {
+    "source": "/docs/Adminegitimi/Gelismis/dilkaynagıayar",
+    "destination": "/docs/admin-egitimleri/gelismis/dilkaynagiayar",
+    "permanent": true
+  },
+  {
+    "source": "/docs/Adminegitimi/Gelismis/isakısı",
+    "destination": "/docs/admin-egitimleri/gelismis/isakisi",
+    "permanent": true
+  },
+  {
+    "source": "/docs/Adminegitimi/Gelismis/kapatmakuralları",
+    "destination": "/docs/admin-egitimleri/gelismis/kapatmakurallari",
+    "permanent": true
+  },
+  {
+    "source": "/docs/Adminegitimi/Gelismis/sistemegenelbakıs",
+    "destination": "/docs/admin-egitimleri/gelismis/sistemegenelbakis",
+    "permanent": true
+  },
+  {
+    "source": "/docs/Adminegitimi/Gelismis/zamanlanmısolayistek",
+    "destination": "/docs/admin-egitimleri/gelismis/zamanlanmisolayistek",
+    "permanent": true
+  },
+  {
+    "source": "/docs/Adminegitimi/Genel Panel Ayarları/Form-Lowcode Geliştirmeleri/Genelbakis",
+    "destination": "/docs/admin-egitimleri/genel-panel-ayarlari/form-lowcode-gelistirmeleri/genelbakis",
+    "permanent": true
+  },
+  {
+    "source": "/docs/Adminegitimi/Genel Panel Ayarları/Form-Lowcode Geliştirmeleri/formkullanimi",
+    "destination": "/docs/admin-egitimleri/genel-panel-ayarlari/form-lowcode-gelistirmeleri/formkullanimi",
+    "permanent": true
+  },
+  {
+    "source": "/docs/Adminegitimi/Genel Panel Ayarları/Form-Lowcode Geliştirmeleri/formtasarimi",
+    "destination": "/docs/admin-egitimleri/genel-panel-ayarlari/form-lowcode-gelistirmeleri/formtasarimi",
+    "permanent": true
+  },
+  {
+    "source": "/docs/Adminegitimi/Genel Panel Ayarları/kurumkonumları",
+    "destination": "/docs/admin-egitimleri/genel-panel-ayarlari/kurumkonumlari",
+    "permanent": true
+  },
+  {
+    "source": "/docs/Adminegitimi/Varlık ve Konfigurasyon/iliskitürleri",
+    "destination": "/docs/admin-egitimleri/varlik-ve-konfigurasyon/iliskiturleri",
+    "permanent": true
+  },
+  {
+    "source": "/docs/Adminegitimi/Varlık ve Konfigurasyon/üreticiler",
+    "destination": "/docs/admin-egitimleri/varlik-ve-konfigurasyon/ureticiler",
+    "permanent": true
+  },
+  {
+    "source": "/docs/Adminegitimi/Varlık ve Konfigurasyon/varliktürleri",
+    "destination": "/docs/admin-egitimleri/varlik-ve-konfigurasyon/varlikturleri",
+    "permanent": true
+  },
+  {
+    "source": "/docs/Adminegitimi/Varlık ve Konfigürasyon/iliskitürleri",
+    "destination": "/docs/admin-egitimleri/varlik-ve-konfigurasyon/iliskiturleri",
+    "permanent": true
+  },
+  {
+    "source": "/docs/Adminegitimi/Varlık ve Konfigürasyon/kullanimmodelleri",
+    "destination": "/docs/admin-egitimleri/varlik-ve-konfigurasyon/kullanimmodelleri",
+    "permanent": true
+  },
+  {
+    "source": "/docs/Adminegitimi/Varlık ve Konfigürasyon/kullanımmodelleri",
+    "destination": "/docs/admin-egitimleri/varlik-ve-konfigurasyon/kullanimmodelleri",
+    "permanent": true
+  },
+  {
+    "source": "/docs/Adminegitimi/Varlık ve Konfigürasyon/kurumicidesteksozlesme",
+    "destination": "/docs/admin-egitimleri/varlik-ve-konfigurasyon/kurumicidesteksozlesme",
+    "permanent": true
+  },
+  {
+    "source": "/docs/Adminegitimi/Varlık ve Konfigürasyon/sozlesmeturleri",
+    "destination": "/docs/admin-egitimleri/varlik-ve-konfigurasyon/sozlesmeturleri",
+    "permanent": true
+  },
+  {
+    "source": "/docs/Adminegitimi/Varlık ve Konfigürasyon/sozlesmeturlerı",
+    "destination": "/docs/admin-egitimleri/varlik-ve-konfigurasyon/sozlesmeturleri",
+    "permanent": true
+  },
+  {
+    "source": "/docs/Adminegitimi/Varlık ve Konfigürasyon/tedarikciler",
+    "destination": "/docs/admin-egitimleri/varlik-ve-konfigurasyon/tedarikciler",
+    "permanent": true
+  },
+  {
+    "source": "/docs/Adminegitimi/Varlık ve Konfigürasyon/tedarikcisozlesme",
+    "destination": "/docs/admin-egitimleri/varlik-ve-konfigurasyon/tedarikcisozlesme",
+    "permanent": true
+  },
+  {
+    "source": "/docs/Adminegitimi/Varlık ve Konfigürasyon/üreticiler",
+    "destination": "/docs/admin-egitimleri/varlik-ve-konfigurasyon/ureticiler",
+    "permanent": true
+  },
+  {
+    "source": "/docs/Adminegitimi/Varlık ve Konfigürasyon/varlikdurumu",
+    "destination": "/docs/admin-egitimleri/varlik-ve-konfigurasyon/varlikdurumu",
+    "permanent": true
+  },
+  {
+    "source": "/docs/Adminegitimi/Varlık ve Konfigürasyon/varliksirketi",
+    "destination": "/docs/admin-egitimleri/varlik-ve-konfigurasyon/varliksirketi",
+    "permanent": true
+  },
+  {
+    "source": "/docs/Adminegitimi/Varlık ve Konfigürasyon/varliktürleri",
+    "destination": "/docs/admin-egitimleri/varlik-ve-konfigurasyon/varlikturleri",
+    "permanent": true
+  },
+  {
+    "source": "/docs/Adminegitimi/Varlık ve Konfigürasyon/varlıkkonumlari",
+    "destination": "/docs/admin-egitimleri/varlik-ve-konfigurasyon/varlikkonumlari",
+    "permanent": true
+  },
+  {
+    "source": "/docs/CSSMAAdmin/Genel Panel Ayarları/hakkında",
+    "destination": "/docs/cssma-admin/genel-panel-ayarlari/hakkinda",
+    "permanent": true
+  },
+  {
+    "source": "/docs/Esm/kiraciYönetimi",
+    "destination": "/docs/esm/kiraciyonetimi",
+    "permanent": true
+  },
+  {
+    "source": "/docs/Teknisyen/cagrı",
+    "destination": "/docs/teknisyen-egitimleri/cagri",
+    "permanent": true
+  },
+  {
+    "source": "/docs/Teknisyen/sonkullanıcı",
+    "destination": "/docs/teknisyen-egitimleri/sonkullanici",
+    "permanent": true
+  },
+  {
+    "source": "/docs/Teknisyen/ıstek",
+    "destination": "/docs/teknisyen-egitimleri/istek",
+    "permanent": true
+  },
+  {
+    "source": "/docs/kurulumkilavuzu/sürecveurunrolleri",
+    "destination": "/docs/kurulum/surecveurunrolleri",
+    "permanent": true
+  },
+  {
+    "source": "/docs/teknisyenkullanımkilavuzu/moduller/Çağrılar/cagrilar",
+    "destination": "/docs/teknisyen/moduller/cagrilar/cagrilar",
+    "permanent": true
+  },
+  {
+    "source": "/docs/teknisyenkullanımkilavuzu/moduller/Çağrılar/cagrilar2",
+    "destination": "/docs/teknisyen/moduller/cagrilar/cagrilar2",
+    "permanent": true
+  },
+  {
+    "source": "/docs/teknisyenkullanımkilavuzu/moduller/Çağrılar/cagrilar3",
+    "destination": "/docs/teknisyen/moduller/cagrilar/cagrilar3",
+    "permanent": true
+  },
+  {
+    "source": "/docs/teknisyenkullanımkilavuzu/moduller/Çağrılar/cagrilar5",
+    "destination": "/docs/teknisyen/moduller/cagrilar/cagrilar5",
+    "permanent": true
+  },
+  {
+    "source": "/docs/teknisyenkullanımkilavuzu/moduller/Değişiklikler/degisiklikler",
+    "destination": "/docs/teknisyen/moduller/degisiklikler/degisiklikler",
+    "permanent": true
+  },
+  {
+    "source": "/docs/teknisyenkullanımkilavuzu/moduller/Değişiklikler/degisiklikler1",
+    "destination": "/docs/teknisyen/moduller/degisiklikler/degisiklikler1",
+    "permanent": true
+  },
+  {
+    "source": "/docs/teknisyenkullanımkilavuzu/moduller/Değişiklikler/degisiklikler2",
+    "destination": "/docs/teknisyen/moduller/degisiklikler/degisiklikler2",
+    "permanent": true
+  },
+  {
+    "source": "/docs/teknisyenkullanımkilavuzu/moduller/Değişiklikler/degisiklikler4",
+    "destination": "/docs/teknisyen/moduller/degisiklikler/degisiklikler4",
+    "permanent": true
+  },
+  {
+    "source": "/docs/teknisyenkullanımkilavuzu/moduller/Görevler/gorevler",
+    "destination": "/docs/teknisyen/moduller/gorevler/gorevler",
+    "permanent": true
+  },
+  {
+    "source": "/docs/teknisyenkullanımkilavuzu/moduller/Görevler/gorevler2",
+    "destination": "/docs/teknisyen/moduller/gorevler/gorevler2",
+    "permanent": true
+  },
+  {
+    "source": "/docs/teknisyenkullanımkilavuzu/moduller/Görevler/gorevler3",
+    "destination": "/docs/teknisyen/moduller/gorevler/gorevler3",
+    "permanent": true
+  },
+  {
+    "source": "/docs/teknisyenkullanımkilavuzu/moduller/Görevler/gorevler5",
+    "destination": "/docs/teknisyen/moduller/gorevler/gorevler5",
+    "permanent": true
+  },
+  {
+    "source": "/docs/teknisyenkullanımkilavuzu/moduller/Gösterge Paneli/DashboardOrnek/aylikolayacilmatrendi",
+    "destination": "/docs/teknisyen/moduller/gosterge-paneli/dashboardornek/aylikolayacilmatrendi",
+    "permanent": true
+  },
+  {
+    "source": "/docs/teknisyenkullanımkilavuzu/moduller/Gösterge Paneli/DashboardOrnek/istekacilmatrendi",
+    "destination": "/docs/teknisyen/moduller/gosterge-paneli/dashboardornek/istekacilmatrendi",
+    "permanent": true
+  },
+  {
+    "source": "/docs/teknisyenkullanımkilavuzu/moduller/Gösterge Paneli/gostergepaneli4",
+    "destination": "/docs/teknisyen/moduller/gosterge-paneli/gostergepaneli4",
+    "permanent": true
+  },
+  {
+    "source": "/docs/teknisyenkullanımkilavuzu/moduller/Gösterge Paneli/gostergepaneli5",
+    "destination": "/docs/teknisyen/moduller/gosterge-paneli/gostergepaneli5",
+    "permanent": true
+  },
+  {
+    "source": "/docs/teknisyenkullanımkilavuzu/moduller/Gösterge Paneli/gostergepaneli6",
+    "destination": "/docs/teknisyen/moduller/gosterge-paneli/gostergepaneli6",
+    "permanent": true
+  },
+  {
+    "source": "/docs/teknisyenkullanımkilavuzu/moduller/Gösterge Paneli/gostergepaneli8",
+    "destination": "/docs/teknisyen/moduller/gosterge-paneli/gostergepaneli8",
+    "permanent": true
+  },
+  {
+    "source": "/docs/teknisyenkullanımkilavuzu/moduller/Iyileştirme/iyilestirme",
+    "destination": "/docs/teknisyen/moduller/iyilestirme/iyilestirme",
+    "permanent": true
+  },
+  {
+    "source": "/docs/teknisyenkullanımkilavuzu/moduller/Iyileştirme/iyilestirme1",
+    "destination": "/docs/teknisyen/moduller/iyilestirme/iyilestirme1",
+    "permanent": true
+  },
+  {
+    "source": "/docs/teknisyenkullanımkilavuzu/moduller/Iyileştirme/iyilestirme3",
+    "destination": "/docs/teknisyen/moduller/iyilestirme/iyilestirme3",
+    "permanent": true
+  },
+  {
+    "source": "/docs/teknisyenkullanımkilavuzu/moduller/Sözleşmeler/sozlesmeler",
+    "destination": "/docs/teknisyen/moduller/sozlesmeler/sozlesmeler",
+    "permanent": true
+  },
+  {
+    "source": "/docs/teknisyenkullanımkilavuzu/moduller/Sözleşmeler/sozlesmeler2",
+    "destination": "/docs/teknisyen/moduller/sozlesmeler/sozlesmeler2",
+    "permanent": true
+  }
+]

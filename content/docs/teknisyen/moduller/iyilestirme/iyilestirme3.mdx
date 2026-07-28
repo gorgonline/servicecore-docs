@@ -1,0 +1,79 @@
+---
+title: "Genel Bakış"
+description: "Sürekli iyileştirme servis yönetiminin esas uygulama metodudur. ITIL4’e göre servis yönetiminin bitmeyen bir sürekli iyileştirme metodu ile uygulanması…"
+---
+
+Sürekli iyileştirme servis yönetiminin esas uygulama metodudur. ITIL4’e göre servis yönetiminin bitmeyen bir sürekli iyileştirme metodu ile uygulanması gerekir. Sürekli iyileştirme ITIL4’ün ana uygulama metodolojisidir.
+
+Her servis yönetimi sisteminin omurgasında sürekli iyileştirme pratikleri yer alır. Bir servis yönetimi süreç ve servis otomasyonu çalışmasının doğal bileşeni sürekli iyileştirme uygulamasıdır.
+
+Sürekli hedeflerle uyum, durum tespiti, zayıflıkların tespit edilip giderilmesi için görevlendirmeler ve iyileştirmelerin sürekli devam ettirilmesi için gerekli insiyatiflerin kayıt ve takip mekanizması CI modülünde geliştirilmiştir. Sürekli iyileştirme kayıtları (CI Register) ortamı olarak CI modülü, CI insiyatiflerinin baştan sona takibi için gerekli altyapıyı sağlamaktadır.
+
+Süreç ve servis raporlarından gelen sonuçların yanısıra, tüm teknik ekip ve kullanıcılardan gelecek iyileştirme önerileri de interaction katmanında yakalanıp iyileştirme fırsatları olarak CI modülünde takip edilmektedir.
+
+ITIL4 ve Servis Yönetimi pratiklerinde “son kullanıcılarla” etkileşimin üç temel türü bulunur. Olay, istek ve iyileştirme önerisi. Genellikle olay ve istek süreçleri karıştırılır ve aynı şekilde ele alınır ki bu doğru değildir. Fakat daha sorunlu olan yaklaşım ise iyileştirme önerilerini istek ile aynı kategoride veya aynı yazılım modülünde ele almaktır.
+
+Kullanıcıların standartlaştırılmış isteklerini içeren servis kataloğunda önerilere, ek ihtiyaçlara, yeni gereksinimlere vb. geliştirme-tasarım-üretim gerektiren konulara yer verilmemelidir. Bunlar birer CI kaydı olarak analiz edilmeli, değerlendirilmeli ve görüş toplanmalı ve karar verilmelidir.
+
+Önceliklendirmeye alınan ve diğer gereksinim-ihtiyaç-fikirlere göre sıraya konularak hareket edilen bu tür iyileştirme insiyatifleri akabinde birer değişiklik veya proje ile de devreye alınabilir.
+
+"TALEP" kavramı ITIL kapsamında kullanıcıların/tüketicilerin/müşterilerin genel davranış kalıplarının, tüketim eğilimlerinin, beklenti değişimlerinin saptanması ve buna göre gerekli kapasite ve bütçe çalışmalarının yapılması pratiğidir. Standart dışı ek geliştirme, tasarım, kodlama, entegrasyon ve yapılandırma gerektiren işlerin karşılanması gereken yer sürekli iyileştirme sürecidir. ITIL4 Service Value System’de “Engage” katmanında hem standart istekler hem de geliştirme (ve akabinde değişiklik) gerektiren durumlar müşteri ile yakın temasta bulunarak CI süreci tarafından liderliği yapılan bir çalışmadır.
+
+“Engage” safhasında karşılaşılan standart dışı her tür gereksinim bir iyileştirme fırsatıdır. Bazıları “fayda” sağlamazken bazıları az faydalı bazıları da yüksek katma değer içeren bu tür öneriler CI süreci liderliğinde ve bir çok başka sürecin katkısı ile değerlendirilir.
+
+Servicecore CI modülünde bu değerlendirme tam üç aşamalı olarak işlenmektedir.
+
+İlk aşamada “Analiz”, ikinci aşamada “Değerlendirme”, üçüncü aşamada “İstişare-Danışma” adımlarından geçilir.
+
+CI pratiğinin sahibi olan CI Yöneticisi liderliğinde bu üç aşamalı karar verme sürecine katkı sağlayan diğer süreçler ; İş analizi, servis seviye yönetimi, ilişki yönetimi, servis portföy yönetimi, risk yönetimi, servis finans yönetimi, servis katalog yönetimi, istek yönetimi süreçleridir.
+
+Servicecore uygulamasını diğer tüm ürünlerden farklı kılan bir diğer özellik bu tür standart dışı isteklerin eposta ve portal aracılığı ile alınması sırasında Interaction ve CI ara katmanlarını entegre ederek sunabilmesidir.
+
+Genellikle BT birimlerinin yazılım ekiplerinin özellikle de proje kültüründen kalma doğrudan sipariş alır gibi yazılım gereksinimlerini alması, backloglara yeterli değerlendirme yapılmadan her tür gereksinimin hızla girivermesi sorunlu bir yaklaşımdır. Standartlaşmış operasyonel hizmetlerden herhangi birini ister gibi bir kullanıcının sıradan bir istek gibi yazılım veya servis geliştirme talebini istek modülünden almak doğru değildir.
+
+Servicecore dijital servis yönetimi uygulamasında bu tür standart dışı gereksinimler iyileştirme insiyatifleri olarak aşağıdaki başlıklara göre analiz ve değerlendirmelerden geçirilebilmektedir.
+
+Kurum hedeflerine bu önerinin katkısı nedir?
+```md
+Genellikle son kullanıcı veya bir departman tarafından "acil ve öncelikli" ihtiyaç olarak belirtilen gereksinimler kurumun amaç ve hedefleriyle ne kadar ilgili ve bunlara ne kadar katkısı var bunun sorulması gereklidir. ITIL4 ve servis yönetimi dünyasının bir numaralı kuralı "değer odaklılık" bağlamında tüm iyileştirmeler kurum hedeflerine bakarak değerlendirilmelidir.
+```
+
+Önerilen iyileştirmenin faydaları somut olarak nelerdir?
+```md
+Bu iyileştirme bir kullanıcıyı mı, iş birimini mi, tüm kurumu mu kapsamaktadır. Elde edilecek kazanımın mali açıdan, verimlilik açısından, kalite açısından getirileri nelerdir. Bu aşamada ikna edici, somut, erişilebilir bir hedef belirtiliyor olmalıdır.
+```
+
+Bu iyileştirmenin gerçekleştirilmesi için gereken efor nedir?
+```md
+Kullanıcı veya iç müşterilerin önerdiği iyileştirmenin arkasındaki gerekli eforu bilmesi beklenemez. Bu aşamada gerçekçi iş gücü hesaplanmalıdır.
+```
+
+Maliyetler nelerdir?
+```md
+İyileştirmenin faydalarını elde edebilmek için gerekli maliyet net olarak bilinmelidir. Maliyet bir iyileştirmenin 1 ve 2. Sorularda sorulan kriterleriyle uyumlu ve yatırıma değecek bir seviyede olması beklenmektedir.
+```
+
+Bu iyileştirmeyi yapmanın ve yapmamanın riskleri nelerdir?
+```md
+Söz konusu iyileştirme fikrini uygulamama durumunda neler kaybedilecektir? Uygulanması durumunda ise yaşanacak değişiklikle hangi tehditler ve sistemsel etkiler olacaktır? Bu aşamada risk yönetimi sürecinin de katkısıyla tehdit ve olasılıklar hesaplanır.
+```
+
+Servicecore CI modülünde bir sonraki adım aşağıdaki kriterlere bağlı olarak önceliklendirme amaçlı değerlendirme puantajıdır. Buradaki kriterlere başka kuruma özgü kriterler de eklenebilir.
+
+Servicecore CI modülünde bir sonraki aşama ilgili iyileştirme ile ilgili tüm ilgili paydaşlardan (servis sahibi, ürün sahibi, müşteri, diğer planlama ve tasarım süreçleri, sistem yöneticileri, yazılım ve altyapı ekipleri ve kullanıcılar vb) görüş toplanmasıdır.
+
+Tüm bu aşamalardan geçen bir iyileştirmenin devreye alınıp alınmayacağı, önceliğinin ne olacağı, ne zamana kadar yapılması gerektiği konusundaki kararlar CI Details bölümünde ve sağ panelde yer alan Properties alanında kayıt altına alınır.
+
+Eğer devreye alınacaksa Implementation safhasına geçilir ve burada bir değişiklik kaydı veya bir proje kaydı açılarak iyileştirme devreye alınıp takip edilir.
+
+Son aşamada gözden geçirme yapılarak CI pratiğinin “Did we get there?” sorusu sorularak iyileştirmenin işe yarayıp yaramadığı, hedeflerine ulaşıp ulaşmadığı ve kurum için hala “değerli” olup olmadığı sorgulanıp kayıt altına alınır.
+
+ITIL4 CI Pratiğinde açıklanan “Continual Improvement Model”e birebir uyumlu şekilde geliştirilen Servicecore CI modülü ile sürekli iyileştirme çalışmaları bu şekilde yönetilir.
+
+<Accordions type="single">
+<Accordion title="Süreç Şeması">
+
+![iyi](/img/teknisyen/iyilestirmesurec.png)
+
+</Accordion>
+</Accordions>

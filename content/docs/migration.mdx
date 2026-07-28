@@ -1,0 +1,39 @@
+---
+title: "Migration Mimarisi"
+description: "Migration Mimarisi ve Aşamaları"
+---
+
+Migration Mimarisi ve Aşamaları
+
+![Entegrasyon](/img/migration/migration.png)
+
+## Servicecore Migration Aşamaları 
+
+Eski kayıtları yeni bir uygulamaya taşımak için genellikle "veri geçirme" veya "veri taşıma" işlemi kullanılır. Bu işlem, eski kullanılan uygulamanızdan Servicecore'a yapılan veri aktarımını içerir. Bu veri aktarımını gerçekleştirmek için kullanılan adımlar şu şekildedir:
+
+1. Veri Analizi:
+    - Eski uygulamadaki verilerin formatını ve yapısını anlamak için analiz yapılması.
+    - Eski verinin Servicecore uygulamasının gereksinimlerine ve veri yapısına uyması için gereklilikleri analiz etme.
+
+2. Veri Haritalama:
+    - Eski uygulamadaki veri alanlarını, Servicecore'daki karşılıklarıyla eşleştirme.
+    - Veri alanları arasındaki farklılıkları belirleme ve uyumsuzlukları çözmejk için bir plan oluşturma.
+
+3. Migration Stratejisi Belirleme:
+    - Verilerin nasıl taşınacağını belirleme ve yöntemleri arasından seçim yapma. (Doğrudan veritabanı bağlantısıyla, API aracılığıyla veya dosya transferi ile)
+    - Büyük veri setleri varsa, migration işlemini aşamalı olarak gerçekleştirmek için bir strateji oluşturma.
+
+4. Yedekleme:
+    - Migration işleminden önce eski veritabanında veya veri kaynağında yedekleme. Bu, olası veri kaybını önlemeye yardımcı olacaktır.
+
+5. Migration Gerçekleştirme:
+    - Veri migration işlemini başlatma ve belirlenen stratejiye göre verileri Servicecore'a taşıma.
+    - Migration işlemi sırasında hataları izlemek ve çözmek için bir mekanizmanın sağlanması.
+
+6. Veri Kontrolü ve Doğrulama:
+    - Migration işlemi tamamlandıktan sonra, verilerin doğru bir şekilde taşındığından emin olunması.
+    - Verilerin kontrol edilmesi ve test senaryolarını çalıştırarak doğrulama sürecinin gerçekleştirilmesi.
+
+7. Geri Bildirim ve İyileştirme:
+    - Kullanıcı geri bildirimlerini ve olası sorunların incelenmesi.
+    - Migration işleminden sonra iyileştirmeler ve düzeltmelerin yapılması.

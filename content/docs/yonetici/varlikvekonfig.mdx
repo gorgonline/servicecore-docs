@@ -1,0 +1,120 @@
+---
+title: "Varlık ve Konfigürasyon Ayarları"
+description: "Varlık ve konfigürasyon üreticiler, kullanım modelleri, varlık konumları, varlık durumu, varlık şirketi, ilişki türleri, sözleşme türleri, varlık…"
+---
+
+Varlık ve konfigürasyon üreticiler, kullanım modelleri, varlık konumları, varlık durumu, varlık şirketi, ilişki türleri, sözleşme türleri, varlık türleri, kurum içi destek sözleşmeleri, tedarikçi sözleşmeleri ve tedarikçiler alanlarından yönetilmektedir.
+
+## Üreticiler
+
+Üreticilerin **eklenmesi, düzenlenmesi** işlemleri bu bölümde yapılmaktadır. Ürünler ve sözleşmelerle ilgili modüllerde üretici bilgileri kullanılmaktadır.
+
+Yeni bir üretici eklemek için `Yeni Üretici` butonuna tıklanmaktadır. Butona tıklandıktan sonra aşağıdaki alanlar doldurulduğunda yeni üretici eklenecektir.
+
+![admin](/img/yonetici/varlikvekonfig-g1.png)
+
+![admin](/img/yonetici/admin100.png)
+
+## Kullanım Modelleri
+
+Varlık kullanım modellerinin eklenmesi ve düzenlenmesi işlemi kullanım modellerinden yapılmaktadır.
+
+Yeni bir kullanım modeli eklemek için **Varlık Kullanım Modeli Ekle** butonuna tıklanır ve aşağıdaki alan doldurulur.
+
+![admin](/img/yonetici/varlikvekonfig-g2.png)
+
+![admin](/img/yonetici/varlikvekonfig-g3.png)
+
+## Varlık Konumları
+
+Varlık konumlarınızı buradan ekleyebilirsiniz. Yeni bir varlık konumu oluşturmak için lütfen sağ üst simgeye tıklayarak açılan modala `varlık lokasyon adını` giriniz. Bundan sonra, gerektirdiği seviyede yeni konum ekleyebilir, eklediğiniz bu konumları düzenleyebilirsiniz.
+
+![admin](/img/yonetici/varlikvekonfig-g4.png)
+
+![admin](/img/yonetici/varlikvekonfig-g5.png)
+
+![admin](/img/yonetici/admin105.png)
+
+## Varlık Durumu Ayarları
+
+Bu bölümde varlık durumu eklenebilir, düzenlenebilir ve silinebilir.
+
+Yeni bir varlık durumu eklemek için `Yeni Varlık Durumu` butonuna tıklanır.
+
+![admin](/img/yonetici/varlikvekonfig-g6.png)
+
+Açılan pencerede bir `isim` girerek bu `varlık durumu` seçildiğinde varlığın `depoda olup olmamasını` da ayarlayabilirsiniz.
+
+![admin](/img/yonetici/varlikvekonfig-g7.png)
+
+## Varlık Şirketi
+
+Bu bölümde varlık şirketlerini ekleyebilir, düzenleyebilir ve silebilirsiniz.
+
+Yeni bir varlık şirketi eklemek için `Yeni Varlık Şirketi` butonuna tıklanır ve açılan pencerede `şirket ismi` belirtilir.
+
+![admin](/img/yonetici/varlikvekonfig-g8.png)
+
+![admin](/img/yonetici/varlikvekonfig-g9.png)
+
+## İlişki Türleri
+
+Varlıklar arasında çeşitli ilişki türleri bulunmaktadır. Bu ilişkilerin bütünü konfigürasyon olarak adlandırılmaktadır. Konfigürasyon bilgisi varlıkların birbirlerine bağlandıkları bu ilişki türlerinin atanması ile adım adım oluşturulur. Bu anlamda konfigürasyonu oluşturan tüm varlıklar birer konfigürasyon nesnesi (CI) olarak değerlendirilir. Servis haritaları da bu bilgiye dayanarak oluşturulur. CMDB (Configuration Management Data Base) bu ilişkilerin bütünüyle oluşturulan bir veri tabanıdır. CMDB tüm süreçler için kritik öneme sahip bilgileri bu yolla temin etmektedir.
+
+Varlık ilişki türü eklerken `aşağı yönlü` ve `yukarı yönlü` olmak üzere belirtmek gerekir. Yeni varlık ilişkisi eklemek için **Varlık İlişki Türü Ekle** butonuna tıklanır ve açılan sayfada aşağı yönlü ve yukarı yönlü olmak üzere isim belirtilir.
+
+![admin](/img/yonetici/varlikvekonfig-g10.png)
+
+![admin](/img/yonetici/varlikvekonfig-g11.png)
+
+## Sözleşme Türleri
+
+Bu modül kullanılarak sözleşmeler eklenebilir, düzenlenebilir ve takip edilebilir. Özellikle dışarıdan alınan hizmetler için sözleşmeler kayıt altına alınmalıdır. Bu hizmetler sayesinde sunulan iç hizmetlerin hangi koşullarda sunulacağı bu sözleşmelerde belirtilmelidir. Arızalanan cihazların hangi üretici veya satıcı tarafından desteklendiği, hangi koşullarda hizmet alındığı, kimse danışılması gerektiği gibi tüm detaylar bu sözleşmelerde yazılı olmalıdır. Bu sözleşmeler ayrıca geçerlilik sürelerine göre sürekli takip edilip güncellenmelidir.
+
+Yeni bir sözleşme türü eklemek için `Sözleşme Türü Ekle` butonuna tıklanır ve açılan pencerede sözleşme türünün `adı ve açıklaması` belirtilir.
+
+![admin](/img/yonetici/varlikvekonfig-g12.png)
+
+![admin](/img/yonetici/varlikvekonfig-g13.png)
+
+## Varlık Türleri
+
+Bu bölümde varlık türleri ekleyebilirsiniz. İlgili varlığın düzenle ikonuna tıklayarak sağdan açılan panelde varlık ek alanlarını yönetebilirsiniz. Eklenen her tür varlığa ve alt varlıklara ek özellikler buradan eklenebilmektedir.
+
+Yeni bir varlık türü eklemek için `Varlık Türü Ekle` butonuna tıklanır ve açılan pencerede varlık türünün `adı` belirtilir. Panelde oluşturulan varlık türünün içerisine `kırılımlı yapı` oluşturabilirsiniz.
+
+![admin](/img/yonetici/varlikvekonfig-g14.png)
+
+![admin](/img/yonetici/varlikvekonfig-g15.png)
+
+![admin](/img/yonetici/admin116.png)
+
+## Kurum İçi Destek Sözleşmeleri
+
+Bilgi teknolojileri hizmet birimi ile kurumun diğer iş birimleri arasındaki bu sözleşmelerde , kuruma sunulan servislerle ilgili koşullara yer verilmektedir. İç hizmet sözleşmeleri Operation Level Agreement olarak BT iç birimleri arasında yapılabileceği gibi kurumun diğer departmanlarına da sunulabilir.
+
+`Sözleşme ekle` butonuna tıklanınca açılan pencerede **departman, sözleşme türü** seçimi yapıldığı gibi `adının ve açıklama` alanının girişinin yapılması, **başlangıç ve bitiş tarihinin** belirlenmesi, **süresi dolmadan ve geçtikten sonra belirli bir gün** seçerek kendi kullanıcılarınızın yanı sıra sözleşme yapılacak firmada yer alan **kişilere bilgilendirme gönderme**, otomatik yenilenme ve yenilendiğinde otomatik eklenecek süreyi belirleyebilirsiniz.
+
+![admin](/img/yonetici/varlikvekonfig-g16.png)
+
+![admin](/img/yonetici/admin118.png)
+
+## Tedarikçi Sözleşmeleri
+
+Dış firmalardan yapılan her tür malzeme, hizmet, lisans vb alımlar ile ilgili sözleşmeler bu bölümde tanımlanmaktadır. Öncelikle tedarikçiler bölümünden eklenecek olan firma belirlenmeli ardından buradan ilgili sözleşme tanımlanmalıdır.
+
+`Sözleşme ekle` butonuna tıklanınca açılan pencerede **tedarikçi, sözleşme türü** seçimi yapıldığı gibi `adının ve açıklama` alanının girişinin yapılması, **başlangıç ve bitiş tarihinin** belirlenmesi, **süresi dolmadan ve geçtikten sonra belirli bir gün** seçerek kendi kullanıcılarınızın yanı sıra sözleşme yapılacak firmada yer alan **kişilere bilgilendirme gönderme**, otomatik yenilenme ve yenilendiğinde otomatik eklenecek süreyi belirleyebilirsiniz.
+
+![admin](/img/yonetici/varlikvekonfig-g17.png)
+
+![admin](/img/yonetici/admin120.png)
+
+## Tedarikçiler
+
+Bu bölümde yeni tedarikçi ekleyebilirsiniz. Sistemde bulunan tedarikçilerin bilgilerine ulaşabilir, bunları düzenleyebilirsiniz.
+
+Yeni tedarikçi eklemek için `Tedarikçi Ekle` butonuna tıklanır ve açılan pencerede şirketin bilgilerinin girişleri yapılır.
+
+![admin](/img/yonetici/varlikvekonfig-g18.png)
+
+![admin](/img/yonetici/admin122.png)

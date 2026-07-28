@@ -1,0 +1,15 @@
+{
+  "pages": [
+    "index",
+    "teknisyen",
+    "kullanici",
+    "yonetici",
+    "entegrasyonlar",
+    "migration",
+    "kurulum",
+    "esm",
+    "admin-egitimleri",
+    "teknisyen-egitimleri",
+    "cssma-admin"
+  ]
+}

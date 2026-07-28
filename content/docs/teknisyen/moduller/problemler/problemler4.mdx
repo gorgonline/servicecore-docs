@@ -1,0 +1,42 @@
+---
+title: "Genel Bakış"
+description: "Problem yönetimi uygulamasının amacı, sorunların olasılığını ve etkisini azaltmaktır. Olayların gerçek ve olası nedenlerini belirleyerek, geçici…"
+---
+
+Problem yönetimi uygulamasının amacı, sorunların olasılığını ve etkisini azaltmaktır. Olayların gerçek ve olası nedenlerini belirleyerek, geçici çözümleri ve bilinen hataları yönetmektir.Servicecore Problem Management modülünün ITIL4 ile tam uyumlu olarak tasarlanmış üç adımı bulunmaktadır.
+
+İlk aşama olan problem tanımlama da ikiye ayrılmaktadır; reactive problem tanımlama olaylar gerçekleştikten sonra olayların nedenini araştırmaya yönelik iken, proaktif problem tanımlama olaylar gerçekleşmeden önce sorunları belirleme ve kayıt altına alma yaklaşımıdır. İlk tür problemler olay yönetimi modülünden ilişkilendirme ile otomatik olarak yapılabilirken, ikinci tür problemler de ilgili modül içerisinden manuel veya sistem izleme araçları ile entegre edilerek otomatik olarak açılabilmektedir.
+
+Bu aşamada problemler hızlıca kayıt altına alınmıştır. Interaction ve Incident modülleri ile entegrasyondan gelen ön bilgiler sayesinde önceliklendirme ve sınıflandırma işlemleri tamamlanmış bu kayıtlar için hızlıca ikinci aşama olan Problem kontrolüne geçilebilmektedir.
+
+Problem kontrolü aşamasında problemlerin analizine odaklanılır ve ServiceCore Problem Management modülünde analiz aşamasında problemin nedeni ve semptomları (belirtiler) kayıt altına alınır.
+
+Bu aşamada analiz için gerekli konfigürasyon ve CI bilgileri entegre varlık modülü sayesinde erişilip inceleme yapılabilmektedir. Problem analizi için ihtiyaç duyulan varlık ve konfigürasyon bilgileri ServiceCore Asset ve ServiceCore CMDB modüllerinde kullanıma hazır olarak sunulmaktadır. Sorunlar analiz edildiğinde, onlara "bilinen hata" durumu atanır.
+
+Bu noktada problem bilinen hata olarak kayıt altına alınabilir.
+
+Üçüncü aşamada ise hata kontrolü çalışmaları Problem Management modülünde kayıt altına alınmaya başlanacaktır. Bir problem analiz edildiğinde kontrol edilmelidir. Hata kontrolü için görev yönetimi ve conversation engine kullanılarak iç ve dış tüm kaynaklardan destek alınabilir. Ayrıca Knowledge Management modülü ile entegre olan bu modül çözümlerin geçici veya kalıcı olarak kayıt altına alınması için hem iç hem de dış bilgi kaynaklarında arama yapılmasına imkan sunmaktadır.
+
+Aktif çözüm araştırması için yapılacak tüm yazışma ve görevlendirmeler modül üzerindeki araçlarla tekil bir kayıt ortamında online yürütülebilmektedir. Tüm bulgular, tüm çözüm alternatifleri entegre çözüm tabında kayıt altına alınmaktadır. Gerekli durumlarda problemin giderilmesi için ve çözümlerin uygulanması için değişiklik kayıtları da otomatik olarak Problem Management modülünden açılabilmektedir. Bu sayede değişiklik yönetimi pratiği için değer akışının Interaction ve Incident modüllerinden nasıl geliştiği geriye yönelik takip edilebilmektedir.
+
+Yenilikçi (ATS®) Auto Time Spent özelliği sayesinde bir problem kaydı üzerinde geçirilen zaman otomatik hesaplanabilmektedir.
+
+Bir diğer özgün ServiceCore geliştirmesi olan (STE®) ServiceCore Time Engine ise aktif tasklar ve iş günlüklerinin zaman hesaplamasını ve timesheet girişlerini otomatize etmektedir. Teknik personellerin konforlu çalışması için gerekli tüm yenilikler yine servis yönetimi uzmanları ve teknik ekiplerce bu amaçla geliştirilmiştir.
+
+Teknisyenlerin kolayca işbirliği yapabilmesini sağlayan bir diğer yenilik ise problem kayıtlarının teknisyenler ve kullanıcılar arasında paylaştırılabilmesidir. Bu sayede aynı olay kaydı hakkındaki tüm bilgiler hem teknik ekiplerce hem de kullanıcılar arasında paylaşılabilmektedir. Öte yandan tüm yazışmalar (AMF®) otomatik mail fetcher (otomatik eposta ayrıştırıcısı) sayesinde hem teknik ekip, hem kullanıcı hem de dış paydaşlarla yapılan tüm görüşmeleri “Conversations” (Görüşmeler) bölümünde tarihsel olarak listeleyerek karmaşanın önüne geçilmiştir.
+
+Teknik ekibin eposta üzerinden kullanıcı ve dış destek kurumları ile görüşmesine ihtiyaç kalmadığı gibi, bir olay kaydı üzerinde çalışacak yeni diğer teknisyenlerin de olaya hızlıca hakim olmasını sağlayan bir tarihsel bilgi birikimi sağlanmaktadır.
+
+Kayıt üzerindeki hakimiyeti arttırmak üzere (RCP®) Record Kontrol Paneli geliştirilmiştir. Tek panelden sürekli ve çok hızlı güncellemeler yapılabilmektedir. Bu sayede olay kayıtları üzerinden harcanan zamanın azaltılması sağlanmıştır. Hızlı takip ve kolay filtreleme için “Pinleme” ve “Takibe Alma” özellikleri geliştirilmiştir. Öncelikli işler için pinleme ve takibe alma yapılarak kolay kullanım amaçlanmıştır.
+
+Problem kayıtlarında önemli konulardan biri olan varlık ve konfigürasyon ilişkisi de problem yönetim panelinde teknisyenlerin erişimine sunulmuştur. Aktif varlık eşleştirmesi sayesinde problemle ilgili tüm varlıkları tek ekranda görebilme ve işlem yapabilme imkanı sağlanmaktadır.
+
+ServiceCore Problem Management modülünde ayrıca yapılan tüm işlerin iş günlükleri tutularak aktif efor yönetimi takip edilebilmektedir. Yapılan tüm işlemlerin takip edildiği History tracking özelliği ile tüm faaliyetler geriye yönelik izlenebilmektedir.
+
+<Accordions type="single">
+<Accordion title="Süreç Şeması">
+
+![Problemler Modülü](/img/teknisyen/problemlersurec.png)
+
+</Accordion>
+</Accordions>

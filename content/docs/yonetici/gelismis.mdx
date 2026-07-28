@@ -1,0 +1,202 @@
+---
+title: "Gelişmiş Ayarlar"
+description: "SLA Politikaları, Kapatma Kuralları ve Gerekçeleri, Otomasyon Yönetimi, Ortak Alanları Yönet, Özel Ek Alanlar, Global Durumlar, Anketler, Sisteme Genel…"
+---
+
+SLA Politikaları, Kapatma Kuralları ve Gerekçeleri, Otomasyon Yönetimi, Ortak Alanları Yönet, Özel Ek Alanlar, Global Durumlar, Anketler, Sisteme Genel Bakış, Entegrasyonlar, Onay İş Akışı, Dil Kaynağı Ayarları, Zamanlanmış Kayıtlar ve Zamanlanmış İstekler gelişmiş ayarlardan yönetilir.
+
+## SLA Politikaları
+
+SLA kapsamında müşterilere sunulan hizmet süre hedefi vaatleri kayıt altına alınır. SLA modülünde tanımlanan SLA Policy Objeleri ise müşterilere sunulan hizmetlerle ilgili süre hedeflerinin hangi koşullarda çalışacağının tanımlarıdır. Bu hedefler servis kalitesinin başarısının ölçülmesi için en önemli metriklerdir.
+
+SLM, Incident ve Request modüllerinin entegrasyonu ile tüm servislerde performansı arttırmak için doğru SLA policy tanımları ile servisler için hedefler belirlenebilmektedir. Kolay SLA girişleri ile hem olay hem de istekler için doğru sıralama ve zamanında müdahale imkanı sağlanmaktadır.
+
+Bu bölümde kural bazlı tanımlanan SLA’ler olaylarda ve isteklerde hangi kaydın öncelikle ele alınacağını belirlemede faydalı olacaktır. Bir kaydın çözüme ulaşması için gerekli hedef tarih bilgisi sistem tarafından otomatik olarak ilgili kaydın `Due Date` bölümüne yazılacaktır. Bu esnada hesaplama sistemce yapılırken çalışma saatleri, tatiller ve mesai saatleri dikkate alınacak ve tam çözüm tarihi ve saati hedefi bu parametrelere göre hesaplanacaktır.
+
+Yeni bir sla politikası eklemek için `SLA Politikaları Ekle` butonuna tıklanır.
+
+![admin](/img/yonetici/gelismis-g1.png)
+
+Açılan ekranda modül kategorisi seçilerek, adı ve açıklaması yazılarak, önceliğe göre müdahale süresi ve çözüm süresi belirlenerek, bu sürelerin mesai içindemi yoksa eskalasyonlamı ilerlenmesi gerektiğini seçerek, müdahale eskalasyonu için belirli süre seçerek, bilgilendirme ve çözüm eskalasyonu içinde belirli bir süre seçerek, bilgilendirme alanları belirlenerek, Sla koşullarında ise belli bir koşul belirterek belirtilen koşula göre sla politikasını uygula ayarları yapılabilir.
+
+![admin](/img/yonetici/admin124.png)
+
+## Kapatma Kuralları ve Gerekçeleri
+
+Kayıt kapatma öncesi gerekli veya zorunlu alanları belirlemek için bu bölümden seçimler yapılabilir. Bir kaydın kapatılması öncesi giriş zorunluluğu olan alanları seçerek bu alanların doldurulması zorunlu kılınmaktadır. Zorunlu alanlar geriye dönük izleme, analiz, raporlama gibi ihtiyaçlar için gereklidir.
+
+Kapatma kurallarında olay, istek, problem, değişiklik, proje olarak zorunlu alanlar belirlenir.
+
+![admin](/img/yonetici/admin125.png)
+
+Kapatma Gerekçeleri olay, istek, problem, değişiklik, proje, sürekli iyileştirme, görev, çağrı olmak üzere ayrı olarak belirlenir.
+
+Yeni kapatma gerekçesi eklemek için **Yeni Kapatma Nedeni Ekle** butonuna tıklanır ve çıkan pencerede ismi girilir.
+
+![admin](/img/yonetici/gelismis-g2.png)
+
+![admin](/img/yonetici/gelismis-g3.png)
+
+## Otomasyon Yönetimi
+
+Otomatik iş kuralları tanımlama ve koşullara bağlı olarak olay ve istekleri dinamik yönetme özellikleri ile donatılan servis otomasyonu kural servisi (SARE- Service Automation Rules Engine) sayesinde birçok manuel yönetim faaliyeti kural tabanlı iş motoru ile otomatikleştirilmektedir.
+
+Manuel veri güncellemeye gerek kalmadan gerçekleşen her olası durumda tamamen teknisyenin ve süreç yöneticisinin hayal gücüne bağlı tüm aksiyonları otomatikleştirmek mümkün hale getirilmiştir. Yönetim panelinden kolayca tanımlanabilen basit aksiyonlardan, çok ön koşullu, çok katmanlı ve çok aksiyonlu dinamik kurallara kadar pek çok otomatik süreç önceden tanımlanarak iş akışlarında daha fazla otomasyon ve servislerde daha yüksek hız sağlanmaktadır.
+
+Yeni bir kural oluşturmak için `Yeni Kural` butonuna tıklanır.
+
+![admin](/img/yonetici/gelismis-g4.png)
+
+Çıkan ekranda kuralın adını belirleyerek modüllere göre **etkileşimleri, koşulları ve aksiyonları** yapıldığında otomasyonu çalıştırabilirsiniz.
+
+![admin](/img/yonetici/admin129.png)
+
+## Ortak Alanları Yönet
+
+Kayıt alt detayları ve öznitelikleri ile ilgili her tür güncelleme bu bölümde yapılmaktadır.
+
+![admin](/img/yonetici/admin130.png)
+
+Öncelik, iş etkisi, aciliyet, kaynak, zaman dilimi, bilgi türü, modül kategorileri, görev kategorileri, srm yönetimi, iş günlüğü türü, proje programı, servis öğesi kategorilerinin belirlenmesi ortak alanları yönet bölümünden yapılmaktadır.
+
+## Özel Ek Alanlar
+
+Kayıt açılışlarında ekstra olarak eklenecek alanların yönetimi buradan yapılmaktadır.
+
+Metin kutusu, metin alanı, tarih, saat, seç, sayı, dosya, onay kutusu olarak özel ek alan eklenebilir.
+
+![admin](/img/yonetici/admin131.png)
+
+## Global Durumlar
+
+Global durumlarda modüllerin içerisindeki kayıtların `statüleri` eklenir. **Yeni durum türü ekle** butonundan ekleme işlemi gerçekleşir.
+
+![admin](/img/yonetici/admin132.png)
+
+## Anketler
+
+Bu alanda anket `oluşturabilir`, `düzenleyebilir` ve `silebilirsiniz`.
+
+Yeni bir `anket` ekleyebilir ve yeni bir `anket şablonu` oluşturabilirsiniz. Yeni bir anket oluşturmak için `Yeni Anket` butonuna tıklanır. Yeni bir anket şablonu oluşturmak için `Anket Şablon Listesi` butonuna tıkladıktan sonra `Yeni Anket Şablonu` butonuna tıklanır.
+
+![admin](/img/yonetici/admin133.png)
+
+![admin](/img/yonetici/admin134.png)
+
+Örnek anket aşağıdadır;
+
+![admin](/img/yonetici/admin190.png)
+
+## Sisteme Genel Bakış
+
+**Sistemin genel özelliklerine** bakılır.
+
+![admin](/img/yonetici/admin135.png)
+
+## Entegrasyonlar
+
+**Dış sistemlerle entegrasyon ayarları** yapılmaktadır.
+
+![admin](/img/yonetici/admin136.png)
+
+![admin](/img/yonetici/gelismis-g5.png)
+
+![admin](/img/yonetici/admin138.png)
+
+## Onay İş Akışı
+
+Onay Akışlarını kullanarak Katalog alt yapısında onay sürecini bir akış üzerinden gerçekleştirebilirsiniz.
+
+Yeni bir iş akışı eklemek için **Yeni İş Akışı Ekle** butonuna tıklanır.
+
+![admin](/img/yonetici/gelismis-g6.png)
+
+Oluşturulan iş akışına **bir ad ve açıklama girişi** aşağıdaki ekran üzerinden yapılmaktadır.
+
+![admin](/img/yonetici/gelismis-g7.png)
+
+`Start` butonuna tıklanılır.
+
+![admin](/img/yonetici/admin141.png)
+
+Açılan ekran aşağıdaki gibidir.
+
+![admin](/img/yonetici/admin142.png)
+
+Action
+```md
+Kaydın durumunu değiştirmek için kullanılan işlem butonudur.
+```
+
+![admin](/img/yonetici/admin143.png)
+
+Control Flow
+```md
+Gelen kaydın içeriğindeki bilgilere göre akışı koşullandırmak ve şartlandırmak için kullanılan işlem butonlarıdır.
+```
+
+![admin](/img/yonetici/admin144.png)
+
+E-mail
+```md
+Bildirimlerin gönderildiği e-postaların eklendiği işlem butonlarıdır.
+```
+
+![admin](/img/yonetici/admin145.png)
+
+HTTP
+```md
+Onay durumunda geri dönüşlerin gösterildiği alan için kullanılan işlem butonlarıdır.
+```
+
+![admin](/img/yonetici/admin146.png)
+
+Integrations
+```md
+Entegrasyon sayfasının tetiklenmesi için kullanılan işlem butonudur.
+```
+
+![admin](/img/yonetici/admin147.png)
+
+Primitives
+```md
+Onay akışında değişken tanımlamak için kullanılan işlem butonlarıdır.
+```
+
+![admin](/img/yonetici/admin148.png)
+
+Scripting
+```md
+Akış içerisinde java script kullanılmak istendiğinde script’i çalıştıran butondur.
+```
+
+![admin](/img/yonetici/admin149.png)
+
+Workflows
+```md
+Dinamik onayların çalışması ve e-postanın alınabilmesi için ilk başta eklenmesi gereken butondur. (Başlangıç sinyali)
+```
+
+![admin](/img/yonetici/admin150.png)
+
+Örnek yönetici onayı için akış aşağıdadır.
+
+![admin](/img/yonetici/admin151.png)
+
+![admin](/img/yonetici/admin152.png)
+
+## Dil Kaynağı Ayarları
+
+Uygulama içerisindeki alanların isteğe göre değiştirilmesi `dil kaynağı ayarlarından` yapılmaktadır.
+
+![admin](/img/yonetici/admin153.png)
+
+## Zamanlanmış Kayıtlar
+
+`Zamanlanmış` ve `tekrarlanan görevlerin` raporlarını bu bölümde görebilirsiniz. Geçmişte zamanlanıp tetiklenen ve otomatik kaydı açılan işlerin geriye dönük durumlarını bu bölümde izlemek mümkündür.
+
+## Zamanlanmış İstekler
+
+`Zamanlanmış` ve `tekrarlanan görevlerin` raporlarını bu bölümde görebilirsiniz. Geçmişte zamanlanıp tetiklenen ve otomatik kaydı açılan işlerin geriye dönük durumlarını bu bölümde izlemek mümkündür.
+
+![admin](/img/yonetici/admin154.png)

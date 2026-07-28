@@ -1,0 +1,47 @@
+---
+title: "Alt Akış Örneği"
+description: "Alt akış (subflow), ana iş akışı içinde belirli senaryoların ayrı bir akış olarak tasarlanıp ihtiyaç olduğunda tetiklenmesini sağlar. Böylece:"
+---
+
+<iframe src="https://www.youtube.com/embed/jx1W2zbFxwI?si=neJM4DqK4Ncyi54p" title="YouTube video player" className="w-full aspect-video rounded-xl border" allowFullScreen />
+
+### Alt Akış Nedir ve Neden Kullanılır? 
+
+Alt akış (subflow), ana iş akışı içinde belirli senaryoların ayrı bir akış olarak tasarlanıp ihtiyaç olduğunda tetiklenmesini sağlar. Böylece:
+
+- Tekrarlanan işlemler merkezi yönetilir.
+- Ana akış sade kalır.
+- Şirket, departman veya kategori bazlı farklı akışlar kolayca uygulanır.
+- Bir değişiklik gerektiğinde onlarca akış yerine sadece alt akış güncellenir.
+
+### Örnek Senaryo: İstek Modülü Üzerinden Alt Akış 
+
+Ana akış istek açıldığında tetiklenir. Başlangıçta sinyal eklenir. Ardından kayıt hangi koşula göre alt akışa yönlenecekse bunun belirlenmesi gerekir. Switch kullanımı önerilir çünkü seçenekler yan yana görünür ve takip etmesi kolaydır.
+
+Switch içinde örneğin:
+
+- X şirket
+- ServiceCore gibi şirket bazlı dallar oluşturulur. Her dal, ilgili alt akışı tetiklemek için Run Subflow bileşenine bağlanır.
+
+### Alt Akışın Tasarlanması 
+
+Alt akış ayrı bir akış olarak oluşturulur ve kendi başlangıç sinyali bulunur. İçinde onay, sinyal, HTTP response veya diğer adımlar bulunabilir. Her alt akış sistem tarafından bir WorkflowID alır. Ana akış bu ID aracılığıyla alt akışları tetikler. Alt Akış Kullanmanın Avantajları Katalog bazlı tasarım yerine şirket bazlı alt akış tasarımı büyük avantaj sağlar.
+
+Örneğin: Aynı şirket için sunucu kurulumu, masaüstü kurulumu ve telefon isteği gibi farklı katalog isteklerinde onay verecek kişi aynı ise katalog bazlı üç farklı akış yapmak gerekir.
+
+Alt akış kullanıldığında:
+
+- Tek akış oluşturulur.
+- Tüm kataloglar ana akış üzerinden bu alt akışa yönlendirilir.
+- Onaycı değiştiğinde sadece tek bir akış güncellenir.
+
+### Run Subflow ile Entegrasyon Mantığı 
+
+Run Subflow tetiklenen alt akışı başlatır. Alt akış tamamlandığında ana akış devam eder. Aynı mantık Integration, HTTP çağrıları veya JavaScript için de geçerlidir.
+
+### Alt Akış Eğitiminde Önemli Kurallar 
+
+- Sinyal adımı zorunludur.
+- Eğer HTTP kullanılıyorsa doğru formatta response dönülmelidir.
+- Alt akış tekrarlanan işleri merkezileştirir.
+- Yeni şirket eklenirse sadece Switch’e yeni bir dal eklemek yeterlidir.

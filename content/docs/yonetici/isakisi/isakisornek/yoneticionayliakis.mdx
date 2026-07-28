@@ -1,0 +1,13 @@
+---
+title: "Yönetici Onaylı Akış"
+description: "Yönetici Onaylı Akış · Yönetici Kılavuzu"
+---
+
+![admin](/img/yonetici/is-ornek.png)
+
+1. Akışın ilk adımı başlangıç sinyali göndermektir.
+2. Başlangıç sinyalinden sonra ilk olarak kayıt için bir durum ataması gerçekleştiriyoruz. Durum ataması gerçekleştirmek için "Action" özelliği kullanılır.
+3. Daha sonra Yönetici Onayına devam ediyor. Bu alanda kaydı açan kişinin yöneticisine onay gitmektedir. Bu yönetici manuel olarak Servicecore ile belirlenebilir veya AD üzerinde tutulan yöneticiden gelebilir. Yönetici Onayına göndermek için Manager-Aprovel kullanılır.
+4. Approve-and-reject-fork kullanılarak bir onay red çatalına devam edilir. Onay ve red sinyalleri takip edilerek http kullanılıp onay red işlemi tamamlanır.
+5. Onay alan kayıt Action kullanılarak bir teknsiyen grubuna atama işlemi gerçekleşir.
+6. Yine Action kullanarak teknisyeni atanan kayda yeni kayıt durumu atama işlemi gerçekleşir.

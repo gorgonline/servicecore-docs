@@ -1,0 +1,182 @@
+---
+title: "Servicecore Kurulum Hizmeti"
+description: "Kurulum, konfigürasyon ve bakım amaçlı olarak Servicecore personeline uzaktan erişim için VPN hesaplarının tanımlanması gerekmektedir."
+---
+
+<Accordions type="single">
+<Accordion title="Kurulum öncesi gerekli erişimlerin tanımlanması">
+
+Kurulum, konfigürasyon ve bakım amaçlı olarak Servicecore personeline uzaktan erişim için VPN hesaplarının tanımlanması gerekmektedir.
+
+\
+
+\
+
+**Continuous Delivery izinleri**
+
+\
+
+Uygulamanın Continuous Delivery metodlarıyla uzaktan ve otomatik güncellenmesi için gerekli Azure DevOps servislerinin izinlerinin tanımlanması gerekmektedir. Bu izin tanımlı olmayan kurumlarda güncellemeler manuel olarak yapılması gerekir. Platin ve üstü destek paketi olan müşterilerde yapılabilmektedir.
+
+</Accordion>
+</Accordions>
+
+<Accordions type="single">
+<Accordion title="Sunucu ortamı hazırlığı">
+
+**Standart Kurulum:**
+
+Aşağıdaki konfigürasyonda bir sunucunun müşteri tarafından temin edilmesi sonrası kurulum işlemleri Servicecore danışmanı tarafından uzaktan bağlantı ile müşteri ortamındaki sunucuda yapılacaktır.
+
+OS : Microsoft Windows Server 2016 + Server: Min 16 Core / 64 GB Ram Disk size : Min. 300 GB
+
+Standart mimari şu linkteki gibidir: [Standart Kurulum Mimarisi (servicecore.app)](https://docs.servicecore.app/docs/kurulumkilavuzu/standartMimari)
+
+**Ek Opsiyonel Kurulumlar :**
+
+a. API Servisleri kurulumu (Ek API Lisansı alınması durumunda) [Standart Kurulum + API Mimarisi (servicecore.app)](https://docs.servicecore.app/docs/kurulumkilavuzu/standartapi)
+
+b. Failover Kurulum (Ek Failover Lisansı alınması durumunda) [Failover Kurulum Mimarisi (servicecore.app)](https://docs.servicecore.app/docs/kurulumkilavuzu/failover)
+
+c. Failover + API Mimarisi (Ek Failover ve Ek API lisansı alınması durumunda) [Failover Kurulum + API Mimarisi (servicecore.app)](https://docs.servicecore.app/docs/kurulumkilavuzu/failoverapi)
+
+</Accordion>
+</Accordions>
+
+<Accordions type="single">
+<Accordion title="Uygulama kurulum işlemleri">
+
+Uzaktan erişim için gerekli VPN bilgilerinin temini sonrası ilk uygulama ve veritabanı kurulumları uzaktan yapılır. DB müşteri tarafından temin edilebilir ya da tercihe göre MSSQL Veritabanı kurulumu tarafımızca yapılacaktır.
+
+</Accordion>
+</Accordions>
+
+<Accordions type="single">
+<Accordion title="Uygulama DNS ve SSL konfigürasyonu">
+
+Uygulama müşteri lokasyonundan erişilebilir olarak teslim edilir. support.musteridomain.com vb. bir iç adresten çalışacak kurulum sonrası müşteri tarafında DNS yönlendirmesi ve SSL tanımlaması işlemleri, müşteri sistem yöneticisinin eşliğinde yapılır.
+
+</Accordion>
+</Accordions>
+
+<Accordions type="single">
+<Accordion title="AD entegrasyon tanımlama">
+
+Müşteri Aktif dizininden kullanıcıları almak üzere gerekli ayarlamalar müşteri AD yetkilisinin eşliğinde Servicecore danışmanı tarafından yapılacaktır. Ad girişi için Servicecore'a bir ad kullanıcısı oluşturulmalıdır.
+
+\
+
+İlgili ayara admin panelinden Yönetim Ayarları -\> Sistem Ayarları -\> Ad Senk. menüsünden ulaşılır.
+
+\
+
+Ad bilgisi için gerekli olacak bilgiler şu şekildedir:
+
+![kurulum](/img/kurulum/adgiris.png)
+
+1. Domain Adı: Ad bilginizde yer alan domain bilginizdir. Örnek: servicecore.local
+2. Etki Alanı Denetleyicisi: Domain controller bilginizdir. Ip veya isim olarak girilebilir Örnek: x.x.x.x veya dc01.servicecore
+3. Giriş Adı: Servicecore için oluşturulan ad kullanıcısının kullanıcı adıdır.
+4. Parola: Servicecore için oluşturulan ad kullanıcısının şifresidir.
+5. Port: Domain kontrollera bağlanılacak port bilgisidir. Default: 389dur.
+6. SSL Portu: Güvenli bağlantı portudur. Default: 636dır.
+7. Cron Saat ve Cron Dakika: Sistemin ad ile periyodik olarak ne kadar sürede bir eşitleyeceğini belirten süre ayarıdır.
+8. Senkronize Edilecekler: Senkronize edilecek bilgilerin belirlendiği alandır.
+9. OU Listesi: Sisteme eşitlenecek adnin Ou listelerinin girileceği alandır. Tüm ad yakalanacaksa en üstten alınmalıdır. Örn: DC=servicecore,DC=local
+
+</Accordion>
+</Accordions>
+
+<Accordions type="single">
+<Accordion title="E-posta entegrasyon tanımlama">
+
+Kullanıcıların çağrılarını iletecekleri ve sistem bildirimlerini gönderirken kullanılacak eposta adresi ([support@musteriadi.com](mailto:support@musteriadi.com) vb) tanımlanmalıdır. Bir veya daha fazla eposta adresinden gelen çağrılar Interaction veya Incident modülüne otomatik yakalanacak ve kayıtlar açılacaktır. Bu amaçla eposta adreslerinin Admin panelden tanımları, müşteri eposta admini eşliğinde tanımlanıp otomatik yakalama işlemi başlatılır.
+
+\
+
+İlgili ayara admin panelinden aşağıdaki yollar ulaşılır:
+
+\
+
+Yönetim Ayarları -\> Sistem Ayarları -\> Giden E-Posta Sunucusu ve E-Posta Ayrıştırıcısı.
+
+\
+
+\
+
+##### Giden Eposta Ayarları 
+
+![kurulum](/img/kurulum/emailsender.png)
+
+1. Adı: Girilen değer mail gönderildiğinde karşı tarafa mail göndericisinin adı olarak gözükecektir.
+2. Sunucu İsmi: Mail sunucusunuzun gönderim yapacağı sunucu adresidir.
+3. Port: Sunucu isminde girilen sunucu adresine Servicecore kurulumundan ulaşılacak port bilgisidir.
+4. Kullanıcı Adı: Gönderim yapılacak mail adresidir.
+5. Parola: Gönderim yapılacak mailin parolasıdır.
+6. TLS Kullan: İşaretlendiğinde TLS iletişim protokolünü kullanarak gönderimi yapacaktır.
+7. SSL Kullan: İşaretlendiğinde SSL iletişim protokolünü kullanarak gönderimi yapacaktır.
+8. Senkronize Edilecekler: Senkronize edilecek bilgilerin belirlendiği alandır.
+9. Test E-Postası Gönder: Girilen bilgiler kaydedildikten sonra test e-postası ile gönderim doğrulanır.
+
+##### Eposta Yakalayıcı Ayarları 
+
+![kurulum](/img/kurulum/emailfetcher.png)
+
+1. E-Posta Hizmet Türü: Eposta yakalayıcısının hizmet türünü belirler. Servicecore POP, IMAP, Exchange, Office 365, EWS ve Microsoft Graph hizmet türlerini destekler.
+2. E-Posta Sunucusunun Adresi: Mailin yakalanacağı eposta sunucusunun adresidir.
+3. Port: Sunucu adresine Servicecore kurulumundan ulaşılırken kullanılacak port bilgisidir.
+4. SSL Kullanılıyor: İşaretlendiğinde SSL iletişim protokolünü kullanarak gönderimi yapacaktır.
+5. Kullanıcı Kaydı: İşaretlendiğin sistemde olmayan bir kullanıcıdan mail gelirse sistem bu kullanıcının kaydını otomatik olarak yapacaktır.
+6. E-Posta Adresi: Gönderim yapılacak mail adresidir.
+7. Kullanıcı Adı: Ekstra bir kullanıcı bilgisi bulunuyorsa bu bilgi yok ise gönderim yapılacak mail adresiyle aynı girilecektir.
+8. Parola: Gönderim yapılacak mailin parolasıdır.
+9. Tip: Yakalanacak mailin ekleneceği modülü berlirler. Çağrı veya olay seçimleri mevcuttur.
+10. Etkileşim kategorisi: Gelen mailin kayıt kategorisidir.
+
+</Accordion>
+</Accordions>
+
+<Accordions type="single">
+<Accordion title="Kullanıcıları ve kullanıcı grupları tanımlama">
+
+AD üzerinden otomatik sürekli sync ile alınan kullanıcılar öncelikle Users bölümünde kaydedilmektedir. Kullanıcıların yetki gruplarına, fonksiyonel dağılımına, hizmet kataloğuna erişimlerine göre gruplandırılması ile kullanıcı grupları tanımlanır.
+
+</Accordion>
+</Accordions>
+
+<Accordions type="single">
+<Accordion title="Lisans tanımlama, teknisyenleri ve teknisyen gruplarını tanımlama">
+
+AD üzerinden otomatik sürekli sync ile alınan kullanıcılardan Teknisyen olarak çalışacak destek personelinin Agenta dönüştürme işlemleri yapılır. Teknisyen rollerinin atanması işlemleri Admin panelden Servicecore danışmanı ile birlikte yapılır. Tüm BT ve diğer destek personelleri fonksiyonel çalışma gruplarına göre (sistem, yazılım, network saha destek vb.) grup, rol ve lisans atamaları yapılarak aktif edilir.
+
+</Accordion>
+</Accordions>
+
+<Accordions type="single">
+<Accordion title="Admin ve teknisyenlerin eğitimlere katılması">
+
+Düzenli olarak ve online canlı eğitmen eşliğinde sunulan eğitimlere ya da offline eğitimlere katılım sağlanması ile ürün konfigürasyon ve kullanımının öğretilmesi.\
+ **CSSM-A Certified Servicecore Service Management Administrator**
+
+\
+
+Servicecore SM ürün sahipleri, ITSM admin-ürün yöneticileri, süreç sahipleri, servis sahipleri için sunulan bu eğitim, servis yönetim sisteminin tüm yönetim ayarları, konfigürasyonu ve özelleştirilmesi işlemlerini içerir.
+
+\
+
+**CSSM-P Certified Servicecore Service Management Practitioner**
+
+\
+
+Teknisyenler, süreç yöneticileri ve servis yöneticileri için sunulan; Servis yönetimi süreçlerinin ne olduğu, nasıl çalıştığı, ürün üzerinde nasıl kullanıldığının aktarıldığı uygulamalı bir eğitimdir.
+
+</Accordion>
+</Accordions>
+
+<Accordions type="single">
+<Accordion title="Kullanıma başlama ve erken dönem yakın destek">
+
+Eğitim sonrası Admin ayarlarının ve kuruma özel detayların tamamlanması ve ardından son kullanıcılar, müşteriler ve tüm ilgili taraflara destek sisteminin eposta ve web adresleri duyurulması, Teknisyenlerin ürünü kullanımı sırasında 1 ay yakın destek sağlanması.
+
+</Accordion>
+</Accordions>

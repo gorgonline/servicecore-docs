@@ -1,0 +1,13 @@
+{
+  "title": "Organizasyon Ayarları",
+  "pages": [
+    "index",
+    "teknisyengruplari",
+    "kullanicigruplari",
+    "teknisyenler",
+    "kullanicilar",
+    "onaylayan",
+    "departmanlar",
+    "roller"
+  ]
+}

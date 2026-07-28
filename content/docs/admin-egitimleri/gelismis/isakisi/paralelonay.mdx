@@ -1,0 +1,54 @@
+---
+title: "Paralel Onay Akışları"
+description: "Seri onay süreçlerinde kayıt yalnızca TEK bir dala gider. Yani bir koşula bağlı olarak sadece bir yol çalışır; diğer dallar işlem görmez. Bu yüzden…"
+---
+
+<iframe src="https://www.youtube.com/embed/VmZw4Q1gL4s?si=vj0SezN8aSmgo9iB" title="YouTube video player" className="w-full aspect-video rounded-xl border" allowFullScreen />
+
+### Neden Paralel Onay? 
+
+Seri onay süreçlerinde kayıt yalnızca TEK bir dala gider. Yani bir koşula bağlı olarak sadece bir yol çalışır; diğer dallar işlem görmez. Bu yüzden onay adımları sırayla ilerler ve ilk kişi onay vermeden ikinci kişi onay ekranını bile göremez. Paralel onay yapısında ise birden fazla onaycının aynı anda sürece dahil olması sağlanır. Bu yapıda tüm dallar eş zamanlı tetiklenir ve her onaycı aynı anda işlem yapabilir.
+
+### Paralel Onay Akışı Nasıl Başlatılır? 
+
+Akış sinyal ile başlatılır. Bu, yapının paralel dallara ayrılabilmesi için gereklidir.
+
+### Fork Kullanarak Paralel Dallar Oluşturma 
+
+Fork bileşeni akışı birden fazla dala ayırır ve her dal aynı anda tetiklenir. Örnek dallar:
+
+- Sistem Ekibi
+- Donanım Ekibi
+- Hukuk Ekibi
+- Maliye Ekibi
+
+Switch’ten farkı:
+
+- Switch: Kayıt yalnızca TEK bir koşula uyan dala gider.
+- Fork: Tüm dallar aynı anda çalışır.
+
+### Paralel Onaycıları Tanımlama 
+
+Her dal kendi onay adımını içerir. Örneğin:
+
+- Onaycı 1: Sherlock
+- Onaycı 2: Semih
+
+Dallarda gerekiyorsa:
+
+- Signal
+- HTTP Response adımları bulunmalıdır.
+
+## Paralel Yapının Mantığı 
+
+### Seri akışta: 
+
+- Kayıt sadece tek bir dala gider.
+- İlk onay gelmeden bir sonraki kişiye gidilmez.
+- Süreç uzayabilir.
+
+### Paralel akışta: 
+
+- Kayıt aynı anda birden fazla onaycıya gider.
+- Herkes bağımsız olarak onay verir.
+- Tüm onaylar tamamlandığında süreç devam eder.

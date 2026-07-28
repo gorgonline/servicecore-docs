@@ -1,0 +1,15 @@
+{
+  "title": "Yönetici Kılavuzu",
+  "pages": [
+    "index",
+    "baslangic",
+    "genel",
+    "organizasyon",
+    "varlikvekonfig",
+    "gelismis",
+    "hizmetiliskileri",
+    "devops",
+    "isakisi",
+    "lowcode"
+  ]
+}

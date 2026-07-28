@@ -1,0 +1,104 @@
+/* ============================================================
+   SERVICECORE DESIGN TOKENS — TEK KAYNAK
+   ------------------------------------------------------------
+   Sitenin tüm görsel kimliği bu dosyadan yönetilir.
+   1) "--sc-*" primitifleri: marka rengi, nötr skala, radius, font
+   2) Fumadocs eşlemesi: --color-fd-* değişkenleri SADECE
+      --sc-* primitiflerine referans verir; başka yerde renk
+      hardcode edilmez.
+   Işık/koyu tema farkı yalnızca primitif katmanında tanımlıdır.
+   ============================================================ */
+
+:root {
+  /* ---- Marka ---- */
+  --sc-brand: #0070f3;              /* ana vurgu rengi — istenirse Servicecore markasıyla değiştirilebilir */
+  --sc-brand-foreground: #ffffff;
+  --sc-brand-soft: rgba(0, 112, 243, 0.08); /* çok hafif marka tonu (inline kod, seçili durum) */
+
+  /* ---- Nötr skala (Geist, açık tema) ---- */
+  --sc-bg: #ffffff;                 /* sayfa zemini */
+  --sc-fg: #171717;                 /* ana metin */
+  --sc-surface: #ffffff;            /* kart / panel zemini */
+  --sc-surface-2: #f5f5f5;          /* hover / ikincil zemin */
+  --sc-muted-fg: #646464;           /* ikincil metin */
+  --sc-border: rgba(0, 0, 0, 0.08); /* ince çizgiler */
+  --sc-overlay: rgba(0, 0, 0, 0.4);
+
+  /* ---- İnline kod (içerikte çok yoğun; zarif ve sakin olmalı) ---- */
+  --sc-code-bg: #f4f4f5;
+  --sc-code-fg: #1f2937;
+  --sc-code-border: rgba(0, 0, 0, 0.06);
+
+  /* ---- Figür / ekran görüntüsü çerçevesi ---- */
+  --sc-figure-bg: #fbfbfb;
+  --sc-figure-border: rgba(0, 0, 0, 0.09);
+  --sc-figure-shadow: 0 1px 2px rgba(0, 0, 0, 0.04), 0 8px 24px rgba(0, 0, 0, 0.06);
+  --sc-figure-shadow-hover: 0 1px 2px rgba(0, 0, 0, 0.05), 0 16px 40px rgba(0, 0, 0, 0.10);
+
+  /* ---- Biçim ---- */
+  --sc-radius: 8px;
+  --sc-radius-lg: 14px;
+
+  /* ---- Ölçü / genişlik ---- */
+  --sc-content-width: 60rem;  /* içerik sütunu — okunaklı premium genişlik; tam genişlik için 100% */
+  --sc-layout-width: 100vw;   /* tüm site kabuğu — kutulamak için ör. 1400px */
+
+  /* ---- Tipografi (next/font değişkenleri layout.tsx'ten gelir) ---- */
+  --sc-font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --sc-font-mono: var(--font-geist-mono), ui-monospace, 'SF Mono', monospace;
+}
+
+.dark {
+  /* ---- Nötr skala (Geist, koyu tema) ---- */
+  --sc-brand: #3b82f6;
+  --sc-brand-soft: rgba(59, 130, 246, 0.14);
+  --sc-bg: #0a0a0a;
+  --sc-fg: #ededed;
+  --sc-surface: #0f0f0f;
+  --sc-surface-2: #1a1a1a;
+  --sc-muted-fg: #9b9b9b;
+  --sc-border: rgba(255, 255, 255, 0.10);
+  --sc-overlay: rgba(0, 0, 0, 0.6);
+
+  --sc-code-bg: #1c1c1f;
+  --sc-code-fg: #e4e4e7;
+  --sc-code-border: rgba(255, 255, 255, 0.08);
+
+  --sc-figure-bg: #101012;
+  --sc-figure-border: rgba(255, 255, 255, 0.10);
+  --sc-figure-shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 8px 24px rgba(0, 0, 0, 0.5);
+  --sc-figure-shadow-hover: 0 1px 2px rgba(0, 0, 0, 0.5), 0 16px 40px rgba(0, 0, 0, 0.6);
+}
+
+/* ------------------------------------------------------------
+   Fumadocs eşlemesi — bu bloğa yeni değer YAZILMAZ,
+   yalnızca yukarıdaki primitiflere referans verilir.
+   ------------------------------------------------------------ */
+:root,
+.dark {
+  --color-fd-background: var(--sc-bg);
+  --color-fd-foreground: var(--sc-fg);
+  --color-fd-muted: var(--sc-surface-2);
+  --color-fd-muted-foreground: var(--sc-muted-fg);
+  --color-fd-popover: var(--sc-bg);
+  --color-fd-popover-foreground: var(--sc-fg);
+  --color-fd-card: var(--sc-surface);
+  --color-fd-card-foreground: var(--sc-fg);
+  --color-fd-border: var(--sc-border);
+  --color-fd-primary: var(--sc-brand);
+  --color-fd-primary-foreground: var(--sc-brand-foreground);
+  --color-fd-secondary: var(--sc-surface-2);
+  --color-fd-secondary-foreground: var(--sc-fg);
+  --color-fd-accent: var(--sc-surface-2);
+  --color-fd-accent-foreground: var(--sc-fg);
+  --color-fd-ring: var(--sc-brand);
+  --color-fd-overlay: var(--sc-overlay);
+}
+
+/* Koyu temada kenar çubuğu da aynı primitifleri kullansın
+   (neutral.css'in sabit gri değerlerini geçersiz kılar) */
+.dark #nd-sidebar {
+  --color-fd-muted: var(--sc-surface-2);
+  --color-fd-secondary: var(--sc-surface-2);
+  --color-fd-muted-foreground: var(--sc-muted-fg);
+}

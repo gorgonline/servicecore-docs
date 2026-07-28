@@ -1,0 +1,74 @@
+---
+title: "Katalog Yapısı ve Öğe Oluşturma"
+description: "Katalog içerisinde servis ağacı denilen yerde hizmet kategorileri bulunmaktadır. Hizmet katagorileri kırılımlı bir yapıda yapılmaktadır. Kategorilerin…"
+---
+
+Katalog içerisinde servis ağacı denilen yerde hizmet kategorileri bulunmaktadır. Hizmet katagorileri kırılımlı bir yapıda yapılmaktadır. Kategorilerin altına öğe girişleri gerçekleştirilmektedir. Aşağıdaki ekranda görülebileceği gibi herhangi bir kategori seçilmediği için tüm öğeleri getirmiştir. Bu öğelere istek butonuna tıklayarak istek kaydı açabilirsiniz. Açtığınız istek kaydı istekler modülü üzerinden yönetilecektir çünkü katalog ile istekler modülü eş zamanlı olarak çalışmaktadır.
+
+![Kata](/img/teknisyen/katalog1.png)
+
+`Öğe ekleme` işlemi aşağıdaki buton üzerinden sağlanmaktadır.
+
+![Kata](/img/teknisyen/katalog-g1.png)
+
+Gelen ekran üzerinde hizmet adı, kısa açıklama, açıklama alanları doldurulur.
+
+`Maliyet` alanı öğenin yapılırken oluşturduğu maliyeti girmenize yarar. Girdiğiniz maliyeti kullanıcıya açabilirsiniz.
+
+`Teslim süresi` öğenin hangi süre zarfı boyunca tam olarak yerine getirileceğini kapsar. Bu alanı kullanıcıya açabilirsiniz.
+
+`Storypoint` alanı öğenin diğer öğelere göre karşılaştırılması sonucu değeridir.
+
+![Kata](/img/teknisyen/katalog3.png)
+
+`Hizmet kategorisi` alanı üzerinden oluşturulan öğenin katalog sayfası üzerindeki servis ağacında bulunan hizmet kategorilerinin hangisinde yer alması gerektiği seçilir.
+
+`Öncelik` alanı açılan istek kayıtlarının aşamalandırılması için girilmesi gereken gerekli bir alandır.
+
+**Teknisyen grubu ve teknisyen** alanı istek oluştuğunda hangi teknisyen grubunun ve teknisyenin bu isteği yerine getireceğini seçmenize yarar.
+
+**Yetkili kullanıcı grupları** alanı bu isteğin hangi kullanıcı gruplarına görünsün veya gözükmesin işlemini yapmanıza yarar.
+
+![Kata](/img/teknisyen/katalog14.png)
+
+Yeni öğe içerisinde `onay süreçleri` oluşturulabilir.
+
+## Temel Onay Akışı
+
+- Müdür onayı
+
+- Gruplar için onay
+
+- Kullanıcılar için onay
+
+![Kata](/img/teknisyen/katalog6.png)
+
+Bu aşamada `insiyatif` özelliği açılır ise yetkili teknisyenler onaylayıcılar olmadan onların yerine onay verip reddedebilir. **Tüm aşamalar onaylanmalıdır** seçilirse her eklenen onaycının bu isteğin yapılabilmesi için onay vermesi gerekmektedir seçilmediği durumda herhangi bir onaycı onay verdiğinde işlem yapılacaktır.
+
+## Dinamik Onay Akışı
+
+Dinamik onay akışı `if-else` komutlarıyla oluşturulmuş bir yapıda kurulur. Buranın değer girişinin yapılabilmesi için admin tarafından şemayı çıkartmak gerekecektir. Şema çıkarıldıktan sonra aşağıdaki alan üzerinden eklenebilir.
+
+![Kata](/img/teknisyen/katalog9.png)
+
+**Servis iş akışı – görevler** alanı istek oluştuğu andan itibaren onay süreci sonrasında belli gruplara ve teknisyenlere atanan görevleri oluşturur. Görevler `iş akışının takibi` için gereklidir.
+
+![Kata](/img/teknisyen/katalog10.png)
+
+`Görev ekle` alanından görev ekleme `diyagram` alanından ise eklediğiniz görevleri `öncül-ardıl` ilişkilendirme yapabilirsiniz.
+
+`Özel ek alanlar` alanından istek kullanıcı tarafından açılırken belirtilen alanların dışında istediğiniz ek bir bilgi varsa ekleme işlemi gerçekleştirilir ve eklenen özel ek alan `zorunlu` kılınabilir. Bu sayede kullanıcı bilgi girişi yapmadan isteği açamayacaktır.
+
+![Kata](/img/teknisyen/katalog11.png)
+
+![Kata](/img/teknisyen/katalog12.png)
+
+![Kata](/img/teknisyen/katalog-g2.png)
+
+Yeni öğe eklendikten sonra aşağıdaki şekilde gözükmektedir. **Düzenlenebilir ve silinebilir** konumdadır.
+
+![Kata](/img/teknisyen/katalog4.png)
+
+Servis Ağacının altında bulunan `arama` bölümünden kategorileri ve öğeleri aratabilirsiniz.
+
+![Kata](/img/teknisyen/katalog-g3.png)
