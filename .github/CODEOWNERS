@@ -1,14 +1,19 @@
 # Bölüm sahipleri — PR açıldığında otomatik inceleme ister.
 #
-# DİKKAT: Bu dosyadaki kurallar şu an YORUM satırıdır; hiçbir inceleyici
-# atanmaz. GitHub organizasyonu ve ekipler oluşturulduktan sonra
-# @org/ekip değerlerini doldurup ilgili satırların başındaki '#' işaretini
-# kaldırın. Bkz. README → "Yayına alma".
+# Aşağıdaki VARSAYILAN kural etkin: ekip kurmayı beklemeden her PR'a bir
+# inceleyici atanır. Bölüm bazlı satırlar ekipler oluşturulunca yorumdan
+# çıkarılmak üzere hazır bekliyor (org adı ./scripts/publish.sh tarafından
+# yerleştirilir). Bkz. README → "Yayına alma", 4. adım.
+#
+# NOT: Kod sahibi olabilmek için kişinin/ekibin depoda YAZMA yetkisi olmalı;
+# yetkisi olmayan ya da var olmayan bir sahip sessizce yok sayılır.
 
-# Varsayılan: dokümantasyon ekibi
+# Varsayılan sahip — daha özel bir kural eşleşmezse bu geçerlidir
+*                                     @gorgonline
+
+# Bölüm bazlı sahiplik (ekipler tanımlanınca aktifleştirin; bunlar
+# yukarıdaki varsayılanı EZER — CODEOWNERS'ta son eşleşen kural kazanır)
 # *                                   @servicecore/dokumantasyon
-
-# Bölüm bazlı sahiplik (örnek — ekipler tanımlanınca aktifleştirin)
 # /content/docs/teknisyen/            @servicecore/destek
 # /content/docs/kullanici/            @servicecore/destek
 # /content/docs/yonetici/             @servicecore/urun

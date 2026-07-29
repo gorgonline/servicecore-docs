@@ -31,31 +31,64 @@ npm run dev          # http://localhost:3000
 
 ## Yayına alma (tek seferlik kurulum)
 
-Bu depo yereldedir; katkı akışının çalışması için önce GitHub'a ve Vercel'e
-bağlanması gerekir. Sırasıyla:
+Bu depo yereldedir; katkı akışının çalışması için GitHub'a ve Vercel'e
+bağlanması gerekir.
+
+### 1. Organizasyonu açın (tarayıcıdan)
+
+[github.com/organizations/plan](https://github.com/organizations/plan) — **Free
+planı yeterli.** Org oluşturmanın REST API'si yok, bu adım elle yapılır.
+
+> `servicecore` adı GitHub'da başkası tarafından alınmış. Alan adıyla uyumlu
+> olduğu için **`servicecore-app`** öneriliyor; `servicecoreapp`, `servicecore-tr`,
+> `getservicecore` de müsait.
+
+### 2. Betiği çalıştırın
 
 ```bash
-# 1) GitHub deposunu oluştur ve gönder (gh CLI ile)
-gh repo create <org>/servicecore-docs --private --source=. --push
-
-# 2) main dalını koru: doğrudan push kapalı, PR + CI zorunlu
-gh api -X PUT repos/<org>/servicecore-docs/branches/main/protection \
-  -f 'required_pull_request_reviews[required_approving_review_count]=1' \
-  -f 'required_status_checks[strict]=true' \
-  -f 'required_status_checks[contexts][]=İçerik ve derleme kontrolü' \
-  -f 'enforce_admins=false' -f 'restrictions=null'
+./scripts/publish.sh servicecore-app
 ```
 
-3. **Vercel**: [vercel.com/new](https://vercel.com/new) → depoyu içe aktar →
-   framework otomatik algılanır → Deploy. Ardından Settings → Domains'ten
-   `docs.servicecore.app` alan adını bağlayın.
-4. **Depo adını koda yazın**: `src/lib/shared.ts` içindeki `gitConfig.user` ve
-   `gitConfig.repo` değerlerini gerçek org/repo ile güncelleyin (sayfa altındaki
-   "GitHub'da Düzenle" bağlantıları buradan üretilir). Alternatif olarak Vercel'de
-   `NEXT_PUBLIC_GITHUB_USER` ve `NEXT_PUBLIC_GITHUB_REPO` ortam değişkenlerini tanımlayın.
-5. **İnceleyicileri atayın**: `.github/CODEOWNERS` dosyasındaki örnek satırları
-   gerçek GitHub ekipleriyle doldurup yorumdan çıkarın — PR'lara otomatik
-   inceleyici ataması ancak bundan sonra çalışır.
+Betik sırasıyla: ön koşulları doğrular → `npm run check` çalıştırır → org adını
+`README.md`, `docs/mcp-kurulumu.md` ve `.github/CODEOWNERS` içine yerleştirip
+commit eder → depoyu **public** oluşturup `main`'i gönderir → dal korumasını
+kurar (doğrudan push kapalı, PR + 1 onay + CI zorunlu) → sonucu doğrulayıp
+kalan elle adımları yazar. Tekrar çalıştırılabilir; tamamlanmış adımları atlar.
+
+> **Depo neden public?** Ücretsiz planda dal koruması yalnızca public depolarda
+> çalışıyor — özel depoda GitHub `403 "Upgrade to GitHub Pro"` döndürüyor.
+> Koruma olmadan `main` herkese açık kalır ve bu depodaki tüm inceleme akışı
+> (bkz. [CLAUDE.md](CLAUDE.md) §4) kâğıt üstünde kalır. İçerik zaten
+> `docs.servicecore.app` üzerinden herkese açık yayınlandığı için public depo
+> ek bir bilgi sızdırmaz. Depoyu özel tutmak isterseniz GitHub Team gerekir.
+
+### 3. Vercel'e bağlayın
+
+[vercel.com/new](https://vercel.com/new) → depoyu içe aktarın → framework
+otomatik algılanır → Deploy. Ardından:
+
+- **Settings → Domains** → `docs.servicecore.app` (DNS'te CNAME'i Vercel'in
+  verdiği hedefe yönlendirin).
+- **Settings → Environment Variables** → `NEXT_PUBLIC_GITHUB_USER` ve
+  `NEXT_PUBLIC_GITHUB_REPO`. Sayfa altındaki "GitHub'da Düzenle" bağlantıları
+  bunlardan üretilir; tanımlanmazsa
+  [`src/lib/shared.ts`](src/lib/shared.ts) içindeki varsayılanlar kullanılır.
+
+### 4. Ekipleri ve inceleyicileri kurun
+
+`.github/CODEOWNERS` kutudan çıktığı gibi çalışır: varsayılan sahip tanımlı
+olduğu için her PR'a inceleyici atanır. Bölüm bazlı sahiplik için
+[org → Teams](https://github.com/orgs/) altında `dokumantasyon`, `destek`,
+`urun`, `entegrasyon`, `implementasyon`, `web` ekiplerini oluşturup dosyadaki
+ilgili satırları yorumdan çıkarın, sonra kod sahibi onayını zorunlu yapın:
+
+```bash
+gh api -X PATCH repos/<org>/servicecore-docs/branches/main/protection/required_pull_request_reviews \
+  -F require_code_owner_reviews=true
+```
+
+Son adım: 13 kişiyi organizasyona davet edip
+[docs/mcp-kurulumu.md](docs/mcp-kurulumu.md) kılavuzunu paylaşın.
 
 ---
 
