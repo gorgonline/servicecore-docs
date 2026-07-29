@@ -17,6 +17,10 @@ jobs:
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
+        with:
+          # Tazelik denetimi PR'ı hedef dalla karşılaştırıyor; sığ klonda
+          # ortak ata bulunamaz ve karşılaştırma yapılamaz.
+          fetch-depth: 0
 
       - uses: actions/setup-node@v4
         with:
@@ -28,6 +32,11 @@ jobs:
 
       - name: İçerik kontrolü (frontmatter, MDX, görseller, bağlantılar)
         run: npm run check:mdx
+        env:
+          # Yalnızca PR'da tanımlı: değişen sayfada `reviewed` tarihinin
+          # güncellenip güncellenmediğini uyarı olarak bildirir. Push'ta boş
+          # kalır, denetim atlanır.
+          FRESHNESS_BASE: ${{ github.event_name == 'pull_request' && format('origin/{0}', github.base_ref) || '' }}
 
       - name: Siteyi derle
         run: npm run build

@@ -20,6 +20,9 @@ const PUBLIC = join(ROOT, 'public');
 
 const errors = [];
 const warnings = [];
+const TODAY = new Date().toISOString().slice(0, 10);
+/** Saat dilimi payı — bkz. reviewed denetimi. UTC bugün + 1 gün. */
+const TOLERANS = new Date(Date.now() + 86_400_000).toISOString().slice(0, 10);
 
 /** Klasörü gez, koşula uyan dosyaları topla */
 function walk(dir, test) {
@@ -58,6 +61,28 @@ for (const file of mdxFiles) {
   if (!/^title:\s*\S/m.test(fm[1])) errors.push(`${rel}: frontmatter'da title yok`);
   if (!/^description:\s*\S/m.test(fm[1]))
     warnings.push(`${rel}: description yok (arama sonuçlarında boş görünür)`);
+
+  // --- tazelik alanı ---
+  // Tarih TIRNAKLI olmalı: çıplak 2026-07-30 YAML'de Date nesnesine dönüşür ve
+  // ayrıştırıcı yerel saat dilimine göre yorumlayınca gün kayabilir.
+  const reviewed = fm[1].match(/^reviewed:\s*(.*)$/m);
+  if (!reviewed) {
+    warnings.push(`${rel}: reviewed yok (çürüme raporunda "tarihi yok" olarak listelenir)`);
+  } else if (!/^"\d{4}-\d{2}-\d{2}"$/.test(reviewed[1].trim())) {
+    errors.push(
+      `${rel}: reviewed biçimi geçersiz — "YYYY-MM-DD" bekleniyor ` +
+        `(tırnak dahil), bulunan: ${reviewed[1].trim() || '(boş)'}`,
+    );
+  } else if (reviewed[1].trim().slice(1, 11) > TOLERANS) {
+    // Bir günlük tolerans: yazar yerel takvimine göre tarih atar, CI ise UTC'de
+    // çalışır. Türkiye UTC+3, yani gece yarısından sonra yazılan "bugün" UTC'de
+    // yarın görünür — sıkı karşılaştırma her seferinde yanlış hata verir.
+    // Toleransın ötesi gerçek yazım hatasıdır (ör. yıl 2027).
+    errors.push(
+      `${rel}: reviewed tarihi gelecekte — ${reviewed[1].trim()} ` +
+        `(bugün UTC: ${TODAY})`,
+    );
+  }
 
   const body = raw.slice(fm[0].length);
 
@@ -166,6 +191,42 @@ if (existsSync(REDIRECTS)) {
         `redirects.json: "${r.source}" kuralı harf duyarsız eşleşme yüzünden ` +
           `gerçek "${src.toLowerCase()}" sayfasını da kaçırır — src/proxy.ts içinde çözün`,
       );
+  }
+}
+
+// --- değişen sayfada tarih güncellendi mi? ---
+// Yalnızca FRESHNESS_BASE tanımlıysa çalışır (CI, PR'ın hedef dalını verir).
+// Yerelde sessizce atlanır; geliştirici her kaydetmede uyarı görmesin.
+//
+// UYARI, hata değil: yazım düzeltmesi gibi değişikliklerde tarihi ilerletmek
+// yanlış olur — "içerik ürünle yeniden doğrulandı" demek istemiyoruz. Kararı
+// inceleyiciye bırakıyoruz, ama görünmez kalmasın.
+const BASE = process.env.FRESHNESS_BASE;
+if (BASE) {
+  const { execFileSync } = await import('node:child_process');
+  const git = (...args) =>
+    execFileSync('git', args, { cwd: ROOT, encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'] });
+
+  try {
+    const changed = git('diff', '--name-only', `${BASE}...HEAD`, '--', 'content/docs')
+      .split('\n')
+      .filter((f) => f.endsWith('.mdx'));
+
+    for (const f of changed) {
+      // Dosya bu PR'da eklenmişse tarih zaten yeni; kontrol etmeye gerek yok.
+      const patch = git('diff', '-U0', `${BASE}...HEAD`, '--', f);
+      if (/^\+\+\+ b\//m.test(patch) && /^--- \/dev\/null/m.test(patch)) continue;
+      if (!/^\+reviewed:/m.test(patch)) {
+        warnings.push(
+          `${f}: içerik değişmiş ama reviewed tarihi güncellenmemiş — ` +
+            `ürünle yeniden doğruladıysanız tarihi bugüne çekin`,
+        );
+      }
+    }
+    console.log(`tazelik: ${changed.length} değişen sayfa denetlendi (taban: ${BASE})`);
+  } catch (e) {
+    // Sığ klon, eksik taban dalı vb. — denetimi kırma, sebebini yaz.
+    warnings.push(`tazelik denetimi atlandı (git karşılaştırması yapılamadı): ${e.message.split('\n')[0]}`);
   }
 }
 

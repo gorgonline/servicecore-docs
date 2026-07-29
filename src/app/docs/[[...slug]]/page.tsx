@@ -18,6 +18,24 @@ function githubUrlFor(path: string) {
   return `https://github.com/${gitConfig.user}/${gitConfig.repo}/blob/${gitConfig.branch}/content/docs/${path}`;
 }
 
+/**
+ * "2026-07-30" → "30 Temmuz 2026". Tarih TIRNAKLI geldiği için düz metindir;
+ * new Date() ile ayrıştırmıyoruz çünkü çıplak ISO tarihi UTC sayılır ve
+ * yerel saat diliminde bir gün geriye kayabilir. Parçalayıp adlandırıyoruz.
+ */
+const AYLAR = [
+  'Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran',
+  'Temmuz', 'Ağustos', 'Eylül', 'Ekim', 'Kasım', 'Aralık',
+];
+
+function tarihYaz(iso: string): string | null {
+  const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso);
+  if (!m) return null;
+  const ay = AYLAR[Number(m[2]) - 1];
+  if (!ay) return null;
+  return `${Number(m[3])} ${ay} ${m[1]}`;
+}
+
 export default async function Page(props: PageProps<'/docs/[[...slug]]'>) {
   const params = await props.params;
   const page = source.getPage(params.slug);
@@ -26,6 +44,7 @@ export default async function Page(props: PageProps<'/docs/[[...slug]]'>) {
   const MDX = page.data.body;
   const markdownUrl = getPageMarkdownUrl(page).url;
   const githubUrl = githubUrlFor(page.path);
+  const reviewedLabel = page.data.reviewed ? tarihYaz(page.data.reviewed) : null;
 
   return (
     <DocsPage
@@ -53,6 +72,11 @@ export default async function Page(props: PageProps<'/docs/[[...slug]]'>) {
         <span>Bu sayfada eksik veya hatalı bilgi mi var?</span>
         <EditOnGitHub href={githubUrl} />
       </div>
+      {reviewedLabel && (
+        <p className="mt-3 text-xs text-fd-muted-foreground">
+          Son doğrulama: <time dateTime={page.data.reviewed}>{reviewedLabel}</time>
+        </p>
+      )}
     </DocsPage>
   );
 }

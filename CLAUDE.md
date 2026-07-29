@@ -45,11 +45,16 @@ Her `.mdx` dosyası şu frontmatter ile başlar:
 ---
 title: "Sayfa Başlığı"
 description: "Sayfayı bir cümleyle özetleyen açıklama (arama sonuçlarında görünür)"
+reviewed: "2026-07-30"
+owner: ahmet
 ---
 ```
 
 - `title` — kenar çubuğunda ve sayfa başlığında görünür. **Zorunlu.**
 - `description` — arama ve kart açıklamalarında kullanılır. **Şiddetle önerilir**, 155 karakteri geçmesin.
+- `reviewed` — içeriğin ürünle en son doğrulandığı tarih. **Tırnak içinde, `YYYY-MM-DD`.**
+  Bkz. §7.
+- `owner` — sayfadan sorumlu GitHub kullanıcısı (`@` olmadan). Boş olabilir.
 
 ### Yazım kuralları
 
@@ -157,3 +162,45 @@ Sık hatalar:
 - **Kaynak:** Yalnızca doğrulanmış bilgi yazılır. Emin olunmayan davranış dokümante edilmez.
 - **Ekran görüntüleri:** Arayüz değiştiyse görsel de güncellenmelidir; eski görsel yanlış bilgiden beterdir.
 - **Kapsam:** Bir sayfa bir konuyu anlatır. Sayfa çok uzarsa alt sayfalara bölün ve `meta.json`'u güncelleyin.
+
+---
+
+## 7. Tazelik — `reviewed` tarihi (ÖNEMLİ)
+
+Dokümantasyonun en büyük düşmanı çürümedir: arayüz değişir, sayfa eski kalır,
+kimse hangi sayfanın güncel olduğunu bilemez. `reviewed` alanı bunu ölçülebilir
+kılar.
+
+**Ne demek:** "Bu sayfanın içeriği şu tarihte ürünle karşılaştırıldı ve doğruydu."
+Git tarihi bu bilgiyi **vermez** — virgül düzeltmesi de commit'tir.
+
+**Kural:**
+
+| Yaptığınız iş | `reviewed` |
+|---|---|
+| Sayfayı ürüne bakarak güncelledin / doğruladın | **bugüne çek** |
+| Yeni sayfa yazdın | **bugünün tarihi** |
+| Sadece yazım/noktalama düzelttin | **dokunma** |
+| Bağlantı yolunu düzelttin, içerik aynı | **dokunma** |
+
+Yanlış tarih, eski tarihten daha zararlıdır: sayfa taze görünür ama değildir.
+**Ürüne bakmadıysanız tarihi ilerletmeyin.**
+
+Biçim tırnaklı olmalı — `reviewed: "2026-07-30"`. Tırnaksız yazılırsa YAML bunu
+tarih nesnesine çevirir ve saat dilimine göre gün kayar; `npm run check:mdx`
+bunu hata olarak yakalar.
+
+**Otomatik takip:** Her pazartesi bir iş çalışır, 90 günden eski sayfaları tek
+issue'da sahibine göre gruplayıp listeler (`tazelik` etiketli). PR'da bir
+sayfanın içeriği değişip tarihi güncellenmemişse CI uyarı verir — engellemez,
+kararı inceleyiciye bırakır.
+
+Çürüme listesini elle görmek için:
+
+```bash
+node scripts/stale-report.mjs        # 90 günden eskiler
+node scripts/stale-report.mjs 30     # 30 günden eskiler
+```
+
+Yeni sayfalara alanı toplu eklemek için: `node scripts/add-freshness.mjs`
+(var olan tarihleri ezmez).

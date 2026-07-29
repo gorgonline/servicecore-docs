@@ -1,0 +1,87 @@
+name: Tazelik Raporu
+
+# Haftada bir, çürümüş sayfaları TEK bir issue'da toplar. Her hafta yeni issue
+# açmaz; var olanı günceller — bildirim yağmuru olmasın, tek yer takip edilsin.
+on:
+  schedule:
+    - cron: '0 6 * * 1' # her pazartesi 06:00 UTC (Türkiye 09:00)
+  workflow_dispatch: # elle de çalıştırılabilir
+    inputs:
+      gun:
+        description: 'Kaç günden eski sayfalar listelensin'
+        required: false
+        default: '90'
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  rapor:
+    name: Çürüyen sayfaları bildir
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+
+      # Bağımlılık gerekmiyor: rapor betiği yalnızca node'un kendi modüllerini
+      # kullanıyor. npm ci atlanınca iş saniyeler içinde bitiyor.
+      - name: Raporu üret
+        id: rapor
+        run: |
+          GUN="${{ github.event.inputs.gun || '90' }}"
+          node scripts/stale-report.mjs "$GUN" > rapor.md
+          echo "gun=$GUN" >> "$GITHUB_OUTPUT"
+          if grep -q 'Çürüyen sayfa yok' rapor.md; then
+            echo "temiz=1" >> "$GITHUB_OUTPUT"
+          else
+            echo "temiz=0" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Issue'yu aç veya güncelle
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+          TEMIZ: ${{ steps.rapor.outputs.temiz }}
+          GUN: ${{ steps.rapor.outputs.gun }}
+        run: |
+          set -euo pipefail
+          BASLIK="Tazelik: $GUN günden eski dokümantasyon sayfaları"
+
+          # Etikete göre bul; başlık değişse bile aynı issue'yu bulmaya devam et.
+          NUMARA="$(gh issue list --repo "$REPO" --label tazelik --state open \
+                     --limit 1 --json number --jq '.[0].number // empty')"
+
+          if [ "$TEMIZ" = "1" ]; then
+            if [ -n "$NUMARA" ]; then
+              gh issue comment "$NUMARA" --repo "$REPO" \
+                --body "Tüm sayfalar $GUN günden yeni. Liste temizlendi, kapatıyorum. ✓"
+              gh issue close "$NUMARA" --repo "$REPO"
+            fi
+            echo "Çürüyen sayfa yok; açılacak issue yok."
+            exit 0
+          fi
+
+          # Etiketi yoksa oluştur (ilk çalıştırmada gerekir).
+          gh label create tazelik --repo "$REPO" \
+            --description "Dokümantasyon tazelik takibi" --color FBCA04 2>/dev/null || true
+
+          {
+            echo "Bu liste her pazartesi otomatik güncellenir. Bir sayfayı ürünle"
+            echo "karşılaştırıp doğruladıysanız frontmatter'daki \`reviewed\` tarihini"
+            echo "bugüne çekin; içerik değiştiyse önce güncelleyin."
+            echo
+            cat rapor.md
+          } > gövde.md
+
+          if [ -n "$NUMARA" ]; then
+            gh issue edit "$NUMARA" --repo "$REPO" --title "$BASLIK" --body-file gövde.md
+            echo "Issue #$NUMARA güncellendi."
+          else
+            gh issue create --repo "$REPO" --title "$BASLIK" \
+              --label tazelik --body-file gövde.md
+          fi
