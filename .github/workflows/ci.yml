@@ -29,10 +29,13 @@ jobs:
       - name: İçerik kontrolü (frontmatter, MDX, görseller, bağlantılar)
         run: npm run check:mdx
 
-      # Derleme, tip kontrolünden ÖNCE gelmeli: fumadocs-mdx'in ürettiği
-      # .source/*.ts dosyaları yalnızca `next build` sırasında doldurulur.
       - name: Siteyi derle
         run: npm run build
+
+      # types:check kendi başına `fumadocs-mdx` çalıştırır: tsc, .source/*.ts
+      # üretilmiş olmadan "is not a module" hatası verir ve bu dosyaların
+      # dolu olup olmaması build önbelleğine göre değişiyordu. Sıra artık
+      # önemli değil, adım kendi girdisini garanti ediyor.
 
       - name: Tip kontrolü
         run: npm run types:check
