@@ -34,35 +34,32 @@ npm run dev          # http://localhost:3000
 Bu depo yereldedir; katkı akışının çalışması için GitHub'a ve Vercel'e
 bağlanması gerekir.
 
-### 1. Organizasyonu açın (tarayıcıdan)
-
-[github.com/organizations/plan](https://github.com/organizations/plan) — **Free
-planı yeterli.** Org oluşturmanın REST API'si yok, bu adım elle yapılır.
-
-> `servicecore` adı GitHub'da başkası tarafından alınmış. Alan adıyla uyumlu
-> olduğu için **`servicecore-app`** öneriliyor; `servicecoreapp`, `servicecore-tr`,
-> `getservicecore` de müsait.
-
-### 2. Betiği çalıştırın
+### 1. Depoyu yayına alın
 
 ```bash
-./scripts/publish.sh servicecore-app
+./scripts/publish.sh
 ```
 
-Betik sırasıyla: ön koşulları doğrular → `npm run check` çalıştırır → org adını
-`README.md`, `docs/mcp-kurulumu.md` ve `.github/CODEOWNERS` içine yerleştirip
-commit eder → depoyu **public** oluşturup `main`'i gönderir → dal korumasını
-kurar (doğrudan push kapalı, PR + 1 onay + CI zorunlu) → sonucu doğrulayıp
-kalan elle adımları yazar. Tekrar çalıştırılabilir; tamamlanmış adımları atlar.
+Hedef `gorgonline/servicecore-docs` olur (`gh`'de oturum açmış hesap).
+Betik sırasıyla: ön koşulları doğrular → `npm run check` çalıştırır → depo
+adresini `README.md`, `docs/mcp-kurulumu.md` ve `src/lib/shared.ts` içine
+yerleştirip commit eder → depoyu **public** oluşturup `main`'i gönderir → dal
+korumasını kurar (doğrudan push kapalı, PR + 1 onay + CI zorunlu) → sonucu
+API'den okuyup doğrular. Depo oluşturmadan önce onay sorar; tekrar
+çalıştırılabilir, tamamlanmış adımları atlar.
+
+Bir organizasyona almak isterseniz org adını argüman verin —
+`./scripts/publish.sh <org-adi>` — ama org'un GitHub'da önceden açılmış olması
+gerekir; oluşturmanın REST API'si yok.
 
 > **Depo neden public?** Ücretsiz planda dal koruması yalnızca public depolarda
 > çalışıyor — özel depoda GitHub `403 "Upgrade to GitHub Pro"` döndürüyor.
-> Koruma olmadan `main` herkese açık kalır ve bu depodaki tüm inceleme akışı
+> Koruma olmadan `main`'e doğrudan yazılabilir ve bu depodaki tüm inceleme akışı
 > (bkz. [CLAUDE.md](CLAUDE.md) §4) kâğıt üstünde kalır. İçerik zaten
 > `docs.servicecore.app` üzerinden herkese açık yayınlandığı için public depo
 > ek bir bilgi sızdırmaz. Depoyu özel tutmak isterseniz GitHub Team gerekir.
 
-### 3. Vercel'e bağlayın
+### 2. Vercel'e bağlayın
 
 [vercel.com/new](https://vercel.com/new) → depoyu içe aktarın → framework
 otomatik algılanır → Deploy. Ardından:
@@ -74,21 +71,55 @@ otomatik algılanır → Deploy. Ardından:
   bunlardan üretilir; tanımlanmazsa
   [`src/lib/shared.ts`](src/lib/shared.ts) içindeki varsayılanlar kullanılır.
 
-### 4. Ekipleri ve inceleyicileri kurun
+### 3. Ekibi ekleyin
 
-`.github/CODEOWNERS` kutudan çıktığı gibi çalışır: varsayılan sahip tanımlı
-olduğu için her PR'a inceleyici atanır. Bölüm bazlı sahiplik için
-[org → Teams](https://github.com/orgs/) altında `dokumantasyon`, `destek`,
-`urun`, `entegrasyon`, `implementasyon`, `web` ekiplerini oluşturup dosyadaki
-ilgili satırları yorumdan çıkarın, sonra kod sahibi onayını zorunlu yapın:
+13 kişiyi ortak çalışan olarak ekleyin — [Settings →
+Access](https://github.com/gorgonline/servicecore-docs/settings/access) ya da:
+
+```bash
+gh api -X PUT repos/gorgonline/servicecore-docs/collaborators/<kullanici> -f permission=push
+```
+
+Sonra [docs/mcp-kurulumu.md](docs/mcp-kurulumu.md) kılavuzunu paylaşın — herkes
+kendi AI asistanını bir kez bağlayıp doğal dille katkı verebilir.
+
+### 4. İnceleyicileri tanımlayın
+
+[`.github/CODEOWNERS`](.github/CODEOWNERS) kutudan çıktığı gibi çalışır:
+varsayılan sahip tanımlı olduğu için her PR'a inceleyici atanır. Bölüm bazlı
+sahiplik için ilgili satırları **kullanıcı adlarıyla** açın:
+
+```
+/content/docs/teknisyen/    @ahmet @ayse
+/content/docs/yonetici/     @mehmet
+```
+
+> Dosyadaki `@org/ekip` biçimindeki örnek satırlar yorumda: **ekip sözdizimi
+> yalnızca organizasyonda geçerlidir**, kişisel hesapta çalışmaz. Kod sahibi
+> olacak kişinin depoda yazma yetkisi olmalı; olmayan sahip sessizce yok sayılır.
+
+Bölüm satırları dolduktan sonra kod sahibi onayını zorunlu yapın:
 
 ```bash
 gh api -X PATCH repos/gorgonline/servicecore-docs/branches/main/protection/required_pull_request_reviews \
   -F require_code_owner_reviews=true
 ```
 
-Son adım: 13 kişiyi organizasyona davet edip
-[docs/mcp-kurulumu.md](docs/mcp-kurulumu.md) kılavuzunu paylaşın.
+> **Kilitlenmemek için:** `main`'de 1 onay zorunlu ve kimse kendi PR'ını
+> onaylayamaz. Henüz başka ortak çalışan yokken tıkanmamak adına koruma
+> yönetici hesabını kapsamıyor (`enforce_admins=false`). Ekip eklendikten sonra
+> sıkılaştırmak için: `gh api -X PATCH repos/gorgonline/servicecore-docs/branches/main/protection -F enforce_admins=true`
+
+### 5. Sonradan: organizasyona taşıma
+
+Organizasyon açtığınızda depoyu **Settings → Transfer ownership** ile oraya
+taşıyabilirsiniz. GitHub eski adresten yenisine otomatik yönlendirme kurar —
+kimsenin bağlantısı, PR'ları ve git geçmişi kırılmaz. Ardından
+`./scripts/publish.sh <org-adi>` çalıştırıp ekip bazlı sahipliği devreye alın.
+
+> `servicecore` org adı GitHub'da başkası tarafından alınmış. Alan adıyla uyumlu
+> olduğu için `servicecore-app` öneriliyor; `servicecoreapp`, `servicecore-tr`,
+> `getservicecore` de müsait.
 
 ---
 
