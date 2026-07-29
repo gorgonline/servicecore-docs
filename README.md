@@ -83,7 +83,7 @@ olduğu için her PR'a inceleyici atanır. Bölüm bazlı sahiplik için
 ilgili satırları yorumdan çıkarın, sonra kod sahibi onayını zorunlu yapın:
 
 ```bash
-gh api -X PATCH repos/<org>/servicecore-docs/branches/main/protection/required_pull_request_reviews \
+gh api -X PATCH repos/gorgonline/servicecore-docs/branches/main/protection/required_pull_request_reviews \
   -F require_code_owner_reviews=true
 ```
 

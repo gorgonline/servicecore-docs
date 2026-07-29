@@ -97,7 +97,7 @@ Kurulumdan sonra asistanınıza doğal dille söyleyin. İyi bir istek şunları
 
 **Örnekler**
 
-> Servicecore dokümantasyon deposunda (servicecore/servicecore-docs) yönetici
+> Servicecore dokümantasyon deposunda (gorgonline/servicecore-docs) yönetici
 > kılavuzundaki "Gelişmiş Ayarlar" sayfasına, SLA politikalarına eklenen
 > "hafta sonu hariç tut" seçeneğini anlat. Yeni bir dalda PR aç.
 
@@ -109,7 +109,7 @@ Kurulumdan sonra asistanınıza doğal dille söyleyin. İyi bir istek şunları
 
 **İpuçları**
 
-- İlk istekte depo adını belirtin: `servicecore/servicecore-docs`.
+- İlk istekte depo adını belirtin: `gorgonline/servicecore-docs`.
 - Asistan depodaki `CLAUDE.md` dosyasını okur; yazım kuralları ve klasör yapısı
   oradan otomatik gelir. "Kuralları CLAUDE.md'den oku" demeniz yeterlidir.
 - Emin olmadığınız bilgiyi yazdırmayın — dokümantasyonda yanlış bilgi,

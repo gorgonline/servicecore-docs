@@ -11,7 +11,7 @@ export const docsContentRoute = '/llms.mdx/docs';
  * Repo oluşturulduğunda user/repo değerlerini güncelleyin.
  */
 export const gitConfig = {
-  user: process.env.NEXT_PUBLIC_GITHUB_USER ?? 'servicecore',
+  user: process.env.NEXT_PUBLIC_GITHUB_USER ?? 'gorgonline',
   repo: process.env.NEXT_PUBLIC_GITHUB_REPO ?? 'servicecore-docs',
   branch: 'main',
 };
