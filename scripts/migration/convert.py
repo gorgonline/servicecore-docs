@@ -915,8 +915,18 @@ def main():
     seen_src = set()
 
     def add_redirect(src, dest):
-        low = src.lower()
-        if src in seen_src or low == dest.lower() or low in live_urls:
+        # Yalnızca kaynak ile hedef BİREBİR aynıysa yönlendirme gereksizdir.
+        # Küçük harfe çevirip karşılaştırmak yanlıştır: barındırma ortamı
+        # (Vercel) harf duyarlıdır, yani /docs/Esm/baslangic adresi
+        # /docs/esm/baslangic sayfasına kendiliğinden düşmez — 404 verir.
+        # Ayrıca /docs/Teknisyen/raporlar gibi adresler küçük harfte BAŞKA
+        # bir sayfayla (/docs/teknisyen/raporlar) çakışır; atlanırsa eski
+        # adres ya 404 olur ya da yanlış sayfayı gösterir.
+        # Yalnızca büyük/küçük harfte ayrışan adresler `proxy.ts` içindeki
+        # normalleştirme katmanında ele alınır: next.config yönlendirme
+        # eşleştirmesi harf duyarsızdır, böyle bir kural kendi hedefiyle de
+        # eşleşip sonsuz döngü üretir.
+        if src in seen_src or src.lower() == dest.lower():
             report.setdefault('redirects_skipped', []).append(src)
             return
         seen_src.add(src)

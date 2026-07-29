@@ -29,6 +29,14 @@ const config = {
       { source: '/markdown-page', destination: '/docs', permanent: true },
       // Eski ayrı arama sayfası — arama artık üst çubukta
       { source: '/search', destination: '/docs', permanent: true },
+      // Eski site tüm ağacın bir kopyasını /docs/ önekiyle de yayınlıyordu
+      // (Docusaurus baseUrl artığı: /docs/docs/..., /docs/blog/...). Bu
+      // adresler canlıydı, dış bağlantılar taşıyabilir; öneki düşürüp
+      // gerçek karşılığına yönlendiriyoruz (oradaki kural zinciri tamamlar).
+      { source: '/docs/docs/:path*', destination: '/docs/:path*', permanent: true },
+      { source: '/docs/blog/:path*', destination: '/docs', permanent: true },
+      { source: '/docs/markdown-page', destination: '/docs', permanent: true },
+      { source: '/docs/search', destination: '/docs', permanent: true },
     ];
   },
 };

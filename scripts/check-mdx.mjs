@@ -126,6 +126,49 @@ for (const file of metaFiles) {
     warnings.push(`${rel}: "index" listelenmiş — kenar çubuğunda bölüm adı iki kez görünür`);
 }
 
+// --- yönlendirme sağlığı (redirects.json) ---
+// Bu üç kontrol gerçek üretim hatalarını yakalar:
+//   a) hedefi olmayan kural  -> eski adres 404
+//   b) yalnızca büyük/küçük harfte ayrışan kural -> next.config eşleştirmesi
+//      harf duyarsız olduğu için kural kendi hedefiyle de eşleşir ve SONSUZ
+//      YÖNLENDİRME DÖNGÜSÜ oluşur (bu durum `src/proxy.ts` işidir)
+//   c) kaynağın küçük harfli hâli gerçek bir sayfa ise o sayfa da kaçırılır
+const REDIRECTS = join(ROOT, 'redirects.json');
+if (existsSync(REDIRECTS)) {
+  let rules;
+  try {
+    rules = JSON.parse(readFileSync(REDIRECTS, 'utf8'));
+  } catch (e) {
+    errors.push(`redirects.json: geçersiz JSON — ${e.message}`);
+    rules = [];
+  }
+  const norm = (s) => {
+    let out = s;
+    try {
+      out = decodeURIComponent(s);
+    } catch {
+      /* bozuk kodlama — olduğu gibi bırak */
+    }
+    return out.normalize('NFC').replace(/\/$/, '');
+  };
+  for (const r of rules) {
+    const src = norm(r.source ?? '');
+    const dest = norm((r.destination ?? '').split('#')[0]);
+    if (!knownUrls.has(dest))
+      errors.push(`redirects.json: "${r.source}" geçersiz hedefe gidiyor — ${r.destination}`);
+    if (src.toLowerCase() === dest.toLowerCase())
+      errors.push(
+        `redirects.json: "${r.source}" yalnızca harf farkıyla kendi hedefine gidiyor — ` +
+          `sonsuz yönlendirme döngüsü olur, src/proxy.ts içinde çözün`,
+      );
+    else if (knownUrls.has(src.toLowerCase()))
+      errors.push(
+        `redirects.json: "${r.source}" kuralı harf duyarsız eşleşme yüzünden ` +
+          `gerçek "${src.toLowerCase()}" sayfasını da kaçırır — src/proxy.ts içinde çözün`,
+      );
+  }
+}
+
 // --- rapor ---
 console.log(`${mdxFiles.length} sayfa, ${metaFiles.length} meta.json denetlendi`);
 if (warnings.length) {

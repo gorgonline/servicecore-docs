@@ -1918,5 +1918,15 @@
     "source": "/docs/teknisyenkullan%C4%B1mkilavuzu/raporlar/baslangicr",
     "destination": "/docs/teknisyen/raporlar/baslangic",
     "permanent": true
+  },
+  {
+    "source": "/docs/CSSMAAdmin/Genel Panel Ayarları/hakkında",
+    "destination": "/docs/admin-egitimleri/genel-panel-ayarlari/hakkinda",
+    "permanent": true
+  },
+  {
+    "source": "/docs/CSSMAAdmin/Genel%20Panel%20Ayarlar%C4%B1/hakk%C4%B1nda",
+    "destination": "/docs/admin-egitimleri/genel-panel-ayarlari/hakkinda",
+    "permanent": true
   }
 ]
