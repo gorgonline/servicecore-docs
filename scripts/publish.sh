@@ -88,8 +88,14 @@ sub README.md            "<org>"                       "$ORG"
 sub docs/mcp-kurulumu.md "servicecore/servicecore-docs" "$ORG/$REPO"
 sub .github/CODEOWNERS   "@servicecore/"               "@$ORG/"
 
+# gitConfig varsayılanı da düzeltilmeli: 'servicecore' org adı GitHub'da
+# BAŞKASINA ait, yani ortam değişkeni tanımlanmadığında "GitHub'da Düzenle"
+# bağlantıları yabancı bir depoya giderdi. Tırnaklı biçimde eşleştiriyoruz;
+# tırnaksız 'servicecore' aynı satırdaki 'servicecore-docs' ile de eşleşir.
+sub src/lib/shared.ts    "?? 'servicecore'"            "?? '$ORG'"
+
 if [ "$SUBBED" = "1" ]; then
-  git add README.md docs/mcp-kurulumu.md .github/CODEOWNERS
+  git add README.md docs/mcp-kurulumu.md .github/CODEOWNERS src/lib/shared.ts
   git commit -q -m "Depo adresi gerçek organizasyonla ($ORG) güncellendi"
   ok "commit edildi"
 fi
