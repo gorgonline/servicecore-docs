@@ -37,6 +37,14 @@
   --fd-layout-width: var(--sc-layout-width);
 }
 
+/* Kenar çubuğu ile içerik arasında dikey ayraç (mobilde kenar çubuğu
+   üste katlandığı için yalnızca masaüstünde) */
+@media (min-width: 768px) {
+  #nd-sidebar {
+    border-inline-end: 1px solid var(--sc-border);
+  }
+}
+
 /* ============================================================
    TİPOGRAFİ
    ============================================================ */
