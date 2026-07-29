@@ -18,6 +18,19 @@ const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const DOCS = join(ROOT, 'content', 'docs');
 const LIMIT = Number(process.argv[2] ?? 90);
 
+/**
+ * Bağlantılar TAM adres olmalı: bu rapor bir GitHub issue'sunun gövdesine
+ * giriyor ve orada `/docs/x` github.com/docs/x'e gider, siteye değil.
+ * Adres src/lib/site.ts ile aynı kaynaktan gelsin diye ortam değişkeni de
+ * okunuyor.
+ */
+const BASE = (process.env.NEXT_PUBLIC_SITE_URL ?? 'https://docs.servicecore.app').replace(/\/$/, '');
+
+/** Uzun tabloyu kimse okumaz; sahip başına gösterilecek en fazla satır. */
+const GRUP_KESIM = 25;
+/** Tarihi olmayan sayfalar listesinde gösterilecek en fazla satır. */
+const KESIM = 60;
+
 function walk(dir) {
   const out = [];
   for (const name of readdirSync(dir)) {
@@ -77,7 +90,7 @@ if (toplam === 0) {
 }
 
 const satir = (p) =>
-  `| [${p.title}](${p.url}) | ${p.reviewed ?? '—'} | ${p.yas ?? '—'} | ${p.owner ? '@' + p.owner : '—'} |`;
+  `| [${p.title}](${BASE}${p.url}) | ${p.reviewed ?? '—'} | ${p.yas ?? '—'} | ${p.owner ? '@' + p.owner : '—'} |`;
 
 console.log(
   `${LIMIT} günden eski **${stale.length}** sayfa var` +
@@ -106,12 +119,17 @@ for (const [sahip, sayfalar] of sirali) {
   );
   console.log('| Sayfa | Son doğrulama | Gün | Sahip |');
   console.log('|---|---|---|---|');
-  for (const p of sayfalar) console.log(satir(p));
+  // En eski sayfalar üstte (dizi zaten yaşa göre sıralı), kesilen sayı yazılıyor.
+  for (const p of sayfalar.slice(0, GRUP_KESIM)) console.log(satir(p));
+  if (sayfalar.length > GRUP_KESIM)
+    console.log(
+      `\n_… ve ${sayfalar.length - GRUP_KESIM} sayfa daha (en eskiler yukarıda). ` +
+        'Tam liste: `node scripts/stale-report.mjs`_',
+    );
 }
 
 // Liste uzunluğu sınırlı: issue gövdesi 200 satırlık tabloya dönüşürse kimse
 // okumaz. Kesilen sayı AÇIKÇA yazılıyor — sessiz kırpma "hepsi bu" gibi görünür.
-const KESIM = 60;
 if (tarihsiz.length) {
   console.log(`\n### Tarihi olmayan sayfalar (${tarihsiz.length})\n`);
   console.log('| Sayfa | Dosya |');
