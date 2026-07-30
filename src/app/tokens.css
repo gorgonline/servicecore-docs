@@ -51,11 +51,48 @@
   --sc-figure-radius: 0;            /* keskin köşe (kart radius'undan bağımsız) */
 
   /* ---- Biçim ---- */
-  --sc-radius: 8px;
-  --sc-radius-lg: 14px;
+  --sc-radius: 4px;                 /* kart, accordion, kod bloğu */
+  --sc-radius-sm: 3px;              /* inline kod, etiket, callout */
+  --sc-radius-lg: 14px;             /* (eski değer — kabuk öğeleri kullanıyor) */
 
-  /* ---- Ölçü / genişlik ---- */
-  --sc-content-width: 60rem;  /* içerik sütunu — okunaklı premium genişlik; tam genişlik için 100% */
+  /* ---- Tipografi ölçeği ----
+     Tek ölçek, her yerde bu kullanılır. Başlıklarda negatif harf aralığı
+     Geist'in karakterini açar; gövdede sıfır kalır. */
+  --sc-text-h1: clamp(1.875rem, 1.55rem + 1.1vw, 2.375rem);  /* 30→38px */
+  --sc-text-h2: 1.3125rem;   /* 21px */
+  --sc-text-h3: 1.03125rem;  /* 16.5px */
+  --sc-text-h4: 0.90625rem;  /* 14.5px */
+  --sc-text-body: 1.03125rem;/* 16.5px */
+  --sc-text-sm: 0.8125rem;   /* 13px — resim altı, yardımcı */
+  --sc-text-label: 0.6875rem;/* 11px — mono etiket */
+
+  --sc-leading-h1: 1.12;
+  --sc-leading-h2: 1.3;
+  --sc-leading-body: 1.72;
+
+  --sc-tracking-h1: -0.022em;
+  --sc-tracking-h2: -0.014em;
+  --sc-tracking-h3: -0.008em;
+
+  /* ---- Dikey ritim — 4px tabanı ---- */
+  --sc-s1: 0.25rem;  --sc-s2: 0.5rem;   --sc-s3: 0.75rem;  --sc-s4: 1rem;
+  --sc-s5: 1.5rem;   --sc-s6: 2rem;     --sc-s7: 3rem;     --sc-s8: 4rem;
+
+  /* ---- Hareket ---- */
+  --sc-dur-fast: 160ms;
+  --sc-ease: cubic-bezier(0.2, 0, 0, 1);
+
+  /* ---- Ölçü / genişlik ----
+     İKİ genişlik var, sebebi şu: metin dar olmalı (satır başına 60–75 karakter),
+     ama sitede 665 ekran görüntüsü var ve dar sütunda okunmaz hale gelirler.
+     Çözüm: metin --sc-prose-width'te kalır, figür/tablo/video
+     --sc-content-width'e kadar SAĞA doğru açılır. İkisi de sola hizalı olduğu
+     için ortak bir sol kenar oluşur; kayma hissi olmaz.
+
+     36rem @ 16.5px ≈ 70 karakter. Eski değer 60rem ≈ 118 karakterdi — okunabilir
+     sınırın iki katı, metnin "duvar gibi" görünmesinin asıl sebebi buydu. */
+  --sc-prose-width: 36rem;    /* metin sütunu */
+  --sc-content-width: 46rem;  /* figür/tablo/video — metinden geniş */
   /* Tüm site kabuğu. 100vw KULLANMAYIN: kaydırma çubuğu genişliğini de sayar
      ve mobilde yatay taşma yaratır. Kutulamak için ör. 1400px verin. */
   --sc-layout-width: 100%;

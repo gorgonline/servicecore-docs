@@ -6,7 +6,13 @@
    hardcode renk yoktur.
    ============================================================ */
 
-/* ---- Sayfa yerleşimi: içeriği geniş alanda ortala, ferah üst boşluk ---- */
+/* ============================================================
+   YERLEŞİM — iki genişlikli sütun
+   ------------------------------------------------------------
+   Metin --sc-prose-width'te kalır (≈70 karakter), figür/tablo/video
+   --sc-content-width'e kadar sağa açılır. İkisi de SOLA hizalı; ortak
+   sol kenar sayesinde kayma hissi olmaz.
+   ============================================================ */
 #nd-page {
   align-items: center;
   min-width: 0; /* grid hücresinin içeriğe göre genişlemesini engeller */
@@ -15,6 +21,24 @@
   width: 100%;
   max-width: var(--sc-content-width);
   min-width: 0;
+}
+
+/* Metin seviyesindeki her şey dar sütunda. */
+#nd-page .prose > :where(p, ul, ol, blockquote, h2, h3, h4, h5, h6),
+#nd-page .prose > :where(div:not(:has(img, iframe, table, [data-card]))) {
+  max-width: var(--sc-prose-width);
+  margin-inline-end: auto;
+}
+
+/* ...ama markdown görseli/videoyu <p> içine sarar; o paragraf metin değil
+   FİGÜR taşıyor, dar sütunda kalırsa ekran görüntüleri okunmaz olur.
+   Geniş sütuna geri açılır. */
+#nd-page .prose > p:has(> img),
+#nd-page .prose > p:has(> a > img),
+#nd-page .prose > p:has(> iframe),
+#nd-page .prose > figure,
+#nd-page .prose > table {
+  max-width: var(--sc-content-width);
 }
 
 /* Geniş içerik (tablo, kod) sayfayı yatay kaydırmaya zorlamasın */
@@ -46,45 +70,78 @@
 }
 
 /* ============================================================
-   TİPOGRAFİ
+   TİPOGRAFİ — tek ölçek, tokens.css'ten
    ============================================================ */
 #nd-page .prose {
-  font-size: 1.0625rem;   /* 17px — rahat okuma */
-  line-height: 1.75;
-  letter-spacing: -0.003em;
+  font-size: var(--sc-text-body);
+  line-height: var(--sc-leading-body);
+  letter-spacing: 0;   /* gövdede negatif aralık YOK — okunabilirliği düşürür */
 }
 
-/* Sayfa başlığı: daha iri ve sıkı */
+/* DİKKAT — h1 ve açıklamaya DAR genişlik verilmez.
+   #nd-page bir flex kabı ve `align-items: center` taşıyor; doğrudan çocuğuna
+   max-width verildiği anda o çocuk ORTALANIR. Gövde metni .prose'un içinde
+   `margin-inline-end: auto` ile sola yaslandığı için başlık ortada, metin
+   solda kalıyor ve ortak sol kenar bozuluyordu.
+   Başlık zaten kısa; 70 karakter kuralı akan metin içindir. İkisi de
+   --sc-content-width kutusunda kalır, sol kenar ortaklaşır. */
 #nd-page h1 {
-  font-size: clamp(2rem, 1.6rem + 1.4vw, 2.6rem);
-  line-height: 1.1;
-  letter-spacing: -0.025em;
-  font-weight: 700;
+  font-size: var(--sc-text-h1);
+  line-height: var(--sc-leading-h1);
+  letter-spacing: var(--sc-tracking-h1);
+  font-weight: 600;      /* 700 fazla ağırdı; Geist 600'de daha oturaklı */
+  text-wrap: balance;
 }
 
-/* Bölüm başlıkları (h2): üstte ince ayraç, ferah boşluk */
+/* Bölüm başlığı (h2): ALTTA ayraç çizgisi — çizgi başlığa aittir ve onu
+   takip eden içerikle gruplar. Üstte çizgi, başlığı bir öncekine bağlar. */
 #nd-page .prose h2 {
-  font-size: 1.5rem;
-  line-height: 1.25;
-  letter-spacing: -0.02em;
-  font-weight: 650;
-  margin-top: 3rem;
-  padding-top: 1.75rem;
-  border-top: 1px solid var(--sc-border);
+  font-size: var(--sc-text-h2);
+  line-height: var(--sc-leading-h2);
+  letter-spacing: var(--sc-tracking-h2);
+  font-weight: 600;
+  margin-top: var(--sc-s7);
+  margin-bottom: var(--sc-s4);
+  padding-bottom: var(--sc-s3);
+  border-bottom: 1px solid var(--sc-border);
+  border-top: 0;
+  padding-top: 0;
 }
 #nd-page .prose h3 {
-  font-size: 1.2rem;
-  letter-spacing: -0.015em;
-  font-weight: 620;
-  margin-top: 2.25rem;
+  font-size: var(--sc-text-h3);
+  line-height: 1.4;
+  letter-spacing: var(--sc-tracking-h3);
+  font-weight: 600;
+  margin-top: var(--sc-s6);
+  margin-bottom: var(--sc-s2);
+}
+#nd-page .prose h4 {
+  font-size: var(--sc-text-h4);
+  line-height: 1.45;
+  letter-spacing: 0;
+  font-weight: 600;
+  color: var(--sc-fg);
+  margin-top: var(--sc-s5);
+  margin-bottom: var(--sc-s2);
 }
 
-/* İçeriğin '**Kalın**' sözde-başlıkları: nefes alanı ver */
+/* Başlık üst üste gelirse aradaki boşluk katlanmasın */
+#nd-page .prose :where(h2, h3, h4) + :where(h2, h3, h4) {
+  margin-top: var(--sc-s4);
+}
+
+/* Paragraf ritmi */
+#nd-page .prose p {
+  margin-block: 0 var(--sc-s4);
+}
+
+/* İçerikte '**Kalın**' tek başına bir satırdaysa sözde-başlıktır (göç
+   artığı). Gerçek başlığa dönüşene kadar en azından nefes alsın. */
 #nd-page .prose p > strong:only-child {
   display: inline-block;
-  margin-top: 0.75rem;
-  font-size: 1.05rem;
-  letter-spacing: -0.01em;
+  margin-top: var(--sc-s3);
+  font-size: var(--sc-text-h4);
+  letter-spacing: 0;
 }
 
 /* ============================================================
@@ -120,7 +177,8 @@
 #nd-page .prose img:not([data-nimg='1'] *),
 #nd-page .prose img {
   display: block;
-  margin: 1.75rem auto;
+  /* SOLA hizalı (auto auto değil): metinle ortak sol kenar oluşsun. */
+  margin: var(--sc-s5) auto var(--sc-s5) 0;
   max-width: 100%;
   height: auto;
   padding: var(--sc-figure-pad);
@@ -143,7 +201,7 @@
    Paspartu VERİLMEZ: video zaten kendi siyah çerçevesiyle geliyor. */
 #nd-page .prose iframe {
   display: block;
-  margin: 1.75rem auto;
+  margin: var(--sc-s5) auto var(--sc-s5) 0;
   border: 1px solid var(--sc-figure-border);
   border-radius: var(--sc-figure-radius);
   max-width: 100%;
