@@ -6,7 +6,13 @@
    hardcode renk yoktur.
    ============================================================ */
 
-/* ---- Sayfa yerleşimi: içeriği geniş alanda ortala, ferah üst boşluk ---- */
+/* ============================================================
+   YERLEŞİM — iki genişlikli sütun
+   ------------------------------------------------------------
+   Metin --sc-prose-width'te kalır (≈70 karakter), figür/tablo/video
+   --sc-content-width'e kadar sağa açılır. İkisi de SOLA hizalı; ortak
+   sol kenar sayesinde kayma hissi olmaz.
+   ============================================================ */
 #nd-page {
   align-items: center;
   min-width: 0; /* grid hücresinin içeriğe göre genişlemesini engeller */
@@ -15,6 +21,27 @@
   width: 100%;
   max-width: var(--sc-content-width);
   min-width: 0;
+}
+
+/* VARSAYILAN: .prose'un her doğrudan çocuğu DAR sütunda.
+   Kural bilinçli olarak "her şey dar, istisnalar geniş" biçiminde kurgulandı.
+   Tersi denenmişti (`div:not(:has(img))` gibi) ve sızdırıyordu: içinde görsel
+   olan bir accordion dar kuralın dışında kalıp komşularından geniş çıkıyordu,
+   sayfa bozuk görünüyordu. */
+#nd-page .prose > * {
+  max-width: var(--sc-prose-width);
+  margin-inline-end: auto;
+}
+
+/* İSTİSNA — yalnızca bunlar geniş sütuna açılır. Markdown görseli/videoyu
+   <p> içine sardığı için o paragraflar da buraya dahil. */
+#nd-page .prose > :where(figure, table, pre),
+#nd-page .prose > p:has(> img),
+#nd-page .prose > p:has(> a > img),
+#nd-page .prose > p:has(> iframe),
+#nd-page .prose > div:has(> pre),
+#nd-page .prose > div.shiki {
+  max-width: var(--sc-content-width);
 }
 
 /* Geniş içerik (tablo, kod) sayfayı yatay kaydırmaya zorlamasın */
@@ -46,45 +73,78 @@
 }
 
 /* ============================================================
-   TİPOGRAFİ
+   TİPOGRAFİ — tek ölçek, tokens.css'ten
    ============================================================ */
 #nd-page .prose {
-  font-size: 1.0625rem;   /* 17px — rahat okuma */
-  line-height: 1.75;
-  letter-spacing: -0.003em;
+  font-size: var(--sc-text-body);
+  line-height: var(--sc-leading-body);
+  letter-spacing: 0;   /* gövdede negatif aralık YOK — okunabilirliği düşürür */
 }
 
-/* Sayfa başlığı: daha iri ve sıkı */
+/* DİKKAT — h1 ve açıklamaya DAR genişlik verilmez.
+   #nd-page bir flex kabı ve `align-items: center` taşıyor; doğrudan çocuğuna
+   max-width verildiği anda o çocuk ORTALANIR. Gövde metni .prose'un içinde
+   `margin-inline-end: auto` ile sola yaslandığı için başlık ortada, metin
+   solda kalıyor ve ortak sol kenar bozuluyordu.
+   Başlık zaten kısa; 70 karakter kuralı akan metin içindir. İkisi de
+   --sc-content-width kutusunda kalır, sol kenar ortaklaşır. */
 #nd-page h1 {
-  font-size: clamp(2rem, 1.6rem + 1.4vw, 2.6rem);
-  line-height: 1.1;
-  letter-spacing: -0.025em;
-  font-weight: 700;
+  font-size: var(--sc-text-h1);
+  line-height: var(--sc-leading-h1);
+  letter-spacing: var(--sc-tracking-h1);
+  font-weight: 600;      /* 700 fazla ağırdı; Geist 600'de daha oturaklı */
+  text-wrap: balance;
 }
 
-/* Bölüm başlıkları (h2): üstte ince ayraç, ferah boşluk */
+/* Bölüm başlığı (h2): ALTTA ayraç çizgisi — çizgi başlığa aittir ve onu
+   takip eden içerikle gruplar. Üstte çizgi, başlığı bir öncekine bağlar. */
 #nd-page .prose h2 {
-  font-size: 1.5rem;
-  line-height: 1.25;
-  letter-spacing: -0.02em;
-  font-weight: 650;
-  margin-top: 3rem;
-  padding-top: 1.75rem;
-  border-top: 1px solid var(--sc-border);
+  font-size: var(--sc-text-h2);
+  line-height: var(--sc-leading-h2);
+  letter-spacing: var(--sc-tracking-h2);
+  font-weight: 600;
+  margin-top: var(--sc-s7);
+  margin-bottom: var(--sc-s4);
+  padding-bottom: var(--sc-s3);
+  border-bottom: 1px solid var(--sc-border);
+  border-top: 0;
+  padding-top: 0;
 }
 #nd-page .prose h3 {
-  font-size: 1.2rem;
-  letter-spacing: -0.015em;
-  font-weight: 620;
-  margin-top: 2.25rem;
+  font-size: var(--sc-text-h3);
+  line-height: 1.4;
+  letter-spacing: var(--sc-tracking-h3);
+  font-weight: 600;
+  margin-top: var(--sc-s6);
+  margin-bottom: var(--sc-s2);
+}
+#nd-page .prose h4 {
+  font-size: var(--sc-text-h4);
+  line-height: 1.45;
+  letter-spacing: 0;
+  font-weight: 600;
+  color: var(--sc-fg);
+  margin-top: var(--sc-s5);
+  margin-bottom: var(--sc-s2);
 }
 
-/* İçeriğin '**Kalın**' sözde-başlıkları: nefes alanı ver */
+/* Başlık üst üste gelirse aradaki boşluk katlanmasın */
+#nd-page .prose :where(h2, h3, h4) + :where(h2, h3, h4) {
+  margin-top: var(--sc-s4);
+}
+
+/* Paragraf ritmi */
+#nd-page .prose p {
+  margin-block: 0 var(--sc-s4);
+}
+
+/* İçerikte '**Kalın**' tek başına bir satırdaysa sözde-başlıktır (göç
+   artığı). Gerçek başlığa dönüşene kadar en azından nefes alsın. */
 #nd-page .prose p > strong:only-child {
   display: inline-block;
-  margin-top: 0.75rem;
-  font-size: 1.05rem;
-  letter-spacing: -0.01em;
+  margin-top: var(--sc-s3);
+  font-size: var(--sc-text-h4);
+  letter-spacing: 0;
 }
 
 /* ============================================================
@@ -110,22 +170,27 @@
 }
 
 /* ============================================================
-   FİGÜRLER — ekran görüntüleri artık çerçeveli, gölgeli, ortalı
+   FİGÜRLER — düz (flat): gri paspartu + ince kenarlık, gölge/hover YOK
+   ------------------------------------------------------------
+   Ayrışmayı gölge değil paspartu sağlıyor: görselin çevresinde
+   --sc-figure-pad kadar boşluk bırakılır, orada --sc-figure-bg görünür.
+   Hover efekti bilinçli olarak yok — görsel tıklanabilir değil, tepki
+   vermesi yanıltıcı olur.
    ============================================================ */
 #nd-page .prose img:not([data-nimg='1'] *),
 #nd-page .prose img {
   display: block;
-  margin: 1.75rem auto;
+  /* SOLA hizalı (auto auto değil): metinle ortak sol kenar oluşsun. */
+  margin: var(--sc-s5) auto var(--sc-s5) 0;
   max-width: 100%;
   height: auto;
+  padding: var(--sc-figure-pad);
   border: 1px solid var(--sc-figure-border);
-  border-radius: var(--sc-radius-lg);
+  border-radius: var(--sc-figure-radius);
   background: var(--sc-figure-bg);
-  box-shadow: var(--sc-figure-shadow);
-  transition: box-shadow 0.25s ease, transform 0.25s ease;
-}
-#nd-page .prose img:hover {
-  box-shadow: var(--sc-figure-shadow-hover);
+  /* box-sizing: paspartu genişliği max-width'e EKLENMESİN, yoksa geniş
+     görseller içerik sütununu taşırır. */
+  box-sizing: border-box;
 }
 
 /* next/image sarmalayıcısını da ortala ve genişliğini serbest bırak */
@@ -135,13 +200,13 @@
   margin-inline: auto;
 }
 
-/* Iframe (YouTube) videoları: figür diliyle uyumlu */
+/* Iframe (YouTube) videoları: figür diliyle uyumlu — aynı düz dil.
+   Paspartu VERİLMEZ: video zaten kendi siyah çerçevesiyle geliyor. */
 #nd-page .prose iframe {
   display: block;
-  margin: 1.75rem auto;
+  margin: var(--sc-s5) auto var(--sc-s5) 0;
   border: 1px solid var(--sc-figure-border);
-  border-radius: var(--sc-radius-lg);
-  box-shadow: var(--sc-figure-shadow);
+  border-radius: var(--sc-figure-radius);
   max-width: 100%;
 }
 
@@ -156,19 +221,286 @@
   gap: 0.75rem;
 }
 #nd-page .prose [data-card='true'] {
-  border-radius: var(--sc-radius-lg);
-  transition: border-color 0.2s ease, box-shadow 0.2s ease,
-    background-color 0.2s ease;
+  border-radius: var(--sc-radius);
+  border: 1px solid var(--sc-border);
+  background: var(--sc-surface);
+  padding: var(--sc-s3) var(--sc-s4);
+  transition: border-color var(--sc-dur-fast) var(--sc-ease),
+    background-color var(--sc-dur-fast) var(--sc-ease);
 }
+/* Kart başlığı sıkı, açıklaması mono sayaç — artifact'taki .count dili */
+#nd-page .prose [data-card='true'] > :where(h2, h3, h4, p:first-child, span:first-child) {
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: -0.006em;
+  margin: 0;
+}
+/* Kart GERÇEK bir bağlantı olduğu için hover geri bildirimi kalıyor — ama
+   gölgeyle değil, kenarlık ve zeminle. (Önceki kural hem gölge veriyordu hem
+   de hardcode renk içeriyordu; ikisi de bu depoda yasak.) */
 #nd-page .prose [data-card='true']:hover {
   border-color: color-mix(in srgb, var(--sc-brand) 45%, var(--sc-border));
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04), 0 6px 20px rgba(0, 0, 0, 0.06);
+  background-color: var(--sc-surface-2);
 }
-/* kart içi tipografi biraz daha sıkı */
+/* Kart açıklaması — SANS. Burası daha önce mono yapılmıştı ve yanlıştı:
+   bölüm giriş sayfalarında kartın açıklaması sayfanın description'ı, yani
+   tam bir cümle. Mono'ya alınınca prose daktiloya diziliyordu. */
 #nd-page .prose [data-card='true'] p {
-  margin: 0.25rem 0 0;
-  font-size: 0.875rem;
+  margin: var(--sc-s1) 0 0;
+  font-size: var(--sc-text-sm);
   line-height: 1.5;
+  color: var(--sc-muted-fg);
+}
+
+/* ============================================================
+   ACCORDION — çukur başlık şeritli kenarlıklı kutu
+   ------------------------------------------------------------
+   Artifact'taki .spec kutusunun aynısı: başlık şeridi sunken tonda,
+   gövde raised. İşaret ok değil, mono + / − .
+   ============================================================ */
+#nd-page .prose div:has(> div > h3[data-accordion-value]) {
+  border: 1px solid var(--sc-border);
+  border-radius: var(--sc-radius);
+  background: var(--sc-surface);
+  overflow: hidden;
+}
+#nd-page .prose h3[data-accordion-value] {
+  margin: 0;
+  font-size: 0.90625rem;
+  font-weight: 600;
+  letter-spacing: -0.006em;
+  background: var(--sc-surface-2);
+  border: 0;
+  padding: 0;
+}
+#nd-page .prose h3[data-accordion-value] button {
+  gap: var(--sc-s2);
+  padding: var(--sc-s3) var(--sc-s4);
+  width: 100%;
+}
+/* fumadocs'un chevron'unu mono +/− ile değiştir */
+#nd-page .prose h3[data-accordion-value] svg {
+  display: none;
+}
+#nd-page .prose h3[data-accordion-value] button::before {
+  content: '−';
+  font-family: var(--sc-font-mono);
+  font-weight: 400;
+  color: var(--sc-muted-fg);
+  flex: none;
+}
+#nd-page .prose h3[data-accordion-value][data-closed] button::before {
+  content: '+';
+}
+
+/* ============================================================
+   MONO MİKRO-ETİKET — tasarımın sesi
+   ------------------------------------------------------------
+   KURAL — mono NEREDE kullanılır:
+     ✓ kod, komut, dosya yolu, URL        (birebir aktarım)
+     ✓ sütunda hizalanan sayı             (tabular)
+     ✓ KISA etiket / eyebrow / tarih      (veri katmanı)
+   Mono NEREDE KULLANILMAZ:
+     ✗ akan metin, açıklama, resim altı yazısı
+   Gerekçe: monospace okuma hızını düşürür, karakter genişliği sabit olduğu
+   için Türkçe metinde kelime siluetleri bozulur, italik yoktur. Cümleyi
+   daktiloya dizmek tam olarak bu sitede düzelttiğimiz hatanın kendisiydi.
+
+   Ölçüt ELEMENT DEĞİL, İÇERİĞİN TÜRÜ. Kart açıklaması bir <p> diye mono
+   yapılamaz — içi cümledir.
+   ============================================================ */
+:where(#nd-page, #nd-toc, #nd-sidebar) .sc-microlabel,
+#nd-page > div:first-child,
+#toc-title {
+  font-family: var(--sc-font-mono);
+  font-size: var(--sc-text-label);
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--sc-muted-fg);
+  font-weight: 400;
+}
+
+/* Resim altı yazısı CÜMLEDİR — sans, küçük, soluk. */
+#nd-page .prose figcaption {
+  font-size: var(--sc-text-sm);
+  line-height: 1.55;
+  color: var(--sc-muted-fg);
+  margin-top: calc(var(--sc-s2) * -1 + var(--sc-s3));
+}
+
+/* Breadcrumb — sayfanın "eyebrow"u */
+#nd-page > div:first-child {
+  gap: var(--sc-s2);
+  margin-bottom: var(--sc-s2);
+}
+#nd-page > div:first-child a {
+  color: var(--sc-muted-fg);
+  text-decoration: none;
+  transition: color var(--sc-dur-fast) var(--sc-ease);
+}
+#nd-page > div:first-child a:hover {
+  color: var(--sc-fg);
+  opacity: 1;
+}
+#nd-page > div:first-child svg {
+  width: 0.75rem;
+  height: 0.75rem;
+  opacity: 0.45;
+}
+
+/* TOC başlığı — ikon yerine mono etiket */
+#toc-title {
+  gap: var(--sc-s2);
+  padding-bottom: var(--sc-s2);
+  border-bottom: 1px solid var(--sc-border);
+  margin-bottom: var(--sc-s3);
+}
+#toc-title svg {
+  width: 0.8125rem;
+  height: 0.8125rem;
+  opacity: 0.5;
+}
+#nd-toc a {
+  font-size: 0.8125rem;
+  line-height: 1.5;
+}
+
+/* Kenar çubuğu — bölüm adları mono, alt öğeler sans */
+#nd-sidebar {
+  font-size: 0.8125rem;
+}
+#nd-sidebar a[data-active='true'] {
+  font-weight: 500;
+}
+
+/* Rakamlar her yerde hizalı */
+#nd-page,
+#nd-toc,
+#nd-sidebar {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Klavye odağı — artifact'ta her etkileşimli öğede vardı */
+#nd-page a:focus-visible,
+#nd-page button:focus-visible,
+#nd-toc a:focus-visible,
+#nd-sidebar a:focus-visible,
+#nd-sidebar button:focus-visible {
+  outline: 2px solid var(--sc-brand);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #nd-page *,
+  #nd-sidebar *,
+  #nd-toc * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* ============================================================
+   GÖLGE TEMİZLİĞİ — fumadocs'un kendi Tailwind sınıfları
+   ------------------------------------------------------------
+   Kendi CSS'imizde gölge kalmadı ama fumadocs bileşenleri
+   `shadow-sm` / `shadow-md` sınıflarını kendisi basıyor: kod bloğu,
+   callout, popover... Kağıt dilinde içerik gölgelenmez. Gölge yalnızca
+   GERÇEKTEN yüzen katmana (açılır menü, arama kutusu) aittir; onlar
+   #nd-page dışında olduğu için bu kuraldan etkilenmez.
+   ============================================================ */
+#nd-page :is(.shadow, .shadow-sm, .shadow-md, .shadow-lg, .shadow-xl) {
+  box-shadow: none;
+}
+/* Köşe yuvarlaklığı da tek sisteme çekilir (rounded-xl = 12px idi) */
+#nd-page :is(.rounded-xl, .rounded-lg) {
+  border-radius: var(--sc-radius);
+}
+
+/* ============================================================
+   CALLOUT — dört anlam, sol şerit + çok hafif zemin
+   ------------------------------------------------------------
+   Kök öğenin tutamağı inline `--callout-color` değişkeni; fumadocs
+   türü buradan veriyor, sınıf adı vermiyor.
+   ============================================================ */
+#nd-page .prose div[style*='--callout-color'] {
+  gap: var(--sc-s3);
+  padding: var(--sc-s3) var(--sc-s4);
+  padding-inline-start: 0;
+  border-radius: var(--sc-radius-sm);
+  border-color: color-mix(in srgb, var(--callout-color) 22%, var(--sc-border));
+  background: color-mix(in srgb, var(--callout-color) 6%, var(--sc-surface));
+  align-items: flex-start;
+}
+/* fumadocs'un 2px yarı saydam şeridi → 3px dolu şerit */
+#nd-page .prose div[style*='--callout-color'] > div[role='none'] {
+  width: 3px;
+  align-self: stretch;
+  border-radius: 0;
+  background: var(--callout-color);
+  opacity: 1;
+}
+#nd-page .prose div[style*='--callout-color'] > svg {
+  margin-inline-start: var(--sc-s3);
+  margin-block-start: 1px;
+}
+
+/* ============================================================
+   KOD BLOĞU — kağıdın çukuru
+   ------------------------------------------------------------
+   NOT: Bugün sitedeki 108 bloğun tamamı düz metin (göç artığı).
+   Bu dil GERÇEK kod içindir; içerik Faz 3'te doğru elemente taşınacak.
+   ============================================================ */
+#nd-page .prose .shiki,
+#nd-page .prose figure:has(pre) {
+  background: var(--sc-code-bg);
+  border: 1px solid var(--sc-code-border);
+  border-radius: var(--sc-radius);
+}
+#nd-page .prose pre {
+  padding: var(--sc-s3) var(--sc-s4);
+  font-size: 0.8125rem;
+  line-height: 1.6;
+}
+
+/* ============================================================
+   TABLO — şu an sitede hiç yok, ama onlarca liste aslında tablo
+   ------------------------------------------------------------
+   Başlık satırı mono + büyük harf + çukur zemin; hücre köşesi keskin;
+   sayılar tabular. Geniş tablo KENDİ İÇİNDE kayar, sayfa gövdesi asla
+   yana kaymaz (üstteki overflow-x kuralı).
+   ============================================================ */
+#nd-page .prose table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+  border: 1px solid var(--sc-border);
+  border-radius: var(--sc-radius);
+  overflow: hidden;
+  margin-block: var(--sc-s5);
+}
+#nd-page .prose th,
+#nd-page .prose td {
+  text-align: start;
+  padding: var(--sc-s2) var(--sc-s3);
+  border-bottom: 1px solid var(--sc-border);
+  vertical-align: baseline;
+}
+#nd-page .prose th {
+  font-family: var(--sc-font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: var(--sc-muted-fg);
+  background: var(--sc-surface-2);
+  white-space: nowrap;
+}
+#nd-page .prose tbody tr:last-child td {
+  border-bottom: 0;
+}
+#nd-page .prose td {
+  font-variant-numeric: tabular-nums;
 }
 
 /* ============================================================
