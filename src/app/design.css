@@ -242,15 +242,14 @@
   border-color: color-mix(in srgb, var(--sc-brand) 45%, var(--sc-border));
   background-color: var(--sc-surface-2);
 }
-/* Kartın alt satırı ("44 sayfa") mono ve soluk — veri katmanı */
+/* Kart açıklaması — SANS. Burası daha önce mono yapılmıştı ve yanlıştı:
+   bölüm giriş sayfalarında kartın açıklaması sayfanın description'ı, yani
+   tam bir cümle. Mono'ya alınınca prose daktiloya diziliyordu. */
 #nd-page .prose [data-card='true'] p {
   margin: var(--sc-s1) 0 0;
-  font-family: var(--sc-font-mono);
-  font-size: 0.6875rem;
-  letter-spacing: 0.06em;
+  font-size: var(--sc-text-sm);
   line-height: 1.5;
   color: var(--sc-muted-fg);
-  font-variant-numeric: tabular-nums;
 }
 
 /* ============================================================
@@ -297,22 +296,36 @@
 /* ============================================================
    MONO MİKRO-ETİKET — tasarımın sesi
    ------------------------------------------------------------
-   Geist Mono yalnızca kod için değil; yön gösteren küçük metinlerin
-   tamamını o taşır. Büyük harf + geniş harf aralığı + soluk mürekkep
-   kombinasyonu, sayfadaki "veri" katmanını "anlatı" katmanından ayırır.
-   Uygulandığı yerler: breadcrumb, TOC başlığı, kenar çubuğu bölüm adı,
-   resim altı, tarih, sayaç.
+   KURAL — mono NEREDE kullanılır:
+     ✓ kod, komut, dosya yolu, URL        (birebir aktarım)
+     ✓ sütunda hizalanan sayı             (tabular)
+     ✓ KISA etiket / eyebrow / tarih      (veri katmanı)
+   Mono NEREDE KULLANILMAZ:
+     ✗ akan metin, açıklama, resim altı yazısı
+   Gerekçe: monospace okuma hızını düşürür, karakter genişliği sabit olduğu
+   için Türkçe metinde kelime siluetleri bozulur, italik yoktur. Cümleyi
+   daktiloya dizmek tam olarak bu sitede düzelttiğimiz hatanın kendisiydi.
+
+   Ölçüt ELEMENT DEĞİL, İÇERİĞİN TÜRÜ. Kart açıklaması bir <p> diye mono
+   yapılamaz — içi cümledir.
    ============================================================ */
 :where(#nd-page, #nd-toc, #nd-sidebar) .sc-microlabel,
 #nd-page > div:first-child,
-#toc-title,
-#nd-page .prose figcaption {
+#toc-title {
   font-family: var(--sc-font-mono);
   font-size: var(--sc-text-label);
   letter-spacing: 0.09em;
   text-transform: uppercase;
   color: var(--sc-muted-fg);
   font-weight: 400;
+}
+
+/* Resim altı yazısı CÜMLEDİR — sans, küçük, soluk. */
+#nd-page .prose figcaption {
+  font-size: var(--sc-text-sm);
+  line-height: 1.55;
+  color: var(--sc-muted-fg);
+  margin-top: calc(var(--sc-s2) * -1 + var(--sc-s3));
 }
 
 /* Breadcrumb — sayfanın "eyebrow"u */
