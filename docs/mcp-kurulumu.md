@@ -29,14 +29,20 @@ kurmaya, bakım yapmaya gerek yok.
 
 ## Ön koşul: GitHub erişimi
 
-1. GitHub hesabınızın Servicecore organizasyonunda ve bu depoda **yazma**
-   yetkisi olmalı (yöneticinizden isteyin).
-2. Bir **fine-grained personal access token** üretin (önerilen ve her istemcide
+1. Bir **GitHub hesabınız** olmalı — yoksa [github.com/signup](https://github.com/signup)
+   (ücretsiz). Kullanıcı adınızı depo yöneticisine bildirin.
+2. Size gelen **ortak çalışan davetini kabul edin.** Davet e-posta ile gelir ve
+   [github.com/notifications](https://github.com/notifications) altında da görünür.
+   Kabul etmediğiniz sürece depoya yazamazsınız — bu adım en sık atlanan adımdır.
+3. Bir **fine-grained personal access token** üretin (önerilen ve her istemcide
    çalışan yöntem): GitHub → Settings → Developer settings →
    Personal access tokens → Fine-grained tokens → **Generate new token**
-     - Repository access: **yalnızca bu depo**
+     - Repository access: **Only select repositories** → `gorgonline/servicecore-docs`
      - İzinler: `Contents: Read and write`, `Pull requests: Read and write`
      - Süre: 90 gün (dolduğunda yenileyin)
+
+> Token üretme ekranında depo listelenmiyorsa daveti henüz kabul etmemişsiniz.
+> 2. adıma dönün.
 
 > Token'ı kimseyle paylaşmayın. Yalnızca bu depoya yetkilendirildiği için
 > kaybolursa etkisi sınırlıdır; yine de hemen iptal edin.
@@ -125,17 +131,17 @@ Kurulumdan sonra asistanınıza doğal dille söyleyin. İyi bir istek şunları
 | ✅ | Yeni bir dal açılır (`docs/konu-adi`), PR ile birleşir |
 | ✅ | Değişiklik yalnızca `content/docs/**` ve `public/img/**` altında olur |
 | ✅ | Frontmatter'da `title` ve `description` bulunur |
+| ✅ | Sayfayı ürüne bakarak güncellediyseniz `reviewed` tarihi bugüne çekilir |
 | ✅ | Yeni sayfa `meta.json`'a eklenir |
 | ❌ | `main` dalına doğrudan yazılmaz (zaten korumalıdır) |
 | ❌ | `src/`, `package.json`, `next.config.mjs` içerik katkısında değiştirilmez |
 
 PR açıldığında otomatik olarak:
-1. **CI** çalışır — MDX sözdizimi, kırık görsel/bağlantı, `meta.json` tutarlılığı
-   ve derleme kontrol edilir.
+1. **CI** çalışır — MDX sözdizimi, kırık görsel/bağlantı, `meta.json` tutarlılığı,
+   `reviewed` tarihi ve derleme kontrol edilir. **CI yeşil olmadan birleştirilemez.**
 2. **Vercel** o PR'a özel bir önizleme adresi üretir.
-3. **Bölüm sahibi** inceler ve onaylar. (Otomatik inceleyici ataması için
-   `.github/CODEOWNERS` dosyasının doldurulmuş olması gerekir; henüz
-   doldurulmadıysa PR'a inceleyiciyi elle ekleyin.)
+3. **Bir inceleyici** onaylar — en az **1 onay** zorunlu. Kendi PR'ınızı kendiniz
+   onaylayamazsınız. İnceleyici otomatik atanır (`.github/CODEOWNERS`).
 
 ---
 
