@@ -18,19 +18,26 @@
   --sc-brand-foreground: #ffffff;   /* marka zemin üzerinde 6.68:1 */
   --sc-brand-soft: rgba(0, 87, 194, 0.08); /* seçili/hafif vurgu zemini */
 
-  /* ---- Nötr skala (Geist, açık tema) ---- */
-  --sc-bg: #ffffff;                 /* sayfa zemini */
-  --sc-fg: #171717;                 /* ana metin */
-  --sc-surface: #ffffff;            /* kart / panel zemini */
-  --sc-surface-2: #f5f5f5;          /* hover / ikincil zemin */
-  --sc-muted-fg: #646464;           /* ikincil metin */
-  --sc-border: rgba(0, 0, 0, 0.08); /* ince çizgiler */
-  --sc-overlay: rgba(0, 0, 0, 0.4);
+  /* ---- Nötr skala — "dijital kağıt" (açık tema) ----
+     Nötrler SICAK: hafif sarıya/bejye çalar, kağıt hissini bu verir. Soğuk
+     griler (#f5f5f5 gibi) ekran gibi durur. Kaynak dil: dijital-kagit-sistemi.
 
-  /* ---- İnline kod (içerikte çok yoğun; zarif ve sakin olmalı) ---- */
-  --sc-code-bg: #f4f4f5;
-  --sc-code-fg: #1f2937;
-  --sc-code-border: rgba(0, 0, 0, 0.06);
+     Üç katmanlı yüzey: base (sayfa) / raised (üste çıkan) / sunken (çukur).
+     Ayrışma GÖLGEYLE DEĞİL bu tonlarla yapılır — gölge yalnızca gerçekten
+     yüzen katmana (açılır menü, popover) ait olabilir, içeriğe asla. */
+  --sc-bg: #fafaf8;                 /* base — sayfa zemini, kağıt */
+  --sc-fg: #1a1a1a;                 /* mürekkep; #0a0a0a uzun metinde sert */
+  --sc-surface: #ffffff;            /* raised — kart/panel, zeminden AÇIK */
+  --sc-surface-2: #f2f1ed;          /* sunken — hover, çukur alanlar */
+  --sc-muted-fg: #525252;           /* ikincil metin (kağıt üzerinde 7.8:1) */
+  --sc-border: #edebe5;             /* opak sıcak çizgi; saydam gri soğuk durur */
+  --sc-overlay: rgba(10, 10, 10, 0.4);
+
+  /* ---- İnline kod (içerikte çok yoğun; zarif ve sakin olmalı) ----
+     Kod da kağıdın çukuru: sunken tonu kullanır. */
+  --sc-code-bg: #f2f1ed;
+  --sc-code-fg: #262626;
+  --sc-code-border: #e6e3db;
 
   /* ---- Figür / ekran görüntüsü çerçevesi ----
      Düz (flat) dil: gölge ve hover YOK, köşe keskin. Ekran görüntüsü metnin
@@ -38,8 +45,8 @@
      görselin çevresindeki --sc-figure-pad kadar boşlukta --sc-figure-bg görünür.
      Sitede 647 görsel var; gölge verildiğinde her sayfa yüzen kutu yığınına
      dönüşüyordu. */
-  --sc-figure-bg: #f4f4f5;          /* paspartu — görsel çevresinde görünen gri */
-  --sc-figure-border: rgba(0, 0, 0, 0.11);
+  --sc-figure-bg: #f2f1ed;          /* paspartu = sunken tonu (aynı kağıt dili) */
+  --sc-figure-border: #e6e3db;
   --sc-figure-pad: 6px;             /* paspartu kalınlığı */
   --sc-figure-radius: 0;            /* keskin köşe (kart radius'undan bağımsız) */
 
@@ -63,22 +70,24 @@
   --sc-brand: #60a5fa;              /* koyu zemin üzerinde 7.79:1 */
   --sc-brand-foreground: #0a0a0a;   /* marka zemin üzerinde 7.79:1 (beyaz 2.5:1 kalırdı) */
   --sc-brand-soft: rgba(96, 165, 250, 0.14);
-  --sc-bg: #0a0a0a;
-  --sc-fg: #ededed;
-  --sc-surface: #0f0f0f;
-  --sc-surface-2: #1a1a1a;
-  --sc-muted-fg: #a1a1a1;           /* koyu zemin üzerinde 7.66:1 */
-  --sc-border: rgba(255, 255, 255, 0.10);
+  /* Koyu tema da aynı kağıt dilinde: nötrler hafif SICAK (mavi-siyah değil).
+     Üç katman korunur — base / raised / sunken. */
+  --sc-bg: #0f0e0c;                 /* base */
+  --sc-fg: #eceae5;                 /* mürekkep (ters) */
+  --sc-surface: #171613;            /* raised */
+  --sc-surface-2: #201e1a;          /* sunken */
+  --sc-muted-fg: #a8a49c;           /* ikincil metin */
+  --sc-border: #2a2823;             /* opak sıcak çizgi */
   --sc-overlay: rgba(0, 0, 0, 0.6);
 
-  --sc-code-bg: #1c1c1f;
-  --sc-code-fg: #e4e4e7;
-  --sc-code-border: rgba(255, 255, 255, 0.08);
+  --sc-code-bg: #201e1a;
+  --sc-code-fg: #e4e1da;
+  --sc-code-border: #2f2c26;
 
   /* Koyu temada paspartu zeminden AÇIK olmalı: ekran görüntüleri beyaz
      ağırlıklı, koyu bir çerçeve onları daha da keser. */
-  --sc-figure-bg: #1c1c1f;
-  --sc-figure-border: rgba(255, 255, 255, 0.13);
+  --sc-figure-bg: #201e1a;
+  --sc-figure-border: #322e27;
 }
 
 /* ------------------------------------------------------------
