@@ -236,6 +236,109 @@
 }
 
 /* ============================================================
+   GÖLGE TEMİZLİĞİ — fumadocs'un kendi Tailwind sınıfları
+   ------------------------------------------------------------
+   Kendi CSS'imizde gölge kalmadı ama fumadocs bileşenleri
+   `shadow-sm` / `shadow-md` sınıflarını kendisi basıyor: kod bloğu,
+   callout, popover... Kağıt dilinde içerik gölgelenmez. Gölge yalnızca
+   GERÇEKTEN yüzen katmana (açılır menü, arama kutusu) aittir; onlar
+   #nd-page dışında olduğu için bu kuraldan etkilenmez.
+   ============================================================ */
+#nd-page :is(.shadow, .shadow-sm, .shadow-md, .shadow-lg, .shadow-xl) {
+  box-shadow: none;
+}
+/* Köşe yuvarlaklığı da tek sisteme çekilir (rounded-xl = 12px idi) */
+#nd-page :is(.rounded-xl, .rounded-lg) {
+  border-radius: var(--sc-radius);
+}
+
+/* ============================================================
+   CALLOUT — dört anlam, sol şerit + çok hafif zemin
+   ------------------------------------------------------------
+   Kök öğenin tutamağı inline `--callout-color` değişkeni; fumadocs
+   türü buradan veriyor, sınıf adı vermiyor.
+   ============================================================ */
+#nd-page .prose div[style*='--callout-color'] {
+  gap: var(--sc-s3);
+  padding: var(--sc-s3) var(--sc-s4);
+  padding-inline-start: 0;
+  border-radius: var(--sc-radius-sm);
+  border-color: color-mix(in srgb, var(--callout-color) 22%, var(--sc-border));
+  background: color-mix(in srgb, var(--callout-color) 6%, var(--sc-surface));
+  align-items: flex-start;
+}
+/* fumadocs'un 2px yarı saydam şeridi → 3px dolu şerit */
+#nd-page .prose div[style*='--callout-color'] > div[role='none'] {
+  width: 3px;
+  align-self: stretch;
+  border-radius: 0;
+  background: var(--callout-color);
+  opacity: 1;
+}
+#nd-page .prose div[style*='--callout-color'] > svg {
+  margin-inline-start: var(--sc-s3);
+  margin-block-start: 1px;
+}
+
+/* ============================================================
+   KOD BLOĞU — kağıdın çukuru
+   ------------------------------------------------------------
+   NOT: Bugün sitedeki 108 bloğun tamamı düz metin (göç artığı).
+   Bu dil GERÇEK kod içindir; içerik Faz 3'te doğru elemente taşınacak.
+   ============================================================ */
+#nd-page .prose .shiki,
+#nd-page .prose figure:has(pre) {
+  background: var(--sc-code-bg);
+  border: 1px solid var(--sc-code-border);
+  border-radius: var(--sc-radius);
+}
+#nd-page .prose pre {
+  padding: var(--sc-s3) var(--sc-s4);
+  font-size: 0.8125rem;
+  line-height: 1.6;
+}
+
+/* ============================================================
+   TABLO — şu an sitede hiç yok, ama onlarca liste aslında tablo
+   ------------------------------------------------------------
+   Başlık satırı mono + büyük harf + çukur zemin; hücre köşesi keskin;
+   sayılar tabular. Geniş tablo KENDİ İÇİNDE kayar, sayfa gövdesi asla
+   yana kaymaz (üstteki overflow-x kuralı).
+   ============================================================ */
+#nd-page .prose table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+  border: 1px solid var(--sc-border);
+  border-radius: var(--sc-radius);
+  overflow: hidden;
+  margin-block: var(--sc-s5);
+}
+#nd-page .prose th,
+#nd-page .prose td {
+  text-align: start;
+  padding: var(--sc-s2) var(--sc-s3);
+  border-bottom: 1px solid var(--sc-border);
+  vertical-align: baseline;
+}
+#nd-page .prose th {
+  font-family: var(--sc-font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: var(--sc-muted-fg);
+  background: var(--sc-surface-2);
+  white-space: nowrap;
+}
+#nd-page .prose tbody tr:last-child td {
+  border-bottom: 0;
+}
+#nd-page .prose td {
+  font-variant-numeric: tabular-nums;
+}
+
+/* ============================================================
    BAĞLANTILAR
    ============================================================ */
 /* Yalnızca metin içi bağlantılar: başlık çapaları ve kartlar hariç

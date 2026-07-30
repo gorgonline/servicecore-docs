@@ -33,6 +33,14 @@
   --sc-border: #edebe5;             /* opak sıcak çizgi; saydam gri soğuk durur */
   --sc-overlay: rgba(10, 10, 10, 0.4);
 
+  /* ---- Durum renkleri — Callout'un dört anlamı ----
+     Marka renginden AYRI tutulur: marka kimlik, bunlar anlam taşır.
+     Kağıt zemin üzerinde AA sağlar. */
+  --sc-info: #0057c2;
+  --sc-good: #1f7a4d;
+  --sc-warn: #b5811d;
+  --sc-bad:  #9a2a2a;
+
   /* ---- İnline kod (içerikte çok yoğun; zarif ve sakin olmalı) ----
      Kod da kağıdın çukuru: sunken tonu kullanır. */
   --sc-code-bg: #f2f1ed;
@@ -117,6 +125,12 @@
   --sc-border: #2a2823;             /* opak sıcak çizgi */
   --sc-overlay: rgba(0, 0, 0, 0.6);
 
+  /* Durum renkleri koyu zeminde açılır — koyu tonlar okunmaz olurdu. */
+  --sc-info: #78b0fa;
+  --sc-good: #5cc48d;
+  --sc-warn: #d9a545;
+  --sc-bad:  #e07a7a;
+
   --sc-code-bg: #201e1a;
   --sc-code-fg: #e4e1da;
   --sc-code-border: #2f2c26;
@@ -150,6 +164,14 @@
   --color-fd-accent-foreground: var(--sc-fg);
   --color-fd-ring: var(--sc-brand);
   --color-fd-overlay: var(--sc-overlay);
+
+  /* Callout'un dört türü. Tanımlı olmadığında fumadocs hepsini
+     --color-fd-muted'a düşürüyordu; dört tür de aynı griye çıkıyor,
+     "dikkat" ile "bilgi" ayırt edilemiyordu. */
+  --color-fd-info: var(--sc-info);
+  --color-fd-success: var(--sc-good);
+  --color-fd-warning: var(--sc-warn);
+  --color-fd-error: var(--sc-bad);
 }
 
 /* Koyu temada kenar çubuğu da aynı primitifleri kullansın
