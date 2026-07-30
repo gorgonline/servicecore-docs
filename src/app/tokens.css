@@ -32,11 +32,16 @@
   --sc-code-fg: #1f2937;
   --sc-code-border: rgba(0, 0, 0, 0.06);
 
-  /* ---- Figür / ekran görüntüsü çerçevesi ---- */
-  --sc-figure-bg: #fbfbfb;
-  --sc-figure-border: rgba(0, 0, 0, 0.09);
-  --sc-figure-shadow: 0 1px 2px rgba(0, 0, 0, 0.04), 0 8px 24px rgba(0, 0, 0, 0.06);
-  --sc-figure-shadow-hover: 0 1px 2px rgba(0, 0, 0, 0.05), 0 16px 40px rgba(0, 0, 0, 0.10);
+  /* ---- Figür / ekran görüntüsü çerçevesi ----
+     Düz (flat) dil: gölge ve hover YOK, köşe keskin. Ekran görüntüsü metnin
+     içine oturur, üstünde yüzmez. Ayrışmayı gölge yerine gri paspartu sağlar:
+     görselin çevresindeki --sc-figure-pad kadar boşlukta --sc-figure-bg görünür.
+     Sitede 647 görsel var; gölge verildiğinde her sayfa yüzen kutu yığınına
+     dönüşüyordu. */
+  --sc-figure-bg: #f4f4f5;          /* paspartu — görsel çevresinde görünen gri */
+  --sc-figure-border: rgba(0, 0, 0, 0.11);
+  --sc-figure-pad: 6px;             /* paspartu kalınlığı */
+  --sc-figure-radius: 0;            /* keskin köşe (kart radius'undan bağımsız) */
 
   /* ---- Biçim ---- */
   --sc-radius: 8px;
@@ -70,10 +75,10 @@
   --sc-code-fg: #e4e4e7;
   --sc-code-border: rgba(255, 255, 255, 0.08);
 
-  --sc-figure-bg: #101012;
-  --sc-figure-border: rgba(255, 255, 255, 0.10);
-  --sc-figure-shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 8px 24px rgba(0, 0, 0, 0.5);
-  --sc-figure-shadow-hover: 0 1px 2px rgba(0, 0, 0, 0.5), 0 16px 40px rgba(0, 0, 0, 0.6);
+  /* Koyu temada paspartu zeminden AÇIK olmalı: ekran görüntüleri beyaz
+     ağırlıklı, koyu bir çerçeve onları daha da keser. */
+  --sc-figure-bg: #1c1c1f;
+  --sc-figure-border: rgba(255, 255, 255, 0.13);
 }
 
 /* ------------------------------------------------------------
