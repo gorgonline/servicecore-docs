@@ -73,7 +73,8 @@ export default async function Page(props: PageProps<'/docs/[[...slug]]'>) {
         <EditOnGitHub href={githubUrl} />
       </div>
       {reviewedLabel && (
-        <p className="mt-3 text-xs text-fd-muted-foreground">
+        // Tarih "veri" katmanı: mono + geniş harf aralığı, anlatıdan ayrışır.
+        <p className="sc-microlabel mt-3">
           Son doğrulama: <time dateTime={page.data.reviewed}>{reviewedLabel}</time>
         </p>
       )}

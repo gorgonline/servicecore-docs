@@ -23,21 +23,24 @@
   min-width: 0;
 }
 
-/* Metin seviyesindeki her şey dar sütunda. */
-#nd-page .prose > :where(p, ul, ol, blockquote, h2, h3, h4, h5, h6),
-#nd-page .prose > :where(div:not(:has(img, iframe, table, [data-card]))) {
+/* VARSAYILAN: .prose'un her doğrudan çocuğu DAR sütunda.
+   Kural bilinçli olarak "her şey dar, istisnalar geniş" biçiminde kurgulandı.
+   Tersi denenmişti (`div:not(:has(img))` gibi) ve sızdırıyordu: içinde görsel
+   olan bir accordion dar kuralın dışında kalıp komşularından geniş çıkıyordu,
+   sayfa bozuk görünüyordu. */
+#nd-page .prose > * {
   max-width: var(--sc-prose-width);
   margin-inline-end: auto;
 }
 
-/* ...ama markdown görseli/videoyu <p> içine sarar; o paragraf metin değil
-   FİGÜR taşıyor, dar sütunda kalırsa ekran görüntüleri okunmaz olur.
-   Geniş sütuna geri açılır. */
+/* İSTİSNA — yalnızca bunlar geniş sütuna açılır. Markdown görseli/videoyu
+   <p> içine sardığı için o paragraflar da buraya dahil. */
+#nd-page .prose > :where(figure, table, pre),
 #nd-page .prose > p:has(> img),
 #nd-page .prose > p:has(> a > img),
 #nd-page .prose > p:has(> iframe),
-#nd-page .prose > figure,
-#nd-page .prose > table {
+#nd-page .prose > div:has(> pre),
+#nd-page .prose > div.shiki {
   max-width: var(--sc-content-width);
 }
 
@@ -219,7 +222,18 @@
 }
 #nd-page .prose [data-card='true'] {
   border-radius: var(--sc-radius);
-  transition: border-color 0.2s ease, background-color 0.2s ease;
+  border: 1px solid var(--sc-border);
+  background: var(--sc-surface);
+  padding: var(--sc-s3) var(--sc-s4);
+  transition: border-color var(--sc-dur-fast) var(--sc-ease),
+    background-color var(--sc-dur-fast) var(--sc-ease);
+}
+/* Kart başlığı sıkı, açıklaması mono sayaç — artifact'taki .count dili */
+#nd-page .prose [data-card='true'] > :where(h2, h3, h4, p:first-child, span:first-child) {
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: -0.006em;
+  margin: 0;
 }
 /* Kart GERÇEK bir bağlantı olduğu için hover geri bildirimi kalıyor — ama
    gölgeyle değil, kenarlık ve zeminle. (Önceki kural hem gölge veriyordu hem
@@ -228,11 +242,149 @@
   border-color: color-mix(in srgb, var(--sc-brand) 45%, var(--sc-border));
   background-color: var(--sc-surface-2);
 }
-/* kart içi tipografi biraz daha sıkı */
+/* Kartın alt satırı ("44 sayfa") mono ve soluk — veri katmanı */
 #nd-page .prose [data-card='true'] p {
-  margin: 0.25rem 0 0;
-  font-size: 0.875rem;
+  margin: var(--sc-s1) 0 0;
+  font-family: var(--sc-font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.06em;
   line-height: 1.5;
+  color: var(--sc-muted-fg);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ============================================================
+   ACCORDION — çukur başlık şeritli kenarlıklı kutu
+   ------------------------------------------------------------
+   Artifact'taki .spec kutusunun aynısı: başlık şeridi sunken tonda,
+   gövde raised. İşaret ok değil, mono + / − .
+   ============================================================ */
+#nd-page .prose div:has(> div > h3[data-accordion-value]) {
+  border: 1px solid var(--sc-border);
+  border-radius: var(--sc-radius);
+  background: var(--sc-surface);
+  overflow: hidden;
+}
+#nd-page .prose h3[data-accordion-value] {
+  margin: 0;
+  font-size: 0.90625rem;
+  font-weight: 600;
+  letter-spacing: -0.006em;
+  background: var(--sc-surface-2);
+  border: 0;
+  padding: 0;
+}
+#nd-page .prose h3[data-accordion-value] button {
+  gap: var(--sc-s2);
+  padding: var(--sc-s3) var(--sc-s4);
+  width: 100%;
+}
+/* fumadocs'un chevron'unu mono +/− ile değiştir */
+#nd-page .prose h3[data-accordion-value] svg {
+  display: none;
+}
+#nd-page .prose h3[data-accordion-value] button::before {
+  content: '−';
+  font-family: var(--sc-font-mono);
+  font-weight: 400;
+  color: var(--sc-muted-fg);
+  flex: none;
+}
+#nd-page .prose h3[data-accordion-value][data-closed] button::before {
+  content: '+';
+}
+
+/* ============================================================
+   MONO MİKRO-ETİKET — tasarımın sesi
+   ------------------------------------------------------------
+   Geist Mono yalnızca kod için değil; yön gösteren küçük metinlerin
+   tamamını o taşır. Büyük harf + geniş harf aralığı + soluk mürekkep
+   kombinasyonu, sayfadaki "veri" katmanını "anlatı" katmanından ayırır.
+   Uygulandığı yerler: breadcrumb, TOC başlığı, kenar çubuğu bölüm adı,
+   resim altı, tarih, sayaç.
+   ============================================================ */
+:where(#nd-page, #nd-toc, #nd-sidebar) .sc-microlabel,
+#nd-page > div:first-child,
+#toc-title,
+#nd-page .prose figcaption {
+  font-family: var(--sc-font-mono);
+  font-size: var(--sc-text-label);
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--sc-muted-fg);
+  font-weight: 400;
+}
+
+/* Breadcrumb — sayfanın "eyebrow"u */
+#nd-page > div:first-child {
+  gap: var(--sc-s2);
+  margin-bottom: var(--sc-s2);
+}
+#nd-page > div:first-child a {
+  color: var(--sc-muted-fg);
+  text-decoration: none;
+  transition: color var(--sc-dur-fast) var(--sc-ease);
+}
+#nd-page > div:first-child a:hover {
+  color: var(--sc-fg);
+  opacity: 1;
+}
+#nd-page > div:first-child svg {
+  width: 0.75rem;
+  height: 0.75rem;
+  opacity: 0.45;
+}
+
+/* TOC başlığı — ikon yerine mono etiket */
+#toc-title {
+  gap: var(--sc-s2);
+  padding-bottom: var(--sc-s2);
+  border-bottom: 1px solid var(--sc-border);
+  margin-bottom: var(--sc-s3);
+}
+#toc-title svg {
+  width: 0.8125rem;
+  height: 0.8125rem;
+  opacity: 0.5;
+}
+#nd-toc a {
+  font-size: 0.8125rem;
+  line-height: 1.5;
+}
+
+/* Kenar çubuğu — bölüm adları mono, alt öğeler sans */
+#nd-sidebar {
+  font-size: 0.8125rem;
+}
+#nd-sidebar a[data-active='true'] {
+  font-weight: 500;
+}
+
+/* Rakamlar her yerde hizalı */
+#nd-page,
+#nd-toc,
+#nd-sidebar {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Klavye odağı — artifact'ta her etkileşimli öğede vardı */
+#nd-page a:focus-visible,
+#nd-page button:focus-visible,
+#nd-toc a:focus-visible,
+#nd-sidebar a:focus-visible,
+#nd-sidebar button:focus-visible {
+  outline: 2px solid var(--sc-brand);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #nd-page *,
+  #nd-sidebar *,
+  #nd-toc * {
+    transition: none !important;
+    animation: none !important;
+  }
 }
 
 /* ============================================================
