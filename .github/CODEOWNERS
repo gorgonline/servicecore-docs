@@ -8,8 +8,11 @@
 # NOT: Kod sahibi olabilmek için kişinin/ekibin depoda YAZMA yetkisi olmalı;
 # yetkisi olmayan ya da var olmayan bir sahip sessizce yok sayılır.
 
-# Varsayılan sahip — daha özel bir kural eşleşmezse bu geçerlidir
-*                                     @gorgonline
+# Varsayılan sahipler — daha özel bir kural eşleşmezse bu geçerlidir.
+# İkisine birden inceleme isteği düşer; ONAY İÇİN BİRİ YETERLİ. Böylece
+# biri izinde/meşgulken iş durmaz.
+# @ibrahimoz takım lideri.
+*                                     @gorgonline @ibrahimoz
 
 # Bölüm bazlı sahiplik (ekipler tanımlanınca aktifleştirin; bunlar
 # yukarıdaki varsayılanı EZER — CODEOWNERS'ta son eşleşen kural kazanır)
