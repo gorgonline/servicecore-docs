@@ -15,13 +15,18 @@ sayfa toplantıda takip edeceğimiz sıra; sonrasında da başvuru kaynağı ola
 
 ## Gündem — 45 dakika
 
-| Saat | Konu | Süre |
-|---|---|---|
-| 17:30 | Neden değişti | 5 dk |
-| 17:35 | **Herkes kurulumu yapar — canlı** | 15 dk |
-| 17:50 | Birlikte bir sayfa güncelleyelim | 10 dk |
-| 18:00 | Kurallar ve sık hatalar | 8 dk |
-| 18:08 | Bölüm sahipliği dağıtımı | 7 dk |
+| Saat | Konu | Bölüm | Süre |
+|---|---|---|---|
+| 17:30 | Neden değişti, sistem nasıl çalışıyor | 1–2 | 10 dk |
+| 17:40 | **Herkes kurulumu yapar — canlı** | 3 | 15 dk |
+| 17:55 | Birlikte bir sayfa güncelleyelim | 4 | 10 dk |
+| 18:05 | Kurallar ve sık hatalar | 5–6 | 5 dk |
+| 18:10 | Bölüm sahipliği dağıtımı | 7 | 5 dk |
+
+> Sunan için not: 17:55'teki blok toplantının en kıymetli kısmı. Kendi
+> ekranınızda baştan sona bir katkı verin — asistana söyleyin, PR açılsın,
+> önizlemeyi gösterin, birleştirin, siteyi yenileyip değişikliği gösterin.
+> Akışı anlatmak yerine göstermek çok daha iyi tutuyor.
 
 ---
 
