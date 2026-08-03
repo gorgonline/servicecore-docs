@@ -211,6 +211,12 @@ Daveti kabul etmemişsinizdir ya da token'da bu depo seçili değildir.
 **Token üretirken depo listede yok**
 Aynı sebep: davet kabul edilmemiş.
 
+**Onaylama nasıl yapılır**
+Öneri linki → üstteki `Files changed` sekmesi → sağ üstteki yeşil **Submit review**
+düğmesi → açılan panelde **Approve** → panelin altındaki **Submit review**.
+İki tane "Submit review" var: biri paneli açar, diğeri onaylar. Approve
+seçilmezse sadece yorum olur, kilit açılmaz.
+
 **Otomatik kontrol kırmızı yandı**
 Genelde MDX sözdizimi. Hata mesajını asistanınıza verin, düzeltir. Yerelde
 `npm run check:mdx` aynı işi yapar.
