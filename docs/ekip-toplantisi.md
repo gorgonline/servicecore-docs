@@ -41,7 +41,84 @@ gönderiyor.
 
 ---
 
-## 2. Kurulum — toplantıda hep birlikte
+## 2. Sistem nasıl çalışıyor
+
+Kuruluma geçmeden önce üç kavramı netleştirelim. Bunları anlarsanız gerisi kolay.
+
+### Dokümantasyon nerede duruyor
+
+Bir veritabanında değil — **metin dosyaları** hâlinde GitHub'da. Bu sayede her
+değişikliğin kim tarafından, ne zaman, neden yapıldığı kayıtlı ve her şey geri
+alınabilir.
+
+Sayfa adresleri dosya yollarıyla birebir aynı:
+
+```
+docs/yonetici/gelismis   →   content/docs/yonetici/gelismis.mdx
+```
+
+### Token nedir, neden gerekiyor
+
+GitHub hesabınıza şifrenizle siz girersiniz. **AI asistanınız sizin şifrenizi
+kullanamaz** — kullanmamalı da. Onun yerine sınırlı bir anahtar verirsiniz: token.
+
+Otel kart anahtarı gibi düşünün. Ev anahtarınızı vermezsiniz; resepsiyon size sadece
+**tek bir odayı**, **belli bir süre** açan bir kart verir. Kaybolursa kartı iptal
+eder, yenisini alırsınız.
+
+| Ayar | Ne anlama geliyor |
+|---|---|
+| Only select repositories → `servicecore-docs` | Bu anahtar **sadece docs deposunu** açar, diğer repolarınıza dokunamaz |
+| Contents: Read and write | Dosyaları okuyabilir ve değiştirebilir |
+| Pull requests: Read and write | Değişiklik önerisi açabilir |
+| 90 gün | Süresi dolunca kendiliğinden geçersiz olur |
+
+Token sızsa bile kaybınız şu: biri docs deposuna **öneri** açabilir. Hepsi bu — ve
+tek tıkla iptal edilir. Şifreniz asla ortalıkta dolaşmaz.
+
+### MCP nedir
+
+AI asistanınız kendi başına GitHub'da işlem yapamaz. **MCP**, asistanların dış
+sistemlere bağlanması için ortak bir standart — USB gibi, herkesin uyduğu bir fiş
+şekli. GitHub bu fişe uyan resmi bir sunucu yayınlıyor ve biz onu kullanıyoruz;
+**kendi sunucumuzu kurmuyoruz, bakımını yapmıyoruz.**
+
+Kurulumdaki `claude mcp add ...` komutu sadece şunu diyor: *asistanım, GitHub'a şu
+anahtarla bağlan.*
+
+### Uçtan uca akış
+
+Diyelim olay modülüne toplu kapatma özelliği eklendi. Şöyle diyorsunuz:
+
+> "Teknisyen kılavuzundaki olaylar sayfasına toplu kapatma özelliğini anlat, PR aç."
+
+Sonra sırasıyla:
+
+1. **Asistan sayfayı bulur ve düzenler.** Token'ıyla depoya bağlanır, ilgili `.mdx`
+   dosyasını açar, metni yazar.
+
+2. **Doğrudan yayına vermez — öneri açar.** Buna *pull request* (PR) denir; "şunu
+   şöyle değiştirmeyi öneriyorum" demek. Canlı site bu sırada hiç etkilenmez.
+
+3. **Robot kontrol eder (CI).** Bozuk yazım var mı, verilen görsel gerçekten duruyor
+   mu, iç bağlantı kırık mı, yeni sayfa menüye eklenmiş mi, `reviewed` tarihi geçerli
+   mi. Hata varsa kırmızı yanar ve öneri birleştirilemez.
+
+4. **Önizleme adresi üretilir.** Vercel o öneriye özel geçici bir site kopyası
+   yayınlar. Değişikliği canlıya çıkmadan gerçek sayfada görürsünüz.
+
+5. **İnsan onaylar.** En az bir onay şart ve **kendi önerinizi kendiniz
+   onaylayamazsınız** — dört göz kuralı.
+
+6. **Birleşince yayınlanır.** Öneri `main` dalına geçer; `main` = canlı olan. Vercel
+   siteyi birkaç dakika içinde yeniden yayınlar.
+
+Zinciri tutan üç şey: **kimse doğrudan canlıya yazamaz**, **robot biçimi kontrol
+eder**, **insan doğruluğu kontrol eder.**
+
+---
+
+## 3. Kurulum — toplantıda hep birlikte
 
 Bir kez yapılır, sonra sadece konuşarak katkı verirsiniz. Yaklaşık 5 dakika.
 
@@ -81,7 +158,7 @@ Cursor ve Claude Desktop ayarları için [mcp-kurulumu.md](mcp-kurulumu.md).
 
 ---
 
-## 3. Katkı nasıl veriliyor
+## 4. Katkı nasıl veriliyor
 
 Dosya açmıyorsunuz, git komutu yazmıyorsunuz. Sadece ne değiştiğini söylüyorsunuz.
 
@@ -107,7 +184,7 @@ değilsiniz.
 
 ---
 
-## 4. Kurallar
+## 5. Kurallar
 
 | | Kural | Neden |
 |---|---|---|
@@ -121,7 +198,7 @@ değilsiniz.
 
 ---
 
-## 5. Sık karşılaşılanlar
+## 6. Sık karşılaşılanlar
 
 **"Depoya erişemiyorum" / 403**
 Daveti kabul etmemişsinizdir ya da token'da bu depo seçili değildir.
@@ -142,7 +219,7 @@ Yeni token üretip bağlantıyı güncelleyin.
 
 ---
 
-## 6. Bölüm sahipliği — toplantıda dolduralım
+## 7. Bölüm sahipliği — toplantıda dolduralım
 
 Her bölümün bir sahibi olmalı. Sahip, o bölüme gelen PR'a otomatik inceleyici atanır
 ve haftalık çürüme raporunda eskiyen sayfalar ona düşer. Boş kalırsa hepsi tek kişiye
@@ -164,7 +241,7 @@ alanına yazılır.
 
 ---
 
-## 7. Toplantıda mutlaka söylenmesi gerekenler
+## 8. Toplantıda mutlaka söylenmesi gerekenler
 
 **`docs.servicecore.app` henüz ESKİ siteyi gösteriyor.** Alan adı yeni siteye
 taşınmadı. Müşteriye link atarken şimdilik `servicecore-docs.vercel.app` kullanın.
