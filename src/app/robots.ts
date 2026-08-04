@@ -5,7 +5,10 @@ export const dynamic = 'force-static';
 
 export default function robots(): MetadataRoute.Robots {
   return {
-    rules: { userAgent: '*', allow: '/' },
+    // /ekip/ altı iç kullanım (toplantı sunumu). Depo public olduğu için
+    // içerik zaten erişilebilir; burada yalnızca arama motorlarının
+    // dizinlemesini engelliyoruz — müşteri aramasında çıkması anlamsız olur.
+    rules: { userAgent: '*', allow: '/', disallow: '/ekip/' },
     sitemap: `${site.url}/sitemap.xml`,
   };
 }

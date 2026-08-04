@@ -1,0 +1,475 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Docs — Ekip Toplantısı · 4 Ağustos</title>
+<style>
+  :root{
+    --paper:#fafaf8; --raised:#fff; --sunken:#f2f1ed; --rule:#edebe5; --rule2:#ddd9cf;
+    --ink:#1a1a1a; --soft:#404040; --muted:#6b6862; --faint:#8f8b83;
+    --accent:#0057c2; --good:#1f7a4d; --warn:#b5811d; --bad:#9a2a2a;
+    --sans:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    --mono:ui-monospace,"SF Mono",SFMono-Regular,Menlo,Consolas,monospace;
+  }
+  @media (prefers-color-scheme:dark){:root{
+    --paper:#0f0e0c; --raised:#171613; --sunken:#201e1a; --rule:#2a2823; --rule2:#3a362e;
+    --ink:#eceae5; --soft:#c9c5bc; --muted:#a8a49c; --faint:#837f77;
+    --accent:#78b0fa; --good:#5cc48d; --warn:#d9a545; --bad:#e07a7a;}}
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--paper);color:var(--ink);font-family:var(--sans);
+       -webkit-font-smoothing:antialiased;overflow-x:hidden}
+
+  .deck{height:100vh;overflow-y:scroll;scroll-snap-type:y mandatory}
+  .s{min-height:100vh;scroll-snap-align:start;scroll-snap-stop:always;
+     display:flex;flex-direction:column;justify-content:center;
+     padding:6vh 7vw;gap:28px;position:relative}
+
+  .eyebrow{font-family:var(--mono);font-size:clamp(11px,1vw,14px);letter-spacing:.14em;
+           text-transform:uppercase;color:var(--faint)}
+  h1{font-size:clamp(38px,5.4vw,76px);font-weight:600;letter-spacing:-.028em;
+     line-height:1.05;text-wrap:balance;max-width:20ch}
+  h2{font-size:clamp(30px,3.6vw,50px);font-weight:600;letter-spacing:-.022em;
+     line-height:1.12;text-wrap:balance;max-width:22ch}
+  .lede{font-size:clamp(18px,1.9vw,27px);line-height:1.5;color:var(--soft);max-width:30ch}
+  .big{font-size:clamp(22px,2.3vw,34px);line-height:1.45;max-width:26ch;font-weight:500}
+  .sub{font-size:clamp(15px,1.35vw,20px);color:var(--muted);line-height:1.55;max-width:44ch}
+  strong{font-weight:600;color:var(--ink)}
+  em{font-style:normal;color:var(--accent);font-weight:600}
+  code{font-family:var(--mono);font-size:.88em;background:var(--sunken);
+       border:1px solid var(--rule);border-radius:4px;padding:.12em .38em}
+
+  /* sayaç + ilerleme */
+  .num{position:absolute;top:4vh;right:7vw;font-family:var(--mono);
+       font-size:12px;color:var(--faint);font-variant-numeric:tabular-nums}
+  .bar{position:fixed;left:0;top:0;height:2px;background:var(--accent);width:0;z-index:9}
+
+  /* listeler */
+  ul{list-style:none;display:flex;flex-direction:column;gap:14px;max-width:34ch}
+  /* DİKKAT: li bir flex kabı, dolayısıyla İÇİNDEKİ HER ÖĞE ayrı bir flex
+     öğesi olur — <strong> de dahil. Metin doğrudan yazılırsa "Files changed"
+     gibi kalın ifadeler ortadan bölünür ve aralarına gap girer.
+     Bu yüzden numaradan sonraki metin DAİMA tek bir <span> içinde olmalı. */
+  li{font-size:clamp(17px,1.7vw,25px);line-height:1.4;display:flex;gap:14px;align-items:baseline}
+  li .b{font-family:var(--mono);font-size:.62em;color:var(--faint);flex:none}
+  li > span:not(.b){flex:1;min-width:0}
+
+  /* tablo */
+  table{border-collapse:collapse;font-size:clamp(14px,1.35vw,20px);max-width:100%}
+  td,th{padding:11px 18px;border-bottom:1px solid var(--rule);text-align:start;vertical-align:baseline}
+  th{font-family:var(--mono);font-size:.62em;letter-spacing:.09em;text-transform:uppercase;
+     color:var(--faint);font-weight:400;background:var(--sunken)}
+  tr:last-child td{border-bottom:0}
+  .tw{border:1px solid var(--rule);border-radius:4px;overflow:hidden;background:var(--raised);
+      max-width:100%;overflow-x:auto}
+
+  /* adım / akış kutuları */
+  .row{display:flex;gap:14px;flex-wrap:wrap}
+  .box{border:1px solid var(--rule);border-radius:4px;background:var(--raised);
+       padding:18px 22px;font-size:clamp(14px,1.3vw,19px);line-height:1.4}
+  .box .t{font-weight:600;margin-bottom:4px}
+  .box .d{color:var(--muted);font-size:.86em}
+  .arrow{color:var(--faint);font-family:var(--mono);align-self:center;font-size:20px}
+
+  .cmd{font-family:var(--mono);font-size:clamp(13px,1.15vw,18px);line-height:1.6;
+       background:var(--sunken);border:1px solid var(--rule);border-radius:4px;
+       padding:18px 22px;white-space:pre;overflow-x:auto;color:var(--soft);max-width:100%}
+
+  .rail{border-inline-start:4px solid var(--accent);padding-inline-start:22px;
+        max-width:34ch;font-size:clamp(17px,1.7vw,25px);line-height:1.45}
+  .rail.warn{border-color:var(--warn)} .rail.bad{border-color:var(--bad)}
+  .rail.good{border-color:var(--good)}
+
+  .kicker{font-size:clamp(15px,1.4vw,21px);color:var(--muted);max-width:40ch}
+  .center{align-items:center;text-align:center}
+  .center ul,.center .lede,.center .big{margin-inline:auto}
+
+  .hint{position:fixed;bottom:16px;left:50%;transform:translateX(-50%);
+        font-family:var(--mono);font-size:11px;color:var(--faint);
+        letter-spacing:.08em;opacity:.65;z-index:9}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  @media (max-width:700px){.s{padding:7vh 8vw;gap:20px}}
+</style>
+</head>
+<body>
+<div class="bar" id="bar"></div>
+<div class="deck" id="deck">
+
+  <!-- 1 -->
+  <section class="s center">
+    <div class="eyebrow">Salı 4 Ağustos 2026 · 17:30</div>
+    <h1>Dokümantasyona nasıl katkı vereceğiz</h1>
+    <p class="lede">Docs yenilendi. Artık işi biten kişi kendi AI asistanına söyleyerek güncelliyor.</p>
+  </section>
+
+  <!-- 2 -->
+  <section class="s">
+    <div class="eyebrow">Gündem</div>
+    <h2>45 dakika</h2>
+    <div class="tw" style="max-width:800px">
+      <table>
+        <tr><td style="font-family:var(--mono);color:var(--faint)">17:30</td><td>Neden değişti, sistem nasıl çalışıyor</td></tr>
+        <tr><td style="font-family:var(--mono);color:var(--faint)">17:40</td><td><strong>Herkes kurulumu yapar — canlı</strong></td></tr>
+        <tr><td style="font-family:var(--mono);color:var(--faint)">17:55</td><td>Gerçek örnek + onay nasıl yapılır</td></tr>
+        <tr><td style="font-family:var(--mono);color:var(--faint)">18:03</td><td><strong>Birlikte bir sayfa güncelleyelim</strong></td></tr>
+        <tr><td style="font-family:var(--mono);color:var(--faint)">18:12</td><td>Kurallar, sık hatalar, bölüm sahipliği</td></tr>
+      </table>
+    </div>
+    <p class="kicker">Bilgisayarınız yanınızda olsun — kurulumu birlikte yapacağız.</p>
+  </section>
+
+  <!-- 3 -->
+  <section class="s">
+    <div class="eyebrow">01 · Neden</div>
+    <h2>Eski docs tek kişiye bağlıydı ve güncellenmiyordu</h2>
+    <div class="tw" style="max-width:900px">
+      <table>
+        <thead><tr><th>Konu</th><th>Önce</th><th>Şimdi</th></tr></thead>
+        <tbody>
+          <tr><td>Güncelleme</td><td>Tek kişi, elle</td><td>Herkes, AI ile</td></tr>
+          <tr><td>Hata kontrolü</td><td>Yok</td><td>Otomatik</td></tr>
+          <tr><td>Yayına çıkış</td><td>Elle</td><td>Onaydan sonra otomatik</td></tr>
+          <tr><td>Güncellik</td><td>Bilinmiyordu</td><td>Her sayfada tarih</td></tr>
+          <tr><td>Geri alma</td><td>Zor</td><td>Tek tık</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 4 -->
+  <section class="s">
+    <div class="eyebrow">02 · Sistem</div>
+    <h2>Dokümantasyon nerede duruyor</h2>
+    <p class="big">Veritabanında değil — <strong>metin dosyaları</strong> hâlinde GitHub'da.</p>
+    <p class="sub">Her değişiklik kim, ne zaman, neden — kayıtlı. Her şey geri alınabilir.</p>
+    <div class="cmd">docs/yonetici/gelismis   →   content/docs/yonetici/gelismis.mdx</div>
+    <p class="kicker">Sayfa adresi ile dosya yolu birebir aynı.</p>
+  </section>
+
+  <!-- 5 -->
+  <section class="s">
+    <div class="eyebrow">02 · Sistem</div>
+    <h2>Token neden gerekiyor</h2>
+    <p class="big">Çünkü <strong>GitHub başka türlü izin vermiyor.</strong></p>
+    <div class="rail">Siz tarayıcıdan şifreyle girersiniz. AI bir <em>program</em> —
+      makineler için ayrılmış kapıdan girer ve o kapı şifre kabul etmez, token ister.</div>
+    <p class="kicker">Tercih değil, zorunluluk.</p>
+  </section>
+
+  <!-- 6 -->
+  <section class="s">
+    <div class="eyebrow">02 · Sistem</div>
+    <h2>Kimin ne yaptığını token'la takip ediyoruz</h2>
+    <p class="big">Token kişiye bağlı. Her değişikliğin altında <strong>o kişinin adı</strong> kalıyor.</p>
+    <ul style="max-width:40ch">
+      <li><span class="b">01</span><span>Sayfa yanlışsa kime soracağınız belli</span></li>
+      <li><span class="b">02</span><span>Biri ayrılınca sadece onun erişimi kapanır</span></li>
+      <li><span class="b">03</span><span>Kim ne kadar katkı verdi görünür</span></li>
+    </ul>
+    <div class="rail bad">Ortak tek hesap kullansaydık bunların hiçbiri olmazdı.</div>
+  </section>
+
+  <!-- 7 -->
+  <section class="s">
+    <div class="eyebrow">02 · Sistem</div>
+    <h2>Anahtar neyi açıyor</h2>
+    <div class="tw" style="max-width:900px">
+      <table>
+        <tr><td><code>servicecore-docs</code></td><td>Sadece bu depo. Diğerlerine dokunamaz</td></tr>
+        <tr><td>Contents</td><td>Dosyaları okur ve değiştirir</td></tr>
+        <tr><td>Pull requests</td><td>Değişiklik önerisi açar</td></tr>
+        <tr><td>90 gün</td><td>Süresi dolunca kendiliğinden ölür</td></tr>
+      </table>
+    </div>
+    <div class="rail good">Sızarsa ne olur? Biri docs deposuna <em>öneri</em> açabilir.
+      Hepsi bu — ve tek tıkla iptal edilir. Şifreniz hiç ortalıkta dolaşmaz.</div>
+  </section>
+
+  <!-- 7 -->
+  <section class="s">
+    <div class="eyebrow">02 · Sistem</div>
+    <h2>MCP nedir</h2>
+    <p class="big">AI'ın dış sistemlere bağlanma standardı. <strong>USB gibi</strong> — herkesin uyduğu bir fiş şekli.</p>
+    <div class="rail">GitHub bu fişe uyan <em>resmi</em> sunucuyu yayınlıyor.
+      Kendi sunucumuzu kurmuyoruz, bakımını yapmıyoruz.</div>
+  </section>
+
+  <!-- 8 -->
+  <section class="s">
+    <div class="eyebrow">02 · Sistem</div>
+    <h2>Uçtan uca ne oluyor</h2>
+    <div class="row">
+      <div class="box"><div class="t">1 · Siz söylersiniz</div><div class="d">"Şu sayfaya şunu ekle"</div></div>
+      <span class="arrow">→</span>
+      <div class="box"><div class="t">2 · AI düzenler</div><div class="d">Sayfayı bulur, yazar</div></div>
+      <span class="arrow">→</span>
+      <div class="box"><div class="t">3 · Öneri açılır</div><div class="d">Canlı site etkilenmez</div></div>
+    </div>
+    <div class="row">
+      <div class="box"><div class="t">4 · Robot kontrol eder</div><div class="d">Kırık bağlantı, eksik görsel</div></div>
+      <span class="arrow">→</span>
+      <div class="box"><div class="t">5 · Önizleme</div><div class="d">Canlıya çıkmadan görürsünüz</div></div>
+      <span class="arrow">→</span>
+      <div class="box"><div class="t">6 · Onay → yayın</div><div class="d">Birkaç dakika</div></div>
+    </div>
+  </section>
+
+  <!-- 9 -->
+  <section class="s center">
+    <div class="eyebrow">02 · Sistem</div>
+    <h2>Zinciri tutan üç şey</h2>
+    <ul style="max-width:40ch">
+      <li><span class="b">01</span><span>Kimse doğrudan canlıya yazamaz</span></li>
+      <li><span class="b">02</span><span>Robot biçimi kontrol eder</span></li>
+      <li><span class="b">03</span><span>İnsan doğruluğu kontrol eder</span></li>
+    </ul>
+  </section>
+
+  <!-- 10 -->
+  <section class="s center">
+    <div class="eyebrow">03 · Kurulum</div>
+    <h1>Şimdi hep birlikte</h1>
+    <p class="lede">Üç adım, yaklaşık 5 dakika. Bir kez yapılır.</p>
+  </section>
+
+  <!-- 11 -->
+  <section class="s">
+    <div class="eyebrow">03 · Kurulum · Adım 1</div>
+    <h2>GitHub davetini kabul edin</h2>
+    <div class="cmd">github.com/gorgonline/servicecore-docs/invitations</div>
+    <div class="rail bad">Kabul etmeden <em>hiçbir şey</em> çalışmaz.
+      En sık atlanan adım budur.</div>
+  </section>
+
+  <!-- 12 -->
+  <section class="s">
+    <div class="eyebrow">03 · Kurulum · Adım 2</div>
+    <h2>Token üretin</h2>
+    <p class="sub">Settings → Developer settings → Personal access tokens →
+      <strong>Fine-grained tokens</strong> → Generate new token</p>
+    <div class="cmd">Repository access : Only select repositories → servicecore-docs
+İzinler          : Contents        Read and write
+                   Pull requests   Read and write
+Süre             : 90 gün</div>
+    <p class="kicker">Depo listede çıkmıyorsa 1. adımı yapmamışsınızdır.</p>
+  </section>
+
+  <!-- 13 -->
+  <section class="s">
+    <div class="eyebrow">03 · Kurulum · Adım 3</div>
+    <h2>AI asistanınıza bağlayın</h2>
+    <div class="cmd">claude mcp add --transport http github \
+  https://api.githubcopilot.com/mcp/ \
+  --header "Authorization: Bearer TOKENINIZ"</div>
+    <div class="rail bad"><strong>Köşeli parantez KOYMAYIN.</strong>
+      <code>Bearer &lt;github_pat_…&gt;</code> yazarsanız bağlantı
+      <em>HTTP 400</em> ile düşer. Sadece token'ın kendisi.</div>
+    <div class="rail warn">Token'ı kimseyle paylaşmayın. Herkes kendi token'ını üretir.</div>
+  </section>
+
+  <!-- 14 -->
+  <section class="s">
+    <div class="eyebrow">04 · Katkı</div>
+    <h2>Dosya açmıyorsunuz, komut yazmıyorsunuz</h2>
+    <p class="big">Sadece <strong>ne değiştiğini</strong> söylüyorsunuz.</p>
+    <div class="rail good">Teknisyen kılavuzundaki olaylar sayfasına toplu kapatma
+      özelliğini anlat, öneri aç.</div>
+    <p class="kicker">İlk istekte depo adını söyleyin: <code>gorgonline/servicecore-docs</code></p>
+  </section>
+
+  <!-- gerçek örnek -->
+  <section class="s">
+    <div class="eyebrow">04 · Gerçek örnek</div>
+    <h2>Bunu dün gerçekten yaptık</h2>
+    <div class="rail good">Arama kutusunda <em>Ctrl+K</em> kısayolu çalışıyordu
+      ama hiçbir sayfada yazmıyordu. Kimse bilmiyordu.</div>
+    <p class="big">Tek cümle eklendi. Toplam değişiklik: <strong>1 dosya, 2 satır.</strong></p>
+  </section>
+
+  <section class="s">
+    <div class="eyebrow">04 · Gerçek örnek</div>
+    <h2>Ben ne yaptım</h2>
+    <div class="rail">Ana sayfaya, aramanın klavyeden de açılabildiğini yaz. Öneri aç.</div>
+    <p class="big">Hepsi bu. <strong>Tek cümle.</strong></p>
+    <p class="kicker">Dosya adı vermedim, biçim söylemedim, git komutu yazmadım.</p>
+  </section>
+
+  <section class="s">
+    <div class="eyebrow">04 · Gerçek örnek</div>
+    <h2>AI ne yaptı</h2>
+    <ul style="max-width:44ch">
+      <li><span class="b">01</span><span>Sayfayı buldu — <code>/docs</code> → <code>index.mdx</code></span></li>
+      <li><span class="b">02</span><span>Ayrı bir kopya açtı, canlıya dokunmadı</span></li>
+      <li><span class="b">03</span><span>Cümleyi yazdı, <code>Ctrl+K</code>'yı kod biçiminde gösterdi</span></li>
+      <li><span class="b">04</span><span>Tarihi bugüne çekti</span></li>
+      <li><span class="b">05</span><span>Öneriyi açtı</span></li>
+    </ul>
+    <p class="kicker">Biçim kurallarını depodaki <code>CLAUDE.md</code>'den kendisi okudu.</p>
+  </section>
+
+  <!-- onay mekaniği -->
+  <section class="s">
+    <div class="eyebrow">04 · Onay</div>
+    <h2>Öneri açıldı. Şimdi ne görüyoruz</h2>
+    <div class="row">
+      <div class="box" style="border-inline-start:3px solid var(--good)">
+        <div class="t">✓ Robot geçti</div><div class="d">3 kontrol, 53 saniye</div></div>
+      <div class="box" style="border-inline-start:3px solid var(--good)">
+        <div class="t">✓ Önizleme hazır</div><div class="d">Geçici site adresi</div></div>
+      <div class="box" style="border-inline-start:3px solid var(--bad)">
+        <div class="t">✗ Onay bekliyor</div><div class="d">Kilitli</div></div>
+    </div>
+    <p class="big">Tek eksik: <strong>bir insanın bakması.</strong></p>
+  </section>
+
+  <section class="s">
+    <div class="eyebrow">04 · Onay</div>
+    <h2>Onaylayan kişi ne yapar</h2>
+    <ul style="max-width:48ch">
+      <li><span class="b">01</span><span>Öneri linkini açar</span></li>
+      <li><span class="b">02</span><span>Üstteki <strong>Files changed</strong> sekmesine tıklar</span></li>
+      <li><span class="b">03</span><span>Sağ üstteki yeşil <strong>Submit review</strong> düğmesine basar</span></li>
+      <li><span class="b">04</span><span>Açılan panelde <strong>Approve</strong> seçer</span></li>
+      <li><span class="b">05</span><span>Panelin altındaki <strong>Submit review</strong> düğmesine basar</span></li>
+    </ul>
+    <div class="rail warn">İki tane "Submit review" var: biri paneli açar, diğeri onaylar.
+      <strong>Approve seçilmezse</strong> sadece yorum olur — kilit açılmaz.</div>
+  </section>
+
+  <section class="s">
+    <div class="eyebrow">04 · Onay</div>
+    <h2>Sonra kilit açılır</h2>
+    <p class="big">Kırmızı yazı kaybolur, yeşil <strong>Merge pull request</strong> düğmesi çıkar.</p>
+    <div class="rail bad"><strong>"Bypass rules" kutusuna dokunmayın.</strong>
+      O acil durum kapısı. Her seferinde kullanılırsa kimse kimsenin yazdığını
+      okumamış olur.</div>
+  </section>
+
+  <section class="s">
+    <div class="eyebrow">04 · Onay</div>
+    <h2>Kendi önerinizi kendiniz onaylayamazsınız</h2>
+    <p class="big">Denerseniz <strong>Approve</strong> seçeneği soluk çıkar. Tıklanmaz.</p>
+    <div class="row">
+      <div class="box" style="border-inline-start:3px solid var(--faint)">
+        <div class="t">Comment</div><div class="d">Yorum bırakır, onay değil</div></div>
+      <div class="box" style="border-inline-start:3px solid var(--bad)">
+        <div class="t">Approve</div><div class="d">Kapalı — öneriyi siz açtınız</div></div>
+      <div class="box" style="border-inline-start:3px solid var(--faint)">
+        <div class="t">Request changes</div><div class="d">Düzeltme ister</div></div>
+    </div>
+    <div class="rail good">Hata değil — <em>dört göz kuralının kendisi.</em>
+      Yazan ile onaylayan farklı kişi olmalı.</div>
+  </section>
+
+  <section class="s">
+    <div class="eyebrow">04 · Onay</div>
+    <h2>Kim onaylar</h2>
+    <p class="big">Onaylamak "gördüm" değil, <strong>"bu bilgi doğru"</strong> demektir.</p>
+    <div class="rail">Olay modülünü bilmeyen biri, olay sayfasının doğru olup
+      olmadığını anlayamaz. O yüzden <em>bölümü bilen kişi</em> onaylar.</div>
+    <p class="kicker">Şimdilik varsayılan: Levent ve İbrahim. Biri onaylarsa yeterli.</p>
+  </section>
+
+  <!-- 15 -->
+  <section class="s center">
+    <div class="eyebrow">Canlı</div>
+    <h1>Şimdi birlikte yapalım</h1>
+    <p class="lede">Ekranda baştan sona bir katkı: söyle → öneri → önizleme → onay → yayın.</p>
+  </section>
+
+  <!-- 16 -->
+  <section class="s">
+    <div class="eyebrow">05 · Kurallar</div>
+    <h2>Dört kural</h2>
+    <ul style="max-width:42ch">
+      <li><span class="b">✓</span><span>Her değişiklik öneri ile gelir</span></li>
+      <li><span class="b">✓</span><span>En az 1 onay — kendi önerinizi kendiniz onaylayamazsınız</span></li>
+      <li><span class="b">✓</span><span>Ürüne bakıp doğruladıysanız tarihi bugüne çekin</span></li>
+      <li><span class="b">✗</span><span>Emin olmadığınız bilgiyi yazmayın</span></li>
+    </ul>
+  </section>
+
+  <!-- 17 -->
+  <section class="s">
+    <div class="eyebrow">06 · Sık hatalar</div>
+    <h2>Üç şey</h2>
+    <ul style="max-width:44ch">
+      <li><span class="b">403</span><span>Daveti kabul etmemişsinizdir</span></li>
+      <li><span class="b">✗</span><span>Kontrol kırmızı yandı → hatayı asistanınıza verin, düzeltir</span></li>
+      <li><span class="b">?</span><span>Yanlış sayfa bulundu → yolu birlikte verin</span></li>
+    </ul>
+  </section>
+
+  <!-- 18 -->
+  <section class="s">
+    <div class="eyebrow">07 · Sahiplik</div>
+    <h2>Kim hangi kılavuzdan sorumlu</h2>
+    <div class="tw" style="max-width:760px">
+      <table>
+        <thead><tr><th>Bölüm</th><th>Sayfa</th><th>Sahip</th></tr></thead>
+        <tbody>
+          <tr><td>Admin Eğitimleri</td><td>51</td><td>…</td></tr>
+          <tr><td>Teknisyen Kılavuzu</td><td>44</td><td>…</td></tr>
+          <tr><td>Yönetici Kılavuzu</td><td>19</td><td>…</td></tr>
+          <tr><td>Teknisyen Eğitimleri</td><td>14</td><td>…</td></tr>
+          <tr><td>Kullanıcı · Kurulum · ESM · Entegrasyon</td><td>32</td><td>…</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="kicker">Sahip = o bölüme gelen öneriye otomatik inceleyici + eskiyen sayfaların sorumlusu.</p>
+  </section>
+
+  <!-- 19 -->
+  <section class="s">
+    <div class="eyebrow">Önemli</div>
+    <h2>Müşteriye hangi linki vereceğiz</h2>
+    <div class="rail warn"><strong>docs.servicecore.app henüz ESKİ siteyi gösteriyor.</strong>
+      Alan adı taşınmadı.</div>
+    <p class="big">Şimdilik: <em>servicecore-docs.vercel.app</em></p>
+    <p class="kicker">Taşıma yapıldığında haber verilecek.</p>
+  </section>
+
+  <!-- 20 -->
+  <section class="s center">
+    <h1>Hepsi bu</h1>
+    <p class="lede">Ayrıntılı kılavuz depoda — kurulum, kurallar, sık hatalar.</p>
+    <div class="cmd" style="text-align:start">github.com/gorgonline/servicecore-docs
+  → docs/ekip-toplantisi.md</div>
+    <p class="kicker">Kurulumu tamamlayamayan bana yazsın.</p>
+  </section>
+
+</div>
+<div class="hint">← → veya boşluk ile ilerleyin</div>
+
+<script>
+  const deck = document.getElementById('deck');
+  const bar  = document.getElementById('bar');
+  const slides = [...document.querySelectorAll('.s')];
+
+  slides.forEach((s,i)=>{
+    const n=document.createElement('div');
+    n.className='num'; n.textContent=String(i+1).padStart(2,'0')+' / '+String(slides.length).padStart(2,'0');
+    s.appendChild(n);
+  });
+
+  const cur = () => Math.round(deck.scrollTop / window.innerHeight);
+  const go  = i => deck.scrollTo({top: Math.max(0,Math.min(slides.length-1,i))*window.innerHeight,
+                                  behavior: matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth'});
+
+  addEventListener('keydown', e => {
+    const k=e.key;
+    if(k==='ArrowRight'||k==='ArrowDown'||k===' '||k==='PageDown'){e.preventDefault();go(cur()+1);}
+    else if(k==='ArrowLeft'||k==='ArrowUp'||k==='PageUp'){e.preventDefault();go(cur()-1);}
+    else if(k==='Home'){e.preventDefault();go(0);}
+    else if(k==='End'){e.preventDefault();go(slides.length-1);}
+    else if(k==='f'||k==='F'){document.documentElement.requestFullscreen?.();}
+  });
+
+  deck.addEventListener('scroll', ()=>{
+    bar.style.width = (deck.scrollTop/(deck.scrollHeight-window.innerHeight)*100)+'%';
+  }, {passive:true});
+</script>
+</body>
+</html>
