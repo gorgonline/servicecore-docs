@@ -34,15 +34,25 @@ kurmaya, bakım yapmaya gerek yok.
 2. Size gelen **ortak çalışan davetini kabul edin.** Davet e-posta ile gelir ve
    [github.com/notifications](https://github.com/notifications) altında da görünür.
    Kabul etmediğiniz sürece depoya yazamazsınız — bu adım en sık atlanan adımdır.
-3. Bir **fine-grained personal access token** üretin (önerilen ve her istemcide
-   çalışan yöntem): GitHub → Settings → Developer settings →
-   Personal access tokens → Fine-grained tokens → **Generate new token**
-     - Repository access: **Only select repositories** → `gorgonline/servicecore-docs`
-     - İzinler: `Contents: Read and write`, `Pull requests: Read and write`
-     - Süre: 90 gün (dolduğunda yenileyin)
+3. Bir **token** üretin. Depo kişisel bir hesaba ait olduğu için **classic
+   token** kullanılır: GitHub → Settings → Developer settings →
+   Personal access tokens → **Tokens (classic)** → **Generate new token (classic)**
+     - Note: `servicecore-docs`
+     - Expiration: 90 gün
+     - Scope: **yalnızca `public_repo`** işaretlensin
 
-> Token üretme ekranında depo listelenmiyorsa daveti henüz kabul etmemişsiniz.
-> 2. adıma dönün.
+> **`repo` kutusunu İŞARETLEMEYİN.** O, özel depolarınız dahil her şeye tam
+> yetki verir. `public_repo` yalnızca herkese açık depolarla sınırlıdır ve
+> bu iş için yeterlidir.
+
+<Callout type="warn" title="Neden fine-grained token değil">
+Fine-grained token'lar bir **kaynak sahibine** bağlıdır — üretirken yalnızca
+kendi hesabınızı ya da üyesi olduğunuz organizasyonları seçebilirsiniz.
+`servicecore-docs` başka bir kişisel hesaba ait olduğu için listede **hiç
+görünmez**; ortak çalışan olmanız bunu değiştirmez. Depo ileride bir
+organizasyona taşınırsa fine-grained token kullanılabilir hale gelir ve daha
+dar yetki verir.
+</Callout>
 
 > Token'ı kimseyle paylaşmayın. Yalnızca bu depoya yetkilendirildiği için
 > kaybolursa etkisi sınırlıdır; yine de hemen iptal edin.
@@ -79,6 +89,18 @@ Bağlantıyı doğrulayın:
 ```bash
 claude mcp list
 ```
+
+> **`✓ Connected` yeterli değil.** O yalnızca "GitHub token'ı kabul etti"
+> demektir; token'ın **bu depoya** erişip erişemediğini kanıtlamaz. Yanlış
+> kapsamlı bir token da Connected görünür.
+>
+> Gerçek testi asistanınıza yaptırın:
+>
+> > `gorgonline/servicecore-docs` deposundaki `content/docs/index.mdx`
+> > dosyasını oku ve ilk satırını söyle.
+>
+> Okuyabiliyorsa kurulum tamamdır. "Bulamadım" ya da "erişemiyorum" diyorsa
+> token'ın kapsamı yanlış — `public_repo` işaretli mi, kontrol edin.
 
 ### Claude Desktop
 
