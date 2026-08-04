@@ -47,6 +47,11 @@ kurmaya, bakım yapmaya gerek yok.
 > Token'ı kimseyle paylaşmayın. Yalnızca bu depoya yetkilendirildiği için
 > kaybolursa etkisi sınırlıdır; yine de hemen iptal edin.
 
+> **AI asistanınızın sohbetine de yapıştırmayın.** Asistanlar kimlik bilgilerini
+> sizin adınıza bir dosyaya veya komuta yazmaz; yapıştırdığınız token ayrıca
+> sohbet kaydına düşer ve iptal edilmesi gerekir. Token'ı yalnızca kendi
+> terminalinizde, aşağıdaki komutlara girin.
+
 ---
 
 ## Kurulum
@@ -79,6 +84,27 @@ Bağlantıyı doğrulayın:
 ```bash
 claude mcp list
 ```
+
+### Token yapıştırmadan kurulum (gh CLI ile)
+
+[GitHub CLI](https://cli.github.com) kuruluysa token üretmeye hiç gerek yoktur;
+tarayıcıdan bir kez oturum açıp aynı bağlantıyı kurabilirsiniz:
+
+```bash
+gh auth login --hostname github.com --git-protocol https --web
+```
+
+Komut bir kerelik kod verir, kodu tarayıcıda onaylarsınız. Ardından token'ı elle
+yazmadan MCP sunucusunu ekleyin — değer keyring'den gelir:
+
+```bash
+claude mcp add -s user --transport http github https://api.githubcopilot.com/mcp/ \
+  --header "Authorization: Bearer $(gh auth token)"
+```
+
+> Bu yöntemdeki token `repo` kapsamındadır, yani **hesabınızdaki tüm depolara**
+> yazabilir. Yetkiyi yalnızca bu depoya daraltmak istiyorsanız yukarıdaki
+> fine-grained token yöntemini kullanın.
 
 ### Claude Desktop
 
@@ -175,6 +201,11 @@ isteyin, ya da yerelde `npm run check:mdx` çalıştırın.
 Token'ı köşeli parantez içinde yapıştırmışsınızdır (`Bearer <github_pat_...>`).
 Parantezleri kaldırın: `claude mcp remove github` sonra komutu parantezsiz
 tekrar çalıştırın.
+
+**Asistan token'ımı kabul etmiyor**
+Beklenen davranış — AI asistanları kimlik bilgilerini sizin adınıza yazmaz.
+`claude mcp add` komutunu kendi terminalinizde çalıştırın ya da yukarıdaki
+`gh` yöntemini kullanın.
 
 **Token süresi doldu**
 Yeni token üretip MCP bağlantısını güncelleyin (`claude mcp remove github`
