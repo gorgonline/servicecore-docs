@@ -80,6 +80,13 @@ Bağlantıyı doğrulayın:
 claude mcp list
 ```
 
+> **Sonra Claude Code'u kapatıp yeniden açın.** MCP araçları oturum açılırken
+> yüklenir. Sunucuyu çalışan bir oturuma eklerseniz `claude mcp list` "Connected"
+> der ama asistan GitHub araçlarını göremez — bağlantı kurulu, araçlar o oturuma
+> ulaşmamıştır. Yeniden açtıktan sonra `/mcp` menüsünde `github` altında
+> araçların listelendiğini doğrulayın. Sunucuyu projede kullanmak için onay
+> isterse onaylayın.
+
 ### Claude Desktop
 
 1. **Ayarlar → Connectors → Add custom connector**
@@ -156,6 +163,12 @@ PR açıldığında otomatik olarak:
 ---
 
 ## Sorun giderme
+
+**`claude mcp list` "Connected" diyor ama asistan GitHub araçlarını kullanamıyor**
+Sunucuyu zaten açık olan bir oturuma eklediniz. Araçlar yalnızca oturum
+başlarken yüklenir; sonradan eklenen sunucu bağlı görünür ama o oturumda
+kullanılamaz. Claude Code'u kapatıp yeniden açın, `/mcp` altında `github`
+araçlarının göründüğünü doğrulayın.
 
 **"Bu depoya erişemiyorum" / 403**
 GitHub hesabınızın depoda yazma yetkisi yok ya da token'ın kapsamı dar.
