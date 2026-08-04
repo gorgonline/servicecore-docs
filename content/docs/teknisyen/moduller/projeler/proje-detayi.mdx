@@ -1,0 +1,97 @@
+---
+title: "Proje Detayı ve Sekmeler"
+description: "Proje içindeki 14 sekmenin ne işe yaradığı, hangi gruplarda toplandığı ve her sekmenin hangi proje yetkisiyle açıldığı."
+reviewed: "2026-08-04"
+owner:
+---
+
+Bir projeyi açtığınızda soldaki sekme listesiyle proje içinde gezinirsiniz. Adres yapısı
+`/Project2/{proje numarası}/{sekme}` biçimindedir; proje numarasını sekmesiz açtığınızda
+`Genel Bakış` sekmesine yönlendirilirsiniz.
+
+Sekmeler beş grup altında toplanır: **Planlama**, **Teslimat**, **Takip**, **İş Birliği**
+ve **Yönetim**.
+
+## Planlama
+
+| Sekme | Ne işe yarar |
+|---|---|
+| `Genel Bakış` | Proje alanları, sağlık göstergeleri ve son hareketlerin özeti |
+| `İş Listesi` | Sprint planlama paneli — epikler, sürükleyerek sprinte alma ve sıralama |
+| `Pano` | Kanban panosu, kulvarlar ve pano seviyesinde filtreler |
+
+`İş Listesi` yalnızca **Scrum** yapısındaki projelerde görünür.
+
+## Teslimat
+
+| Sekme | Ne işe yarar |
+|---|---|
+| `Görevler` | Görev ızgarası — sütun seçimi, filtreleme ve toplu işlem |
+| `Yol Haritası` | Zaman çizelgesi ve Gantt görünümü, bağımlılıklar |
+| `Kaynaklar` | Kişi bazlı yük, kapasite ve proje grafikleri |
+
+`Kaynaklar` sekmesi tek bir ekran değil, bir grafik kümesidir: `Pano`, `Kişiler`,
+`Isı Haritası`, `Kapasite`, `İş Yükü`, `Tahmin Doğruluğu`, `Darboğaz`, `Kişi Bazlı`,
+`SLA`, `Hedefler`, `Müsaitlik`, `Çapraz Proje` ve `Takımlar`.
+
+Bir kısmı yapı türüne bağlıdır:
+
+- Yalnızca **Scrum** projelerinde: `Tükenme Grafiği`, `Hız`, `Karşılaştırma`, `Tahmin`, `Devir`
+- Yalnızca **Kanban** projelerinde: `Akış` (kümülatif akış)
+- **Basic** projelerde gizlenir: `Kapasite`, `Darboğaz`
+
+## Takip
+
+| Sekme | Ne işe yarar |
+|---|---|
+| `Program` | Üye bazlı görev zamanlayıcısı; gün, hafta ve ay görünümleri |
+| `İş Günlükleri` | Harcanan zamanın girildiği ve raporlandığı tablo |
+| `Riskler` | Olasılık/etki puanlı risk kaydı ve 5x5 risk matrisi |
+| `Aktivite` | Projede yapılan tüm işlemlerin filtrelenebilir kaydı |
+| `Raporlar` | Kullanıcı tanımlı grafikler ve filtrelenmiş görev listeleri |
+
+## İş Birliği
+
+| Sekme | Ne işe yarar |
+|---|---|
+| `Dosyalar` | Klasörlenebilir dosya alanı, sürükle-bırak yükleme |
+| `Gelen Kutusu` | Projeye ait e-posta yazışmalarının takibi |
+
+## Yönetim
+
+| Sekme | Ne işe yarar |
+|---|---|
+| `Ayarlar` | Projeye özel tüm yapılandırma — bkz. [Proje Ayarları](/docs/teknisyen/moduller/projeler/proje-ayarlari) |
+
+## Sekmeleri hangi yetki açar
+
+Sekmeler proje rolünüze göre görünür veya gizlenir. Aşağıdaki yetkiler **proje bazlı**
+yetkilerdir; `Ayarlar` ▸ `Yetkiler` sekmesinden rol bazında verilir.
+
+| Sekme | Gereken yetki |
+|---|---|
+| `Genel Bakış` | Yetki aranmaz — projeye erişebilen herkes görür |
+| `Görevler` ve `İş Listesi` | **Tüm Görevleri Görebilir**, **Sadece Kendi Grubunun Görevlerini Görebilir** veya **Sadece Kendi Görevlerini Görebilir** |
+| `Pano` | **Kanbanı Görebilir** |
+| `Yol Haritası` | **Gantt Şemasını Görebilir** |
+| `Kaynaklar` | **Kaynakları Görebilir** |
+| `Program` | **Zamanlayıcıyı Görebilir** |
+| `İş Günlükleri` | **Proje İş Günlüklerini Görebilir** |
+| `Dosyalar` | **Proje Dosyalarını Görebilir** |
+| `Gelen Kutusu` | **Proje Gelen Kutusunu Görebilir** |
+| `Aktivite` | **Proje Aktivitelerini Görebilir** |
+| `Raporlar` | **Raporları Görebilir** |
+| `Riskler` | **Gantt Şemasını Görebilir**, **Projeyi Düzenleyebilir** veya görev görüntüleme yetkilerinden biri |
+| `Ayarlar` | **Projeyi Düzenleyebilir**, **Durum Geçişlerini Görebilir**, **Otomasyon Kurallarını Görebilir**, **Özel Alanları Yönetebilir**, **Proje Üyelerini Görebilir** gibi yönetim yetkilerinden herhangi biri |
+
+<Callout type="info" title="ÖNEMLİ">
+**Proje lideri** ve **sistem yöneticisi** tüm sekmeleri yetki kontrolüne takılmadan
+görür. Bu yüzden yetki ayarlarını test ederken kısıtlı bir kullanıcıyla deneyin;
+yöneticiyle bakıldığında eksik yetki fark edilmez.
+</Callout>
+
+<Callout type="warn" title="DİKKAT">
+Bir sekmenin görünmesi, içindeki tüm işlemleri yapabileceğiniz anlamına gelmez.
+Görüntüleme ve değiştirme yetkileri ayrıdır: **Kanbanı Görebilir** panoyu açar, pano
+üzerinden görev değiştirmek ise **Görev Düzenleyebilir** gibi ayrı yetkiler gerektirir.
+</Callout>

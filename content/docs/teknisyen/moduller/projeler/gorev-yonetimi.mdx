@@ -1,0 +1,108 @@
+---
+title: "Görev Yönetimi"
+description: "Projede görev oluşturma, görev detayı bölümleri, alt görevler, durum geçişleri, etiketler ve iş günlüğü girişi."
+reviewed: "2026-08-04"
+owner:
+---
+
+Görev, proje modülünde işin yürüdüğü temel kayıttır. Görevler `Görevler`, `Pano` ve
+Scrum projelerinde `İş Listesi` sekmelerinden oluşturulur ve yönetilir; üç sekme de aynı
+kayıtları gösterir, yalnızca sunuş biçimleri farklıdır.
+
+## Görev oluşturma
+
+Görev oluşturma penceresinde doldurulan alanlar:
+
+| Alan | Zorunlu | Not |
+|---|---|---|
+| **Görev Türü** | Evet | Projede tanımlı türlerden seçilir |
+| **Başlık** | Evet | Görevin özeti |
+| **Öncelik** | Evet | Sistem öncelik listesinden |
+| **Atanan** | Hayır | Yalnızca proje üyeleri arasından seçilir |
+| **Sprint** | Hayır | Yalnızca Scrum projelerinde görünür |
+| **Takım** | Hayır | Görev bir takıma da atanabilir |
+| **Etiketler** | Hayır | Serbest etiketleme |
+
+Pencerenin üstünde ayrıca bir **görev şablonu** seçilebilir. Şablon seçildiğinde görevin
+alanları şablondaki değerlerle doldurulur.
+
+<Callout type="warn" title="DİKKAT">
+`Atanan` listesi yalnızca **projeye üye olan** kişileri içerir. Aradığınız kişiyi
+göremiyorsanız önce `Ayarlar` ▸ `Üyeler` sekmesinden projeye eklemeniz gerekir.
+</Callout>
+
+## Görev detayı
+
+Bir göreve tıkladığınızda detay paneli açılır. Panelde şu bölümler bulunur:
+
+- **Açıklama** — zengin metin alanı
+- **Alt Görevler** — göreve bağlı alt kırılımlar
+- **Ekler** — dosya ekleri
+- **Yorumlar** — ekip içi yazışma
+- **Geçmiş** — görevde yapılan tüm değişikliklerin kaydı
+- **İş Günlükleri** — göreve harcanan zaman
+
+Sağ tarafta görevin alanları yer alır: `Atanan`, `Raporlayan`, `Öncelik`, `Durum`,
+`Bitiş Tarihi`, `Etiketler` ve Scrum projelerinde ek olarak `Sprint`, `Hikaye Puanı`
+ve `Epik`.
+
+<Callout type="info" title="ÖNEMLİ">
+`Hikaye Puanı`, `Sprint` ve `Epik` alanları projenin yapı türüne bağlıdır. Basic
+projelerde bu alanlar hiç görünmez, Kanban projelerinde sprint alanı bulunmaz —
+bkz. [Kavramlar ve Hiyerarşi](/docs/teknisyen/moduller/projeler/kavramlar).
+</Callout>
+
+## Alt görevler
+
+Alt görev, bir görevin altındaki iş kırılımıdır. Projede "alt görev" olarak işaretlenmiş
+bir görev türü bulunması gerekir; sistem şablonlarından Scrum yapısındakiler bu türü
+**Alt Görev** adıyla getirir. Böyle bir tür tanımlı değilse `Ayarlar` ▸ `Görev Türleri`
+sekmesinden eklenmelidir. Alt görevler:
+
+- Üst görevin detay panelindeki `Alt Görevler` bölümünden eklenir
+- Kendi durumuna, atananına ve iş günlüğüne sahiptir
+- Üst görev silindiğinde birlikte silinebilir; silme penceresinde bu seçenek sunulur
+
+Bir görevi kopyalarken veya taşırken alt görevlerinin de dahil edilip edilmeyeceği
+sorulur.
+
+## Durum değiştirme ve geçişler
+
+Görevin durumu, detay panelinden veya listedeki durum menüsünden değiştirilir. Hangi
+durumdan hangi duruma geçilebileceğini projenin **geçiş** tanımları belirler
+(`Ayarlar` ▸ `Geçişler`).
+
+Bir geçişe şunlar bağlanmış olabilir:
+
+- **Geçiş ekranı** — geçiş sırasında doldurulması istenen bir form
+- **Koşul** — belirli bir alan dolu değilse geçişe izin verilmemesi
+- **Onay** — geçişin bir veya birden fazla kişinin onayına takılması
+
+<Callout type="warn" title="DİKKAT">
+Hiçbir geçişin hedefi olmayan bir durum, sistem tarafından **her durumdan erişilebilir**
+kabul edilir. Akışınızın giriş durumuna hiç gelen geçiş tanımlamazsanız, o durum akışın
+her aşamasında durum listesinde çıkar ve kaydı başa saran bir kısayol hâline gelir. Her
+duruma en az bir gelen geçiş tanımlayın.
+</Callout>
+
+## Etiketler
+
+Etiketler projeler arası ortak bir havuzdan gelir ve göreve serbestçe eklenir. Etiketle
+filtreleme `Görevler` sekmesinden ve kaydedilmiş filtrelerden yapılabilir.
+
+## İş günlüğü
+
+Harcanan zaman, görev detayındaki `İş Günlükleri` bölümünden veya projenin
+`İş Günlükleri` sekmesinden girilir. Kayıt yapılırken başlangıç ve bitiş zamanı verilir.
+
+<Callout type="warn" title="DİKKAT">
+İş günlüğünün süresi **bitiş zamanı eksi başlangıç zamanı** olarak hesaplanır. Bitiş
+zamanı boş bırakılan bir kayıt hata vermez, ancak **0 dakika** olarak düşer. Süre
+girdiğinizi düşündüğünüz hâlde raporlarda sıfır görüyorsanız önce bu alanı kontrol edin.
+</Callout>
+
+## Toplu işlem ve dışa aktarma
+
+`Görevler` sekmesinde birden fazla görev seçilerek toplu güncelleme yapılabilir.
+Görev listesi Excel'e aktarılabilir; aynı biçimdeki dosya içe aktarılarak toplu görev
+girişi de yapılabilir.

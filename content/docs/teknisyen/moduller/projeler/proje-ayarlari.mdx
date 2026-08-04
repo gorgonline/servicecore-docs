@@ -1,0 +1,90 @@
+---
+title: "Proje Ayarları"
+description: "Proje bazında yapılandırılan 14 ayar sekmesi: durumlar, geçişler, görev türleri, üyeler, yetkiler, alanlar, otomasyon ve diğerleri."
+reviewed: "2026-08-04"
+owner:
+---
+
+Proje ayarları, projenin `Ayarlar` sekmesinden açılır. Buradaki her ayar **yalnızca o
+projeye** aittir; bir projede yaptığınız değişiklik diğer projeleri etkilemez.
+
+Adres yapısı `/Project2/{proje numarası}/settings` biçimindedir; `?section=` parametresiyle
+doğrudan bir sekmeye bağlantı verilebilir (örneğin `?section=transitions`).
+
+## Sekmeler
+
+| Sekme | Ne yapılandırılır |
+|---|---|
+| `Genel` | Proje adı, açıklaması ve temel proje alanları |
+| `Pano` | Pano kolonları, kolon-durum eşleşmesi ve hızlı filtreler |
+| `Durumlar` | Projenin görev durumları ve durum kategorileri |
+| `Görev Türleri` | Projede kullanılabilecek görev türleri, renkleri ve simgeleri |
+| `Çözümler` | Görev kapatılırken seçilen çözüm nedenleri |
+| `Etiketler` | Projede kullanılan etiketler |
+| `Üyeler` | Projeye dahil kişiler ve proje rolleri |
+| `Takımlar` | Projeye bağlı takımlar |
+| `Kapasite` | Üyelerin proje bazındaki kapasite ayarları |
+| `Bildirimler` | Hangi olayda kime bildirim gideceği |
+| `Yetkiler` | Proje rollerinin hangi işlemleri yapabileceği |
+| `Geçişler` | Durumlar arası geçişler, geçiş ekranları, koşullar ve onaylar |
+| `Alanlar` | Projeye özel alanlar ve görev türlerine bağlanmaları |
+| `Otomasyon` | Tetikleyici-koşul-aksiyon kuralları |
+
+<Callout type="info" title="ÖNEMLİ">
+`Ayarlar` sekmesi bütün olarak tek bir yetkiye bağlı değildir. **Projeyi Düzenleyebilir**,
+**Durum Geçişlerini Görebilir**, **Otomasyon Kurallarını Görebilir**, **Özel Alanları
+Yönetebilir** veya **Proje Üyelerini Görebilir** gibi yönetim yetkilerinden herhangi biri
+sekmeyi açar; içeride de yalnızca yetkiniz olan bölümler görünür.
+</Callout>
+
+## Sırasıyla ne yapılandırılır
+
+Yeni bir projeyi kullanıma hazırlarken en sık izlenen sıra:
+
+1. `Üyeler` — ekibi ekleyin ve proje rollerini verin. Atama yapılabilmesi için kişinin
+   projeye üye olması şarttır.
+2. `Yetkiler` — rollerin hangi işlemleri yapabileceğini belirleyin.
+3. `Durumlar` — şablondan gelen durumları projenizin iş akışına göre düzenleyin.
+4. `Geçişler` — hangi durumdan hangisine geçilebileceğini, gerekiyorsa geçiş ekranı ve
+   onay adımlarını tanımlayın.
+5. `Görev Türleri` ve `Alanlar` — projeye özgü kayıt türlerini ve alanları ekleyin.
+6. `Pano` — kolonları durumlarla eşleştirin.
+7. `Bildirimler` ve `Otomasyon` — tekrar eden işleri otomatikleştirin.
+
+## Durumlar
+
+Durumlar proje oluşturulurken şablondan kopyalanır. Her durumun bir **durum kategorisi**
+vardır: `Yapılacak`, `Devam Ediyor`, `Tamamlandı`. Kategori, durumun adından bağımsızdır
+ve panoların, raporların ve projeler arası filtrelerin "bu iş bitti mi" sorusunu
+yanıtlamasını sağlar.
+
+<Callout type="warn" title="DİKKAT">
+Yeni durum eklerken kategoriyi doğru seçin. Adı "Tamamlandı" olan ama kategorisi
+`Devam Ediyor` olarak bırakılan bir durum, panoda ve raporlarda bitmemiş iş olarak
+sayılmaya devam eder.
+</Callout>
+
+## Geçişler
+
+Geçişler, bir görevin hangi durumdan hangi duruma geçebileceğini tanımlar. Bir geçişe
+üç şey bağlanabilir:
+
+- **Geçiş ekranı** — geçiş sırasında açılan ve doldurulması istenen form
+- **Kural** — geçişin önündeki koşullar ve geçiş sonrasında çalışacak işlemler
+- **Onay** — geçişin bir veya birden çok onaycının kararına bağlanması
+
+Onay tanımlarken, geçişin gideceği bekleme durumu ile onay ve red sonuçlarının gideceği
+durumlar arasındaki geçişlerin de tanımlı olması gerekir. Eksik bir geçiş, onay verilse
+bile görevin ilerlememesine yol açar.
+
+## Yetkiler
+
+Proje yetkileri, ITSM tarafındaki genel yetkilerden ayrıdır. Genel yetki modüle girişi
+açar; proje içinde ne yapılabileceğine **proje rolü** karar verir. Bu yüzden bir
+kullanıcının proje modülünü görebiliyor olması, sizin projenizde görev düzenleyebileceği
+anlamına gelmez — o hakkı `Yetkiler` sekmesinden rolüne vermeniz gerekir.
+
+<Callout type="info" title="ÖNEMLİ">
+Proje lideri ve sistem yöneticisi proje yetki kontrollerinin dışındadır. Yetki ayarlarını
+doğrularken kısıtlı bir kullanıcıyla test edin.
+</Callout>
