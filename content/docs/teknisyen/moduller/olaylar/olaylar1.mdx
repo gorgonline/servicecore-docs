@@ -1,6 +1,6 @@
 ---
 title: "Hızlı, Toplu İşlem ve Filtreler"
-description: "Bir olay kaydına sabitleme ve favori olarak ekleme yapılmaktadır."
+description: "Olay listesinde favorileme, sabitleme, hızlı düzenleme, toplu işlem ve toplu kapatma ile özel filtre görünümlerinin kullanımı."
 reviewed: "2026-07-30"
 owner:
 ---
@@ -21,9 +21,23 @@ Aşağıdaki resimde üst tarafta bulunan butonlardan Toplu İşlem, Kapat, Sil,
 
 - Durum, öncelik, iş etkisi, aciliyet, kategori, teknisyen grubu ve teknisyen atamasını yapılmaktadır.
 
-`Kapat` tıklandığında seçilen kayıtları kapatmaktadır ve bir kapatma gerekçesi, durum, kapatma açıklaması istemektedir.
+`Kapat` tıklandığında seçili kayıtların tümü tek pencere üzerinden kapatılmaktadır. Toplu kapatma için önce listede kapatılacak olaylar soldaki kutucuklardan seçilir, ardından üstte görünen `Kapat` butonuna tıklanır.
 
 ![Olaylar Modülü](/img/teknisyen/olaylar1-g1.png)
+
+Açılan pencerede aşağıdaki alanlar doldurulur:
+
+- `Gerekçe` — kaydın hangi nedenle kapatıldığı.
+- `Durum` — kaydın kapanış durumu.
+- **Kapatma Açıklaması** — kapatma ile ilgili serbest metin açıklaması.
+
+`Olayı Kapat` ile işlem tamamlanır; `Vazgeç` ile pencere kapatılır ve seçili kayıtlarda değişiklik olmaz.
+
+<Callout type="warn" title="DİKKAT">
+Pencerede girilen gerekçe, durum ve açıklama seçili **tüm** kayıtlara aynı şekilde uygulanır. Farklı gerekçelerle kapatılacak kayıtlar varsa seçimi gruplara ayırıp her grubu ayrı kapatın.
+</Callout>
+
+`Gerekçe` listesindeki seçenekler ve kapatma sırasında hangi alanların zorunlu olduğu yönetici panelindeki [Kapatma Kuralları ve Gerekçeleri](/docs/yonetici/gelismis) bölümünden tanımlanır. Tek bir kaydın kendi detay ekranından kapatılması için bkz. [Kayıt Detayları](/docs/teknisyen/moduller/olaylar/olaylar2).
 
 `Sil` tıklandığında seçilen kayıtları silmektedir ve bir silme gerekçesi, durum istemektedir.
 
