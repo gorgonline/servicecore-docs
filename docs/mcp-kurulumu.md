@@ -55,10 +55,20 @@ kurmaya, bakım yapmaya gerek yok.
 
 ```bash
 claude mcp add --transport http github https://api.githubcopilot.com/mcp/ \
-  --header "Authorization: Bearer <TOKEN>"
+  --header "Authorization: Bearer TOKENINIZ"
 ```
 
-`<TOKEN>` yerine ürettiğiniz fine-grained token'ı yazın.
+`TOKENINIZ` yerine ürettiğiniz fine-grained token'ı yapıştırın. Komut şöyle
+görünmeli:
+
+```bash
+  --header "Authorization: Bearer github_pat_11ABC..."
+```
+
+> **Köşeli parantez KOYMAYIN.** Token'ı `<...>` içine alırsanız GitHub o
+> işaretleri token'ın parçası sanar ve bağlantı şu hatayla düşer:
+> `HTTP 400 — bad request: Authorization header badly formatted`
+> Sadece token'ın kendisi yazılır, başka hiçbir işaret olmaz.
 
 İstemciniz tarayıcı tabanlı oturum açmayı destekliyorsa sunucuyu header'sız
 ekleyip `/mcp` menüsünden **Authenticate** ile de bağlanmayı deneyebilirsiniz;
@@ -88,7 +98,7 @@ claude mcp list
   "mcpServers": {
     "github": {
       "url": "https://api.githubcopilot.com/mcp/",
-      "headers": { "Authorization": "Bearer <TOKEN>" }
+      "headers": { "Authorization": "Bearer TOKENINIZ" }
     }
   }
 }
@@ -160,6 +170,11 @@ Sayfa yolları site adresiyle aynıdır: `docs.servicecore.app/docs/yonetici/gel
 **CI kırmızı**
 Genelde MDX sözdizimi hatasıdır. Hata mesajını asistanınıza verip düzeltmesini
 isteyin, ya da yerelde `npm run check:mdx` çalıştırın.
+
+**`HTTP 400 — Authorization header badly formatted`**
+Token'ı köşeli parantez içinde yapıştırmışsınızdır (`Bearer <github_pat_...>`).
+Parantezleri kaldırın: `claude mcp remove github` sonra komutu parantezsiz
+tekrar çalıştırın.
 
 **Token süresi doldu**
 Yeni token üretip MCP bağlantısını güncelleyin (`claude mcp remove github`
