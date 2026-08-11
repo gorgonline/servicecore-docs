@@ -1,6 +1,9 @@
 {
   "title": "Yapılandırma",
   "pages": [
+    "pano-ayarlari",
+    "durumlar",
+    "gorev-turleri",
     "uyeler"
   ]
 }
