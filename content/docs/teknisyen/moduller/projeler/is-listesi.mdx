@@ -1,0 +1,101 @@
+---
+title: "İş Listesi (Backlog)"
+description: "Scrum projelerinde sprint planlama ekranı: sprint oluşturma, işleri sprintlere dağıtma, sprint durumları ve iş listesi bölümü."
+reviewed: "2026-08-11"
+owner:
+---
+
+`İş Listesi` sekmesi, henüz bir sprinte alınmamış işlerin bekletildiği ve sprintlerin
+planlandığı ekrandır.
+
+<Callout type="warn" title="DİKKAT">
+Bu sekme **yalnızca Scrum** yapısındaki projelerde görünür. Kanban ve Basic projelerde
+işler `Pano` ve `Görevler` sekmelerinden yönetilir. Yapı türü proje oluşturulduktan
+sonra değiştirilemez — bkz.
+[Proje Oluşturma](/docs/teknisyen/moduller/projeler/proje-olusturma).
+</Callout>
+
+![İş listesi ve sprint planlama ekranı](/img/teknisyen/proje-is-listesi.png)
+
+## Üstteki sayaçlar
+
+| Sayaç | Ne gösterir |
+|---|---|
+| **Toplam** | Projedeki tüm görev sayısı |
+| **Sprintler** | Kapanmamış sprint sayısı |
+| **Aktif** | Başlatılmış sprint sayısı |
+| **İş Listesi** | Hiçbir sprinte bağlı olmayan görev sayısı |
+| **Gecikmiş** | Bitiş tarihi geçmiş görev sayısı |
+| **Hikaye Puanı** | Toplam hikaye puanı |
+
+## Ekranın yapısı
+
+Ekran yukarıdan aşağıya şu bölümlerden oluşur:
+
+1. **Sprint blokları** — her planlanan sprint kendi bloğunda, içindeki görevlerle
+2. **`+ Sprint oluştur`** — yeni sprint açar
+3. **`İş Listesi`** — henüz sprinte alınmamış görevler
+
+Görevler sprint blokları ile iş listesi arasında **sürüklenerek** taşınır.
+
+### Sprint başlığındaki bilgiler
+
+Her sprint satırında sprint adı, durum rozeti, görev sayısı ve toplam puan, durum
+kategorilerine göre kırılım, tarih aralığı ve sağdaki `⋯` menüsü bulunur.
+
+## Sprint durumları
+
+Bir sprint üç durumdan birinde olur:
+
+```mermaid
+flowchart LR
+  F[Gelecek] -->|Sprinti başlat| A[Aktif]
+  A -->|Sprinti tamamla| C[Kapandı]
+```
+
+| Durum | Anlamı |
+|---|---|
+| **Gelecek** | Oluşturulmuş, henüz başlatılmamış |
+| **Aktif** | Üzerinde çalışılan sprint |
+| **Kapandı** | Tamamlanmış sprint |
+
+<Callout type="warn" title="DİKKAT">
+Sprint, tarihleri geldiğinde **kendiliğinden aktifleşmez**. Başlangıç tarihi geçmiş
+olsa bile durum `Gelecek` kalır; sprinti `⋯` menüsünden **açıkça başlatmanız** gerekir.
+Yukarıdaki ekran görüntüsünde `Sprint 12`'nin tarihi geçmiş olmasına rağmen hâlâ
+`Gelecek` görünmesinin ve `Aktif` sayacının `0` olmasının sebebi budur.
+</Callout>
+
+Sprint tamamlandığında bitmemiş görevlerin ne olacağı sorulur; bunlar genellikle bir
+sonraki sprinte veya iş listesine devredilir.
+
+## Filtreleme ve gruplama
+
+Sayaçların altındaki çubuk hem sprint bloklarını hem iş listesini birlikte süzer:
+`Görev ara`, `Türü`, `Atanan`, `Durum`, `Takım`. Sağdaki `Grupla` seçicisi satırları
+kümeler.
+
+## Görev satırındaki bilgiler
+
+Her satırda görev türü ikonu, anahtar, başlık, bağlı olduğu **epik** rozeti, bitiş
+tarihi (geçmişse kırmızı), hikaye puanı, durum ve atanan kişi yer alır.
+
+Sprint bloğunun altındaki `+ Görev Oluştur` bağlantısı, görevi doğrudan o sprinte
+ekleyerek açar.
+
+<Callout type="info" title="ÖNEMLİ">
+Sprint tarihleri boş bırakılabilir. Ancak yol haritası ve iş günlükleri gibi ekranlar
+sprint tarihlerini kullandığından, tarihsiz sprintler bu ekranlarda eksik görünür.
+Sprint açarken tarih vermeniz önerilir.
+</Callout>
+
+## İlgili sayfalar
+
+<Cards>
+  <Card title="Pano" href="/docs/teknisyen/moduller/projeler/pano">
+    Sprintteki işleri iş akışı sütunlarında ilerletin.
+  </Card>
+  <Card title="Görevler" href="/docs/teknisyen/moduller/projeler/gorevler">
+    Tüm görevleri ızgarada, alanlarıyla ve JQL ile süzerek yönetin.
+  </Card>
+</Cards>
