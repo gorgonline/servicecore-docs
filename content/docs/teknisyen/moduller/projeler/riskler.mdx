@@ -1,0 +1,82 @@
+---
+title: "Riskler"
+description: "Proje risk kaydı: olasılık × etki matrisi, risk skoru, durumlar, azaltma ve acil durum planları."
+reviewed: "2026-08-11"
+owner:
+---
+
+`Riskler` sekmesi, projenin **risk kaydını** tutar: her risk olasılık ve etki değeriyle
+puanlanır, bir sahibe ve gözden geçirme tarihine bağlanır.
+
+![Proje risk kaydı ve olasılık × etki matrisi](/img/teknisyen/proje-riskler.png)
+
+## Risk skoru
+
+Skor, iki değerin çarpımıdır:
+
+**Skor = Olasılık (P) × Etki (I)**
+
+Her ikisi de **1–5** arasında verilir, dolayısıyla skor 1 ile 25 arasında olur. Skor
+rozetinin rengi risk bandını gösterir (düşük / orta / yüksek).
+
+| Örnek | P | I | Skor |
+|---|---|---|---|
+| Operatör SMS gecikmeleri | 3 | 4 | 12 |
+| Biyometrik API desteği | 4 | 3 | 12 |
+| Test kapsamının büyümesi | 5 | 2 | 10 |
+| Mağaza onay süresi | 2 | 3 | 6 |
+
+<Callout type="info" title="ÖNEMLİ">
+Aynı skor farklı anlamlara gelebilir: `5 × 2` ile `2 × 5` ikisi de 10'dur ama biri
+"sık ama küçük", diğeri "seyrek ama büyük" bir risktir. Matris tam bu ayrımı
+görünür kılar — bu yüzden skor kadar konuma da bakın.
+</Callout>
+
+## Olasılık × Etki matrisi
+
+Soldaki 5×5 ısı haritası **açık riskleri** kendi hücrelerinde gösterir; hücredeki sayı
+o kombinasyondaki risk adedidir. Sağ üst köşeye yaklaşan riskler önce ele alınmalıdır.
+
+Matris yalnızca **açık** riskleri sayar; kapatılan riskler tabloda kalır ama haritada
+görünmez.
+
+## Tablo
+
+| Kolon | İçerik |
+|---|---|
+| **Risk** | Başlık; altında risk sahibi |
+| **P** / **I** | Olasılık ve etki (1–5) |
+| **Skor** | P × I, renkli rozet |
+| **Durum** | `Açık`, `Azaltılıyor`, `Kabul edildi`, `Kapandı` |
+| **Gözden geçirme** | Riskin yeniden değerlendirileceği tarih |
+
+Satır sonundaki simgelerle risk düzenlenir veya silinir. Başlıktaki `4 açık` rozeti
+kapanmamış risk sayısını verir.
+
+## Risk ekleme
+
+Sağ üstteki `Risk ekle` düğmesi formu açar. Başlık, olasılık ve etki dışında şunlar
+girilebilir:
+
+- **Açıklama** — riskin ne olduğu
+- **Azaltma planı** — riskin gerçekleşme olasılığını veya etkisini düşürecek önlem
+- **Acil durum planı** — risk gerçekleşirse ne yapılacağı
+- **Sahip** — riski takip eden kişi
+- **Gözden geçirme tarihi**
+
+<Callout type="warn" title="DİKKAT">
+`Gözden geçirme tarihi` boş bırakılan riskler zamanla unutulur: sistem bu tarih için
+otomatik hatırlatma üretmez, tarih yalnızca listede görünür. Risk kaydını canlı tutmak
+için düzenli gözden geçirme alışkanlığı gerekir.
+</Callout>
+
+## İlgili sayfalar
+
+<Cards>
+  <Card title="Genel Bakış" href="/docs/teknisyen/moduller/projeler/genel-bakis">
+    Projenin sağlık durumu ve sponsor raporu.
+  </Card>
+  <Card title="Kaynaklar" href="/docs/teknisyen/moduller/projeler/kaynaklar">
+    Sprint sağlığı ve ekip yükü göstergeleri.
+  </Card>
+</Cards>
