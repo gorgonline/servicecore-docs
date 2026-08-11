@@ -1,0 +1,97 @@
+---
+title: "Filtreler ve JQL"
+description: "Projeler arası görev arama: JQL sorgu dili, kayıtlı ve paylaşılan filtreler, filtrelerin kullanıldığı yerler."
+reviewed: "2026-08-11"
+owner:
+---
+
+`Filtreler` sayfası, **tüm projelerde** görev aramanızı sağlar. Sorgular **JQL** ile
+yazılır; kaydedilen sorgular başka ekranlarda yeniden kullanılır.
+
+![Filtreler sayfası ve JQL sorgu çubuğu](/img/teknisyen/pm-filtreler.png)
+
+## İki kip
+
+| Kip | Ne için |
+|---|---|
+| **Temel** | Açılır kutularla süzme — sorgu dili bilmeden |
+| **Kod** | JQL sorgusunu doğrudan yazma |
+
+`Çalıştır` sorguyu uygular, `Kaydet` filtreyi saklar.
+
+## JQL sözdizimi
+
+Sorgular `alan operatör değer` üçlülerinden oluşur ve `AND` / `OR` ile birleşir:
+
+```text
+status = "Devam Ediyor" AND assignee = currentUser() ORDER BY createdDate DESC
+```
+
+Ekranda verilen örnekler:
+
+```text
+isDone = false AND storyPoints > 5
+createdDate >= -7d
+project = "Proje Adı" ORDER BY dueDate ASC
+```
+
+### Sık kullanılan yapılar
+
+| Yapı | Anlamı |
+|---|---|
+| `currentUser()` | Sorguyu çalıştıran kişi — filtreyi paylaşılabilir kılar |
+| `-7d` | Göreli tarih: son 7 gün |
+| `ORDER BY <alan> ASC\|DESC` | Sıralama |
+| `isDone = false` | Kapanmamış işler |
+
+<Callout type="info" title="ÖNEMLİ">
+`currentUser()` bir filtreyi **kişiye göre değişken** yapar: aynı filtre herkeste kendi
+işlerini gösterir. Ekip geneli paylaşılan filtrelerde bunu kullanmak, kişi başına ayrı
+filtre açmaktan çok daha sürdürülebilirdir.
+</Callout>
+
+<Callout type="warn" title="DİKKAT">
+Değerlerde **boşluk varsa tırnak** gerekir: `status = "Devam Ediyor"`. Tırnaksız yazılan
+çok kelimeli değer sorguyu bozar.
+
+Ayrıca değerler ürün içindeki **yazımıyla** eşleşmelidir; durum adları projeye özel
+olduğu için bir projede çalışan sorgu diğerinde boş dönebilir.
+</Callout>
+
+## Kayıtlı ve paylaşılan filtreler
+
+Sol sütun ikiye ayrılır:
+
+- **Filtrelerim** — kendi kaydettiğiniz filtreler. Yanlarındaki simgelerle paylaşılır
+  veya silinir.
+- **Benimle Paylaşılanlar** — başkalarının sizinle paylaştığı filtreler.
+
+Yıldızlanan filtreler kenar çubuğundaki `Favori Filtreler` bölümünde kısayol olarak
+görünür.
+
+## Filtreler nerede kullanılır
+
+Kaydedilen bir filtre yalnız bu sayfada yaşamaz:
+
+| Yer | Nasıl kullanılır |
+|---|---|
+| **Görevler** sekmesi | `Kayıtlı Filtreler` düğmesinden çağrılır |
+| **Pano** | Hızlı filtre chip'i veya varsayılan board filtresi olarak |
+| **Raporlar** | Raporun veri kapsamını belirleyen filtre olarak |
+
+<Callout type="info" title="ÖNEMLİ">
+Filtreler **projeye değil kullanıcıya** aittir. Bu yüzden projeler arası çalışan bir
+sorgu (örneğin "tüm projelerdeki gecikmiş işlerim") tek bir yerde tanımlanıp her yerde
+kullanılabilir.
+</Callout>
+
+## İlgili sayfalar
+
+<Cards>
+  <Card title="Görevler" href="/docs/teknisyen/moduller/projeler/gorevler">
+    Proje içindeki JQL filtre çubuğu.
+  </Card>
+  <Card title="Pano Ayarları" href="/docs/teknisyen/moduller/projeler/yapilandirma/pano-ayarlari">
+    Hızlı filtreler ve varsayılan board filtresi.
+  </Card>
+</Cards>
