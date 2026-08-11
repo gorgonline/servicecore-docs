@@ -1,0 +1,74 @@
+---
+title: "Görev Türleri"
+description: "Projenin görev türleri: anahtar, renk ve simge, epik ve alt görev işaretleri, tür ekleme ve pasifleştirme."
+reviewed: "2026-08-11"
+owner:
+---
+
+`Ayarlar` ▸ `Görev Türleri`, projede hangi tür işlerin açılabileceğini belirler. Türler
+**projeye özeldir** ve proje oluşturulurken seçilen şablondan kopyalanır.
+
+![Proje ayarları — görev türleri](/img/teknisyen/proje-ayarlar-gorev-turleri.png)
+
+## Satırdaki bilgiler
+
+| Öğe | Açıklama |
+|---|---|
+| Renkli simge | Türün rengi ve ikonu; görev listesinde ve panoda bu görünür |
+| **Ad** | Türün görünen adı (`Kullanıcı Hikayesi`, `Hata`…) |
+| **Anahtar** | Değişmeyen teknik anahtar (`STORY`, `BUG`, `SUB_TASK`…) |
+| Rozet | Türün özel rolü: `Epik` veya `Alt Görev` |
+| Anahtar düğmesi | Türü aktif/pasif yapar |
+
+## Epik ve Alt Görev rozetleri
+
+İki tür rozeti davranış değiştirir:
+
+- **Epik** — bu türdeki görevler üst kırılım olarak davranır; altına başka görevler
+  bağlanabilir ve yol haritasında kapsayıcı çubuk olarak çizilir.
+- **Alt Görev** — bu türdeki görevler bir üst göreve bağlı açılır; görev çekmecesindeki
+  `Alt Görevler` bölümünde listelenir.
+
+<Callout type="info" title="ÖNEMLİ">
+Rozetler tür bazında **tekil davranış** tanımlar, ad değil. Türün adını değiştirmek
+davranışını değiştirmez; "Epic" yerine "Girişim" yazarsanız da o tür epik olarak
+davranmaya devam eder.
+</Callout>
+
+<Callout type="warn" title="DİKKAT">
+Epik ve alt görev kavramları **yapı türüne** bağlıdır: Basic yapıdaki projelerde epik
+kullanılmaz. Yapı türünün hangi özellikleri açıp kapattığı için bkz.
+[Kavramlar ve Hiyerarşi](/docs/teknisyen/moduller/projeler/kavramlar).
+</Callout>
+
+## Tür ekleme ve pasifleştirme
+
+`Görev Türü Oluştur` yeni tür açar; ad, anahtar, renk ve simge girilir.
+
+Satır sonundaki anahtar düğmesi türü **pasifleştirir**. Pasif tür yeni görev
+oluştururken seçilemez, ancak o türdeki mevcut görevler olduğu gibi kalır — bu yüzden
+kullanımdan kaldırılacak türler için silmek yerine pasifleştirmek daha güvenlidir.
+
+<Callout type="warn" title="DİKKAT">
+Bir türü **silmeden** önce o türdeki görevlerin başka bir türe taşındığından emin olun.
+Ayrıca `Ayarlar` ▸ `Alanlar` bölümünde o türe bağlanmış özel alan eşlemeleri varsa
+onlar da etkilenir.
+</Callout>
+
+## Türlerin etkilediği yerler
+
+- **Görev oluşturma** — tür listesi buradan gelir
+- **Geçişler** — geçiş kuralları görev türü bazında tanımlanabilir
+- **Alanlar** — özel alanlar görev türlerine bağlanır
+- **Pano ve listeler** — tür rengi ve simgesi kartlarda/satırlarda görünür
+
+## İlgili sayfalar
+
+<Cards>
+  <Card title="Durumlar" href="/docs/teknisyen/moduller/projeler/yapilandirma/durumlar">
+    Görev durumları ve durum kategorileri.
+  </Card>
+  <Card title="Yapılandırma" href="/docs/teknisyen/moduller/projeler/yapilandirma">
+    Tüm ayar bölümleri ve önerilen sıra.
+  </Card>
+</Cards>

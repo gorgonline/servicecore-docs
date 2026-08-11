@@ -1,0 +1,90 @@
+---
+title: "Portföyler"
+description: "Portföy listesi ve detayı: program sayaçları, kapasite ve talep karşılaştırması, finansallar ve portföy sekmeleri."
+reviewed: "2026-08-11"
+owner:
+---
+
+**Portföy**, hiyerarşinin en üst seviyesidir: programları ve dolayısıyla projeleri
+stratejik bir başlık altında toplar. "Bu yatırım kümesi bir bütün olarak nasıl gidiyor?"
+sorusu portföy seviyesinde yanıtlanır.
+
+<Callout type="warn" title="DİKKAT">
+Portföy sayfasını görebilmek için **Portföyleri Görebilir** yetkisi gerekir. Yalnızca
+proje yetkisi verilmiş bir kullanıcı bu sayfayı kenar çubuğunda hiç görmez.
+</Callout>
+
+## Liste
+
+`Portföyler` sayfası tüm portföyleri listeler. Üstteki sekmeler `Hepsi`, `Aktif` ve
+`Arşivlendi` olarak süzer; arama kutusu ada göre arar.
+
+| Kolon | İçerik |
+|---|---|
+| **Kod** | Portföy kısa kodu (`PF-4`) |
+| **Ad** | Ad ve açıklama |
+| **Durum** | `Aktif` / `Arşivlendi` |
+| **Sahip** | Portföyden sorumlu kişi |
+| **Başlangıç / Hedef Tarih** | Zaman aralığı |
+
+Sağ üstteki simgelerle görünüm değiştirilir (liste, kart, pano, takvim); `Yeni portföy`
+yeni kayıt açar.
+
+## Portföy detayı
+
+![Portföy genel bakış ekranı](/img/teknisyen/pm-portfoy-detay.png)
+
+Bir portföye girildiğinde solda kendi sekmeleri açılır: `Genel Bakış`, `Hedefler`,
+`Programlar`, `Gösterge Paneli`, `Panolar`, `Yol Haritası`, `Son Aktiviteler`, `Ayarlar`.
+
+### Üst sayaçlar
+
+`Aktif`, `Planlama`, `Tamamlandı` ve `Programlar` — portföye bağlı programların durum
+dağılımı. Sayfa başlığındaki rozetler ayrıca program sayısını, aktif olanları, müsait
+kapasiteyi ve kapasiteli takım sayısını özetler.
+
+### Kapasite ve talep
+
+`Kapasite vs Talep` bölümü önümüzdeki 8 haftayı karşılaştırır: **kapasite** (ekiplerin
+çalışma saati), **talep** (planlanan iş), **doluluk** oranı ve **aşırı yüklü hafta**
+sayısı.
+
+<Callout type="info" title="ÖNEMLİ">
+Bu bölüm boş görünüyorsa veri eksik değildir — **programlardaki takımlara çalışma saati
+tanımlanmamıştır**. Ekranın kendi yönlendirmesi (`Takımları yönet`) doğrudan oraya
+götürür. Kapasite tanımı proje seviyesinde
+[Kapasite](/docs/teknisyen/moduller/projeler/yapilandirma/kapasite) bölümünden yapılır.
+</Callout>
+
+Grafiğin altındaki `tarihsiz` değeri, **tarihi olmayan** işlerin toplam süresini gösterir;
+bunlar zaman eksenine yerleştirilemediği için talebe dağıtılamaz.
+
+### Finansallar
+
+`Bütçe vs Gerçekleşen` bölümü portföy bütçesini takip eder. Gerçekleşen maliyet, takım
+maliyet oranı ile girilen iş günlüklerinden hesaplanır — yani **iş günlüğü girilmezse
+gerçekleşen maliyet oluşmaz**.
+
+Bütçe `Ayarlar` bölümünden tanımlanır.
+
+### Sağ panel
+
+Portföyün künyesi: sahip, kod, durum, başlangıç ve hedef tarih, oluşturulma tarihi ve
+açıklama. Her alanın yanındaki kalem simgesiyle yerinde düzenlenir.
+
+## Program bağlama
+
+Portföye program bağlamak, portföy detayındaki `Programlar` sekmesinden yapılır. Bir
+program yalnızca portföye bağlandıktan sonra portföyün sayaçlarına ve grafiklerine dahil
+olur.
+
+## İlgili sayfalar
+
+<Cards>
+  <Card title="Programlar" href="/docs/teknisyen/moduller/projeler/portfoy-program/programlar">
+    Portföyün altındaki yürütme katmanı.
+  </Card>
+  <Card title="Kavramlar ve Hiyerarşi" href="/docs/teknisyen/moduller/projeler/kavramlar">
+    Portföy–program–girişim–proje zinciri.
+  </Card>
+</Cards>
