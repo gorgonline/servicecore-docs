@@ -1,0 +1,84 @@
+---
+title: "Pano"
+description: "Kanban panosunda sütunlar, kart bilgileri, WIP limiti, filtreleme ve kartı sürükleyerek durum değiştirme."
+reviewed: "2026-08-11"
+owner:
+---
+
+`Pano` sekmesi, projedeki işleri iş akışı durumlarına göre sütunlarda gösterir. Kart
+sürüklendiğinde görevin durumu değişir.
+
+![Proje panosu](/img/teknisyen/proje-pano.png)
+
+## Sütunlar
+
+Her sütun bir veya daha fazla **proje durumuna** karşılık gelir. Sütun ile durum eşlemesi
+projeye özeldir ve `Ayarlar` ▸ `Pano` sekmesinden yapılır — yani sütun sayısı ve adları
+projeden projeye değişir.
+
+Yukarıdaki örnekte pano altı sütunludur: `Bekleyen İşler`, `Hazır`, `Devam Ediyor`,
+`İnceleme`, `Test`, `Yayınlandı`.
+
+<Callout type="info" title="ÖNEMLİ">
+Sütun başlığındaki sayı o sütundaki **kart adedidir**. Panonun üstündeki şerit ise
+projenin bütününü özetler: toplam kart, sütun başına dağılım, sütun sayısı ve toplam
+hikaye puanı.
+</Callout>
+
+### WIP limiti
+
+Bir sütuna **WIP limiti** (aynı anda üzerinde çalışılabilecek en fazla iş sayısı)
+tanımlanabilir. Limit `Ayarlar` ▸ `Pano` sekmesinden sütun bazında verilir; tanımlıysa
+sütun başlığında görünür.
+
+## Kart üzerindeki bilgiler
+
+Her kartta şunlar yer alır:
+
+| Öğe | Açıklama |
+|---|---|
+| Görev anahtarı | `#PRJ-<proje>-<görev>` biçiminde, göreve gider |
+| Görev türü ikonu | Türün rengi ve simgesi (özellik, hata, görev…) |
+| Başlık | Görev adı |
+| Hikaye puanı | Sol alttaki sayı (yalnız Scrum ve Kanban yapılarında) |
+| Bitiş tarihi | Geçmiş tarihler kırmızı gösterilir |
+| Atanan | Sağ alttaki avatar |
+
+Sütunun altındaki `+ İş oluştur` bağlantısı, doğrudan o sütunun durumuyla yeni görev açar.
+
+## Filtreleme ve gruplama
+
+Panonun üstündeki çubuk kartları daraltır:
+
+- **Kartlarda ara** — başlıkta metin arama
+- **Görevlerim** — yalnızca size atanmış kartlar
+- **Son Güncellenen** — sıralama ölçütü
+- **Tüm atananlar** / **Tüm takımlar** — kişi ve takım süzgeci
+- **Gruplama** — kartları kulvarlara (swimlane) ayırır
+
+## Kartı taşıma
+
+Kartı bir sütundan diğerine sürüklemek görevin durumunu değiştirir.
+
+<Callout type="warn" title="DİKKAT">
+Sürükleme her zaman serbest değildir. Projede **geçiş kuralları** tanımlıysa yalnızca
+tanımlı geçişler yapılabilir; geçişe form, koşul veya onay kapısı bağlanmış olabilir.
+Kart bıraktığınız yerde durmuyor ve eski sütununa geri dönüyorsa sebebi genellikle budur.
+</Callout>
+
+<Callout type="info" title="ÖNEMLİ">
+Bir statüye hiç **gelen geçiş** tanımlanmamışsa, o statü durum listesinde görünür ancak
+sunucu yazmayı reddeder. Böyle bir durumla karşılaşırsanız `Ayarlar` ▸ `Geçişler`
+ekranından o statüye en az bir geçiş tanımlayın.
+</Callout>
+
+## İlgili sayfalar
+
+<Cards>
+  <Card title="Görevler" href="/docs/teknisyen/moduller/projeler/gorevler">
+    Aynı işleri ızgara görünümünde, tüm alanlarıyla ve JQL ile süzerek yönetin.
+  </Card>
+  <Card title="Kavramlar ve Hiyerarşi" href="/docs/teknisyen/moduller/projeler/kavramlar">
+    Durum, durum kategorisi ve yapı türü kavramları.
+  </Card>
+</Cards>
