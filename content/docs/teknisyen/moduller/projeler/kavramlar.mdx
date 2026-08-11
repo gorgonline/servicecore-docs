@@ -1,0 +1,155 @@
+---
+title: "Kavramlar ve Hiyerarşi"
+description: "Portföy, program, girişim, proje ve görev nasıl ilişkilenir; proje yapısı türü hangi özellikleri açıp kapatır."
+reviewed: "2026-08-11"
+owner:
+---
+
+Proje yönetimi modülü tek bir ekran değil, birbirine bağlı bir sayfa kümesidir. Bir proje
+açtığınızda solda modülün kendi kenar çubuğu görünür; bu çubuk portföyden görev listesine
+kadar tüm proje yönetimi ekranlarına erişim sağlar.
+
+## Hiyerarşi
+
+Kayıt türleri yukarıdan aşağıya şöyle ilişkilenir:
+
+```mermaid
+flowchart TD
+  PF[Portföy] --> PRG1[Program]
+  PF --> PRG2[Program]
+  PRG1 --> GRS[Girişim]
+  PRG1 --> PRJ[Proje]
+  GRS -. epik bağlanır .-> EPK[Epik]
+  PRJ --> EPK
+  EPK --> GRV[Görev]
+  GRV --> ALT[Alt Görev]
+```
+
+- **Portföy** — Stratejik gruplama seviyesi. Altında bir veya daha fazla program yer alır.
+- **Program** — Ortak bir sonuca hizmet eden projeleri ve girişimleri bir arada yürütür.
+  Bütçe, planlanan maliyet ve hedef tarih program seviyesinde de tutulur.
+- **Girişim** — Program altında değer bazlı iş kalemi; fayda puanı ve WSJF alanlarıyla
+  önceliklendirilir. Girişimin yol haritası, kendisine bağlanan epiklerden çizilir.
+- **Proje** — Görevlerin, sprintlerin, panonun ve iş günlüklerinin yaşadığı asıl çalışma alanı.
+- **Epik / Görev / Alt Görev** — Proje içindeki iş kırılımı.
+
+Bağlama işlemleri üst kaydın detay sayfasından yapılır: portföy detayındaki `Programlar`
+sekmesinden programlar, program detayındaki `Projeler` ve `Girişimler` sekmelerinden ise
+projeler ve girişimler bağlanır.
+
+## Modülün sayfaları
+
+| Sayfa | Adres | Ne işe yarar |
+|---|---|---|
+| **Benim İşlerim** | `/MyWork/Index` | Tüm projelerdeki kendi görevlerinizi tek listede toplar |
+| **Portföyler** | `/Portfolio/Index` | Programları ve yatırımları üst seviyede gruplar |
+| **Programlar** | `/Program/Index` | Birden fazla projeyi ortak bir hedef altında yürütür |
+| **Girişimler** | `/Initiative/Index` | Program altında değer bazlı iş kalemlerini tanımlar |
+| **Projeler** | `/Project2/Index` | Proje listesi ve proje detayı |
+| **Bağımlılıklar** | `/DependencyMatrix/Index` | Projeler ve görevler arası bağımlılık matrisi |
+| **Takımlar** | `/Team/Index` | Organizasyon seviyesinde takım havuzu |
+| **Kapasite** | `/Capacity/Index` | Kaynak arzı ve talebinin karşılaştırılması |
+| **Analitik** | `/Analytics/Index` | Proje yönetimi göstergeleri |
+| **Kapsam** | `/Scope/Index` | Portföy ve program seviyesinde kapsam takibi |
+| **Hedefler (OKR)** | `/Objectives/Index` | Hedef ve anahtar sonuç tanımları |
+| **Filtreler** | `/Filters/Index` | Kaydedilmiş görev filtreleri |
+| **Entegrasyonlar** | `/ProjectIntegrations/Index` | Proje yönetimi entegrasyonları kataloğu |
+
+<Callout type="warn" title="DİKKAT">
+Kenar çubuğunda **yalnızca yetkiniz olan sayfalar** görünür ve her sayfanın yetkisi
+farklıdır. `Projeler` için **Projeleri Görebilir**, `Portföyler` için
+**Portföyleri Görebilir**, `Programlar` ile `Bağımlılıklar` ve `Takımlar` için
+**Programları Görebilir** yetkisi gerekir. Yalnız proje yetkisi verilmiş bir kullanıcı
+üst seviye sayfaları hiç görmez — bu beklenen davranıştır.
+</Callout>
+
+## Proje detayı sekmeleri
+
+Bir proje açıldığında üstte şu sekmeler bulunur. Sekmeler dört gruba ayrılır:
+
+| Grup | Sekmeler |
+|---|---|
+| **Planlama** | `Genel Bakış` · `İş Listesi` · `Pano` |
+| **Teslim** | `Görevler` · `Yol Haritası` · `Kaynaklar` |
+| **Takip** | `Program` · `İş Günlükleri` · `Riskler` · `Aktivite` · `Raporlar` |
+| **İşbirliği** | `Dosyalar` · `Gelen Kutusu` |
+| **Yapılandırma** | `Ayarlar` |
+
+<Callout type="info" title="ÖNEMLİ">
+`Program` sekmesi bir programa (program yönetimi kaydına) değil, projenin **zaman
+çizelgesi/takvim** görünümüne karşılık gelir. Program yönetimi için soldaki
+`Programlar` sayfasını kullanın.
+</Callout>
+
+## Proje yapısı türleri
+
+Her proje üç yapı türünden biriyle açılır: **Basic**, **Scrum** veya **Kanban**. Yapı
+türü proje oluşturulurken seçilen şablondan gelir ve projede hangi özelliklerin
+kullanılabileceğini belirler.
+
+| Özellik | Basic | Scrum | Kanban |
+|---|---|---|---|
+| Sprint | — | ✓ | — |
+| `İş Listesi` sekmesi | — | ✓ | — |
+| Epik | — | ✓ | ✓ |
+| Story point | — | ✓ | ✓ |
+| Bayrak, izleyici ve oy | — | ✓ | ✓ |
+| Kümülatif akış grafiği | — | — | ✓ |
+
+Story point ve sprint kapalı olduğunda ilgili sütunlar görev listesinden, ilgili alanlar
+da görev detayından tamamen kaldırılır.
+
+<Callout type="warn" title="DİKKAT">
+`İş Listesi` sekmesi **yalnızca Scrum** yapısındaki projelerde görünür. Kanban ve Basic
+projelerde görevler `Pano` ve `Görevler` sekmelerinden yönetilir. Diğer tüm sekmeler her
+yapı türünde görünür.
+</Callout>
+
+### Kaynaklar sekmesindeki grafikler
+
+`Kaynaklar` sekmesinin alt sekmeleri de yapı türüne göre değişir:
+
+| Alt sekme | Hangi yapıda |
+|---|---|
+| Burndown, Hız, Karşılaştırma, Tahmin, Devreden İş, Tahminleme, Kişisel Hız, SLA, Sprint Hedefi | Yalnızca **Scrum** |
+| Akış (kümülatif akış) | Yalnızca **Kanban** |
+| Kapasite, Darboğaz | **Basic dışındaki** yapılarda |
+
+## Varsayılan görev türleri
+
+Görev türleri projeye özeldir ve **seçilen şablondan** kopyalanır. Örneğin
+`Yazılım Projesi (Scrum)` şablonuyla açılan bir projede şu türler bulunur:
+
+| Tür | Ne için kullanılır |
+|---|---|
+| **Epic** | Hikayelere bölünebilen büyük iş parçası |
+| **Kullanıcı Hikayesi** | Kullanıcı perspektifinden tanımlanan işlevsellik |
+| **Görev** | Teknik görev veya uygulama kalemi |
+| **Hata** | Düzeltilmesi gereken yazılım hatası |
+| **Alt Görev** | Görev veya hikayenin alt parçası |
+| **Teknik Borç** | Kod kalitesi iyileştirme veya yeniden düzenleme |
+
+Şablon kullanılmadan açılan projelerde yapı türüne göre varsayılan bir küme oluşturulur:
+Basic için `Task` ve `Bug`; Scrum için `Epic`, `Story`, `Task`, `Bug`, `Sub-task`;
+Kanban için `Feature`, `Task` ve `Bug`.
+
+Türler `Ayarlar` ▸ `Görev Türleri` sekmesinden yeniden adlandırılabilir, renkleri
+değiştirilebilir ve yeni tür eklenebilir.
+
+## Durum ve durum kategorisi
+
+Her projenin **kendi** görev durumları vardır; durumlar proje oluşturulurken şablondan
+kopyalanır. Her durum ayrıca bir durum kategorisine bağlıdır:
+
+- **Yapılacak** — henüz başlanmamış işler
+- **Devam Ediyor** — üzerinde çalışılan işler
+- **Tamamlandı** — biten işler
+
+Kategori, durumun adından bağımsızdır. Panolar, raporlar ve projeler arası filtreler
+"bitti mi" sorusunu durum adına değil bu kategoriye bakarak yanıtlar; bu yüzden yeni bir
+durum eklerken doğru kategoriyi seçmek önemlidir.
+
+<Callout type="info" title="ÖNEMLİ">
+Durumlar proje bazında tutulur. İki farklı projede aynı ada sahip iki durum, birbirinden
+bağımsız iki kayıttır. Bir projede yaptığınız durum değişikliği diğer projeleri etkilemez.
+</Callout>
