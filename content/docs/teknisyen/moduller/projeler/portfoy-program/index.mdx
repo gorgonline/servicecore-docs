@@ -1,0 +1,33 @@
+---
+title: "Portföy ve Program"
+description: "Proje üstü seviye: portföyler, programlar ve girişimler; stratejik gruplama, kapasite/talep ve değer akışı."
+reviewed: "2026-08-11"
+owner:
+---
+
+Proje seviyesinin üstünde üç katman bulunur. Her biri farklı bir soruyu yanıtlar:
+
+```mermaid
+flowchart LR
+  PF[Portföy<br/>doğru şeylere mi<br/>yatırım yapıyoruz] --> PRG[Program<br/>birlikte yürüyen<br/>işler nasıl gidiyor]
+  PRG --> INI[Girişim<br/>hangi değeri<br/>üretiyoruz]
+  PRG --> PRJ[Proje<br/>işi kim<br/>yapıyor]
+```
+
+<Callout type="warn" title="DİKKAT">
+Bu üç sayfanın her biri **ayrı yetki** ister: `Portföyleri Görebilir`,
+`Programları Görebilir` ve `Girişimleri Yönetebilir`. Yalnız proje yetkisi verilmiş bir
+kullanıcı bu sayfaları kenar çubuğunda hiç görmez — bu beklenen davranıştır.
+</Callout>
+
+<Cards>
+  <Card title="Portföyler" href="/docs/teknisyen/moduller/projeler/portfoy-program/portfoyler">
+    Program sayaçları, kapasite/talep karşılaştırması, finansallar.
+  </Card>
+  <Card title="Programlar" href="/docs/teknisyen/moduller/projeler/portfoy-program/programlar">
+    Girişim ve proje sayaçları, Program Increment'ler, sağlık göstergesi.
+  </Card>
+  <Card title="Girişimler" href="/docs/teknisyen/moduller/projeler/portfoy-program/girisimler">
+    Değer akışı durumları, fayda puanı ve WSJF, epic bağlama.
+  </Card>
+</Cards>
