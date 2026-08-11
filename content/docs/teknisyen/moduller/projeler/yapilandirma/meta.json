@@ -5,12 +5,14 @@
     "pano-ayarlari",
     "durumlar",
     "gorev-turleri",
+    "cozumler",
     "alanlar",
     "etiketler",
     "gecisler",
     "otomasyon",
     "bildirimler",
     "yetkiler",
-    "uyeler"
+    "uyeler",
+    "kapasite"
   ]
 }
