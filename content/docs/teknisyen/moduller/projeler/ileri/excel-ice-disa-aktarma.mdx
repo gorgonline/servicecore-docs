@@ -1,0 +1,77 @@
+---
+title: "Excel İçe ve Dışa Aktarma"
+description: "Görevleri Excel'e aktarma ve Excel'den içe alma: yetkiler, tarih ve ondalık tuzakları, gidiş-dönüş uyumu."
+reviewed: "2026-08-11"
+owner:
+---
+
+Görevler `Görevler` sekmesindeki araç çubuğundan **Excel'e aktarılır** ve Excel'den
+**içe alınır**. Toplu düzenleme ve dış paydaşla veri paylaşımı için kullanılır.
+
+## Yetkiler
+
+<Callout type="warn" title="DİKKAT">
+İki işlem **ayrı yetkiler** ister: `Görev Dışa Aktarabilir` ve `Görev İçe Aktarabilir`.
+Araç çubuğunda ilgili simgeyi göremiyorsanız rolünüzde o yetki tanımlı değildir.
+</Callout>
+
+## Gidiş-dönüş uyumu
+
+Dışa aktarılan dosya, düzenlenip **geri yüklenebilecek** biçimdedir: seçenekli alanlar
+(açılır liste, çoklu seçim) ve kişi alanları, kimlik numarası yerine **okunabilir
+karşılıklarıyla** yazılır.
+
+<Callout type="info" title="ÖNEMLİ">
+Bu ayrım önemlidir: içe aktarma değerleri **ada göre** çözer. Ham kimlik numarası içeren
+bir dosya geri yüklendiğinde "bulunamadı" hatası verir. Kişi alanlarında eşleşme
+**e-posta** üzerinden yapılır, ad üzerinden değil.
+</Callout>
+
+## Tarih ve sayı tuzakları
+
+Excel dosyalarında en sık iki hata görülür ve ikisi de **sessizdir** — dosya yüklenir,
+hata çıkmaz, yalnız değer yanlıştır:
+
+| Tuzak | Ne olur |
+|---|---|
+| **Tarih biçimi** | `05.08.2026` bazı ayrıştırıcılarda **8 Mayıs** olarak okunur (ay/gün takla atar). Gün 12'den büyükse hata görünür, değilse fark edilmez. |
+| **Ondalık ayracı** | `3,5` değeri virgül binlik ayracı sayılırsa **35** olur — on kat sapma. |
+
+<Callout type="warn" title="DİKKAT">
+Bu iki hatadan korunmanın en güvenli yolu, hücreleri **metin olarak değil tipli**
+bırakmaktır: dışa aktarılan dosyada tarih hücresi gerçek tarih, sayı hücresi gerçek
+sayıdır. Hücreleri elle metne çevirmek veya metin olarak yapıştırmak ayrıştırma tuzağını
+geri getirir.
+
+Dosyayı düzenlerken tarih ve sayı hücrelerinin biçimini değiştirmeyin.
+</Callout>
+
+## İçe aktarma sırası
+
+1. Önce mevcut görevleri **dışa aktarın** — doğru kolon başlıklarını ve değer yazımlarını
+   içeren bir şablon elde edersiniz.
+2. Dosyayı düzenleyin; kolon başlıklarını değiştirmeyin.
+3. İçe aktarın ve doğrulama sonucunu okuyun.
+
+<Callout type="info" title="ÖNEMLİ">
+İçe aktarma, satır bazında doğrulama yapar ve hatalı satırları raporlar. Bir satırın
+reddedilmesi diğerlerini engellemez; bu yüzden büyük dosyalarda sonucu satır satır
+kontrol etmek gerekir.
+</Callout>
+
+## Türkçe karakter ve CSV
+
+CSV çıktıları UTF-8 kodlanır. Excel, işaretleyicisi olmayan UTF-8 dosyaları sistem kod
+sayfası sanabilir ve Türkçe harfler bozulur ("Görev" → "GÃ¶rev"). Dosya bozuk açılırsa
+Excel'in içe aktarma sihirbazından kodlamayı **UTF-8** seçin.
+
+## İlgili sayfalar
+
+<Cards>
+  <Card title="Görevler" href="/docs/teknisyen/moduller/projeler/gorevler">
+    Dışa/içe aktarma düğmelerinin bulunduğu ekran.
+  </Card>
+  <Card title="Alanlar" href="/docs/teknisyen/moduller/projeler/yapilandirma/alanlar">
+    Özel alanların tanımlandığı bölüm.
+  </Card>
+</Cards>

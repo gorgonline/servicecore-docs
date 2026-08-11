@@ -1,0 +1,59 @@
+---
+title: "Analitik"
+description: "Projeler arası raporlar ve panolar: genel raporlar, grafik/tablo türleri ve zamanlanmış gönderim."
+reviewed: "2026-08-11"
+owner:
+---
+
+`Analitik` sayfası, **tüm projelerdeki** raporları ve panoları bir arada toplar. Proje
+içindeki `Raporlar` sekmesi tek bir projeyi kapsarken burası projeler arasıdır.
+
+## İki sekme
+
+| Sekme | İçerik |
+|---|---|
+| **Özel Raporlar** | Grafik ve tablo raporları |
+| **Panolar** | Birden fazla raporu bir araya getiren panolar |
+
+## Sayaçlar
+
+`Toplam`, `Grafik Rapor`, `Tablo Rapor`, `Zamanlanmış` ve `Genel Rapor` — son ikisi
+önemlidir:
+
+- **Zamanlanmış** — belirli aralıklarla üretilip e-posta ile gönderilen raporlar.
+- **Genel rapor** — belirli bir projeye bağlı olmayan, **projeler arası** rapor.
+
+<Callout type="info" title="ÖNEMLİ">
+Bir raporun "genel" olması, veri kaynağının tek projeyle sınırlı olmadığı anlamına gelir.
+Proje bazında açılan raporlar yalnız o projenin verisini görür; portföy/program seviyesinde
+karşılaştırma yapacaksanız genel rapor oluşturmalısınız.
+</Callout>
+
+## Rapor türleri
+
+- **Grafik rapor** — görsel özet (dağılım, trend, karşılaştırma)
+- **Tablo rapor** — ayrıntılı, satır bazlı veri görünümü
+
+Rapor tanımlarken **filtreler** ile veri daraltılır; filtreler JQL sorgularına dayanır.
+
+## Zamanlama
+
+Raporlar zamanlanabilir ve e-posta ile gönderilir. Düzenli durum raporlaması için en
+pratik yol budur: sponsor raporu kendi posta kutusunda bulur.
+
+<Callout type="warn" title="DİKKAT">
+Raporlar **canlı veriyi** okur. Filtresi geniş bırakılmış bir rapor, sistem büyüdükçe
+yavaşlar ve okunmaz hâle gelir. Rapor tanımlarken kapsamı baştan daraltmak, sonradan
+düzeltmekten kolaydır.
+</Callout>
+
+## İlgili sayfalar
+
+<Cards>
+  <Card title="Raporlar" href="/docs/teknisyen/moduller/projeler/ozel-raporlar">
+    Tek bir projenin raporları ve yerleşik çevik grafikler.
+  </Card>
+  <Card title="Kapsam" href="/docs/teknisyen/moduller/projeler/portfoy-program/kapsam">
+    Raporların dayandığı verinin sağlık taraması.
+  </Card>
+</Cards>
