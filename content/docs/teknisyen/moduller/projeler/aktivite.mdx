@@ -1,0 +1,61 @@
+---
+title: "Aktivite"
+description: "Projedeki tüm hareketlerin kaydı: tür ve üye süzgeçleri, tarih aralığı, değişiklik ayrıntısı ve hızlı filtreler."
+reviewed: "2026-08-11"
+owner:
+---
+
+`Aktivite` sekmesi, projede yapılan **tüm hareketlerin** kaydını tutar: görev oluşturma
+ve silme, sprintle ilişkilendirme, yorum, alan değişiklikleri.
+
+![Proje aktivite kaydı](/img/teknisyen/proje-aktivite.png)
+
+## Kolonlar
+
+| Kolon | İçerik |
+|---|---|
+| **Türü** | Hareketin sınıfı (`Görev`, `Sprint Görevi`, `Yorum`, `Aktivite`…) |
+| **Açıklama** | Kim, neyi, hangi kayıt üzerinde yaptı |
+| **Değişiklikler** | Alan değişikliklerinde eski → yeni değer |
+| **Yapan Kişi** | Hareketi yapan kullanıcı |
+| **Zaman** | Göreli zaman (`14 dakika önce`) |
+
+Açıklama içindeki görev anahtarı bağlantıdır; tıklandığında görev çekmecesi açılır.
+
+## Filtreleme
+
+Üstteki üç hızlı düğme sık kullanılan aralıkları verir:
+
+| Düğme | Ne yapar |
+|---|---|
+| **Bugün** | Yalnızca bugünün hareketleri |
+| **Bu Hafta** | İçinde bulunulan hafta |
+| **Aktivitelerim** | Yalnızca sizin yaptığınız hareketler |
+
+Altındaki çubuk daha ayrıntılı süzer: `Türe göre filtrele`, `Üyeye göre filtrele` ve
+başlangıç–bitiş **tarih aralığı**. `Temizle` tüm süzgeçleri kaldırır.
+
+Sol üstteki rozet, geçerli süzgeçlere uyan kayıt sayısını gösterir.
+
+<Callout type="info" title="ÖNEMLİ">
+Bu ekran **projenin tamamını** kapsar. Tek bir görevin geçmişi için görev çekmecesindeki
+`Geçmiş` sekmesini kullanın — bkz.
+[Görev Detayı](/docs/teknisyen/moduller/projeler/gorev-detayi).
+</Callout>
+
+<Callout type="warn" title="DİKKAT">
+Aktivite kaydı bir **denetim izi** değildir: kayıtlar silinmez ama her hareket türü aynı
+ayrıntıda yazılmaz; bazı satırlar yalnızca hareketin gerçekleştiğini belirtir, `Değişiklikler`
+kolonu boş kalır. Alan bazında kesin izleme gerekiyorsa görev geçmişine bakın.
+</Callout>
+
+## İlgili sayfalar
+
+<Cards>
+  <Card title="Genel Bakış" href="/docs/teknisyen/moduller/projeler/genel-bakis">
+    Son aktiviteler özeti projenin genel bakış ekranında da yer alır.
+  </Card>
+  <Card title="Görev Detayı" href="/docs/teknisyen/moduller/projeler/gorev-detayi">
+    Tek bir görevin alan değişiklikleri `Geçmiş` sekmesindedir.
+  </Card>
+</Cards>
