@@ -1,0 +1,50 @@
+---
+title: "Entegrasyonlar"
+description: "Proje yönetimi entegrasyon kataloğu ve otomasyonun webhook/HTTP aksiyonlarıyla ilişkisi."
+reviewed: "2026-08-11"
+owner:
+---
+
+`Entegrasyonlar` sayfası, proje yönetimi modülünün dış sistemlerle kurabileceği bağlantıları
+bir **katalog** olarak sunar.
+
+## Katalog nasıl okunur
+
+Her kart bir entegrasyon adayını tanıtır: ne işe yaradığı ve hangi yönde veri taşıdığı.
+Kartlar kurulum sihirbazı değil, yönlendirmedir — bağlantının kendisi ilgili sistemin
+ayarlarından yapılır.
+
+## Otomasyon ile ilişkisi
+
+<Callout type="info" title="ÖNEMLİ">
+Katalogda karşılığı olmayan bir entegrasyon ihtiyacı çoğu zaman **otomasyon** ile
+çözülebilir: `Ayarlar` ▸ `Otomasyon` bölümündeki kurallar **webhook** ve **HTTP isteği**
+aksiyonlarını destekler.
+
+Yani "görev şu duruma geçince şu sisteme haber ver" türü ihtiyaçlar için ayrı bir
+entegrasyona gerek yoktur — bkz.
+[Otomasyon](/docs/teknisyen/moduller/projeler/yapilandirma/otomasyon).
+</Callout>
+
+<Callout type="warn" title="DİKKAT">
+Webhook ve HTTP aksiyonları dış adreslere istek atar. Hedef adresin doğruluğundan ve
+gönderilen veride hassas bilgi bulunmadığından emin olun; bir kez gönderilen veri geri
+alınamaz.
+</Callout>
+
+## Proje e-postası
+
+En sık kullanılan "entegrasyon" aslında modülün kendi içindedir: projeye tanımlanan bir
+e-posta adresi, gelen iletileri projenin `Gelen Kutusu` sekmesine düşürür — bkz.
+[Gelen Kutusu](/docs/teknisyen/moduller/projeler/gelen-kutusu).
+
+## İlgili sayfalar
+
+<Cards>
+  <Card title="Otomasyon" href="/docs/teknisyen/moduller/projeler/yapilandirma/otomasyon">
+    Webhook ve HTTP aksiyonlarını taşıyan kural motoru.
+  </Card>
+  <Card title="Gelen Kutusu" href="/docs/teknisyen/moduller/projeler/gelen-kutusu">
+    Projeye e-posta ile gelen içerik.
+  </Card>
+</Cards>
