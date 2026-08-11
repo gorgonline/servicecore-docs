@@ -1,0 +1,107 @@
+---
+title: "Yapılandırma"
+description: "Proje ayarları: 14 bölümün ne işe yaradığı ve hangi sırayla ele alınması gerektiği."
+reviewed: "2026-08-11"
+owner:
+---
+
+Proje ayarları, projenin `Ayarlar` sekmesinden açılır. Sol tarafta **14 bölüm** bulunur;
+her biri projenin ayrı bir yönünü yapılandırır.
+
+<Callout type="info" title="ÖNEMLİ">
+Ayarların tamamı **projeye özeldir**. Bir projede yaptığınız değişiklik diğer projeleri
+etkilemez; ayarların ilk hâli proje oluşturulurken **şablondan kopyalanır** — bkz.
+[Proje Oluşturma](/docs/teknisyen/moduller/projeler/proje-olusturma).
+</Callout>
+
+## Bölümler
+
+| Bölüm | Ne yapılandırır |
+|---|---|
+| **Genel** | Proje adı, açıklaması, lideri, tarihleri, sağlık ve risk seviyesi |
+| **Pano** | Pano sütunları, sütun–durum eşlemesi, WIP limitleri |
+| **Durumlar** | Projenin görev durumları ve durum kategorileri |
+| **Görev Türleri** | Epik, hikaye, görev, hata gibi türler; renk ve simgeleri |
+| **Çözümler** | Görev kapanış nedenleri |
+| **Etiketler** | Projede kullanılabilecek etiketler |
+| **Üyeler** | Projede kim var ve hangi rolde |
+| **Takımlar** | Proje takımları ve üyeleri |
+| **Kapasite** | Haftalık kapasite ve izinler |
+| **Bildirimler** | Hangi olayda kime bildirim gideceği |
+| **Yetkiler** | Proje rolleri ve rollerin yetkileri |
+| **Geçişler** | Durumlar arası geçişler; koşul, ekran ve onay kapıları |
+| **Alanlar** | Görev türlerine bağlı özel alanlar |
+| **Otomasyon** | Tetikleyici–koşul–aksiyon kuralları |
+
+## Önerilen sıra
+
+Yeni bir projeyi yapılandırırken şu sıra işi kolaylaştırır:
+
+```mermaid
+flowchart LR
+  A[Yetkiler:<br/>rolleri tanımla] --> B[Üyeler:<br/>ekibi ekle]
+  B --> C[Durumlar ve<br/>Görev Türleri]
+  C --> D[Pano:<br/>sütunları eşle]
+  D --> E[Geçişler:<br/>iş akışı kuralları]
+  E --> F[Bildirimler<br/>ve Otomasyon]
+```
+
+<Callout type="warn" title="DİKKAT">
+**Yetkiler (roller) her şeyden önce gelir.** Projeye üye eklerken bir rol seçmek
+zorunludur; projede hiç rol tanımlı değilse `Üye Ekle` penceresindeki `Rol` listesi boş
+kalır ve üye eklenemez.
+
+Roller normalde şablondan kopyalanır, ancak **şablonda rol tanımlı değilse** proje
+sıfır rolle açılır. Bu durumda önce `Yetkiler` bölümünden en az bir rol oluşturun.
+</Callout>
+
+## Bu bölümdeki sayfalar
+
+<Cards>
+  <Card title="Genel" href="/docs/teknisyen/moduller/projeler/yapilandirma/genel">
+    Künye alanları, yapı türünü sonradan değiştirme, şablonlaştırma ve arşivleme.
+  </Card>
+  <Card title="Pano Ayarları" href="/docs/teknisyen/moduller/projeler/yapilandirma/pano-ayarlari">
+    Sütun–durum eşlemesi, eşlemsiz durumlar, WIP limiti, hızlı filtreler.
+  </Card>
+  <Card title="Durumlar" href="/docs/teknisyen/moduller/projeler/yapilandirma/durumlar">
+    Görev durumları, kategoriler, sıra numarası ve çift durum kümesi tuzağı.
+  </Card>
+  <Card title="Görev Türleri" href="/docs/teknisyen/moduller/projeler/yapilandirma/gorev-turleri">
+    Türler, anahtarlar, epik ve alt görev rozetleri, pasifleştirme.
+  </Card>
+  <Card title="Çözümler" href="/docs/teknisyen/moduller/projeler/yapilandirma/cozumler">
+    Kapanış çözüm değerleri, varsayılan çözüm; çözümler instance genelinde ortaktır.
+  </Card>
+  <Card title="Alanlar" href="/docs/teknisyen/moduller/projeler/yapilandirma/alanlar">
+    Görev türü bazında özel alan yapılandırması; açıklama ve bağlam kategorileri.
+  </Card>
+  <Card title="Etiketler" href="/docs/teknisyen/moduller/projeler/yapilandirma/etiketler">
+    Etiket yönetimi; etiketler instance genelinde ortaktır, birleştirme ve silme.
+  </Card>
+  <Card title="Geçişler" href="/docs/teknisyen/moduller/projeler/yapilandirma/gecisler">
+    Durumlar arası geçiş kuralları, varsayılan üretim, ekran/onay/koşul yapılandırması.
+  </Card>
+  <Card title="Otomasyon" href="/docs/teknisyen/moduller/projeler/yapilandirma/otomasyon">
+    Tetikleyici–koşul–aksiyon kuralları, test ve günlükler, yazılabilen alan sınırı.
+  </Card>
+  <Card title="Bildirimler" href="/docs/teknisyen/moduller/projeler/yapilandirma/bildirimler">
+    Bildirim türlerini açıp kapatma; ayarlar tüm proje üyeleri için geçerlidir.
+  </Card>
+  <Card title="Yetkiler (Proje Rolleri)" href="/docs/teknisyen/moduller/projeler/yapilandirma/yetkiler">
+    Proje rolleri, rollere yetki atama ve global yetki ile rol arasındaki iş bölümü.
+  </Card>
+  <Card title="Üyeler" href="/docs/teknisyen/moduller/projeler/yapilandirma/uyeler">
+    Projeye üye ekleme, rol atama ve gözlemci (salt okunur) üyeler.
+  </Card>
+  <Card title="Takımlar" href="/docs/teknisyen/moduller/projeler/yapilandirma/takimlar">
+    Org havuzu ile proje takımı ilişkisi, takım rolü ve görev atamada takımın yeri.
+  </Card>
+  <Card title="Kapasite" href="/docs/teknisyen/moduller/projeler/yapilandirma/kapasite">
+    Üye bazında haftalık kapasite, günlük karşılığı ve tahsis oranı.
+  </Card>
+</Cards>
+
+<Callout type="info" title="ÖNEMLİ">
+14 ayar bölümünün tamamı belgelenmiştir.
+</Callout>

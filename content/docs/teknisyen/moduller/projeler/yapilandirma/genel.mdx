@@ -1,0 +1,80 @@
+---
+title: "Genel"
+description: "Projenin künye alanları, yapı türünü sonradan değiştirme, şablon olarak kaydetme ve arşivleme."
+reviewed: "2026-08-11"
+owner:
+---
+
+`Ayarlar` ▸ `Genel`, projenin künyesini ve yaşam döngüsü işlemlerini barındırır.
+
+![Proje ayarları — genel](/img/teknisyen/proje-ayarlar-genel.png)
+
+## Künye alanları
+
+| Alan | Açıklama |
+|---|---|
+| **Proje Adı** | Zorunlu; listelerde ve tüm ekranlarda görünür |
+| **Açıklama** | Projenin kapsamı |
+| **Proje Lideri** | Projenin sorumlusu |
+| **Proje Türü** | Yönetici tarafından tanımlanan proje türleri |
+| **Destek Müşteri Hesabı** | Projeye bağlı müşteri kaydı |
+| **Proje Yapı Tipi** | `Basic`, `Scrum` veya `Kanban` |
+| **Proje Sağlığı** | `Yolunda`, `Riskli`, `Engellendi` |
+| **Risk Seviyesi** | `Düşük`, `Orta`, `Yüksek`, `Kritik` |
+
+Değişiklikler `Değişiklikleri Kaydet` ile uygulanır.
+
+<Callout type="info" title="ÖNEMLİ">
+**Proje Lideri** yalnız bir künye alanı değildir: lider, proje içindeki tüm sekmeleri
+yetki kontrolüne takılmadan görür. Bu yüzden gerçek sorumluyu seçin.
+</Callout>
+
+## Yapı türü sonradan değiştirilebilir
+
+`Proje Yapı Tipi` alanı proje açıldıktan **sonra da** değiştirilebilir. Ekranın kendi
+notu bunu açıkça söyler: *"Hangi ekranların (backlog, sprint, pano) görüneceğini
+belirler. Veri silinmez."*
+
+<Callout type="warn" title="DİKKAT">
+Veri silinmez ama **görünmez olabilir**. Scrum'dan Basic'e geçtiğinizde `İş Listesi`
+sekmesi, sprintler ve hikaye puanı alanları arayüzden kalkar; kayıtlar veritabanında
+durur ve yapı türünü geri aldığınızda yeniden görünür.
+
+Bu yüzden yapı türünü değiştirmek geri alınabilir bir işlemdir — ama ekip ortasında
+yapmak kafa karıştırır: sprint planlaması yapan bir ekip, ertesi gün `İş Listesi`
+sekmesini bulamaz.
+</Callout>
+
+Yapı türünün hangi özellikleri açıp kapattığı için bkz.
+[Kavramlar ve Hiyerarşi](/docs/teknisyen/moduller/projeler/kavramlar).
+
+## Şablon olarak kaydet
+
+`Şablon Olarak Kaydet`, projenin **yapılandırmasını** yeni projelerde kullanılabilecek bir
+şablona dönüştürür: görev türleri, durumlar, geçişler, pano, alan eşlemeleri, bildirim
+ayarları ve roller.
+
+<Callout type="info" title="ÖNEMLİ">
+Şablona giden şey **yapılandırmadır**, görevler değil. Kendi akışınızı bir kez kurup
+şablonlaştırmak, sonraki projelerde tekrar tekrar durum/geçiş tanımlamaktan kurtarır.
+
+Bir şablonda **rol tanımlı yoksa** o şablonla açılan projeler rolsüz başlar ve ekip
+eklenemez — bkz.
+[Yetkiler](/docs/teknisyen/moduller/projeler/yapilandirma/yetkiler).
+</Callout>
+
+## Projeyi arşivle
+
+Sayfanın altındaki `Projeyi Arşivle` bölümü projeyi aktif listeden çıkarır. Arşivlenen
+proje silinmez; verisi durur ve gerektiğinde geri alınabilir.
+
+## İlgili sayfalar
+
+<Cards>
+  <Card title="Yapılandırma" href="/docs/teknisyen/moduller/projeler/yapilandirma">
+    Tüm ayar bölümleri ve önerilen sıra.
+  </Card>
+  <Card title="Proje Oluşturma" href="/docs/teknisyen/moduller/projeler/proje-olusturma">
+    Şablonların projeye ne kurduğu.
+  </Card>
+</Cards>

@@ -1,0 +1,102 @@
+---
+title: "Geçişler"
+description: "Durumlar arası geçiş kuralları: görev türü bazında tanımlama, varsayılan geçiş üretimi, ekran/onay/koşul yapılandırması ve gelen kenarı olmayan statü tuzağı."
+reviewed: "2026-08-11"
+owner:
+---
+
+`Ayarlar` ▸ `Geçişler`, bir görevin hangi durumdan hangi duruma geçebileceğini belirler.
+Geçiş tanımlı değilse o yön **kapalıdır**.
+
+![Proje ayarları — geçiş kuralları](/img/teknisyen/proje-ayarlar-gecisler.png)
+
+## Geçişler görev türü bazındadır
+
+Ekranın ilk alanı `Görev Türü` seçicisidir ve **seçim yapılmadan liste görünmez**.
+Her görev türü kendi iş akışına sahip olabilir: hataların akışı hikayelerinkinden farklı
+olabilir.
+
+<Callout type="warn" title="DİKKAT">
+Bir görev türü için tanımladığınız geçişler **yalnız o türü** bağlar. Yeni bir görev türü
+eklediğinizde onun geçişleri boş başlar; tanımlamayı unutursanız o türdeki görevlerin
+akışı diğerlerinden farklı davranır.
+</Callout>
+
+## Tablo
+
+| Kolon | İçerik |
+|---|---|
+| **Kaynak Durum** | Geçişin başladığı durum |
+| **Hedef Durum** | Geçişin vardığı durum |
+| **Geçiş Adı** | Kullanıcıya gösterilen ad (`InReview → Done`) |
+| **Açıklama** | İsteğe bağlı not |
+| **Sıra** | Listede ve menülerde görünme sırası |
+| **Yapılandırma** | Geçişe bağlı ekran, koşul, onay veya doğrulayıcı özeti |
+
+Üstteki dört düğme listeyi yapılandırmaya göre süzer: `Ekran açar`, `Onay gerektirir`,
+`Kuralı var`, `Dikkat gerektirir`.
+
+## Varsayılan geçişleri üretme
+
+`Varsayılanları Oluştur`, **durum sırasına göre** ileri ve geri geçişlerden oluşan bir
+zincir kurar. Sıfırdan bir akış kurarken hızlı bir başlangıçtır; sonrasında gereksiz
+geçişleri silip özel olanları eklersiniz.
+
+<Callout type="warn" title="DİKKAT">
+Üretim **durum sırasını** temel aldığı için, sırası olmayan veya kullanılmayacak durumlar
+da zincire girer. Ekran görüntüsündeki 18 geçişin ilk altısı, projeyle birlikte seed
+edilen `Todo`/`InProgress`/`InReview`/`Done` durumlarına aittir — akışın gerçek durumları
+`Bekleyen İşler`'den başlar.
+
+Varsayılanları üretmeden **önce** kullanmayacağınız durumları silmek, sonradan onlarca
+gereksiz geçişi tek tek temizlemekten kolaydır. Bkz.
+[Durumlar](/docs/teknisyen/moduller/projeler/yapilandirma/durumlar).
+</Callout>
+
+## Geçişe yapılandırma bağlama
+
+Bir geçiş yalnızca "izin ver" demekten ibaret değildir; üzerine şunlar bağlanabilir:
+
+| Yapılandırma | Ne yapar |
+|---|---|
+| **Ekran** | Geçiş sırasında form açar (örneğin çözüm ve açıklama ister) |
+| **Koşul** | Geçişin kime/hangi durumda görüneceğini sınırlar |
+| **Doğrulayıcı** | Geçiş anında alan zorunluluğu kontrol eder |
+| **Onay** | Geçişi bir onay kapısına bağlar |
+| **Son fonksiyon** | Geçiş sonrası otomatik işlem çalıştırır |
+
+## İş Akışı Diyagramı
+
+Tablonun altındaki `İş Akışı Diyagramı` bölümü, tanımlı geçişleri **görsel bir graf**
+olarak gösterir. Karmaşık akışlarda kopuk düğümleri ve eksik yönleri görmenin en hızlı
+yoludur.
+
+## Sık karşılaşılan iki durum
+
+### Kart panoda geri dönüyor
+
+Bir kartı sürüklediğinizde eski sütununa geri dönüyorsa, o yönde tanımlı bir geçiş
+yoktur — ya da geçişe bağlı bir koşul/doğrulayıcı sizi durduruyordur.
+
+### Statü listede görünüyor ama yazılamıyor
+
+<Callout type="warn" title="DİKKAT">
+Hiçbir geçişin **hedefi** olmayan bir statü, durum listesinde "şuraya taşı" seçeneği
+olarak görünebilir; ancak sunucu o yazmayı **reddeder** ve
+`Transition not allowed by the project workflow.` hatası döner.
+
+Bu, akışta unutulmuş (gelen kenarı olmayan) statülerde ortaya çıkar. Çözüm: o statüye
+**en az bir gelen geçiş** tanımlayın — örneğin "iade → revize et ve yeniden gönder"
+gibi. Böylece statü akışa bağlanır ve hem listede hem yazmada tutarlı davranır.
+</Callout>
+
+## İlgili sayfalar
+
+<Cards>
+  <Card title="Durumlar" href="/docs/teknisyen/moduller/projeler/yapilandirma/durumlar">
+    Geçişlerin bağladığı durumların tanımlandığı bölüm.
+  </Card>
+  <Card title="Pano" href="/docs/teknisyen/moduller/projeler/pano">
+    Geçiş kurallarının günlük kullanımda hissedildiği ekran.
+  </Card>
+</Cards>

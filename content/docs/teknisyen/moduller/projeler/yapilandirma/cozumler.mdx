@@ -1,0 +1,64 @@
+---
+title: "Çözümler"
+description: "Kapatılan görevler için çözüm değerleri, varsayılan çözüm ve çözümlerin instance genelinde ortak olması."
+reviewed: "2026-08-11"
+owner:
+---
+
+`Ayarlar` ▸ `Çözümler`, bir görev kapatılırken seçilebilecek **çözüm değerlerini**
+tanımlar: iş neden bitti?
+
+![Proje ayarları — görev çözümleri](/img/teknisyen/proje-ayarlar-cozumler.png)
+
+## Çözüm nedir, durumdan farkı ne
+
+**Durum** işin nerede olduğunu, **çözüm** ise nasıl sonuçlandığını anlatır. İkisi
+birbirinin yerine geçmez:
+
+- Bir görev `Tamamlandı` durumunda olabilir ama çözümü `Yapılmayacak` olabilir — iş
+  kapandı, ama teslim edilmedi.
+- Raporlarda "kaç iş gerçekten teslim edildi" sorusu duruma değil **çözüme** bakarak
+  yanıtlanır.
+
+Kutudan çıkan çözümler: `Tamamlandı`, `Yapılmayacak`, `Tekrar Eden İş`.
+
+## Varsayılan çözüm
+
+Bir çözüm `Varsayılan` rozetiyle işaretlenir; görev kapatılırken önceden seçili gelen
+değer budur.
+
+<Callout type="info" title="ÖNEMLİ">
+Varsayılanı ekibin **en sık** kullandığı değere ayarlayın. Varsayılan yanlışsa,
+kapatılan işlerin çoğu yanlış çözümle etiketlenir ve rapor sayıları sessizce bozulur —
+kimse hata görmediği için de fark edilmez.
+</Callout>
+
+## Çözümler instance genelinde ortaktır
+
+<Callout type="warn" title="DİKKAT">
+Etiketler gibi, **çözümler de projeye özel değildir**: tüm projelerde aynı çözüm listesi
+kullanılır.
+
+Bu, ayar panelindeki diğer bölümlerden (durumlar, görev türleri, roller — hepsi projeye
+kopyalanır) ayrıldığı noktadır. Burada eklediğiniz bir çözüm **her projede** seçilebilir
+hâle gelir; sildiğiniz bir çözüm **her projeden** kalkar.
+
+Projeye özgü bir kapanış nedeni gerekiyorsa çözüm yerine **özel alan** kullanmak daha
+doğrudur.
+</Callout>
+
+## Çözüm ekleme ve düzenleme
+
+`Çözüm Ekle` yeni değer tanımlar; ad ve açıklama girilir. Satır sonundaki simgelerle
+düzenlenir veya silinir.
+
+## İlgili sayfalar
+
+<Cards>
+  <Card title="Durumlar" href="/docs/teknisyen/moduller/projeler/yapilandirma/durumlar">
+    İşin nerede olduğunu anlatan durumlar ve kategorileri.
+  </Card>
+  <Card title="Etiketler" href="/docs/teknisyen/moduller/projeler/yapilandirma/etiketler">
+    Diğer instance geneli ayar.
+  </Card>
+</Cards>

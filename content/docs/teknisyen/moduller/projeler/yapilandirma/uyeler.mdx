@@ -1,0 +1,75 @@
+---
+title: "Üyeler"
+description: "Projeye üye ekleme, rol atama, gözlemci üyeler ve rol tanımlı olmadığında karşılaşılan boş rol listesi."
+reviewed: "2026-08-11"
+owner:
+---
+
+`Ayarlar` ▸ `Üyeler`, projede kimin bulunduğunu ve **hangi rolde** olduğunu belirler.
+Projedeki yetkiler bu roller üzerinden işler.
+
+![Proje ayarları — üyeler bölümü](/img/teknisyen/proje-ayarlar-uyeler.png)
+
+## Liste
+
+| Kolon | İçerik |
+|---|---|
+| **Üye** | Kişinin adı ve avatarı |
+| **Rol** | Projedeki rolü; açılır listeden değiştirilebilir |
+| **Türü** | `Kullanıcı` veya `Ajan` |
+| **Katıldı** | Projeye eklenme zamanı |
+| **Düzenleme** | Üyeyi projeden çıkarma |
+
+Bölüm başlığındaki rozet üye sayısını gösterir. Sağ üstteki kutudan üye aranır.
+
+## Üye ekleme
+
+`Üye Ekle` düğmesi üç alanlı bir pencere açar:
+
+| Alan | Zorunlu | Açıklama |
+|---|---|---|
+| **Üye** | Evet | Kişi arayıp seçilir |
+| **Rol** | Evet | Projedeki rolü |
+| **Observer** | Hayır | Son kullanıcı portalı üzerinden **salt okunur** erişim |
+
+<Callout type="warn" title="DİKKAT">
+`Rol` listesi boşsa üye ekleyemezsiniz. Bu, projede hiç **proje rolü** tanımlı olmadığı
+anlamına gelir.
+
+Roller proje oluşturulurken şablondan kopyalanır; ancak seçtiğiniz şablonda rol tanımlı
+değilse proje sıfır rolle açılır. Çözüm: önce `Ayarlar` ▸ `Yetkiler` bölümünden en az
+bir rol oluşturun, sonra üyeleri ekleyin.
+</Callout>
+
+## Rol neden önemli
+
+Proje içinde bir kullanıcının **ne yapabileceğine** proje rolü karar verir. Modüle
+girebilmek için gereken global yetki yalnızca **Projeleri Görebilir**'dir; görev
+düzenleme, iş günlüğü girme, pano yönetme gibi eylemler proje rolündeki yetkilerle
+açılır.
+
+<Callout type="info" title="ÖNEMLİ">
+**Proje lideri** ayrı bir kavramdır ve `Ayarlar` ▸ `Genel` bölümünden seçilir. Lider,
+proje içindeki tüm sekmeleri yetki kontrolüne takılmadan görür — bu yüzden lideri
+gerçek sorumluya göre seçin.
+</Callout>
+
+## Üyelerin etkilediği ekranlar
+
+Üye listesi yalnızca bir kayıt değildir; şu ekranlar doğrudan buna bağlıdır:
+
+- **Görev atama** — yalnızca proje üyeleri göreve atanabilir
+- **Kaynaklar** — `Takım Kullanımı` ve `İş Yükü Dengesi` kartları, görevlere atanmış
+  üye yoksa `—` gösterir
+- **Kapasite** — haftalık kapasite üye bazında tutulur
+
+## İlgili sayfalar
+
+<Cards>
+  <Card title="Yapılandırma" href="/docs/teknisyen/moduller/projeler/yapilandirma">
+    Tüm ayar bölümleri ve önerilen yapılandırma sırası.
+  </Card>
+  <Card title="Kaynaklar" href="/docs/teknisyen/moduller/projeler/kaynaklar">
+    Üye ve yük göstergelerinin okunduğu ekran.
+  </Card>
+</Cards>

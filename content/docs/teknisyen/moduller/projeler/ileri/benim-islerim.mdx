@@ -1,0 +1,67 @@
+---
+title: "Benim İşlerim"
+description: "Tüm projelerdeki kendi işleriniz tek ekranda: beş sekme, proje bazlı gruplama ve gecikme süzgeçleri."
+reviewed: "2026-08-11"
+owner:
+---
+
+`Benim İşlerim`, farklı projelere dağılmış kendi işlerinizi **tek ekranda** toplar. Gün
+başında açılacak ekran budur: hangi projede olduğuna bakmadan "bugün ne yapmalıyım"
+sorusunu yanıtlar.
+
+## Beş sekme
+
+| Sekme | İçerik |
+|---|---|
+| **Bana Atanan** | Size atanmış görevler |
+| **Takımım** | Takımınıza atanmış, henüz kişiye düşmemiş işler |
+| **Raporladıklarım** | Sizin açtığınız görevler |
+| **İzlediklerim** | İzlemeye aldığınız görevler |
+| **Onaylarım** | Onayınızı bekleyen istekler |
+
+Her sekmenin yanında iki sayı bulunur: **toplam** ve kırmızı rozetle **gecikmiş** adet.
+
+<Callout type="info" title="ÖNEMLİ">
+`Onaylarım` sekmesi, onay kapısı olan iş akışlarında kritik önemdedir: onay bekleyen bir
+görev, onaycı bu sekmeye bakmadığı sürece görülmeyebilir. Onaylı akış kullanan ekiplerin
+bu sekmeyi günlük alışkanlık hâline getirmesi önerilir — bkz.
+[Onay Akışları](/docs/teknisyen/moduller/projeler/ileri/onay-akislari).
+</Callout>
+
+## Gruplama
+
+İşler **projeye göre** gruplanır; her grup başlığında proje adı, anahtarı ve kart sayısı
+görünür. Grup içinde kartlar durum kulvarlarına ayrılır.
+
+Bu gruplama, birden fazla projede çalışan kişiler için bağlam değiştirmeyi kolaylaştırır:
+aynı ekranda "hangi projede kaç işim var" sorusu da yanıtlanır.
+
+## Süzgeçler
+
+Sağ üstteki üç anahtar görünümü daraltır:
+
+| Anahtar | Ne yapar |
+|---|---|
+| **Geciken** | Yalnızca bitiş tarihi geçmiş işler |
+| **Bugün biten** | Bugün teslim edilmesi gerekenler |
+| **Tamamlananları göster** | Kapanmış işleri de listeler (varsayılan: kapalı) |
+
+Yanındaki arama kutusu görev adına göre arar.
+
+<Callout type="warn" title="DİKKAT">
+Bu ekran **proje bağlamı olmadan** açılır. Görev kartına tıkladığınızda açılan detay
+çekmecesi de proje dışından çalışır; bu yüzden bazı proje-özel eylemler (proje yetkisine
+bağlı olanlar) burada farklı davranabilir. İşi projesinde açmak her zaman en güvenli
+yoldur.
+</Callout>
+
+## İlgili sayfalar
+
+<Cards>
+  <Card title="Filtreler ve JQL" href="/docs/teknisyen/moduller/projeler/ileri/filtreler-jql">
+    Kendi görünümünüzü `currentUser()` ile kurmak.
+  </Card>
+  <Card title="Görev Detayı" href="/docs/teknisyen/moduller/projeler/gorev-detayi">
+    Karta tıklandığında açılan çekmece.
+  </Card>
+</Cards>

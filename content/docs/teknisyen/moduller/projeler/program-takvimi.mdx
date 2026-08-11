@@ -1,0 +1,68 @@
+---
+title: "Program (Takvim)"
+description: "Kişi ve takım bazlı zaman çizelgesi: görevleri sürükleyerek yeniden planlama ve atama, gün/hafta/ay görünümleri."
+reviewed: "2026-08-11"
+owner:
+---
+
+`Program` sekmesi, projedeki işleri **kim ne zaman yapıyor** ekseninde gösterir: satırlar
+kişiler veya takımlar, yatay eksen zaman.
+
+<Callout type="info" title="ÖNEMLİ">
+Sekmenin adı `Program`'dır ama bir **programa** (program yönetimi kaydına) karşılık
+gelmez; projenin **takvim/zaman çizelgesi** görünümüdür. Program yönetimi için soldaki
+`Programlar` sayfasını kullanın.
+</Callout>
+
+![Proje program (takvim) görünümü](/img/teknisyen/proje-program-takvimi.png)
+
+## Satırlar: üyeler veya takımlar
+
+Sağ üstteki `Üyeler` / `Takımlar` düğmeleri satırların neye göre gruplanacağını seçer.
+Üye satırlarında kişinin adı ve **projedeki rolü** görünür. Yanındaki `Takım` seçicisi
+görünümü tek bir takıma daraltır.
+
+Başlıktaki özet kaç görev ve kaç üye gösterildiğini bildirir.
+
+## Zaman ekseni
+
+| Öğe | Ne yapar |
+|---|---|
+| `‹` `›` | Dönemi ileri/geri alır |
+| `Bugün` | İçinde bulunulan güne döner |
+| `Gün` · `Hafta` · `Ay` | Zaman çözünürlüğü |
+| `Durum` | Görevleri duruma göre süzer |
+
+Dikey çizgi şu anki zamanı gösterir.
+
+## Sürükleyerek planlama
+
+Ekranın kendi ipucu üç işlemi özetler:
+
+- **Sürükleyin** — görevi yeniden planlamak (zamanını değiştirmek) veya **başka bir
+  kişiye atamak** için: bir satırdan diğerine sürüklemek atamayı değiştirir.
+- **Sağ tıklayın** — görev üzerindeki işlemler menüsü.
+- **`?` tuşu** — klavye kısayolları.
+
+<Callout type="warn" title="DİKKAT">
+Bu ekrandan yapılan atama değişikliği de projenin **geçiş ve yetki kurallarına** tabidir.
+Sürükleme geri alınıyorsa, hedef kişi proje üyesi olmayabilir ya da rolünüz o işlemi
+kapsamıyordur.
+</Callout>
+
+## Saat bilgisi olmayan görevler
+
+Yalnız tarih taşıyan (saat bilgisi olmayan) görevler gün boyunca uzanan bantlar olarak
+çizilir. Saatlik planlama yapan ekipler görevlere başlangıç/bitiş **saati** vererek daha
+okunur bir takvim elde eder.
+
+## İlgili sayfalar
+
+<Cards>
+  <Card title="Kaynaklar" href="/docs/teknisyen/moduller/projeler/kaynaklar">
+    Aynı yükün toplam ve oran olarak görüldüğü ekran.
+  </Card>
+  <Card title="Yol Haritası" href="/docs/teknisyen/moduller/projeler/yol-haritasi">
+    İş ekseninde (kişi değil) zaman görünümü.
+  </Card>
+</Cards>

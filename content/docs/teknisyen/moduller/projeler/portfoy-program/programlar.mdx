@@ -1,0 +1,91 @@
+---
+title: "Programlar"
+description: "Program detayı: girişim ve proje sayaçları, Program Increment'ler, kapasite ve talep, sağlık göstergesi."
+reviewed: "2026-08-11"
+owner:
+---
+
+**Program**, ortak bir sonuca hizmet eden projeleri ve girişimleri bir arada yürüten
+katmandır: portföyün altında, projelerin üstünde durur.
+
+![Program genel bakış ekranı](/img/teknisyen/pm-program-detay.png)
+
+<Callout type="warn" title="DİKKAT">
+Program sayfası **Programları Görebilir** yetkisi ister. Aynı yetki `Bağımlılıklar` ve
+`Takımlar` sayfaları için de gereklidir.
+</Callout>
+
+## Program sekmeleri
+
+Bir programa girildiğinde solda şu sekmeler açılır: `Genel Bakış`, `Girişimler`,
+`Hedefler`, `Program Increment'leri`, `Projeler`, `Takımlar`, `Gösterge Paneli`,
+`Panolar`, `Yol Haritası`, `Son Aktiviteler`, `Ayarlar`.
+
+## Üst sayaçlar
+
+| Sayaç | Ne gösterir |
+|---|---|
+| **Girişimler** | Programa bağlı girişim sayısı |
+| **Program Increment'leri** | Tanımlı PI sayısı ve kaçının aktif olduğu |
+| **Projeler** | Programa bağlı proje sayısı |
+| **Takımlar** | Programa bağlı takım sayısı |
+
+Başlık şeridinde ayrıca programın **durumu** (`Aktif`) ve **sağlığı** (`Yolunda`)
+rozet olarak görünür.
+
+## Program Increment (PI)
+
+Program Increment, birden fazla takımın ortak takvimde planlandığı **büyük zaman
+kutusudur** (tipik olarak birkaç sprint uzunluğunda). PI tanımlamak, program seviyesinde
+"bu çeyrekte ne teslim edilecek" sorusunu yanıtlanır kılar.
+
+PI'lar `Program Increment'leri` sekmesinden yönetilir ve yol haritasında bir katman
+olarak görünür.
+
+## Kapasite ve talep
+
+Portföydeki ile aynı mantık: önümüzdeki 8 hafta için kapasite, talep, doluluk ve aşırı
+yüklü hafta sayısı.
+
+<Callout type="info" title="ÖNEMLİ">
+`Kapasite verisi yok` görüyorsanız programa **takım bağlanmamış** ya da bağlı takımlara
+çalışma saati tanımlanmamıştır. Ekrandaki `Takım bağla` bağlantısı doğrudan ilgili
+sekmeye götürür.
+
+Grafik altındaki `tarihsiz` değeri, tarihi olmadığı için zaman eksenine
+yerleştirilemeyen işlerin toplamıdır — planlamaya dahil edilemezler.
+</Callout>
+
+## Finansallar
+
+`Bütçe vs Gerçekleşen`: bütçe `Ayarlar`dan tanımlanır, gerçekleşen maliyet takım maliyet
+oranı ile iş günlüklerinden hesaplanır.
+
+## Sağ panel
+
+Programın künyesi: sahip, kod, durum, **sağlık**, başlangıç/hedef tarih, oluşturulma ve
+açıklama. Alanlar yerinde düzenlenir.
+
+<Callout type="info" title="ÖNEMLİ">
+**Sağlık** alanı portföy ve program raporlarını besler. Boş bırakılan programlar üst
+seviye görünümlerde renksiz kalır; düzenli güncellemek raporların değerini belirler.
+</Callout>
+
+## Bağlama işlemleri
+
+- **Girişim bağlama** → `Girişimler` sekmesi
+- **Proje bağlama** → `Projeler` sekmesi
+- **Takım bağlama** → `Takımlar` sekmesi
+
+Bağlanmayan kayıtlar programın sayaçlarına ve grafiklerine girmez.
+
+## İlgili sayfalar
+
+<Cards>
+  <Card title="Portföyler" href="/docs/teknisyen/moduller/projeler/portfoy-program/portfoyler">
+    Programların bağlandığı üst katman.
+  </Card>
+  <Card title="Girişimler" href="/docs/teknisyen/moduller/projeler/portfoy-program/girisimler">
+    Program altındaki değer bazlı iş kalemleri.
+  </Card>
+</Cards>
