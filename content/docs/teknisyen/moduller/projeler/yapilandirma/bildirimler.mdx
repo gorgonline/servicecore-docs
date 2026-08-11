@@ -1,0 +1,64 @@
+---
+title: "Bildirimler"
+description: "Proje bildirim türlerini açıp kapatma, grup anahtarları ve e-posta şablonlarının nerede yönetildiği."
+reviewed: "2026-08-11"
+owner:
+---
+
+`Ayarlar` ▸ `Bildirimler`, projede hangi olayların bildirim üreteceğini belirler.
+
+![Proje ayarları — bildirimler](/img/teknisyen/proje-ayarlar-bildirimler.png)
+
+<Callout type="warn" title="DİKKAT">
+Bu ayarlar **tüm proje üyeleri için geçerlidir** — kişisel tercih değildir. Bir bildirim
+türünü kapattığınızda o bildirim projedeki **hiç kimseye** gitmez.
+</Callout>
+
+## Yapısı
+
+Bildirimler gruplar hâlinde listelenir (örneğin `Görev Bildirimleri`). Grup başlığındaki
+sayaç kaç bildirimin açık olduğunu gösterir (`11/11`), yanındaki anahtar ise **grubun
+tamamını** birden açıp kapatır. Her satırın kendi anahtarı da vardır.
+
+Üstteki arama kutusu bildirim adına göre süzer.
+
+## Görev bildirimleri
+
+| Bildirim | Ne zaman gönderilir |
+|---|---|
+| **Görev Oluşturuldu** | Projede yeni bir görev açıldığında |
+| **Görev Güncellendi** | Bir görevin alanları düzenlendiğinde |
+| **Görev Durumu Değişti** | Görev farklı bir duruma geçtiğinde |
+| **Görev Atandı** | Görev ilk kez birine atandığında |
+| **Görev Yeniden Atandı** | Atanan kişi değiştiğinde |
+| **Göreve Takım Atandı** | Takım atandığında (takım üyeleri ve izleyiciler bilgilendirilir) |
+| **Görev Önceliği Değişti** | Öncelik değiştiğinde |
+| **Bağımlılık Çözüldü** | Bloklayan görev tamamlanıp önü açıldığında |
+| **Göreve Yorum Eklendi** | Göreve yorum yazıldığında |
+
+Her satırdaki bilgi simgesi bildirimin ayrıntısını açıklar.
+
+<Callout type="info" title="ÖNEMLİ">
+**E-posta şablonlarının içeriği burada yönetilmez.** Bu ekran yalnızca bildirimin
+gönderilip gönderilmeyeceğini belirler; metin ve biçim **global bildirim ayarlarından**
+düzenlenir.
+</Callout>
+
+## Öneriler
+
+- Projeye yeni katılan ekipler için `Görev Güncellendi` çok gürültülü olabilir; durum ve
+  atama bildirimlerini açık bırakıp bunu kapatmak yaygın bir denge.
+- `Bağımlılık Çözüldü`, bağımlılıkları düzenli kullanan projelerde en değerli
+  bildirimlerden biridir: bekleyen kişi, önünün açıldığını başkasından duymak zorunda
+  kalmaz.
+
+## İlgili sayfalar
+
+<Cards>
+  <Card title="Üyeler" href="/docs/teknisyen/moduller/projeler/yapilandirma/uyeler">
+    Bildirimlerin gittiği kişiler.
+  </Card>
+  <Card title="Otomasyon" href="/docs/teknisyen/moduller/projeler/yapilandirma/otomasyon">
+    Koşullu ve özelleştirilmiş bildirimler için kural motoru.
+  </Card>
+</Cards>

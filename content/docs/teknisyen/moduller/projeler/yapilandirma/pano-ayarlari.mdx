@@ -1,0 +1,82 @@
+---
+title: "Pano Ayarları"
+description: "Pano oluşturma, sütun–durum eşlemesi, eşlemsiz durumlar, hızlı filtreler ve varsayılan board filtresi."
+reviewed: "2026-08-11"
+owner:
+---
+
+`Ayarlar` ▸ `Pano`, projenin panolarını ve **sütun–durum eşlemesini** yönetir. Bir proje
+birden fazla panoya sahip olabilir.
+
+![Proje ayarları — pano yönetimi ve sütun eşlemesi](/img/teknisyen/proje-ayarlar-pano.png)
+
+## Pano seçimi
+
+Üstteki `Pano Seç` listesi düzenlenecek panoyu belirler; yanındaki simgelerle pano
+yeniden adlandırılır veya silinir. `Pano Oluştur` yeni pano açar.
+
+## Sütun–durum eşlemesi
+
+Ekranın orta bölümü sütunları yan yana gösterir. Her sütunun altında ona **eşlenmiş
+durumlar** yer alır; durumlar sütunlar arasında sürüklenerek taşınır.
+
+Bir sütun **birden fazla duruma** karşılık gelebilir: örneğin `Devam Ediyor` sütununa hem
+`Geliştirmede` hem `Kod İnceleme` durumlarını eşleyerek panoyu sadeleştirebilirsiniz.
+
+### "Eşlemsiz" kutusu
+
+En soldaki `Eşlemsiz` kutusu, **hiçbir sütuna eşlenmemiş** durumları tutar.
+
+<Callout type="warn" title="DİKKAT">
+Eşlemsiz bir durumun panoda **sütunu yoktur**; o durumdaki görevler panoda hiç görünmez.
+Görev kaybolmaz — `Görevler` listesinde ve iş listesinde durur — ama panoyu kullanan ekip
+onu göremez.
+
+Yeni açılan projelerde seed edilen `Todo`, `InProgress`, `InReview`, `Done` durumları
+genellikle **eşlemsiz** gelir (ekran görüntüsündeki durum budur). Aynı durumlar sıra
+numarası taşımadığı için yeni görevlerin varsayılan durumu da olabilirler — yani görev
+`Todo` ile açılır ve panoda görünmez.
+
+**Çözüm:** kullanmayacağınız seed durumlarını silin, ya da hem bir sütuna eşleyin hem de
+sıra numarası verin. Ayrıntı:
+[Durumlar](/docs/teknisyen/moduller/projeler/yapilandirma/durumlar).
+</Callout>
+
+## WIP limiti
+
+Sütun başlığındaki kalem simgesiyle sütun düzenlenir; burada sütuna **WIP limiti** (aynı
+anda üzerinde çalışılabilecek en fazla iş sayısı) verilebilir. Limit tanımlıysa panoda
+sütun başlığında görünür.
+
+## Hızlı filtreler
+
+`Hızlı filtre ekle` ile panoya kalıcı filtre düğmeleri (chip) eklenir. Her filtre bir
+**JQL** ifadesidir.
+
+<Callout type="info" title="ÖNEMLİ">
+Aktif chip'ler **VE** ile birleşir ve süzme **sunucu tarafında** uygulanır — yani filtre
+yalnız görünümü değil, panoya çekilen veriyi de daraltır. Bu, büyük projelerde panoyu
+hızlandırır.
+</Callout>
+
+## Varsayılan board filtresi
+
+Kayıtlı bir JQL filtresi seçilirse pano **her açılışta** o filtreyle gelir. Ekibin sürekli
+aynı alt kümeyle çalıştığı panolarda (örneğin yalnız içinde bulunulan sürüm) kullanışlıdır.
+
+<Callout type="warn" title="DİKKAT">
+Varsayılan filtre panoyu kalıcı olarak daraltır. Panoda beklediği kartı göremeyen bir
+kullanıcı genellikle bu ayarı bilmez; panoyu birine devrederken varsayılan filtreyi de
+söyleyin.
+</Callout>
+
+## İlgili sayfalar
+
+<Cards>
+  <Card title="Pano" href="/docs/teknisyen/moduller/projeler/pano">
+    Ayarların sonucunu gördüğünüz çalışma ekranı.
+  </Card>
+  <Card title="Durumlar" href="/docs/teknisyen/moduller/projeler/yapilandirma/durumlar">
+    Sütunlara eşlenen durumların tanımlandığı bölüm.
+  </Card>
+</Cards>
