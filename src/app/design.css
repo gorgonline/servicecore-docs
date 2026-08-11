@@ -40,7 +40,8 @@
 #nd-page .prose > p:has(> a > img),
 #nd-page .prose > p:has(> iframe),
 #nd-page .prose > div:has(> pre),
-#nd-page .prose > div.shiki {
+#nd-page .prose > div.shiki,
+#nd-page .prose > div.sc-mermaid {
   max-width: var(--sc-content-width);
 }
 
@@ -208,6 +209,47 @@
   border: 1px solid var(--sc-figure-border);
   border-radius: var(--sc-figure-radius);
   max-width: 100%;
+}
+
+/* ------------------------------------------------------------
+   Mermaid diyagramları — ekran görüntüsüyle AYNI figür dili.
+   Diyagram da bir figürdür: aynı paspartu, aynı keskin köşe, gölge yok.
+   Renkler bileşen içinde tokens.css'ten okunur (bkz. components/mdx/mermaid.tsx),
+   burada yalnızca çerçeve ve yerleşim tanımlıdır.
+   ------------------------------------------------------------ */
+#nd-page .prose .sc-mermaid {
+  display: block;
+  margin: var(--sc-s5) auto var(--sc-s5) 0;
+  padding: var(--sc-figure-pad);
+  border: 1px solid var(--sc-figure-border);
+  border-radius: var(--sc-figure-radius);
+  background: var(--sc-figure-bg);
+  box-sizing: border-box;
+  /* Geniş diyagram sayfayı yatay kaydırmaya zorlamasın. */
+  overflow-x: auto;
+}
+
+/* Diyagram istemcide render edilir; gelene kadar kutu yüksekliği korunur,
+   yoksa sayfa yerleşimi ilk saniyede zıplar. */
+#nd-page .prose .sc-mermaid[data-loading='true'] {
+  min-height: 8rem;
+}
+
+#nd-page .prose .sc-mermaid svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  /* Diyagram figürün kendi paspartusunda duruyor; img kuralının ikinci bir
+     çerçeve eklemesini engelle. */
+  margin: 0 auto;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+/* Sözdizimi hatalı diyagram: sayfa düşmez, kaynak kod olarak görünür. */
+#nd-page .prose .sc-mermaid-error {
+  border-left: 3px solid var(--sc-bad);
 }
 
 /* ============================================================

@@ -1,5 +1,6 @@
 import { defineConfig, defineDocs } from 'fumadocs-mdx/config';
 import { metaSchema, pageSchema } from 'fumadocs-core/source/schema';
+import { remarkMdxMermaid } from 'fumadocs-core/mdx-plugins';
 import { z } from 'zod';
 
 /**
@@ -35,6 +36,9 @@ export const docs = defineDocs({
 
 export default defineConfig({
   mdxOptions: {
-    // MDX options
+    // ```mermaid kod bloklarını <Mermaid chart="..." /> bileşenine çevirir.
+    // Bileşen `src/components/mdx.tsx`'te global olarak kayıtlı; yazar MDX'te
+    // düz kod bloğu yazar, bileşen sözdizimi bilmesi gerekmez.
+    remarkPlugins: [remarkMdxMermaid],
   },
 });
