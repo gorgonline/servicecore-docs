@@ -1,0 +1,105 @@
+---
+title: "Proje Oluşturma"
+description: "Üç adımlı proje sihirbazı, hazır proje şablonları, doldurulan alanlar ve proje açıldığında otomatik kurulan yapılandırma."
+reviewed: "2026-08-11"
+owner:
+---
+
+Yeni proje, `Projeler` listesinin sağ üstündeki `Proje Oluştur` düğmesiyle açılır. Düğme
+yalnızca **Proje Ekleyebilir** yetkisi olan kullanıcılara görünür.
+
+Sihirbaz üç adımdan oluşur: `Şablon Seç`, `Proje Bilgileri`, `Önizleme`. Şablon seçmeden
+sonraki adıma geçilemez.
+
+## 1. Adım — Şablon Seç
+
+![Proje oluşturma sihirbazı, şablon seçme adımı](/img/teknisyen/proje-olusturma-sihirbaz.png)
+
+Şablon, projenin iskeletini belirler: görev türleri, durumlar ve projenin **yapı türü**
+(Basic, Scrum veya Kanban) şablondan gelir. Şablonlar kategoriye göre süzülebilir:
+`Tümü`, `Özel`, `Yazılım`, `Hukuk`, `Finans`, `İnsan Kaynakları`, `Pazarlama`,
+`BT Operasyon`, `İnşaat`, `Eğitim`, `Danışmanlık`.
+
+Her şablon kartında yapı türü etiketi görünür. Kutudan çıkan sistem şablonları:
+
+| Şablon | Yapı türü |
+|---|---|
+| Yazılım Projesi (Scrum) | Scrum |
+| Yazılım Projesi (Kanban) | Kanban |
+| Yazılım Projesi (Waterfall) | Basic |
+| Hukuk Projesi | Kanban |
+| Finans Projesi | Basic |
+| İnsan Kaynakları Projesi | Kanban |
+| Pazarlama Projesi | Kanban |
+| BT Operasyon Projesi | Kanban |
+| İnşaat Projesi | Basic |
+| Eğitim Projesi | Kanban |
+| Danışmanlık Projesi | Basic |
+
+Sistem şablonları arasında sprint kullanan tek şablon **Yazılım Projesi (Scrum)**'dur.
+
+Kendi şablonlarınızı da oluşturabilir, düzenleyebilir ve silebilirsiniz; özel şablonlar
+`Özel` kategorisinde listelenir.
+
+<Callout type="warn" title="DİKKAT">
+Yapı türü proje oluşturulduktan sonra ekrandan değiştirilemez. Sprint kullanacak bir
+proje açıyorsanız **Scrum** yapısında bir şablon seçin; aksi hâlde projede `İş Listesi`
+sekmesi ve sprint alanları hiç görünmez.
+</Callout>
+
+## 2. Adım — Proje Bilgileri
+
+| Alan | Zorunlu | Açıklama |
+|---|---|---|
+| **Proje Adı** | Evet | Listede ve tüm ekranlarda görünen ad |
+| **Açıklama** | Hayır | Projenin kapsamını anlatan serbest metin |
+| **Proje Türü** | Hayır | Yönetici tarafından tanımlanan proje türleri |
+| **Öncelik** | Hayır | Sistemdeki öncelik listesinden seçilir |
+| **Proje Lideri** | Hayır | Projenin sorumlusu |
+| **Risk Seviyesi** | Hayır | `Düşük`, `Orta`, `Yüksek`, `Kritik` |
+| **Proje Zaman Çizelgesi** | Hayır | Planlanan başlangıç ve bitiş tarihi |
+
+<Callout type="info" title="ÖNEMLİ">
+`Proje Lideri` yalnızca bir görünüm alanı değildir: proje lideri, proje içindeki tüm
+sekmeleri yetki kontrolüne takılmadan görür. Bu yüzden lideri gerçek sorumluya göre
+seçin.
+</Callout>
+
+## 3. Adım — Önizleme
+
+Son adımda seçilen şablonun projeye ne kuracağı özetlenir: yapı türü, açılacak görev
+türleri ve durumlar renkleriyle birlikte listelenir. Onayladığınızda proje oluşturulur.
+
+Proje oluşturulurken şablondaki yapılandırma projeye kopyalanır:
+
+- **Görev türleri**
+- **Durumlar** ve aralarındaki **geçişler**
+- **Pano** ve pano kolonları
+- Görev türlerine bağlı **özel alan** eşlemeleri
+- **Bildirim ayarları**
+- Proje bazlı **roller**
+
+<Callout type="info" title="ÖNEMLİ">
+Durumlar ve görev türleri projeye **kopyalanır**, bağlanmaz. Şablonu sonradan
+değiştirmeniz, o şablonla daha önce açılmış projeleri etkilemez; aynı şekilde bir
+projedeki durum değişikliği de şablona veya diğer projelere yansımaz.
+</Callout>
+
+## Proje oluşturduktan sonra
+
+1. `Ayarlar` ▸ `Üyeler` sekmesinden proje ekibini ekleyin ve rollerini verin.
+2. Gerekiyorsa `Ayarlar` ▸ `Durumlar` ve `Ayarlar` ▸ `Geçişler` ile iş akışını projeye uyarlayın.
+3. Scrum projelerinde `İş Listesi` sekmesinden ilk sprinti açın.
+4. Görevleri girin — bkz. [Görevler](/docs/teknisyen/moduller/projeler/gorevler).
+
+## Proje listesi
+
+`Projeler` listesinde projeler ada göre aranabilir ve dört ölçütle süzülebilir: **durum**,
+**öncelik**, **sağlık** ve **risk seviyesi**. Satıra tıklamak projeyi açar. Satır
+sonundaki menüden projeyi görüntüleyebilir, doğrudan panosuna gidebilir veya ayarlarını
+açabilirsiniz.
+
+<Callout type="info" title="ÖNEMLİ">
+Listede yalnızca görme yetkiniz olan projeler çıkar. Yönetici olmayan kullanıcılar
+kendilerinin üye olduğu projeleri görür.
+</Callout>

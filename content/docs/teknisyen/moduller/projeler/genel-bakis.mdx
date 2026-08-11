@@ -1,0 +1,74 @@
+---
+title: "Genel Bakış"
+description: "Projenin özet ekranı: hikaye puanı, ilerleme ve açık görev kartları, proje bilgileri paneli, kilometre taşları ve son aktiviteler."
+reviewed: "2026-08-11"
+owner:
+---
+
+`Genel Bakış`, bir proje açıldığında ilk gelen sekmedir. Projenin durumunu tek ekranda
+özetler: sayısal göstergeler, künye bilgileri ve son hareketler.
+
+![Proje genel bakış ekranı](/img/teknisyen/proje-genel-bakis.png)
+
+## Üstteki özet kartları
+
+| Kart | Ne gösterir |
+|---|---|
+| **Hikaye Puanı** | Tamamlanan / toplam hikaye puanı |
+| **Genel İlerleme** | Yüzde olarak ilerleme; altında projenin sağlık durumu |
+| **Açık Görevler** | Kapanmamış görev sayısı; altında engellenen iş uyarısı |
+
+<Callout type="info" title="ÖNEMLİ">
+`Hikaye Puanı` kartı yalnızca hikaye puanı kullanan yapı türlerinde (Scrum ve Kanban)
+anlamlıdır. Basic yapıdaki projelerde bu alan boş kalır.
+</Callout>
+
+Sayfanın en üst şeridinde ayrıca proje anahtarı, adı, `Yıldızla` düğmesi, sağlık rozeti
+ve etkin pano seçicisi bulunur.
+
+## Proje Bilgileri
+
+Projenin künyesidir. Alanların çoğu proje oluşturma sihirbazında girilir, sonrasında
+`Ayarlar` ▸ `Genel` sekmesinden değiştirilir.
+
+| Alan | Açıklama |
+|---|---|
+| **Proje Lideri** | Projenin sorumlusu |
+| **Durum** | Projenin yaşam döngüsü durumu |
+| **Öncelik** | Sistemdeki öncelik listesinden |
+| **Sağlık** | `Yolunda`, `Riskli` veya `Engellendi` |
+| **Risk Seviyesi** | `Low`, `Medium`, `High`, `Critical` |
+| **Bölüm** | İlgili organizasyon birimi |
+| **Destek Müşteri Hesabı** | Projeye bağlı müşteri kaydı |
+| **Başlangıç / Bitiş Tarihi** | Planlanan zaman aralığı; bitiş tarihinin yanında kalan gün sayısı gösterilir |
+| **Etiketler** | Projeye iliştirilen etiketler |
+| **Açıklama** | Projenin kapsamını anlatan serbest metin |
+| **Uygulama İlerlemesi** | Yüzde çubuğu |
+
+<Callout type="warn" title="DİKKAT">
+**Sağlık** ile **Durum** aynı şey değildir. Durum projenin nerede olduğunu (planlama,
+yürütme, kapanış…), sağlık ise **iyi gidip gitmediğini** anlatır. Portföy ve program
+ekranlarındaki sağlık göstergeleri bu alandan beslenir; boş bırakılırsa üst seviye
+raporlarda proje renksiz görünür.
+</Callout>
+
+## Sağ sütun
+
+- **Yaklaşan Kilometre Taşları** — projenin yaklaşan dönüm noktaları. Sağ üstteki `+`
+  ile yeni kilometre taşı eklenir.
+- **Sponsor Raporu** — `Rapor oluştur` düğmesi son 30 günü özetleyen bir sponsor raporu
+  üretir: bitenler, planlananlar, riskler, kilometre taşları, sağlık ve kapsam değişimi.
+  Yanındaki zarf simgesiyle rapor e-posta olarak gönderilir.
+- **Son Aktiviteler** — projedeki son hareketler (görev oluşturma, silme, durum
+  değişikliği…). `Tümünü Gör` bağlantısı `Aktivite` sekmesini açar.
+
+## İlgili sayfalar
+
+<Cards>
+  <Card title="Pano" href="/docs/teknisyen/moduller/projeler/pano">
+    İşleri iş akışı sütunlarında görün ve sürükleyerek ilerletin.
+  </Card>
+  <Card title="Görevler" href="/docs/teknisyen/moduller/projeler/gorevler">
+    Tüm görevleri ızgarada, alanlarıyla ve JQL ile süzerek yönetin.
+  </Card>
+</Cards>
