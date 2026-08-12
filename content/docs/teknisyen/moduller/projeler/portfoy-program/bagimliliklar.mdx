@@ -1,0 +1,76 @@
+---
+title: "Bağımlılıklar"
+description: "Programlar arası epic bağımlılıkları, bağımlılık tipleri, kritik yol ve risk altındaki bağlar."
+reviewed: "2026-08-11"
+owner:
+---
+
+`Bağımlılıklar` sayfası, **programlar arası epic bağımlılıklarını** ve bunlardan doğan
+**kritik yolu** gösterir. Ekranın kendi tanımıyla: *programlar arası epic bağımlılıkları
+ve tam CPM kritik yolu*.
+
+<Callout type="warn" title="DİKKAT">
+Bu sayfa **Programları Görebilir** yetkisi ister.
+</Callout>
+
+## Neyi çözer
+
+Tek bir projenin içindeki bağımlılıklar görev çekmecesinden yönetilir. Bu sayfa daha
+büyük soruyu yanıtlar: **bir programdaki gecikme başka bir programı ne kadar geciktirir?**
+
+## Sekmeler
+
+| Sekme | İçerik |
+|---|---|
+| **Hepsi** | Tüm bağımlılıklar |
+| **Kritik Yol** | Projenin bitiş tarihini doğrudan belirleyen zincir |
+| **Risk Altında** | Tarihleri çakışan veya sıkışan bağlar |
+| **Sağlıklı** | Zaman payı yeterli olan bağlar |
+
+Her sekmenin yanındaki sayı o gruptaki bağ adedini verir.
+
+## Kolonlar
+
+| Kolon | İçerik |
+|---|---|
+| **Kaynak Epic** | Bağımlılığın çıktığı epic (anahtar, ad, proje) |
+| **Tip** | Bağımlılık türü — örneğin `FS` |
+| **Hedef Epic** | Bağımlı olan epic |
+| **Kaynak / Hedef Tarihler** | İki tarafın zaman aralıkları |
+| **Programlar** | Bağın hangi programları ilgilendirdiği |
+| **Durum** | `Sağlıklı`, `Risk Altında`, `Kritik Yol` |
+
+### Bağımlılık tipi: FS
+
+`FS` = *Finish-to-Start*: kaynak epic **bitmeden** hedef epic başlayamaz. En yaygın
+bağımlılık türüdür.
+
+## Durum nasıl hesaplanır
+
+Durum, iki tarafın **tarihlerinin** karşılaştırılmasından çıkar:
+
+- Kaynak bitiş tarihi hedef başlangıcından **sonraysa** bağ `Risk Altında` olur — hedef
+  başlaması gerekirken kaynak hâlâ devam ediyordur.
+- Zincir üzerinde toplam süreyi belirleyen bağlar `Kritik Yol` olarak işaretlenir.
+
+<Callout type="warn" title="DİKKAT">
+Bu hesap **tamamen tarihlere** dayanır. Tarihi olmayan epic'ler bağımlılık analizine
+giremez; bağ tanımlı olsa bile durum üretilemez. `Kapsam` sayfasındaki **tarihsiz görev**
+uyarısı bu yüzden doğrudan bu ekranın güvenilirliğini etkiler.
+</Callout>
+
+## Filtreleme
+
+Üstteki arama kutusu epic adına göre arar; `Filtre` düğmesi program, durum ve tarih
+aralığına göre daraltır.
+
+## İlgili sayfalar
+
+<Cards>
+  <Card title="Kapsam" href="/docs/teknisyen/moduller/projeler/portfoy-program/kapsam">
+    Tarihsiz iş uyarıları — bu ekranın veri kalitesini belirler.
+  </Card>
+  <Card title="Yol Haritası" href="/docs/teknisyen/moduller/projeler/yol-haritasi">
+    Proje içi kritik yol görünümü.
+  </Card>
+</Cards>

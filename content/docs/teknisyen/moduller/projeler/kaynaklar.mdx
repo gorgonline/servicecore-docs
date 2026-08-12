@@ -1,0 +1,71 @@
+---
+title: "Kaynaklar"
+description: "Projenin ölçüm ekranı: sprint sağlığı, iş yükü ve kapasite, tükenme ve hız grafikleri; hangi alt sekmenin hangi yapı türünde göründüğü."
+reviewed: "2026-08-11"
+owner:
+---
+
+`Kaynaklar`, projenin sayısal görünümüdür: sprint sağlığı, ekip yükü, kapasite ve çevik
+grafikler burada toplanır. Ekran çok sayıda **alt sekmeden** oluşur.
+
+![Kaynaklar sekmesi — sprint sağlığı panosu](/img/teknisyen/proje-kaynaklar.png)
+
+## Üst şerit
+
+Sol üstteki seçici görünümü bir sprinte daraltır (`Tüm sprintler` varsayılandır). Sağ
+üstte projeye atanmış üye sayısı ve `CSV Dışa Aktar` bulunur.
+
+Altındaki sayaçlar: `Görevler`, `Tamamlanmış`, `Devam Ediyor`, `Yapılacak`,
+`Hikaye Puanı`, `İş Yükü` (tahmini toplam süre) ve `Kapasite`.
+
+## Alt sekmeler
+
+Alt sekmeler **projenin yapı türüne göre** açılıp kapanır:
+
+| Alt sekme | Hangi yapıda görünür |
+|---|---|
+| `Pano` · `Kişiler` · `Isı Haritası` · `İş Yükü` | Her yapıda |
+| `Kapasite` · `Darboğaz` | **Basic dışında** (Scrum ve Kanban) |
+| `Tükenme Grafiği` · `Hız` · `Karşılaştırma` · `Tahmin` · `Devir` · `Tahmin Doğruluğu` · `Kişi Bazlı` · `SLA` · `Hedefler` | Yalnızca **Scrum** |
+| `Akış` (kümülatif akış) | Yalnızca **Kanban** |
+
+<Callout type="info" title="ÖNEMLİ">
+Scrum'a özel sekmeler sprint kavramına dayanır; sprinti olmayan bir yapıda anlamları
+olmadığı için hiç gösterilmezler. Yukarıdaki ekran görüntüsü bir **Scrum** projesine
+aittir, bu yüzden çevik grafiklerin tamamı görünür.
+</Callout>
+
+## Sprint sağlığı panosu
+
+`Pano` alt sekmesi sprintin durumunu kartlarla özetler:
+
+| Kart | Ne ölçer |
+|---|---|
+| **Sağlık Puanı** | Sprintin genel durumu (`Kritik`, `Riskli`, `İyi`) |
+| **Sprint İlerlemesi** | Yüzde ilerleme ve kalan gün |
+| **Tamamlama** | Biten görev / toplam görev |
+| **Hikaye Puanı** | Tamamlanan / toplam puan |
+| **Gecikmiş** | Bitiş tarihi geçmiş görev sayısı |
+| **Takım Kullanımı** | Ekibin doluluk oranı |
+| **İş Yükü Dengesi** | Yükün kişiler arasında dağılımı |
+
+Altındaki `Görev Dağılımı` şeridi işleri `Yapılacak` / `Devam Ediyor` / `Tamamlanmış`
+olarak kırar.
+
+<Callout type="warn" title="DİKKAT">
+`Takım Kullanımı` ve `İş Yükü Dengesi` kartları, görevlere **atanmış takım üyesi**
+gerektirir. Projeye üye eklenmemişse (ya da görevler bir takıma bağlanmamışsa) bu
+kartlar `—` gösterir; ekran görüntüsündeki durum budur. Üyeler `Ayarlar` ▸ `Üyeler`
+sekmesinden eklenir.
+</Callout>
+
+## İlgili sayfalar
+
+<Cards>
+  <Card title="İş Listesi (Backlog)" href="/docs/teknisyen/moduller/projeler/is-listesi">
+    Sprint planlama; buradaki grafiklerin veri kaynağı.
+  </Card>
+  <Card title="İş Günlükleri" href="/docs/teknisyen/moduller/projeler/is-gunlukleri">
+    Harcanan sürenin girildiği zaman çizelgesi.
+  </Card>
+</Cards>

@@ -1,0 +1,63 @@
+---
+title: "Etiketler"
+description: "Etiket yönetimi: etiketlerin instance genelinde ortak olması, kullanım sayıları, birleştirme ve silme."
+reviewed: "2026-08-11"
+owner:
+---
+
+`Ayarlar` ▸ `Etiketler`, görevlere iliştirilen etiketleri yönetir.
+
+<Callout type="warn" title="DİKKAT">
+**Etiketler projeye özel değildir.** Diğer ayar bölümlerinin aksine (durumlar, görev
+türleri, roller — hepsi projeye kopyalanır), etiketler **instance'taki tüm projelerde
+ortaktır**. Ekranın kendi notu da bunu söyler.
+
+Sonuçları:
+
+- Bir projede oluşturduğunuz etiket, **tüm diğer projelerde** de seçilebilir hâle gelir.
+- Bir etiketi silmek, onu kullanan **her projedeki** görevlerden kaldırır.
+- Etiket adları çakışabilir: iki ekip aynı kelimeyi farklı anlamda kullanırsa ayırt
+  edilemez.
+
+Bu yüzden etiket adlarını proje kısaltmasıyla önekleyen ekipler vardır (`mobil-ux`,
+`bddk-rapor` gibi).
+</Callout>
+
+## Liste
+
+Her satırda etiketin adı (kendi renginde) ve **kaç görevde kullanıldığı** yer alır.
+Kullanım sayısı, bir etiketin gerçekten yaşayıp yaşamadığını gösteren en pratik ölçüdür:
+tek görevde kalmış etiketler genellikle yazım hatası veya terk edilmiş denemelerdir.
+
+## İşlemler
+
+| İşlem | Ne yapar |
+|---|---|
+| **Düzenle** | Etiketin adını ve rengini değiştirir |
+| **Birleştir** | Etiketi başka bir etiketle birleştirir |
+| **Sil** | Etiketi tamamen kaldırır |
+
+### Birleştirme
+
+`Birleştir`, aynı şeyi anlatan iki etiketi tek bir etikete indirir: kaynak etiketi taşıyan
+tüm görevler hedef etikete geçer ve kaynak etiket silinir.
+
+Yazım farklılıklarından doğan ikizleri (`UI` / `ui` / `arayuz`) temizlemenin doğru yolu
+budur — tek tek görevlerden etiket sökmek yerine.
+
+<Callout type="warn" title="DİKKAT">
+Birleştirme ve silme **geri alınamaz** ve instance genelinde etkilidir. Bir etiketi
+silmeden önce kullanım sayısına bakın: 30 görevde kullanılan bir etiketi silmek, o
+görevlerin sınıflandırmasını sessizce kaldırır.
+</Callout>
+
+## İlgili sayfalar
+
+<Cards>
+  <Card title="Görev Detayı" href="/docs/teknisyen/moduller/projeler/gorev-detayi">
+    Etiketlerin göreve iliştirildiği yer.
+  </Card>
+  <Card title="Yapılandırma" href="/docs/teknisyen/moduller/projeler/yapilandirma">
+    Tüm ayar bölümleri ve önerilen sıra.
+  </Card>
+</Cards>

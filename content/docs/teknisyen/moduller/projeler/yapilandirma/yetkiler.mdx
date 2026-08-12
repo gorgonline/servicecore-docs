@@ -1,0 +1,83 @@
+---
+title: "Yetkiler (Proje Rolleri)"
+description: "Proje rolleri, rollere yetki atama ve global yetki ile proje rolü arasındaki iş bölümü."
+reviewed: "2026-08-11"
+owner:
+---
+
+`Ayarlar` ▸ `Yetkiler`, projenin **rollerini** tanımlar. Proje içinde bir kullanıcının ne
+yapabileceğine bu roller karar verir.
+
+![Proje ayarları — proje rolleri](/img/teknisyen/proje-ayarlar-yetkiler.png)
+
+## İki katmanlı yetki
+
+Proje modülünde yetki iki katmandan geçer:
+
+```mermaid
+flowchart LR
+  A[Global yetki:<br/>Projeleri Görebilir] -->|modül kapısı| B[Proje rolü]
+  B -->|eylem izni| C[Görev düzenle,<br/>iş günlüğü, pano…]
+```
+
+| Katman | Ne yapar | Nerede tanımlanır |
+|---|---|---|
+| **Global yetki** | Modüle girip giremeyeceğinizi belirler | Yönetici ▸ Roller |
+| **Proje rolü** | Proje içinde ne yapabileceğinizi belirler | Bu ekran |
+
+<Callout type="info" title="ÖNEMLİ">
+Proje içi eylemler için gereken global yetki yalnızca **Projeleri Görebilir**'dir. Görev
+düzenlemek, iş günlüğü girmek veya panoyu yönetmek için kullanıcıya "Proje Ekleyebilir"
+gibi yaşam döngüsü yetkileri vermeye **gerek yoktur** — bunlar yalnızca projenin kendisini
+açma, silme, arşivleme içindir.
+</Callout>
+
+## Rol listesi
+
+Her satırda rolün adı, `Proje Rolü` rozeti ve açıklaması bulunur. Satır sonundaki kalem
+simgesi rolü düzenler ve **yetkilerini** atamanızı sağlar; çöp kutusu rolü siler.
+
+`Rol Oluştur` yeni rol açar.
+
+<Callout type="warn" title="DİKKAT">
+**Rolleri her şeyden önce tanımlayın.** Projeye üye eklerken bir rol seçmek zorunludur;
+proje sıfır rolle açılmışsa `Üye Ekle` penceresindeki `Rol` listesi boş kalır ve ekibinizi
+ekleyemezsiniz.
+
+Roller proje oluşturulurken şablondan kopyalanır, ancak seçilen şablonda rol tanımlı
+değilse proje rolsüz açılır — kutudan çıkan `Yazılım Projesi (Scrum)` şablonunda böyledir.
+</Callout>
+
+## Rol tasarımı için öneriler
+
+Tipik bir proje üç rolle çalışır:
+
+| Rol | Kimin için | Tipik yetkiler |
+|---|---|---|
+| **Proje Yöneticisi** | Projeden sorumlu kişi | Yapılandırma, sprint, üye, tüm görev işlemleri |
+| **Geliştirici** | İşi yapan ekip üyesi | Görev oluşturma/düzenleme, iş günlüğü, pano kullanımı |
+| **İzleyici** | Paydaş, sponsor | Yalnız görüntüleme |
+
+<Callout type="warn" title="DİKKAT">
+Bir **okuma** ekranını yönetim yetkisine bağlamayın. Örneğin görev listesini yalnızca
+"Backlog Yönetebilir" yetkisi olanlara açarsanız, yalnız görüntüleme yetkisi verilmiş bir
+teknisyen ekranı açar ama kartlar gelmez — hata mesajı da görmez. Görüntüleme uçlarını
+görüntüleme yetkileriyle eşleştirin.
+</Callout>
+
+## Proje lideri ayrıdır
+
+`Ayarlar` ▸ `Genel` bölümündeki **proje lideri**, rollerden bağımsız bir alandır. Lider,
+proje içindeki tüm sekmeleri yetki kontrolüne takılmadan görür. Bu yüzden lideri gerçek
+sorumluya göre seçin; "geçici olarak" birini lider yapmak ona projenin tamamını açar.
+
+## İlgili sayfalar
+
+<Cards>
+  <Card title="Üyeler" href="/docs/teknisyen/moduller/projeler/yapilandirma/uyeler">
+    Rollerin kişilere atandığı bölüm.
+  </Card>
+  <Card title="Yapılandırma" href="/docs/teknisyen/moduller/projeler/yapilandirma">
+    Tüm ayar bölümleri ve önerilen sıra.
+  </Card>
+</Cards>
