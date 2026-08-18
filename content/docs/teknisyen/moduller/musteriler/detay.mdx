@@ -1,0 +1,72 @@
+---
+title: "Müşteri Detayı"
+description: "Müşteri kaydının detay sekmeleri: kişiler, yetkili teknisyenler, hesap sözleşmeleri, CMDB ve süreçler."
+reviewed: "2026-08-18"
+owner:
+---
+
+Listeden bir müşteri adına ya da satırdaki `Detaylar` düğmesine tıklandığında
+kayıt, çalışma alanında yeni bir sekmede açılır. Sekme adı `Müşteriler` ve kayıt
+numarasından oluşur; sekme sağındaki `×` ile kapatılır.
+
+![Müşteri detayı](/img/teknisyen/musteriler-detay.png)
+
+1. **Kayıt sekmeleri** — `Detay`, `Kişiler`, `Yetkili Teknisyen Grupları`, `Kapsanan Müşteriler`, `Yetkili Teknisyenler`, `Hesap Sözleşmeleri`, `CMDB` ve `Süreçler`. Sekme adının yanındaki rozet o sekmedeki kayıt sayısını gösterir.
+2. **Durum rozeti** — hesabın aktif/pasif durumu ve kayıt bağlantısını kopyalama düğmesi.
+3. **Kayıt işlemleri** — kayıt başlığı ve açıklaması üzerindeki işlem ikonları.
+4. **Özet bilgi paneli** — **Domain Adı**, **Açıklama**, **E-Posta Alan Adı**, **Adres**, **Posta Kodu**, **Gelir**, **Uygulama URL'si** ve **CRM No**.
+5. **Firma yapısı** — hesabın kendisi ve varsa bağlı alt firmaları.
+
+## Kişiler
+
+Müşteriye ait son kullanıcılar bu sekmede listelenir; **Tam Adı**, **E-Mail**,
+**Telefon** ve **İş Tanımı** sütunları gösterilir.
+
+- `+ Kişi Ekle` — yeni bir kişi oluşturur.
+- `+ Var Olan Kişileri Ekle` — sistemde kayıtlı bir kullanıcıyı bu hesaba bağlar.
+
+## Yetkili Teknisyen Grupları
+
+Hesaba bakmakla yükümlü teknisyen grupları burada tutulur. `+ Teknisyen Grubu Ekle`
+ile grup eklenir; liste **Grup Adı** sütunundan oluşur.
+
+## Kapsanan Müşteriler
+
+Sözleşmeleri kapsayan alt müşterilerin eklendiği sekmedir. Bir üst firmanın
+sözleşmesi altında birden fazla firmaya hizmet veriliyorsa, kapsam bu sekmeden
+tanımlanır.
+
+## Yetkili Teknisyenler
+
+Hesapla ilgilenecek teknisyenler tek tek eklenir. Liste **Ad**, **Soyad** ve
+**E-Mail** sütunlarından oluşur; `+ Yetkili Teknisyenler` düğmesi ile ekleme
+yapılır.
+
+## Hesap Sözleşmeleri
+
+Müşteriye ait destek anlaşmalarının tutulduğu sekmedir. Kayıt yokken iki seçenek
+sunulur:
+
+- `Yeni Anlaşma Ekle` — sıfırdan sözleşme oluşturur.
+- `Var Olan Sözleşmeyi Ekle` — sistemde tanımlı bir sözleşmeyi bu hesaba bağlar.
+
+## CMDB
+
+Müşteriyle ilişkili envanter kalemleri bu sekmede takibe alınır:
+`Varlık Ekle`, `Hizmet Ekle`, `Lisans Ekle`, `Aksesuar Ekle` ve `Sarf Malzeme Ekle`.
+
+## Süreçler
+
+Müşteriye ait tüm kayıtların modül modül izlendiği sekmedir.
+
+![Müşteri süreçleri](/img/teknisyen/musteriler-surecler.png)
+
+1. **Kayıt sekmeleri** — `Süreçler` sekmesi seçili.
+2. **Modül sekmeleri** — `Çağrı`, `Olay`, `Problem`, `İstek`, `Değişiklik`, `SI`, `Görev` ve `Proje`.
+3. **Filtre satırı** — kayıt numarası, durum, konu, oluşturulma tarihi, teknisyen ve kullanıcıya göre filtreleme.
+4. `Excel'e Aktar` ve `Yeni Kayıt` — listeyi dışa aktarır veya seçili modülde müşteri adına yeni kayıt açar.
+
+<Callout type="info" title="ÖNEMLİ">
+Süreçler sekmesindeki modül sekmeleri, müşterinin o modüldeki kayıtlarını
+gösterir. Kayıt yoksa liste boş görünür.
+</Callout>

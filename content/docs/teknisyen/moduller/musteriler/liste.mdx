@@ -1,0 +1,85 @@
+---
+title: "Müşteri Listesi, Filtreler ve Eylemler"
+description: "Aktif ve pasif müşteri listeleri; sütun filtreleri, sıralama, görünür sütun seçimi, satır eylemleri ve toplu eylemler."
+reviewed: "2026-08-18"
+owner:
+---
+
+`Müşteriler` sekmesi, hesapların listelendiği ve gündelik işlemlerin yapıldığı
+ekrandır. Liste iki alt sekmeye ayrılır: `Aktif Müşteriler` ve `Pasif Müşteriler`.
+
+![Müşteri listesi](/img/teknisyen/musteriler-liste.png)
+
+1. **Aktif Müşteriler / Pasif Müşteriler** — listeyi duruma göre ayırır.
+2. **Toplu seçim kutusu** — başlıktaki kutu sayfadaki tüm kayıtları işaretler.
+3. **Sıralama okları** — sütun başlığındaki oklarla artan/azalan sıralama yapılır.
+4. **Sütun filtre satırı** — her sütunun altındaki `Ara...` kutusuna yazılan metin o sütunda aranır; `Sektör` bir açılır listedir.
+5. **Sütunlar** — listede görünecek sütunların seçildiği menüyü açar.
+6. **Satır eylemleri** — `Düzenleme` sütunundaki işlem ikonları.
+7. **Sayfalama** — sayfa numaraları ve sayfa başına kayıt sayısı (`10 / sayfa`).
+
+## Sütunlar
+
+Varsayılan listede **Durum**, **Müşteri Adı**, **Müşteri Alan Adı**, **Açıklama**,
+**Sektör**, **Adres**, **E-Posta Alan Adı**, **Gelir** ve **Düzenleme** sütunları yer alır.
+
+Sağ üstteki dişli düğmesi ile açılan `Sütunlar` menüsünden görünür sütunlar
+işaretlenip kaldırılabilir.
+
+![Sütun seçimi](/img/teknisyen/musteriler-sutunlar.png)
+
+1. **Sütunlar** düğmesi.
+2. Görünür sütun listesi — `Aktif`, `Müşteri Adı`, `Müşteri Alan Adı`, `Kayıt Açıklaması`, `Sektör Adı`, `Adres`, `E-Posta Alan Adı`, `Gelir`, `Posta Kodu`, `Düzenleme`.
+
+## Filtreleme
+
+Sütun başlıklarının altındaki `Ara...` kutularına yazılan metin anında uygulanır;
+birden fazla sütunda aynı anda filtre verilebilir. Filtre sonrası sayfalama da
+sonuç sayısına göre güncellenir.
+
+![Listede filtreleme](/img/teknisyen/musteriler-filtre.png)
+
+1. Filtre kutusuna yazılan arama metni.
+2. Filtreye uyan kayıtlar.
+3. Sonuca göre güncellenen sayfalama.
+
+## Satır eylemleri
+
+Aktif müşteri listesinde her satırın `Düzenleme` sütununda dört işlem bulunur:
+
+| İkon | Eylem | Açıklama |
+|---|---|---|
+| Kalem | `Düzenle` | Hesap bilgilerinin düzenlendiği paneli açar |
+| Göz | `Devre Dışı` | Hesabı pasif duruma alır |
+| Çöp kutusu | `Sil` | Hesap kaydını siler |
+| Liste | `Detaylar` | Kaydı yeni bir çalışma alanı sekmesinde açar |
+
+Müşteri adına tıklandığında da kayıt detayı yeni sekmede açılır. Bkz.
+[Müşteri Detayı](/docs/teknisyen/moduller/musteriler/detay).
+
+## Toplu eylemler
+
+Satır başındaki kutular işaretlendiğinde listenin üstünde seçim şeridi belirir.
+Şeritte seçili kayıt sayısı ile `Devre Dışı Bırak` ve `Sil` düğmeleri yer alır.
+
+![Toplu eylem şeridi](/img/teknisyen/musteriler-toplu-eylem.png)
+
+1. Satır seçim kutusu.
+2. Seçim şeridi — seçili kayıt sayısı ve toplu eylem düğmeleri.
+
+<Callout type="warn" title="DİKKAT">
+`Sil` ve `Devre Dışı Bırak` seçili tüm kayıtlara uygulanır. İşlemden önce seçim
+şeridindeki kayıt sayısını kontrol edin.
+</Callout>
+
+## Pasif müşteriler
+
+`Pasif Müşteriler` sekmesinde durumu pasife alınmış hesaplar listelenir. Bu
+listede satır eylemleri farklıdır: düzenleme ve devre dışı bırakma yerine
+`Aktif Duruma Getir` seçeneği bulunur.
+
+![Pasif müşteriler](/img/teknisyen/musteriler-pasif.png)
+
+1. `Pasif Müşteriler` sekmesi.
+2. **Pasif** durum rozeti.
+3. Satır eylemleri — `Aktif Duruma Getir`, `Sil`, `Detaylar`.
