@@ -1,0 +1,91 @@
+---
+title: "Kaydı İş Birimine Taşıma"
+description: "Bir istek kaydını başka bir iş birimine aktarma: hedef birimde yeni kayıt açma, kaynak kaydın kapanması ve taşıma bilgisinin izlenmesi."
+reviewed: "2026-08-18"
+owner:
+---
+
+Bir istek, ilgisi olmayan bir iş birimine açılmış olabilir. Örneğin İnsan Kaynakları'nı ilgilendiren bir istek Bilgi Teknolojileri'ne düşmüş olabilir. `Kaydı İş Birimine Taşı` işlemi bu durumda kaydı hedef birime aktarır: hedef birimde yeni bir istek açılır, kaynak kayıt gerekçesiyle birlikte kapanır ve iki kayıt kalıcı olarak birbirine bağlanır.
+
+## Neden kayıt taşınmıyor da yenisi açılıyor
+
+Her iş biriminin kendi hizmet kataloğu, kendi istek formu, kendi durumları, öncelikleri ve teknisyen ekipleri vardır. Kaydı olduğu gibi öteki birime taşımak, o birimde karşılığı olmayan alanlar ve anlamsız durum değerleri bırakırdı.
+
+Bunun yerine istek, hedef birimde **o birimin kendi kurallarıyla** oluşturulur: doğru katalog kalemi, doğru form, doğru durum ve öncelik listesi. Kaynak taraftaki geçmiş ise kendi biriminde eksiksiz kalır.
+
+## Nasıl kullanılır
+
+İstek detay ekranında `Diğer İşlemler` menüsünden `Kaydı İş Birimine Taşı` seçeneğine tıklanır. Açılan pencerede sırasıyla:
+
+1. **İş birimi** seçilir. Listede yalnızca diğer birimler görünür; kaydın hâlihazırda bulunduğu birim listelenmez.
+2. **Hizmet kataloğu kalemi** seçilir. Liste, seçilen birimin kendi kataloğundan gelir.
+3. **Form doldurulur.** Açılan form hedef birimin istek formudur; durum, öncelik, aciliyet, iş etkisi, teknisyen, teknisyen grubu ve kullanıcı alanları o birimin verisiyle gelir. Konu ve açıklama kaynak istekten ön dolu gelir, düzenlenebilir.
+4. **Notları taşı** seçeneği işaretlenir veya kaldırılır. Varsayılan olarak işaretlidir.
+5. `Taşı` butonuna tıklanır.
+
+<Callout type="info" title="ÖNEMLİ">
+İş birimi değiştirildiğinde katalog seçimi sıfırlanır, katalog değiştirildiğinde form yeniden yüklenir. Pencere kapatılıp yeniden açıldığında hiçbir seçim korunmaz.
+</Callout>
+
+## Taşımadan sonra ne olur
+
+**Kaynak kayıt:**
+
+- Otomatik olarak kapatılır.
+- Kapatma açıklamasına hedef iş birimi ve yeni istek numarası yazılır.
+- Geçmişine **Kayıt İş Birimine Taşındı** satırı eklenir.
+- Yeniden açılamaz ve tekrar taşınamaz.
+
+**Hedef birimdeki yeni kayıt:**
+
+- Kendi istek numarasıyla açılır.
+- Hangi istekten geldiğini belirten bilgi notu düşer.
+- Hedef birimin bildirim ve otomasyon kuralları çalışır.
+- Kaynak kayda kalıcı olarak bağlıdır.
+
+Kaynak kayıtta görünen kapatma açıklaması şu biçimdedir:
+
+```
+Kaydınız Başka Bir Tenanta Taşındığı İçin Kapatılmıştır.
+Hedef İş Birimi: İnsan Kaynakları 1.2., Yeni İstek: SR3134
+```
+
+## Ne taşınır, ne taşınmaz
+
+| İçerik | Durum | Açıklama |
+|---|---|---|
+| Konu ve açıklama | Taşınır | Formda ön dolu gelir, düzenlenebilir |
+| Formda doldurulan alanlar | Taşınır | Durum, öncelik, aciliyet, iş etkisi, teknisyen, kullanıcı |
+| Notlar | Taşınır | Seçime bağlı; kopyalanır, kaynakta da kalır |
+| Sistem notları | Taşınmaz | Kaynak kaydın kendi işleyişine ait oldukları için hariç tutulur |
+| Kullanıcı, şirket, lokasyon, departman | Taşınır | Formda boş bırakılırsa kaynak istekten alınır |
+| Ekler ve e-posta yazışmaları | Taşınmaz | Kaynak kayıtta kalır |
+| Görevler, iş günlükleri, çözümler | Taşınmaz | Kaynak kayıtta kalır |
+| İlişkili kayıtlar ve SLA geçmişi | Taşınmaz | Hedefte SLA yeniden değerlendirilir |
+
+## Taşıma Bilgisi ekranı
+
+Taşımaya konu olmuş her kayıtta `Diğer İşlemler` menüsüne `Taşıma Bilgisi` seçeneği eklenir. Bu ekran kaynak ve hedef iş birimini, her iki isteğin numarasını ve konusunu, taşıma tarihini ve işlemi yapan teknisyeni gösterir. İstek numaralarına tıklanarak diğer kayda geçilebilir.
+
+Bir kayıt hem başka bir birimden gelmiş hem de sonradan üçüncü bir birime taşınmış olabilir. Bu durumda ekran iki bölüm gösterir: **Bu Kayda Gelen Taşıma** ve **Bu Kayıttan Giden Taşıma**. Böylece taşıma zincirinin tamamı izlenebilir kalır.
+
+Taşıma Bilgisi salt okunur bir ekrandır; kaynak kayıt kapanmış olsa da her zaman görüntülenebilir.
+
+## Bildirimler ve otomasyonlar
+
+Taşıma, iki tarafta da normal iş akışını tetikler; sessiz bir veri aktarımı değildir.
+
+- **Hedef birimde** yeni istek bildirimleri gider ve o birimin otomasyon kuralları çalışır. Kural ve şablonlar hedef birimin kendi tanımlarından okunur.
+- **Kaynak birimde** isteğin güncellendiği ve kapatıldığı bildirimleri gider; kapatma bildirimi taşıma gerekçesini içerir.
+
+<Callout type="warn" title="DİKKAT">
+Tek bir taşıma işleminde istek sahibine kaynak taraftan güncelleme ve kapatma, hedef taraftan da yeni istek bildirimi ulaşabilir. Bildirim şablonlarınızı buna göre gözden geçirmeniz önerilir.
+</Callout>
+
+## Bilinmesi gerekenler
+
+- **Taşıma geri alınamaz.** Taşınmış bir kayıt yeniden açılamaz ve ikinci kez taşınamaz.
+- **Kapalı istekler taşınamaz.** İşlem yalnızca açık istekler için kullanılabilir.
+- **Hedef katalog kalemine form bağlı olmalıdır.** Form tanımlı değilse pencere bunu bildirir ve taşımaya izin vermez; ilgili kaleme yönetici panelinden form bağlanması gerekir.
+- **Lokasyon ve departman listeleri tüm iş birimlerinde ortaktır.** Bu iki alan kurulum genelinde tek listeden gelir, iş birimine göre daralmaz.
+- **Yetki.** İşlemi yapabilmek için istek oluşturma yetkisi gerekir.
