@@ -1,0 +1,79 @@
+---
+title: "Takvim"
+description: "Görev ajandası: teknisyen satırları, gün/hafta/ay ölçeği, modül renk kodları ve görev kuyruğundan sürükleyerek planlama."
+reviewed: "2026-08-19"
+owner:
+---
+
+`Takvim` sekmesi görevleri **teknisyen ajandası** olarak gösterir: her satır bir
+teknisyendir, yatay eksen zamandır. Görevi sürükleyerek saatini değiştirebilir, kenardaki
+**Görev Kuyruğu**'ndan zamansız bir görevi takvime bırakarak planlayabilirsiniz.
+
+## Ekranın bölümleri
+
+![Görev ajandasının bölümleri](/img/teknisyen/gorev-yerlesim.png)
+
+| # | Bölüm | Ne işe yarar |
+|---|---|---|
+| ❶ | Başlık | Ekranın adı ve tek cümlelik özeti |
+| ❷ | Modül renk kodları | Görevin hangi modülden geldiğini rengiyle gösterir |
+| ❸ | `Yeni Görev Ekle` | Görev oluşturma çekmecesini açar |
+| ❹ | Görünüm sekmeleri | `Takvim`, `Liste`, `Kanban Pano`, `İş Günlüğü` |
+
+<Callout type="info" title="ÖNEMLİ">
+Renk kodları yalnız bir açıklama şeridi değildir: **takvimdeki çubuk rengi, kanban
+kartının renk şeridi ve listedeki rozet** aynı kaynaktan gelir. Bir görevin turuncu
+olması onun teknisyen görevi, yeşil olması proje görevi olduğunu söyler.
+</Callout>
+
+## Takvim yüzeyi
+
+![Takvim araç çubuğu ve gün görünümü](/img/teknisyen/gorev-takvim-yerlesim.png)
+
+| # | Bölüm | Ne işe yarar |
+|---|---|---|
+| ❶ | Tarih gezinme | `‹` / `›` ile dönem değiştirir, `Bugün` bugüne döner; sağdaki tarih seçici doğrudan atlar |
+| ❷ | Süzgeç ve ölçek | `Teknisyen Grubu`, `Teknisyen`, `Aşama`, `Modül Seç` süzgeçleri ile `Gün` / `Hafta` / `Ay` ölçeği |
+| ❸ | Ajanda | Satırlar teknisyenleri, sütunlar zamanı gösterir; çubuklar görevlerdir |
+
+Çubuğun üzerinde görev numarası, konusu ve planlanan başlangıç–bitiş bilgisi yer alır.
+Çubuğu sürüklemek görevin zamanını, satırlar arasında taşımak ise **atandığı teknisyeni**
+değiştirir.
+
+## Görev Kuyruğu
+
+Takvimin sağındaki kuyruk, **henüz ajandaya yerleşmemiş** görevleri tutar.
+
+![Görev kuyruğu](/img/teknisyen/gorev-takvim-kuyruk.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | Kategori seçici | Kuyruğun hangi görev kümesini göstereceğini belirler |
+
+Üç kategori vardır:
+
+| Kategori | İçerdiği görevler |
+|---|---|
+| **Zamansız • Atanmamış** | Ne tarihi ne teknisyeni olan görevler |
+| **Zamanlı • Atanmamış** | Tarihi olan ama teknisyeni olmayan görevler |
+| **Zamansız • Atanmış** | Teknisyeni olan ama tarihi olmayan görevler |
+
+Kuyruktaki bir görevi **takvimin üzerine sürükleyip bırakmak**, onu bıraktığınız
+teknisyenin satırına ve bıraktığınız saate planlar. Kuyruk boşsa
+`Bu kategoride bekleyen görev yok.` yazar.
+
+<Callout type="info" title="ÖNEMLİ">
+Kuyruk, planlanmayı bekleyen işin görünür hâlidir. `Zamansız • Atanmamış` kategorisinin
+sürekli dolu olması, görev açılırken tarih ve teknisyen verilmediğini gösterir.
+</Callout>
+
+## İlgili sayfalar
+
+<Cards>
+  <Card title="Liste" href="/docs/teknisyen/moduller/gorevler/liste">
+    Aynı görevleri ızgarada, tüm alanları ve süzgeçleriyle yönetin.
+  </Card>
+  <Card title="Görev Oluşturma" href="/docs/teknisyen/moduller/gorevler/gorev-olusturma">
+    Yeni görev çekmecesindeki alanlar.
+  </Card>
+</Cards>
