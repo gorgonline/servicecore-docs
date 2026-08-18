@@ -1,14 +1,20 @@
 ---
 title: "Girişimler"
 description: "Girişim listesi: değer akışı durumları, fayda puanı ve WSJF ile önceliklendirme, epic bağlama."
-reviewed: "2026-08-11"
+reviewed: "2026-08-18"
 owner:
 ---
 
 **Girişim**, program altında **değer bazlı** bir iş kalemidir: "ne yapacağız" değil, "hangi
 değeri üreteceğiz" sorusunu tanımlar. Projeler işi yürütür, girişimler değeri ölçer.
 
-![Girişim listesi](/img/teknisyen/pm-girisimler.png)
+![Girişim genel bakış ekranı](/img/teknisyen/pm-girisim-detay.png)
+
+| # | Bölüm | Ne işe yarar |
+|---|---|---|
+| ❶ | Bölüm menüsü | Bağlı Epic'ler, Programlar, Yol Haritası, Panolar, Ayarlar |
+| ❷ | Başlık kartı | Girişim adı, kodu, değer akışı durumu ve sağlık rozeti |
+| ❸ | Genel bakış gövdesi | Bağlı epic, hikaye puanı, program ve fayda puanı sayaçları |
 
 ## Değer akışı durumları
 
@@ -32,6 +38,19 @@ flowchart LR
 | **Tamamlandı** | Bitti |
 
 ## Kolonlar
+
+![Girişim listesi](/img/teknisyen/pm-girisimler-yerlesim.png)
+
+| # | Bölüm | Ne işe yarar |
+|---|---|---|
+| ❶ | Başlık ve kayıt sayısı | Toplam girişim rozeti |
+| ❷ | Değer akışı sekmeleri | Funnel, Analiz, Backlog, Uygulanıyor, Tamamlandı |
+| ❸ | Liste | Kod, ad, durum, sağlık, fayda çubuğu, WSJF, sahip ve hedef tarih |
+
+<Callout type="info" title="ÖNEMLİ">
+Görselde liste, ekranın üstündeki arama kutusuyla daraltılmıştır; süzgeç
+temizlendiğinde tüm kayıtlar listelenir.
+</Callout>
 
 | Kolon | İçerik |
 |---|---|

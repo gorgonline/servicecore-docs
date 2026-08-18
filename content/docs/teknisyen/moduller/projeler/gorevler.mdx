@@ -1,7 +1,7 @@
 ---
 title: "Görevler"
 description: "Görev ızgarası: kolonlar, JQL filtre çubuğu, kayıtlı filtreler, gruplama ve görev oluşturma yolları."
-reviewed: "2026-08-11"
+reviewed: "2026-08-18"
 owner:
 ---
 
@@ -9,13 +9,31 @@ owner:
 *nerede* olduğunu gösterir; bu ekran ise *ne olduğunu* — alanlarıyla, süzgeçleriyle ve
 toplu işlemleriyle.
 
-![Görev ızgarası](/img/teknisyen/proje-gorevler.png)
+## Ekranın bölümleri
+
+![Görev ızgarasının bölümleri](/img/teknisyen/proje-gorevler-yerlesim.png)
+
+| # | Bölüm | Ne işe yarar |
+|---|---|---|
+| ❶ | Filtre çubuğu | Temel/Kod kipinde süzme, `Çalıştır` ve `Kaydet` |
+| ❷ | Özet şeridi | Süzülen görev adedi ve toplam hikaye puanı |
+| ❸ | Kolon başlıkları | Sıralama; sağdaki dişliden kolon seçici açılır |
+| ❹ | Görev satırı | Anahtara tıklandığında görev detayı açılır |
+| ❺ | Oluşturma düğmeleri | `Görev Oluştur` ve `Formla Oluştur` |
 
 ## Kolonlar
 
 Varsayılan kolonlar: `Görev`, `Epik`, `Atanan`, `Durum`, `Öncelik`, `HP` (hikaye puanı)
 ve `Bitiş`. Sağ üstteki dişli simgesinden kolon seçici açılır; görünecek kolonlar
 buradan değiştirilir.
+
+![Görev satırının sol bölümü](/img/teknisyen/proje-gorevler-satir.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | Görev türü ikonu | Türün rengi ve simgesi |
+| ❷ | Görev anahtarı | Tıklandığında görev detayını açar |
+| ❸ | Başlık | Çift tıklandığında satır içinde düzenlenir |
 
 Görev satırındaki anahtar (`#PRJ-61-10315` gibi) görev detayını açar. Epik kolonu,
 görevin bağlı olduğu epiği rozet olarak gösterir; epik satırlarının kendisi ayrı renkle
@@ -26,9 +44,15 @@ listelenir.
 yapıdaki projelerde hikaye puanı alanı hiç bulunmaz.
 </Callout>
 
-Listenin üstünde kaç görevin süzüldüğü ve toplam hikaye puanı özetlenir
-(`15 görevler (filtrelenmiş)` · `86 SP`). Alt şeritte sayfa boyutu ve toplam kayıt sayısı
-yer alır.
+Listenin üstünde kaç görevin süzüldüğü ve toplam hikaye puanı özetlenir; alt şeritte
+sayfa boyutu ve toplam kayıt sayısı yer alır.
+
+![Görev ızgarası özet şeridi](/img/teknisyen/proje-gorevler-ozet.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | Süzülen görev adedi | Filtre uygulanmışsa `(filtrelenmiş)` ibaresiyle |
+| ❷ | Toplam hikaye puanı | Süzülen görevlerin `HP` toplamı |
 
 ## Filtre çubuğu
 
@@ -36,6 +60,8 @@ yer alır.
 
 - **Temel** — açılır kutularla süzme
 - **Kod** — sorguyu doğrudan yazma (JQL)
+
+![JQL filtre çubuğu](/img/teknisyen/proje-gorevler-jql.png)
 
 Kod kipinde sorgular şu biçimdedir:
 

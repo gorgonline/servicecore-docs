@@ -98,6 +98,59 @@ Video gömme (YouTube):
 - Yeni ekran görüntüsü eklerken **ilgili bölüm klasörüne** koyun, adı anlamlı olsun.
 - Görseller otomatik çerçevelenir/gölgelenir; ek stil vermeyin.
 
+### Ekran görüntüsü standardı
+
+Ekran görüntüsü, metnin söylediğini **göstermek** içindir. Tam ekran bir
+yakalama bunu yapmaz: figür sütunu 46rem (≈736px) olduğu için 1900px'lik bir
+görüntü %38 ölçekle çizilir, arayüzdeki 13px metin ekranda 5px'e düşer ve
+görselde tıklayıp büyütme yoktur. Kural üç maddede özetlenir: **kırp, iki
+katman kullan, işaretle.**
+
+**1. Kırp — kabuk görsele girmez.**
+Sol menü, üst menü ve proje kenar çubuğu her sayfada aynıdır; tekrar
+göstermek yer harcar. Yalnızca anlatılan bölge yakalanır. Hedef genişlik
+**≤900px**; 736px'in altı 1:1 çizilir ve en okunaklısıdır. Uzun sayfalarda
+görsel anlamlı bir yükseklikle sınırlanır (2000px'lik bir sayfa görüntüsü
+kimseye bir şey anlatmaz).
+
+**2. İki katman — yerleşim + detay.**
+
+| Katman | Ne gösterir | Tipik ölçü |
+|---|---|---|
+| **Yerleşim haritası** | Ekranın bölümleri, "ne nerede" | ~880px, 3–5 işaret |
+| **Detay** | Tek bir öğenin anatomisi | ~500–740px, 2–3× büyütme, 3–7 işaret |
+
+Yerleşim haritası okuyucuyu yönlendirir, detay görseli tek tek alanları
+anlatır. Bir sayfada tek bir tam ekran görüntüsü ikisini birden yapamaz.
+
+**3. İşaretle — kırmızı kutu + numaralı rozet.**
+Kutu `#D92D20`, 3px, dışında 2px beyaz halo (beyaz ve renkli zeminde okunur).
+Rozet aynı kırmızıda dolu daire, beyaz rakam, kutunun köşesinde. Ok yalnızca
+kutulanamayacak kadar küçük öğede kullanılır.
+
+**Görselin içine metin YAZILMAZ.** Anlamlar hemen altındaki tabloda ❶❷❸ ile
+verilir. Sebep: metin görselin dışında kaldığı sürece aranabilir, çevrilebilir
+ve düzeltilebilir; görsele gömülürse her kelime değişikliği yeniden yakalama
+gerektirir.
+
+```mdx
+![Pano ekranının bölümleri](/img/teknisyen/proje-pano-yerlesim.png)
+
+| # | Bölüm | Ne işe yarar |
+|---|---|---|
+| ❶ | Özet şeridi | Kart adedi, sütun sayısı ve hikaye puanı toplamı |
+| ❷ | Süzgeç çubuğu | Arama, kişi/takım süzgeci, sıralama ve gruplama |
+```
+
+**Adlandırma:** `proje-<sayfa>-<konu>.png`. Yerleşim haritası daima
+`-yerlesim` ile biter, böylece sayfanın giriş görseli bir bakışta ayırt edilir.
+
+**Üretim:** Görseller elle kırpılmaz. Ana depodaki
+`ServiceCoreApp.AutomationE2E` altındaki Playwright hattı, sayfayı gerçek
+uygulamada açar, **CSS seçicisinden** kırpar ve işaret kutularını yine
+seçiciden hesaplar. Koordinat değil seçici saklandığı için arayüz kaydığında
+görselleri yeniden üretmek tek komuttur; spec dosyaları `shots/<sayfa>.json`.
+
 ---
 
 ## 3. Kenar çubuğu ve sıralama — `meta.json`

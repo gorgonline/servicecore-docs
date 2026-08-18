@@ -1,14 +1,23 @@
 ---
 title: "İş Günlükleri"
 description: "Projenin zaman çizelgesi görünümü: hücreye tıklayarak süre girme, kişi kırılımı, günlük toplamlar ve dışa aktarma."
-reviewed: "2026-08-11"
+reviewed: "2026-08-18"
 owner:
 ---
 
 `İş Günlükleri`, projedeki görevlere harcanan süreyi **zaman çizelgesi** biçiminde
 gösterir: satırlar görevler, sütunlar ayın günleridir.
 
-![İş günlükleri zaman çizelgesi](/img/teknisyen/proje-is-gunlukleri.png)
+## Ekranın bölümleri
+
+![İş günlükleri ekranının bölümleri](/img/teknisyen/proje-is-gunlukleri-yerlesim.png)
+
+| # | Bölüm | Ne işe yarar |
+|---|---|---|
+| ❶ | Dönem seçici | Görüntülenen ay; oklarla ileri/geri gidilir |
+| ❷ | Görünüm anahtarları | `Tüm Günler` ve `Hafta sonları` gösterimi |
+| ❸ | Izgara başlığı | Özet, atanan, durum ve işlenen süre kolonları |
+| ❹ | Zaman çizelgesi | Gün sütunlarında girilen süreler |
 
 ## Süre girme
 
@@ -24,6 +33,14 @@ Bir günlüğün toplamda görünmediğini fark ederseniz önce bitiş zamanın�
 </Callout>
 
 ## Satır yapısı
+
+![İş günlükleri ızgarası](/img/teknisyen/proje-is-gunlukleri-izgara.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | Özet kolonu | Kullanıcı ve altındaki görev satırları |
+| ❷ | İşlenen süre | Satırın dönem toplamı |
+| ❸ | Kullanıcı satırı | Altındaki görev satırlarının toplamını taşır |
 
 Görev satırı genişletildiğinde altında **kişi kırılımı** görünür: aynı göreve birden
 fazla kişi süre girdiyse her biri ayrı satırda listelenir.
