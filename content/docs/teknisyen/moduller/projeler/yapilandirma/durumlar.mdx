@@ -1,0 +1,86 @@
+---
+title: "Durumlar"
+description: "Proje görev durumları, durum kategorileri, sıra numarası ve yeni projede oluşan çift durum kümesi."
+reviewed: "2026-08-11"
+owner:
+---
+
+`Ayarlar` ▸ `Durumlar`, projenin görev durumlarını yönetir. Durumlar **projeye özeldir**:
+iki farklı projede aynı ada sahip iki durum, birbirinden bağımsız iki kayıttır.
+
+![Proje ayarları — durum yönetimi](/img/teknisyen/proje-ayarlar-durumlar.png)
+
+## Durum satırındaki rozetler
+
+Her durumun yanında birkaç rozet bulunur:
+
+| Rozet | Anlamı |
+|---|---|
+| **Yapılacak** / **Devam Ediyor** / **Tamamlanmış** | Durum **kategorisi** |
+| **Açık** / **Beklemeye Alınanlar** / **Kapatılan** | Durumun iş akışındaki hâli |
+| **Proje** | Durumun projeye ait olduğu (şablona değil) |
+| **Sıra: n** | Durumun sıra numarası |
+
+Soldaki renkli kare, panoda ve görev listesinde kullanılan durum rengidir.
+
+<Callout type="info" title="ÖNEMLİ">
+**Kategori, durumun adından bağımsızdır.** Panolar, raporlar ve projeler arası filtreler
+"bu iş bitti mi" sorusunu durumun adına değil **kategorisine** bakarak yanıtlar. Yeni bir
+durum eklerken doğru kategoriyi seçmek bu yüzden kritiktir; adı "Tamamlandı" olan ama
+kategorisi `Devam Ediyor` olan bir durum, raporlarda bitmemiş sayılır.
+</Callout>
+
+## Yeni projede iki durum kümesi olur
+
+Yeni açılan bir projede genellikle **iki grup durum** bulunur:
+
+1. **Proje oluşturulurken seed edilen** dört durum: `Todo`, `InProgress`, `InReview`,
+   `Done`. Bunların **sıra numarası yoktur**.
+2. **Şablondan kopyalanan** durumlar: örneğin `Bekleyen İşler`, `Yapılacak`,
+   `Geliştirmede`, `Kod İnceleme`, `Test`, `Tamamlandı`. Bunlar `Sıra: 1..n` taşır.
+
+Yukarıdaki ekran görüntüsünde her iki küme de görünür.
+
+<Callout type="warn" title="DİKKAT">
+Bu, yeni görevlerin **beklenmedik bir durumda açılmasına** yol açar.
+
+Varsayılan açılış durumu seçilirken önce projeye ait olanlar, sonra **sıra numarası en
+küçük olan** tercih edilir. Sıra numarası **boş** olan durumlar sıralamada en başa geçtiği
+için, seed edilen `Todo` durumu — akışınızın gerçek giriş durumu `Bekleyen İşler` olsa
+bile — kazanır.
+
+İkinci etkisi daha da görünür: bu seed durumları genellikle **hiçbir pano sütununa
+eşlenmemiştir**. Yani görev `Todo` ile açılır ve **panoda hiç görünmez** — `Görevler`
+listesinde durur ama panoyu kullanan ekip onu göremez.
+
+**Çözüm:** kullanmayacağınız seed durumlarını silin, ya da hem sıra numarası verin hem de
+`Ayarlar` ▸ `Pano` bölümünden bir sütuna eşleyin.
+</Callout>
+
+## Durum ekleme ve düzenleme
+
+`Durum Oluştur` yeni durum açar. Her durum için ad, renk, kategori ve sıra numarası
+girilir. Satır sonundaki kalem simgesi düzenler, çöp kutusu siler.
+
+<Callout type="warn" title="DİKKAT">
+Bir durumu silmeden önce o durumdaki görevleri başka bir duruma taşıyın. Ayrıca
+`Ayarlar` ▸ `Geçişler` bölümünde o duruma bağlı geçişler varsa onlar da gözden
+geçirilmelidir.
+</Callout>
+
+## Durumlar ile pano ilişkisi
+
+Pano sütunları durumlardan **ayrı** kavramlardır: bir sütun bir veya daha fazla duruma
+karşılık gelir ve eşleme `Ayarlar` ▸ `Pano` bölümünde yapılır. Durum eklemek, o durumu
+otomatik olarak panoda göstermez — sütuna eşlemeniz gerekir.
+
+## İlgili sayfalar
+
+<Cards>
+  <Card title="Yapılandırma" href="/docs/teknisyen/moduller/projeler/yapilandirma">
+    Tüm ayar bölümleri ve önerilen yapılandırma sırası.
+  </Card>
+  <Card title="Pano" href="/docs/teknisyen/moduller/projeler/pano">
+    Sütun–durum eşlemesinin sonucunu gördüğünüz ekran.
+  </Card>
+</Cards>

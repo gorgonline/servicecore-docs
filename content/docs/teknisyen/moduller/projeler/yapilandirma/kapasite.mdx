@@ -1,0 +1,64 @@
+---
+title: "Kapasite"
+description: "Üye bazında haftalık kapasite, günlük karşılığı ve tahsis oranı; kapasitenin hangi ekranları beslediği."
+reviewed: "2026-08-11"
+owner:
+---
+
+`Ayarlar` ▸ `Kapasite`, proje üyelerinin **haftalık çalışma kapasitesini** tanımlar.
+Planlama ekranlarındaki yük hesapları bu değerden beslenir.
+
+![Proje ayarları — kapasite](/img/teknisyen/proje-ayarlar-kapasite.png)
+
+## Üst şerit
+
+| Değer | Anlamı |
+|---|---|
+| **Toplam** | Tüm üyelerin haftalık kapasitesi toplamı |
+| **Ortalama** | Üye başına ortalama kapasite |
+| **Üyeler** | Kapasitesi tanımlı üye sayısı |
+
+## Tablo
+
+| Kolon | İçerik |
+|---|---|
+| **Üye** | Kişi |
+| **Rol** | Projedeki rolü |
+| **Haftalık Kapasite (saat)** | Düzenlenebilir alan |
+| **Günlük** | Haftalıktan türetilen günlük karşılık |
+| **Tahsisat** | Kapasitenin ne kadarının işe bağlandığı |
+
+Haftalık kapasite değiştirildiğinde günlük karşılık kendiliğinden güncellenir
+(40 saat → 8,0 saat/gün).
+
+<Callout type="info" title="ÖNEMLİ">
+Listede **yalnızca proje üyeleri** görünür. Kapasite tanımlamak istediğiniz kişi
+listede yoksa önce `Ayarlar` ▸ `Üyeler` bölümünden projeye eklenmelidir.
+</Callout>
+
+## Kapasite neyi etkiler
+
+Kapasite bir kayıt alanından ibaret değildir; şu ekranlar doğrudan buna bakar:
+
+- **Kaynaklar** ▸ `Kapasite` ve `İş Yükü` — kimin ne kadar dolu olduğunu bu değere göre
+  hesaplar
+- **Sprint planlama** — sprinte alınan işin ekibin kapasitesine oranı
+- Üst seviye **Kapasite** sayfası — projeler arası arz/talep karşılaştırması
+
+<Callout type="warn" title="DİKKAT">
+Kapasite **hedef değil, ölçü birimidir**. Haftalık 40 saat yazmak, kişinin 40 saatlik iş
+alması gerektiği anlamına gelmez; izin, toplantı ve destek işleri düşüldükten sonra
+gerçekte plana açık süre genellikle daha azdır. Ekipler çoğu zaman bu değeri gerçekçi
+bir "proje işine ayrılabilen süre" olarak (örneğin 30 saat) tanımlar.
+</Callout>
+
+## İlgili sayfalar
+
+<Cards>
+  <Card title="Üyeler" href="/docs/teknisyen/moduller/projeler/yapilandirma/uyeler">
+    Kapasitesi tanımlanacak kişilerin projeye eklendiği bölüm.
+  </Card>
+  <Card title="Kaynaklar" href="/docs/teknisyen/moduller/projeler/kaynaklar">
+    Kapasitenin yük ve doluluk göstergelerine dönüştüğü ekran.
+  </Card>
+</Cards>

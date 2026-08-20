@@ -1,0 +1,65 @@
+---
+title: "Alanlar"
+description: "Görev türü bazında özel alan yapılandırması: kullanılabilir alanlar, açıklama ve bağlam kategorileri."
+reviewed: "2026-08-11"
+owner:
+---
+
+`Ayarlar` ▸ `Alanlar`, her görev türünde hangi **özel alanların** görüneceğini belirler.
+
+![Proje ayarları — görev türü alan yapılandırması](/img/teknisyen/proje-ayarlar-alanlar.png)
+
+## Görev türü bazındadır
+
+Ekran, `Geçişler` gibi, önce bir **görev türü** seçilmesini ister. Seçim yapılmadan
+yapılandırma görünmez.
+
+<Callout type="warn" title="DİKKAT">
+Alan yapılandırması **her görev türü için ayrıdır**. Bir hikayeye eklediğiniz alan
+otomatik olarak hatalarda görünmez. Yeni bir görev türü eklediğinizde onun alan
+yapılandırması boş başlar.
+</Callout>
+
+## Üç sütun
+
+| Sütun | Anlamı |
+|---|---|
+| **Kullanılabilir Alanlar** | Henüz bu türe eşlenmemiş, eklenebilecek alanlar |
+| **Açıklama Alanları** | Görevin ana gövdesinde gösterilen alanlar |
+| **Bağlam Alanları** | Yan panelde, künye bilgisi olarak gösterilen alanlar |
+
+Başlıklardaki sayı o kategorideki alan adedini verir. `Ekle` bağlantısıyla kullanılabilir
+alanlar kategorilere dağıtılır.
+
+`Tüm alanlar eşlendi` mesajı, eklenebilecek başka alan kalmadığını gösterir.
+
+## Yeni alan oluşturma
+
+`Yeni Alan Oluştur` düğmesi yeni bir özel alan tanımlar. Alan tipi (metin, sayı, tarih,
+açılır liste, çoklu seçim, kullanıcı seçici…) burada belirlenir.
+
+<Callout type="info" title="ÖNEMLİ">
+İki adım karıştırılmamalı: **alanı oluşturmak** onu kullanılabilir hâle getirir; **göreve
+göstermek** için ayrıca bir görev türüne eşlemeniz gerekir. Oluşturduğu alanı görevde
+göremeyen kullanıcıların çoğu ikinci adımı atlamıştır.
+</Callout>
+
+## Kategori seçimi neyi değiştirir
+
+- **Açıklama alanları** görevin okunduğu ana kolonda, açıklamanın yanında yer alır —
+  işin *ne olduğunu* anlatan bilgiler için uygundur.
+- **Bağlam alanları** sağdaki künye panelinde durur — sınıflandırma, kaynak, referans
+  numarası gibi *yan* bilgiler için uygundur.
+
+Seçim yalnızca yerleşimi etkiler; alanın verisi ve davranışı değişmez.
+
+## İlgili sayfalar
+
+<Cards>
+  <Card title="Görev Türleri" href="/docs/teknisyen/moduller/projeler/yapilandirma/gorev-turleri">
+    Alanların eşlendiği türlerin tanımlandığı bölüm.
+  </Card>
+  <Card title="Görev Detayı" href="/docs/teknisyen/moduller/projeler/gorev-detayi">
+    Alanların son kullanıcıya nasıl göründüğü.
+  </Card>
+</Cards>

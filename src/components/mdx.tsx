@@ -1,6 +1,7 @@
 import defaultMdxComponents from 'fumadocs-ui/mdx';
 import { Callout } from 'fumadocs-ui/components/callout';
 import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
+import { Mermaid } from '@/components/mdx/mermaid';
 import type { MDXComponents } from 'mdx/types';
 
 export function getMDXComponents(components?: MDXComponents) {
@@ -10,6 +11,9 @@ export function getMDXComponents(components?: MDXComponents) {
     Callout,
     Accordion,
     Accordions,
+    // ```mermaid kod bloklarını source.config.ts'teki remarkMdxMermaid
+    // buraya yönlendirir; MDX'te elle yazılmaz.
+    Mermaid,
     ...components,
   } satisfies MDXComponents;
 }

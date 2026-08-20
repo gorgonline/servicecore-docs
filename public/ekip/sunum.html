@@ -177,10 +177,9 @@
     <h2>Anahtar neyi açıyor</h2>
     <div class="tw" style="max-width:900px">
       <table>
-        <tr><td><code>servicecore-docs</code></td><td>Sadece bu depo. Diğerlerine dokunamaz</td></tr>
-        <tr><td>Contents</td><td>Dosyaları okur ve değiştirir</td></tr>
-        <tr><td>Pull requests</td><td>Değişiklik önerisi açar</td></tr>
+        <tr><td><code>public_repo</code></td><td>Yalnızca herkese açık depolar — özel repolarınıza dokunamaz</td></tr>
         <tr><td>90 gün</td><td>Süresi dolunca kendiliğinden ölür</td></tr>
+        <tr><td>Yeni yetki vermez</td><td>Zaten erişebildiğiniz yerleri programa taşır</td></tr>
       </table>
     </div>
     <div class="rail good">Sızarsa ne olur? Biri docs deposuna <em>öneri</em> açabilir.
@@ -248,12 +247,12 @@
     <div class="eyebrow">03 · Kurulum · Adım 2</div>
     <h2>Token üretin</h2>
     <p class="sub">Settings → Developer settings → Personal access tokens →
-      <strong>Fine-grained tokens</strong> → Generate new token</p>
-    <div class="cmd">Repository access : Only select repositories → servicecore-docs
-İzinler          : Contents        Read and write
-                   Pull requests   Read and write
-Süre             : 90 gün</div>
-    <p class="kicker">Depo listede çıkmıyorsa 1. adımı yapmamışsınızdır.</p>
+      <strong>Tokens (classic)</strong> → Generate new token (classic)</p>
+    <div class="cmd">Note       : servicecore-docs
+Expiration : 90 gün
+Scope      : yalnızca  public_repo</div>
+    <div class="rail bad"><strong>`repo` kutusunu işaretlemeyin.</strong>
+      O, özel depolarınız dahil her şeye tam yetki verir.</div>
   </section>
 
   <!-- 13 -->

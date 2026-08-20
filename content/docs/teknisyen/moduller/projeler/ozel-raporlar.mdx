@@ -1,0 +1,63 @@
+---
+title: "Raporlar"
+description: "Proje özel raporları: yerleşik raporlar, grafik ve tablo raporları, filtreleme ve zamanlanmış e-posta gönderimi."
+reviewed: "2026-08-11"
+owner:
+---
+
+`Raporlar` sekmesi, projeye özel raporlar oluşturmanızı sağlar. Kutudan çıkan **yerleşik
+raporlar** ile kendi tanımladığınız raporlar aynı ekranda toplanır.
+
+![Proje özel raporlar ekranı](/img/teknisyen/proje-raporlar.png)
+
+## Yerleşik raporlar
+
+Dört rapor hazır gelir:
+
+| Rapor | Ne gösterir |
+|---|---|
+| **Tükenme Grafiği** | Sprint tükenme ve artış grafiği — kalan işi takip eder |
+| **Hız** | Sprint bazlı tamamlanan hikaye puanı trendi |
+| **Akış** | Haftalık görev durum dağılımını gösteren kümülatif akış diyagramı |
+| **Tahmin** | Hız tabanlı kalan iş tamamlama tahmini |
+
+<Callout type="info" title="ÖNEMLİ">
+Bu raporların anlamlı çıkması için projede **sprint** ve **hikaye puanı** kullanılıyor
+olması gerekir. Basic yapıdaki bir projede tükenme ve hız grafikleri boş kalır.
+</Callout>
+
+## Kendi raporunuz
+
+`Yeni Rapor` iki tür rapor oluşturur:
+
+- **Grafik rapor** — görsel özet (dağılım, trend)
+- **Tablo rapor** — ayrıntılı veri görünümü
+
+Rapor tanımlarken **filtreler** ile veriyi daraltırsınız; hangi görevlerin rapora gireceği
+böyle belirlenir.
+
+## Zamanlama
+
+Raporlar **zamanlanabilir**: belirli aralıklarla üretilip e-posta ile gönderilir. Üstteki
+sayaçlarda kaç raporun zamanlanmış olduğu görünür.
+
+<Callout type="info" title="ÖNEMLİ">
+Zamanlanmış rapor, düzenli durum toplantılarının yerini alan en pratik araçtır: sponsor
+her pazartesi raporu e-postasında bulur, ekibin ayrıca derleme yapması gerekmez.
+</Callout>
+
+## Sekmeler ve sayaçlar
+
+Üstteki `Tümü`, `Grafikler`, `Tablolar`, `Zamanlanmış` sekmeleri raporları türüne göre
+süzer; her birinin yanındaki sayı o türdeki rapor adedini gösterir.
+
+## İlgili sayfalar
+
+<Cards>
+  <Card title="Kaynaklar" href="/docs/teknisyen/moduller/projeler/kaynaklar">
+    Aynı çevik grafiklerin canlı görüldüğü ekran.
+  </Card>
+  <Card title="Görevler" href="/docs/teknisyen/moduller/projeler/gorevler">
+    Rapor filtrelerinin dayandığı JQL sorguları.
+  </Card>
+</Cards>

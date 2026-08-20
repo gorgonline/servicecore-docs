@@ -1,0 +1,65 @@
+---
+title: "İş Günlükleri"
+description: "Projenin zaman çizelgesi görünümü: hücreye tıklayarak süre girme, kişi kırılımı, günlük toplamlar ve dışa aktarma."
+reviewed: "2026-08-11"
+owner:
+---
+
+`İş Günlükleri`, projedeki görevlere harcanan süreyi **zaman çizelgesi** biçiminde
+gösterir: satırlar görevler, sütunlar ayın günleridir.
+
+![İş günlükleri zaman çizelgesi](/img/teknisyen/proje-is-gunlukleri.png)
+
+## Süre girme
+
+Bir hücreye tıklayarak o görev ve o gün için iş günlüğü eklersiniz. Klavye kısayolları
+için `?` tuşuna basın.
+
+<Callout type="warn" title="DİKKAT">
+İş günlüğünün süresi **başlangıç ve bitiş zamanının farkından** hesaplanır. Bitiş
+zamanı girilmeden kaydedilen bir günlük **0 saat** olarak düşer: kayıt oluşur, hata
+mesajı çıkmaz, yalnızca süre kaybolur ve toplamlara yansımaz.
+
+Bir günlüğün toplamda görünmediğini fark ederseniz önce bitiş zamanını kontrol edin.
+</Callout>
+
+## Satır yapısı
+
+Görev satırı genişletildiğinde altında **kişi kırılımı** görünür: aynı göreve birden
+fazla kişi süre girdiyse her biri ayrı satırda listelenir.
+
+| Kolon | İçerik |
+|---|---|
+| **Görev** | Görev anahtarı ve başlığı |
+| **Durum** | Görevin güncel durumu |
+| **Atanan** | Görevin atandığı kişi |
+| **Logged** | Görevin o aydaki toplam süresi |
+| Gün sütunları | O güne girilen süre |
+
+En alttaki şerit **günlük toplamları**, üstteki `Toplam` rozeti ise seçili ayın
+tamamını gösterir.
+
+## Dönem ve görünüm
+
+- Başlıktaki `‹` `›` okları ay değiştirir; `Bugün` içinde bulunulan aya döner.
+- **Tüm Günler** kapalıyken yalnızca içerik olan günler gösterilir.
+- **Hafta sonları** anahtarı cumartesi/pazar sütunlarını açıp kapatır.
+- Sağdaki simgeler satır yüksekliğini ve tam ekran görünümünü ayarlar.
+- `Dışa Aktar` çizelgeyi dosya olarak indirir.
+
+<Callout type="info" title="ÖNEMLİ">
+Bu ekran yalnızca **proje görevlerinin** sürelerini gösterir. Bir teknisyenin tüm
+işlerindeki süreleri (olay, talep, değişiklik dahil) görmek için `Görevler` modülündeki
+iş günlüğü çizelgesini kullanın; o ekran farklı bir veri kaynağından beslenir.
+</Callout>
+
+## İlgili sayfalar
+
+<Cards>
+  <Card title="Görev Detayı" href="/docs/teknisyen/moduller/projeler/gorev-detayi">
+    Tek bir görevin iş günlükleri, görev çekmecesindeki `İş Günlükleri` sekmesindedir.
+  </Card>
+  <Card title="Yol Haritası" href="/docs/teknisyen/moduller/projeler/yol-haritasi">
+    Planlanan zaman ile gerçekleşeni karşılaştırın.
+  </Card>
+</Cards>

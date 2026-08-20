@@ -73,13 +73,15 @@ eder, yenisini alırsınız.
 
 | Ayar | Ne anlama geliyor |
 |---|---|
-| Only select repositories → `servicecore-docs` | Bu anahtar **sadece docs deposunu** açar, diğer repolarınıza dokunamaz |
-| Contents: Read and write | Dosyaları okuyabilir ve değiştirebilir |
-| Pull requests: Read and write | Değişiklik önerisi açabilir |
+| Scope: `public_repo` | Yalnızca **herkese açık** depolar. Özel repolarınıza dokunamaz |
 | 90 gün | Süresi dolunca kendiliğinden geçersiz olur |
+| — | Token **yeni yetki üretmez**; kişinin GitHub'da zaten erişebildiği yerleri programa taşır |
 
-Token sızsa bile kaybınız şu: biri docs deposuna **öneri** açabilir. Hepsi bu — ve
-tek tıkla iptal edilir. Şifreniz asla ortalıkta dolaşmaz.
+Son madde en önemlisi: Tahsin tarayıcıdan bir depoya yazamıyorsa, token'ıyla da
+yazamaz. Token bir kapı açmaz, elinizdeki anahtarı programa uzatır.
+
+Token sızsa bile kaybınız sınırlı, ve tek tıkla iptal edilir. **Şifreniz asla
+ortalıkta dolaşmaz** — asıl mesele bu.
 
 ### MCP nedir
 
@@ -136,16 +138,21 @@ E-posta ile geldi. **Kabul etmeden hiçbir şey çalışmaz** — en sık atlana
 ### Adım 2 — Token üretin
 
 GitHub → Settings → Developer settings → Personal access tokens →
-**Fine-grained tokens** → Generate new token
+**Tokens (classic)** → **Generate new token (classic)**
 
 ```
-Repository access : Only select repositories → servicecore-docs
-İzinler           : Contents        Read and write
-                    Pull requests   Read and write
-Süre              : 90 gün
+Note       : servicecore-docs
+Expiration : 90 gün
+Scope      : yalnızca  public_repo
 ```
 
-> Depo listede çıkmıyorsa 1. adımı yapmamışsınızdır.
+> **`repo` kutusunu işaretlemeyin** — o özel depolarınız dahil her şeye tam
+> yetki verir. `public_repo` yeterli.
+
+> **Neden fine-grained değil:** fine-grained token'lar kaynak sahibine bağlı;
+> üretirken yalnızca kendi hesabınızı seçebilirsiniz. `servicecore-docs` başka
+> bir kişisel hesaba ait olduğu için listede hiç görünmez. Depo bir
+> organizasyona taşınırsa fine-grained kullanılabilir hale gelir.
 
 ### Adım 3 — AI asistanınıza bağlayın
 

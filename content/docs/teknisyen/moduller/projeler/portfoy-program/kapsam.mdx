@@ -1,0 +1,91 @@
+---
+title: "Kapsam"
+description: "Portföyden göreve tüm kapsamın sağlık taraması: kapsam matrisi, bağlantı/tarih/sahip/bütçe kapsaması ve kapsanmamış iş uyarıları."
+reviewed: "2026-08-11"
+owner:
+---
+
+`Kapsam` sayfası, hiyerarşinin **veri hijyenini** ölçer: portföyden göreve kadar her
+seviyede kaç kayıt var, bunların kaçı üst seviyeye bağlı, tarihli, sahipli ve bütçeli.
+
+![Kapsam matrisi ve kapsanmamış iş uyarıları](/img/teknisyen/pm-kapsam.png)
+
+## Neden önemli
+
+Diğer ekranlar "işler nasıl gidiyor" sorusunu yanıtlar. Bu ekran daha önce gelen bir
+soruyu sorar: **verimiz bu soruyu yanıtlayacak durumda mı?**
+
+Tarihi olmayan bir görev yol haritasında çizilemez; üst iş bağı olmayan bir görev
+portföy raporlarına akmaz; sahipsiz bir iş kimseyi uyarmaz. Bu sayfa o boşlukları
+tek ekranda toplar.
+
+## Üst özet
+
+| Değer | Anlamı |
+|---|---|
+| **Toplam iş / epic** | Sistemdeki toplam görev ve epic sayısı |
+| **Hikaye puanı / tamamlandı** | Toplam ve tamamlanan puan |
+| **İlerleme** | Genel tamamlanma yüzdesi |
+| **Stratejik kapsam** | Hikaye puanının **programa bağlı projelerdeki** payı |
+
+<Callout type="info" title="ÖNEMLİ">
+**Stratejik kapsam** yüzdesi, yapılan işin ne kadarının stratejik yapıya (program →
+portföy) bağlı olduğunu söyler. Düşük bir değer, ekiplerin çalıştığı işin üst seviye
+raporlarda **görünmediği** anlamına gelir.
+</Callout>
+
+## Kapsam matrisi
+
+Satırlar hiyerarşi seviyeleri (`Portföy`, `Program`, `Girişim`, `Proje`, `Epic`,
+`Görev`), kolonlar kapsama ölçütleri:
+
+| Kolon | Ne ölçer |
+|---|---|
+| **Sayı** | O seviyedeki toplam kayıt |
+| **Üst seviyeye bağlı** | Kaçı bir üst katmana bağlanmış |
+| **Tarihli** | Kaçının tarihi var |
+| **Sahipli** | Kaçının sorumlusu belli |
+| **Bütçeli** | Kaçına bütçe tanımlı (yalnız stratejik seviyeler) |
+
+Yüzdeler renklendirilir: düşük kapsama kırmızı, orta turuncu, yüksek yeşil. Böylece
+zayıf halka gözle bulunur.
+
+## Kapsanmamış kapsam uyarıları
+
+Matrisin altındaki liste, her boşluğu **eyleme dönüştürülebilir** biçimde sayar ve
+yanındaki `Görüntüle` bağlantısı doğrudan ilgili kayıtlara götürür:
+
+| Uyarı | Ne demek |
+|---|---|
+| Portföye bağlı olmayan program | Üst seviye raporlarda görünmez |
+| Programa bağlı olmayan proje | Program sayaçlarına girmez |
+| Girişime bağlı olmayan epic | Girişim yol haritasında çubuk çıkmaz |
+| Epic/üst iş bağı olmayan görev | Kırılım ağacında yetim kalır |
+| **Tarihsiz görev** | Yol haritası ve kapasite planına dahil edilemez |
+| **Tahminsiz görev** (SP/efor yok) | Hız ve tükenme grafiklerine katkı vermez |
+| **Sahipsiz görev** | Kimseye atanmamış, takip edilmiyor |
+| Bütçesiz stratejik varlık | Finansal raporlarda boş kalır |
+
+<Callout type="warn" title="DİKKAT">
+Bu sayılar **hata değil, borç**tur. Sıfırlanmaları gerekmez; ama sürekli büyüyorlarsa
+raporlarınız gerçeği anlatmıyor demektir. En yüksek getirili ikisi genellikle
+**tarihsiz görev** (planlamayı bozar) ve **programa bağlı olmayan proje** (stratejik
+kapsamı düşürür) olur.
+</Callout>
+
+## Nasıl kullanılır
+
+Çeyrek başında bu sayfayı açıp iki-üç uyarıyı hedef seçmek, tüm raporlama zincirini
+iyileştirmenin en hızlı yoludur — tek tek ekranları düzeltmeye çalışmaktan çok daha
+verimlidir.
+
+## İlgili sayfalar
+
+<Cards>
+  <Card title="Portföyler" href="/docs/teknisyen/moduller/projeler/portfoy-program/portfoyler">
+    Kapsamın beslediği üst seviye göstergeler.
+  </Card>
+  <Card title="Girişimler" href="/docs/teknisyen/moduller/projeler/portfoy-program/girisimler">
+    Epic bağlantısının yapıldığı katman.
+  </Card>
+</Cards>

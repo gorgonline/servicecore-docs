@@ -1,0 +1,91 @@
+---
+title: "Görevler"
+description: "Görev ızgarası: kolonlar, JQL filtre çubuğu, kayıtlı filtreler, gruplama ve görev oluşturma yolları."
+reviewed: "2026-08-11"
+owner:
+---
+
+`Görevler` sekmesi, projedeki tüm işleri ızgara görünümünde listeler. Pano işin
+*nerede* olduğunu gösterir; bu ekran ise *ne olduğunu* — alanlarıyla, süzgeçleriyle ve
+toplu işlemleriyle.
+
+![Görev ızgarası](/img/teknisyen/proje-gorevler.png)
+
+## Kolonlar
+
+Varsayılan kolonlar: `Görev`, `Epik`, `Atanan`, `Durum`, `Öncelik`, `HP` (hikaye puanı)
+ve `Bitiş`. Sağ üstteki dişli simgesinden kolon seçici açılır; görünecek kolonlar
+buradan değiştirilir.
+
+Görev satırındaki anahtar (`#PRJ-61-10315` gibi) görev detayını açar. Epik kolonu,
+görevin bağlı olduğu epiği rozet olarak gösterir; epik satırlarının kendisi ayrı renkle
+listelenir.
+
+<Callout type="info" title="ÖNEMLİ">
+`HP` kolonu yalnızca **Scrum ve Kanban** yapısındaki projelerde anlamlıdır. Basic
+yapıdaki projelerde hikaye puanı alanı hiç bulunmaz.
+</Callout>
+
+Listenin üstünde kaç görevin süzüldüğü ve toplam hikaye puanı özetlenir
+(`15 görevler (filtrelenmiş)` · `86 SP`). Alt şeritte sayfa boyutu ve toplam kayıt sayısı
+yer alır.
+
+## Filtre çubuğu
+
+Çubuk iki kipte çalışır:
+
+- **Temel** — açılır kutularla süzme
+- **Kod** — sorguyu doğrudan yazma (JQL)
+
+Kod kipinde sorgular şu biçimdedir:
+
+```text
+status = "Devam Ediyor" AND assignee = currentUser() ORDER BY createdDate DESC
+```
+
+`Çalıştır` sorguyu uygular, `Kaydet` ise sorguyu **kayıtlı filtre** hâline getirir.
+Kaydedilen filtreler soldaki `Kayıtlı Filtreler` düğmesinden ve kenar çubuğundaki
+`Favori Filtreler` bölümünden çağrılabilir.
+
+<Callout type="info" title="ÖNEMLİ">
+Kayıtlı filtreler projeye değil kullanıcıya aittir ve `Filtreler` sayfasından tüm
+projeler genelinde yönetilir.
+</Callout>
+
+## Gruplama
+
+`Gruplama` seçicisi satırları bir alana göre kümeler (epik, atanan, durum gibi).
+Varsayılan `Gruplama Yok`'tur.
+
+## Görev oluşturma
+
+Sağ üstte iki düğme vardır:
+
+| Düğme | Ne yapar |
+|---|---|
+| `Görev Oluştur` | Standart alanlarla hızlı oluşturma penceresi |
+| `Formla Oluştur` | Projeye tanımlı **görev şablonundan/özel formdan** oluşturma |
+
+Ayrıca listenin en altındaki `+ Görev oluştur` satırı, ızgaradan ayrılmadan satır içi
+görev açar.
+
+## Dışa ve içe aktarma
+
+Çubuğun sağındaki indirme/yükleme simgeleri görevleri **Excel** olarak dışa aktarır ve
+Excel'den içe aktarır.
+
+<Callout type="warn" title="DİKKAT">
+Bu iki işlem ayrı yetkiler ister (`Görev Dışa Aktarabilir` ve `Görev İçe Aktarabilir`).
+Simgeleri göremiyorsanız rolünüzde bu yetkiler tanımlı değildir.
+</Callout>
+
+## İlgili sayfalar
+
+<Cards>
+  <Card title="Pano" href="/docs/teknisyen/moduller/projeler/pano">
+    Aynı işleri iş akışı sütunlarında görün ve sürükleyerek ilerletin.
+  </Card>
+  <Card title="Kavramlar ve Hiyerarşi" href="/docs/teknisyen/moduller/projeler/kavramlar">
+    Görev türleri, durumlar ve yapı türlerinin etkisi.
+  </Card>
+</Cards>

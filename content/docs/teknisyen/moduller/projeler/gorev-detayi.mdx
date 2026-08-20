@@ -1,0 +1,99 @@
+---
+title: "Görev Detayı"
+description: "Görev çekmecesi: alt görevler, bağımlılıklar, yorumlar, geçmiş ve iş günlükleri; sağdaki durum, detay, kişi ve tarih alanları."
+reviewed: "2026-08-11"
+owner:
+---
+
+Bir görevin anahtarına tıklandığında sağdan **görev çekmecesi** açılır. Görevin tüm
+alanları, alt kırılımı ve tartışması bu ekranda toplanır.
+
+![Görev detayı çekmecesi](/img/teknisyen/proje-gorev-detayi.png)
+
+<Callout type="info" title="ÖNEMLİ">
+Çekmece adres çubuğuna yansır (`?task=PRJ-61-10315`). Bu adresi kopyalayarak bir görevi
+doğrudan paylaşabilirsiniz.
+</Callout>
+
+## Üst şerit
+
+| Öğe | Ne yapar |
+|---|---|
+| **İzle** | Görevi izlemeye alır; değişikliklerde bildirim alırsınız |
+| **Oyla** | Göreve oy verir (önceliklendirme sinyali) |
+| **⋮** | Taşıma, kopyalama, silme gibi ek işlemler |
+
+<Callout type="info" title="ÖNEMLİ">
+`İzle` ve `Oyla` yalnızca **Scrum ve Kanban** yapısındaki projelerde bulunur. Basic
+yapıda bu düğmeler görünmez.
+</Callout>
+
+## Sol bölüm
+
+### Açıklama ve Ekler
+
+Açıklama serbest metindir. `Ekler` bölümünden dosya yüklenir.
+
+### Alt Görevler
+
+`Alt Görev Ekle` ile görev daha küçük parçalara bölünür. Bölümün üstündeki çubuk
+tamamlanma oranını gösterir (`% Tamamlanmış (biten/toplam)`). Alt görevler kendi
+öncelik, atanan ve durum alanlarıyla listelenir.
+
+<Callout type="info" title="ÖNEMLİ">
+Alt görevler de birer görevdir: görev listesinde ayrı satır olarak görünürler ve kendi
+anahtarlarını taşırlar.
+</Callout>
+
+### Bağımlılıklar
+
+`Bağımlılık Ekle` ile görev başka görevlere bağlanır (engelliyor / engelleniyor gibi).
+Proje geneli görünüm için `Bağımlılıklar` sayfasını kullanın.
+
+### Aktivite
+
+Üç sekmelidir:
+
+| Sekme | İçerik |
+|---|---|
+| **Yorumlar** | Görev üzerindeki tartışma |
+| **Geçmiş** | Alan değişikliklerinin kaydı (kim, ne zaman, neyi değiştirdi) |
+| **İş Günlükleri** | Göreve harcanan süre kayıtları |
+
+<Callout type="warn" title="DİKKAT">
+İş günlüğü süresi **başlangıç ve bitiş zamanının farkından** hesaplanır. Bitiş zamanı
+girilmeden kaydedilen bir iş günlüğü **0 dakika** olarak düşer — kayıt oluşur, hata
+alınmaz, yalnızca süre kaybolur.
+</Callout>
+
+## Sağ sütun
+
+| Bölüm | Alanlar |
+|---|---|
+| **Durum** | Görevin iş akışı durumu; buradan değiştirilir |
+| **Etiketler** | Göreve iliştirilen etiketler |
+| **Detaylar** | Öncelik, Hikaye Puanı, Sprint, Epik |
+| **Kişiler** | Takım, Atanan, Raporlayan |
+| **Tarihler** | Oluşturuldu, Başlangıç, Bitiş (`Daha Fazla` ile gerçekleşen tarihler) |
+| **Zaman Takibi** | Tahmini ve harcanan süre |
+
+<Callout type="warn" title="DİKKAT">
+Durumu buradan değiştirmek, projedeki **geçiş kurallarına** tabidir. Hedef statüye
+tanımlı bir geçiş yoksa ya da geçiş bir form, koşul veya onay kapısı taşıyorsa değişiklik
+doğrudan uygulanmaz. Beklenen statüyü listede göremiyorsanız
+`Ayarlar` ▸ `Geçişler` ekranını kontrol edin.
+</Callout>
+
+`Hikaye Puanı` ve `Sprint` alanları yapı türüne bağlıdır: sprint yalnızca **Scrum**,
+hikaye puanı **Scrum ve Kanban** projelerinde bulunur.
+
+## İlgili sayfalar
+
+<Cards>
+  <Card title="Görevler" href="/docs/teknisyen/moduller/projeler/gorevler">
+    Görev ızgarası, kolonlar ve JQL filtre çubuğu.
+  </Card>
+  <Card title="İş Listesi (Backlog)" href="/docs/teknisyen/moduller/projeler/is-listesi">
+    Sprint planlama ve sprinte alınmamış işler.
+  </Card>
+</Cards>
