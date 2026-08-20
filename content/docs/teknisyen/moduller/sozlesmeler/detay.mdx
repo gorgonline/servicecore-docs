@@ -5,13 +5,6 @@ reviewed: "2026-08-20"
 owner: berdanasen
 ---
 
-Bir sözleşmeyi açmanın iki yolu vardır:
-
-- Listede `Sözleşme Numarası` kolonundaki `CNR…` bağlantısına tıklamak — sözleşme, liste
-  sayfasından ayrılmadan yeni bir sekmede açılır.
-- `/AdminContract/EditV2/{sözleşme numarası}` adresine gitmek — sözleşme tek başına, tam
-  sayfa olarak açılır.
-
 ![Sözleşme detayı: Detaylar sekmesi ve Özellikler paneli](/img/teknisyen/sozlesme-v2-detay.png)
 
 ## Ekran düzeni
@@ -36,10 +29,15 @@ Araç çubuğunda `Kaydet` butonu ve `Diğer Eylemler` menüsü yer alır.
 - `Diğer Eylemler` menüsünden varlık ekleme ve ilişkili sözleşme ekleme sekmelerine
   geçebilir, sözleşmeyi silebilirsiniz.
 
+![Araç çubuğu ve Özellikler paneli](/img/teknisyen/sozlesme-v2-detay-ozellikler.png)
+
 <Callout type="info" title="ÖNEMLİ">
 `Bildirimler` sekmesi açıkken araç çubuğundaki `Kaydet` pasiftir. Bildirim ayarları
-o sekmenin kendi `Kaydet` butonu ile kaydedilir.
+o sekmenin kendi `Kaydet` butonu ile kaydedilir — bkz.
+[Bildirimler ve Geçmiş](/docs/teknisyen/moduller/sozlesmeler/bildirimler-gecmis).
 </Callout>
+
+![Bildirimler sekmesi](/img/teknisyen/sozlesme-v2-bildirimler.png)
 
 ## Salt okunur durumlar
 
@@ -68,7 +66,8 @@ Sağdaki `Özellikler` panelinde sözleşmenin temel alanları bulunur:
 | `Süresi Geçtikten Sonra Bilgilendir (Gün)` | Bitişten sonra bildirim gönderilecek gün listesi |
 | `Otomatik Yenilensin` | İşaretlenirse `Otomatik Süre` alanı açılır |
 
-Bilgilendirme gün alanlarına **birden fazla gün** girilebilir; her gün ayrı bir etiket
+Bilgilendirme gün alanlarına **birden fazla gün** girilebilir (örnekte bitişten 30, 15 ve
+7 gün önce, bitişten 3 ve 7 gün sonra); her gün ayrı bir etiket
 olarak eklenir. Aynı gün iki kez eklenmez. Bu alanlar `Bildirimler` sekmesindeki
 karşılıklarıyla aynı veriyi gösterir.
 
@@ -97,6 +96,8 @@ Yenileme kaydı, sözleşmenin bitiş tarihini ileri bir tarihe taşımak için 
 Yeni kayıt, bölümün sağ üstündeki `Yenile` butonu ile eklenir.
 Tabloda şu kolonlar bulunur: `Yenileme Tarihi`, `Yenileyen Teknisyen`, `Yeni Bitiş Tarihi`,
 `Açıklama`, `Otomatik Yenilensin` ve `Düzenleme`.
+
+![Sözleşme yenilemeleri tablosu](/img/teknisyen/sozlesme-v2-detay-yenilemeler.png)
 
 - Yenileme eklemek, düzenlemek ve silmek için `Sözleşme Düzenleyebilir` yetkisi gerekir.
 - `Yeni Bitiş Tarihi` yalnızca gün bazında girilir; saat seçimi yoktur.

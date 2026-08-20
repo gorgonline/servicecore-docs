@@ -15,8 +15,6 @@ Pano yalnızca yeni sözleşme ekranlarında bulunur. Yeni ekranlar `Genel Ayarl
 sözleşmeler eski ekranlarda görüntülenir ve `Pano` sekmesi görünmez.
 </Callout>
 
-![Sözleşme panosu: özet kartları ve grafikler](/img/teknisyen/sozlesme-v2-pano.png)
-
 ## Özet kartları
 
 Panonun üst satırında altı özet kartı bulunur. Kartlardaki sayı **üç sözleşme
@@ -31,6 +29,8 @@ tipinin toplamıdır**.
 | `Onay Bekleyen` | Onay durumu onay bekleyen sözleşmeler (e-posta üzerinden onay bekleyenler dâhil) |
 | `Onaylandı` | Onay durumu onaylandı olan sözleşmeler |
 
+![Panodaki altı özet kartı](/img/teknisyen/sozlesme-v2-pano-kartlar.png)
+
 `Aktif` kartındaki yüzde çipi, aktif sözleşmelerin `Aktif + Pasif` toplamına oranıdır.
 
 <Callout type="warn" title="DİKKAT">
@@ -42,6 +42,8 @@ Kart toplamları bu nedenle birbirine eklenerek toplam sözleşme sayısı elde 
 ## Grafikler
 
 Özet kartlarının altında beş grafik alanı yer alır:
+
+![Pano grafikleri](/img/teknisyen/sozlesme-v2-pano-grafikler.png)
 
 - **Sözleşme Tipi Aktiflik Dağılımı** — her sözleşme tipi için aktif ve pasif sayısını yan yana gösterir.
 - **Onay Özeti** — onay bekleyen ve onaylanan sözleşme sayılarını karşılaştırır. Her ikisi de sıfırsa grafik yerine boş içerik görünür.
@@ -59,7 +61,11 @@ Grafik kartlarının sağ üstündeki `⋮` menüsündeki `Yenile` seçeneği pa
 
 ## Görünürlük ve yetki
 
-- Panoyu görmek için `Sözleşmeleri Görebilir` yetkisi gerekir.
+- Panoyu görmek için `Sözleşmeleri Görebilir` yetkisi gerekir. Yetkiler
+  `Yönetici ▸ Roller` altında, ilgili rolün `Sözleşme` sekmesinden verilir.
+
+![Rol düzenleme ekranındaki sözleşme yetkileri](/img/teknisyen/sozlesme-v2-rol-yetkileri.png)
+
 - Yetkili teknisyen grubu kısıtı panoya da uygulanır: kısıta tabi bir kullanıcı yalnızca
   hiçbir teknisyen grubuna bağlanmamış sözleşmeleri ve kendi üyesi olduğu gruplara bağlı
   sözleşmeleri sayılara dâhil edilmiş görür. Bu nedenle iki kullanıcının panosundaki
