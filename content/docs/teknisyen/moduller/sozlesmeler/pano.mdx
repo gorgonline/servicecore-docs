@@ -15,6 +15,8 @@ Pano yalnızca yeni sözleşme ekranlarında bulunur. Yeni ekranlar `Genel Ayarl
 sözleşmeler eski ekranlarda görüntülenir ve `Pano` sekmesi görünmez.
 </Callout>
 
+![Sözleşme panosu: özet kartları ve grafikler](/img/teknisyen/sozlesme-v2-pano.png)
+
 ## Özet kartları
 
 Panonun üst satırında altı özet kartı bulunur. Kartlardaki sayı **üç sözleşme
@@ -25,14 +27,14 @@ tipinin toplamıdır**.
 | `Aktif` | Aktif olan ve iptal edilmemiş sözleşmeler |
 | `Pasif` | Pasif olan **veya** iptal edilmiş sözleşmeler |
 | `Süresi Yaklaşmış` | Aktif, iptal edilmemiş ve bitiş tarihi bugün ile bugünden 30 gün sonrası arasında olan sözleşmeler |
-| `Süresi Geçmiş` | Bitiş tarihi bugünden önce olan sözleşmeler (aktif/pasif ayrımı yapılmaz) |
+| `Süresi Doldu` | Bitiş tarihi bugünden önce olan sözleşmeler (aktif/pasif ayrımı yapılmaz) |
 | `Onay Bekleyen` | Onay durumu onay bekleyen sözleşmeler (e-posta üzerinden onay bekleyenler dâhil) |
-| `Onaylanan` | Onay durumu onaylandı olan sözleşmeler |
+| `Onaylandı` | Onay durumu onaylandı olan sözleşmeler |
 
 `Aktif` kartındaki yüzde çipi, aktif sözleşmelerin `Aktif + Pasif` toplamına oranıdır.
 
 <Callout type="warn" title="DİKKAT">
-`Süresi Geçmiş` sayısı diğer kartlardan bağımsız hesaplanır; süresi geçmiş bir
+`Süresi Doldu` sayısı diğer kartlardan bağımsız hesaplanır; süresi geçmiş bir
 sözleşme hâlâ aktif durumdaysa hem `Aktif` hem `Süresi Geçmiş` kartında sayılır.
 Kart toplamları bu nedenle birbirine eklenerek toplam sözleşme sayısı elde edilmez.
 </Callout>
@@ -44,7 +46,7 @@ Kart toplamları bu nedenle birbirine eklenerek toplam sözleşme sayısı elde 
 - **Sözleşme Tipi Aktiflik Dağılımı** — her sözleşme tipi için aktif ve pasif sayısını yan yana gösterir.
 - **Onay Özeti** — onay bekleyen ve onaylanan sözleşme sayılarını karşılaştırır. Her ikisi de sıfırsa grafik yerine boş içerik görünür.
 - **Aktif Oranı** — aktif sözleşme oranını gösterge (gauge) olarak gösterir.
-- **Risk Ve Onay Odağı** — her sözleşme tipi için `Süresi Yaklaşmış`, `Süresi Geçmiş` ve `Onay Bekleyen` sayılarını yatay çubuklarla karşılaştırır.
+- **Risk Ve Onay Odağı** — her sözleşme tipi için `Süresi Yaklaşmış`, `Süresi Doldu` ve `Onay Bekleyen` sayılarını yatay çubuklarla karşılaştırır.
 - **İlgili taraf dağılımı** — her sözleşme tipi için ayrı bir grafik çizilir:
   - Kurum İçi Destek Sözleşmeleri için `Departman Dağılımı`
   - Tedarikçi Sözleşmeleri için `Tedarikçi Dağılımı`

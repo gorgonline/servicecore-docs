@@ -15,6 +15,8 @@ yetkisi ister ve sözleşme salt okunur durumdayken kapalıdır.
 `Varlıklar` sekmesinde iki ayrı tablo bulunur: üstte sözleşmeye bağlı **varlıklar**,
 altta bağlı **hizmetler**.
 
+![Varlıklar sekmesi: varlık ve hizmet tabloları](/img/teknisyen/sozlesme-v2-varliklar.png)
+
 - `Varlık Ekle` — henüz bir sözleşmeye bağlanmamış varlıkların listesini açar; seçilen
   varlıklar sözleşmeye bağlanır.
 - `Hizmet Ekle` — aynı akışı varlık hizmetleri için çalıştırır.
@@ -30,6 +32,8 @@ hizmetlerini görüntüleme yetkisi de gerekir. Bu yetki yoksa listeler boş gel
 ## Finansal Bilgiler
 
 `Finansal Bilgiler` sekmesi, sözleşmeye ait ödeme ve maliyet kayıtlarını tutar.
+![Finansal Bilgiler sekmesi](/img/teknisyen/sozlesme-v2-finansal.png)
+
 `Finansal Bilgi Ekle` butonu ile açılan pencerede şu alanlar bulunur:
 
 | Alan | Zorunlu | Açıklama |
@@ -55,16 +59,18 @@ kurmak için kullanılır. `İlişkili Sözleşme Ekle` menüsünde iki seçenek
 - `Kapsamı Genişletilmiş Sözleşme ile İlişkilendir` — bu sözleşmenin kapsamını genişleten
   bir ek sözleşme eklenir.
 
-Kurulan ilişkiler dört ayrı tabloda listelenir:
+![İlişkili Sözleşmeler sekmesi](/img/teknisyen/sozlesme-v2-iliskili.png)
+
+Kurulan ilişkiler dört ayrı tabloda listelenir; **yalnızca kayıt bulunan tablolar görünür**:
 
 - `Alt Sözleşmeler`
 - `Üst Sözleşmeler`
 - `Kapsamı Genişletilmiş Sözleşmeler`
 - `Üst Ek Sözleşmeler`
 
-Her tabloda `Durum`, `Sözleşme No`, `Sözleşme Türü Adı`, `Başlangıç Tarihi`,
-`Bitiş Tarihi` ve `Düzenleme` kolonları bulunur. İlişki, satırdaki silme işlemiyle
-kaldırılır; kaldırmadan önce onay sorulur.
+Her tabloda `Sözleşme No`, `Sözleşme Türü Adı`, `Başlangıç Tarihi`, `Bitiş Tarihi`,
+`Durum` ve `Düzenleme` kolonları bulunur; başlıkta kayıt sayısı gösterilir. İlişki,
+satırdaki silme işlemiyle kaldırılır; kaldırmadan önce onay sorulur.
 
 <Callout type="info" title="ÖNEMLİ">
 İlişki kurulacak sözleşme listesinde yalnızca bu sözleşmeyle **henüz ilişkilendirilmemiş**

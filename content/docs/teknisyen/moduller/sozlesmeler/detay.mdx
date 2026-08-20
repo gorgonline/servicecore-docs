@@ -12,6 +12,8 @@ Bir sözleşmeyi açmanın iki yolu vardır:
 - `/AdminContract/EditV2/{sözleşme numarası}` adresine gitmek — sözleşme tek başına, tam
   sayfa olarak açılır.
 
+![Sözleşme detayı: Detaylar sekmesi ve Özellikler paneli](/img/teknisyen/sozlesme-v2-detay.png)
+
 ## Ekran düzeni
 
 Detay ekranı iki sütundan oluşur:
@@ -70,26 +72,29 @@ Bilgilendirme gün alanlarına **birden fazla gün** girilebilir; her gün ayrı
 olarak eklenir. Aynı gün iki kez eklenmez. Bu alanlar `Bildirimler` sekmesindeki
 karşılıklarıyla aynı veriyi gösterir.
 
-<Callout type="info" title="ÖNEMLİ">
-`Sözleşme Modeli` değiştirildiğinde ilgili taraf alanı da değişir: kurum içi seçilirse
-`Bölüm`, tedarikçi seçilirse `Tedarikçi`, müşteri hizmet seçilirse `Destek Müşteri Hesabı`
-alanı görünür hâle gelir.
+<Callout type="warn" title="DİKKAT">
+`Sözleşme Modeli` ile ona bağlı taraf alanları (`Bölüm`, `Tedarikçi`, `Destek Müşteri Hesabı`)
+bu panelde **salt okunur** gösterilir; sözleşme oluşturulduktan sonra buradan değiştirilemez.
+Hangi alanın görüneceğini sözleşme modeli belirler: kurum içi sözleşmede `Bölüm`, tedarikçi
+sözleşmesinde `Tedarikçi`, müşteri hizmet sözleşmesinde `Destek Müşteri Hesabı`.
 </Callout>
 
 ## Detaylar sekmesi
 
 `Detaylar` sekmesi dört bölümden oluşur:
 
-1. **Açıklama** — sözleşmenin açıklama metni. Bu kartın kendi kaydetme işlemi vardır;
-   açıklamayı güncellemek için araç çubuğundaki `Kaydet` butonuna gerek yoktur.
-2. **Ekler** — sözleşmeye dosya eklenir ve eklenen dosyalar buradan görüntülenip silinir.
-3. **Özel form alanları** — sözleşme tipi için tasarlanan özel formun alanları. Buradaki
-   değişiklikler araç çubuğundaki `Kaydet` ile kaydedilir.
-4. **Sözleşme Yenilemeleri** — sözleşmenin uzatma kayıtları.
+1. **Açıklama** — kartın başlığı sözleşmenin adıdır, gövdesinde açıklama metni bulunur.
+   Bu kartın kendi kaydetme işlemi vardır; açıklamayı güncellemek için araç çubuğundaki
+   `Kaydet` butonuna gerek yoktur.
+2. **Dosyalar** — sözleşmeye dosya eklenir, eklenen dosyalar buradan görüntülenip silinir.
+3. **Sözleşme Yenilemeleri** — sözleşmenin uzatma kayıtları; başlıkta kayıt sayısı görünür.
+4. **Özel form alanları** — sözleşme tipi için tasarlanan özel formun alanları (örnekte
+   `Varsayılan Sözleşme Formu`). Buradaki değişiklikler araç çubuğundaki `Kaydet` ile kaydedilir.
 
 ## Sözleşme yenilemeleri
 
 Yenileme kaydı, sözleşmenin bitiş tarihini ileri bir tarihe taşımak için kullanılır.
+Yeni kayıt, bölümün sağ üstündeki `Yenile` butonu ile eklenir.
 Tabloda şu kolonlar bulunur: `Yenileme Tarihi`, `Yenileyen Teknisyen`, `Yeni Bitiş Tarihi`,
 `Açıklama`, `Otomatik Yenilensin` ve `Düzenleme`.
 

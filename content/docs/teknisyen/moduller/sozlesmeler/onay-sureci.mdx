@@ -9,6 +9,8 @@ Sözleşmenin onaya sunulması, detay ekranındaki `Tavsiyeler` sekmesinden yür
 Onay süreci; danışma kurulundan, kurum içi kişilerden ve kurum dışı e-posta
 adreslerinden oluşabilir.
 
+![Tavsiyeler sekmesi: onaycı listesi ve durumları](/img/teknisyen/sozlesme-v2-onay-sureci.png)
+
 ## Onaycı ekleme
 
 Henüz onaycı yoksa sekmede `Sözleşmeyi Onaylayacak Kişileri Ekle` butonu görünür.
@@ -31,13 +33,15 @@ eklenmiş kurum dışı adresler tekrar eklenmez.
 Onaycı listesindeki her satır kendi durumunu taşır ve şu sırayı izler:
 
 1. **Gönderim bekliyor** — onaycı eklenmiştir, henüz kendisine gönderilmemiştir.
-   Satırdaki `Onay İçin Gönder` işlemi ile onay talebi iletilir.
-2. **Yanıt bekliyor** — talep iletilmiştir, onaycının kararı beklenir.
-3. **Onaylandı** veya **Reddedildi** — karar verilmiştir; satırda sonuç tarihi görünür.
+   Satırdaki `Onay İçin Gönder` butonu ile onay talebi iletilir.
+2. **Cevap bekleniyor** — talep iletilmiştir, onaycının kararı beklenir. Bu satırda
+   `Onayla / Reddet` butonu etkinleşir.
+3. **Onayladı veya tamamladı** / **Reddedildi** — karar verilmiştir; satırda sonuç tarihi
+   görünür ve her iki buton da pasifleşir.
 
-Tabloda `İstek Tarihi`, `Sonuç tarihi`, `Gönderme Açıklaması`, `Açıklama` ve `Durum`
-bilgileri listelenir. `Onayla / Reddet` işlemleri satır üzerinden yapılır ve açıklama
-girilebilir.
+Tabloda onaycının adı (`Advisor` kolonu) ile birlikte `Durum`, `Gönderme Açıklaması`,
+`Açıklama`, `İstek Tarihi` ve `Sonuç tarihi` bilgileri listelenir. `Gönderme Açıklaması`
+onay talebi gönderilirken, `Açıklama` ise karar verilirken girilir.
 
 Onaycılar kararlarını sözleşme ekranından verebileceği gibi, kendilerine gönderilen
 onay e-postasındaki bağlantı üzerinden de onaylayabilir veya reddedebilir.
