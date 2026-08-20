@@ -66,9 +66,23 @@ belirler.
 ## Geçmiş sekmesi
 
 `Geçmiş` sekmesi, sözleşme üzerinde yapılan tüm değişiklikleri zaman çizelgesi olarak
-listeler: alan güncellemeleri, onay ve ret işlemleri, ilişkilendirmeler ve durum
-değişiklikleri. Sekme başlığındaki rozet, kayıt sayısını gösterir.
+listeler: alan güncellemeleri, onay üyesi ekleme, finansal kayıt ve yenileme işlemleri,
+ilişkilendirmeler, dosya ekleme/silme ve durum değişiklikleri. Her satırda **tarih-saat,
+yapılan işlem ve işlemi yapan kişi** yer alır. Sekme başlığındaki rozet, kayıt sayısını gösterir.
 
-![Geçmiş sekmesi](/img/teknisyen/sozlesme-v2-gecmis.png)
+![Geçmiş sekmesi: filtreler ve zaman çizelgesi](/img/teknisyen/sozlesme-v2-gecmis.png)
+
+### Geçmişi filtreleme
+
+Zaman çizelgesinin üstünde üç filtre bulunur:
+
+| Filtre | İşlevi |
+|---|---|
+| `Operasyon Tipi` | İşlemin hangi kayıt üzerinde yapıldığını seçer (sözleşme, yenileme, finansal bilgi, ilişki, onay üyesi …) |
+| `İşlem Tipi` | İşlemin türünü seçer (ekleme, güncelleme, silme) |
+| `Başlangıç Tarihi` – `Bitiş Tarihi` | Belirli bir tarih aralığındaki kayıtları gösterir |
+
+Filtreler birlikte çalışır ve listeyi anında daraltır; tarih aralığı için **iki ucun da**
+seçilmesi gerekir. Filtreleme yalnızca ekrandaki görünümü etkiler, kayıtlara dokunmaz.
 
 Geçmiş kayıtları yalnızca okunur; buradan bir işlem geri alınamaz.
