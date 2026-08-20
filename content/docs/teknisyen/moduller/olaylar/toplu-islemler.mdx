@@ -1,0 +1,96 @@
+---
+title: "Toplu İşlemler"
+description: "Listeden birden çok olay kaydını seçip topluca güncelleme, kapatma, silme, atama, birleştirme ve yeniden açma."
+reviewed: "2026-08-20"
+owner:
+---
+
+Aynı işlemi birçok kayda tek tek uygulamak yerine, listeden kayıtları seçip
+topluca işlem yapabilirsiniz. Bu sayfa seçim yapmayı ve seçimden sonra çıkan
+düğmelerin her birini anlatır.
+
+## Kayıt seçmek
+
+Kartın sol kenarına gelindiğinde bir seçim kutusu belirir. Kutuyu işaretlediğinizde
+listenin üstünde toplu işlem düğmeleri görünür.
+
+![Kayıt seçimi ve toplu işlem düğmeleri](/img/teknisyen/olay-liste-secim.png)
+
+| No | Alan | Açıklama |
+|---|---|---|
+| 1 | Seçim kutusu | Kaydı işleme dâhil eder. Birden çok kayıt işaretlenebilir. |
+| 2 | `Toplu İşlem` | Seçili kayıtların alanlarını hep birlikte değiştirir. |
+| 3 | `Kapat` | Seçili kayıtları kapatır. |
+| 4 | `Sil` | Seçili kayıtları siler. |
+| 5 | `Bana Ata` | Seçili kayıtları kendi üzerinize alır. |
+| 6 | `Birleştirilenler` | Aynı konuya ait kayıtları tek kayıtta birleştirir. |
+| 7 | `Yeniden Aç` | Kapatılmış kayıtları yeniden açar. |
+
+<Callout type="info" title="ÖNEMLİ">
+`Birleştirilenler` ve `Yeniden Aç` düğmeleri her seçimde etkin olmaz. Birleştirme için
+en az iki kayıt seçilmesi, yeniden açma için de seçilen kaydın kapatılmış olması gerekir.
+Koşul sağlanmadığında düğme soluk görünür.
+</Callout>
+
+## Toplu İşlem
+
+![Toplu işlem penceresi](/img/teknisyen/olay-liste-toplu-islem.png)
+
+Pencerede doldurduğunuz her alan, seçili tüm kayıtlara birlikte uygulanır:
+
+- `Durum Değiştir`
+- `Önceliği Değiştir`
+- `Etkiyi Değiştir`
+- `Aciliyeti Değiştir`
+- `Kategori`
+- `Grup Değiştir`
+- `Teknisyen Değiştir`
+
+Boş bıraktığınız alanlar değişmez. `Kaydet` ile işlem uygulanır, `İptal` ile pencere kapanır.
+
+## Kapat
+
+![Toplu olay kapatma penceresi](/img/teknisyen/olay-liste-kapat-modal.png)
+
+Kapatma sırasında `Gerekçe`, `Durum` ve `Kapatma Açıklaması` sorulur. `Durum` alanı zorunludur.
+
+<Callout type="info" title="İPUCU">
+Kapatma açıklaması kullanıcının gördüğü metindir. Sorunun nasıl giderildiğini
+kullanıcının anlayacağı dilde yazmak, tekrar açılan kayıt sayısını azaltır.
+</Callout>
+
+## Sil
+
+![Olay silme penceresi](/img/teknisyen/olay-liste-sil-modal.png)
+
+Silme işleminde `Silme Gerekçesi` ve `Durum` alanlarının ikisi de zorunludur.
+
+<Callout type="warn" title="DİKKAT">
+Silinen kayıtlar listeden kalkar; ancak `Kontrol Paneli` içindeki **Silinmiş mi?**
+seçeneğiyle yeniden listelenebilir.
+</Callout>
+
+## Bana Ata
+
+Seçili kayıtların teknisyeni, işlemi yapan kişi olarak güncellenir. Ayrı bir
+pencere açılmaz. Bir kayda müdahaleye başlarken kaydı üzerinize almak, aynı
+kayıtta iki teknisyenin birlikte çalışmasını engeller.
+
+## Birleştirilenler
+
+![Olay birleştirme penceresi](/img/teknisyen/olay-liste-birlestir.png)
+
+Aynı sorunu bildiren birden çok kayıt tek kayıtta toplanır.
+
+- **Birleştirilecek Olaylar** — Seçtiğiniz kayıtların numaraları burada listelenir.
+- `Birincil Kaydı Seçiniz` — Diğerlerinin bağlanacağı ana kayıt.
+- **Alt Olay Kaydını Güncelle → Durum** — Birleştirilen alt kayıtların hangi duruma çekileceği.
+- **Olaylar Birleşirken Notları Taşı** — İşaretlendiğinde alt kayıtlardaki notlar ana kayda taşınır.
+
+`Birleştir` düğmesiyle işlem tamamlanır.
+
+## Yeniden Aç
+
+Kapatılmış bir kayıt için sorunun tekrarladığı anlaşıldığında kayıt yeniden
+açılır. Yeni bir kayıt açmak yerine aynı kaydın yeniden açılması, o sorunun
+geçmişinin tek yerde kalmasını sağlar.

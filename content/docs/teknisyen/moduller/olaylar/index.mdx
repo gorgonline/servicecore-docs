@@ -1,38 +1,50 @@
 ---
-title: "Yeni Olay Oluşturma"
-description: "Yeni Olay aşağıdaki butondan açılmaktadır."
-reviewed: "2026-07-30"
+title: "Olaylar"
+description: "Olay yönetimi modülünün kılavuzu: kayıt açma, listeyi kullanma, filtreleme, toplu işlemler ve kayıt detayındaki tüm sekmeler."
+reviewed: "2026-08-20"
 owner:
 ---
 
-![Olaylar Modülü](/img/teknisyen/olaylar12.png)
+Olay yönetimi modülü, kesinti ve arızaların kaydedildiği, önceliklendirildiği ve
+çözüme kavuşturulduğu yerdir. Bu kılavuz modülün iki ana ekranını — olay listesi
+ve kayıt detayı — bütün işlevleriyle anlatır.
 
-Butona tıklandığında aşağıdaki gibi bir ekran çıkmaktadır.
+## Nereden başlamalı
 
-![Olaylar Modülü](/img/teknisyen/olaylar13.png)
+<Cards>
+  <Card title="Genel Bakış" href="/docs/teknisyen/moduller/olaylar/olaylar4">
+    Modülün ITIL4 yaklaşımı, süreç şeması ve öne çıkan yetenekleri.
+  </Card>
+  <Card title="Yeni Olay Oluşturma" href="/docs/teknisyen/moduller/olaylar/yeni-olay">
+    Elle kayıt açma ve tekrarlayan (zamanlanmış) olay tanımlama.
+  </Card>
+  <Card title="Olay Listesi" href="/docs/teknisyen/moduller/olaylar/olaylar1">
+    Liste ekranının bölümleri, kayıt kartı ve kart üzerindeki hızlı işlemler.
+  </Card>
+  <Card title="Filtreleme, Arama ve Görünümler" href="/docs/teknisyen/moduller/olaylar/liste-filtreleme">
+    Filtre görünümleri, kontrol paneli, akıllı arama ve grid görünümü.
+  </Card>
+  <Card title="Toplu İşlemler" href="/docs/teknisyen/moduller/olaylar/toplu-islemler">
+    Birden çok kaydı seçip topluca güncelleme, kapatma, silme ve birleştirme.
+  </Card>
+  <Card title="Kayıt Detayı" href="/docs/teknisyen/moduller/olaylar/olaylar2">
+    Görüşmeler, dosyalar, varlıklar, olay formu ve sağ panel.
+  </Card>
+  <Card title="Detay Sekmeleri" href="/docs/teknisyen/moduller/olaylar/detay-sekmeler">
+    Görevler, iş günlükleri, çözümler, süreçler ve kayıt geçmişi.
+  </Card>
+</Cards>
 
-- Önceden tanımlanmış şablonlar şablonda kullanılmaktadır.
+## Bir olayın tipik yolculuğu
 
-- Teknisyen grubuna atama, teknisyene atama, kategori, durum, kaynak, etki, aciliyet ve öncelik seçilebilmektedir.
+1. **Kayıt açılır** — Kullanıcıdan e-posta, portal veya telefonla gelir; entegrasyonlar da otomatik kayıt açar.
+2. **Sınıflandırılır** — Kategori, öncelik, iş etkisi ve aciliyet belirlenir.
+3. **Atanır** — Doğru teknisyen grubuna, oradan da bir teknisyene atanır.
+4. **Çalışılır** — Görevler açılır, iş günlükleri girilir, kullanıcıyla yazışılır.
+5. **Çözülür** — Uygulanan ve işe yarayan çözümler kayda işlenir.
+6. **Kapatılır** — Gerekçe ve kapatma açıklamasıyla kayıt kapatılır.
 
-- Dosya ekleme kısmından ek eklenebilmektedir.
-
-`Yeni Zamanlanmış Olay` aşağıdaki butondan açılmaktadır.
-
-![Olaylar Modülü](/img/teknisyen/olaylar14.png)
-
-Butona tıkladığımızda aşağıdaki pencere çıkacaktır.
-
-![Olaylar Modülü](/img/teknisyen/olaylar15.png)
-
-- Önceden tanımlanmış şablonlar şablonda kullanılmaktadır.
-
-- Teknisyen seçilebilmektedir.
-
-- Frekans olarak belirtilen yer bu olayın günlük, haftalık olarak seçmenizi sağladığı alandır.
-
-- İlk tekrar tarihi ve toplam tekrarlanma ayarları yapılabilmektedir.
-
-<Callout type="info" title="Örnek">
-Frekans haftalık seçildiğinde, ilk tekrar tarihi bugün girildiğinde ve tekrarlanma sayısı 3 girildiğinde belirtilen gün üzerinden hesaplama yaparak her hafta olay açacaktır ve bunu 3 hafta süresince yapacaktır.
+<Callout type="info" title="İPUCU">
+Kaydı üzerinize almadan işleme başlamayın. `Bana Ata` ile kaydı üstlenmek, aynı
+olayda iki teknisyenin habersiz çalışmasını önler.
 </Callout>

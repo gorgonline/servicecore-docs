@@ -1,0 +1,108 @@
+---
+title: "Görevler, İş Günlükleri, Çözümler, Süreçler ve Geçmiş"
+description: "Olay kaydının detay ekranındaki sekmeler: görev yönetimi, efor kaydı, üç katmanlı çözümler, diğer kayıtlarla bağıntılar ve kayıt geçmişi."
+reviewed: "2026-08-20"
+owner:
+---
+
+Kaydın detay ekranındaki `Detaylar` sekmesi olayın kendisini gösterir. Diğer beş
+sekme ise olay üzerinde yapılan çalışmayı yönetir. Sekme adının yanındaki sayı,
+o sekmede kaç kayıt olduğunu gösterir.
+
+## Görevler
+
+![Görevler sekmesi](/img/teknisyen/olay-detay-gorevler.png)
+
+Bir olay birden çok kişinin işini gerektirdiğinde, iş parçaları görev olarak
+tanımlanır. Böylece kimin neyi ne zamana kadar yapacağı takip edilebilir hâle gelir.
+
+- `Aktif` ve `Tamamlanmış` başlıkları, görevleri durumuna göre ayırır.
+- `Ekle` düğmesiyle yeni görev tanımlanır.
+- `Diyagram` düğmesi görevleri ve aralarındaki öncül ilişkilerini şema olarak gösterir.
+- Tabloda `Başlık`, `Açıklama`, `Grup`, `Teknisyen`, `Öncül`, `Başlangıç`, `Bitiş` ve `Kullanıcı` bilgileri yer alır.
+
+Tablonun altında görevlerle ilgili süre özetleri bulunur: **Görev Toplam İş Günlüğü
+Süresi**, **Aktif Görevin İş Günlüğü Süresi**, **Tamamlanan Görevin İş Günlüğü Süresi**
+ve **Aktif İş Günlüğü Süresi**.
+
+<Callout type="info" title="İPUCU">
+`Öncül` alanı, bir görevin başlaması için hangi görevin bitmesi gerektiğini
+belirtir. Sıralı ilerleyen işlerde bu alanı doldurmak, ekibin yanlış sırada
+çalışmasını engeller.
+</Callout>
+
+## İş Günlükleri
+
+![İş günlükleri sekmesi](/img/teknisyen/olay-detay-is-gunlukleri.png)
+
+Olay üzerinde harcanan efor buraya işlenir. `İş Günlükleri` başlığı doğrudan
+olaya, `Görev İş Günlükleri` başlığı ise olaya bağlı görevlere girilen kayıtları
+listeler.
+
+`İş Günlüğü Ekle` düğmesiyle yeni kayıt açılır. Tabloda `Başlık`, `Açıklama`,
+`Türü`, `Teknisyen`, `Başlangıç Tarihi`, `Bitiş Tarihi` ve **Süre (Zaman)**
+bilgileri görünür.
+
+<Callout type="info" title="ÖNEMLİ">
+İş günlüğü yalnızca raporlama için değildir: sözleşmeli müşterilerde harcanan
+sürenin faturalanması ve ekip kapasitesinin ölçülmesi bu kayıtlara dayanır.
+</Callout>
+
+## Çözümler
+
+![Çözümler sekmesi](/img/teknisyen/olay-detay-cozumler.png)
+
+ServiceCore'da çözümler üç katmanda tutulur. Bu ayrım, "denenmiş ama işe yaramamış"
+ile "sorunu gerçekten çözmüş" bilgiyi birbirinden ayırır:
+
+| Katman | Anlamı |
+|---|---|
+| `Önerilen` | Denenmesi düşünülen çözüm önerisi. |
+| `Uygulanan` | Kayıt üzerinde denenmiş çözüm. |
+| `İşe Yarayan` | Sorunu gerçekten gideren çözüm. |
+
+Üstteki kutulardan yalnızca istediğiniz katman listelenir. `Çözüm Ekle` ile yeni
+çözüm girilir; tabloda `Konu`, `Türü`, `Teknisyen`, `Oluşturulduğu Tarih` ve
+`Güncelleme Tarihi` yer alır. Satır sonundaki düğmelerle çözüm onaylanır,
+düzenlenir veya silinir.
+
+<Callout type="info" title="İPUCU">
+`İşe Yarayan` olarak işaretlenen çözümler bilgi bankasına aktarılabildiği için,
+aynı sorun tekrarladığında çözüm hazır gelir. Katmanı doğru işaretlemek bu yüzden önemlidir.
+</Callout>
+
+## Süreçler
+
+![Süreçler sekmesi](/img/teknisyen/olay-detay-surecler.png)
+
+Bir olay tek başına kalmayabilir: tekrarlayan bir arızanın kök nedeni için problem
+kaydı, kalıcı düzeltme için değişiklik kaydı gerekebilir. Bu sekme, olayın diğer
+modüllerdeki kayıtlarla bağını kurar ve gösterir.
+
+Alt başlıklar bağıntı türünü belirler: `Problem`, `İstek`, `Değişiklik`,
+`İyileştirme`, `İlişkiler` ve `Proje`. `Yeni Kayıt` düğmesiyle seçili türde yeni
+bir kayıt açılıp olaya bağlanır; var olan bir kayıt da bağlanabilir.
+
+Tabloda bağlanan kaydın numarası, `Konu`, `Açıklama`, `Durum Adı`,
+`Teknisyen Grubu`, `Teknisyen` ve `Özel Ek Alanlar` bilgileri görünür.
+
+<Callout type="info" title="ÖNEMLİ">
+Bağıntı iki yönlü çalışır. Bağlanan problem veya değişiklik kaydında yapılan
+çalışma, olay kaydından da izlenebilir; kullanıcı sorunun hangi aşamada olduğunu
+şeffaf biçimde görür.
+</Callout>
+
+## Geçmiş
+
+![Geçmiş sekmesi](/img/teknisyen/olay-detay-gecmis.png)
+
+Kayıt üzerinde yapılan her işlem, kim yaptıysa adıyla ve tarihiyle burada tutulur:
+not ekleme, teknisyen değişikliği, güncelleme, bağlantı ekleme ve diğerleri.
+
+- `Geçmiş` başlığı hareket listesini, `Harcanan Süre` başlığı ise kayıtta geçen süreyi gösterir.
+- `Operasyon Tipi`, `İşlem Tipi` ve tarih aralığı alanlarıyla liste daraltılır.
+
+<Callout type="info" title="İPUCU">
+"Bu kayıt neden bu duruma geçti?" ya da "Teknisyen ne zaman değişti?" gibi
+soruların yanıtı bu sekmededir. Kayıt devrederken de en hızlı özet buradan alınır.
+</Callout>

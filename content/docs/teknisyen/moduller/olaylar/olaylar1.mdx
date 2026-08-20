@@ -1,86 +1,125 @@
 ---
-title: "Hızlı, Toplu İşlem ve Filtreler"
-description: "Bir olay kaydına sabitleme ve favori olarak ekleme yapılmaktadır."
-reviewed: "2026-07-30"
+title: "Olay Listesi"
+description: "Olay listesinin bölümleri, kayıt kartının okunuşu ve kart üzerindeki hızlı işlem ikonlarının tamamı."
+reviewed: "2026-08-20"
 owner:
 ---
 
-![Olaylar Modülü](/img/teknisyen/olaylar2.png)
+Olay listesi, modüle girdiğinizde açılan ilk ekrandır. Tüm olay kayıtları burada
+kart biçiminde listelenir; sağ taraftaki panellerden filtrelenir, kartların
+üzerindeki ikonlardan da listeden çıkmadan işlem yapılır.
 
-Üç nokta seçildiğinde kayıt durumu, önceliği, kategorisi, grubu ve teknisyeni `Hızlı Düzenleme` ekranı üzerinden değiştirilebilmektedir.
+## Ekranın bölümleri
 
-![Olaylar Modülü](/img/teknisyen/olaylar3.png)
+![Olay listesi genel görünüm](/img/teknisyen/olay-liste-genel.png)
 
-Aşağıdaki resimde üst tarafta bulunan butonlardan Toplu İşlem, Kapat, Sil, Bana Ata ve `Birleştir` yapılmaktadır.
+| No | Bölüm | Ne işe yarar |
+|---|---|---|
+| 1 | Modül menüsü | Görev, Çağrı, Olay, Problem, İstek, Katalog, Değişiklik, KB, SI, CMDB, Sözleşme ve Proje modülleri arasında geçiş yapar. |
+| 2 | Üst araç çubuğu | Yeni kayıt açma, zamanlanmış olay tanımlama, akıllı arama ve grid görünümü. |
+| 3 | Olay kartı | Tek bir olay kaydının özeti ve hızlı işlem ikonları. |
+| 4 | `Filtre Görünümleri` | Hazır ve kendi oluşturduğunuz filtreler. |
+| 5 | `Kontrol Paneli` | Alan alan filtreleme yapılan panel. |
+| 6 | Sayfalama ve sıralama | Kayıt sayısı, sayfa geçişleri, sayfa başına kayıt ve sıralama ölçütü. |
 
-![Olaylar Modülü](/img/teknisyen/olaylar4.png)
+<Callout type="info" title="İPUCU">
+Filtreleme ve arama araçlarının tamamı ayrı bir sayfada anlatılır: **Filtreleme, Arama ve Görünümler**.
+</Callout>
 
-`Toplu İşlem` butonuna tıklandığında aşağıdaki pencere açılmaktadır.
+## Üst araç çubuğu
 
-![Olaylar Modülü](/img/teknisyen/olaylar5.png)
+![Olay listesi üst araç çubuğu](/img/teknisyen/olay-liste-ustbar.png)
 
-- Durum, öncelik, iş etkisi, aciliyet, kategori, teknisyen grubu ve teknisyen atamasını yapılmaktadır.
+1. **Yeni Olay** — Yeni bir olay kaydı açma formunu getirir.
+2. **Yeni Zamanlanmış Olay** — Belirli aralıklarla kendi kendine açılacak tekrarlayan olay tanımlar.
+3. **Ara** — Modüller arası akıllı arama penceresini açar.
+4. **Grid Görünümü** — Kayıtları kart yerine tablo biçiminde listeler.
 
-`Kapat` tıklandığında seçilen kayıtları kapatmaktadır ve bir kapatma gerekçesi, durum, kapatma açıklaması istemektedir.
+## Olay kartını okumak
 
-![Olaylar Modülü](/img/teknisyen/olaylar1-g1.png)
+![Olay kartının bölümleri](/img/teknisyen/olay-liste-kart.png)
 
-`Sil` tıklandığında seçilen kayıtları silmektedir ve bir silme gerekçesi, durum istemektedir.
+1. **Kayıt numarası** — Olayın `INC` numarası. Kayıttan söz ederken kullanılan tekil numaradır.
+2. **Durum etiketi** — Kaydın bulunduğu durum (`Açık`, `Devam Etmekte`, `Müşteri Bekleyen`, `Tedarikçi Beklenen`, `Atandı`, `Çözülenler`, `Kapatılanlar`). Renk, durumun ayarlarda tanımlanan rengidir.
+3. **Konu** — Olayın başlığı ve yanında kaydın açılışından bu yana geçen süre.
+4. **Açıklama** — Kullanıcının bildirdiği sorunun özeti.
+5. **Hızlı işlem ikonları** — Aşağıda tek tek anlatılır.
 
-![Olaylar Modülü](/img/teknisyen/olaylar1-g2.png)
+Kartın sağ tarafında ayrıca **Teknisyen Grubu**, **Teknisyen**, **Kullanıcı**,
+**Destek Müşteri Hesabı**, **Şirket**, **Kategori Adı**, **SLA Çözüm Kalan Yüzdesi**,
+**Sözleşme** ve **Öncelik** bilgileri görünür. Bilgi girilmemiş alanlarda `---` yazar.
 
-`Bana ata` tıklandığında olay kim tarafından müdahale ediliyorsa o kişinin üzerinde atanacaktır.
+## Kart üzerindeki hızlı işlem ikonları
 
-`Birleştir` tıklandığında aynı konuya ait olan bir INC kaydı ile bağlanmasını istemektedir.
+![Olay kartı hızlı işlem ikonları](/img/teknisyen/olay-liste-kart-ikonlar.png)
 
-![Olaylar Modülü](/img/teknisyen/olaylar8.png)
+| No | İkon | İşlevi |
+|---|---|---|
+| 1 | Şimşek | `Hızlı İşlem` menüsünü açar: bağlantıyı kopyala, detay sayfasına git, iş günlüğü ekle. |
+| 2 | Liste | `Hızlı Güncelleme` panelini açar; kaydı açmadan durum, öncelik, kategori, grup, teknisyen ve sözleşme değiştirilir. |
+| 3 | Ataç | Kayda eklenmiş `Ekler` listesini getirir. |
+| 4 | Dolu zarf | `Gelen Posta` — kullanıcıdan gelen e-postaları gösterir. |
+| 5 | Boş zarf | `Giden Posta` — kayıttan gönderilen e-postaları gösterir. |
+| 6 | Not | `Not Göster ve Ekle` penceresini açar. |
+| 7 | Ampul | Kayda ait `Çözümler` panelini açar. |
 
-- Birleştirilecek olaylar kısmında toplu seçim yapılmışsa ya da bir kayıt üzerinden işlem yapıldıysa o kayıtın veya kayıtların numarası çıkacaktır.
+<Callout type="info" title="ÖNEMLİ">
+İkonların üzerindeki turuncu sayı, o başlıkta kaç kayıt bulunduğunu gösterir.
+Örneğin not ikonunda `3` yazıyorsa kayıtta üç not vardır. Sayı yoksa o başlık boştur.
+</Callout>
 
-Resimde öncelik yok alanı kayıtın `öncelik` durumunu, kategorisi yok alanı `kategoriyi`, 01 November alanı hedef çözüm tarihini göstermektedir.
+### Hızlı İşlem menüsü
 
-Resimde `Kırmızı mektup simgesi` kullanıcının bir mail attığı anlamına gelmektedir.
+![Hızlı işlem menüsü](/img/teknisyen/olay-liste-hizli-islem.png)
 
-![Olaylar Modülü](/img/teknisyen/olaylar9.png)
+- `Bağlantıyı Kopyala` — Kaydın adresini panoya kopyalar; mesajla paylaşmak için kullanılır.
+- `Detay sayfasına git` — Kaydın detay ekranını açar.
+- `İş Günlüğü Ekle` — Listeden çıkmadan kayda iş günlüğü girer.
 
-Resimde `Yeşil mektup simgesi` teknisyenin bir mail attığı anlamına gelmektedir.
+### Hızlı Güncelleme
 
-![Olaylar Modülü](/img/teknisyen/olaylar10.png)
+![Hızlı güncelleme paneli](/img/teknisyen/olay-liste-hizli-guncelleme.png)
 
-Bir INC kaydında işlem yapılıyorsa aşağıdaki resimde belirtilen `>` alanından işin başlangıç süresi başlatılabilmektedir veya durdurulabilmektedir. Diğer belirtilen sarı alandan ise olayın içerisinde bulunan `ekler` görüntülenebilmektedir.
+Kaydı açmadan `Durum`, `Öncelik`, `Kategori`, `Teknisyen Grubu`, `Teknisyen` ve
+`Sözleşme` alanları değiştirilir. `Kaydet` düğmesine basıldığında değişiklikler kayda işlenir.
 
-![Olaylar Modülü](/img/teknisyen/olaylar1-g3.png)
+### Not gösterme ve ekleme
 
-Sağ tarafta `Özel Filtre` alanından belirli başlıkları seçerek kayıtlar filtrelenmektedir.
+![Not ekleme penceresi](/img/teknisyen/olay-liste-notlar.png)
 
-![Olaylar Modülü](/img/teknisyen/olaylar16.png)
+Pencerenin üst kısmında kayda daha önce girilmiş notlar, notu giren kişi ve tarihiyle
+listelenir. Alt kısımdaki editörden yeni not yazılır.
 
-`+` butonundan filtre yapılmaktadır ve oluşturulan filtrede düzenleme, silme işlemi yapılmaktadır.
+<Callout type="warn" title="DİKKAT">
+`Özel Not` işaretli bırakıldığında not iç yazışma olarak kalır, kullanıcı bu notu görmez.
+İşaret kaldırılırsa not kullanıcıya açık hâle gelir.
+</Callout>
 
-![Olaylar Modülü](/img/teknisyen/olaylar1-g4.png)
+### Çözümler paneli
 
-![Olaylar Modülü](/img/teknisyen/olaylar1-g5.png)
+![Çözümler paneli](/img/teknisyen/olay-liste-cozumler-panel.png)
 
-`Filtre Görünümlerinden` sabit filtreleri ya da oluşturulan filtreleri seçerek kayıtları getirilebilmektedir.
+Üç katmanlı çözüm mimarisi bu panelde yönetilir: çözümler `Önerilen`, `Uygulanan` ve
+`İşe Yarayan` olarak ayrışır; üstteki kutulardan yalnızca istediğiniz katman listelenir.
+`Çözüm Ekle` ile yeni çözüm girilir, satır sonundaki düğmelerle çözüm onaylanır,
+düzenlenir veya silinir.
 
-![Olaylar Modülü](/img/teknisyen/olaylar1-g6.png)
+## Kaydı takip etme ve sabitleme
 
-`Kontrol panelinden` teknisyene göre, kullanıcıya göre, duruma, kategoriye göre sıralama yapılabilmektedir.
+![Kaydı takip etme ve sabitleme](/img/teknisyen/olay-liste-sabitle-favori.png)
 
-![Olaylar Modülü](/img/teknisyen/olaylar20.png)
+Kartın üzerine gelindiğinde sağ üst köşede iki düğme belirir:
 
-`Akıllı aramadan` kolayca aciliyete göre, aşamaya göre veya kategoriye göre sıralama yapılmaktadır.
+1. `Takip Et` — Kaydı takip listenize alır; kayıttaki hareketleri izlemenizi sağlar.
+2. `Sabitle` — Kaydı listede sabitler, aramanız gerekmeden elinizin altında kalır.
 
-![Olaylar Modülü](/img/teknisyen/olaylar21.png)
+Yoğun bir listede öncelikli işlerinizi bu iki düğmeyle ayırmak, her seferinde
+filtre kurmaktan hızlıdır.
 
-Aşağı kısımda yer alan **öncelikten, aciliyetten ve iş etkisinden** de toplu seçim yaparak kayıtlar getirilmektedir.
+## Sayfalama ve sıralama
 
-![Olaylar Modülü](/img/teknisyen/olaylar1-g7.png)
+![Sayfalama ve sıralama](/img/teknisyen/olay-liste-sayfalama.png)
 
-`Silinenler` ve `arşivlenenler` getirilebilir ve filtrelenen kayıtlar `Excel’e` aktarılabilmektedir.
-
-![Olaylar Modülü](/img/teknisyen/olaylar1-g8.png)
-
-`Filtre Kayıt` özelliği açılmışsa ve öncesinden bir filtre uygulanmışsa sayfa yenilense bile uygulanan filtre gitmeyecektir. Böylece filtreleriniz sabit kalacaktır.
-
-![Olaylar Modülü](/img/teknisyen/olaylar1-g9.png)
+Sol tarafta kaç kayıt içinde kaçıncı aralığı gördüğünüz yazar. Ortadan sayfalar
+arasında geçilir, `10 / sayfa` alanından sayfa başına kayıt sayısı değiştirilir.
+Sağdaki alandan sıralama ölçütü (örneğin `Olay Numarası`) ve yönü seçilir.

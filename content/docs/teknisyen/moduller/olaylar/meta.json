@@ -2,7 +2,11 @@
   "title": "OLAYLAR",
   "pages": [
     "olaylar4",
+    "yeni-olay",
     "olaylar1",
-    "olaylar2"
+    "liste-filtreleme",
+    "toplu-islemler",
+    "olaylar2",
+    "detay-sekmeler"
   ]
 }

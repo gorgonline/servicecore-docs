@@ -1,0 +1,67 @@
+---
+title: "Yeni Olay Oluşturma"
+description: "Elle yeni olay kaydı açma ve belirli aralıklarla kendi kendine açılan zamanlanmış olay tanımlama."
+reviewed: "2026-08-20"
+owner:
+---
+
+Olay kayıtları e-posta ve entegrasyonlarla otomatik olarak da açılır; ancak
+telefonla veya yüz yüze gelen bildirimler için kaydı teknisyen açar. Bu sayfa iki
+yolu anlatır: tek seferlik yeni kayıt ve tekrarlayan (zamanlanmış) kayıt.
+
+## Yeni olay kaydı açmak
+
+Olay listesinin sağ üstündeki `Yeni Olay` düğmesi **Olay Kaydı Aç** formunu getirir.
+
+![Yeni olay kaydı formu](/img/teknisyen/olay-yeni-olay.png)
+
+| Alan | Açıklama |
+|---|---|
+| `Özel Form` | Kurumda birden fazla olay formu tanımlıysa hangisinin kullanılacağını seçer. Alanlar seçilen forma göre değişir. |
+| `Konu` | Sorunun tek satırlık başlığı. **Zorunludur.** |
+| `Açıklama` | Sorunun ayrıntısı. Biçimlendirme, tablo, bağlantı ve görsel eklenebilir. **Zorunludur.** |
+| `Dosya Yükle` | Ekran görüntüsü, günlük dosyası gibi ekler sürükleyip bırakılarak yüklenir. |
+| `Kullanıcı` | Sorunu yaşayan kişi. |
+| `Kategori` | Olayın sınıflandırması. Doğru kategori, kaydın doğru ekibe gitmesini sağlar. |
+| `Öncelik` | Kaydın önem sırası. |
+| `Teknisyen Grubu` | Kaydın atanacağı ekip. |
+| `Durum` | Kaydın başlangıç durumu. |
+| `İş Etkisi` | Sorunun işe etkisi. |
+| `Teknisyen` | Kaydı üstlenecek kişi. |
+| `Kaynak` | Kaydın nereden geldiği (telefon, e-posta, portal gibi). |
+| `Aciliyet` | Sorunun ne kadar acil olduğu. |
+
+`Kaydet` düğmesine basıldığında kayda bir `INC` numarası verilir ve kayıt listeye düşer.
+
+<Callout type="info" title="İPUCU">
+`Öncelik` genellikle `İş Etkisi` ve `Aciliyet` birlikte değerlendirilerek belirlenir:
+etkisi yüksek ve acil bir sorun, tek kullanıcıyı etkileyen bir sorundan önce ele alınır.
+</Callout>
+
+## Zamanlanmış (tekrarlayan) olay tanımlamak
+
+Düzenli olarak yapılması gereken işler — periyodik bakım, yedek kontrolü,
+raporlama gibi — her seferinde elle kayıt açılmadan tanımlanabilir. Listenin sağ
+üstündeki saat simgesi **Tekrarlanan Bir Olay Oluşturun** penceresini açar.
+
+![Zamanlanmış olay oluşturma](/img/teknisyen/olay-liste-zamanlanmis-olay.png)
+
+| Alan | Açıklama |
+|---|---|
+| `Olay Şablonu Seçiniz` | Açılacak kaydın içeriğini belirleyen şablon. **Zorunludur.** |
+| `Teknisyen Grubu` | Kayıtların atanacağı ekip. **Zorunludur.** |
+| `Teknisyen` | Kayıtları üstlenecek kişi. **Zorunludur.** |
+| `Kullanıcı` | Kayıtlarda kullanıcı olarak görünecek kişi. **Zorunludur.** |
+| `Özel Form` | Kayıtların hangi formla açılacağı. **Zorunludur.** |
+| `Özel Ek Alanlar` | `Yeni Özel Alan Ekle` ile kayda ek alan tanımlanır. |
+| `Period` | Tekrarın sıklığı: `Periyot` (gün gibi), `Saatler` ve `Dakikalar` alanlarıyla belirlenir. **Zorunludur.** |
+
+<Callout type="info" title="ÖNEMLİ">
+Şablon seçimi zorunludur: tekrarlayan kaydın konusu ve açıklaması şablondan gelir.
+Şablon tanımlı değilse önce yönetici panelinden olay şablonu oluşturulmalıdır.
+</Callout>
+
+<Callout type="warn" title="DİKKAT">
+Periyodu ayarlarken sıklığı gerçek ihtiyaca göre seçin. Çok sık tekrar, kimsenin
+okumadığı yüzlerce olay kaydı üretir ve gerçek olayların arasında kaybolmasına yol açar.
+</Callout>

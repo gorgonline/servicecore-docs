@@ -1,0 +1,100 @@
+---
+title: "Filtreleme, Arama ve Görünümler"
+description: "Filtre görünümleri, kontrol paneli, kendi filtrenizi oluşturma, akıllı arama ve grid görünümü."
+reviewed: "2026-08-20"
+owner:
+---
+
+Olay sayısı arttıkça listeyi daraltmak zorunlu hâle gelir. Listenin sağ tarafında
+bunun için iki panel vardır: hazır filtrelerin bulunduğu `Filtre Görünümleri` ve
+alan alan filtreleme yapılan `Kontrol Paneli`. Üst araç çubuğundaki `Ara` ve
+`Grid Görünümü` düğmeleri de bu işi tamamlar.
+
+## Filtre Görünümleri
+
+![Filtre görünümleri paneli](/img/teknisyen/olay-liste-filtre-gorunumleri.png)
+
+1. **Yeni filtre (+)** — Kendi filtrenizi oluşturmanız için pencereyi açar.
+2. **Kayıtlı filtreler** — Hazır gelen ve sizin oluşturduğunuz filtreler. Bir filtreye tıklandığında liste o filtreye göre daralır.
+
+Hazır gelen filtreler şunlardır:
+
+| Filtre | Getirdiği kayıtlar |
+|---|---|
+| `Olaylarım` | Teknisyeni siz olan tüm kayıtlar. |
+| `Atanmamış Olaylar` | Henüz bir teknisyene atanmamış kayıtlar. |
+| `Açık Olaylar` | Kapatılmamış tüm kayıtlar. |
+| `Açık Olaylarım` | Size atanmış ve kapatılmamış kayıtlar. |
+| `Gecikmiş Olaylar` | Hedef çözüm süresi aşılmış kayıtlar. |
+| `Gecikmiş Olaylarım` | Size atanmış ve süresi aşılmış kayıtlar. |
+| `Bugün Süresi Dolan Olaylar` | Çözüm süresi bugün dolan kayıtlar. |
+
+<Callout type="info" title="İPUCU">
+Güne başlarken `Açık Olaylarım` ve `Gecikmiş Olaylarım` filtrelerini sırayla
+açmak, gününüzü önceliğe göre planlamanın en hızlı yoludur.
+</Callout>
+
+### Kayıtlı filtreyi düzenleme ve silme
+
+![Kayıtlı filtre satırındaki düğmeler](/img/teknisyen/olay-liste-filtre-hover.png)
+
+Filtrenin üzerine gelindiğinde satırın sağında düzenleme ve silme düğmeleri belirir.
+Hazır filtreler de dâhil olmak üzere filtrenin adı ve koşulları buradan değiştirilir.
+
+### Kendi filtrenizi oluşturmak
+
+![Yeni filtre oluşturma](/img/teknisyen/olay-liste-filtre-olustur.png)
+
+`Filtre Adı` verildikten sonra koşullar eklenir. Koşullar arasındaki `Ve` / `Veya`
+seçimi filtrenin nasıl çalıştığını belirler:
+
+- `Ve` — Koşulların **tamamını** sağlayan kayıtlar gelir.
+- `Veya` — Koşullardan **herhangi birini** sağlayan kayıtlar gelir.
+
+Filtrenin yalnızca sizde mi görüneceği yoksa `Herkes` tarafından mı kullanılacağı da
+bu pencerede seçilir. `Kaydet` sonrası filtre, `Filtre Görünümleri` listesine eklenir.
+
+## Kontrol Paneli
+
+![Kontrol paneli](/img/teknisyen/olay-liste-kontrol-paneli.png)
+
+| No | Bölüm | Açıklama |
+|---|---|---|
+| 1 | Filtre kaydı | Anahtar açıkken uyguladığınız filtre, sayfa yenilendiğinde bile korunur. |
+| 2 | Alan filtreleri | `Olay Numarası`, `Migration Numarası`, `Konu`, `Durum`, `Aşama`, `Teknisyen Grubu`, `Teknisyen`, `Şirket`, `Müşteri`, `Kullanıcı`, `Kategori`, `Oluşturulduğu Tarih`, `Etiketler`, `Bölüm`, `Kaynak` ve `Özel Form`. |
+| 3 | Öncelik / Aciliyet / İş Etkisi | Çoklu seçim yapılır; işaretlenen tüm seviyeler listeye gelir. |
+| 4 | Silinmiş mi? / Arşivlenmiş mi? | Silinmiş ve arşivlenmiş kayıtları listeye dâhil eder. |
+| 5 | İşlem düğmeleri | `Özel Filtre Ekle` seçtiğiniz koşulları kayıtlı filtre olarak saklar, `Sıfırla` tüm alanları temizler, `SLA Yeniden Çalıştır` listedeki kayıtların SLA hesabını yeniler. |
+
+<Callout type="info" title="ÖNEMLİ">
+Alanlara girdiğiniz koşullar birbirini daraltarak çalışır. Sonuç beklediğinizden az
+geliyorsa `Sıfırla` ile paneli temizleyip yeniden başlamak en pratik yoldur.
+</Callout>
+
+## Akıllı arama
+
+![Akıllı arama penceresi](/img/teknisyen/olay-liste-arama.png)
+
+Üst araç çubuğundaki `Ara` düğmesi, yalnızca olaylarda değil tüm modüllerde arama
+yapan pencereyi açar. Üstteki etiketlerden hangi modülde aranacağı seçilir:
+`Çözüm Havuzu`, `Olay`, `Çağrı`, `Problem`, `Değişiklik`, `İstek`, `Varlık`,
+`Sözleşme`, `Görev`, `Proje` ve `Sürekli iyileştirme`.
+
+Arama kutusuna serbest metin yazılabileceği gibi, `priority:Yüksek` biçiminde
+alan adı vererek de arama yapılır. `Arama Ayarları` başlığı altından aramanın
+hangi alanlarda çalışacağı belirlenir.
+
+<Callout type="info" title="İPUCU">
+`Çözüm Havuzu` etiketi, daha önce çözülmüş kayıtlardaki çözümleri arar. Yeni bir
+olaya başlamadan önce buradan arama yapmak, aynı sorunun daha önce nasıl
+çözüldüğünü dakikalar içinde gösterir.
+</Callout>
+
+## Grid görünümü
+
+![Grid görünümü](/img/teknisyen/olay-liste-grid.png)
+
+Kayıtları kart yerine tablo biçiminde listeler. Her kolonun başlığındaki alandan
+o kolona göre arama ve sıralama yapılır; sağ üstteki dişli düğmesinden hangi
+kolonların görüneceği seçilir. Çok sayıda kaydı yan yana karşılaştırmak için
+kart görünümünden daha elverişlidir.

@@ -1,112 +1,168 @@
 ---
-title: "Kayıt Detayları"
-description: "Olay kaydı detayında ekler, ilişkili varlık ve hizmetler ile görüşmeler sekmelerinin kullanımı."
-reviewed: "2026-07-30"
+title: "Kayıt Detayı"
+description: "Olay kaydının detay ekranı: üst düğmeler, görüşmeler, dosyalar, varlıklar, olay formu ve sağ paneldeki kullanıcı bilgileri ile özellikler."
+reviewed: "2026-08-20"
 owner:
 ---
 
-![Olaylar Modülü](/img/teknisyen/olaylar24.png)
+Listeden bir kaydın üzerine tıkladığınızda kaydın detay ekranı açılır. Bir olayla
+ilgili her şey bu ekranda toplanır: yazışmalar, dosyalar, varlıklar, formdaki
+alanlar ve kaydın tüm özellikleri.
 
-## Ekler
+## Ekranın bölümleri
 
-Dosya ekleme işlemleri `ekler` kısmından yönetilir.
+![Olay kaydı detay ekranı](/img/teknisyen/olay-detay-genel.png)
 
-![Olaylar Modülü](/img/teknisyen/olaylar2-g1.png)
+| No | Bölüm | Ne işe yarar |
+|---|---|---|
+| 1 | Sekmeler | `Detaylar`, `Görevler`, `İş Günlükleri`, `Çözümler`, `Süreçler`, `Geçmiş`. Sekme adının yanındaki sayı o sekmedeki kayıt adedidir. |
+| 2 | İşlem düğmeleri | Kaydı kaydetme, kapatma ve diğer eylemler. |
+| 3 | Kayıt başlığı | Olayın konusu ve kullanıcının yazdığı açıklama. |
+| 4 | `Görüşmeler` | Kullanıcı ve ekiplerle yapılan tüm yazışmalar ile notlar. |
+| 5 | Olay formu | Kaydın alanlarının düzenlendiği form. |
+| 6 | Sağ panel | Kullanıcı bilgileri, SLA ve kaydın özellikleri. |
 
-## Varlıklar-Hizmetler
+## Üst düğmeler
 
-Kayıtla bağıntılı varlık ve hizmet ekleme işlemleri `varlıklar-hizmetler` kısmından yönetilir.
+![Detay ekranı üst düğmeleri](/img/teknisyen/olay-detay-ust-butonlar.png)
 
-![Olaylar Modülü](/img/teknisyen/olaylar2-g2.png)
+1. **Kayıt numarası** — Kaydın `INC` numarası.
+2. **Bağlantıyı Kopyala** — Kaydın adresini panoya kopyalar.
+3. `Kaydet` — Formda ve sağ panelde yaptığınız değişiklikleri kaydeder.
+4. `Kapat` — Kaydı kapatma penceresini açar. Zorunlu alanlar boş olduğunda düğme pasif kalır ve üzerine gelindiğinde eksik alan adını yazar.
+5. **Diğer eylemler** — Aşağıda anlatılan kısayol menüsünü açar.
+6. **Yerleşim** — Ekrandaki bölümlerin yerleşimini düzenlemek için kullanılır.
 
-<Callout type="info" title="NOT">
-Varlıkla ilgili bir kayıt ise hangi varlıkta sorun yaşanıyor ise o varlık eklenebilmektedir.
-</Callout>
+### Diğer eylemler menüsü
+
+![Diğer eylemler menüsü](/img/teknisyen/olay-detay-diger-eylemler.png)
+
+Tek menüden kayıtla ilgili bütün kısayollara erişilir:
+
+| Eylem | Açıklama |
+|---|---|
+| `Çözüm Ekle` | Kayda önerilen, uygulanan veya işe yarayan çözüm girer. |
+| `Paylaş` | Kaydı başka bir teknisyen veya kullanıcıyla paylaşır. |
+| `Sil` | Kaydı gerekçesiyle birlikte siler. |
+| `Klon` | Aynı içerikle yeni bir kayıt açar. |
+| `Dosya Ekle` | Kayda dosya yükler. |
+| `Cevapla` / `İlet` | Kullanıcıya veya üçüncü taraflara e-posta gönderir. |
+| `Not Ekle` | Kayda not girer. |
+| `Görev Ekle` | Kayda bağlı görev oluşturur. |
+| `İş Günlüğü Ekle` | Harcanan efor için iş günlüğü girer. |
+| `Arşivle` | Kaydı arşive alır. |
+| `Reddet` | Kaydı gerekçesiyle reddeder. |
+| `Takip Et` | Kaydı takip listenize alır; kayıttaki hareketleri izler. |
+| `Otomasyonlar` | Kayıt üzerinde tanımlı otomasyonları çalıştırır. |
+| `Çıktı Al` | Kaydın yazdırılabilir çıktısını üretir. |
 
 ## Görüşmeler
 
-**İlet- Tümünü Cevapla- Cevapla** diyerek kullanıcılarla mailleşme, `not` girişleri ve olası durumlarda kaydı `reddetme` işlemleri görüşmeler kısmından sağlanmaktadır.
+Kullanıcı ile yapılan tüm yazışma ve notlar tarih sırasıyla burada listelenir.
+Kayda sonradan katılan bir teknisyen, olayın geçmişini bu bölümden okuyarak hızla
+devralabilir.
 
-![Olaylar Modülü](/img/teknisyen/olaylar27.png)
+![Görüşmeler bölümü](/img/teknisyen/olay-detay-gorusmeler.png)
 
-Kayıdın içerisine `not girişi` aşağıdaki gibidir.
+| No | Alan | Açıklama |
+|---|---|---|
+| 1 | Filtre kutuları | `Notlar`, `Gelen Posta` ve `Giden Posta` kayıtlarının hangisinin listelenmesini seçer. |
+| 2 | `Cevapla` | Son gelen e-postayı gönderene yanıt verir. |
+| 3 | `Tümünü Cevapla` | Yazışmadaki tüm alıcılara yanıt verir. |
+| 4 | `İlet` | Yazışmayı başka bir adrese iletir. |
+| 5 | `Not Ekle` | Kayda not girer. |
 
-![Olaylar Modülü](/img/teknisyen/olaylar28.png)
+Satırların sağındaki düğmelerle görüşme genişletilir, kaydedilir, düzenlenir veya silinir.
 
-Not ekleye basıldığında aşağıdaki gibi bir ekran çıkacaktır.
+### Not ekleme
 
-![Olaylar Modülü](/img/teknisyen/olaylar29.png)
+![Not ekleme penceresi](/img/teknisyen/olay-detay-not-ekle.png)
 
-<Callout type="info" title="ÖNEMLİ">
-Gizli not üzerinde tik var ise müşteri bu notu görmez fakat tik kaldırılırsa yazılacak not müşteriye açık olmaktadır.
+<Callout type="warn" title="DİKKAT">
+`Özel Not` işaretli bırakıldığında not iç yazışma olarak kalır, kullanıcı bu notu görmez.
+İşaret kaldırılırsa not kullanıcıya açık hâle gelir.
 </Callout>
 
-Aşağıdaki buton üzerinden kayıt `reddedilebilmektedir`.
+### E-posta ile cevap verme
 
-![Olaylar Modülü](/img/teknisyen/olaylar30.png)
+![Cevaplama penceresi](/img/teknisyen/olay-detay-cevapla.png)
 
-Reddet butonuna basıldığında çıkan ekran aşağıdaki gibidir.
+`Kimden` alanı sistemin tanımlı gönderici adresi, `Kime` alanı ise kaydı açan
+kullanıcının adresiyle hazır gelir. `CC` ve `BCC` alanlarına ek alıcı eklenir.
+Gönderilen ileti aynı zamanda `Görüşmeler` listesine `Giden Posta` olarak düşer.
 
-![Olaylar Modülü](/img/teknisyen/olaylar39.png)
+<Callout type="info" title="ÖNEMLİ">
+Kullanıcı bu e-postaya yanıt verdiğinde yanıt otomatik olarak aynı kayda düşer;
+ayrıca yeni bir kayıt açılmaz. Böylece yazışmanın tamamı tek kayıtta kalır.
+</Callout>
 
-Bu ekran üzerinde **kapatma gerekçesi, açıklama ve durum** seçilmek zorundadır.
+## Dosyalar
 
-## Genel Bakış
+![Dosyalar bölümü](/img/teknisyen/olay-detay-dosyalar.png)
 
-Sağ panelde, **kaydı açan kişinin bilgileri** görüntülenebilmektedir.
+Kayda eklenmiş dosyalar bu bölümde listelenir; dosya eklenmemiş kayıtlarda bölüm
+boş görünür. Sağdaki yükleme düğmesiyle yeni dosya eklenir.
 
-![Olaylar Modülü](/img/teknisyen/olaylar31.png)
+## Varlıklar-Hizmetler
 
-## Zaman Makinesi, Kayıt Geçişleri ve Favorileme-Sabitleme
+![Varlıklar ve hizmetler bölümü](/img/teknisyen/olay-detay-varliklar.png)
 
-Kayıtta işlem yapılıyorsa kayıt başlatabilir ve durdurabilir aynı zamanda sabitleme, favoriye ekleme ve kayıtlar arasında ok tuşları ile geçiş sağlanabilmektedir.
+Olayın hangi varlık veya hizmetle ilgili olduğu burada belirtilir. `Varlık Ekle`
+ve `Hizmet Ekle` düğmeleriyle ilişkilendirme yapılır.
 
-![Olaylar Modülü](/img/teknisyen/olaylar2-g3.png)
+- **Varlık Listesi** — Id, Seri No, Adı, Varlık Türü, Varlık Durumu, Sözleşme, Sözleşme Durumu ve Barkod bilgileriyle listelenir.
+- **Hizmet Listesi** — Id, Adı, Açıklama, Uptime Hedefi, Çözünürlük Hedefi ve Sahibi bilgileriyle listelenir.
 
-## Özellikler
+<Callout type="info" title="İPUCU">
+Varlığı kayda bağlamak yalnızca bilgi amaçlı değildir: aynı varlıkta tekrarlayan
+olaylar, o varlığın gerçekten sorunlu olduğunu raporlarda görünür kılar.
+</Callout>
 
-Kaydın bilgileri yer almaktadır. Bu alan üzerinde `düzeltmeler` yapılıp güncellenebilmektedir.
+## Sistem Bildirimleri
 
-![Olaylar Modülü](/img/teknisyen/olaylar33.png)
+![Sistem bildirimleri bölümü](/img/teknisyen/olay-detay-sistem-bildirimleri.png)
 
-## Detaylar
+Kayıt için sistemin otomatik gönderdiği bildirimler (`Yeni Olay Oluşturuldu`,
+`Gruba Atandığında`, `Teknisyene Atandığında`, `İlk Defa Atandığında` gibi)
+zaman damgasıyla listelenir. "Kullanıcıya bildirim gitti mi?" sorusunun yanıtı buradadır.
 
-Kaydın bilgileri yer almaktadır burada `düzenlemeler` yapılabilmektedir.
+## Olay formu
 
-![Olaylar Modülü](/img/teknisyen/olaylar34.png)
+![Olay formu](/img/teknisyen/olay-detay-form.png)
 
-## Kaydın İçerik Butonları
+Kaydın alanları bu formdan düzenlenir. Kullanılan form adı üstte yazar
+(örneğin `Default Incident Form`); kurum birden fazla form tanımladıysa
+`Özel Form Düzenle` alanından seçilir.
 
-Kaydın üst kısmında yer alan `butonlar` aşağıdaki gibidir.
+- `Konu` ve `Açıklama` — Zorunludur.
+- `Dosya Yükle` — Sürükle bırak ile dosya eklenir.
+- `Diğer Alanlar` — `Kullanıcı`, `Kategori`, `Öncelik`, `Teknisyen Grubu`, `Durum`, `İş Etkisi`, `Teknisyen`, `Kaynak` ve `Aciliyet`.
+- `Sürüm Notu` — Zorunludur. Yapılan çalışmanın hangi sorunu giderdiği, kullanıcının anlayacağı dilde yazılır.
 
-![Olaylar Modülü](/img/teknisyen/olaylar2-g4.png)
+<Callout type="info" title="ÖNEMLİ">
+Formda yapılan değişiklikler `Kaydet` düğmesine basılmadan kayda işlenmez.
+</Callout>
 
-- `Kapat` butonundan kayıt kapatılmaktadır. Kayıt kapatılırken **açıklama, durum ve gerekçe** zorunludur.
+## Sağ panel
 
-![Olaylar Modülü](/img/teknisyen/olaylar39.png)
+### Kullanıcı / Bilgiler ve SLA
 
-- `Bana ata` butonundan kayıta müdahale eden kişinin üzerine atama yapılmaktadır.
+![Kullanıcı bilgileri ve SLA bölümü](/img/teknisyen/olay-detay-kullanici-bilgileri.png)
 
-- `Bağıntılar` butonundan yeni istek, yeni problem, var olan problem, yeni iyileştirme ve var olan iyileştirme, yeni değişiklik ve var olan değişiklik olarak bağıntı kurulabilmektedir.
+Kaydı açan kişinin adı, iş tanımı, e-posta adresi, telefonu ve kaydın açılış
+tarihi burada görünür. Kullanıcıya ulaşmak için listeye geri dönmeniz gerekmez.
+`SLA` başlığı ise kayda uygulanan hizmet seviyesi bilgilerini açar.
 
-![Olaylar Modülü](/img/teknisyen/olaylar36.png)
+### Özellikler
 
-`Diğer eylemler` butonundan kısa yol olarak çözüm, bağlantı, paylaş, kapat, sil, arşivler ve klonla işlemi yapılmaktadır. Klonlamak aynı kayıttan bir kayıt daha açmak demektir.
+![Özellikler bölümü](/img/teknisyen/olay-detay-ozellikler.png)
 
-Aynı zamanda dosya ekleme, cevapla ve ilet diyerek mail atılabilmektedir. Not ekleme, görev, iş günlüğü, ilişki de eklenebilmektedir.
+Kaydın tüm nitelikleri tek panelde toplanır ve buradan da güncellenebilir:
+`Konu`, `Kullanıcı`, `Teknisyen Grubu`, `Teknisyen`, `Durum`, `Öncelik`, `Kaynak`,
+`Kategori`, `Çözüm Tarihi`, **Hedef Cevap Tarihi - Hedef Çözüm Tarihi**,
+`İş Etkisi`, `Aciliyet`, `Şirket` ve `Etiketler`.
 
-![Olaylar Modülü](/img/teknisyen/olaylar37.png)
-
-- Kayıtın detaylar kısmının dışında görevlerden `görev` eklenebilmektedir.
-
-- İş günlüğünden `iş günlüğü` eklenebilmektedir.
-
-- Çözümlerden `çözüm` eklenebilmektedir.
-
-- Bağıntılardan `bağıntı` eklenebilmektedir.
-
-- Varlıklardan `varlık` eklenebilmektedir.
-
-- `Geçmişte` ise kayıtta yapılan tüm aktiviteler görülmektedir.
-
-![Olaylar Modülü](/img/teknisyen/olaylar2-g5.png)
+<Callout type="info" title="İPUCU">
+Aynı alanlar hem formda hem bu panelde yer alır. Panel, kayıt üzerinde hızlı
+güncelleme yapmak; form ise kaydı baştan sona doldurmak için elverişlidir.
+</Callout>
