@@ -1,22 +1,14 @@
-import { getPageImage, getPageMarkdownUrl, source } from '@/lib/source';
+import { getPageImage, source } from '@/lib/source';
 import {
   DocsBody,
   DocsDescription,
   DocsPage,
   DocsTitle,
-  EditOnGitHub,
-  MarkdownCopyButton,
-  ViewOptionsPopover,
 } from 'fumadocs-ui/layouts/notebook/page';
 import { notFound } from 'next/navigation';
 import { getMDXComponents } from '@/components/mdx';
 import type { Metadata } from 'next';
 import { createRelativeLink } from 'fumadocs-ui/mdx';
-import { gitConfig } from '@/lib/shared';
-
-function githubUrlFor(path: string) {
-  return `https://github.com/${gitConfig.user}/${gitConfig.repo}/blob/${gitConfig.branch}/content/docs/${path}`;
-}
 
 /**
  * "2026-07-30" → "30 Temmuz 2026". Tarih TIRNAKLI geldiği için düz metindir;
@@ -42,8 +34,6 @@ export default async function Page(props: PageProps<'/docs/[[...slug]]'>) {
   if (!page) notFound();
 
   const MDX = page.data.body;
-  const markdownUrl = getPageMarkdownUrl(page).url;
-  const githubUrl = githubUrlFor(page.path);
   const reviewedLabel = page.data.reviewed ? tarihYaz(page.data.reviewed) : null;
 
   return (
@@ -55,11 +45,10 @@ export default async function Page(props: PageProps<'/docs/[[...slug]]'>) {
       aria-label="Sayfa içeriği"
     >
       <DocsTitle>{page.data.title}</DocsTitle>
-      <DocsDescription className="mb-0">{page.data.description}</DocsDescription>
-      <div className="flex flex-row gap-2 items-center border-b pb-6">
-        <MarkdownCopyButton markdownUrl={markdownUrl} />
-        <ViewOptionsPopover markdownUrl={markdownUrl} githubUrl={githubUrl} />
-      </div>
+      {/* Katkıcıya yönelik düğmeler (Markdown'ı Kopyala / Aç) bilinçli olarak
+          YOK: bu site müşteriye açılıyor, okuyan kitle katkı veren kitle değil.
+          Ekip katkıyı AI + MCP ile veriyor, bu düğmelerden değil. */}
+      <DocsDescription className="mb-0 border-b pb-6">{page.data.description}</DocsDescription>
       <DocsBody>
         <MDX
           components={getMDXComponents({
@@ -68,13 +57,12 @@ export default async function Page(props: PageProps<'/docs/[[...slug]]'>) {
           })}
         />
       </DocsBody>
-      <div className="mt-10 flex flex-row items-center justify-between gap-4 border-t pt-6 text-sm text-fd-muted-foreground">
-        <span>Bu sayfada eksik veya hatalı bilgi mi var?</span>
-        <EditOnGitHub href={githubUrl} />
-      </div>
+      {/* "GitHub'da Düzenle" de aynı sebeple kaldırıldı — müşteriyi depoya
+          götürmesi istenmiyor. "Son doğrulama" KALIYOR: müşteriye link
+          atarken dokümanın ne zaman doğrulandığını göstermek değerli. */}
       {reviewedLabel && (
         // Tarih "veri" katmanı: mono + geniş harf aralığı, anlatıdan ayrışır.
-        <p className="sc-microlabel mt-3">
+        <p className="sc-microlabel mt-10 border-t pt-6">
           Son doğrulama: <time dateTime={page.data.reviewed}>{reviewedLabel}</time>
         </p>
       )}
