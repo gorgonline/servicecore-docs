@@ -1,0 +1,62 @@
+---
+title: "Onay Süreci"
+description: "Sözleşme detayındaki Tavsiyeler sekmesinden onaycı ekleme, onaya gönderme, onaylama ve reddetme adımları."
+reviewed: "2026-08-20"
+owner: berdanasen
+---
+
+Sözleşmenin onaya sunulması, detay ekranındaki `Tavsiyeler` sekmesinden yürütülür.
+Onay süreci; danışma kurulundan, kurum içi kişilerden ve kurum dışı e-posta
+adreslerinden oluşabilir.
+
+## Onaycı ekleme
+
+Henüz onaycı yoksa sekmede `Sözleşmeyi Onaylayacak Kişileri Ekle` butonu görünür.
+Açılan pencerede üç alan bulunur:
+
+- `Danışma Kurulu` — tanımlı bir kurul seçilir.
+- `Danışılacak Kişiler` — kurum içi kullanıcılar seçilir.
+- `Danışılacak Diğer Üyeler (Dış Kaynaklar, Danışmanlar vb)` — kurum dışı e-posta adresleri girilir.
+
+En az bir kişi seçilmelidir. Aynı e-posta adresi birden fazla kez eklenemez; daha önce
+eklenmiş kurum dışı adresler tekrar eklenmez.
+
+<Callout type="info" title="ÖNEMLİ">
+İlk onaycı eklendiğinde sözleşmenin onay durumu **Onay Bekleniyor** olur ve sekme
+çubuğunun sağındaki onay rozetinde görünür.
+</Callout>
+
+## Onay adımları
+
+Onaycı listesindeki her satır kendi durumunu taşır ve şu sırayı izler:
+
+1. **Gönderim bekliyor** — onaycı eklenmiştir, henüz kendisine gönderilmemiştir.
+   Satırdaki `Onay İçin Gönder` işlemi ile onay talebi iletilir.
+2. **Yanıt bekliyor** — talep iletilmiştir, onaycının kararı beklenir.
+3. **Onaylandı** veya **Reddedildi** — karar verilmiştir; satırda sonuç tarihi görünür.
+
+Tabloda `İstek Tarihi`, `Sonuç tarihi`, `Gönderme Açıklaması`, `Açıklama` ve `Durum`
+bilgileri listelenir. `Onayla / Reddet` işlemleri satır üzerinden yapılır ve açıklama
+girilebilir.
+
+Onaycılar kararlarını sözleşme ekranından verebileceği gibi, kendilerine gönderilen
+onay e-postasındaki bağlantı üzerinden de onaylayabilir veya reddedebilir.
+
+## Süreç tamamlandığında
+
+- Sözleşmenin onay durumu **Onaylandı** veya **Reddedildi** olduğunda
+  `Sözleşmeyi Onaylayacak Kişileri Ekle` butonu pasifleşir; yeni onaycı eklenemez.
+- Onay süreci **reddedildiyse** sözleşmenin tamamı salt okunur hâle gelir.
+- Sözleşme pasif veya iptal edilmiş durumdaysa da onaycı eklenemez.
+
+Onay ve ret işlemleri sözleşmenin `Geçmiş` sekmesine kaydedilir.
+
+## Yetkiler
+
+| İşlem | Gerekli yetki |
+|---|---|
+| Onaycı ekleme, onaycı çıkarma, onay için gönderme | `Sözleşme Düzenleyebilir` |
+| Ekrandaki `Onayla` / `Reddet` butonlarının görünmesi | `Sözleşme Düzenleyebilir` |
+| Onaycı satırının silinebilmesi | `Sözleşme Silebilir` |
+
+`SuperAdmin` yetkisine sahip kullanıcılar bu işlemlerin tamamını yapabilir.

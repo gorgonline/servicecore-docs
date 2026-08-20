@@ -1,0 +1,72 @@
+---
+title: "Varlıklar, Finansal Bilgiler ve İlişkiler"
+description: "Sözleşmeye varlık ve hizmet bağlama, maliyet kaydı girme ve sözleşmeler arasında alt/üst ilişki kurma."
+reviewed: "2026-08-20"
+owner: berdanasen
+---
+
+Sözleşme detayındaki üç sekme, sözleşmenin kapsamını tanımlar: hangi varlıkları
+kapsadığı, ne kadara mal olduğu ve hangi sözleşmelerle ilişkili olduğu.
+Bu sekmelerdeki tüm ekleme, düzenleme ve silme işlemleri `Sözleşme Düzenleyebilir`
+yetkisi ister ve sözleşme salt okunur durumdayken kapalıdır.
+
+## Varlıklar
+
+`Varlıklar` sekmesinde iki ayrı tablo bulunur: üstte sözleşmeye bağlı **varlıklar**,
+altta bağlı **hizmetler**.
+
+- `Varlık Ekle` — henüz bir sözleşmeye bağlanmamış varlıkların listesini açar; seçilen
+  varlıklar sözleşmeye bağlanır.
+- `Hizmet Ekle` — aynı akışı varlık hizmetleri için çalıştırır.
+- Tablodaki satırlar üzerinden bağlantı kaldırılabilir.
+
+Henüz hiçbir bağlantı yoksa sekmede boş içerik ekranı ve aynı iki buton görünür.
+
+<Callout type="info" title="ÖNEMLİ">
+Bağlanabilir varlık ve hizmet listelerini görebilmek için CMDB tarafındaki varlık
+hizmetlerini görüntüleme yetkisi de gerekir. Bu yetki yoksa listeler boş gelir.
+</Callout>
+
+## Finansal Bilgiler
+
+`Finansal Bilgiler` sekmesi, sözleşmeye ait ödeme ve maliyet kayıtlarını tutar.
+`Finansal Bilgi Ekle` butonu ile açılan pencerede şu alanlar bulunur:
+
+| Alan | Zorunlu | Açıklama |
+|---|---|---|
+| `Ödeme Adı` | Evet | Ödemenin tanımı |
+| `Maliyet` | Evet | Yalnızca sayı girilebilir; harf ve ondalık kabul edilmez |
+| `Para Birimi` | Evet | Tanımlı para birimleri arasından seçilir |
+| `Ödeme Tarihi` | Hayır | |
+| `Sipariş Numarası` | Hayır | |
+| `Fatura Numarası` | Hayır | |
+| `Dekont Numarası` | Hayır | |
+| `Açıklama` | Hayır | |
+
+Kayıtlar tabloda listelenir; satır üzerinden düzenlenebilir veya silinebilir.
+Silme işleminden önce onay sorulur.
+
+## İlişkili Sözleşmeler
+
+`İlişkili Sözleşmeler` sekmesi, sözleşmeler arasında hiyerarşi ve ek sözleşme ilişkisi
+kurmak için kullanılır. `İlişkili Sözleşme Ekle` menüsünde iki seçenek vardır:
+
+- `Alt Sözleşme İlişkilendir` — bu sözleşmenin altına bağlı bir sözleşme eklenir.
+- `Kapsamı Genişletilmiş Sözleşme ile İlişkilendir` — bu sözleşmenin kapsamını genişleten
+  bir ek sözleşme eklenir.
+
+Kurulan ilişkiler dört ayrı tabloda listelenir:
+
+- `Alt Sözleşmeler`
+- `Üst Sözleşmeler`
+- `Kapsamı Genişletilmiş Sözleşmeler`
+- `Üst Ek Sözleşmeler`
+
+Her tabloda `Durum`, `Sözleşme No`, `Sözleşme Türü Adı`, `Başlangıç Tarihi`,
+`Bitiş Tarihi` ve `Düzenleme` kolonları bulunur. İlişki, satırdaki silme işlemiyle
+kaldırılır; kaldırmadan önce onay sorulur.
+
+<Callout type="info" title="ÖNEMLİ">
+İlişki kurulacak sözleşme listesinde yalnızca bu sözleşmeyle **henüz ilişkilendirilmemiş**
+sözleşmeler görünür.
+</Callout>

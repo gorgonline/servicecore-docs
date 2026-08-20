@@ -1,0 +1,70 @@
+---
+title: "Bildirimler ve Geçmiş"
+description: "Sözleşme bitiş tarihine bağlı bildirim alıcıları ve gün ayarları, yetkili teknisyen grupları ve sözleşme geçmişi."
+reviewed: "2026-08-20"
+owner: berdanasen
+---
+
+## Bildirimler sekmesi
+
+`Bildirimler` sekmesi, sözleşmenin bitiş tarihine bağlı hatırlatmaların kime ve kaç gün
+önce/sonra gideceğini belirler.
+
+<Callout type="info" title="ÖNEMLİ">
+Bu sekmenin **kendi `Kaydet` butonu** vardır ve sağ paneldeki araç çubuğu `Kaydet`
+butonu bu sekme açıkken pasiftir. Bildirim ayarlarını sekmenin sağ üstündeki
+`Kaydet` ile kaydedin.
+</Callout>
+
+### Alıcılar
+
+Bildirim alıcıları iki gruba ayrılır:
+
+- **Karşı taraf** — `Süresi Dolmadan Önce Kullanıcıyı Bilgilendir` ve
+  `Süresi Geçtikten Sonra Kullanıcıyı Bilgilendir` alanları. Seçilebilecek kişiler
+  sözleşme modeline göre değişir:
+
+  | Sözleşme modeli | Karşı taraf listesi |
+  |---|---|
+  | Kurum İçi Destek | Sözleşmenin bağlı olduğu **bölümün** kullanıcıları |
+  | Tedarikçi | Sözleşmenin **tedarikçisine** tanımlı iletişim kişileri |
+  | Müşteri Hizmet | Sözleşmenin bağlı olduğu **destek müşteri hesabının** kullanıcıları |
+
+- **Bizim tarafımız** — `Süresi Dolmadan Önce Bizim Kullanıcımızı Bilgilendir` ve
+  `Süresi Geçtikten Sonra Bizim Kullanıcımızı Bilgilendir` alanları. Kurum içi
+  kullanıcılar arasından seçim yapılır.
+
+<Callout type="warn" title="DİKKAT">
+Kurum içi destek sözleşmesinde **bölüm**, müşteri hizmet sözleşmesinde **destek müşteri
+hesabı** seçilmemişse karşı taraf listesi boş kalır ve seçim yapılamaz. Önce
+`Özellikler` panelinden ilgili alanı doldurun.
+</Callout>
+
+### Gün ayarları
+
+`Süresi Dolmadan Önce Bilgilendir (Gün)` ve `Süresi Geçtikten Sonra Bilgilendir (Gün)`
+alanlarına **birden fazla gün** girilebilir; her değer bir etiket olarak eklenir.
+Yalnızca sayı kabul edilir ve aynı gün iki kez eklenmez. Örneğin `30`, `7` ve `1`
+girildiğinde bitişten 30, 7 ve 1 gün önce hatırlatma gönderilir.
+
+Bu alanlar, `Özellikler` panelindeki aynı adlı alanlarla aynı veriyi gösterir;
+hangisinden değiştirirseniz diğerinde de görünür.
+
+### Yetkili Teknisyen Grupları
+
+`Yetkili Teknisyen Grupları` alanı, sözleşmeyi hangi teknisyen gruplarının göreceğini
+belirler.
+
+- Alan boş bırakılan sözleşmeler **herkes** tarafından görülür.
+- Bir veya daha fazla grup seçilirse, grup kısıtına tabi kullanıcılar bu sözleşmeyi
+  yalnızca seçilen gruplardan birine üyeyse görür.
+- Kısıt hem sözleşme listelerine hem de `Pano` sayılarına uygulanır.
+- `SuperAdmin` yetkisine sahip kullanıcılar bu kısıttan etkilenmez.
+
+## Geçmiş sekmesi
+
+`Geçmiş` sekmesi, sözleşme üzerinde yapılan tüm değişiklikleri zaman çizelgesi olarak
+listeler: alan güncellemeleri, onay ve ret işlemleri, ilişkilendirmeler ve durum
+değişiklikleri. Sekme başlığındaki rozet, kayıt sayısını gösterir.
+
+Geçmiş kayıtları yalnızca okunur; buradan bir işlem geri alınamaz.

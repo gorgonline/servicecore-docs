@@ -1,0 +1,99 @@
+---
+title: "Sözleşme Detayı"
+description: "Sözleşme detay ekranının yapısı: araç çubuğu, Özellikler paneli, Detaylar sekmesi, ekler ve sözleşme yenilemeleri."
+reviewed: "2026-08-20"
+owner: berdanasen
+---
+
+Bir sözleşmeyi açmanın iki yolu vardır:
+
+- Listede `Sözleşme Numarası` kolonundaki `CNR…` bağlantısına tıklamak — sözleşme, liste
+  sayfasından ayrılmadan yeni bir sekmede açılır.
+- `/AdminContract/EditV2/{sözleşme numarası}` adresine gitmek — sözleşme tek başına, tam
+  sayfa olarak açılır.
+
+## Ekran düzeni
+
+Detay ekranı iki sütundan oluşur:
+
+- **Sol sütun** — sekmeler: `Detaylar`, `Tavsiyeler`, `Finansal Bilgiler`, `Varlıklar`,
+  `İlişkili Sözleşmeler`, `Bildirimler`, `Geçmiş`. Kayıt bulunan sekmelerin başlığında
+  kayıt sayısını gösteren bir rozet çıkar.
+- **Sağ sütun** — araç çubuğu ve katlanabilir `Özellikler` paneli.
+
+Sekme çubuğunun sağ ucunda üç öge bulunur: sözleşmenin **onay durumu rozeti**
+(yalnızca bir onay süreci başlatıldıysa), `CNR…` biçimindeki **sözleşme kodu etiketi**
+ve sözleşmenin doğrudan bağlantısını panoya kopyalayan **kopyalama butonu**.
+
+## Araç çubuğu
+
+Araç çubuğunda `Kaydet` butonu ve `Diğer Eylemler` menüsü yer alır.
+
+- `Kaydet` yalnızca `Özellikler` panelinde veya özel form alanlarında **değişiklik
+  yaptığınızda** etkinleşir. Sayfa ilk açıldığında pasiftir.
+- `Diğer Eylemler` menüsünden varlık ekleme ve ilişkili sözleşme ekleme sekmelerine
+  geçebilir, sözleşmeyi silebilirsiniz.
+
+<Callout type="info" title="ÖNEMLİ">
+`Bildirimler` sekmesi açıkken araç çubuğundaki `Kaydet` pasiftir. Bildirim ayarları
+o sekmenin kendi `Kaydet` butonu ile kaydedilir.
+</Callout>
+
+## Salt okunur durumlar
+
+Aşağıdaki durumlarda sözleşme detayı salt okunur hâle gelir; `Kaydet`, `Diğer Eylemler`
+ve sekmelerdeki ekleme/düzenleme/silme işlemleri kapanır:
+
+- Sözleşme **pasif** durumdaysa,
+- Sözleşme **iptal edilmişse**,
+- Sözleşmenin onay süreci **reddedilmişse**.
+
+## Özellikler paneli
+
+Sağdaki `Özellikler` panelinde sözleşmenin temel alanları bulunur:
+
+| Alan | Açıklama |
+|---|---|
+| `Sözleşme Adı` | Sözleşmenin adı |
+| `Sözleşme Modeli` | Kurum içi, tedarikçi veya müşteri hizmet |
+| `Bölüm` | Yalnızca kurum içi destek sözleşmelerinde |
+| `Tedarikçi` | Yalnızca tedarikçi sözleşmelerinde |
+| `Destek Müşteri Hesabı` | Yalnızca müşteri hizmet sözleşmelerinde |
+| `Destek Planı` | Yalnızca müşteri hizmet sözleşmelerinde |
+| `Sözleşme Türü` | Yönetici panelinde tanımlanan sözleşme türü |
+| `Başlangıç Tarihi` / `Bitiş Tarihi` | Sözleşmenin geçerlilik aralığı |
+| `Süresi Dolmadan Önce Bilgilendir (Gün)` | Bitişten önce bildirim gönderilecek gün listesi |
+| `Süresi Geçtikten Sonra Bilgilendir (Gün)` | Bitişten sonra bildirim gönderilecek gün listesi |
+| `Otomatik Yenilensin` | İşaretlenirse `Otomatik Süre` alanı açılır |
+
+Bilgilendirme gün alanlarına **birden fazla gün** girilebilir; her gün ayrı bir etiket
+olarak eklenir. Aynı gün iki kez eklenmez. Bu alanlar `Bildirimler` sekmesindeki
+karşılıklarıyla aynı veriyi gösterir.
+
+<Callout type="info" title="ÖNEMLİ">
+`Sözleşme Modeli` değiştirildiğinde ilgili taraf alanı da değişir: kurum içi seçilirse
+`Bölüm`, tedarikçi seçilirse `Tedarikçi`, müşteri hizmet seçilirse `Destek Müşteri Hesabı`
+alanı görünür hâle gelir.
+</Callout>
+
+## Detaylar sekmesi
+
+`Detaylar` sekmesi dört bölümden oluşur:
+
+1. **Açıklama** — sözleşmenin açıklama metni. Bu kartın kendi kaydetme işlemi vardır;
+   açıklamayı güncellemek için araç çubuğundaki `Kaydet` butonuna gerek yoktur.
+2. **Ekler** — sözleşmeye dosya eklenir ve eklenen dosyalar buradan görüntülenip silinir.
+3. **Özel form alanları** — sözleşme tipi için tasarlanan özel formun alanları. Buradaki
+   değişiklikler araç çubuğundaki `Kaydet` ile kaydedilir.
+4. **Sözleşme Yenilemeleri** — sözleşmenin uzatma kayıtları.
+
+## Sözleşme yenilemeleri
+
+Yenileme kaydı, sözleşmenin bitiş tarihini ileri bir tarihe taşımak için kullanılır.
+Tabloda şu kolonlar bulunur: `Yenileme Tarihi`, `Yenileyen Teknisyen`, `Yeni Bitiş Tarihi`,
+`Açıklama`, `Otomatik Yenilensin` ve `Düzenleme`.
+
+- Yenileme eklemek, düzenlemek ve silmek için `Sözleşme Düzenleyebilir` yetkisi gerekir.
+- `Yeni Bitiş Tarihi` yalnızca gün bazında girilir; saat seçimi yoktur.
+- `Yenileyen Teknisyen`, kaydı ekleyen veya güncelleyen kullanıcı olarak yazılır.
+  Bir yenileme kaydını başka bir teknisyen güncellediğinde bu alan güncelleyen kişiyi gösterir.

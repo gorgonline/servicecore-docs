@@ -1,0 +1,114 @@
+---
+title: "Sözleşme Listesi"
+description: "Sözleşmeler sekmesindeki tür listeleri, kolonlar, filtreler, satır işlemleri ve sözleşmelerin sekme olarak açılması."
+reviewed: "2026-08-20"
+owner: berdanasen
+---
+
+`Sözleşme` menüsündeki `Sözleşmeler` sekmesi, üç sözleşme tipinin listelerini
+ve yeni sözleşme ekleme işlemini barındırır.
+
+## Sayfa sekmeleri
+
+Sayfanın en üstünde iki sabit sekme vardır:
+
+- `Pano` — bkz. [Sözleşme Panosu](/docs/teknisyen/moduller/sozlesmeler/pano)
+- `Sözleşmeler` — sözleşme listeleri
+
+Bir sözleşme açıldığında, sayfadan ayrılmadan üstte yeni bir sekme olarak eklenir.
+Böylece aynı anda birden fazla sözleşme üzerinde çalışabilirsiniz.
+
+- Sabit `Pano` ve `Sözleşmeler` sekmeleri kapatılamaz; yalnızca sözleşme sekmeleri kapatılabilir.
+- Açık sekmeler ve son bakılan sekme tarayıcıda saklanır; sayfayı yenilediğinizde aynı sekmeler geri gelir.
+- Açık bir sözleşme sekmesini kapattığınızda `Sözleşmeler` sekmesine dönülür.
+
+## Tür listeleri
+
+`Sözleşmeler` sekmesi içinde üç alt sekme bulunur; her sekmenin başlığında o türdeki
+sözleşme sayısı parantez içinde gösterilir:
+
+- `Tedarikçi Sözleşmeleri`
+- `Müşteri Hizmet Sözleşmeleri`
+- `Kurum İçi Destek Sözleşmeleri`
+
+Adres satırına tür numarası ekleyerek doğrudan ilgili sekmeye gidebilirsiniz:
+`/AdminContract/IndexV2/1` kurum içi, `/AdminContract/IndexV2/2` tedarikçi ve
+`/AdminContract/IndexV2/3` müşteri hizmet sözleşmelerini açar.
+
+## Kolonlar ve filtreler
+
+Her üç listede ortak olan kolonlar:
+
+| Kolon | Açıklama |
+|---|---|
+| `Durum` | `Aktif` veya `Devre Dışı` rozeti |
+| `Sözleşme Numarası` | `CNR` ön ekli sözleşme kodu; tıklandığında sözleşme yeni sekmede açılır |
+| `Sözleşme Adı` | Sözleşmenin adı |
+| `Sözleşme Türü Adı` | Yönetici panelinde tanımlanan sözleşme türü |
+| `Başlangıç Tarihi` / `Bitiş Tarihi` | `GG.AA.YYYY` biçiminde |
+| `Düzenleme` | Satır işlemleri |
+
+Sözleşme tipine göre ek kolonlar gelir:
+
+- Kurum İçi Destek Sözleşmeleri listesinde `Departman Adı`
+- Tedarikçi Sözleşmeleri listesinde `Tedarikçi`
+- Müşteri Hizmet Sözleşmeleri listesinde `Destek Müşteri Hesabı` ve `Destek Hizmet Planı`
+
+Sözleşme türü, departman, tedarikçi, destek müşteri hesabı ve destek hizmet planı
+kolonlarında kolon başlığındaki filtre, aranabilir bir seçim listesi olarak açılır.
+Kolon başlıklarından sıralama yapılabilir.
+
+<Callout type="info" title="ÖNEMLİ">
+Kolon seçimleri ve filtreler **her tür listesi için ayrı** saklanır. Tedarikçi listesinde
+gizlediğiniz bir kolon, kurum içi listesini etkilemez.
+</Callout>
+
+## Satır işlemleri
+
+`Düzenleme` kolonundaki işlemler:
+
+- **Düzenle** — sözleşmeyi düzenleme penceresinde açar.
+- **Sil** — sözleşmeyi siler.
+- **Devre Dışı / Aktif Duruma Getir** — sözleşmeyi pasife veya aktife çeker. Pasife çekmeden önce onay sorulur.
+
+<Callout type="warn" title="DİKKAT">
+Pasife çekilen sözleşme, detay ekranında **salt okunur** hâle gelir; alanları ve
+sekmelerdeki ekleme/silme işlemleri kapanır. Düzenlemeye devam etmek için sözleşmeyi
+tekrar aktif duruma getirmeniz gerekir.
+</Callout>
+
+## Yeni sözleşme ekleme
+
+Sayfanın sağ üstündeki `Sözleşme Ekle` butonu, **o an aktif olan tür sekmesinin**
+sözleşmesini oluşturur: tedarikçi sekmesindeyken tedarikçi sözleşmesi, kurum içi
+sekmesindeyken kurum içi sözleşme eklenir.
+
+Açılan yan panelde önce `Özel Form` seçilir, ardından form alanları doldurulup `Kaydet`
+ile kayıt tamamlanır. Alanların hangileri olacağı, yönetici panelinde o sözleşme tipi için
+tasarlanan özel forma göre değişir.
+
+<Callout type="warn" title="DİKKAT">
+İlgili sözleşme tipi için tanımlı bir özel form yoksa panelde form alanları yerine
+uyarı metni görünür ve kayıt yapılamaz. Bu durumda önce yönetici panelinden sözleşme
+özel formu tanımlanmalıdır.
+</Callout>
+
+## Yardım paneli
+
+Listenin sağ üst köşesindeki soru işareti simgesi, sözleşmeler modülünün kısa yardım
+metnini yan panelde açar. Panel, üzerindeki kapatma butonu ile yeniden gizlenir.
+
+## Yetkiler
+
+Sözleşme modülüne girmek ve listeleri görmek için `Sözleşmeleri Görebilir` yetkisi gerekir.
+Yeni ekranlarda listeden yapılan **ekleme, düzenleme, silme, aktif/pasif** işlemleri de
+bu yetkiyle çalışır. Sözleşme detayındaki bazı işlemler ise ek yetki ister:
+
+| İşlem | Gerekli yetki |
+|---|---|
+| Onaycı ekleme/çıkarma, onaya gönderme | `Sözleşme Düzenleyebilir` |
+| Sözleşme yenilemesi ekleme/düzenleme/silme | `Sözleşme Düzenleyebilir` |
+| İlişkili sözleşme ekleme/kaldırma | `Sözleşme Düzenleyebilir` |
+| Finansal bilgi ekleme/düzenleme/silme | `Sözleşme Düzenleyebilir` |
+| Varlık ve hizmet bağlama/kaldırma | `Sözleşme Düzenleyebilir` |
+| Bağlanabilir varlık/hizmet listesini görme | CMDB kategorisindeki varlık hizmetlerini görüntüleme yetkisi |
