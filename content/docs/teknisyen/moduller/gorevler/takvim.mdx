@@ -1,0 +1,194 @@
+---
+title: "Takvim"
+description: "Görev ajandası: araç çubuğu, modül süzgeci, sağ tık menüsü, tam ekran, görev kuyruğu ve klavye kısayolları."
+reviewed: "2026-08-19"
+owner:
+---
+
+`Takvim` sekmesi görevleri **teknisyen ajandası** olarak gösterir: her satır bir
+teknisyendir, yatay eksen zamandır. Görev çubuğu sürüklenerek taşınır, kenarından
+çekilerek süresi değiştirilir; kenardaki **Görev Kuyruğu**'ndan zamansız bir görev
+takvime bırakılarak planlanır.
+
+## Ekranın bölümleri
+
+![Görev ajandasının bölümleri](/img/teknisyen/gorev-yerlesim.png)
+
+| # | Bölüm | Ne işe yarar |
+|---|---|---|
+| ❶ | Başlık | Ekranın adı ve tek cümlelik özeti |
+| ❷ | Modül renk kodları | Görevin hangi modülden geldiğini rengiyle gösterir |
+| ❸ | `Yeni Görev Ekle` | Görev oluşturma çekmecesini açar |
+| ❹ | Görünüm sekmeleri | `Takvim`, `Liste`, `Kanban Pano`, `İş Günlüğü` |
+
+<Callout type="info" title="ÖNEMLİ">
+Renk kodları yalnız bir açıklama şeridi değildir: **takvimdeki çubuk rengi, kanban
+kartının renk şeridi ve listedeki rozet** aynı kaynaktan gelir. Bir görevin turuncu
+olması onun teknisyen görevi, yeşil olması proje görevi olduğunu söyler.
+</Callout>
+
+## Takvim yüzeyi
+
+![Takvim araç çubuğu ve gün görünümü](/img/teknisyen/gorev-takvim-yerlesim.png)
+
+| # | Bölüm | Ne işe yarar |
+|---|---|---|
+| ❶ | Tarih gezinme | Dönem değiştirme ve `Bugün` |
+| ❷ | Süzgeç ve ölçek | Süzgeçler ile `Gün` / `Hafta` / `Ay` ölçeği |
+| ❸ | Ajanda | Satırlar teknisyenleri, sütunlar zamanı gösterir |
+
+Zaman ekseni **30 dakikalık dilimlere** bölünmüştür; çubuğu sürüklemek görevin zamanını,
+satırlar arasında taşımak ise **atandığı teknisyeni** değiştirir.
+
+## Araç çubuğu
+
+Ajandanın bütün denetimleri tek çubuktadır.
+
+![Takvim araç çubuğu](/img/teknisyen/gorev-takvim-arac-cubugu.png)
+
+| # | Denetim | Ne yapar |
+|---|---|---|
+| ❶ | Dönem gezinme | `‹` önceki, `›` sonraki dönem; `Bugün` bugüne döner |
+| ❷ | Tarih seçici | Doğrudan bir tarihe atlar |
+| ❸ | `Modül Seç` | Hangi modüllerin görevlerinin görüneceğini belirler |
+| ❹ | Süzgeçleri temizle | Tüm süzgeçleri sıfırlar; yanındaki rozet aktif süzgeç sayısını gösterir |
+| ❺ | Mesai anahtarı ve ölçek | Saat simgesi mesai saatlerini, düğmeler `Gün`/`Hafta`/`Ay` ölçeğini seçer |
+| ❻ | Görev kuyruğu | Sağdaki kuyruk panelini gizler veya gösterir |
+| ❼ | Tam ekran | Ajandayı tam ekrana açar |
+
+`Modül Seç`'in solunda ayrıca `Teknisyen Grubu`, `Teknisyen` ve `Aşama` süzgeçleri
+bulunur. `Aşama` süzgeci görevin genel durumunu (`Açık`, `Beklemede`, `Kapalı`) seçer.
+
+### Modül süzgeci — başka modüllerin görevlerini gizleme
+
+Ajanda **tüm modüllerin** görevlerini bir arada gösterir. Yalnız bir bölümüyle
+ilgileniyorsanız `Modül Seç` süzgecinden ilgili modülleri işaretleyin; işaretlenmeyen
+modüllerin görevleri ajandadan kalkar.
+
+![Modül süzgeci](/img/teknisyen/gorev-takvim-modul-suzgec.png)
+
+Süzgeç çoklu seçimlidir; yedi modül listelenir: `Teknisyen`, `Olay`, `Problem`, `İstek`,
+`Değişiklik`, `Sürekli İyileştirme` ve `Proje`.
+
+<Callout type="info" title="ÖNEMLİ">
+Süzgeç boş bırakıldığında **hepsi** gösterilir. Ajandanın kalabalık göründüğü durumlarda
+ilk bakılacak yer burasıdır; süzgeçlerin açık olup olmadığını
+**Süzgeçleri temizle** düğmesinin yanındaki sayı rozetinden anlarsınız.
+</Callout>
+
+### Mesai saatleri
+
+Saat simgeli düğme, ekseni **yalnız mesai saatleriyle** sınırlamak ile tüm günü göstermek
+arasında geçiş yapar. Yalnız `Gün` ve `Hafta` ölçeğinde görünür; mesai dışı saatleri
+gizlemek uzun ajandalarda ekranı belirgin biçimde kısaltır.
+
+## Görev kuyruğunu gizleme ve tam ekran
+
+Ajanda için yer açmanın iki yolu vardır. `≡` düğmesi sağdaki **Görev Kuyruğu** panelini
+katlar, `⛶` düğmesi ekranı tam ekrana alır.
+
+![Görev kuyruğu gizlenmiş takvim](/img/teknisyen/gorev-takvim-kuyruk-kapali.png)
+
+| # | Denetim | Ne yapar |
+|---|---|---|
+| ❶ | Kuyruk düğmesi | Kuyruk paneli kapalıyken simge değişir; aynı düğme geri açar |
+
+<Callout type="info" title="ÖNEMLİ">
+Kuyruğun açık/kapalı tercihi **tarayıcıda saklanır**; sayfayı kapatıp açtığınızda
+bıraktığınız gibi gelir. Tam ekran ise ajandayı **kuyruk paneliyle birlikte** büyütür,
+yalnız takvimi değil.
+</Callout>
+
+## Görev Kuyruğu
+
+Takvimin sağındaki kuyruk, **henüz ajandaya yerleşmemiş** görevleri tutar.
+
+![Görev kuyruğu](/img/teknisyen/gorev-takvim-kuyruk.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | Kategori seçici | Kuyruğun hangi görev kümesini göstereceğini belirler |
+
+| Kategori | İçerdiği görevler |
+|---|---|
+| **Zamansız • Atanmamış** | Ne tarihi ne teknisyeni olan görevler |
+| **Zamanlı • Atanmamış** | Tarihi olan ama teknisyeni olmayan görevler |
+| **Zamansız • Atanmış** | Teknisyeni olan ama tarihi olmayan görevler |
+
+Kuyruktaki bir görevi **takvimin üzerine sürükleyip bırakmak**, onu bıraktığınız
+teknisyenin satırına ve bıraktığınız saate planlar. Kuyruk boşsa
+`Bu kategoride bekleyen görev yok.` yazar.
+
+## Çubuğa tıklama — önizleme balonu
+
+Bir görev çubuğuna tıklamak küçük bir önizleme balonu açar.
+
+![Görev önizleme balonu](/img/teknisyen/gorev-takvim-onizleme.png)
+
+Balonda görev numarası, konusu, planlanan başlangıç–bitiş aralığı ve atanan kişi yer
+alır; `Düzenle` bağlantısı görevi düzenlemeye açar.
+
+## Çubuğa sağ tıklama
+
+Görev çubuğuna sağ tıklamak bağlam menüsünü açar.
+
+![Görev çubuğunda sağ tık menüsü](/img/teknisyen/gorev-takvim-sag-tik.png)
+
+Menü **görevin türüne göre değişir**:
+
+| Menü maddesi | Proje görevi | Diğer görevler |
+|---|---|---|
+| `Tamamla` / `Yeniden Aç` | — | ✔ (görev açıksa `Tamamla`, kapalıysa `Yeniden Aç`) |
+| `Detay` | ✔ | ✔ |
+| `Klonla` | — | ✔ |
+| `Kayda Yönlendir` | ✔ | ✔ |
+| `Sil` | — | ✔ |
+
+<Callout type="warn" title="DİKKAT">
+Yukarıdaki görsel **proje görevinin** menüsüdür; proje görevlerinde yalnız `Detay` ve
+`Kayda Yönlendir` bulunur. Sebebi, proje görevlerinin yaşam döngüsünün proje modülüne
+ait olmasıdır: tamamlama, klonlama ve silme işlemleri oradaki iş akışı kurallarından
+geçmek zorundadır.
+</Callout>
+
+`Kayda Yönlendir`, görevin bağlı olduğu kayda (olay, istek, problem, değişiklik veya
+proje) gider. `Detay` ise görevi ekranı terk etmeden çekmecede açar.
+
+## Boş bir dilime tıklama
+
+Ajandada **boş bir zaman dilimine** tıklamak küçük bir hızlı oluşturma formu açar.
+Buradan açılan görev, tıkladığınız teknisyene atanır, tıkladığınız saatte başlar ve
+varsayılan olarak **30 dakika** sürer. Bu yolla açılan görevler **teknisyen görevi**
+olarak kaydedilir — bir olaya veya isteğe bağlanmaz.
+
+<Callout type="info" title="ÖNEMLİ">
+Bir kayda bağlı görev açmak istiyorsanız hızlı oluşturmayı değil, ilgili kaydın kendi
+ekranındaki görev bölümünü ya da `Yeni Görev Ekle` çekmecesini kullanın.
+</Callout>
+
+## Klavye kısayolları
+
+Araç çubuğunun sağındaki `?` düğmesi kısayol listesini açar; `?` tuşu da aynı listeyi
+açıp kapatır.
+
+![Klavye kısayolları](/img/teknisyen/gorev-takvim-kisayollar.png)
+
+| Kısayol | Ne yapar |
+|---|---|
+| `←` `→` | Önceki / sonraki döneme geçer |
+| `T` | Bugüne döner |
+| `D` | Gün görünümü |
+| `W` | Hafta görünümü |
+| `M` | Ay görünümü |
+| `?` | Kısayol listesini açar/kapatır |
+
+## İlgili sayfalar
+
+<Cards>
+  <Card title="Liste" href="/docs/teknisyen/moduller/gorevler/liste">
+    Aynı görevleri ızgarada, tüm alanları ve süzgeçleriyle yönetin.
+  </Card>
+  <Card title="Görev Oluşturma" href="/docs/teknisyen/moduller/gorevler/gorev-olusturma">
+    `Yeni Görev Ekle` çekmecesindeki alanlar.
+  </Card>
+</Cards>
