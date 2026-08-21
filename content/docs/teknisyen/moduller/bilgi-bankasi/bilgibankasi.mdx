@@ -1,14 +1,35 @@
 ---
 title: "KB (Bilgi Bankası) Oluşturma"
-description: "Çözüm kaydı oluşturmak için Yeni Bilgi Kaydı butonuna tıklanır."
-reviewed: "2026-07-30"
+description: "Çözüm kaydı oluşturmak için Yeni Bilgi Kaydı butonuna tıklanır; konu, gövde, kategori ve yetki bilgileri girilir."
+reviewed: "2026-08-18"
 owner:
 ---
 
-![KB Modülü](/img/teknisyen/bilgibankasi-g1.png)
+Çözüm kaydı oluşturmak için `KB` sekmesinde sağ üstteki `Yeni Bilgi Kaydı` butonuna tıklanır. Açılan pencere aşağıdaki gibi olacaktır.
 
-Açılan pencere aşağıdaki gibi olacaktır.
+![Yeni Çözüm formu](/img/teknisyen/kb-yeni-kayit-ust.jpg)
 
-![KB Modülü](/img/teknisyen/kb2.png)
+<Callout type="info" title="ÖNEMLİ">
+Sağ üstteki `Şablondan Oluştur` bağlantısı ile mevcut bir şablonun içeriği taban alınarak yeni kayıt başlatılabilir. Şablonlar hakkında detay için bkz. [Şablonlar](/docs/teknisyen/moduller/bilgi-bankasi/sablonlar).
+</Callout>
 
-Konusunu, açıklamasını, kısa özetini, anahtar kelime belirlenmek isteniyorsa anahtar kelime yazarak, çözüm kaydının türünü seçerek, dosya eklemek istiyorsanız dosya ekleyerek ve çözüm kaydını bir fotoğraf altında görüntelemek istiyorsanız fotoğraf ekleyerek çözüm kaydını oluşturabilirsiniz.
+## Alanlar
+
+- **Konu** *(zorunlu)*: Çözüm kaydının başlığı.
+- **Gövde** *(zorunlu, 5000 karakter)*: Zengin metin editörü; kalın/italik/altı çizili/üstü çizili biçimlendirme, numaralı ve madde imli liste, bağlantı, görsel, video ve emoji ekleme desteklenir.
+- `Kategori` *(zorunlu)*: Çözümün ait olduğu kategori.
+- `Anahtar Kelime`: Kaydın aranabilirliğini artırmak için serbest metin etiketler eklenir.
+- `Bilgi Alanları`: Makalenin ekleneceği bilgi alanı (wiki alanı) seçilir. Bkz. [Bilgi Alanları](/docs/teknisyen/moduller/bilgi-bankasi/bilgialanlari).
+- **Şablon Olarak Kaydet**: Açılırsa kayıt, `Şablonlar` sekmesindeki şablon havuzuna eklenir.
+- `Ekler`: Kayda dosya eklenebilir.
+
+![Yeni Çözüm formu - alt kısım](/img/teknisyen/kb-yeni-kayit-alt.jpg)
+
+## Yetki Tanımlama
+
+Formun altındaki `Yetki Tanımlama` sekmesinde kaydın görünürlüğü gruplar bazında sınırlandırılabilir:
+
+- `Yetkili Kullanıcı Grupları`
+- `Yetkili Teknisyen Grupları`
+
+![Yetki Tanımlama](/img/teknisyen/kb-yetki-tanimlama.jpg)

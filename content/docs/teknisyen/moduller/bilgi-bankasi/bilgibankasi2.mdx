@@ -1,26 +1,48 @@
 ---
-title: "Hızlı Düzenleme ve Filtreler"
-description: "Çözüm kaydı açıldığında ve bilgi bankası modülüne geldiğinde statüsü onaylanmadı olarak gelecektir."
-reviewed: "2026-07-30"
+title: "Listeleme, Filtreleme ve Hızlı Düzenleme"
+description: "Çözüm Havuzu ızgara/liste görünümleri, filtre paneli ve kayıt üzerindeki hızlı işlemler (onay, düzenle, sil)."
+reviewed: "2026-08-18"
 owner:
 ---
 
-`Hızlı düzenleme`den onay verebilir veya onayı kaldırabilirsiniz.
+`KB` sekmesindeki `Çözüm Havuzu`, tüm çözüm kayıtlarını listeler. Sağ üstteki simgeler ile `ızgara` (kart) ve `liste` görünümleri arasında geçiş yapılabilir.
 
-![KB Modülü](/img/teknisyen/kb3.png)
+![Çözüm Havuzu](/img/teknisyen/kb-liste-izgara.jpg)
 
-Çözüm kaydını `düzenleyebilirsiniz`.
+Her kayıt kartında/satırında KB numarası, onay durumu, kategori etiketi, konu, kısa açıklama, görüntülenme sayısı ve tarih yer alır. `Tümünü Seç` kutusu ile toplu işlem için birden fazla kayıt seçilebilir.
 
-![KB Modülü](/img/teknisyen/kb4.png)
+## Filtre Paneli
 
-`Detay` alanından detayını görüntüleyebilir, yorum ekleyebilir ve çözüm kaydını düzenleyebilirsiniz.
+Sağ taraftaki `Filtre Paneli` üzerinden çözüm kayıtları aşağıdaki kriterlere göre listelenebilir:
 
-![KB Modülü](/img/teknisyen/kb5.png)
+- `KB Numarası`
+- `Konu`
+- `Anahtar Kelime`
+- `Onay Durumu`
+- `Kategori`
+- `Oluşturan`
+- `Oluşturulduğu Tarih`
+- `Görüntüleme Sayısı`
+- `Silinen Kayıtlar` (silinmiş kayıtları da listeye dahil eder)
 
-`Sil` alanından oluşturulan çözüm kaydını silebilirsiniz.
+Filtre panelinin altındaki `Uygulama Önerileri` bölümünde modülün kullanım amacına dair kısa bir rehber metni bulunur.
 
-![KB Modülü](/img/teknisyen/kb6.png)
+## Hızlı İşlemler
 
-`Filtre paneli` üzerinden çözüm kaydının numarasına göre, konusuna göre, teknisyenine, kategorisine, kısa özetine, görüntülenme sayısına ve onay durumuna göre çözüm kayıtlarını listeletebilirsiniz.
+Bir kayda tıklandığında `Makale Detayları` sekmesi açılır. Sekmenin sağ üstünde, kaydın onay durumuna göre değişen simgeler bulunur:
 
-![KB Modülü](/img/teknisyen/kb7.png)
+<Accordions type="single">
+<Accordion title="Ortak simgeler">
+
+- `Yorum Ekle`
+- `Versiyon Geçmişi`
+- `Düzenle`
+- `Bağlantıyı Kopyala`
+- `Sil`
+
+</Accordion>
+</Accordions>
+
+Onay durumuna göre farklılaşan simgeler ve ilgili işlemler için bkz. [Onay Süreci, Versiyon Geçmişi ve İşbirliği](/docs/teknisyen/moduller/bilgi-bankasi/bilgibankasi3).
+
+`Düzenle` simgesine tıklandığında kayıt, oluşturma formuyla aynı alanlarla (Konu, Gövde, Kategori, Anahtar Kelime, Bilgi Alanları, Ekler, Yetki Tanımlama) açılır ve `Güncelle` ile kaydedilir. `Bağlantıyı Kopyala` kaydın adresini panoya kopyalar.

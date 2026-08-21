@@ -1,0 +1,51 @@
+---
+title: "Bilgi Alanları (Wiki)"
+description: "Ekip içi wiki alanları: klasör/sayfa ağacı, üyelik ve erişim yönetimi, alan ayarları."
+reviewed: "2026-08-18"
+owner:
+---
+
+KB modülündeki `Bilgi Alanları` sekmesi, çözüm kayıtlarından bağımsız, ekip içi wiki/dokümantasyon alanları sağlar. Üstteki sayaçlarda toplam `Aktif Alan`, `Toplam Sayfa` ve `Katkıda Bulunan` sayısı görünür; alanlar `Tümü`, `Bilgi Bankası`, `Dokümantasyon` ve `Proje` filtreleriyle listelenebilir.
+
+Her alan kartında adı, kısa `Key` kodu, `Alan Tipi` etiketi, açıklaması, sayfa sayısı, üye sayısı ve etiketleri yer alır.
+
+## Alan Detayı
+
+Bir alana tıklandığında, sol tarafta klasör ve sayfalardan oluşan `Sayfa Ağacı`, üstte özet kutuları (`Klasör`, `Makale`, `Üye Sayısı`, `Erişim`) ve altında `Üyeler` listesi ile alan bilgileri (oluşturan, oluşturulma/son güncelleme tarihi, alan kodu) görüntülenir.
+
+![Bilgi Alanı detayı](/img/teknisyen/kb-bilgi-alani-detay.jpg)
+
+Sayfa ağacındaki bir sayfaya tıklandığında, üstte breadcrumb (konum) ve `Düzenle` butonuyla birlikte sayfa içeriği açılır.
+
+## Alan Ayarları
+
+Sağ üstteki `Ayarlar` butonu, alanın genel bilgilerini düzenlemek için bir panel açar:
+
+- `Alan Adı`
+- `Açıklama`
+- `Alan Tipi` (`Dokümantasyon`, `Bilgi Bankası`, `Proje`)
+- `Renk`
+- `Erişim` (`Özel` — anahtarı açık/kapalı bir seçenektir)
+- `Etiketler`
+- `Alan Sil`
+
+![Alan Ayarları](/img/teknisyen/kb-bilgi-alani-ayarlar.jpg)
+
+## Üye Yönetimi
+
+`Üye Yönetimi` butonu ile alan üyeleri yönetilir. Bu pencereden:
+
+- Kullanıcı seçip rolüyle birlikte tek tek eklenebilir,
+- Bir kullanıcı grubu seçip toplu olarak eklenebilir,
+- Başka bir alandan üye listesi kopyalanabilir,
+- Mevcut üyeler ada göre aranıp role göre filtrelenebilir,
+- Bir üyenin rolü değiştirilebilir veya üye kaldırılabilir,
+- Birden fazla üye seçilerek toplu rol atama veya toplu silme yapılabilir.
+
+Roller: `Yönetici`, `Katkıda Bulunan`, `Görüntüleyici`.
+
+![Üye Yönetimi](/img/teknisyen/kb-bilgi-alani-uye-yonetimi.jpg)
+
+## Yeni Alan Oluşturma
+
+`Bilgi Alanları` sekmesinin sağ üstündeki `Yeni Alan` butonuyla açılan form, `Alan Ayarları` panelindekiyle aynı alanları içerir (Alan Adı, Açıklama, Alan Tipi, Renk, Erişim, Etiketler).
