@@ -1,0 +1,43 @@
+---
+title: "Yeni Müşteri Hesabı Oluşturma"
+description: "Yeni Müşteri Hesabı panelindeki alanlar ve hesap oluşturma adımları."
+reviewed: "2026-08-18"
+owner:
+---
+
+Sağ üstteki `Yeni Müşteri Hesabı` düğmesine tıklandığında ekranın sağından
+`Oluştur` paneli açılır.
+
+![Yeni müşteri hesabı paneli](/img/teknisyen/musteriler-yeni-hesap.png)
+
+1. **Özel Form** — hesap oluştururken kullanılacak form şablonu seçilir (varsayılan: **Müşteri Default**).
+2. **Müşteri Adı** ve **Müşteri Alan Adı** — hesabın adı ve firmaya ait alan adı.
+3. **Açıklama** — zengin metin düzenleyici; biçimlendirme, tablo, bağlantı ve görsel eklenebilir.
+4. **Sınıflandırma ve ticari alanlar** — **Hesap Türü**, **Sektör**, **Gelir**, **Posta Kodu**, **CRM No** ve **Bağlı Olduğu Müşteri**.
+5. **Hesap için mailden yeni kullanıcı açılmasın** — açık olduğunda, bu hesaba gelen e-postalardan otomatik kullanıcı oluşturulmaz.
+6. `Kaydet` — hesabı oluşturur. Panelin sol altındaki `Vazgeç` ile işlem iptal edilir.
+
+## Alanlar
+
+| Alan | Açıklama |
+|---|---|
+| **Müşteri Adı** | Listede ve kayıt başlıklarında görünen hesap adı |
+| **Müşteri Alan Adı** | Firmanın alan adı (örn. `ornekfirma.com.tr`) |
+| **Açıklama** | Hesabı tanımlayan serbest metin |
+| **E-Posta Alan Adı** | Hesaba bağlanacak e-posta alan adı |
+| **Hesap Türü** | `External Customer`, `Internal Customer` veya `Partner` |
+| **Sektör** | Hesabın sektörü; panoda sektör dağılımı bu alandan üretilir |
+| **Gelir** | Hesabın gelir bilgisi; panodaki gelir göstergelerini besler |
+| **Posta Kodu** | Adres posta kodu |
+| **CRM No** | Dış CRM sistemindeki karşılık numarası |
+| **Bağlı Olduğu Müşteri** | Alt firma yapısı için üst müşteri hesabı |
+| **Adres** | Hesabın açık adresi |
+
+<Callout type="info" title="ÖNEMLİ">
+**Hesap Türü** ve **Sektör** listelerinin içeriği yönetim ayarlarından tanımlanır;
+kurulumunuzda farklı seçenekler görebilirsiniz.
+</Callout>
+
+Kayıt oluşturulduktan sonra hesabın kişileri, yetkili teknisyenleri, sözleşmeleri
+ve varlıkları kayıt detayından yönetilir. Bkz.
+[Müşteri Detayı](/docs/teknisyen/moduller/musteriler/detay).

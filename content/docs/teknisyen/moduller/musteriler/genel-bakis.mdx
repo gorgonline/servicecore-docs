@@ -1,0 +1,60 @@
+---
+title: "Genel Bakış"
+description: "Müşteriler modülünün çalışma alanı sekmeleri ve müşteri portföyünü özetleyen Pano ekranı."
+reviewed: "2026-08-18"
+owner:
+---
+
+Müşteriler modülünde birden fazla harici müşteri hesabı yönetilir. Kurumunuza ait
+destek hesapları eklenebilir, düzenlenebilir ve durumları (aktif / devre dışı)
+kontrol edilebilir. Böylece her müşteri için farklı alan adları ve açıklamalarla
+detaylı yönetim sağlanır.
+
+Modüle üst menüdeki `Müşteriler` bağlantısı ile girilir.
+
+## Ekranın yapısı
+
+Modül, sekmeli bir çalışma alanı olarak çalışır: `Pano` ve `Müşteriler` sabit
+sekmelerdir, açtığınız her müşteri kaydı için ise ayrı bir sekme eklenir. Böylece
+birden fazla müşteri kaydı aynı anda açık tutulabilir.
+
+![Müşteriler Panosu](/img/teknisyen/musteriler-pano.png)
+
+1. **Çalışma alanı sekmeleri** — `Pano`, `Müşteriler` ve açık müşteri kayıtları. Kayıt sekmeleri, sekme adının yanındaki `×` ile kapatılır.
+2. `Yeni Müşteri Hesabı` — yeni hesap oluşturma panelini açar. Bkz. [Yeni Müşteri Hesabı Oluşturma](/docs/teknisyen/moduller/musteriler/yeni-hesap).
+3. **Hesap transferi** ikonu — kullanıcıların hesaplar arasında yönetildiği ekranı açar. Bkz. [Hesap Transferi](/docs/teknisyen/moduller/musteriler/hesap-transferi).
+4. **Özet kartları** — portföyün sayısal özeti.
+5. **Grafikler** — dağılım ve kırılım grafikleri.
+6. **Hizmet Planı & Faturalama** — destek planı ve faturalama göstergeleri.
+
+## Özet kartları
+
+| Kart | Gösterdiği bilgi |
+|---|---|
+| **Toplam Müşteri** | Aktif ve pasif müşterilerin toplam sayısı |
+| **Aktif Müşteri** | Aktif müşteri sayısı ve aktif oranı |
+| **Pasif Müşteri** | Pasif müşteri sayısı ve pasif oranı |
+| **Toplam Gelir** | Tüm müşterilerin gelir alanlarının toplamı |
+
+## Grafikler
+
+- **Sektöre göre dağılım** — müşterilerin sektör bazında sayısı.
+- **Zaman dilimine göre dağılım** — müşterilerin zaman dilimi kırılımı ve toplam sayısı.
+- **En yüksek gelirli ilk 10** — gelire göre sıralanmış ilk on müşteri.
+- **Aktif Oranı** — aktif müşterilerin toplam içindeki yüzdesi.
+- **Domain & firma yapısı** — domaini tanımlı, e-posta domaini tanımlı, bağlı olduğu müşteri ve alt firma kırılımları.
+
+Her grafik kartının sağ üstündeki `⋮` menüsünden `Yenile` ile o kartın verisi
+yeniden çekilir.
+
+<Callout type="info" title="ÖNEMLİ">
+Grafik ve kartlar sayfa açıldıktan sonra arka planda yüklenir. Değerler ilk anda
+boş görünüyorsa yükleme tamamlanana kadar bekleyin veya kartın `⋮` menüsünden
+`Yenile` deyin.
+</Callout>
+
+## Hizmet Planı & Faturalama
+
+Sayfanın alt şeridinde destek planı ve faturalama göstergeleri yer alır:
+**Aktif Destek Planı**, **Bu Ay Faturalanacak Tutar**, **Kullanılan Destek Saati**,
+**Kalan Destek Kredisi**, **Kapsam Dışı İş Sayısı** ve **Bu Ay Yenilenecek Sözleşme**.
