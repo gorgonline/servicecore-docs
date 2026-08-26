@@ -1,14 +1,23 @@
 ---
 title: "Yol Haritası"
 description: "Projenin Gantt görünümü: zaman ölçeği, gruplama, çubukların sürüklenmesi, kritik yol, referans çizgisi ve dışa aktarma."
-reviewed: "2026-08-11"
+reviewed: "2026-08-18"
 owner:
 ---
 
 `Yol Haritası`, projedeki işleri zaman ekseninde gösterir. Solda ızgara, sağda Gantt
 şeridi bulunur; ikisi birlikte kayar.
 
-![Yol haritası (Gantt) ekranı](/img/teknisyen/proje-yol-haritasi.png)
+## Ekranın bölümleri
+
+![Yol haritası ekranının bölümleri](/img/teknisyen/proje-yol-haritasi-yerlesim.png)
+
+| # | Bölüm | Ne işe yarar |
+|---|---|---|
+| ❶ | Ölçek denetimleri | `Saat`/`Gün`/`Hafta`/`Ay`/`Çeyrek`, `Ekrana sığdır` ve `Bugün` |
+| ❷ | Sol ızgara | Görev listesi; kolonları sıralanabilir, genişliği ayarlanabilir |
+| ❸ | Zaman ekseni başlığı | Seçili ölçeğe göre hafta/ay/çeyrek sütunları |
+| ❹ | Sprint çubuğu | Sprintin tarih aralığı; altındaki görev çubuklarını kapsar |
 
 ## Zaman ölçeği
 
@@ -26,11 +35,20 @@ Dikey turuncu çizgi **bugünü** gösterir.
 
 ## Gruplama
 
+![Yol haritası sol ızgara başlığı](/img/teknisyen/proje-yol-haritasi-izgara.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | Sabitlenmiş kolon | Görev adı; yatay kaydırmada yerinde kalır |
+| ❷ | Kolon seçici | Izgarada görünecek kolonları belirler |
+
 Sol üstteki seçici satırları kümeler. Ekran görüntüsündeki görünüm sprintlere göre
 gruplanmıştır: her sprint başlığında tamamlanma yüzdeleri ve görev sayısı rozeti bulunur.
 `Atanan Kişiye Göre Grupla` seçildiğinde satırlar kişi bazında toplanır.
 
 ## Çubuklar
+
+![Yol haritasında bir görev çubuğu](/img/teknisyen/proje-yol-haritasi-cubuk.png)
 
 Her görev, başlangıç ve bitiş tarihine göre bir çubukla çizilir. Çubuk **sürüklenerek**
 taşınır, kenarından çekilerek süresi değiştirilir; bu işlem görevin tarihlerini günceller.
