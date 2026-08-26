@@ -1,16 +1,32 @@
 ---
 title: "Kaynaklar"
 description: "Projenin ölçüm ekranı: sprint sağlığı, iş yükü ve kapasite, tükenme ve hız grafikleri; hangi alt sekmenin hangi yapı türünde göründüğü."
-reviewed: "2026-08-11"
+reviewed: "2026-08-18"
 owner:
 ---
 
 `Kaynaklar`, projenin sayısal görünümüdür: sprint sağlığı, ekip yükü, kapasite ve çevik
 grafikler burada toplanır. Ekran çok sayıda **alt sekmeden** oluşur.
 
-![Kaynaklar sekmesi — sprint sağlığı panosu](/img/teknisyen/proje-kaynaklar.png)
+## Ekranın bölümleri
+
+![Kaynaklar sekmesinin bölümleri](/img/teknisyen/proje-kaynaklar-yerlesim.png)
+
+| # | Bölüm | Ne işe yarar |
+|---|---|---|
+| ❶ | Üst şerit | Görev, hikaye puanı, iş yükü ve kapasite sayaçları |
+| ❷ | Sprint seçici ve dışa aktarma | Panoyu bir sprinte daraltır; CSV üretir |
+| ❸ | Sağlık kartları | Sprint sağlık puanı, ilerleme, tamamlama ve iş yükü dengesi |
 
 ## Üst şerit
+
+![Kaynaklar üst şeridi](/img/teknisyen/proje-kaynaklar-ozet.png)
+
+| # | Sayaç | Ne gösterir |
+|---|---|---|
+| ❶ | Görev sayacı | Sekmede kapsanan toplam görev |
+| ❷ | Hikaye puanı | Toplam HP |
+| ❸ | İş yükü | Tahmini sürelerin toplamı (saat) |
 
 Sol üstteki seçici görünümü bir sprinte daraltır (`Tüm sprintler` varsayılandır). Sağ
 üstte projeye atanmış üye sayısı ve `CSV Dışa Aktar` bulunur.
@@ -36,6 +52,13 @@ aittir, bu yüzden çevik grafiklerin tamamı görünür.
 </Callout>
 
 ## Sprint sağlığı panosu
+
+![Sprint sağlığı kartları](/img/teknisyen/proje-kaynaklar-saglik.png)
+
+| # | Kart | Ne gösterir |
+|---|---|---|
+| ❶ | Sağlık puanı | Sprintin genel durumu (Kritik / İyi / …) |
+| ❷ | Sprint ilerlemesi | Geçen süreye göre tamamlanma |
 
 `Pano` alt sekmesi sprintin durumunu kartlarla özetler:
 
