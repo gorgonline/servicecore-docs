@@ -1,0 +1,72 @@
+---
+title: "Sözleşme Panosu"
+description: "Sözleşme modülünün Pano sekmesindeki özet kartları, grafikleri ve bu sayıların hangi kurala göre hesaplandığı."
+reviewed: "2026-08-20"
+owner: berdanasen
+---
+
+`Sözleşme` menüsü açıldığında ilk gelen sekme `Pano`'dur. Pano; kurum içi, tedarikçi
+ve müşteri hizmet sözleşmelerinin tamamını tek ekranda özetler ve hiçbir kayıt
+üzerinde değişiklik yapmaz — yalnızca okuma amaçlıdır.
+
+<Callout type="info" title="ÖNEMLİ">
+Pano yalnızca yeni sözleşme ekranlarında bulunur. Yeni ekranlar `Genel Ayarlar` altındaki
+**Yeni sözleşme sayfalarına yönlendir (beta)** seçeneği ile açılır. Seçenek kapalıysa
+sözleşmeler eski ekranlarda görüntülenir ve `Pano` sekmesi görünmez.
+</Callout>
+
+## Özet kartları
+
+Panonun üst satırında altı özet kartı bulunur. Kartlardaki sayı **üç sözleşme
+tipinin toplamıdır**.
+
+| Kart | Hangi sözleşmeler sayılır |
+|---|---|
+| `Aktif` | Aktif olan ve iptal edilmemiş sözleşmeler |
+| `Pasif` | Pasif olan **veya** iptal edilmiş sözleşmeler |
+| `Süresi Yaklaşmış` | Aktif, iptal edilmemiş ve bitiş tarihi bugün ile bugünden 30 gün sonrası arasında olan sözleşmeler |
+| `Süresi Doldu` | Bitiş tarihi bugünden önce olan sözleşmeler (aktif/pasif ayrımı yapılmaz) |
+| `Onay Bekleyen` | Onay durumu onay bekleyen sözleşmeler (e-posta üzerinden onay bekleyenler dâhil) |
+| `Onaylandı` | Onay durumu onaylandı olan sözleşmeler |
+
+![Panodaki altı özet kartı](/img/teknisyen/sozlesme-v2-pano-kartlar.png)
+
+`Aktif` kartındaki yüzde çipi, aktif sözleşmelerin `Aktif + Pasif` toplamına oranıdır.
+
+<Callout type="warn" title="DİKKAT">
+`Süresi Doldu` sayısı diğer kartlardan bağımsız hesaplanır; süresi geçmiş bir
+sözleşme hâlâ aktif durumdaysa hem `Aktif` hem `Süresi Doldu` kartında sayılır.
+Kart toplamları bu nedenle birbirine eklenerek toplam sözleşme sayısı elde edilmez.
+</Callout>
+
+## Grafikler
+
+Özet kartlarının altında beş grafik alanı yer alır:
+
+![Pano grafikleri](/img/teknisyen/sozlesme-v2-pano-grafikler.png)
+
+- **Sözleşme Tipi Aktiflik Dağılımı** — her sözleşme tipi için aktif ve pasif sayısını yan yana gösterir.
+- **Onay Özeti** — onay bekleyen ve onaylanan sözleşme sayılarını karşılaştırır. Her ikisi de sıfırsa grafik yerine boş içerik görünür.
+- **Aktif Oranı** — aktif sözleşme oranını gösterge (gauge) olarak gösterir.
+- **Risk Ve Onay Odağı** — her sözleşme tipi için `Süresi Yaklaşmış`, `Süresi Doldu` ve `Onay Bekleyen` sayılarını yatay çubuklarla karşılaştırır.
+- **İlgili taraf dağılımı** — her sözleşme tipi için ayrı bir grafik çizilir:
+  - Kurum İçi Destek Sözleşmeleri için `Departman Dağılımı`
+  - Tedarikçi Sözleşmeleri için `Tedarikçi Dağılımı`
+  - Müşteri Hizmet Sözleşmeleri için `Müşteri Dağılımı`
+
+  Dağılım grafiklerinde **en çok sözleşmeye sahip ilk 10 kayıt** listelenir; departmanı,
+  tedarikçisi veya müşteri hesabı boş olan sözleşmeler `Tanımsız` başlığı altında toplanır.
+
+Grafik kartlarının sağ üstündeki `⋮` menüsündeki `Yenile` seçeneği pano verisini yeniden çeker.
+
+## Görünürlük ve yetki
+
+- Panoyu görmek için `Sözleşmeleri Görebilir` yetkisi gerekir. Yetkiler
+  `Yönetici ▸ Roller` altında, ilgili rolün `Sözleşme` sekmesinden verilir.
+
+![Rol düzenleme ekranındaki sözleşme yetkileri](/img/teknisyen/sozlesme-v2-rol-yetkileri.png)
+
+- Yetkili teknisyen grubu kısıtı panoya da uygulanır: kısıta tabi bir kullanıcı yalnızca
+  hiçbir teknisyen grubuna bağlanmamış sözleşmeleri ve kendi üyesi olduğu gruplara bağlı
+  sözleşmeleri sayılara dâhil edilmiş görür. Bu nedenle iki kullanıcının panosundaki
+  sayılar farklı olabilir. Ayrıntı için bkz. [Bildirimler ve Geçmiş](/docs/teknisyen/moduller/sozlesmeler/bildirimler-gecmis).
