@@ -1,0 +1,48 @@
+---
+title: "Onay Süreci, Versiyon Geçmişi ve İşbirliği"
+description: "Çözüm kayıtlarında onay/red işlemleri, versiyon geçmişi, yorumlar (satır içi ve genel) ve kayda bağlı beyaz tahtalar."
+reviewed: "2026-08-18"
+owner:
+---
+
+Yeni oluşturulan bir çözüm kaydı `Onay Bekliyor` durumunda gelir. Kayıt detayının sağındaki `Makale Özellikleri` panelinde durum bu şekilde görünür.
+
+![Onay Bekliyor durumundaki kayıt](/img/teknisyen/kb-onay-bekliyor.jpg)
+
+## Onaylama ve Reddetme
+
+`Onay Bekliyor` durumundaki bir kayıtta, `Makale Detayları` başlığının sağındaki araç çubuğunda iki ayrı onay simgesi bulunur:
+
+- Kırmızı çarpı: kaydı **reddeder**
+- Yeşil onay işareti: kaydı **onaylar**
+
+Kayıt onaylandıktan sonra durum `Onaylandı` olarak değişir ve araç çubuğundaki iki simge yerini tek bir turuncu çarpı simgesine bırakır; bu simge ile **onay geri alınabilir**.
+
+<Callout type="info" title="ÖNEMLİ">
+`Bilgiler` panelinde onaylayan kullanıcı ve onay tarihi ayrıca gösterilir.
+</Callout>
+
+## Versiyon Geçmişi
+
+Araç çubuğundaki saat simgesi `Versiyon Geçmişi` panelini açar. Kayıt düzenlenip güncellendikçe her güncelleme ayrı bir versiyon (v1, v2, ...) olarak listelenir; hiç düzenleme yapılmamış bir kayıtta panel boş görünür.
+
+Her versiyon satırında değişikliği yapan kullanıcı, tarih, değişen alanlar (`Değişen:` etiketleri) ve kısa bir özet yer alır. `Bu versiyonu gör` ile o versiyonun içeriği görüntülenebilir; en güncel versiyonda ayrıca `Öncekiyle karşılaştır` bağlantısı bulunur. Panelin altındaki `Versiyonları Karşılaştır` alanından iki versiyon seçilip yan yana karşılaştırılabilir.
+
+![Versiyon Geçmişi](/img/teknisyen/kb-versiyon-gecmisi.jpg)
+
+## Yorumlar
+
+İki tür yorum vardır:
+
+- **Genel yorumlar**: Kayıt detayının altındaki `Yorum Ekle` alanından, zengin metin editörü ile eklenir. Eklenen yorumlar `Yorumlar` başlığı altında listelenir.
+- **Satır içi yorumlar**: Makale içeriğinde bir metin parçası seçildiğinde açılan pencereden, o metne özel bir yorum eklenir. Satır içi yorumlar `Satır İçi Yorumlar` panelinde `Açık`, `Çözülen` ve `Tümü` sekmeleriyle listelenir; her yorum konusuna yanıt yazılabilir ve çözüldü olarak işaretlenebilir.
+
+Her iki yorum türünde de `@` yazılarak kullanıcı etiketlenebilir (mention).
+
+![Yorum Ekle ve Beyaz Tahtalar](/img/teknisyen/kb-yorum-beyaz-tahta.jpg)
+
+![Satır İçi Yorumlar](/img/teknisyen/kb-satir-ici-yorum.jpg)
+
+## Beyaz Tahtalar
+
+Kayıt detayının sağ alt köşesindeki `Beyaz Tahtalar` bölümünden, kayda bağlı bir veya birden fazla beyaz tahta (whiteboard) oluşturulabilir. Bu, çözümü görsel olarak (akış şeması, diyagram vb.) desteklemek için kullanılır.
