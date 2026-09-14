@@ -1,0 +1,66 @@
+---
+title: "Kanban Pano"
+description: "Süreç başına ayrı kanban panosu: durum sütunları, teknisyen kulvarları ve görev kartları."
+reviewed: "2026-08-19"
+owner:
+---
+
+`Kanban Pano` sekmesi görevleri durumlarına göre sütunlarda gösterir. Görevlerin
+yer aldığı **her ITSM süreci için ayrı bir pano** vardır; panolar üstteki sekmelerden
+değiştirilir.
+
+## Ekranın bölümleri
+
+![Kanban panosunun bölümleri](/img/teknisyen/gorev-kanban-yerlesim.png)
+
+| # | Bölüm | Ne işe yarar |
+|---|---|---|
+| ❶ | Süreç sekmeleri | `Teknisyen`, `Olay`, `İstek`, `Problem`, `Değişiklik` panoları |
+| ❷ | Süzgeçler | `Teknisyen Grubu` ve tarih aralığı |
+| ❸ | Sütun başlıkları | Görev durumları ve her sütundaki kart adedi |
+| ❹ | Kulvar başlığı | Kulvarın kime ait olduğu ve içindeki görev sayısı |
+| ❺ | Kart | Tek bir görev |
+
+## Süreç panoları
+
+Her sekme yalnız o süreçte açılmış görevleri gösterir:
+
+| Sekme | İçerdiği görevler |
+|---|---|
+| **Teknisyen** | Bir kayda bağlı olmadan doğrudan açılan teknisyen görevleri |
+| **Olay** | Olay kayıtlarında açılan görevler |
+| **İstek** | İstek kayıtlarında açılan görevler |
+| **Problem** | Problem kayıtlarında açılan görevler |
+| **Değişiklik** | Değişiklik kayıtlarında açılan görevler |
+
+<Callout type="info" title="ÖNEMLİ">
+Sekmeler panoyu **değiştirir**, süzmez. Bir süreçte hiç görev yoksa o panonun sütunları
+`Görev yok` yazar; bu, süzgeçlerin yanlış olduğu anlamına gelmez.
+</Callout>
+
+## Sütunlar ve kulvarlar
+
+Sütunlar görev **durumlarıdır**; başlıktaki sayı o sütundaki kart adedidir. Satırlar
+(kulvarlar) görevin **atandığı teknisyeni** gruplar; kulvar başlığında kişinin adı ve
+görev sayısı yazar. Kulvar başlığındaki ok ile kulvar katlanır.
+
+Kartı bir sütundan diğerine sürüklemek görevin durumunu değiştirir.
+
+## Kart üzerindeki bilgiler
+
+![Bir kanban kartı](/img/teknisyen/gorev-kanban-kart.png)
+
+Kartta görev numarası, öncelik bilgisi, görev konusu ve öncelik rozeti yer alır. Kartın
+sol kenarındaki renk şeridi görevin **hangi modülden geldiğini** gösterir — renklerin
+karşılığı ekranın üstündeki renk kodu şeridindedir.
+
+## İlgili sayfalar
+
+<Cards>
+  <Card title="Liste" href="/docs/teknisyen/moduller/gorevler/liste">
+    Aynı görevleri ızgarada, tüm alanlarıyla süzerek yönetin.
+  </Card>
+  <Card title="Takvim" href="/docs/teknisyen/moduller/gorevler/takvim">
+    Görevleri teknisyen ajandasında zamana yerleştirin.
+  </Card>
+</Cards>

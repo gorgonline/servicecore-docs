@@ -1,0 +1,45 @@
+---
+title: "Görev Oluşturma"
+description: "Yeni Görev Ekle çekmecesi: konu, açıklama, atama, tarih ve öncelik alanları ile özel form yapısı."
+reviewed: "2026-08-19"
+owner:
+---
+
+Görev, ekranın sağ üstündeki `Yeni Görev Ekle` düğmesiyle açılan **çekmeceden**
+oluşturulur. Çekmece dört görünümün hepsinde aynıdır.
+
+## Çekmecenin bölümleri
+
+![Yeni görev çekmecesi](/img/teknisyen/gorev-olusturma-cekmece.png)
+
+| # | Bölüm | Ne işe yarar |
+|---|---|---|
+| ❶ | Başlık | Çekmecenin adı; `×` ile kapatılır |
+| ❷ | Konu alanı | Görevin başlığı |
+| ❸ | Alan ızgarası | Atama, tarih ve öncelik alanlarının ikili yerleşimi |
+
+Çekmece aşağıya doğru konu, açıklama, atama (grup/teknisyen), planlanan başlangıç–bitiş
+ve öncelik alanlarını sırayla sunar; en altta kaydetme düğmeleri bulunur.
+
+<Callout type="info" title="ÖNEMLİ">
+Bu form **özel form tasarımcısıyla** üretilir. Bu yüzden alanların hangileri olduğu,
+sırası ve zorunluluğu tenanttan tenanta değişebilir; yukarıdaki görsel varsayılan
+düzeni gösterir.
+</Callout>
+
+<Callout type="warn" title="DİKKAT">
+Görevi **tarihsiz veya teknisyensiz** kaydederseniz görev takvimde görünmez; `Takvim`
+sekmesindeki **Görev Kuyruğu**'na düşer. Kuyruğun kalabalıklaşmaması için görevi
+açarken tarih ve teknisyen vermek en temizidir.
+</Callout>
+
+## İlgili sayfalar
+
+<Cards>
+  <Card title="Takvim" href="/docs/teknisyen/moduller/gorevler/takvim">
+    Kuyruktaki görevi sürükleyerek ajandaya yerleştirin.
+  </Card>
+  <Card title="Görev Detayı" href="/docs/teknisyen/moduller/gorevler/gorev-detayi">
+    Oluşturulan görevin detay çekmecesi.
+  </Card>
+</Cards>

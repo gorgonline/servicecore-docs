@@ -1,0 +1,88 @@
+---
+title: "Liste"
+description: "Görev ızgarası: kolonlar, süzgeç paneli, toplu işlem, satır eylemleri ve sayfalama."
+reviewed: "2026-08-19"
+owner:
+---
+
+`Liste` sekmesi tüm görevleri ızgarada listeler. Takvim işin *ne zaman* yapılacağını
+gösterir; bu ekran *hangi görevin hangi durumda* olduğunu — alanlarıyla, süzgeçleriyle
+ve toplu işlemleriyle.
+
+## Ekranın bölümleri
+
+![Görev listesinin bölümleri](/img/teknisyen/gorev-liste-yerlesim.png)
+
+| # | Bölüm | Ne işe yarar |
+|---|---|---|
+| ❶ | Araç çubuğu | Toplu seçim, toplu işlem, arama ve sıralama |
+| ❷ | Izgara | Görev satırları ve satır sonundaki eylem düğmeleri |
+| ❸ | Süzgeç paneli | Listeyi daraltan alan bazlı süzgeçler |
+
+## Kolonlar
+
+| Kolon | İçerik |
+|---|---|
+| `Durum` | Görevin durumu (`Yapılacaklar`, `Devam Etmekte`, `Gözden Geçirilmekte`, `Tamamlanmış`…) |
+| `Görev No` | `#<kayıt>-<görev>` biçiminde numara; altında bağlı olduğu kayıt |
+| `Teknisyen` | Görevin atandığı teknisyen |
+| `Kullanıcı` | Görevin ilgili olduğu son kullanıcı |
+| `Konu` | Görev başlığı |
+| `Planlanan Başlangıç` | Planlanan başlangıç tarihi |
+| `Planlanan Bitiş` | Planlanan bitiş tarihi |
+| `İşlemler` | Satır eylemleri |
+
+`İşlemler` kolonunda üç düğme bulunur: **göz** simgesi görev detayı çekmecesini açar,
+**onay** simgesi görevi tamamlanmış olarak işaretler, **çöp kutusu** görevi siler.
+
+## Araç çubuğu
+
+Soldaki `Tümünü Seç` kutusu görünen satırların tümünü seçer. Seçim yapıldıktan sonra
+`Toplu işlem` listesinden bir eylem seçilip `Uygula` ile çalıştırılır.
+
+![Toplu işlem seçenekleri](/img/teknisyen/gorev-liste-toplu-islem.png)
+
+| Toplu işlem | Ne yapar |
+|---|---|
+| `Kapat` | Seçili görevleri tamamlanmış olarak kapatır |
+| `Aç` | Kapalı görevleri yeniden açar |
+| `Sil` | Seçili görevleri siler |
+
+<Callout type="info" title="ÖNEMLİ">
+Seçenekler seçime göre etkinleşir: hepsi zaten açık görevlerden oluşan bir seçimde `Aç`
+soluk kalır. Toplu işlem **yalnız seçili satırlara** uygulanır, süzgeçle daralttığınız
+listenin tamamına değil.
+</Callout>
+
+Sağdaki iki arama kutusundan ilki **görev numarasına**, ikincisi görev metnine göre arar.
+Alttaki seçici sıralama alanını (`Görev Numarası`, tarih alanları…), yanındaki ok ise
+sıralama yönünü belirler.
+
+## Süzgeç paneli
+
+![Süzgeç paneli](/img/teknisyen/gorev-liste-suzgec.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | `Temizle` | Tüm süzgeçleri sıfırlar |
+| ❷ | Süzgeç grubu | Etiket ve seçici çifti |
+
+Panelde şu süzgeçler vardır: `Teknisyen Grubu`, `Teknisyen`, `Kullanıcı`, `Aşama`,
+`Durum`, `Kategori` ve `Planlanan Başlangıç - Bitiş` tarih aralığı.
+
+## Sayfalama
+
+Izgaranın altında toplam kayıt sayısı ve sayfa boyutu yer alır. Liste **tüm modüllerin**
+görevlerini içerdiği için toplam sayı yüksektir; ekranı daraltmak için süzgeç panelini
+kullanın.
+
+## İlgili sayfalar
+
+<Cards>
+  <Card title="Takvim" href="/docs/teknisyen/moduller/gorevler/takvim">
+    Aynı görevleri teknisyen ajandasında planlayın.
+  </Card>
+  <Card title="Görev Detayı" href="/docs/teknisyen/moduller/gorevler/gorev-detayi">
+    Satırdaki göz simgesinin açtığı çekmece.
+  </Card>
+</Cards>
