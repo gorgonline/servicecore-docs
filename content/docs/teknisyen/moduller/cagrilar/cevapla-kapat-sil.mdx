@@ -1,0 +1,100 @@
+---
+title: "Cevaplama, Kapatma ve Silme"
+description: "Çağrıya e-postayla cevap verip kapatma, çağrıyı bir açıklamayla kapatma, silme ve kapatılmış çağrıyı yeniden açma."
+reviewed: "2026-09-24"
+owner: berdanasen
+---
+
+Her çağrı bir olaya ya da isteğe dönüşmez. Bilgi almak için yazılan, kısa bir cevapla
+çözülen ya da destek kapsamında olmayan talepler doğrudan çağrı üzerinde sonuçlandırılır.
+Bunun için kartın sağındaki son üç buton kullanılır:
+
+- **Cevapla ve Kapat:** Kullanıcıya e-postayla cevap verilmesi yeterliyse.
+  Örneğin misafir ağ şifresini soran bir kullanıcıya bilgiyi iletmek.
+- **Kapat:** Cevap yazmaya gerek olmayan talepler için.
+  Örneğin kurum içi bir bilgilendirme e-postası ya da telefonda çözülen bir sorun.
+- **Sil:** Hiç kayıt altında tutulmaması gereken talepler için.
+  Örneğin kampanya e-postaları, istenmeyen (spam) e-postalar ya da yanlışlıkla açılmış mükerrer kayıtlar.
+
+## Cevapla ve Kapat
+
+Zarf simgeli `Cevapla ve Kapat` butonuna tıklandığında `Tümünü Cevapla` penceresi açılır.
+Pencere, kullanıcının adresi alıcı olarak eklenmiş ve çağrının açıklaması mesaj alanına
+alınmış olarak gelir. Cevabınızı mesajın en üstüne yazın.
+
+![Tümünü Cevapla penceresi](/img/teknisyen/cagri-cevapla-kapat.png)
+
+| # | Alan | Açıklama |
+|---|---|---|
+| ❶ | `Kimden` | Cevabın gönderileceği destek e-posta adresi. Kurumunuzda birden fazla destek adresi tanımlıysa listeden seçebilirsiniz |
+| ❷ | `Kime` | Cevabın gideceği adresler. Çağrıyı açan kullanıcı otomatik eklenir; başka adres de yazabilirsiniz. Sağdaki `BCC` ile gizli alıcı alanını açabilirsiniz |
+| ❸ | `CC` | Bilgi olarak eklenecek adresler |
+| ❹ | Mesaj | Kullanıcıya gidecek metin. Altında kullanıcının ilk mesajı yer alır |
+| ❺ | Dosya ekleme | Cevaba dosya eklemek için dosyayı bu alana sürükleyin ya da alana tıklayıp seçin |
+| ❻ | Önem düzeyi | E-postayı `Düşük` ya da `Yüksek` önemli olarak işaretler |
+| ❼ | `Gönder` | Cevabı gönderir ve çağrıyı kapatır |
+
+`Gönder` butonuna bastığınızda e-posta kullanıcıya gönderilir, çağrı kapatılır ve açık
+çağrılar listesinden çıkar. `Vazgeç` butonu hiçbir şey göndermeden pencereyi kapatır.
+
+<Callout type="info" title="ÖNEMLİ">
+`Kime` ve `CC` alanlarına yazılan adresler kontrol edilir. Geçersiz bir e-posta adresi
+yazılırsa hangi adresin hatalı olduğu alanın altında gösterilir ve e-posta gönderilmez.
+</Callout>
+
+## Kapat
+
+Klasör simgeli `Kapat` butonuna tıklandığında `Kapat` penceresi açılır.
+
+![Kapat penceresi](/img/teknisyen/cagri-kapat.png)
+
+| # | Alan | Açıklama |
+|---|---|---|
+| ❶ | Kapanış durumu | Çağrının hangi durumla kapatılacağı. Çağrıyı doğrudan kapatıyorsanız `Kapatılanlar` seçin |
+| ❷ | `Kapatma Yorumu` | Çağrının neden ve nasıl kapatıldığı. **Zorunludur** |
+| ❸ | `Kaydet` | Çağrıyı kapatır |
+
+Kaydettiğinizde çağrı kapatılır ve açık çağrılar listesinden çıkar. Kapatma yorumu
+çağrının kaydında saklanır.
+
+## Sil
+
+Çöp kutusu simgeli `Sil` butonuna tıklandığında önce bir onay sorusu çıkar.
+
+![Silme onayı](/img/teknisyen/cagri-sil-onay.png)
+
+`Emin misiniz?` sorusuna `Evet` derseniz `Sil` penceresi açılır; `Hayır` işlemi iptal eder.
+
+![Sil penceresi](/img/teknisyen/cagri-sil.png)
+
+| # | Alan | Açıklama |
+|---|---|---|
+| ❶ | Durum | Silinen çağrının alacağı durum |
+| ❷ | `Silme Gerekçesi` | Çağrının neden silindiği. **Zorunludur** |
+| ❸ | `Kaydet` | Çağrıyı siler |
+
+Silinen çağrı listeden kalkar. Silinen çağrıları yeniden görmek için `Kontrol Paneli`'ndeki
+`Silinmiş mi?` kutusunu işaretleyin. Bu kutu yalnızca `Silinen Kayıtları Görebilir` yetkisi
+olan kullanıcılarda etkindir.
+
+<Callout type="warn" title="DİKKAT">
+`Sil` butonu kapatılmış ve dönüştürülmüş çağrılarda da etkindir. Silmeden önce doğru
+çağrıyı seçtiğinizden emin olun.
+</Callout>
+
+## Yeniden Aç
+
+Kapatılmış ya da dönüştürülmüş bir çağrının kartında işlem butonlarının başında
+`Yeniden Aç` butonu bulunur.
+
+![Kapatılmış bir çağrıdaki Yeniden Aç butonu](/img/teknisyen/cagri-kart-kapali.png)
+
+| # | Alan | Açıklama |
+|---|---|---|
+| ❶ | Durum | Çağrının kapanış durumu |
+| ❷ | `Yeniden Aç` | Çağrıyı tekrar açar |
+| ❸ | `Kapatma Tarihi` | Çağrının kapatıldığı tarih ve saat |
+
+`Yeniden Aç` butonuna bastığınızda "Yapılan değişiklikler başarıyla kaydedildi." mesajı
+görünür ve çağrı yeniden açık çağrılar arasına döner. Açılan çağrıyı yeniden
+düzenleyebilir, dönüştürebilir ya da kapatabilirsiniz.

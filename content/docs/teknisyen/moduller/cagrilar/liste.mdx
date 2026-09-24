@@ -1,0 +1,113 @@
+---
+title: "Çağrı Listesi"
+description: "Çağrılar ekranının bölümleri, çağrı kartının yapısı, kart üzerindeki işlem butonları, kapalı ve dönüştürülmüş çağrılar."
+reviewed: "2026-09-24"
+owner: berdanasen
+---
+
+Üst menüden `Çağrı` seçildiğinde çağrı listesi açılır. Her çağrı listede bir kart olarak
+görünür; en yeni çağrı en üsttedir. Liste ilk açıldığında **açık** çağrıları gösterir.
+Kapatılmış ya da başka bir kayda dönüştürülmüş çağrıları görmek için
+[filtreleri](/docs/teknisyen/moduller/cagrilar/filtreleme) kullanabilirsiniz.
+
+![Çağrılar ekranının bölümleri](/img/teknisyen/cagri-liste-yerlesim.png)
+
+| # | Bölüm | Ne işe yarar |
+|---|---|---|
+| ❶ | Toplu işlem çubuğu | Seçtiğiniz çağrıları tek seferde kapatır, siler, günceller, birleştirir ya da dönüştürür. Bkz. [Toplu İşlemler](/docs/teknisyen/moduller/cagrilar/toplu-islemler) |
+| ❷ | Çağrı kartları | Her kart bir çağrıdır. Karta tıklandığında detayı kartın altında açılır |
+| ❸ | `Yeni Çağrı`, arama ve ızgara görünümü | Yeni çağrı açar, genel aramayı başlatır, kayıtları tablo görünümünde listeler |
+| ❹ | `Filtre Görünümleri` | Kaydedilmiş filtreler. Birine tıklandığında liste o filtreye göre süzülür |
+| ❺ | `Kontrol Paneli` | Çağrı no, konu, durum, teknisyen, kullanıcı gibi alanlara göre anlık filtreleme |
+
+Sağ panelin en altındaki `Uygulama Önerileri` kutusunda çağrı modülünün nasıl
+kullanılması gerektiğine dair kısa bir açıklama bulunur.
+
+## Çağrı kartı
+
+![Çağrı kartının yapısı](/img/teknisyen/cagri-liste-kart.png)
+
+| # | Alan | Açıklama |
+|---|---|---|
+| ❶ | Çağrı numarası ve durum | `#INT` ile başlayan çağrı numarası ve çağrının durumu (`Açık`, `Kapatılanlar`, `Olaya Dönüştürülenler` gibi) |
+| ❷ | Konu | Çağrının konusu ve ne kadar önce açıldığı. Fareyle zamanın üzerine gelindiğinde tam tarih ve saat görünür |
+| ❸ | Açıklama | Çağrı açıklamasının ilk satırı |
+| ❹ | İşlem butonları | Çağrıyı dönüştürme, cevaplama, kapatma ve silme butonları (aşağıda) |
+| ❺ | Ekler ve gelen posta | Çağrıya eklenmiş dosyalar ve çağrıya gelen e-posta sayısı |
+| ❻ | Çağrı bilgileri | `Teknisyen Grubu`, `Teknisyen`, `Kullanıcı`, `Destek Müşteri Hesabı`, `Şirket` ve `Sözleşme` |
+
+Yeni gelen ve henüz kimsenin açmadığı çağrıların numarasının solunda **kırmızı bir nokta**
+bulunur. Çağrının detayını açtığınızda nokta kaybolur.
+
+## Kart üzerindeki işlem butonları
+
+![Çağrı kartındaki işlem butonları](/img/teknisyen/cagri-liste-islem-butonlari.png)
+
+| # | Buton | Ne yapar |
+|---|---|---|
+| ❶ | `Olay` | Çağrıyı olay kaydına dönüştürür |
+| ❷ | `İstek` | Çağrıyı hizmet katalogundaki bir isteğe dönüştürür |
+| ❸ | `Sürekli iyileştirme` | Çağrıyı sürekli iyileştirme kaydına dönüştürür |
+| ❹ | `Cevapla ve Kapat` | Kullanıcıya e-posta ile cevap verir ve çağrıyı kapatır |
+| ❺ | `Kapat` | Çağrıyı bir kapanış açıklamasıyla kapatır |
+| ❻ | `Sil` | Çağrıyı bir silme gerekçesiyle siler |
+
+Butonların ayrıntıları için
+[Çağrıyı Dönüştürme](/docs/teknisyen/moduller/cagrilar/donusturme) ve
+[Cevaplama, Kapatma ve Silme](/docs/teknisyen/moduller/cagrilar/cevapla-kapat-sil)
+sayfalarına bakın.
+
+## Ekler ve gelen posta
+
+Kartın sol altındaki ataç simgesine tıklandığında çağrıya eklenmiş dosyalar listelenir.
+E-postayla gelen çağrılarda gelen e-postanın kendisi de (`OriginalEmail.eml`) burada
+bulunur. Simgenin üzerindeki kırmızı sayı, ek sayısını gösterir.
+
+![Çağrının ekleri](/img/teknisyen/cagri-kart-ekler.png)
+
+Ataç simgesinin yanındaki zarf simgesi `Gelen Posta` sayısıdır; çağrıya kullanıcıdan
+kaç e-posta geldiğini gösterir.
+
+## Kapalı ve dönüştürülmüş çağrılar
+
+Kapatılan ya da dönüştürülen çağrılar düzenlenemez. Bu çağrıların kartında işlem butonları
+pasif görünür; yalnızca `Yeniden Aç` ve `Sil` kullanılabilir.
+
+![Olaya dönüştürülmüş bir çağrı](/img/teknisyen/cagri-kart-donusturuldu.png)
+
+| # | Alan | Açıklama |
+|---|---|---|
+| ❶ | Durum | Çağrının neye dönüştürüldüğü: `Olaya Dönüştürülenler`, `İsteğe Dönüştürülenler` veya `İyileştirmeye Dönüştürülenler` |
+| ❷ | `Yeniden Aç` | Çağrıyı tekrar açık duruma getirir |
+| ❸ | `Dönüştürüldü` | Oluşan kaydın numarası (`#INC`, `#SR` veya `#CI` ile başlar) ve kapatılma tarihi |
+
+Durum etiketine ya da `Dönüştürüldü` alanındaki numaraya tıkladığınızda oluşan olay,
+istek veya iyileştirme kaydı yeni bir sekmede açılır.
+
+Kapatılmış bir çağrıda durum `Kapatılanlar` olarak görünür ve kapatılma tarihi kartın sağ
+alt köşesinde yer alır.
+
+![Kapatılmış bir çağrı](/img/teknisyen/cagri-kart-kapali.png)
+
+`Yeniden Aç` butonuna bastığınızda çağrı tekrar açılır ve kapalı çağrıları listelediğiniz
+görünümden çıkar; açık çağrılar listesinde yeniden görünür.
+
+## Sayfalama
+
+Listenin altında sayfa numaraları ve sayfa başına gösterilecek kayıt sayısı bulunur.
+Seçtiğiniz kayıt sayısı tarayıcınızda saklanır; ekranı tekrar açtığınızda aynı sayıda
+kayıt görürsünüz.
+
+![Sayfalama](/img/teknisyen/cagri-liste-sayfalama.png)
+
+## Yetkiler
+
+Çağrı yetkileri `Yönetici ▸ Roller` altında, rolün `Çağrı` sekmesinden verilir.
+
+![Rol ekranındaki çağrı yetkileri](/img/teknisyen/cagri-rol-yetkileri.png)
+
+Bu ekranda iki yetki doğrudan görünür bir fark yaratır:
+
+- `Çağrı Ekleyebilir` yetkisi olmayan kullanıcılarda `Yeni Çağrı` butonu pasif görünür.
+- `Silinen Kayıtları Görebilir` yetkisi olmayan kullanıcılarda `Kontrol Paneli`'ndeki
+  `Silinmiş mi?` kutusu işaretlenemez.
