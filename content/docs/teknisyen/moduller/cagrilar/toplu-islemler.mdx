@@ -1,0 +1,124 @@
+---
+title: "Toplu İşlemler"
+description: "Birden fazla çağrıyı seçip tek seferde kapatma, silme, güncelleme, birleştirme ve olaya, isteğe veya iyileştirmeye dönüştürme."
+reviewed: "2026-09-24"
+owner: berdanasen
+---
+
+Aynı konuda çok sayıda çağrı geldiğinde (örneğin bir kesinti sırasında onlarca kullanıcının
+aynı sorunu bildirmesi) çağrıları tek tek işlemek yerine seçip tek seferde
+sonuçlandırabilirsiniz.
+
+## Çağrıları seçme
+
+![Çağrıların seçilmesi ve toplu işlem çubuğu](/img/teknisyen/cagri-toplu-secim.png)
+
+| # | Öge | Açıklama |
+|---|---|---|
+| ❶ | `Tümü` kutusu | Sayfadaki bütün çağrıları seçer ya da seçimi kaldırır |
+| ❷ | Kart seçim kutusu | Farenizi kartın sol kenarına getirdiğinizde görünür. İşaretlenen kartın kutusu işaretli kalır |
+| ❸ | Toplu işlem butonları | Çağrı seçilmeden pasiftir; seçimden sonra etkinleşir |
+
+<Callout type="info" title="ÖNEMLİ">
+`Tümü` kutusu yalnızca **ekranda görünen sayfadaki** çağrıları seçer. Daha fazla çağrıyı
+tek seferde işlemek için sayfa başına kayıt sayısını artırın. Filtre ya da sayfa
+değiştirdiğinizde seçim temizlenir.
+</Callout>
+
+Butonların hangi durumda kullanılabildiği:
+
+| Buton | Ne zaman etkin |
+|---|---|
+| `Kapat`, `Güncelle` | En az bir çağrı seçildiğinde. Seçimde kapatılmış bir çağrı varsa pasiftir |
+| `Sil` | En az bir çağrı seçildiğinde |
+| `Birleştir`, `Olay Kaydına Dönüştür`, `İsteğe Dönüştür`, `İyileştirmeye Dönüştür` | En az **iki** çağrı seçildiğinde. Seçimde kapatılmış bir çağrı varsa pasiftir |
+
+## Toplu kapatma
+
+`Kapat` butonu, tekli kapatmadaki pencerenin aynısını açar. Seçtiğiniz kapanış durumu ve
+yazdığınız `Kapatma Yorumu` seçili çağrıların hepsine uygulanır.
+
+![Toplu kapatma penceresi](/img/teknisyen/cagri-toplu-kapat.png)
+
+| # | Alan | Açıklama |
+|---|---|---|
+| ❶ | Kapanış durumu | Çağrıların kapanış durumu (genellikle `Kapatılanlar`) |
+| ❷ | `Kapatma Yorumu` | Tüm çağrılara yazılacak açıklama. **Zorunludur** |
+| ❸ | `Kaydet` | Seçili çağrıları kapatır |
+
+## Toplu silme
+
+`Sil` butonu, tekli silmedeki pencereyi açar. Seçtiğiniz durum ve `Silme Gerekçesi` seçili
+çağrıların hepsine uygulanır.
+
+![Toplu silme penceresi](/img/teknisyen/cagri-toplu-sil.png)
+
+| # | Alan | Açıklama |
+|---|---|---|
+| ❶ | Durum | Silinen çağrıların alacağı durum |
+| ❷ | `Silme Gerekçesi` | Silme nedeni. **Zorunludur** |
+| ❸ | `Kaydet` | Seçili çağrıları siler |
+
+## Toplu güncelleme
+
+`Güncelle` butonu, seçili çağrıların ortak bilgilerini tek seferde değiştirmenizi sağlar.
+Örneğin bir gruba gelen bütün çağrıları başka bir teknisyen grubuna yönlendirmek için
+kullanılır.
+
+![Toplu güncelleme paneli](/img/teknisyen/cagri-toplu-guncelle.png)
+
+Panelde `Durum`, `İş Etkisi`, `Aciliyet`, `Kategori`, `Kaynak`, `Teknisyen Grubu` ve
+`Teknisyen` alanları bulunur ❶. `Kaydet` ❷ butonuna bastığınızda yalnızca **doldurduğunuz
+alanlar** değişir; boş bıraktığınız alanlar çağrılarda olduğu gibi kalır.
+
+## Birleştirme
+
+Aynı konuda açılmış çağrıları tek bir çağrı altında toplamak için kullanılır. Örneğin
+aynı yazıcı arızası için on farklı kullanıcının açtığı çağrılar birleştirilebilir.
+
+![Birleştirme penceresi](/img/teknisyen/cagri-toplu-birlestir.png)
+
+| # | Alan | Açıklama |
+|---|---|---|
+| ❶ | Durum | Birleştirilen çağrıların durumu (`Birleştirilenler`) |
+| ❷ | `Birincil Kaydı Seçiniz` | Diğer çağrıların altında toplanacağı ana çağrı |
+| ❸ | Seçili çağrılar | Listede yalnızca seçtiğiniz çağrılar çıkar; çağrı numarası ve konusuyla görünür |
+
+`Kaydet` butonuna bastığınızda birincil çağrı açık kalır, diğer çağrılar
+`Birleştirilenler` durumuyla kapatılır ve birincil çağrıya bağlanır. Çalışmaya birincil
+çağrı üzerinden devam edersiniz.
+
+<Callout type="warn" title="DİKKAT">
+Birleştirmeden önce mutlaka birincil çağrıyı seçin.
+</Callout>
+
+## Toplu dönüştürme
+
+`Olay Kaydına Dönüştür`, `İsteğe Dönüştür` ve `İyileştirmeye Dönüştür` butonları, seçili
+çağrıların **her biri için ayrı** bir kayıt oluşturur. Tekli dönüştürmeden farklı olarak form
+açılmaz; her kayıt kendi çağrısının bilgileriyle oluşturulur.
+
+### Olaya dönüştürme
+
+![Toplu olay dönüştürme penceresi](/img/teknisyen/cagri-toplu-olay.png)
+
+Pencerede yalnızca bir açıklama alanı ❶ bulunur. Buraya yazdığınız not, dönüştürme
+açıklaması olarak tüm çağrılara eklenir. `Kaydet` ❷ ile dönüştürme başlar.
+
+### İsteğe dönüştürme
+
+![Toplu istek dönüştürme penceresi](/img/teknisyen/cagri-toplu-istek.png)
+
+Pencerede `Servis Öğesi` alanından isteklerin açılacağı hizmet katalogu öğesini seçin ❶.
+Seçili çağrıların hepsi bu katalog öğesiyle isteğe dönüştürülür. `Kaydet` ❷ ile dönüştürme
+başlar.
+
+### İyileştirmeye dönüştürme
+
+![Toplu iyileştirme dönüştürme penceresi](/img/teknisyen/cagri-toplu-iyilestirme.png)
+
+Olay dönüştürmedeki gibi yalnızca bir açıklama alanı ❶ vardır. `Kaydet` ❷ ile seçili
+çağrılar sürekli iyileştirme kayıtlarına dönüştürülür.
+
+İşlem tamamlandığında "Yapılan değişiklikler başarıyla kaydedildi." mesajı görünür ve
+dönüştürülen çağrılar açık çağrılar listesinden çıkar.

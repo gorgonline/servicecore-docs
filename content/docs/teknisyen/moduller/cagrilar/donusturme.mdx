@@ -1,0 +1,88 @@
+---
+title: "Çağrıyı Dönüştürme"
+description: "Bir çağrının olay, istek veya sürekli iyileştirme kaydına dönüştürülmesi ve dönüştürme sonrasında çağrıda görünen bilgiler."
+reviewed: "2026-09-24"
+owner: berdanasen
+---
+
+Çağrı, gelen talebin ilk karşılandığı yerdir. Talebi değerlendirdikten sonra hangi süreçle
+devam edeceğine karar verir ve çağrıyı ilgili kayda dönüştürürsünüz:
+
+- Bir şey bozulduysa ya da çalışmıyorsa **olay**,
+- Kullanıcı hizmet katalogundaki bir hizmeti istiyorsa **istek**,
+- Var olan bir işin daha iyi hâle getirilmesi öneriliyorsa **sürekli iyileştirme**.
+
+Dönüştürme, kart üzerindeki ilk üç butonla yapılır.
+
+![Dönüştürme butonları](/img/teknisyen/cagri-liste-islem-butonlari.png)
+
+Butonlar soldan sağa `Olay` ❶, `İstek` ❷ ve `Sürekli iyileştirme` ❸ butonlarıdır.
+Birden fazla çağrıyı tek seferde dönüştürmek için
+[Toplu İşlemler](/docs/teknisyen/moduller/cagrilar/toplu-islemler) sayfasına bakın.
+
+## Olaya dönüştürme
+
+`Olay` butonuna tıklandığında `Olay Kaydına Dönüştür` paneli açılır. Panel, olay
+formunu çağrının bilgileriyle doldurulmuş olarak getirir.
+
+![Olay kaydına dönüştürme paneli](/img/teknisyen/cagri-donustur-olay.png)
+
+| # | Bölüm | Açıklama |
+|---|---|---|
+| ❶ | `Özel Form` | Olayın hangi formla açılacağı. Varsayılan olay formu seçili gelir; kurumunuzda başka olay formları tanımlıysa buradan değiştirebilirsiniz |
+| ❷ | Olay formu | Çağrıdan aktarılan bilgiler ve olay formunun diğer alanları |
+| ❸ | `Kaydet` | Olayı oluşturur ve çağrıyı kapatır |
+
+Çağrıdan olaya şu bilgiler aktarılır: konu, açıklama, kullanıcı, teknisyen grubu,
+aciliyet, iş etkisi ve kaynak. Çağrının kategorisi aktarılmaz; olayın
+kategorisini formdaki `Kategori Adı` alanından seçin. Aktarılan bilgileri kaydetmeden önce
+değiştirebilirsiniz.
+
+## İsteğe dönüştürme
+
+`İstek` butonuna tıklandığında `İsteğe Dönüştür` paneli açılır. Önce panelin sağ
+üstündeki listeden kullanıcının istediği **hizmet katalogu öğesini** seçin. Seçtiğiniz
+öğenin formu panele gelir.
+
+![İsteğe dönüştürme paneli](/img/teknisyen/cagri-donustur-istek.png)
+
+| # | Bölüm | Açıklama |
+|---|---|---|
+| ❶ | Hizmet katalogu öğesi | İsteğin hangi katalog öğesiyle açılacağı. Öğe seçilmeden form gelmez |
+| ❷ | Öğenin formu | Katalog öğesi için tasarlanmış form. Çağrının açıklaması formdaki açıklama alanına aktarılır |
+| ❸ | `Kaydet` | İsteği oluşturur ve çağrıyı kapatır |
+
+Katalog öğesinde varsayılan bir teknisyen grubu, teknisyen, öncelik, aciliyet veya iş etkisi
+tanımlıysa bu değerler forma kendiliğinden gelir. Formdaki zorunlu alanlar (yıldızlı alanlar)
+doldurulmadan istek oluşturulamaz.
+
+## Sürekli iyileştirmeye dönüştürme
+
+`Sürekli iyileştirme` butonuna tıklandığında `İyileştirmeye Dönüştür` paneli açılır.
+Çağrının konusu `Başlık`, açıklaması `Açıklama` alanına aktarılır.
+
+![İyileştirmeye dönüştürme paneli](/img/teknisyen/cagri-donustur-iyilestirme.png)
+
+| # | Bölüm | Açıklama |
+|---|---|---|
+| ❶ | `Özel Form` | İyileştirme kaydının açılacağı form |
+| ❷ | İyileştirme formu | Çağrıdan aktarılan bilgiler ve formun diğer alanları |
+| ❸ | `Kaydet` | İyileştirme kaydını oluşturur ve çağrıyı kapatır |
+
+## Dönüştürme sonrası
+
+`Kaydet` butonuna bastığınızda "Yapılan değişiklikler başarıyla kaydedildi." mesajı görünür
+ve çağrı açık çağrılar listesinden çıkar. Çağrı silinmez; kapatılmış olarak saklanır ve
+yeni kayda bağlanır.
+
+![Olaya dönüştürülmüş bir çağrı](/img/teknisyen/cagri-kart-donusturuldu.png)
+
+- ❶ Çağrının durumu dönüştürme türüne göre `Olaya Dönüştürülenler`,
+  `İsteğe Dönüştürülenler` veya `İyileştirmeye Dönüştürülenler` olur.
+- ❸ Kartın sağ alt köşesindeki `Dönüştürüldü` alanında oluşan kaydın numarası
+  (`#INC…`, `#SR…` veya `#CI…`) görünür.
+- Durum etiketine ya da kayıt numarasına tıkladığınızda oluşan kayıt yeni bir sekmede açılır.
+
+Dönüştürülmüş çağrıları görmek için `Kontrol Paneli`'nde `Aşama` alanından `Kapalı`
+seçebilir ya da `Durum` alanından ilgili dönüştürme durumunu seçebilirsiniz. Bkz.
+[Filtreleme ve Filtre Görünümleri](/docs/teknisyen/moduller/cagrilar/filtreleme).
