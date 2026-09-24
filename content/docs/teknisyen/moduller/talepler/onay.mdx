@@ -1,0 +1,66 @@
+---
+title: "Onay Süreci"
+description: "İsteklerde onay: onay durumu etiketi, Servis Ön Onay Aşamaları, iş akışıyla yürüyen onaylar ve Onay Zaman Çizelgesi."
+reviewed: "2026-09-24"
+owner: berdanasen
+---
+
+Bazı hizmetler karşılanmadan önce onay gerektirir; örneğin yeni bir bilgisayar talebinin
+yönetici tarafından onaylanması. Hangi katalog öğesinin onaya tabi olduğunu ve onaycıları
+yöneticiniz belirler. İstek açıldığında onay adımları kendiliğinden başlar.
+
+## Onay durumu
+
+İstek detayında, sekmelerin sağında isteğin onay durumu bir etiketle gösterilir.
+
+![Onay durumu etiketi](/img/teknisyen/istek-detay-onay-rozeti.png)
+
+Onay gerektirmeyen isteklerde etiket `Onay Gerektirmez` olarak görünür. Onay bekleyen
+istekler listede `Onay Bekleniyor` durumuyla yer alır; onaylanan istekler `Onaylandı`
+durumuna geçer.
+
+Onay bekleyen istekleri topluca görmek için `Filtre Görünümleri` kutusunda bu durumlara göre
+bir filtre kaydedebilirsiniz; bkz.
+[Filtreleme ve Filtre Görünümleri](/docs/teknisyen/moduller/talepler/filtreleme).
+
+## Servis Ön Onay Aşamaları
+
+İsteğin onay aşamaları, her aşamadaki onaycılar ve verdikleri kararlar `Servis Ön Onay Aşamaları`
+sekmesinde listelenir.
+
+![Servis Ön Onay Aşamaları sekmesi](/img/teknisyen/istek-sekme-onay-asamalari.png)
+
+İstekte onay aşaması yoksa sekmede `Onay Aşaması Yok` yazar. Böyle bir isteğe
+`Onay Aşaması Ekle` butonuyla elle onay aşaması ekleyebilirsiniz.
+
+## İş akışıyla yürüyen onaylar
+
+Onay, yöneticinizin tasarladığı bir iş akışıyla yürüyorsa `Servis Ön Onay Aşamaları` sekmesinin
+yerinde `İş Akışı` sekmesi bulunur. Sekmede iki alt sekme vardır.
+
+![İş Akışı sekmesi](/img/teknisyen/istek-sekme-is-akisi.png)
+
+- **İş Akışı:** Onay akışının adımları şema olarak görünür. Tamamlanan, bekleyen ve hata
+  alan adımlar ayrı renklerle işaretlenir; akışın hangi adımda olduğunu buradan izlersiniz.
+- **Onay Zaman Çizelgesi:** Onay isteklerinin tablo hâlinde dökümü.
+
+![Onay Zaman Çizelgesi](/img/teknisyen/istek-sekme-onay-zaman-cizelgesi.png)
+
+Tabloda her satır bir onay isteğidir: `Aşama Numarası`, `Onayı Tetikleyen`, `Onaylayan`,
+`Onay İsteme Zamanı`, `Onay durumu`, `Karar Tarihi` ve `Açıklama`. Örnekteki onay isteği,
+belirlenen sürede yanıtlanmadığı için `Zaman Aşımına Uğradı` durumuna düşmüş ve sistem
+tarafından işleme alınmıştır.
+
+Henüz gönderilmemiş bir onay isteği için satırdaki `Onay İçin Gönder` butonuyla onay e-postası
+onaycıya yeniden gönderilir.
+
+<Callout type="info" title="ÖNEMLİ">
+Onay akışı bir sebeple durduysa (örneğin onaycı değiştiyse) `Diğer Eylemler` menüsündeki
+`Onay Akışını Yenile` ile akışı baştan başlatabilirsiniz. Bu seçenek yalnızca
+`Onay Akışını Yeniden Başlatabilir` yetkisi olan kullanıcılarda görünür.
+</Callout>
+
+## Onay ve kapatma
+
+Kapatma kurallarında `Onaylanmış olmalıdır` kuralı açıksa, onayı tamamlanmamış bir istek
+kapatılamaz; bkz. [Kapatma ve Kapatma Kuralları](/docs/teknisyen/moduller/talepler/kapatma).

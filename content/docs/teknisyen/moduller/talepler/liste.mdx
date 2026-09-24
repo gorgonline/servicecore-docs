@@ -1,0 +1,119 @@
+---
+title: "İstek Listesi"
+description: "İstekler ekranının bölümleri, istek kartı, kart üzerindeki simgeler, takip etme, sabitleme ve istekleri sekme olarak açma."
+reviewed: "2026-09-24"
+owner: berdanasen
+---
+
+Üst menüden `İstek` seçildiğinde istek listesi açılır. Her istek listede bir kart olarak
+görünür. Liste varsayılan olarak istek numarasına göre, en yeni istek en üstte olacak şekilde
+sıralanır.
+
+![İstekler ekranının bölümleri](/img/teknisyen/istek-liste-yerlesim.png)
+
+| # | Bölüm | Ne işe yarar |
+|---|---|---|
+| ❶ | `İstekler` sekmesi | İstek listesi. Açtığınız her istek bu sekmenin yanına yeni bir sekme olarak eklenir |
+| ❷ | İstek kartları | Her kart bir istektir. Kartın başlığına tıklandığında istek yeni bir sekmede açılır |
+| ❸ | Üst butonlar | `Yeni İstek`, `Yeni Zamanlanmış İstek`, `Ara` ve `Grid Görünümü` |
+| ❹ | `Filtre Görünümleri` | Kaydedilmiş filtreler. Birine tıklandığında liste o filtreye göre süzülür |
+| ❺ | `Kontrol Paneli` | İstek numarası, ad, durum, teknisyen, katalog öğesi gibi alanlara göre anlık filtreleme |
+
+Bir istek seçildiğinde listenin üstünde toplu işlem çubuğu belirir; bkz.
+[Toplu İşlemler](/docs/teknisyen/moduller/talepler/toplu-islemler).
+
+## İstek kartı
+
+![İstek kartının yapısı](/img/teknisyen/istek-liste-kart.png)
+
+| # | Alan | Açıklama |
+|---|---|---|
+| ❶ | İstek numarası ve durum | `#SR` ile başlayan istek numarası ve isteğin durumu (`Açık`, `Onay Bekleniyor`, `Kapatılanlar` gibi) |
+| ❷ | Konu | İsteğin konusu ve ne kadar önce açıldığı. Fareyle zamanın üzerine gelindiğinde tam tarih görünür |
+| ❸ | Açıklama | İstek açıklamasının ilk satırı |
+| ❹ | Kart simgeleri | Kart menüsü, hızlı güncelleme, ekler, e-postalar ve notlar (aşağıda) |
+| ❺ | İstek bilgileri | `Teknisyen Grubu`, `Teknisyen`, `Kullanıcı`, `Destek Müşteri Hesabı`, `Şirket`, `Hedef Çözüm Tarihi`, `Katalog`, `SLA Çözüm Kalan Yüzdesi`, `Sözleşme` ve `Öncelik` |
+
+Yeni gelen ve henüz açılmamış isteklerin numarasının solunda **kırmızı bir nokta** bulunur.
+
+<Callout type="info" title="ÖNEMLİ">
+Kartın alt satırı, ekran genişliğine göre sağa doğru kaydırılabilir. Bilgilerin tamamını
+görmek için satırın sağındaki ok simgesini kullanabilir ya da tarayıcı penceresini
+genişletebilirsiniz.
+</Callout>
+
+## Kart simgeleri
+
+![Kartın sol altındaki simgeler](/img/teknisyen/istek-liste-kart-simgeler.png)
+
+| # | Simge | Ne yapar |
+|---|---|---|
+| ❶ | Kart menüsü (şimşek) | `Bağlantıyı Kopyala`, `Detay sayfasına git` ve `İş Günlüğü Ekle` seçeneklerini açar |
+| ❷ | `Hızlı Güncelleme` | İsteği açmadan durum, öncelik, grup, teknisyen ve sözleşme bilgisini değiştirir |
+| ❸ | `Ekler` | İsteğe eklenmiş dosyaları listeler |
+| ❹ | `Gelen Posta` | Kullanıcıdan gelen e-posta sayısı |
+| ❺ | `Giden Posta` | Kullanıcıya gönderilen e-posta sayısı |
+| ❻ | `Not Göster ve Ekle` | İsteğe not ekler |
+
+### Kart menüsü
+
+![Kart menüsü](/img/teknisyen/istek-liste-kart-menu.png)
+
+- **Bağlantıyı Kopyala:** İsteğin adresini panoya kopyalar; bağlantıyı bir e-postaya ya da
+  mesaja yapıştırabilirsiniz.
+- **Detay sayfasına git:** İsteği listeden bağımsız, tam sayfa olarak açar.
+- **İş Günlüğü Ekle:** İsteği açmadan iş günlüğü girer; bkz.
+  [Detay Sekmeleri](/docs/teknisyen/moduller/talepler/sekmeler).
+
+### Hızlı güncelleme
+
+![Hızlı Güncelleme penceresi](/img/teknisyen/istek-liste-hizli-guncelleme.png)
+
+`Durum Değiştir`, `Önceliği Değiştir`, `Grup Değiştir`, `Teknisyen Değiştir` ve `Sözleşme`
+alanlarından değiştirmek istediklerinizi seçip `Kaydet`'e basın. Kapatılmış isteklerde hızlı
+güncelleme kullanılamaz.
+
+### Not ekleme
+
+![Not Ekle penceresi](/img/teknisyen/istek-liste-not.png)
+
+`Not Göster ve Ekle` simgesi `Not Ekle` penceresini açar. `Açıklama` alanına notunuzu yazıp
+`Kaydet`'e basın. `Özel Not` işaretliyse not yalnızca teknisyenler tarafından görülür;
+işaret kaldırılırsa kullanıcı da notu görebilir.
+
+## Takip etme ve sabitleme
+
+Farenizi bir kartın üzerine getirdiğinizde kartın sağ üst köşesinde iki simge belirir.
+
+![Takip Et ve Sabitle simgeleri](/img/teknisyen/istek-liste-takip-sabitle.png)
+
+| # | Simge | Ne yapar |
+|---|---|---|
+| ❶ | `Takip Et` (yıldız) | İsteği takip ettiğiniz kayıtlar arasına ekler |
+| ❷ | `Sabitle` | İsteği listenin en üstüne sabitler; sık baktığınız istekleri kaybetmezsiniz |
+
+Simgeye tekrar tıkladığınızda takip ya da sabitleme kaldırılır.
+
+## İstekleri sekme olarak açma
+
+Bir kartın başlığına tıkladığınızda istek, listeden ayrılmadan yeni bir sekmede açılır.
+Böylece birden fazla istek üzerinde aynı anda çalışabilir, sekmeler arasında geçiş
+yapabilirsiniz.
+
+![İsteğin sekme olarak açılması](/img/teknisyen/istek-liste-sekme.png)
+
+İsteği tam sayfa açmak için kart menüsündeki `Detay sayfasına git` seçeneğini kullanın.
+
+## Sayfalama ve sıralama
+
+![Sayfalama ve sıralama](/img/teknisyen/istek-liste-sayfalama.png)
+
+Listenin altında sayfa numaraları ❶ ve sıralama seçeneği ❷ bulunur. Sıralama alanına
+tıklayarak listeyi farklı bir bilgiye göre sıralayabilirsiniz; yanındaki ok simgesi sıralamayı
+artan ya da azalan yapar.
+
+![Sıralama seçenekleri](/img/teknisyen/istek-liste-siralama.png)
+
+Sıralama seçenekleri: `İstek Tarihi`, `Servis İsteği Numarası`, `İstek Adı`, `Durum`,
+`Hedef Çözüm Tarihi` ve `Son Güncelleme Tarihi`. Seçtiğiniz sayfa başına kayıt sayısı
+tarayıcınızda saklanır.

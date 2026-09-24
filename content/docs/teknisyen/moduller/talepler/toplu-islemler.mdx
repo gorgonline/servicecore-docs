@@ -1,0 +1,92 @@
+---
+title: "Toplu İşlemler"
+description: "Birden fazla isteği seçip tek seferde güncelleme, kapatma, silme, kendine atama, birleştirme ve yeniden açma."
+reviewed: "2026-09-24"
+owner: berdanasen
+---
+
+Aynı işlemi birden çok isteğe uygulamanız gerektiğinde (örneğin bir teknisyenin izne çıkması
+nedeniyle isteklerini başka birine devretmek) istekleri seçip tek seferde işleyebilirsiniz.
+
+## İstekleri seçme
+
+Farenizi bir kartın sol kenarına getirdiğinizde seçim kutusu belirir. Bir istek seçildiğinde
+listenin üstünde toplu işlem çubuğu açılır.
+
+![İsteklerin seçilmesi ve toplu işlem çubuğu](/img/teknisyen/istek-toplu-secim.png)
+
+| # | Öge | Açıklama |
+|---|---|---|
+| ❶ | Toplu işlem çubuğu | `Toplu İşlem`, `Kapat`, `Sil`, `Bana Ata`, `Birleştir` ve `Yeniden Aç` |
+| ❷ | Seçim kutuları | Seçili isteklerin kutusu işaretli kalır |
+
+Butonların hangi durumda kullanılabildiği:
+
+| Buton | Ne zaman etkin |
+|---|---|
+| `Toplu İşlem`, `Sil`, `Bana Ata` | En az bir istek seçildiğinde |
+| `Kapat` | En az bir istek seçildiğinde. Seçimde kapatılmış bir istek varsa pasiftir |
+| `Birleştir` | En az **iki** istek seçildiğinde |
+| `Yeniden Aç` | Seçimde kapatılmış bir istek olduğunda |
+
+## Toplu İşlem
+
+Seçili isteklerin durumunu, önceliğini, etkisini, aciliyetini, grubunu ve teknisyenini tek
+seferde değiştirir.
+
+![Toplu İşlem penceresi](/img/teknisyen/istek-toplu-islem.png)
+
+Değiştirmek istediğiniz alanlarda yeni değeri seçin (`Durum Değiştir`, `Önceliği Değiştir`,
+`Etkiyi Değiştir`, `Aciliyeti Değiştir`, `Grup Değiştir`, `Teknisyen Değiştir`) ve `Kaydet`'e
+basın. Yalnızca **doldurduğunuz alanlar** değişir; boş bıraktığınız alanlar isteklerde olduğu
+gibi kalır.
+
+## Toplu kapatma
+
+`Kapat` butonu `Toplu İstek Kapatma` penceresini açar. Pencere, tek istek kapatmadaki alanların
+aynısını içerir: `Gerekçe`, `Durum` ve `Kapatma Açıklaması`. Girdiğiniz bilgiler seçili isteklerin
+hepsine uygulanır.
+
+![Toplu İstek Kapatma penceresi](/img/teknisyen/istek-toplu-kapat.png)
+
+Kapatma kuralları her istek için ayrı denetlenir; bkz.
+[Kapatma ve Kapatma Kuralları](/docs/teknisyen/moduller/talepler/kapatma).
+
+## Toplu silme
+
+`Sil` butonu silme penceresini açar. `Silme Gerekçesi` ve `Durum` alanlarını doldurup `Sil`
+butonuna basın.
+
+![Toplu silme penceresi](/img/teknisyen/istek-toplu-sil.png)
+
+Silinen istekler listeden kalkar. Silinen istekleri görmek için `Kontrol Paneli`'ndeki
+`Silinmiş mi?` kutusunu işaretleyin (`Silinen Kayıtları Görebilir` yetkisi gerekir).
+
+## Bana Ata
+
+Seçili isteklerin hepsini size atar. Onay sorusuna `Tamam` derseniz istekler üzerinize atanır.
+
+![Bana Ata onayı](/img/teknisyen/istek-toplu-bana-ata.png)
+
+## Birleştirme
+
+Aynı konuda açılmış istekleri tek bir istek altında toplar. Örneğin aynı kullanıcının aynı
+bilgisayar için iki kez açtığı istekler birleştirilebilir.
+
+![İstekleri Birleştir penceresi](/img/teknisyen/istek-toplu-birlestir.png)
+
+- `Birleştirilecek İstek Kaydı` alanında seçtiğiniz istekler listelenir.
+- `Birincil Kaydı Seçiniz` alanından çalışmaya devam edilecek ana isteği seçin. Diğer istekler
+  bu isteğin altında toplanır ve kapatılır.
+- `İstekler Birleştirilirken Notları da Taşı` işaretliyse diğer isteklerin notları birincil
+  isteğe taşınır.
+
+<Callout type="warn" title="DİKKAT">
+Onay aşamaları birleştirilmez. Birleştirme sonrasında yalnızca birincil isteğin onay aşamaları
+devam eder.
+</Callout>
+
+## Toplu yeniden açma
+
+Kapatılmış istekleri seçtiğinizde `Yeniden Aç` butonu etkinleşir. Açılan pencerede isteklerin
+açılacağı durumu seçip onaylayın.

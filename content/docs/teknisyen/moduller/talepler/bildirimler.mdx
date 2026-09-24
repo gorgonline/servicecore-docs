@@ -1,0 +1,80 @@
+---
+title: "Bildirimler"
+description: "İstek modülünde hangi durumlarda kime bildirim gittiği, bildirimlerin açılıp kapatılması ve istekte gönderilen bildirimlerin kaydı."
+reviewed: "2026-09-24"
+owner: berdanasen
+---
+
+İstek açıldığında, bir teknisyene atandığında, onaya gönderildiğinde ya da kapatıldığında
+ilgili kişilere otomatik bildirim gönderilir. Hangi durumda kime, hangi kanaldan bildirim
+gideceği `Ayarlar ▸ Bildirimler` ekranında, `İstek` sekmesinden yönetilir.
+
+## Bildirim ayarları
+
+![Bildirimler ekranı, İstek sekmesi](/img/teknisyen/istek-bildirim-ayarlari.png)
+
+| # | Bölüm | Kime gider |
+|---|---|---|
+| ❶ | `İstek` sekmesi | İstek modülüne ait bildirimler |
+| ❷ | `Teknisyen` | İsteğe atanan teknisyene |
+| ❸ | `Kullanıcı` | İsteği açan kullanıcıya |
+| ❹ | `Sahibi` | Sağ üstteki `Seçiniz` ile belirlenen kişilere (örneğin hizmet sahibi ya da birim yöneticisi) |
+
+### Kanallar
+
+Her bildirimin yanında gönderim kanallarının simgeleri bulunur.
+
+![Bir bildirimin kanal simgeleri](/img/teknisyen/istek-bildirim-kanallar.png)
+
+Simgeler soldan sağa: **e-posta**, **SMS**, **tarayıcı bildirimi**, **Microsoft Teams** ve
+**koşul** (filtre). Altı mavi çizgili simge, o kanalın açık olduğunu gösterir. Bir kanalı açmak
+ya da kapatmak için simgesine tıklayın; bildirimin metnini düzenlemek için simgeye çift
+tıklayın. Koşul simgesiyle bildirimin yalnızca belirli isteklerde (örneğin belirli bir katalog
+öğesinde ya da öncelikte) gönderilmesini sağlayabilirsiniz.
+
+Bildirim metinlerinde isteğe ait bilgiler (istek numarası, konu, kullanıcı, teknisyen gibi)
+değişken olarak kullanılabilir. Şablonların düzenlenmesi için
+[Yönetici Kılavuzu ▸ Bildirim Şablonları](/docs/yonetici/genel) sayfasına bakın.
+
+## İstek bildirimleri
+
+**Teknisyene giden bildirimler**
+
+- İstek Teknisyene Atandığında
+- İstek Gruba Atandığında
+- Yorum Eklendiğinde
+- İstek Paylaşıldığında
+- İstek Güncellendiğinde
+- İstek Yeniden Açıldığında
+- İstek Aşama Üyesi Onaylandığında, Bir onay tamamlandığında, İsteğin Onay Durumu Tamamlandığında
+- SLA İlk Müdahale Zamanında, SLA Çözüm Zamanında
+
+**Kullanıcıya giden bildirimler**
+
+- Yeni İstek Oluşturulduğunda
+- İstek Kapatıldığında
+- İstek Onaya Gönderildiğinde
+- Yorum Eklendiğinde
+- İstek Paylaşıldığında, İstek Güncellendiğinde
+- İstek Aşama Üyesi Onaylandığında, Bir onay tamamlandığında, İsteğin Onay Durumu Tamamlandığında
+- İstek Kaydı Oluştuğunda Diğer Kullanıcılara Bildir
+- İlk Defa Atandığında
+- İsteğe Görev Eklendiğinde, İstekteki Görev Kapatıldığında
+
+**Sahibine giden bildirimler**
+
+- Yeni İstek Oluşturulduğunda, İstek Gruba Atandığında
+- İstek Silindiğinde, İstek Yeniden Açıldığında
+- İsteğin değişiklik, iyileştirme ya da projeyle ilişkilendirildiği ve ilişkisinin kesildiği durumlar
+
+## İstekte gönderilen bildirimler
+
+Bir istek için gönderilen bütün bildirimler, istek detayındaki `Sistem Bildirimleri` kartında
+listelenir.
+
+![Sistem Bildirimleri kartı](/img/teknisyen/istek-detay-sistem-bildirimleri.png)
+
+Her satırda bildirimin türü (örneğin `Yeni İstek Oluşturulduğunda`, `İstek Paylaşıldığında`) ve
+gönderildiği tarih görünür. Bir kullanıcı "bana bildirim gelmedi" dediğinde, bildirimin
+gönderilip gönderilmediğini buradan kontrol edebilirsiniz. İstekte çalışan otomasyon kuralları
+da bu kartta kayıt bırakır.
