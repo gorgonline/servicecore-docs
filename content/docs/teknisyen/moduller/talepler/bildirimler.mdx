@@ -32,8 +32,26 @@ ya da kapatmak için simgesine tıklayın; bildirimin metnini düzenlemek için 
 tıklayın. Koşul simgesiyle bildirimin yalnızca belirli isteklerde (örneğin belirli bir katalog
 öğesinde ya da öncelikte) gönderilmesini sağlayabilirsiniz.
 
-Bildirim metinlerinde isteğe ait bilgiler (istek numarası, konu, kullanıcı, teknisyen gibi)
-değişken olarak kullanılabilir. Şablonların düzenlenmesi için
+### Bildirim şablonu
+
+Bir kanal simgesine çift tıkladığınızda o bildirimin şablonu açılır.
+
+![Bildirim Şablonu Düzenle penceresi](/img/teknisyen/istek-bildirim-sablon.png)
+
+- `Dil Seçimi` ile şablonun hangi dildeki metnini düzenlediğinizi seçersiniz; her dil için ayrı
+  metin tutulur.
+- `Konu` ve `Bildirim İçeriği` alanlarında `{{Request.Id}}`, `{{Request.Subject}}`,
+  `{{Request.User.FullName}}` gibi değişkenler kullanılır. Bu değişkenler gönderim sırasında
+  isteğin bilgileriyle doldurulur. `Bildirim Açıklamaları` butonu kullanılabilecek değişkenlerin
+  listesini gösterir.
+- `Kaydet` şablonu kaydeder, `Kaydet ve Kapat` kaydedip pencereyi kapatır.
+
+Sağdaki `Şablonu Ön İzle` bölümüne bir istek numarası yazıp `Ön İzleme`'ye bastığınızda,
+bildirimin o istek için nasıl görüneceğini görürsünüz:
+
+![Şablonun bir istek için ön izlemesi](/img/teknisyen/istek-bildirim-sablon-onizleme.png)
+
+Şablonlar hakkında ayrıntılı bilgi için
 [Yönetici Kılavuzu ▸ Bildirim Şablonları](/docs/yonetici/genel) sayfasına bakın.
 
 ## İstek bildirimleri

@@ -55,6 +55,79 @@ Kapatılmış bir istekte `Kapat` yerine `Yeniden Aç` butonu çıkar.
 
 Kapatılmış isteklerde menüdeki değişiklik yapan işlemler kullanılamaz.
 
+### Paylaş
+
+İsteği, normalde göremeyecek teknisyenlerle ya da kullanıcılarla paylaşır.
+
+![Kayıt Paylaşımı penceresi](/img/teknisyen/istek-eylem-paylas.png)
+
+`Teknisyenler` ve `Kullanıcılar` alanlarından paylaşılacak kişileri seçin, isterseniz `Yorum`
+alanına bir not yazın ve `Paylaş` butonuna basın. Paylaşılan kişilere bildirim gönderilir.
+
+### Klon
+
+İsteğin bir ya da birden fazla kopyasını oluşturur. Aynı talebin birkaç kişi için tekrar
+açılması gerektiğinde (örneğin beş yeni çalışan için aynı bilgisayar talebi) kullanılır.
+
+![Klon penceresi](/img/teknisyen/istek-eylem-klon.png)
+
+`Klon Sayısı` alanına kaç kopya oluşturulacağını yazın, `Durum` alanından kopyaların açılacağı
+durumu seçin ve `Klon` butonuna basın.
+
+### Sil
+
+İsteği bir silme gerekçesiyle siler.
+
+![Sil penceresi](/img/teknisyen/istek-eylem-sil.png)
+
+`Silme Gerekçesi` ve `Durum` alanlarını doldurup `Kaydet`'e basın. Silinen istekleri görmek için
+bkz. [Filtreleme ve Filtre Görünümleri](/docs/teknisyen/moduller/talepler/filtreleme).
+
+### Dosya Ekle
+
+Bilgisayarınızın dosya seçme penceresini açar. Seçtiğiniz dosya isteğe eklenir ve
+`Dosyalar` kartında listelenir.
+
+![Dosyalar kartına eklenen dosya](/img/teknisyen/istek-detay-dosyalar.png)
+
+### Görev Ekle ve İş Günlüğü Ekle
+
+`Görevler` ve `İş Günlükleri` sekmelerindeki ekleme pencerelerini açar; bkz.
+[Detay Sekmeleri](/docs/teknisyen/moduller/talepler/sekmeler).
+
+### Arşivle
+
+İsteği arşive kaldırır. Pencere açılmaz; işlem hemen yapılır ve
+"Yapılan değişiklikler başarıyla kaydedildi." mesajı görünür. Arşivlenen istek listeden kalkar.
+Arşivlenmiş istekleri görmek için `Kontrol Paneli`'ndeki `Arşivlenmiş mi?` kutusunu işaretleyin.
+
+![Arşivlenmiş istekler listesinde bir istek](/img/teknisyen/istek-arsivlenmis.png)
+
+### Onay Akışını Yenile
+
+İsteğin onay akışını baştan başlatır. Pencere açılmaz; işlem hemen yapılır ve onaycılara
+yeniden onay isteği gönderilebilir. Onay akışı bir sebeple durduğunda (örneğin onaycı
+değiştiğinde) kullanılır.
+
+### Otomasyonlar
+
+İstek üzerinde elle çalıştırılabilen otomasyon kurallarını listeler.
+
+![Otomasyon Çalıştır penceresi](/img/teknisyen/istek-eylem-otomasyonlar.png)
+
+Listeden çalıştırmak istediğiniz otomasyonu seçin. Hangi otomasyonların listede yer alacağını
+yöneticiniz belirler.
+
+### Çıktı Al
+
+İsteği bir yazdırma şablonuyla görüntüler.
+
+![Şablonlar penceresi](/img/teknisyen/istek-eylem-cikti-al.png)
+
+Listeden şablonu seçin (örneğin `İstek Yazdırma Şablonu`). `Ön İzleme` şablonun istek
+bilgileriyle doldurulmuş halini gösterir, `PDF İndir` PDF olarak indirir, `Dışa Aktar` dosya
+olarak dışa aktarır.
+
 ## Sağ panel
 
 ![Sağ panel](/img/teknisyen/istek-detay-sag-panel.png)
@@ -99,6 +172,28 @@ salt okunur görünür. Kapatılmış isteklerde de alanlar düzenlenemez.
 Kartı açtığınızda `Varlık Listesi` ve `Hizmet Listesi` tabloları görünür. `Varlık Ekle` ile
 istekle ilgili bir varlığı (örneğin kullanıcının bilgisayarını), `Hizmet Ekle` ile ilgili bir
 hizmeti isteğe bağlarsınız. Bağlanan kaydı tablodaki silme simgesiyle kaldırabilirsiniz.
+
+#### Varlık Ekle
+
+![Varlık Ekle penceresi](/img/teknisyen/istek-detay-varlik-ekle.png)
+
+| # | Öge | Açıklama |
+|---|---|---|
+| ❶ | Arama türü | Varlıkların nerede aranacağı: isteği açan kullanıcıya ait varlıklar, kullanıcının departmanına ait varlıklar ya da kurumun bütün varlıkları. Örnekte kurumun bütün varlıkları seçilmiştir |
+| ❷ | Kolon aramaları | Her kolonun üstündeki `Ara...` alanına yazarak listeyi daraltırsınız |
+| ❸ | Seçim kutuları | Bağlamak istediğiniz varlıkları işaretleyin; birden fazla varlık seçebilirsiniz |
+| ❹ | `Kaydet` | Seçilen varlıkları isteğe bağlar |
+
+Örneğin `Adı` kolonuna "Dizüstü" yazdığınızda yalnızca adında bu kelime geçen varlıklar listelenir:
+
+![Varlık Ekle penceresinde adla arama](/img/teknisyen/istek-detay-varlik-ara.png)
+
+#### Hizmet Ekle
+
+![Hizmet Ekle penceresi](/img/teknisyen/istek-detay-hizmet-ekle.png)
+
+Pencerede kurumun hizmetleri adı, açıklaması, uptime ve çözüm hedefleri ve sahibiyle listelenir.
+İlgili hizmeti işaretleyip `Kaydet`'e basın.
 
 ### Özel form
 

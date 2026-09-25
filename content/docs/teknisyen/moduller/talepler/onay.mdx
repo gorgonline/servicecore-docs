@@ -28,10 +28,28 @@ bir filtre kaydedebilirsiniz; bkz.
 İsteğin onay aşamaları, her aşamadaki onaycılar ve verdikleri kararlar `Servis Ön Onay Aşamaları`
 sekmesinde listelenir.
 
-![Servis Ön Onay Aşamaları sekmesi](/img/teknisyen/istek-sekme-onay-asamalari.png)
+![Servis Ön Onay Aşamaları sekmesi](/img/teknisyen/istek-sekme-onay-asamalari-dolu.png)
 
-İstekte onay aşaması yoksa sekmede `Onay Aşaması Yok` yazar. Böyle bir isteğe
-`Onay Aşaması Ekle` butonuyla elle onay aşaması ekleyebilirsiniz.
+Tabloda her satır bir onay aşamasıdır: `No`, `Aşama Adı`, `Aşama Tipi` (örneğin
+`Yönetici Onayı`, `Grup Onayı`), `Aşama Grup İsmi` ve `Durum`. Örnekteki istekte ilk aşama
+onaylanmış, ikinci aşamanın onay süresi dolmuştur. Onayı henüz gönderilmemiş bir aşama için
+`Onay İçin Gönder` butonunu kullanın.
+
+İstekte onay aşaması yoksa sekmede `Onay Aşaması Yok` yazar.
+
+![Onay aşaması olmayan istek](/img/teknisyen/istek-sekme-onay-asamalari.png)
+
+### Onay aşaması ekleme
+
+`Onay Aşaması Ekle` butonu yeni bir onay aşaması tanımlamanızı sağlar.
+
+![Onay Aşaması Ekle penceresi](/img/teknisyen/istek-onay-asamasi-ekle.png)
+
+- `Aşama Adı` alanına aşamanın adını yazın.
+- `Onay Tipi` alanından aşamanın nasıl onaylanacağını seçin (örneğin `Grup Onayı`).
+- `İstek Onay Kurulu` alanından onay kurulunu seçin; `Onaylama Kurulu Üyeleri` alanında
+  kurulun üyeleri görünür.
+- `Kaydet` ile aşama isteğe eklenir.
 
 ## İş akışıyla yürüyen onaylar
 
