@@ -1,0 +1,83 @@
+---
+title: "Görüşmeler ve Notlar"
+description: "İstek detayında kullanıcıyla e-posta yazışması: Cevapla, Tümünü Cevapla, İlet, Not Ekle ve özel notlar."
+reviewed: "2026-09-24"
+owner: berdanasen
+---
+
+`Detaylar` sekmesindeki `Görüşmeler` kartı, istekle ilgili bütün yazışmaları tek yerde
+toplar: kullanıcıdan gelen e-postalar, kullanıcıya gönderilen cevaplar ve teknisyen notları.
+
+![Görüşmeler kartı](/img/teknisyen/istek-detay-gorusmeler.png)
+
+| # | Öge | Ne işe yarar |
+|---|---|---|
+| ❶ | Filtreler | `Notlar`, `Gelen Posta` ve `Giden Posta` kutularıyla listede görmek istediğiniz kayıtları seçersiniz |
+| ❷ | `Cevapla` | Kullanıcıya e-postayla cevap verir |
+| ❸ | `Tümünü Cevapla` | Son e-postadaki tüm alıcılara cevap verir |
+| ❹ | `İlet` | Yazışmayı başka birine e-postayla iletir |
+| ❺ | `Not Ekle` | İsteğe not ekler |
+| ❻ | Yazışma listesi | Gelen ve giden e-postalar ile notlar, tarih sırasıyla |
+
+Listede her satırda yazanın adı, e-posta adresi ve tarih görünür. Satırın başındaki simge
+kaydın türünü gösterir: kırmızı ok **gelen e-posta**, yeşil ok **giden e-posta**, kilit
+simgesi **özel not**. Satıra tıkladığınızda içerik açılır. Satırın sağındaki simgelerle o
+e-postayı cevaplayabilir, tümünü cevaplayabilir ya da iletebilirsiniz; notlarda düzenleme ve
+silme simgeleri bulunur.
+
+## Cevapla
+
+`Cevapla` butonu e-posta penceresini açar. `Kime` alanına isteği açan kullanıcının adresi
+kendiliğinden gelir.
+
+![Cevapla penceresi](/img/teknisyen/istek-detay-cevapla.png)
+
+| Alan | Açıklama |
+|---|---|
+| `Kimden` | Cevabın gönderileceği destek e-posta adresi |
+| `Kime` | Cevabın gideceği adresler. Başka adres de ekleyebilirsiniz |
+| `CC` / `BCC` | Bilgi olarak ya da gizli olarak eklenecek adresler |
+| Mesaj | Cevabınızın metni. Araç çubuğundaki `Hazır Cevaplar` ile önceden tanımlanmış metinleri ekleyebilirsiniz |
+| Dosya | Cevaba dosya eklemek için dosyayı alana sürükleyin ya da tıklayıp seçin |
+
+Pencerenin altında iki gönderme seçeneği vardır:
+
+- **Gönder:** E-postayı gönderir, isteğin durumu değişmez.
+- **Gönder ve Durumu Değiştir:** E-postayı gönderirken isteğin durumunu da değiştirir. Örneğin
+  kullanıcıdan bilgi istediğinizde isteği `Kullanıcıdan Bilgi Bekleniyor` durumuna
+  alabilirsiniz.
+
+Gönderilen e-posta `Görüşmeler` listesine giden posta olarak eklenir.
+
+## Tümünü Cevapla
+
+`Tümünü Cevapla` aynı pencereyi açar. Kullanıcıyla birlikte e-postadaki diğer alıcılara da cevap
+vermek istediğinizde kullanılır; alıcıları göndermeden önce `Kime` ve `CC` alanlarında kontrol
+edin.
+
+![Tümünü Cevapla penceresi](/img/teknisyen/istek-detay-tumunu-cevapla.png)
+
+## İlet
+
+`İlet` butonu aynı pencereyi `Kime` alanı boş olarak açar. Yazışmayı bir tedarikçiye ya da
+başka bir birime iletmek için kullanılır. `Beni Ekle` ile kendi adresinizi alıcılara
+ekleyebilirsiniz.
+
+![İlet penceresi](/img/teknisyen/istek-detay-ilet.png)
+
+## Not Ekle
+
+`Not Ekle` butonu not penceresini açar. Not, e-posta olarak gönderilmez; yalnızca istekte
+saklanır.
+
+![Not Ekle penceresi](/img/teknisyen/istek-detay-not-ekle.png)
+
+- `Not Açıklaması` alanına notunuzu yazın.
+- `Özel Not` işaretliyse not yalnızca teknisyenler tarafından görülür; kullanıcı son kullanıcı
+  portalında bu notu görmez. İşaret kaldırılırsa kullanıcı da notu görebilir.
+
+<Callout type="info" title="ÖNEMLİ">
+Başkalarının notlarını düzenleyebilmek için `Herkesin Notlarını Düzenleyebilir`, yalnızca
+kendi notlarınızı düzenleyebilmek için `Kendi Notlarını Düzenleyebilir` yetkisi gerekir; bkz.
+[Roller ve Yetkiler](/docs/teknisyen/moduller/talepler/yetkiler).
+</Callout>
