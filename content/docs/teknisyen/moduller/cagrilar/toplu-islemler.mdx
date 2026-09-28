@@ -1,7 +1,7 @@
 ---
 title: "Toplu İşlemler"
 description: "Birden fazla çağrıyı seçip tek seferde kapatma, silme, güncelleme, birleştirme ve olaya, isteğe veya iyileştirmeye dönüştürme."
-reviewed: "2026-09-24"
+reviewed: "2026-09-28"
 owner: berdanasen
 ---
 
@@ -84,9 +84,20 @@ aynı yazıcı arızası için on farklı kullanıcının açtığı çağrılar
 | ❷ | `Birincil Kaydı Seçiniz` | Diğer çağrıların altında toplanacağı ana çağrı |
 | ❸ | Seçili çağrılar | Listede yalnızca seçtiğiniz çağrılar çıkar; çağrı numarası ve konusuyla görünür |
 
-`Kaydet` butonuna bastığınızda birincil çağrı açık kalır, diğer çağrılar
+Aşağıdaki örnekte 3. kattaki yazıcı arızası için üç farklı kullanıcının açtığı çağrılar
+birleştiriliyor. Durum olarak `Birleştirilenler` ❶, birincil kayıt olarak ilk açılan
+`INT2071` ❷ seçildi.
+
+![Doldurulmuş birleştirme penceresi](/img/teknisyen/cagri-birlestir-dolu.png)
+
+`Kaydet` ❸ butonuna bastığınızda birincil çağrı açık kalır, diğer çağrılar
 `Birleştirilenler` durumuyla kapatılır ve birincil çağrıya bağlanır. Çalışmaya birincil
 çağrı üzerinden devam edersiniz.
+
+![Birleştirilmiş bir çağrı](/img/teknisyen/cagri-kart-birlestirildi.png)
+
+Birleştirilen çağrı açık çağrılar listesinden çıkar. Kapalı çağrılar arasında durumu ❶
+`Birleştirilenler` olarak görünür; `Kapatma Tarihi` ❷ birleştirmenin yapıldığı andır.
 
 <Callout type="warn" title="DİKKAT">
 Birleştirmeden önce mutlaka birincil çağrıyı seçin.

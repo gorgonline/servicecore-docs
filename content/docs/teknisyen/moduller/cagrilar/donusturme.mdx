@@ -1,7 +1,7 @@
 ---
 title: "Çağrıyı Dönüştürme"
 description: "Bir çağrının olay, istek veya sürekli iyileştirme kaydına dönüştürülmesi ve dönüştürme sonrasında çağrıda görünen bilgiler."
-reviewed: "2026-09-24"
+reviewed: "2026-09-28"
 owner: berdanasen
 ---
 
@@ -73,15 +73,50 @@ doldurulmadan istek oluşturulamaz.
 
 `Kaydet` butonuna bastığınızda "Yapılan değişiklikler başarıyla kaydedildi." mesajı görünür
 ve çağrı açık çağrılar listesinden çıkar. Çağrı silinmez; kapatılmış olarak saklanır ve
-yeni kayda bağlanır.
+yeni kayda bağlanır. Kapatılma tarihi, dönüştürmenin yapıldığı an olur.
+
+### Olaya dönüştürülen çağrı
 
 ![Olaya dönüştürülmüş bir çağrı](/img/teknisyen/cagri-kart-donusturuldu.png)
 
-- ❶ Çağrının durumu dönüştürme türüne göre `Olaya Dönüştürülenler`,
-  `İsteğe Dönüştürülenler` veya `İyileştirmeye Dönüştürülenler` olur.
-- ❸ Kartın sağ alt köşesindeki `Dönüştürüldü` alanında oluşan kaydın numarası
-  (`#INC…`, `#SR…` veya `#CI…`) görünür.
-- Durum etiketine ya da kayıt numarasına tıkladığınızda oluşan kayıt yeni bir sekmede açılır.
+| # | Alan | Açıklama |
+|---|---|---|
+| ❶ | Durum | `Olaya Dönüştürülenler` |
+| ❷ | `Yeniden Aç` | Çağrıyı tekrar açar; bkz. [Cevaplama, Kapatma ve Silme](/docs/teknisyen/moduller/cagrilar/cevapla-kapat-sil) |
+| ❸ | `Dönüştürüldü` | Oluşan olay kaydının numarası (`#INC…`) |
+
+Örnekteki `VPN bağlantısı 10 dakikada bir kopuyor` çağrısı `#INC1115` numaralı olaya
+dönüştürüldü. Kartın diğer işlem butonları pasif görünür; dönüştürülmüş çağrı
+düzenlenemez ve tekrar dönüştürülemez.
+
+### İsteğe dönüştürülen çağrı
+
+![İsteğe dönüştürülmüş bir çağrı](/img/teknisyen/cagri-kart-istege-donusturuldu.png)
+
+Durum ❶ `İsteğe Dönüştürülenler` olur ve `Dönüştürüldü` ❷ alanında istek numarası
+(`#SR…`) görünür.
+
+Oluşan istek, çağrının konusu, açıklaması ve kullanıcısıyla açılır. Katalog öğesinde tanımlı
+görevler de istekle birlikte kendiliğinden oluşur.
+
+![Çağrıdan oluşan istek](/img/teknisyen/cagri-donusen-istek.png)
+
+| # | Öge | Açıklama |
+|---|---|---|
+| ❶ | Kaynak çağrı | İsteğin hangi çağrıdan oluştuğu (`INT2076`). İstek numarasının yanında görünür |
+| ❷ | `Görevler` | Katalog öğesinin görevleri. Örnekteki `Yazılım Kurulum Talebi` öğesinin üç görevi istekle birlikte açıldı |
+
+### İyileştirmeye dönüştürülen çağrı
+
+![İyileştirmeye dönüştürülmüş bir çağrı](/img/teknisyen/cagri-kart-iyilestirmeye-donusturuldu.png)
+
+Durum ❶ `İyileştirmeye Dönüştürülenler` olur ve `Dönüştürüldü` ❷ alanında sürekli
+iyileştirme kaydının numarası (`#CI…`) görünür.
+
+### Oluşan kayda gitme
+
+Durum etiketine ya da `Dönüştürüldü` alanındaki numaraya tıkladığınızda oluşan kayıt yeni bir
+sekmede açılır.
 
 Dönüştürülmüş çağrıları görmek için `Kontrol Paneli`'nde `Aşama` alanından `Kapalı`
 seçebilir ya da `Durum` alanından ilgili dönüştürme durumunu seçebilirsiniz. Bkz.
