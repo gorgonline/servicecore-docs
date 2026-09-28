@@ -1,0 +1,38 @@
+---
+title: "Yetkiler"
+description: "Katalog modülündeki yetkiler: katalogu görme, öğe ekleme, düzenleme ve silme; rol ekranından nasıl verildikleri."
+reviewed: "2026-09-28"
+owner: berdanasen
+---
+
+Teknisyenlerin katalogda neler yapabileceği rollerle belirlenir. Katalog yetkileri
+`Yönetici ▸ Roller` ekranında, rolün `Katalog` ❶ sekmesinden verilir.
+
+![Rol ekranındaki Katalog yetkileri](/img/teknisyen/katalog-rol-yetkileri.png)
+
+| Yetki | Ne sağlar |
+|---|---|
+| `Servis Öğelerini Görebilir` | Üst menüde `Katalog`'u görme ve katalog ekranını açma |
+| `Servis Öğesi Ekleyebilir` | `Öğe Ekle` ile yeni katalog öğesi oluşturma |
+| `Servis Öğelerini Düzenleyebilir` | Öğenin bilgilerini, formunu, onay akışını ve görevlerini değiştirme |
+| `Servis Öğelerini Silebilir` | Öğeyi katalogdan kaldırma |
+
+`Servis Öğelerini Görebilir` yetkisi olmayan teknisyenler, istek modülündeki
+`İstek Oluşturabilir` yetkisiyle katalogu açıp istek oluşturabilir; ancak üst menüde `Katalog`
+görünmez, katalog `Yeni İstek` butonuyla açılır. Bkz.
+[İstekler](/docs/teknisyen/moduller/talepler) bölümündeki "Roller ve Yetkiler" sayfası.
+
+<Callout type="info" title="ÖNEMLİ">
+Rolde değişiklik yaptıktan sonra `Kaydet` butonuna basmayı unutmayın. Değişikliğin
+teknisyenin ekranına yansıması için teknisyenin oturumu kapatıp yeniden açması gerekebilir.
+</Callout>
+
+## Yönetim ekranları için gereken yetkiler
+
+| Ekran | Ne için |
+|---|---|
+| `Ayarlar ▸ Ortak Alanları Yönet` | Katalog kategorileri ve öğe sıralaması; bkz. [Kategoriler ve Sıralama](/docs/teknisyen/moduller/katalog/kategoriler) |
+| `Ayarlar ▸ Onaylayanlar ve Danışmanlar` | Grup onay aşamalarında kullanılan onay grupları; bkz. [Onay Akışı](/docs/teknisyen/moduller/katalog/onay-akisi) |
+| `Ayarlar ▸ Genel Ayarlar` | Yeni katalog ekranının açılması (**Yeni İstek V2 sayfasına yönlendir**) |
+
+Bu ekranlar yönetici yetkileriyle açılır.

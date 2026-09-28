@@ -1,0 +1,83 @@
+---
+title: "Onay Akışı"
+description: "Katalog öğesinde onay adımlarının tanımlanması: müdür onayı, grup ve kullanıcı onay aşamaları ve iş akışı ile onay."
+reviewed: "2026-09-28"
+owner: berdanasen
+---
+
+Bir katalog öğesi için istek açıldığında isteğin hangi onaylardan geçeceği, öğenin
+`Onay Akışı` bölümünde belirlenir. Bu bölüm öğe sayfasının `Detaylar` sekmesinde, `Ekler`
+bölümünün altındadır.
+
+Onay iki yoldan biriyle tanımlanır:
+
+- **Onay Mekanizması:** Müdür onayı, grup onayı ve kullanıcı onayı aşamalarını bu ekranda
+  sırayla tanımlarsınız. Çoğu öğe için yeterlidir.
+- **İş Akışı:** Önceden hazırlanmış bir iş akışını seçersiniz. Koşula göre değişen onay
+  adımları gerektiğinde kullanılır.
+
+Öğeyi kaydettiğinizde **hangi sekme açıksa o yöntem geçerli olur.** Örneğin `İş Akışı`
+sekmesinde bir iş akışı seçip kaydederseniz, `Onay Mekanizması` sekmesindeki aşamalar
+kullanılmaz.
+
+## Onay Mekanizması
+
+![Onay Mekanizması sekmesi](/img/teknisyen/katalog-onay-mekanizmasi.png)
+
+| # | Öge | Açıklama |
+|---|---|---|
+| ❶ | `Onay Mekanizması` | Onay aşamalarının bu ekranda tanımlandığı sekme |
+| ❷ | `İş Akışı` | Onayın bir iş akışıyla yürütüldüğü sekme (aşağıda) |
+| ❸ | `Tüm aşamalar onaylanmalıdır` | İşaretliyse istek, tanımlanan aşamaların hepsi onaylandığında onaylanmış olur. İşaretli değilse aşamalardan birinin onayı yeterlidir |
+| ❹ | `İnisiyatif kullanılabilir` | İşaretliyse yetkili teknisyenler, onaycıların yerine isteği onaylayabilir ya da reddedebilir |
+| ❺ | `Onaylayacak Müdür` | `Müdür Onayına Gönder` işaretliyse istek önce, isteği açan kullanıcının yöneticisinin onayına gider |
+| ❻ | `Gruplar İçin Onay Aşamaları` | Bir onay grubundan seçilen kişilerin onayı |
+| ❼ | `Kullanıcılar İçin Onay Aşamaları` | Belirli kullanıcıların onayı |
+
+Aşamalar numara sırasıyla ilerler: `Onay Adımı 1`, `Onay Adımı 2`, `Onay Adımı 3`... Örnekteki
+öğede istek önce kullanıcının müdürüne, müdür onayladıktan sonra `Donanım Destek` grubundaki
+onaycılara gider.
+
+### Grup onay aşaması
+
+![Grup onay aşaması](/img/teknisyen/katalog-onay-grup.png)
+
+| # | Alan | Açıklama |
+|---|---|---|
+| ❶ | Aşama adı | Aşamanın adı (örneğin `Donanım Destek Onayı`). İsteğin onay ekranında bu adla görünür |
+| ❷ | Onay grubu | Onayın gideceği grup. Gruplar `Ayarlar ▸ Onaylayanlar ve Danışmanlar` ekranında tanımlanır |
+| ❸ | Onaycılar | Gruptaki kişilerden bu aşamada onay verecek olanlar |
+| ❹ | Aşama ekle (+) | Yeni bir grup onay aşaması ekler |
+
+<Callout type="warn" title="DİKKAT">
+Grup seçip onaycı seçmezseniz öğe kaydedilmez ve "Grup aşamalarını kontrol ediniz" uyarısı
+çıkar. Grup seçtiğiniz her aşamada en az bir onaycı seçin.
+</Callout>
+
+### Kullanıcı onay aşaması
+
+`Kullanıcılar İçin Onay Aşamaları` bölümünde aşamaya bir ad verip onay verecek kullanıcıları
+listeden seçersiniz. Birden fazla kullanıcı aşaması eklemek için satırın sağındaki `+`
+butonunu kullanın.
+
+## İş Akışı
+
+`İş Akışı` sekmesinde `İş akışını seçiniz` ❷ listesinden, yönetici tarafından önceden
+hazırlanmış bir iş akışını seçersiniz. İş akışı, isteğin alanlarına göre farklı onaycılara
+gitmek gibi koşullu senaryolar için kullanılır.
+
+![İş Akışı sekmesi](/img/teknisyen/katalog-onay-is-akisi.png)
+
+İş akışlarının nasıl hazırlandığı Yönetici Kılavuzu'nda anlatılır; bkz.
+[Kataloğa Dinamik Onay Akışı](/docs/yonetici/isakisi/katalogakistanimlama).
+
+## İstekte onay
+
+Bu öğeyle açılan bir istekte onay aşamaları, istek detayındaki `Servis Ön Onay Aşamaları`
+bölümünde görünür. Ayrıntılar için bkz.
+[İstekler](/docs/teknisyen/moduller/talepler) bölümündeki "Onay Süreci" sayfası.
+
+<Callout type="info" title="ÖNEMLİ">
+Onay akışında yaptığınız değişiklikler yalnızca **bundan sonra açılacak** isteklere uygulanır.
+Onay sürecindeki mevcut istekler eski aşamalarla devam eder.
+</Callout>

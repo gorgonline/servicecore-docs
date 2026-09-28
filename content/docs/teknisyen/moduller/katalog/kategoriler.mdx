@@ -1,0 +1,70 @@
+---
+title: "Kategoriler ve Sıralama"
+description: "Servis ağacındaki kategorilerin eklenmesi, düzenlenmesi, yayınlanması, son kullanıcıdan gizlenmesi ve kategori ile öğe sıralaması."
+reviewed: "2026-09-28"
+owner: berdanasen
+---
+
+Katalog ekranının solundaki `Servis Ağacı`, kategorilerden oluşur. Kategoriler ve katalogdaki
+sıralama `Ayarlar ▸ Ortak Alanları Yönet` ekranından yönetilir. Bu ekran yönetici yetkisiyle
+açılır.
+
+## Kategori listesi
+
+`Servis Öğesi Kategorisi` sekmesinde bütün kategoriler, alt kategorileriyle birlikte ağaç
+şeklinde listelenir.
+
+![Servis Öğesi Kategorisi sekmesi](/img/teknisyen/katalog-kategori-yonetimi.png)
+
+| # | Öge | Ne işe yarar |
+|---|---|---|
+| ❶ | `Servis Öğesi Kategorisi` | Kategorilerin yönetildiği sekme |
+| ❷ | `Servis Öğe Kategorisi Ekle` | Yeni bir üst kategori ekler |
+| ❸ | `Genişlet`, `Daralt` | Bütün alt kategorileri açar ya da kapatır |
+| ❹ | `Sıralamayı Düzelt` | Kategorilerin sırası karıştıysa sıra numaralarını düzeltir |
+| ❺ | `Ara` | Kategori adına göre arama |
+| ❻ | Sürükleme tutamacı | Kategoriyi tutup yukarı ya da aşağı sürükleyerek servis ağacındaki sırasını değiştirir |
+| ❼ | Alt kategori | Üst kategorinin altında, içeriden başlayarak gösterilir (`Donanım` altındaki `Yedek Parça`) |
+| ❽ | Satır butonları | `Ekle` (+) bu kategorinin altına alt kategori ekler, `Düzenle` kategoriyi değiştirir, `Sil` kategoriyi kaldırır |
+
+`Yayınlama Durumu` kolonu kategorinin `Servis Ağacı`'nda görünüp görünmediğini,
+`Son Kullanıcı İçin Gizlensin mi?` kolonu kategorinin son kullanıcı portalında gizli olup
+olmadığını gösterir.
+
+## Kategori ekleme ve düzenleme
+
+`Servis Öğe Kategorisi Ekle`, satırdaki `Ekle` (+) ya da `Düzenle` butonu aynı pencereyi açar.
+
+![Servis Öğesi Kategorisi penceresi](/img/teknisyen/katalog-kategori-ekle.png)
+
+| # | Alan | Açıklama |
+|---|---|---|
+| ❶ | `Kategori Adı` | Kategorinin `Servis Ağacı`'nda görünen adı. Zorunludur |
+| ❷ | `Yayınlama Durumu` | Açıksa kategori katalog ekranındaki `Servis Ağacı`'nda görünür. Kapalı kategoriler ağaçta listelenmez |
+| ❸ | `Son Kullanıcı İçin Gizlensin mi?` | Açıksa kategori son kullanıcı portalında görünmez; yalnızca teknisyenler görür |
+| ❹ | `Yetkili Kullanıcı Grupları` | Kategoriyi görebilecek kullanıcı grupları |
+
+`Kaydet`'e bastığınızda kategori listeye eklenir. `Yayınlama Durumu` açıksa katalog ekranındaki
+`Servis Ağacı`'nda da görünür.
+
+<Callout type="info" title="ÖNEMLİ">
+`Son Kullanıcı İçin Gizlensin mi?` seçeneği, yalnızca teknisyenlerin kullandığı hizmetler için
+uygundur. Örnekteki `Yedek Parça` kategorisi, teknisyenlerin kendi işleri için açtığı yedek
+parça taleplerini içerdiği için son kullanıcılardan gizlenmiştir.
+</Callout>
+
+## Öğe sıralaması
+
+`Servis Öğesi` sekmesi katalogdaki bütün öğeleri kategorileriyle birlikte listeler. Öğelerin
+katalog ekranındaki sırası buradan belirlenir.
+
+![Servis Öğesi sekmesi](/img/teknisyen/katalog-oge-siralama.png)
+
+| # | Öge | Açıklama |
+|---|---|---|
+| ❶ | `Servis Öğesi` | Öğelerin listelendiği sekme |
+| ❷ | `Ara` | Öğe adına göre arama |
+| ❸ | Sürükleme tutamacı | Öğeyi tutup sürükleyerek katalogdaki sırasını değiştirir |
+
+Öğelerin kendisi bu ekrandan değil, katalog ekranından eklenir ve düzenlenir; bkz.
+[Katalog Öğesi Oluşturma](/docs/teknisyen/moduller/katalog/oge-olusturma).
