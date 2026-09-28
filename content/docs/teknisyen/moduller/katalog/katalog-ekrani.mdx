@@ -1,0 +1,103 @@
+---
+title: "Katalog Ekranı"
+description: "Katalog ekranının bölümleri: servis ağacı, arama, öğe kartı, liste görünümü, öğe düzenleme ve silme."
+reviewed: "2026-09-28"
+owner: berdanasen
+---
+
+Üst menüden `Katalog` seçildiğinde hizmet katalogu açılır. Solda kategoriler, sağda bu
+kategorilerdeki katalog öğeleri bulunur.
+
+![Katalog ekranının bölümleri](/img/teknisyen/katalog-yerlesim.png)
+
+| # | Bölüm | Ne işe yarar |
+|---|---|---|
+| ❶ | `Servis Ağacı` | Katalogdaki kategoriler. Bir kategoriye tıklandığında yalnızca o kategorinin öğeleri listelenir |
+| ❷ | Arama | Öğe adına göre arama |
+| ❸ | `Temizle` | Arama ve kategori seçimini kaldırır; bütün öğeler yeniden listelenir |
+| ❹ | `Öğe Ekle` | Yeni katalog öğesi oluşturma sayfasını yeni bir tarayıcı sekmesinde açar; bkz. [Katalog Öğesi Oluşturma](/docs/teknisyen/moduller/katalog/oge-olusturma) |
+| ❺ | Görünüm | Kart görünümü ile liste görünümü arasında geçiş yapar |
+| ❻ | Katalog öğesi | Öğenin kartı. Karta tıklandığında o öğe için istek formu açılır |
+
+Bir sayfada 18 öğe görünür. Daha fazla öğe varsa listenin altında sayfa numaraları çıkar.
+
+## Kategoriye göre listeleme
+
+`Servis Ağacı`'nda bir kategoriye tıkladığınızda sağ tarafta yalnızca o kategorideki öğeler
+kalır. Alt kategorisi olan kategorilerin yanında ok simgesi bulunur; kategoriye tıkladığınızda
+alt kategorileri de açılır.
+
+![Donanım kategorisinin seçilmesi](/img/teknisyen/katalog-kategori-secimi.png)
+
+| # | Açıklama |
+|---|---|
+| ❶ | Seçilen kategori (`Donanım`). Seçili kategori mavi yazıyla gösterilir |
+| ❷ | Kategorinin alt kategorisi (`Yedek Parça`) |
+| ❸ | Seçilen kategorideki öğeler |
+
+Bütün öğelere dönmek için ağacın en üstündeki `Servis Ağacı` satırına ya da `Temizle` butonuna
+tıklayın.
+
+Kategoriler `Ayarlar ▸ Ortak Alanları Yönet` ekranından yönetilir; bkz.
+[Kategoriler ve Sıralama](/docs/teknisyen/moduller/katalog/kategoriler).
+
+## Arama
+
+Arama kutusuna yazmaya başladığınızda liste kendiliğinden süzülür; `Ara` butonuna basmanız
+gerekmez. Arama bütün kategorilerde yapılır.
+
+![Katalogda arama](/img/teknisyen/katalog-arama.png)
+
+| # | Açıklama |
+|---|---|
+| ❶ | Aranan kelime |
+| ❷ | Adında aranan kelime geçen öğeler |
+
+## Katalog öğesi kartı
+
+![Katalog öğesi kartı](/img/teknisyen/katalog-kart.png)
+
+| # | Alan | Açıklama |
+|---|---|---|
+| ❶ | Öğe adı | Uzun adlar kısaltılır; fareyle üzerine geldiğinizde adın tamamı görünür |
+| ❷ | Öğe resmi | Öğe oluşturulurken yüklenen resim. Resim yüklenmemişse varsayılan resim görünür |
+| ❸ | Kısa açıklama | Öğenin kısa açıklaması |
+| ❹ | `Düzenle` | Öğenin düzenleme sayfasını açar |
+| ❺ | `Sil` | Öğeyi katalogdan kaldırır |
+
+Kartın boş bir yerine tıkladığınızda o öğe için **istek formu** açılır. Formu doldurup
+kaydettiğinizde istek oluşturulur; bkz.
+[Yeni İstek Oluşturma](/docs/teknisyen/moduller/talepler/yeni-istek).
+
+### Öğeyi silme
+
+`Sil` butonuna tıkladığınızda onay sorusu çıkar. `Evet`'e ❶ bastığınızda öğe katalogdan
+kaldırılır; `Hayır` işlemi iptal eder.
+
+![Öğe silme onayı](/img/teknisyen/katalog-sil-onay.png)
+
+Silinen öğe katalogda artık listelenmez ve bu öğe için yeni istek açılamaz. Bu öğeyle daha
+önce açılmış istekler etkilenmez.
+
+<Callout type="info" title="ÖNEMLİ">
+Öğeyi düzenleyebilmek için `Servis Öğelerini Düzenleyebilir`, silebilmek için
+`Servis Öğelerini Silebilir` yetkisi gerekir; bkz.
+[Yetkiler](/docs/teknisyen/moduller/katalog/yetkiler).
+</Callout>
+
+## Liste görünümü
+
+Sağ üstteki görünüm butonuyla öğeleri resimsiz bir liste olarak görebilirsiniz. Çok sayıda
+öğesi olan kataloglarda aradığınızı bulmak liste görünümünde daha kolaydır.
+
+![Liste görünümü](/img/teknisyen/katalog-liste-gorunumu.png)
+
+| # | Öge | Açıklama |
+|---|---|---|
+| ❶ | Başlık | `Hizmet Kataloğu` başlığı ve listelenen öğe sayısı |
+| ❷ | Kart görünümü | Kart görünümüne geri döner |
+| ❸ | Kolon ayarları | Listede görünecek kolonları seçer |
+| ❹ | `Düzenle` ve `Sil` | Kart üzerindekilerle aynı işi yapar |
+
+Satıra tıkladığınızda, kartta olduğu gibi o öğe için istek formu açılır. Sayfa her açılışta
+kart görünümüyle başlar.
