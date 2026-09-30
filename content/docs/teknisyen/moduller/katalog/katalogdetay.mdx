@@ -1,0 +1,97 @@
+---
+title: "Katalog Öğesi Detay Sayfası"
+description: "Katalog öğesinin detay sayfası: Detaylar, Ek Alanlarla Form Özelleştirme ve Katalog İlişkileri sekmeleri, onay modu seçimi ve ön tanımlı görevler."
+reviewed: "2026-09-30"
+owner:
+---
+
+Bir katalog öğesini açtığınızda ya da yeni öğe eklediğinizde, öğeye ait her şeyin
+yönetildiği detay sayfası açılır. Sayfa sekmelere ayrılmıştır: `Detaylar`,
+`Ek Alanlarla Form Özelleştirme` ve `Katalog İlişkileri`.
+
+Öğeyi açmak için `Katalog` sayfasında ilgili öğenin sağ üstündeki kalem
+işaretine tıklayın.
+
+<Callout type="info" title="ÖNEMLİ">
+`Ek Alanlarla Form Özelleştirme` sekmesi yalnız özel form yetkisi olan
+kullanıcılara görünür. `Katalog İlişkileri` sekmesi ise yalnız **kayıtlı**
+öğelerde çıkar; yeni öğe oluştururken görünmez, öğeyi kaydettikten sonra gelir.
+</Callout>
+
+## Detaylar sekmesi
+
+Bu sekme üç bölümden oluşur: öğe bilgileri, onay akışı ve ön tanımlı görevler.
+
+### Öğe bilgileri
+
+| Alan | Ne işe yarar |
+|---|---|
+| **Hizmet Adı** | Öğenin katalogda görünen adı |
+| **Kısa Açıklama** | Katalog kartında görünen tek satırlık tanım |
+| **Açıklama** | Öğenin ayrıntılı anlatımı |
+| **Hizmet Kategorisi** | Öğenin servis ağacında duracağı kategori |
+| **Maliyet** | Hizmetin maliyeti |
+| **Fiyat Bilgisi Kullanıcıya Gösterilsin** | Maliyetin son kullanıcıya görünüp görünmeyeceği |
+| **Teslim Süresi (Gün)** | Hizmetin tamamlanma süresi |
+| **Tahmini Teslim Süresi Kullanıcıya Gösterilsin** | Teslim süresinin son kullanıcıya görünüp görünmeyeceği |
+| **StoryPoint** | Öğenin diğer öğelere göre büyüklük değeri |
+| **Öncelik**, **Aciliyet**, **Etki** | Bu öğeden açılan isteklerin varsayılan değerleri |
+| **Teknisyen Grubu**, **Teknisyen** | İstek açıldığında atanacak grup ve kişi |
+| **Yetkili Kullanıcı Grupları** | Öğeyi katalogda görebilecek kullanıcı grupları |
+
+Öğeye görsel ve ek dosya da bu bölümden eklenir.
+
+### Onay akışı
+
+Öğeden açılan isteklerin nasıl onaylanacağı buradan seçilir. Üç mod vardır ve
+**aynı anda yalnız biri geçerlidir** — sekme değiştirmek modu değiştirir.
+
+| Mod | Ne zaman kullanılır |
+|---|---|
+| `Onay Mekanizması` | Sabit, sıralı onay aşamaları yeterliyse |
+| `İş Akışı` | Koşullu dallanma gerekiyorsa ve akış admin tarafından tasarlanmışsa |
+| `Gelişmiş Onay Akışı` | Onay sürecini sürükle-bırak bir şema ile kendiniz çizmek istiyorsanız |
+
+`Onay Mekanizması` modunda müdür onayı, gruplar için onay ve kullanıcılar için
+onay aşamaları tanımlanır. **Tüm aşamalar onaylanmalıdır** seçilirse her
+onaycının onayı gerekir; seçilmezse ilk onay yeterlidir. `İnisiyatif` açılırsa
+yetkili teknisyenler onaycılar yerine karar verebilir.
+
+`Gelişmiş Onay Akışı` modu ayrı bir sayfada anlatılmıştır:
+[Gelişmiş Onay Akışı](/docs/teknisyen/moduller/katalog/gelismisonayakisi).
+
+<Callout type="warn" title="DİKKAT">
+`Gelişmiş Onay Akışı` modunda akış, katalog öğesinden **ayrı** kaydedilir.
+Akışta kaydedilmemiş değişiklik varken öğeyi kaydetmeye çalışırsanız sistem
+*"Lütfen gelişmiş onay akışında yapılan değişiklikleri kaydediniz."* uyarısını
+verir ve kayıt yapılmaz. Önce akışı, sonra öğeyi kaydedin.
+</Callout>
+
+### Ön tanımlı görevler
+
+İstek açıldığında otomatik oluşacak görevler bu bölümde tanımlanır. Her görev
+için kategori, teknisyen grubu ve teknisyen seçilebilir.
+
+- `Görev ekle` ile yeni görev eklenir.
+- `Diyagram` ile görevler arasında öncül–ardıl ilişkisi kurulur.
+- `Koşullar` ile görevin hangi durumda oluşacağı belirlenir.
+- `Onaylar` ile göreve onay adımı eklenir.
+
+## Ek Alanlarla Form Özelleştirme sekmesi
+
+Kullanıcı isteği açarken dolduracağı ek alanlar buradan tasarlanır. Standart
+istek alanlarının dışında bilgi toplamanız gerektiğinde kullanılır; eklenen alan
+`zorunlu` yapılabilir, o zaman kullanıcı alanı doldurmadan isteği açamaz.
+
+<Callout type="warn" title="DİKKAT">
+Bu sekmede tanımladığınız ek alanlar `Gelişmiş Onay Akışı` içindeki **koşul
+düğümünde kullanılamaz**. Onayın bir değere göre dallanması gerekiyorsa ayrımı
+isteğin kendi alanlarından biri (Öncelik, Aciliyet, Etiketler) taşımalıdır.
+</Callout>
+
+## Katalog İlişkileri sekmesi
+
+Bir katalog öğesini başka öğelerle ilişkilendirmenizi sağlar. Birlikte talep
+edilen ya da birbirinin önkoşulu olan hizmetleri buradan bağlayabilirsiniz.
+İlişki eklemek için kategori ve öğe seçip `Ekle` deyin; listeden `Detay` ile
+ilişkili öğeye geçebilirsiniz.
