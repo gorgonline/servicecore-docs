@@ -84,8 +84,15 @@ kartında listelenir.
 
 ### Arşivle
 
-Kaydı arşive kaldırır. Pencere açılmaz; işlem hemen yapılır ve arşivlenen kayıt listeden kalkar.
-Arşivlenmiş kayıtları görmek için `Kontrol Paneli`'ndeki `Arşivlenmiş mi?` kutusunu işaretleyin.
+Kaydı arşive kaldırır. Pencere açılmaz; işlem hemen yapılır, "Yapılan değişiklikler başarıyla
+kaydedildi." mesajı görünür ve arşivlenen kayıt listeden kalkar. Arşivlenmiş kayıtları görmek için
+`Kontrol Paneli`'ndeki `Arşivlenmiş mi?` kutusunu ❶ işaretleyin:
+
+![Arşivlenmiş mi? kutusu](/img/teknisyen/iyilestirme-filtre-arsivlenmis-kutu.png)
+
+Liste yalnızca arşivlenmiş kayıtları gösterir:
+
+![Arşivlenmiş bir iyileştirme](/img/teknisyen/iyilestirme-arsivlenmis.png)
 
 ### Otomasyonlar
 
@@ -141,6 +148,9 @@ salt okunur görünür. Kapatılmış kayıtlarda da alanlar düzenlenemez.
 | ❹ | `Dosyalar` kartı | Kayda eklenmiş dosyalar |
 | ❺ | Yükle | Kayda yeni dosya ekler |
 
+Örnekte kayda `Self_servis_portal_teklifi.pdf` dosyası eklenmiştir; dosyanın adına tıklayarak
+açabilirsiniz.
+
 Düzenle simgesine bastığınızda açıklama bir metin düzenleyicide açılır. Değişikliği yapıp kartın
 altındaki `Kaydet` butonuna basın.
 
@@ -186,6 +196,18 @@ değiştirir (örneğin `Müşteri Cevap Bekliyor`).
 
 `Not Açıklaması` alanına notunuzu yazıp `Kaydet`'e basın. `Özel Not` işaretliyse not yalnızca
 teknisyenler tarafından görülür; işaret kaldırılırsa kullanıcı da notu görebilir.
+
+### Sistem Bildirimleri
+
+Kayıtla ilgili gönderilen otomatik bildirimler (kayıt oluşturuldu, teknisyene atandı, danışmaya
+gönderildi gibi) `Sistem Bildirimleri` kartında tarih sırasıyla listelenir. Kart, kayıtta en az bir
+bildirim varsa görünür.
+
+![Sistem Bildirimleri kartı](/img/teknisyen/iyilestirme-detay-sistem-bildirimleri.png)
+
+Her satırda bildirimin kime ve hangi olay için gönderildiği ve gönderim zamanı yer alır; satırı
+açtığınızda bildirimin içeriği görünür. Hangi olayda kime bildirim gideceği için bkz.
+[Bildirimler](/docs/teknisyen/moduller/iyilestirme/bildirimler).
 
 ### Özel form
 
