@@ -1,0 +1,72 @@
+---
+title: "Uygulama ve Gözden Geçirme"
+description: "Onaylanan iyileştirmeyi değişiklik ya da proje kaydıyla hayata geçirme ve sonuçları Gözden Geçirme sekmesinde takip etme."
+reviewed: "2026-10-06"
+owner: berdanasen
+---
+
+Danışma sonucunda uygulanmasına karar verilen öneri, bir **değişiklik** ya da **proje** kaydıyla
+hayata geçirilir. Küçük ve tek seferlik işler (bir sistem ayarının değiştirilmesi gibi) için
+değişiklik, planlama ve görev takibi gerektiren büyük işler için proje uygundur. Uygulamanın
+sonuçları daha sonra **Gözden Geçirme** sekmesinde değerlendirilir.
+
+## Uygulama
+
+Kayda henüz bir değişiklik ya da proje bağlanmadıysa `Uygulama` sekmesinde iki buton görünür.
+
+![Uygulama sekmesi](/img/teknisyen/iyilestirme-sekme-uygulama.png)
+
+| # | Buton | Ne yapar |
+|---|---|---|
+| ❶ | `Değişiklik Oluştur ve İlişkilendir` | Yeni bir değişiklik kaydı açar ve iyileştirmeye bağlar |
+| ❷ | `Proje Oluştur ve İlişkilendir` | Yeni bir proje açar ve iyileştirmeye bağlar |
+
+Bağlanan değişiklik ya da proje, butonların yerine bu sekmede listelenir. Böylece önerinin
+uygulamasının hangi aşamada olduğunu iyileştirme kaydından takip edebilirsiniz.
+
+### Değişiklik oluşturma
+
+![Değişiklik oluşturma penceresi](/img/teknisyen/iyilestirme-uygulama-degisiklik.png)
+
+Pencere, değişiklik formuyla açılır. `Başlık`, `Açıklama`, `Değişiklik İsteyen` (öneriyi
+getiren kullanıcı) ve `Öncelik` alanları iyileştirme kaydından hazır gelir. Değişikliğin türünü,
+sahibini ve diğer bilgilerini tamamlayıp `Kaydet`'e basın. Değişiklik kaydı oluşturulur ve
+iyileştirmeye bağlanır; değişikliğin bundan sonraki adımları Değişiklikler modülünde yürütülür.
+
+### Proje oluşturma
+
+![Proje oluşturma penceresi](/img/teknisyen/iyilestirme-uygulama-proje.png)
+
+Pencere, proje formuyla açılır. `Konu`, `Açıklama` ve `Öncelik` iyileştirme kaydından hazır
+gelir. `Başlangıç Tarihi`, `Bitiş Tarihi` ve `Kategori` alanlarını doldurup `Kaydet`'e basın.
+
+<Callout type="info" title="ÖNEMLİ">
+Kurumunuzda yeni proje modülü açıksa `Proje Oluştur ve İlişkilendir` butonu, proje şablonlarıyla
+çalışan proje oluşturma sihirbazını açar. Bu durumda butonu kullanabilmek için proje ekleme
+yetkiniz olmalıdır.
+</Callout>
+
+Kapatma kurallarında `Bağıntılanmış değişiklik kapatılmış olmalıdır.` ya da
+`Bağıntılanmış proje zorunludur.` seçiliyse iyileştirme, bağlı değişiklik kapanmadan ya da bir
+proje bağlanmadan kapatılamaz; bkz.
+[Kapatma ve Kapatma Kuralları](/docs/teknisyen/moduller/iyilestirme/kapatma).
+
+## Gözden Geçirme
+
+Uygulanan iyileştirmenin beklenen sonucu verip vermediği belirli aralıklarla kontrol edilir.
+`Gözden Geçirme` sekmesi bu kontrolün tarihini ve notlarını tutar.
+
+![Gözden Geçirme sekmesi](/img/teknisyen/iyilestirme-sekme-gozden-gecirme.png)
+
+| # | Öge | Açıklama |
+|---|---|---|
+| ❶ | `Bir Sonraki Gözden Geçirme Tarihi` | İyileştirmenin sonuçlarının ne zaman tekrar değerlendirileceği |
+| ❷ | `Kaydet` | Seçilen tarihi kaydeder |
+| ❸ | Sil | Gözden geçirme tarihini, notlarını ve dosyalarını siler |
+| ❹ | `Gözden Geçirme Notları` | Değerlendirmenin sonuçları ve bir sonraki adımlar. Sağ üstteki kalem simgesiyle düzenlenir |
+| ❺ | `Dosyalar` | Gözden geçirmeye ait dosyalar (ölçüm raporu, anket sonucu gibi). Yükleme simgesiyle dosya eklenir |
+
+<Callout type="warn" title="DİKKAT">
+Sil simgesi tarih, notlar ve dosyaların hepsini birlikte siler. Silinen dosyalar geri
+getirilemez.
+</Callout>

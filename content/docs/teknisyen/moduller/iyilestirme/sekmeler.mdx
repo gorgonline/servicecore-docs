@@ -1,0 +1,130 @@
+---
+title: "Diğer Sekmeler"
+description: "İyileştirme detayındaki İş Günlükleri, Varlıklar, Süreçler ve Geçmiş sekmeleri."
+reviewed: "2026-10-06"
+owner: berdanasen
+---
+
+Bu sayfa iyileştirme detayındaki `İş Günlükleri`, `Varlıklar`, `Süreçler` ve `Geçmiş`
+sekmelerini anlatır. Diğer sekmeler için bkz.
+[Analiz ve Değerlendirme](/docs/teknisyen/moduller/iyilestirme/analiz-degerlendirme),
+[Tavsiyeler ve İş Akışı](/docs/teknisyen/moduller/iyilestirme/tavsiyeler) ve
+[Uygulama ve Gözden Geçirme](/docs/teknisyen/moduller/iyilestirme/uygulama).
+
+## İş Günlükleri
+
+Öneri üzerinde harcadığınız zamanı kayıt altına alırsınız (analiz, test, toplantı gibi). İş
+günlükleri raporlarda teknisyen emeğini ve maliyeti hesaplamak için kullanılır.
+
+![İş Günlükleri sekmesi](/img/teknisyen/iyilestirme-sekme-is-gunlukleri.png)
+
+Tabloda her iş günlüğünün başlığı, açıklaması, türü, teknisyeni, başlangıç ve bitiş zamanı ve
+süresi görünür. `Düzenleme` kolonundaki simgelerle iş günlüğünü düzenler ya da silersiniz.
+Tablonun altında toplam süreler dakika olarak yer alır.
+
+`İş Günlüğü Ekle` ❶ butonu iş günlüğü panelini açar.
+
+![İş Günlüğü Ekle paneli](/img/teknisyen/iyilestirme-is-gunlugu-ekle.png)
+
+| Alan | Açıklama |
+|---|---|
+| `Başlık` ve `Açıklama` | Yapılan işin kısa adı ve ayrıntısı |
+| `İş Günlüğü Türü` | İşin türü (kurumunuzda tanımlıysa) |
+| `İşi Yapan` | İşi yapan teknisyen. Varsayılan olarak siz gelirsiniz. **Zorunludur** |
+| `Saat` ve `Dakika` | Harcanan süre. Alttaki hazır butonlarla (`15dk`, `30dk`, `1s` …) süreyi tek tıkla girebilirsiniz. **Zorunludur** |
+| `Tarih` | İşin yapıldığı tarih |
+| `İşi Yapanın Maliyeti`, `Diğer Masraflar` | Maliyet hesabı için tutarlar |
+| `Tahmini Süre` | İşin ne kadar sürmesi beklendiği |
+| `Faturalandırılabilir` | İşin müşteriye faturalandırılıp faturalandırılmayacağı |
+
+Bilgileri girip `Kaydet`'e basın. İş günlüğünü listeden kayıt açmadan girmek için kart
+menüsündeki `İş Günlüğü Ekle` seçeneğini de kullanabilirsiniz; bkz.
+[İyileştirme Listesi](/docs/teknisyen/moduller/iyilestirme/liste).
+
+## Varlıklar
+
+Önerinin ilgili olduğu varlıkları (bilgisayar, sunucu, yazıcı gibi) ve hizmetleri (e-posta, VPN
+gibi) kayda bağlarsınız. Böylece bir varlık ya da hizmet üzerinde hangi iyileştirmelerin
+yapıldığı izlenebilir.
+
+![Varlıklar sekmesi](/img/teknisyen/iyilestirme-sekme-varliklar.png)
+
+Üstteki tablo bağlı hizmetleri, alttaki tablo bağlı varlıkları gösterir. Bağlı kaydı satırdaki
+silme simgesiyle kaldırırsınız.
+
+| # | Buton | Ne yapar |
+|---|---|---|
+| ❶ | `Varlık Ekle` | Kayda varlık bağlar |
+| ❷ | `Hizmet Ekle` | Kayda hizmet bağlar |
+
+### Varlık Ekle
+
+![Varlık Ekle penceresi](/img/teknisyen/iyilestirme-varlik-ekle.png)
+
+Pencerenin üstündeki arama türü ❶ varlıkların nerede aranacağını belirler: öneriyi getiren
+kullanıcıya ait varlıklar, kullanıcının departmanına ait varlıklar ya da kurumun bütün
+varlıkları. Örnekte kurumun bütün varlıkları seçilmiştir. Kolonların üstündeki `Ara...`
+alanlarıyla listeyi daraltın, bağlamak istediğiniz varlıkları işaretleyin ve `Kaydet`'e basın.
+
+### Hizmet Ekle
+
+![Hizmet Ekle penceresi](/img/teknisyen/iyilestirme-hizmet-ekle.png)
+
+Pencerede kurumun hizmetleri adı, açıklaması, uptime ve çözüm hedefleri ve sahibiyle listelenir.
+İlgili hizmetleri işaretleyip `Kaydet`'e basın.
+
+## Süreçler
+
+`Süreçler` sekmesi, iyileştirmeyle bağlantılı diğer kayıtları üç alt sekmede gösterir.
+
+### Çağrı
+
+Kayıt bir çağrıdan dönüştürüldüyse kaynak çağrı burada görünür.
+
+![Süreçler sekmesinde kaynak çağrı](/img/teknisyen/iyilestirme-sekme-surecler-cagri.png)
+
+Alt sekmeler ❶ arasında geçiş yaparsınız. Tabloda çağrının numarası, konusu, açıklaması,
+durumu (`İyileştirmeye Dönüştürüldü`), teknisyen grubu ve teknisyeni yer alır.
+
+### İstek
+
+İyileştirmeyle ilişkilendirilmiş istekleri listeler. Sağ üstteki `Bağıntı Ekle` butonuyla
+kayda istek bağlayabilirsiniz.
+
+![Süreçler sekmesinde bağlı istekler](/img/teknisyen/iyilestirme-sekme-surecler-istek.png)
+
+### İlişkiler
+
+Birbiriyle ilgili iyileştirmeleri bağlar. Örneğin şifre sıfırlama portalı önerisi, ilk temasta
+çözülen kayıt oranını artırma önerisiyle ilişkilidir.
+
+![İlişkiler alt sekmesi](/img/teknisyen/iyilestirme-sekme-surecler-iliskiler.png)
+
+| # | Öge | Açıklama |
+|---|---|---|
+| ❶ | `Bağıntı Ekle` | Yeni bir ilişki ekler |
+| ❷ | `İlişkinin Geldiği Kayıt` | Bu kaydı kendisine bağlamış olan iyileştirmeler |
+| ❸ | `İlişkilenen Kayıt` | Bu kaydın bağlandığı iyileştirmeler. Satırdaki silme simgesiyle ilişki kaldırılır |
+
+`Bağıntı Ekle` butonuna bastığınızda iki seçenek çıkar:
+
+![Bağıntı Ekle seçenekleri](/img/teknisyen/iyilestirme-baginti-ekle.png)
+
+- **Yeni Kayıt:** Yeni bir iyileştirme açar ve bu kayda bağlar.
+- **Varolan Kayıt:** Mevcut iyileştirmeler arasından seçim yapmanızı sağlar.
+
+![Varolan Kayıt penceresi](/img/teknisyen/iyilestirme-baginti-varolan.png)
+
+Listeden bağlamak istediğiniz iyileştirmeyi seçip `Kaydet`'e basın. Zaten bağlı olan kayıtlar ve
+kaydın kendisi listede görünmez.
+
+## Geçmiş
+
+Kayıt üzerinde yapılan bütün işlemler (oluşturma, alan değişiklikleri, notlar, atamalar)
+tarih sırasıyla listelenir.
+
+![Geçmiş sekmesi](/img/teknisyen/iyilestirme-sekme-gecmis.png)
+
+Her satırda işlemin tarihi, türü ve işlemi yapan kişi yer alır. Üstteki `Operasyon Tipi`,
+`İşlem Tipi` ve tarih aralığı alanlarıyla listeyi süzebilirsiniz. `Harcanan Süre` sekmesi,
+kaydın hangi durumda ve hangi teknisyende ne kadar süre kaldığını gösterir.

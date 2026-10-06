@@ -1,0 +1,197 @@
+---
+title: "İyileştirme Detayı"
+description: "İyileştirme detay ekranının bölümleri: sekmeler, araç çubuğu, Diğer Eylemler menüsü, sağ panel, açıklama, dosyalar, görüşmeler ve özel form."
+reviewed: "2026-10-06"
+owner: berdanasen
+---
+
+İyileştirme listesinde bir kartın başlığına tıkladığınızda kayıt, detay ekranıyla açılır.
+
+![İyileştirme detay ekranının bölümleri](/img/teknisyen/iyilestirme-detay-yerlesim.png)
+
+| # | Bölüm | Açıklama |
+|---|---|---|
+| ❶ | Sekmeler | `Detay`, `Analiz`, `Değerlendirme`, `Tavsiyeler`, `İş Akışı`, `Uygulama`, `Gözden Geçirme`, `İş Günlükleri`, `Varlıklar`, `Süreçler` ve `Geçmiş`. Kayıt bulunan sekmelerde sayı rozeti görünür |
+| ❷ | Numara ve simgeler | İyileştirme numarası (`CI41` gibi), kaydı o anda görüntüleyen diğer kullanıcılar (göz simgesi) ve bağlantı kopyalama simgesi |
+| ❸ | Araç çubuğu | `Kaydet`, `Bana Ata`, `Kapat` ve diğer işlemler |
+| ❹ | Detay | Önerinin açıklaması, dosyaları, görüşmeleri ve formu |
+| ❺ | Sağ panel | Kullanıcı bilgileri ve kaydın özellikleri |
+
+Kayıt siz açıkken başka bir kullanıcı tarafından değiştirilirse numaranın yanında mavi bir
+yenileme simgesi belirir; simgeye tıkladığınızda kaydın güncel hali yüklenir.
+
+Sekmelerin içeriği için bkz.
+[Analiz ve Değerlendirme](/docs/teknisyen/moduller/iyilestirme/analiz-degerlendirme),
+[Tavsiyeler ve İş Akışı](/docs/teknisyen/moduller/iyilestirme/tavsiyeler),
+[Uygulama ve Gözden Geçirme](/docs/teknisyen/moduller/iyilestirme/uygulama) ve
+[Diğer Sekmeler](/docs/teknisyen/moduller/iyilestirme/sekmeler).
+
+## Araç çubuğu
+
+![Araç çubuğu](/img/teknisyen/iyilestirme-detay-arac-cubugu.png)
+
+| # | Buton | Ne yapar |
+|---|---|---|
+| ❶ | `Kaydet` | Sağ paneldeki ve formdaki değişiklikleri kaydeder |
+| ❷ | `Bana Ata` | Kaydı size atar |
+| ❸ | `Kapat` | Kaydı kapatır; bkz. [Kapatma ve Kapatma Kuralları](/docs/teknisyen/moduller/iyilestirme/kapatma) |
+| ❹ | Diğer Eylemler (üç nokta) | Ek işlemlerin bulunduğu menüyü açar |
+| ❺ | Sürükleme modu | Açıldığında `Detay` sekmesindeki kartların sırasını sürükleyerek değiştirebilirsiniz; simge kırmızıya döner. Tekrar tıklandığında mod kapanır |
+
+Kayıt bir kapatma kuralını sağlamıyorsa araç çubuğunun sağında kırmızı bir ünlem simgesi
+belirir; bkz. [Kapatma ve Kapatma Kuralları](/docs/teknisyen/moduller/iyilestirme/kapatma).
+Kapatılmış bir kayıtta `Kapat` yerine `Yeniden Aç` butonu çıkar.
+
+## Diğer Eylemler
+
+![Diğer Eylemler menüsü](/img/teknisyen/iyilestirme-detay-diger-eylemler.png)
+
+| Menü öğesi | Ne yapar |
+|---|---|
+| `Paylaş` | Kaydı başka teknisyenlerle ya da kullanıcılarla paylaşır |
+| `Sil` | Kaydı bir silme gerekçesiyle siler |
+| `Dosya Ekle` | Kayda dosya ekler |
+| `Cevapla` / `İlet` | Görüşmeler bölümündeki e-posta işlemlerini başlatır (aşağıda) |
+| `Arşivle` | Kaydı arşive kaldırır |
+| `Otomasyonlar` | Kayıt üzerinde çalıştırılabilen otomasyonları listeler |
+| `Çıktı Al` | Kaydı yazdırılabilir bir şablonla görüntüler |
+
+Kapatılmış kayıtlarda menüdeki değişiklik yapan işlemler kullanılamaz.
+
+### Paylaş
+
+Kaydı, normalde göremeyecek teknisyenlerle ya da kullanıcılarla paylaşır. Örneğin öneriyle
+ilgili görüşünü almak istediğiniz bir yöneticiyle kaydı paylaşabilirsiniz.
+
+![Kayıt Paylaşımı penceresi](/img/teknisyen/iyilestirme-eylem-paylas.png)
+
+`Teknisyenler` ve `Kullanıcılar` alanlarından paylaşılacak kişileri seçin, isterseniz `Yorum`
+alanına bir not yazın ve `Paylaş` butonuna basın. Paylaşılan kişilere bildirim gönderilir.
+
+### Sil
+
+Kaydı bir silme gerekçesiyle siler.
+
+![Sil penceresi](/img/teknisyen/iyilestirme-eylem-sil.png)
+
+`Silme Gerekçesi` ve `Durum` alanlarını doldurup `Kaydet`'e basın. Silinen kayıtları görmek için
+bkz. [Filtreleme ve Filtre Görünümleri](/docs/teknisyen/moduller/iyilestirme/filtreleme).
+
+### Dosya Ekle
+
+Bilgisayarınızın dosya seçme penceresini açar. Seçtiğiniz dosya kayda eklenir ve `Dosyalar`
+kartında listelenir.
+
+### Arşivle
+
+Kaydı arşive kaldırır. Pencere açılmaz; işlem hemen yapılır ve arşivlenen kayıt listeden kalkar.
+Arşivlenmiş kayıtları görmek için `Kontrol Paneli`'ndeki `Arşivlenmiş mi?` kutusunu işaretleyin.
+
+### Otomasyonlar
+
+Kayıt üzerinde çalıştırılabilen otomasyon kurallarını listeler.
+
+![Otomasyon Çalıştır penceresi](/img/teknisyen/iyilestirme-eylem-otomasyonlar.png)
+
+Listeden çalıştırmak istediğiniz otomasyonu seçin. Hangi otomasyonların listede yer alacağını
+yöneticiniz belirler; tanımlı otomasyon yoksa liste boş görünür. Onay iş akışları da bu yolla
+başlatılır; bkz. [Tavsiyeler ve İş Akışı](/docs/teknisyen/moduller/iyilestirme/tavsiyeler).
+
+### Çıktı Al
+
+Kaydı bir yazdırma şablonuyla görüntüler.
+
+![Şablonlar penceresi](/img/teknisyen/iyilestirme-eylem-cikti-al.png)
+
+`Ön İzleme` şablonun kayıt bilgileriyle doldurulmuş halini gösterir, `PDF İndir` PDF olarak
+indirir, `Dışa Aktar` dosya olarak dışa aktarır.
+
+## Sağ panel
+
+![Sağ panel](/img/teknisyen/iyilestirme-detay-sag-panel.png)
+
+| # | Bölüm | Açıklama |
+|---|---|---|
+| ❶ | `Kullanıcı / Bilgiler` | Öneriyi getiren kullanıcının e-posta adresi, telefonu, destek müşteri hesabı ve kaydın oluşturulma tarihi |
+| ❷ | `Özellikler` | Kaydın düzenlenebilir alanları |
+
+`Özellikler` bölümündeki alanlar: `Konu`, `Kullanıcı`, `Teknisyen Grubu`, `Teknisyen`, `Durum`,
+`Öncelik`, `Kaynak`, `Kategori`, `Hedef Başlangıç Tarihi`, `Hedef Bitiş Tarihi`, `İş Etkisi`
+ve `Aciliyet`. `Hedef Başlangıç Tarihi` ve `Hedef Bitiş Tarihi`, iyileştirmenin ne zaman
+uygulanmaya başlanıp ne zaman tamamlanacağını gösterir.
+
+Bir alanı değiştirdikten sonra araç çubuğundaki `Kaydet` butonuna basın.
+
+<Callout type="info" title="ÖNEMLİ">
+`İyileştirmeyi Düzenleyebilir` yetkisi olmayan kullanıcılar için sağ paneldeki alanlar ve form
+salt okunur görünür. Kapatılmış kayıtlarda da alanlar düzenlenemez.
+</Callout>
+
+## Detay sekmesi
+
+### Açıklama ve dosyalar
+
+![Açıklama ve Dosyalar kartları](/img/teknisyen/iyilestirme-detay-konu.png)
+
+| # | Öge | Açıklama |
+|---|---|---|
+| ❶ | Açıklama kartı | Kartın başlığı kaydın konusu, gövdesi önerinin açıklamasıdır |
+| ❷ | Tam ekran görüntüle | Açıklamayı büyük bir pencerede gösterir; uzun açıklamaları okumak için kullanılır |
+| ❸ | Düzenle | Açıklamayı düzenleme moduna alır (aşağıda) |
+| ❹ | `Dosyalar` kartı | Kayda eklenmiş dosyalar |
+| ❺ | Yükle | Kayda yeni dosya ekler |
+
+Düzenle simgesine bastığınızda açıklama bir metin düzenleyicide açılır. Değişikliği yapıp kartın
+altındaki `Kaydet` butonuna basın.
+
+![Açıklamanın düzenlenmesi](/img/teknisyen/iyilestirme-detay-konu-duzenle.png)
+
+### Görüşmeler
+
+`Görüşmeler` kartı, kayıtla ilgili e-postaları ve notları tarih sırasıyla gösterir.
+
+![Görüşmeler kartı](/img/teknisyen/iyilestirme-detay-gorusmeler.png)
+
+| # | Öge | Açıklama |
+|---|---|---|
+| ❶ | Filtreler | `Notlar`, `Gelen Posta` ve `Giden Posta` kutularıyla listede neyin görüneceğini seçersiniz |
+| ❷ | `Cevapla` | Kullanıcıya e-posta ile cevap yazar |
+| ❸ | `Tümünü Cevapla` | E-postadaki bütün alıcılara cevap yazar |
+| ❹ | `İlet` | Kaydı e-posta ile başka bir kişiye iletir |
+| ❺ | `Not Ekle` | Kayda not ekler |
+
+Listede her satır bir not ya da e-postadır. Satırın solundaki ok ile içerik açılır:
+
+- **Kilit simgesi** olan notlar özel nottur; yalnızca teknisyenler görür.
+- **Kırmızı ok simgesi** olan satırlar kullanıcıdan gelen e-postadır. E-postanın altında
+  `Not Ekle`, `Cevapla`, `Maili Cevapla`, `Tümünü Cevapla`, `İlet` ve `Yeni Kayıt` butonları
+  bulunur.
+- Notların altındaki `Düzenle` ve `Sil` butonlarıyla notu değiştirebilir ya da silebilirsiniz.
+  Not düzenleme, rolünüzdeki not yetkilerine bağlıdır; bkz.
+  [Roller ve Yetkiler](/docs/teknisyen/moduller/iyilestirme/yetkiler).
+
+#### Cevapla
+
+![Cevapla penceresi](/img/teknisyen/iyilestirme-detay-cevapla.png)
+
+`Kimden` alanında e-postanın gönderileceği adres, `Kime` alanında kullanıcının e-posta adresi
+hazır gelir. `CC` ve `BCC` ile başka alıcılar ekleyebilirsiniz. Metin alanına cevabınızı yazın,
+gerekirse `Hazır Cevaplar` listesinden kayıtlı bir metin seçin ve dosya ekleyin. `Gönder`
+e-postayı gönderir; `Gönder ve Durumu Değiştir` e-postayı gönderirken kaydın durumunu da
+değiştirir (örneğin `Müşteri Cevap Bekliyor`).
+
+#### Not Ekle
+
+![Not Ekle penceresi](/img/teknisyen/iyilestirme-detay-not-ekle.png)
+
+`Not Açıklaması` alanına notunuzu yazıp `Kaydet`'e basın. `Özel Not` işaretliyse not yalnızca
+teknisyenler tarafından görülür; işaret kaldırılırsa kullanıcı da notu görebilir.
+
+### Özel form
+
+![İyileştirmenin özel formu](/img/teknisyen/iyilestirme-detay-ozel-form.png)
+
+Kartın başlığında formun adı ve iyileştirme numarası yer alır. Kayıt açılırken doldurulan
+alanlar burada görünür ve değiştirilebilir. Yıldızlı alanlar zorunludur; zorunlu bir alan boşsa
+kayıt kapatılamaz. Formun altındaki `Diğer Alanlar` bölümü sağ paneldeki özelliklerin aynısını
+içerir.

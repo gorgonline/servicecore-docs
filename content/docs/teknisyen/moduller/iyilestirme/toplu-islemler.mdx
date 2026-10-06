@@ -1,0 +1,72 @@
+---
+title: "Toplu İşlemler"
+description: "Birden fazla iyileştirmeyi seçip tek seferde güncelleme, kapatma, silme ve kendine atama."
+reviewed: "2026-10-06"
+owner: berdanasen
+---
+
+Aynı işlemi birden çok iyileştirmeye uygulamanız gerektiğinde (örneğin değerlendirme toplantısında
+ele alınan önerileri bir teknisyen grubuna devretmek) kayıtları seçip tek seferde işleyebilirsiniz.
+
+## İyileştirmeleri seçme
+
+Farenizi bir kartın sol kenarına getirdiğinizde seçim kutusu belirir. Bir kayıt seçildiğinde
+listenin üstünde toplu işlem çubuğu açılır. Listenin sol üstündeki kutuyla sayfadaki bütün
+kayıtları birden seçebilirsiniz.
+
+![İyileştirmelerin seçilmesi ve toplu işlem çubuğu](/img/teknisyen/iyilestirme-toplu-secim.png)
+
+| # | Öge | Açıklama |
+|---|---|---|
+| ❶ | Toplu işlem çubuğu | `Toplu İşlem`, `Kapat`, `Sil` ve `Bana Ata` |
+| ❷ | Seçim kutuları | Seçili kayıtların kutusu işaretli kalır |
+
+Butonların hangi durumda kullanılabildiği:
+
+| Buton | Ne zaman etkin |
+|---|---|
+| `Sil` | En az bir kayıt seçildiğinde |
+| `Toplu İşlem`, `Kapat`, `Bana Ata` | En az bir kayıt seçildiğinde. Seçimde kapatılmış bir kayıt varsa pasiftir |
+
+## Toplu İşlem
+
+Seçili kayıtların durumunu, önceliğini, etkisini, aciliyetini, grubunu ve teknisyenini tek
+seferde değiştirir.
+
+![Toplu İşlem penceresi](/img/teknisyen/iyilestirme-toplu-islem.png)
+
+Değiştirmek istediğiniz alanlarda yeni değeri seçin (`Durum Değiştir`, `Önceliği Değiştir`,
+`Etkiyi Değiştir`, `Aciliyeti Değiştir`, `Grup Değiştir`, `Teknisyen Değiştir`) ve `Kaydet`'e
+basın. Yalnızca **doldurduğunuz alanlar** değişir; boş bıraktığınız alanlar kayıtlarda olduğu
+gibi kalır.
+
+## Toplu kapatma
+
+`Kapat` butonu `Toplu Kapatma` penceresini açar. Pencere, tek kayıt kapatmadaki alanların
+aynısını içerir: `Gerekçe`, `Durum` ve `Kapatma Açıklaması`. Girdiğiniz bilgiler seçili
+kayıtların hepsine uygulanır.
+
+![Toplu Kapatma penceresi](/img/teknisyen/iyilestirme-toplu-kapat.png)
+
+Kapatma kuralları her kayıt için ayrı denetlenir; bkz.
+[Kapatma ve Kapatma Kuralları](/docs/teknisyen/moduller/iyilestirme/kapatma).
+
+## Toplu silme
+
+`Sil` butonu silme panelini açar. `Silme Gerekçesi` ve `Durum` alanlarını doldurup `Sil`
+butonuna basın.
+
+![Toplu silme paneli](/img/teknisyen/iyilestirme-toplu-sil.png)
+
+Silinen kayıtlar listeden kalkar. Silinmiş kayıtları görmek için `Kontrol Paneli`'ndeki
+`Silinmiş mi?` kutusunu işaretleyin; bkz.
+[Filtreleme ve Filtre Görünümleri](/docs/teknisyen/moduller/iyilestirme/filtreleme).
+
+## Bana Ata
+
+Seçili kayıtları size atar. Önce bir onay sorulur:
+
+![Bana Ata onayı](/img/teknisyen/iyilestirme-toplu-bana-ata.png)
+
+`Tamam` dediğinizde seçili kayıtların hepsi size atanır. Vazgeçmek için pencerenin sağ
+üstündeki çarpı simgesine basın.

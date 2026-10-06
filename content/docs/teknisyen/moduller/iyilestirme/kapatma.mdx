@@ -1,0 +1,107 @@
+---
+title: "Kapatma ve Kapatma Kuralları"
+description: "İyileştirmeyi kapatma, kapatmayı engelleyen kurallar ve uyarılar, kapatma kuralları ve gerekçeleri, yeniden açma."
+reviewed: "2026-10-06"
+owner: berdanasen
+---
+
+Uygulaması tamamlanan, gözden geçirilen ya da uygulanmamasına karar verilen iyileştirme, araç
+çubuğundaki `Kapat` butonuyla kapatılır. Kurumunuzda **kapatma kuralları** tanımlıysa kurallar
+sağlanmadan kayıt kapatılamaz.
+
+## İyileştirmeyi kapatma
+
+`Kapat` butonuna bastığınızda `Kapatma Bilgileri` penceresi açılır.
+
+![Kapatma Bilgileri penceresi](/img/teknisyen/iyilestirme-kapat.png)
+
+| # | Alan | Açıklama |
+|---|---|---|
+| ❶ | `Gerekçe` | Kaydın neden kapatıldığı (aşağıda) |
+| ❷ | `Durum` | Kaydın kapanış durumu (genellikle `Kapatılanlar`). **Zorunludur** |
+| ❸ | `Kapatma Açıklaması` | Önerinin nasıl sonuçlandığına dair kısa açıklama. Kapatma kurallarında istenmişse zorunludur |
+| ❹ | `Kapat` | Kaydı kapatır |
+
+`Gerekçe` alanına tıkladığınızda yöneticinizin tanımladığı gerekçeler listelenir:
+
+![Kapatma gerekçesi seçimi](/img/teknisyen/iyilestirme-kapat-gerekce.png)
+
+`Kapat` butonuna bastığınızda kayıt kapatılır ve "Kayıt başarıyla kapatıldı." mesajı görünür.
+Kayıtta kaydedilmemiş bir değişiklik varsa önce değişiklik kaydedilir. `Vazgeç` pencereyi
+kapatmadan çıkar.
+
+## Kapatmayı engelleyen durumlar
+
+### Eksik kurallar
+
+Kayıt bir kapatma kuralını sağlamıyorsa araç çubuğunun sağında kırmızı bir ünlem simgesi ❶
+belirir.
+
+![Eksik kural simgesi](/img/teknisyen/iyilestirme-detay-eksik-kural-simge.png)
+
+Simgeye tıkladığınızda `Eksik kurallar` listesi açılır. Listede sağlanmayan her kural bir
+satırda yazar (örnekte kayda teknisyen atanmamıştır).
+
+![Eksik kurallar listesi](/img/teknisyen/iyilestirme-detay-eksik-kurallar.png)
+
+Kurallar sağlanmadan `Kapat`'a basarsanız pencere açılmaz; ekranın sağ üstünde eksik kuralı
+bildiren bir uyarı çıkar.
+
+![Eksik kural uyarısı](/img/teknisyen/iyilestirme-kapat-eksik-kural-uyari.png)
+
+Eksik bilgiyi tamamlayıp `Kaydet`'e bastığınızda simge kaybolur ve kayıt kapatılabilir.
+
+### Zorunlu form alanları
+
+İyileştirmenin formunda doldurulmamış zorunlu bir alan varsa `Kapat`'a bastığınızda `Detay`
+sekmesi açılır ve ekran eksik alana kaydırılır. Alanı doldurup tekrar deneyin.
+
+## Kapatma kuralları
+
+Kapatma kuralları `Ayarlar ▸ Kapatma Kuralları` ekranında, `İyileştirmeler` sekmesinden
+tanımlanır. İşaretlenen her kural, iyileştirmeler kapatılmadan önce denetlenir.
+
+![İyileştirmeler için kapatma kuralları](/img/teknisyen/iyilestirme-kapatma-kurallari.png)
+
+| Kural | Kayıt ne zaman kapatılabilir |
+|---|---|
+| `Notlar girilmiş olmalıdır.` | Kayda en az bir not eklendiğinde |
+| `İş günlükleri girilmiş olmalıdır.` | Kayda en az bir iş günlüğü girildiğinde |
+| `Açıklama girilmiş olmalıdır.` | Açıklama dolu olduğunda |
+| `Kategori tanımlanmış olmalıdır.` | Kategori seçildiğinde |
+| `Kayıt kaynağı tanımlanmış olmalıdır.` | `Kaynak` alanı dolu olduğunda |
+| `Teknisyen tanımlanmış olmalıdır.` | Kayda teknisyen atandığında |
+| `Teknisyen grubu tanımlanmış olmalıdır.` | Kayda teknisyen grubu atandığında |
+| `Aciliyet belirlenmiş olmalıdır.` | Aciliyet seçildiğinde |
+| `Bağıntılanmış değişiklik kapatılmış olmalıdır.` | Uygulama için açılan değişiklik kapatıldığında |
+| `Bağıntılanmış proje zorunludur.` | Kayda bir proje bağlandığında |
+| `Varlık tanımlanmış olmalıdır.` | Kayda en az bir varlık bağlandığında |
+| `Öncelik belirlenmiş olmalıdır.` | Öncelik seçildiğinde |
+| `Hedef başlangıç tarihi girilmiş olmalıdır` | Hedef başlangıç tarihi dolu olduğunda |
+| `Hedef bitiş tarihi girilmiş olmalıdır` | Hedef bitiş tarihi dolu olduğunda |
+| `Onaylar tamamlanmış olmalıdır.` | Danışma ve onaylar sonuçlandığında |
+| `Kapatma açıklaması girilmiş olmalıdır.` | Kapatma penceresinde `Kapatma Açıklaması` yazıldığında |
+
+Seçimleri yaptıktan sonra sayfanın altındaki `Kaydet` butonuna basın.
+
+## Kapatma gerekçeleri
+
+Kapatma penceresindeki `Gerekçe` listesi `Ayarlar ▸ Kapatma Kuralları` ekranının
+`Kapatma Gerekçeleri` bölümünde, `Sürekli İyileştirme` sekmesinden yönetilir.
+
+![Sürekli İyileştirme kapatma gerekçeleri](/img/teknisyen/iyilestirme-kapatma-gerekceleri.png)
+
+`Yeni Kapatma Nedeni Ekle` ile yeni gerekçe eklenir. Satırlardaki simgelerle bir gerekçenin
+altına alt gerekçe ekleyebilir, gerekçeyi düzenleyebilir ya da silebilirsiniz. Satırın solundaki
+tutamaçla gerekçelerin sırasını sürükleyerek değiştirirsiniz.
+
+<Callout type="info" title="ÖNEMLİ">
+Kullanıcıların kendi kayıtlarını kapatırken seçtiği gerekçeler (örnekteki
+`Kullanıcı öneriden vazgeçti`) teknisyenin kapatma penceresinde listelenmez.
+</Callout>
+
+## Yeniden açma
+
+Kapatılmış bir iyileştirmede araç çubuğunda `Kapat` yerine `Yeniden Aç` butonu görünür.
+Butona bastığınızda kaydın yeniden açılacağı durumu seçer ve onaylarsınız. Yeniden açılan
+kayıt tekrar düzenlenebilir hale gelir.

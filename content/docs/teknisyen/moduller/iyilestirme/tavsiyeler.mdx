@@ -1,0 +1,101 @@
+---
+title: "Tavsiyeler ve İş Akışı"
+description: "İyileştirme önerisi için danışılacak kişileri ekleme, görüş ve onay isteme, onay durumları, iş akışı şeması ve Onay Zaman Çizelgesi."
+reviewed: "2026-10-06"
+owner: berdanasen
+---
+
+Analiz ve değerlendirmesi yapılan bir öneri hakkında karar vermeden önce ilgili kişilerin
+görüşü alınır. Bu danışma süreci **Tavsiyeler** sekmesinde yürütülür. Kurumunuzda iyileştirmeler
+için bir onay iş akışı tanımlıysa akışın durumu **İş Akışı** sekmesinde izlenir.
+
+## Tavsiyeler
+
+![Tavsiyeler sekmesi](/img/teknisyen/iyilestirme-sekme-tavsiyeler.png)
+
+| # | Öge | Açıklama |
+|---|---|---|
+| ❶ | `Danışılacak Kişileri Ekle` | Görüşü alınacak kişileri ekler (aşağıda) |
+| ❷ | Durum | Danışılan kişinin cevap durumu |
+| ❸ | `Onayla / Reddet` | Kişinin kararını onun adına kaydeder |
+| ❹ | `Onay İçin Gönder` | Kişiye görüş ve onay isteği gönderir |
+| ❺ | Sil | Danışılan kişiyi listeden kaldırır |
+
+Tabloda her satır danışılan bir kişidir. `Gönderme Açıklaması` kişiye ne sorulduğunu,
+`Açıklama` kişinin verdiği cevabı, `İstek Tarihi` ve `Sonuç tarihi` görüşün ne zaman istendiğini
+ve ne zaman verildiğini gösterir. Sekmenin adındaki sayı, danışılan kişi sayısıdır.
+
+### Danışma durumları
+
+| Durum | Anlamı |
+|---|---|
+| `Onaya gönderilmeyi bekliyor` | Kişi eklendi, henüz görüş istenmedi |
+| `Cevap bekleniyor` | Görüş istendi, kişinin cevabı bekleniyor |
+| `Onayladı veya tamamladı` | Kişi öneriyi onayladı ya da görüşünü bildirdi |
+| `Reddetti` | Kişi öneriyi reddetti |
+| `Onay Süresi Doldu` | Kişi verilen süre içinde cevap vermedi |
+
+### Danışılacak kişileri ekleme
+
+`Danışılacak Kişileri Ekle` butonu aşağıdaki pencereyi açar.
+
+![Danışılacak Kişileri Ekle penceresi](/img/teknisyen/iyilestirme-tavsiye-ekle.png)
+
+- **Danışma Kurulu:** Önceden tanımlanmış bir kurul seçtiğinizde kurulun üyeleri listeye
+  eklenir. Kurullar yöneticiniz tarafından `Tavsiye ve Onay Kurulları` ekranındaki
+  `SI Danışma Kurulu` bölümünde tanımlanır.
+- **Danışılacak Kişiler:** Kurumunuzdaki kişilerden görüşü alınacak olanları tek tek seçersiniz.
+- **Danışılacak Diğer Üyeler:** Sistemde kaydı olmayan kişilerin (dış danışman, tedarikçi gibi)
+  e-posta adreslerini yazarsınız.
+
+`Kaydet`'e bastığınızda seçilen kişiler tabloya `Onaya gönderilmeyi bekliyor` durumuyla eklenir.
+
+### Görüş ve onay isteme
+
+Bir satırdaki `Onay İçin Gönder` butonuna basın, kişiye sormak istediğinizi açıklama olarak
+yazın ve gönderin. Kişiye bildirim gider ve satırın durumu `Cevap bekleniyor` olur. Reddedilen
+ya da süresi dolan bir danışmayı aynı butonla yeniden gönderebilirsiniz.
+
+<Callout type="warn" title="DİKKAT">
+`Onay İçin Gönder` kişiye bildirim gönderir. Bildirimin doğru kişiye gideceğinden emin olduktan
+sonra gönderin.
+</Callout>
+
+### Kararı kişi adına kaydetme
+
+Danışılan kişi kararını size telefonla ya da toplantıda ilettiyse kararı onun adına
+kaydedebilirsiniz. Satırdaki `Onayla / Reddet` butonu `Danışmayı Onayla` penceresini açar.
+
+![Danışmayı Onayla penceresi](/img/teknisyen/iyilestirme-tavsiye-onayla.png)
+
+`Açıklama` alanına kişinin görüşünü yazın (**zorunludur**) ve kararına göre `Onayla` ya da
+`Reddet` butonuna basın.
+
+<Callout type="info" title="ÖNEMLİ">
+`Onayla / Reddet` butonu yalnızca `İnisiyatif alarak kaydı onaylayabilir` ya da
+`İnisiyatif alarak kaydı reddedebilir` yetkisi olan kullanıcılarda etkindir. Danışılan kişiyi
+listeden kaldırmak için `Onayları Silebilir` yetkisi gerekir; bkz.
+[Roller ve Yetkiler](/docs/teknisyen/moduller/iyilestirme/yetkiler).
+</Callout>
+
+## İş Akışı
+
+Kurumunuzda iyileştirmeler için bir onay iş akışı tasarlandıysa akış, otomasyon kuralları
+aracılığıyla kayıt üzerinde başlatılır. `İş Akışı` sekmesi akışın şemasını gösterir; kaydın
+akışta hangi adımda olduğunu buradan izlersiniz.
+
+![İş Akışı sekmesi](/img/teknisyen/iyilestirme-sekme-is-akisi.png)
+
+Örnekteki kayıtta henüz bir iş akışı çalıştırılmadığı için şemada yalnızca başlangıç adımı
+(`Start`) görünür.
+
+### Onay Zaman Çizelgesi
+
+`Onay Zaman Çizelgesi` sekmesi, iş akışının istediği onayları sırasıyla listeler.
+
+![Onay Zaman Çizelgesi](/img/teknisyen/iyilestirme-sekme-onay-zaman-cizelgesi.png)
+
+Her satırda onayın hangi `Aşama`'da istendiği, onayı kimin tetiklediği (`Onayı Tetikleyen`),
+kimin onaylayacağı (`Onaylayan`), onayın ne zaman istendiği, `Onay durumu`, `Karar Tarihi` ve
+onaylayanın açıklaması bulunur. `Düzenleme` kolonundaki buton, cevap vermeyen onaylayana onay
+e-postasını yeniden gönderir.

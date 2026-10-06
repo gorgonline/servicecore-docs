@@ -1,0 +1,58 @@
+---
+title: "Yeni İyileştirme Oluşturma"
+description: "Yeni İyileştirme formuyla iyileştirme kaydı açma, formdaki alanlar ve çağrıdan iyileştirmeye dönüştürülen kayıtlar."
+reviewed: "2026-10-06"
+owner: berdanasen
+---
+
+İyileştirme önerileri iki yoldan kayda girer: teknisyen öneriyi doğrudan yeni bir iyileştirme
+olarak açar ya da kullanıcıdan gelen bir çağrı iyileştirmeye dönüştürülür.
+
+## Yeni İyileştirme formu
+
+Listenin sağ üstündeki `Yeni İyileştirme` butonuna basın.
+
+![Yeni İyileştirme butonu](/img/teknisyen/iyilestirme-yeni-buton.png)
+
+<Callout type="info" title="ÖNEMLİ">
+`Yeni İyileştirme` butonu yalnızca `İyileştirme Oluşturabilir` yetkisi olan kullanıcılarda
+görünür; bkz. [Roller ve Yetkiler](/docs/teknisyen/moduller/iyilestirme/yetkiler).
+</Callout>
+
+Ekranın sağından `Oluştur` paneli açılır.
+
+![Oluştur paneli](/img/teknisyen/iyilestirme-yeni-form.png)
+
+| # | Alan | Açıklama |
+|---|---|---|
+| ❶ | `Özel Form` | Kaydın hangi formla açılacağı. Kurumunuzda iyileştirmeler için birden fazla form tanımlıysa buradan seçilir; varsayılan form `Default Continual Improvement Form`'dur |
+| ❷ | `Başlık` | Önerinin kısa adı. **Zorunludur** |
+| ❸ | `Açıklama` | Önerinin ayrıntısı: mevcut durum, sorun ve önerilen iyileştirme. **Zorunludur** |
+| ❹ | `Dosya Yükle` | Öneriyle ilgili dosyalar (rapor, ekran görüntüsü, teklif gibi). Dosyayı alana sürükleyebilir ya da tıklayarak seçebilirsiniz |
+| ❺ | `Diğer Alanlar` | `Kullanıcı`, `Teknisyen Grubu`, `Teknisyen`, `Kategori`, `Durum`, `Kaynak`, `Öncelik`, `İş Etkisi` ve `Aciliyet` |
+| ❻ | `Kaydet` | Kaydı oluşturur |
+
+`İyileştirme Numarası` alanı boş bırakılır; numara kayıt oluşturulurken kendiliğinden verilir.
+Formda kurumunuza özel başka alanlar da bulunabilir (örnekteki `Teslim Tarihi` gibi).
+
+`Kaydet`'e bastığınızda panel kapanır ve yeni iyileştirme listenin en üstünde görünür. Zorunlu
+bir alan boşsa kayıt oluşturulmaz ve alanın altında uyarı çıkar.
+
+<Callout type="info" title="ÖNEMLİ">
+`Kullanıcı` alanı, öneriyi getiren kişidir. Kayıtla ilgili e-postalar ve bildirimler bu kişiye
+gider. Öneriyi kendiniz getiriyorsanız alanı boş bırakabilirsiniz.
+</Callout>
+
+## Çağrıdan iyileştirmeye dönüştürme
+
+Kullanıcılar önerilerini çoğu zaman portal ya da e-posta üzerinden çağrı olarak iletir.
+Çağrılar modülündeki `İyileştirmeye Dönüştür` işlemiyle çağrı bir iyileştirme kaydına
+dönüştürülür. Çağrının konusu ve açıklaması yeni kayda aktarılır, çağrının durumu
+`İyileştirmeye Dönüştürüldü` olur.
+
+Dönüştürülen kaydın hangi çağrıdan geldiği, iyileştirme detayındaki `Süreçler ▸ Çağrı`
+sekmesinde görünür:
+
+![Kaydın geldiği çağrı](/img/teknisyen/iyilestirme-sekme-surecler-cagri.png)
+
+Ayrıntılar için bkz. [Diğer Sekmeler](/docs/teknisyen/moduller/iyilestirme/sekmeler).
