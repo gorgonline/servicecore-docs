@@ -1,0 +1,143 @@
+---
+title: "Alan Sayfası"
+description: "Bir alanın ana sayfası, sayfa ağacı, klasör ve sayfa işlemleri, alan ayarları, üye yönetimi, dışa aktarma ve veritabanları."
+reviewed: "2026-10-06"
+owner: oobcore
+---
+
+Bir alana girdiğinizde kenar çubuğu o alanın sayfa ağacına dönüşür ve sağda alanın ana sayfası açılır.
+
+## Alanın ana sayfası
+
+![Alan ana sayfasının bölümleri](/img/teknisyen/kb-alan-yerlesim.png)
+
+| # | Bölüm | Ne işe yarar |
+|---|---|---|
+| ❶ | Başlık | Alanın adı, kodu, açıklaması ve sağda alan işlemleri (aşağıda). |
+| ❷ | **Son güncellenen sayfalar** | Alanda en son değişen sayfalar; hangi klasörde oldukları ve ne zaman güncellendikleri yazar. |
+| ❸ | `Klasörler` | Alanın ana klasörleri ve her birindeki sayfa sayısı. |
+| ❹ | `Etiketler` | Alandaki sayfalarda kullanılan etiketler ve kaç sayfada geçtikleri. Bir etikete tıklayınca o etiketi taşıyan sayfalar listelenir. |
+| ❺ | `Sağlık` | Alandaki süresi dolan, gözden geçirilecek, bayat ve sahipsiz sayfa sayıları. Bkz. [Yönetim Ekranları](/docs/teknisyen/moduller/bilgi-bankasi/yonetim#sağlık). |
+| ❻ | **Veritabanları** | Alandaki veritabanları (aşağıda). |
+
+### Başlıktaki işlemler
+
+![Alan başlığındaki işlem simgeleri](/img/teknisyen/kb-alan-ust-bilgi.png)
+
+| # | Simge | Ne işe yarar |
+|---|---|---|
+| ❶ | Yıldız | Alanı favorilerinize ekler. |
+| ❷ | Zil | Alanı izlersiniz; alandaki sayfalar değiştiğinde e-posta alırsınız. İzlediğiniz alanda zil dolu görünür. |
+| ❸ | **Dışa aktar (zip)** | Alanın sayfalarını bir zip dosyasına aktarır. Hazırlanması zaman alabilir; hazır olunca `Dışa aktarımlarım` listesinden indirilir. |
+| ❹ | **Dışa aktarımlarım** | Başlattığınız dışa aktarımların durumu (`Hazırlanıyor`, `Hazır`, `Başarısız`); hazır olanı `İndir` ile alırsınız. |
+| ❺ | **Diğer işlemler** | Alan menüsü (aşağıda). |
+
+Dışa aktarma için rolünüzde alanı toplu dışa aktarma yetkisi bulunmalıdır.
+
+### Alan menüsü
+
+Başlıktaki ya da kenar çubuğunda alan adının yanındaki `⋯` simgesi alan menüsünü açar.
+
+![Alan menüsü](/img/teknisyen/kb-alan-menu.png)
+
+| # | Grup | İçerik |
+|---|---|---|
+| ❶ | Kişisel | `Favorilere ekle`, `İzle` (izlediğiniz alanda `İzleniyor`). |
+| ❷ | Alan araçları | `Üyeler`, `Veritabanları`, `Sağlık`, `Analitik` ve `Dışa aktar (zip)`. |
+| ❸ | `Ayarlar` | Alanın genel bilgileri ve erişimi (aşağıda). |
+| ❹ | `Sil` | Alanı siler. |
+
+Menüde yalnızca alandaki rolünüzün izin verdiği işlemler görünür.
+
+## Sayfa ağacı
+
+![Alanın kenar çubuğu ve sayfa ağacı](/img/teknisyen/kb-alan-agac.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | `Tüm alanlar` | Alan listesine döner. |
+| ❷ | Alan adı ve rolünüz | Alanın adı ve bu alandaki rolünüz (`Yönetici`, `Düzenleyici`, `Katkıda Bulunan` ya da `Görüntüleyici`). `⋯` alan menüsünü açar. |
+| ❸ | **Başlığa göre ara** | Ağaçta sayfa adına göre süzer. |
+| ❹ | `Ekle` (`+`) | `Klasör Ekle` ya da `Mevcut Sayfayı Bağla`. |
+| ❺ | Satır işlemleri | Bir satırın üstüne gelince çıkar: `+` (`Alt sayfa oluştur`) o sayfanın altına yeni sayfa açar, `⋯` satır menüsünü açar. |
+
+Ağaçta onay bekleyen sayfalar `Onayda`, taslaklar `Taslak` etiketiyle görünür. Bir sayfayı ya da klasörü sürükleyip başka bir klasörün içine bırakarak yerini değiştirebilirsiniz.
+
+### Satır menüsü
+
+![Ağaçtaki bir sayfanın menüsü](/img/teknisyen/kb-alan-agac-menu.png)
+
+Satır menüsünde ❶, rolünüzün izin verdiği işlemler bulunur:
+
+| İşlem | Açıklama |
+|---|---|
+| **Alt Klasör Ekle** | Klasörün içine yeni klasör açar (klasör satırlarında). |
+| **Mevcut Sayfayı Bağla** | Bilgi Bankası'ndaki var olan bir sayfayı bu klasöre bağlar. Aramak için en az iki harf yazın; yalnızca onaylanmış sayfalar bulunur. |
+| `Taşı…` | `Sayfayı taşı` penceresini açar; `Yeni üst sayfa` seçin ya da `Alan kökü`ne taşıyın. |
+| **Kopya oluştur…** | Sayfanın bir kopyasını oluşturur. Kopya onaya gider. |
+| **Alandan kaldır** | Sayfayı (ve altındaki sayfaları) bu alanın ağacından çıkarır. **Sayfanın kendisi silinmez**, Bilgi Bankası'nda ve bağlı olduğu diğer alanlarda durmaya devam eder. |
+
+## Alan ayarları
+
+Alan menüsündeki `Ayarlar` sağda bir panel açar.
+
+![Alan ayarları paneli](/img/teknisyen/kb-alan-ayarlar.png)
+
+- **Genel Bilgiler:** `Alan Adı`, `Açıklama`, `Alan Tipi` ve `Renk`.
+- **Erişim** ❶: `Herkese Açık` ya da `Özel`. Özel alanı yalnızca üyeleri görür.
+- **Etiketler:** Alanın etiketleri. `Yeni etiket ekle…` kutusuna yazıp `Ekle`ye basın.
+
+Değişiklikleri `Kaydet` ❸ ile kaydedin. `Alanı Sil` ❷ alanı siler; yanlışlıkla silmeyi önlemek için onay penceresinde alanın adını yazmanız istenir. Alandaki sayfalar silinmez; yalnızca alan ve sayfa ağacı kaldırılır, sayfalar `Tüm sayfalar` listesinde kalır.
+
+Ayarları yalnızca alanın yöneticileri değiştirebilir.
+
+## Üye yönetimi
+
+Alan menüsündeki `Üyeler`, `Üye Yönetimi` penceresini açar.
+
+![Üye Yönetimi penceresi](/img/teknisyen/kb-alan-uyeler.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | Kullanıcı ekleme | `Kullanıcı seç…` ile bir teknisyen seçin, yanındaki listeden rolünü belirleyin ve `Ekle`ye basın. |
+| ❷ | Grup ekleme | `Kullanıcı grubu seç…` ile bir grubun bütün üyelerini aynı rolle `Toplu Ekle`. |
+| ❸ | Üye kopyalama | `Başka alandan üye kopyala…` ile başka bir alanın üye listesini rolleriyle birlikte getirin. |
+| ❹ | Arama ve süzme | `Üye ara…` ada göre, `Tüm Roller` role göre süzer. |
+| ❺ | Toplu işlem | `Filtrelenenleri seç` ya da satırlardaki kutularla üyeleri seçip `Rol ata` ile rollerini değiştirin ya da `Toplu Sil` ile çıkarın. |
+| ❻ | Üyenin rolü | Tek bir üyenin rolünü değiştirir; yanındaki çöp kutusu üyeyi alandan çıkarır. |
+
+Alan rolleri şunlardır:
+
+| Rol | Neler yapabilir |
+|---|---|
+| `Yönetici` | Her şey: ayarlar, üyeler, alanı silme ve aşağıdaki tüm işlemler. |
+| `Düzenleyici` | Sayfaları ağaçta taşıma, alandan kaldırma ve aşağıdaki işlemler. |
+| **Katkıda Bulunan** | Alana sayfa ve klasör ekleme, var olan sayfayı bağlama. |
+| **Görüntüleyici** | Yalnızca okuma. Özel alanlarda alanı görebilmek için en az bu rol gerekir. |
+
+Alan rolü, rolünüzdeki Bilgi Bankası yetkileriyle birlikte değerlendirilir. Örneğin alanda `Katkıda Bulunan` olsanız bile rolünüzde alan düzenleme yetkisi yoksa sayfa ekleyemezsiniz.
+
+## Veritabanları
+
+Veritabanı, bir alanın içinde tutulan yapılandırılmış bir tablodur: bilinen hatalar listesi, sürüm takvimi, lisans türleri gibi. Satırlarda Bilgi Bankası sayfalarına bağlantı verebilir, veritabanını bir görünümüyle sayfaların içine gömebilirsiniz.
+
+Alanın veritabanlarını görmek için alan ana sayfasındaki `Tüm veritabanları` bağlantısını ya da alan menüsündeki `Veritabanları`nı kullanın.
+
+![Alanın veritabanları](/img/teknisyen/kb-alan-veritabanlari.png)
+
+Listede her veritabanının satır ve kolon sayısı yazar. `Yeni veritabanı` ❶ ile yeni bir tablo açarsınız. Bir veritabanına tıklayınca içeriği açılır:
+
+![Bir veritabanının tablo görünümü](/img/teknisyen/kb-alan-veritabani.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | **Tüm veritabanları** | Veritabanı listesine döner. |
+| ❷ | Görünümler | Kayıtlı görünümler arasında geçiş yapar. Görünüm `Tablo`, `Kart` ya da `Pano` biçiminde olabilir; çark simgesi görünümü düzenler, `Görünüm ekle` yeni görünüm oluşturur. Pano görünümü satırları bir seçim kolonuna göre sütunlara ayırır. |
+| ❸ | **Kolonları düzenle** | Kolon ekler, siler, sıralar ve türünü seçer: `Metin`, `Sayı`, `Tarih`, `Tekli seçim`, `Çoklu seçim`, `Kişi`, `Onay kutusu`, `Bağlantı` ya da `Makale` (Bilgi Bankası sayfasına bağlantı). |
+| ❹ | `Satır ekle` | Tabloya yeni satır ekler. |
+| ❺ | **Satırlarda ara** | Tablodaki satırlarda arar. |
+| ❻ | Sayfa bağlantısı | Bir satırın bağlandığı Bilgi Bankası sayfası. Göremediğiniz sayfalar `(erişiminiz yok)` olarak görünür. |
+
+Veriyi `CSV içe aktar` ve `CSV dışa aktar` ile toplu olarak alıp verebilirsiniz. Kırmızı çöp kutusu veritabanını siler.
+
+Bir veritabanını sayfaya gömmek için editörde `Veritabanı` bloğunu kullanın; bkz. [Editör ve Bloklar](/docs/teknisyen/moduller/bilgi-bankasi/editor).

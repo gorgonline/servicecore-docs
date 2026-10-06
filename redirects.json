@@ -751,32 +751,32 @@
   },
   {
     "source": "/docs/teknisyenkullanımkilavuzu/moduller/Bilgi Bankası/bilgibankasi",
-    "destination": "/docs/teknisyen/moduller/bilgi-bankasi/bilgibankasi",
+    "destination": "/docs/teknisyen/moduller/bilgi-bankasi/sayfa-olusturma",
     "permanent": true
   },
   {
     "source": "/docs/teknisyenkullan%C4%B1mkilavuzu/moduller/Bilgi%20Bankas%C4%B1/bilgibankasi",
-    "destination": "/docs/teknisyen/moduller/bilgi-bankasi/bilgibankasi",
+    "destination": "/docs/teknisyen/moduller/bilgi-bankasi/sayfa-olusturma",
     "permanent": true
   },
   {
     "source": "/docs/teknisyenkullanımkilavuzu/moduller/Bilgi Bankası/bilgibankasi2",
-    "destination": "/docs/teknisyen/moduller/bilgi-bankasi/bilgibankasi2",
+    "destination": "/docs/teknisyen/moduller/bilgi-bankasi/tum-sayfalar",
     "permanent": true
   },
   {
     "source": "/docs/teknisyenkullan%C4%B1mkilavuzu/moduller/Bilgi%20Bankas%C4%B1/bilgibankasi2",
-    "destination": "/docs/teknisyen/moduller/bilgi-bankasi/bilgibankasi2",
+    "destination": "/docs/teknisyen/moduller/bilgi-bankasi/tum-sayfalar",
     "permanent": true
   },
   {
     "source": "/docs/teknisyenkullanımkilavuzu/moduller/Bilgi Bankası/bilgibankasi4",
-    "destination": "/docs/teknisyen/moduller/bilgi-bankasi/bilgibankasi4",
+    "destination": "/docs/teknisyen/moduller/bilgi-bankasi/genel-bakis",
     "permanent": true
   },
   {
     "source": "/docs/teknisyenkullan%C4%B1mkilavuzu/moduller/Bilgi%20Bankas%C4%B1/bilgibankasi4",
-    "destination": "/docs/teknisyen/moduller/bilgi-bankasi/bilgibankasi4",
+    "destination": "/docs/teknisyen/moduller/bilgi-bankasi/genel-bakis",
     "permanent": true
   },
   {
@@ -1927,6 +1927,31 @@
   {
     "source": "/docs/CSSMAAdmin/Genel%20Panel%20Ayarlar%C4%B1/hakk%C4%B1nda",
     "destination": "/docs/admin-egitimleri/genel-panel-ayarlari/hakkinda",
+    "permanent": true
+  },
+  {
+    "source": "/docs/teknisyen/moduller/bilgi-bankasi/bilgibankasi",
+    "destination": "/docs/teknisyen/moduller/bilgi-bankasi/sayfa-olusturma",
+    "permanent": true
+  },
+  {
+    "source": "/docs/teknisyen/moduller/bilgi-bankasi/bilgibankasi2",
+    "destination": "/docs/teknisyen/moduller/bilgi-bankasi/tum-sayfalar",
+    "permanent": true
+  },
+  {
+    "source": "/docs/teknisyen/moduller/bilgi-bankasi/bilgibankasi3",
+    "destination": "/docs/teknisyen/moduller/bilgi-bankasi/onay-ve-yasam-dongusu",
+    "permanent": true
+  },
+  {
+    "source": "/docs/teknisyen/moduller/bilgi-bankasi/bilgibankasi4",
+    "destination": "/docs/teknisyen/moduller/bilgi-bankasi/genel-bakis",
+    "permanent": true
+  },
+  {
+    "source": "/docs/teknisyen/moduller/bilgi-bankasi/bilgialanlari",
+    "destination": "/docs/teknisyen/moduller/bilgi-bankasi/alanlar",
     "permanent": true
   }
 ]
