@@ -1,0 +1,80 @@
+---
+title: "Editör ve Bloklar"
+description: "Bilgi Bankası editörünün araç çubuğu, Ekle menüsü, / komutları ve bilgi paneli, durum rozeti, kolon, içindekiler gibi akıllı bloklar."
+reviewed: "2026-10-06"
+owner: oobcore
+---
+
+Bilgi Bankası editörü, düz metnin ötesinde okunması kolay sayfalar yazmanız için tasarlanmıştır: bilgi ve uyarı panelleri, açılır kapanır bölümler, kolonlar, otomatik içindekiler, diyagramlar ve canlı kayıt tabloları ekleyebilirsiniz.
+
+## Araç çubuğu
+
+![Editör araç çubuğu](/img/teknisyen/kb-editor-arac-cubugu.png)
+
+| # | Grup | İçerik |
+|---|---|---|
+| ❶ | Metin stili | `Normal metin`, `Başlık 1`, `Başlık 2`, `Başlık 3`. |
+| ❷ | Biçim | `Kalın`, `İtalik`, `Altı çizili` ve satır içi `Kod`. |
+| ❸ | Listeler | `Madde işaretli liste`, `Numaralı liste` ve onay kutulu `Görev listesi`. |
+| ❹ | Ekleme | `Bağlantı`, `Görsel` ve `Tablo`. |
+| ❺ | `Ekle` | Tüm blokların listesi (aşağıda). |
+| ❻ | `Geri al` ve `Yinele` | Son değişikliği geri alır ya da yineler. |
+| ❼ | **Diğer araçlar** | Daha az kullanılan biçimler. |
+
+`Diğer araçlar` menüsünde `Üstü çizili`, `Alıntı`, `Kod bloğu`, `Ayırıcı çizgi`, hizalama seçenekleri (`Sola Yasla`, `Ortala`, `Sağa Yasla`, `Tamamla`), girinti, `Formatı Temizle` ve sayfanın HTML'ini gösteren `Kaynak Kodu` bulunur.
+
+![Diğer araçlar menüsü](/img/teknisyen/kb-editor-diger-araclar.png)
+
+Bir metni seçtiğinizde seçimin yanında küçük bir biçim çubuğu da çıkar; metin rengini buradan değiştirebilirsiniz.
+
+## Blok ekleme
+
+Blok eklemenin iki yolu vardır. İkisi de aynı listeyi açar.
+
+**Ekle düğmesi:** Araç çubuğundaki `Ekle`ye tıklayın. Üstteki `Blok ara` kutusuna bloğun adını yazarak listeyi daraltabilirsiniz; `Daha fazla göster` bütün blokları listeler.
+
+![Ekle menüsü](/img/teknisyen/kb-editor-ekle.png)
+
+**Eğik çizgi (/) komutu:** Boş bir satırın başında `/` yazın. Menü açılır; yazmaya devam ederek süzün (`/panel`, `/tablo`, `/tarih` gibi), `Enter` ile ekleyin. Türkçe ve İngilizce adlar ikisi de çalışır.
+
+![Eğik çizgi menüsü](/img/teknisyen/kb-editor-slash.png)
+
+## Bloklar
+
+Aşağıdaki örnek sayfada sık kullanılan bloklar bir arada görülüyor.
+
+![Akıllı blokların örnek kullanımı](/img/teknisyen/kb-editor-bloklar.png)
+
+| # | Blok | Ne işe yarar |
+|---|---|---|
+| ❶ | `İçindekiler` | Sayfadaki başlıklardan otomatik oluşur; başlık ekledikçe kendini günceller. Bir maddeye tıklayan okuyucu o bölüme gider. |
+| ❷ | `Durum rozeti` | Satır içinde renkli bir etiket (GÜNCEL, TEST EDİLDİ gibi). Eklerken metnini ve rengini seçersiniz. |
+| ❸ | `Tarih` | Satır içinde bir tarih çipi. |
+| ❹ | `Bilgi paneli` | Dikkat çekilecek bilgi için renkli kutu. `Not`, `Başarı`, `Uyarı` ve `Hata` türleri de vardır. |
+| ❺ | `Kolonlar` | İçeriği yan yana sütunlara böler: 1:1, 1:2, 2:1 ya da 1:1:1. Örnekte Windows ve macOS adımları yan yana. |
+| ❻ | `Uyarı paneli` | Bilgi panelinin uyarı türü. |
+| ❼ | **Genişlet / Daralt** | Başlığına tıklanınca açılan bölüm. Uzun ayrıntıları (hata kodları, ekler) gizlemek için kullanılır; okuyucu ekranında kapalı başlar. |
+
+### Blok listesinin tamamı
+
+| Grup | Bloklar |
+|---|---|
+| **Temel** | `Başlık 1`–`Başlık 3`, `Madde listesi`, `Numaralı liste`, `Görev listesi`, `Kod bloğu`, `Alıntı`, `Ayırıcı çizgi`, `Tablo` |
+| **Bloklar** | `Bilgi paneli`, `Not paneli`, `Başarı paneli`, `Uyarı paneli`, `Hata paneli`, `Durum rozeti`, `Genişlet / Daralt`, `İçindekiler`, kolon düzenleri, `Formül (satır içi)`, `Formül bloğu`, `Tarih` |
+| **Medya** | `Görsel`, `YouTube`, `Çizim`, `Diyagram (Mermaid)`, `Web sayfası (iframe)` |
+| **Dinamik** | `Alt sayfalar`, `Son güncellenenler`, `Canlı kayıt tablosu`, `Veritabanı` |
+
+Birkaç blok hakkında not:
+
+- **Formül:** LaTeX yazarak matematiksel ifade ekler. Eklenen formüle tıklayınca düzenleme penceresi açılır.
+- **Çizim:** Sayfanın içine bir çizim alanı gömer; çift tıklayarak düzenlenir. Yalnızca kaydedilmiş bir sayfayı düzenlerken kullanılabilir.
+- **Diyagram (Mermaid):** Metinden akış, sıra ya da durum diyagramı çizer.
+- **Alt sayfalar** ve **Son güncellenenler:** Sayfa bir alandaysa alt sayfaları ve alandaki son güncellenen sayfaları canlı listeler; liste her açılışta güncel olur.
+- **Canlı kayıt tablosu:** Olay, istek, problem, değişiklik, görev ya da makale listesini sayfaya gömer. Tablo, sayfayı okuyan kişinin yetkisiyle çalışır; herkes yalnızca görme yetkisi olduğu kayıtları görür.
+- **Veritabanı:** Bir alandaki veritabanını seçtiğiniz görünümle sayfaya gömer. Bkz. [Alan Sayfası](/docs/teknisyen/moduller/bilgi-bankasi/alan-sayfasi#veritabanları).
+
+## İpuçları
+
+- **Kişi etiketleme:** İçerikte `@` yazıp bir ad seçtiğinizde o kişiden bahsetmiş olursunuz; sayfa, kişinin `Sizin için` sayfasındaki `Bahsedenler` sekmesinde görünür.
+- **Sayfa bağlantısı:** Başka bir Bilgi Bankası sayfasının adresini yapıştırdığınızda bağlantı, sayfanın adını gösteren bir çipe dönüşür.
+- **Blokları taşıma:** Bir bloğun solunda beliren tutamaçtan tutup sürükleyerek yerini değiştirebilirsiniz.

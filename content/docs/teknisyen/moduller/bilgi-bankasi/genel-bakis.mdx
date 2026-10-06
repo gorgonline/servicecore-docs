@@ -1,0 +1,57 @@
+---
+title: "Genel Bakış"
+description: "Bilgi Bankası modülüne genel bakış: temel kavramlar, ekranın bölümleri, kenar çubuğu ve diğer modüllerle bağlantı."
+reviewed: "2026-10-06"
+owner: oobcore
+---
+
+Bilgi Bankası, kurumunuzun bilgisini tek bir yerde toplar: nasıl yapılır rehberleri, sorun giderme adımları, bilinen hatalar, politikalar, runbook'lar ve toplantı notları. Yazılan her sayfa aranabilir, onaydan geçer ve ihtiyaç duyulduğunda olay, istek ve problem kayıtlarından doğrudan kullanılabilir. Son kullanıcılar da yayındaki sayfalara portal üzerinden ulaşıp sorunlarını kendileri çözebilir.
+
+Modüle üst menüdeki `KB` simgesinden girilir.
+
+## Temel kavramlar
+
+| Kavram | Anlamı |
+|---|---|
+| **Sayfa** | Bilgi Bankası'ndaki her içerik bir sayfadır (eski adıyla makale ya da çözüm kaydı). Her sayfanın `KB` ile başlayan bir numarası vardır, örneğin `KB956`. |
+| **Alan** | Bir ekibin ya da hizmetin sayfalarını kendi klasör ağacıyla bir arada tutan çalışma alanı. Örnek: `IT Hizmet Masası`, `Ağ ve Güvenlik`. |
+| **Şablon** | Yeni sayfaya hazır bir yapıyla başlamanızı sağlayan iskelet. ServiceCore ile gelen hazır şablonlar ve kurumunuzun kendi şablonları vardır. |
+| **Durum** | Sayfanın yaşam döngüsündeki yeri: taslak, incelemede, yayında, kullanımdan kalktı ya da arşivde. Yeni sayfa önce onaya gider; yalnızca onaylanan sayfa yayına çıkar. |
+| **Etiket** | Sayfayı aramada ve süzmede bulmayı kolaylaştıran anahtar kelimeler. |
+
+## Ekranın bölümleri
+
+Bilgi Bankası iki ana bölümden oluşur: solda her ekranda sabit kalan kenar çubuğu, sağda seçtiğiniz bölümün içeriği.
+
+![Bilgi Bankası ekranının bölümleri](/img/teknisyen/kb-genel-yerlesim.png)
+
+| # | Bölüm | Ne işe yarar |
+|---|---|---|
+| ❶ | Kenar çubuğu | Oluşturma, arama ve tüm bölümlere geçiş. Aşağıda ayrıntılı anlatılır. |
+| ❷ | Sayfa başlığı | Bulunduğunuz bölümün adı ve kısa özeti. `Sizin için` sayfasında sizi adınızla karşılar. |
+| ❸ | İçerik | Seçilen bölümün içeriği: sayfa listesi, alanlar, şablonlar ya da açtığınız sayfanın kendisi. |
+
+## Kenar çubuğu
+
+![Kenar çubuğunun bölümleri](/img/teknisyen/kb-genel-kenar-cubugu.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | `Oluştur` | Yeni sayfa açar: boş sayfa, şablondan başlama ya da dosyadan içe aktarma. Bkz. [Sayfa Oluşturma](/docs/teknisyen/moduller/bilgi-bankasi/sayfa-olusturma). |
+| ❷ | **Sayfalarda ara** | Hızlı arama penceresini açar. Klavyeden `⌘ K` (Windows'ta `Ctrl K`) ile de açılır. |
+| ❸ | Ana gezinti | `Sizin için`, `Tüm sayfalar`, `Favori`, `Şablonlar` ve `Alanlar` bölümleri. |
+| ❹ | **Kenar çubuğunu özelleştir** | Bölümlerin sırasını ve görünürlüğünü kendinize göre ayarlarsınız. Bkz. [Tercihler](/docs/teknisyen/moduller/bilgi-bankasi/tercihler). |
+| ❺ | `Yönetim` | `Sağlık`, `Analitik`, `Otomasyon` ve `Denetim` ekranları. `Sağlık` dışındakileri görmek için rolünüzde ilgili yetki bulunmalıdır. |
+
+Kenar çubuğunun altında son açtığınız beş sayfayı gösteren `En son` listesi ve kişisel ayarlarınızın bulunduğu `Tercihlerim` yer alır. Sağ üstteki `Daralt` simgesiyle kenar çubuğunu kapatıp içerik alanını genişletebilirsiniz; ekran 1100 pikselden darsa kenar çubuğu kendiliğinden daralır.
+
+## Diğer modüllerle bağlantı
+
+Bilgi Bankası, olay, istek ve problem kayıtlarıyla birlikte çalışır:
+
+- Bir kaydın `Çözümler` sekmesinden Bilgi Bankası'ndaki bir sayfayı çözüm olarak ekleyebilir ya da kaydın çözümünden yeni bir sayfa oluşturabilirsiniz. Bkz. [İstekler](/docs/teknisyen/moduller/talepler/istekler3).
+- Bir sayfa çözüm olarak kullanıldığında, sayfanın sağ panelindeki `Bağlantılar` bölümünde ilgili kayıt `İlişkili kayıtlar` altında görünür.
+- Bir sayfanın içinde olay, istek ya da problem numarasına bağlantı verdiğinizde, o kaydın sağ panelindeki `Bu kayda değinen makaleler` bölümünde sayfanız listelenir.
+- Editördeki `Canlı kayıt tablosu` bloğu, bir sayfaya olay ya da istek listesi gömmenizi sağlar; bkz. [Editör ve Bloklar](/docs/teknisyen/moduller/bilgi-bankasi/editor).
+
+Yayındaki sayfalar, kullanıcının grubuna açık kategorilerdeyse son kullanıcı portalında da görünür; kullanıcılar sorunlarını çağrı açmadan çözebilir.

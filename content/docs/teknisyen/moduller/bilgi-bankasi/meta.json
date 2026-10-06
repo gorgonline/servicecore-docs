@@ -1,11 +1,20 @@
 {
-  "title": "KB (BİLGİ BANKASI)",
+  "title": "BİLGİ BANKASI (KB)",
   "pages": [
-    "bilgibankasi4",
-    "bilgibankasi",
-    "bilgibankasi2",
-    "bilgibankasi3",
+    "genel-bakis",
+    "sizin-icin",
+    "tum-sayfalar",
+    "sayfa-okuma",
+    "yorumlar",
+    "surum-gecmisi",
+    "sayfa-olusturma",
+    "editor",
+    "onay-ve-yasam-dongusu",
+    "paylasim-ve-erisim",
     "sablonlar",
-    "bilgialanlari"
+    "alanlar",
+    "alan-sayfasi",
+    "yonetim",
+    "tercihler"
   ]
 }

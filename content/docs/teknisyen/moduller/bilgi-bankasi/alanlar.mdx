@@ -1,0 +1,53 @@
+---
+title: "Alanlar"
+description: "Ekip ve hizmet sayfalarını kendi ağacıyla toplayan alanlar: alan listesi, süzme, alan oluşturma ve alan şablonları."
+reviewed: "2026-10-06"
+owner: oobcore
+---
+
+Alan, bir ekibin ya da hizmetin sayfalarını bir arada tutan çalışma yeridir. Her alanın kendi klasör ve sayfa ağacı, üyeleri ve ayarları vardır. Örneğin `IT Hizmet Masası` alanı çalışanlara yönelik nasıl yapılır rehberlerini, `Ağ ve Güvenlik` alanı ise ağ ekibinin runbook'larını toplar.
+
+Bir sayfa birden fazla alanda yer alabilir; alan, sayfanın kopyası değil, düzenli bir görünümüdür.
+
+## Alan listesi
+
+Kenar çubuğundaki `Alanlar` bağlantısı görebildiğiniz tüm alanları listeler.
+
+![Alanlar sayfasının bölümleri](/img/teknisyen/kb-alanlar-yerlesim.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | `Alan oluştur` | Yeni alan açar (aşağıda). Yalnızca alan oluşturma yetkisi olanlar görür. |
+| ❷ | **Alanlarda ara** | Alan adında arar. |
+| ❸ | Tür süzgeci | `Tümü`, `Bilgi Bankası`, `Dokümantasyon` ya da `Proje`. Yanlarında her türdeki alan sayısı yazar. |
+| ❹ | `Favoriler` | Yalnızca yıldızladığınız alanları gösterir. |
+| ❺ | Sıralama | `Ada göre` ya da `Favoriler önce`. |
+| ❻ | Alan kartı | Alanın adı, kodu ve açıklaması. Yalnızca üyelerin görebildiği alanlarda `Özel alan` etiketi bulunur. Sağ alttaki yıldız alanı favorilerinize ekler. |
+
+Bir karta tıklayınca alanın ana sayfası açılır; bkz. [Alan Sayfası](/docs/teknisyen/moduller/bilgi-bankasi/alan-sayfasi).
+
+## Alan oluşturma
+
+`Alan oluştur` düğmesi `Yeni Alan Oluştur` penceresini açar.
+
+![Yeni Alan Oluştur penceresi](/img/teknisyen/kb-alan-olustur.png)
+
+| # | Alan | Açıklama |
+|---|---|---|
+| ❶ | `Şablon` | Alanın başlangıç klasörleri. `Boş alan` klasörsüz başlar; diğer üç şablon klasörleri hazır açar (aşağıdaki tablo). |
+| ❷ | `Alan Adı` ve `Alan Kodu (4 karakter)` | **Zorunlu.** Kod dört harften oluşur; sistem sonuna dört haneli bir numara ekleyerek alanın kalıcı anahtarını üretir (örneğin `TBLA` → `TBLA0007`). |
+| ❸ | `Alan Tipi` | **Zorunlu.** `Bilgi Bankası`, `Dokümantasyon` ya da `Proje`. Listede süzmek için kullanılır. |
+| ❹ | **Herkese açık alan** | Açıksa alanı Bilgi Bankası'nı görebilen herkes görür. Kapalıysa alan **özeldir**: yalnızca üyeleri görür. |
+| ❺ | `Oluştur` | Alanı oluşturur. Oluşturan kişi alanın yöneticisi olur. |
+
+`Açıklama`, `Renk` ve `Etiketler` isteğe bağlıdır; renk alanın simgesinde kullanılır.
+
+| Şablon | Oluşturduğu klasörler |
+|---|---|
+| `Ekip alanı` | Genel bakış, Toplantı notları, Kararlar, Süreçler, İşe başlangıç |
+| **Ürün dokümantasyonu** | Başlarken, Kullanım kılavuzları, Yapılandırma, Entegrasyonlar, Sürüm notları, Sık sorulan sorular |
+| **Destek bilgi bankası** | Sık sorulan sorular, Sorun giderme, Nasıl yapılır, Bilinen hatalar, Kurallar ve politikalar |
+
+<Callout type="info" title="İPUCU">
+Alanı ekip mi yoksa hizmet etrafında mı kuracağınıza okuyucuya göre karar verin. Son kullanıcılara yönelik rehberleri tek bir hizmet alanında, ekibin kendi iç prosedürlerini ise ayrı bir ekip alanında tutmak, yetkileri de sadeleştirir.
+</Callout>

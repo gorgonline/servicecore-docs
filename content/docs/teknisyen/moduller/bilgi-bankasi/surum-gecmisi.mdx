@@ -1,0 +1,54 @@
+---
+title: "Sürüm Geçmişi"
+description: "Sayfanın tüm sürümlerini görme, iki sürümü karşılaştırma, eski bir sürüme dönme ve sayfayı kimlerin okuduğunu görme."
+reviewed: "2026-10-06"
+owner: oobcore
+---
+
+Bilgi Bankası bir sayfanın her güncellemesini ayrı bir sürüm olarak saklar. Böylece kimin neyi ne zaman değiştirdiğini görebilir, iki sürümü yan yana karşılaştırabilir ve gerekirse eski bir sürüme dönebilirsiniz.
+
+Sürüm geçmişini açmak için sayfanın `Diğer işlemler` menüsünden `Sürüm geçmişi`ni seçin. Menüde öğenin yanında sayfanın güncel sürüm numarası yazar (`v3` gibi).
+
+## Sürüm listesi
+
+![Sürüm geçmişi paneli](/img/teknisyen/kb-surum-gecmisi.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | Karşılaştırma seçimi | `Eski versiyon seç` ve `Yeni versiyon seç` kutularından iki sürüm seçip `Karşılaştır`a tıklayın. |
+| ❷ | **Geçerli sürüm** | Okuyucuların şu an gördüğü sürüm. |
+| ❸ | Sürüm numarası | Tıklayınca o sürümün içeriği açılır. |
+| ❹ | `⋯` menüsü | Sürümle ilgili işlemler (aşağıda). |
+
+Her satırda değişikliği yapan kişi, değişikliğin türü, tarihi ve yazarın bıraktığı not görünür. Değişiklik türleri şunlardır: `Oluşturuldu`, `İçerik Güncelleme`, `Büyük Güncelleme`, `Metadata Güncelleme` (yalnızca kategori, etiket gibi bilgiler değişti), `Durum değişikliği` ve `Geri Yükleme`.
+
+## Sürüm işlemleri
+
+![Bir sürümün menüsü](/img/teknisyen/kb-surum-gecmisi-menu.png)
+
+Bir sürümün `⋯` menüsünde ❶ üç işlem bulunur:
+
+- `Görüntüle`: o sürümün içeriğini açar.
+- `Karşılaştır`: o sürümü bir öncekiyle karşılaştırır.
+- `Bu sürüme dön`: sayfanın içeriğini o sürüme geri getirir. İsterseniz neden döndüğünüzü not olarak yazabilirsiniz. Geri dönüş eski sürümleri silmez; listeye `Geri Yükleme` türünde yeni bir sürüm eklenir.
+
+`Bu sürüme dön` geçerli sürümde görünmez.
+
+## İki sürümü karşılaştırma
+
+![Sürüm karşılaştırma](/img/teknisyen/kb-surum-karsilastir.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | Karşılaştırılan sürümler | Soldaki eski, sağdaki yeni sürüm; yazarları ve tarihleriyle. |
+| ❷ | Görünüm ve özet | `Değişiklikler` farkları tek metin içinde gösterir, `Yan Yana` iki sürümü iki sütunda gösterir. Sağdaki yeşil ve kırmızı sayılar eklenen ve silinen kelime sayısıdır. |
+| ❸ | Eklenen metin | Eklenen kısımlar yeşil, silinen kısımlar kırmızı ve üstü çizili görünür. |
+| ❹ | `Geçmişe Dön` | Sürüm listesine geri döner. |
+
+## Sayfayı kimler okudu
+
+Sayfanın `Diğer işlemler` menüsündeki `Kim okudu`, sayfayı okuyan teknisyenleri listeler. Bu öğeyi analitik yetkisi olan kullanıcılar ve sayfanın yazarı görür.
+
+![Makaleyi okuyanlar penceresi](/img/teknisyen/kb-kim-okudu.png)
+
+Tabloda her okuyucunun sayfayı en son ne zaman okuduğu ve kaç farklı gün okuduğu yer alır. Okuma, teknisyen başına günde bir kez sayılır; aynı gün sayfayı on kez açmak tek okuma olarak görünür.
