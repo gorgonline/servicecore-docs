@@ -851,22 +851,22 @@
   },
   {
     "source": "/docs/teknisyenkullanımkilavuzu/moduller/Cmdb/cmdb1",
-    "destination": "/docs/teknisyen/moduller/cmdb/cmdb1",
+    "destination": "/docs/teknisyen/moduller/cmdb/varlik-detayi",
     "permanent": true
   },
   {
     "source": "/docs/teknisyenkullan%C4%B1mkilavuzu/moduller/Cmdb/cmdb1",
-    "destination": "/docs/teknisyen/moduller/cmdb/cmdb1",
+    "destination": "/docs/teknisyen/moduller/cmdb/varlik-detayi",
     "permanent": true
   },
   {
     "source": "/docs/teknisyenkullanımkilavuzu/moduller/Cmdb/cmdb3",
-    "destination": "/docs/teknisyen/moduller/cmdb/cmdb3",
+    "destination": "/docs/teknisyen/moduller/cmdb/genel-bakis",
     "permanent": true
   },
   {
     "source": "/docs/teknisyenkullan%C4%B1mkilavuzu/moduller/Cmdb/cmdb3",
-    "destination": "/docs/teknisyen/moduller/cmdb/cmdb3",
+    "destination": "/docs/teknisyen/moduller/cmdb/genel-bakis",
     "permanent": true
   },
   {
@@ -1927,6 +1927,16 @@
   {
     "source": "/docs/CSSMAAdmin/Genel%20Panel%20Ayarlar%C4%B1/hakk%C4%B1nda",
     "destination": "/docs/admin-egitimleri/genel-panel-ayarlari/hakkinda",
+    "permanent": true
+  },
+  {
+    "source": "/docs/teknisyen/moduller/cmdb/cmdb1",
+    "destination": "/docs/teknisyen/moduller/cmdb/varlik-detayi",
+    "permanent": true
+  },
+  {
+    "source": "/docs/teknisyen/moduller/cmdb/cmdb3",
+    "destination": "/docs/teknisyen/moduller/cmdb/genel-bakis",
     "permanent": true
   }
 ]

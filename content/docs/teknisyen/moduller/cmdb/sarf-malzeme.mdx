@@ -1,0 +1,50 @@
+---
+title: "Sarf Malzeme"
+description: "Sarf Malzeme sekmesi: stokla takip edilen tüketim malzemeleri, yeni sarf malzeme ekleme, stok ve minimum adet."
+reviewed: "2026-10-07"
+owner: necatikekec
+---
+
+Sarf malzemeler, stok adediyle takip edilen tüketim malzemeleridir (kâğıt,
+toner, pil, etiket rulosu…). Her kayıt için bir stok adedi ve isteğe bağlı bir
+minimum adet tutulur.
+
+## Sarf malzeme listesi
+
+![Sarf Malzeme sekmesi](/img/teknisyen/vrl-sarf-liste.png)
+
+| # | Ne işe yarar |
+|---|---|
+| ❶ | **Yeni Sarf Malzeme**: Yeni sarf malzeme çekmecesini açar. |
+| ❷ | **Sarf Malzeme Türü**: Listeyi türe göre süzer. |
+| ❸ | `Stok` ve `Min`: Eldeki adet ve minimum adet. |
+| ❹ | **Satır işlemleri**: `Düzenle` ve sil. Silmeden önce onay istenir. |
+
+Listede birden çok satır seçilerek toplu silme de yapılabilir. Sarf malzeme
+türleri yönetici tarafından `Ayarlar` › `Varlık Yönetimi` ekranının
+`Varlık Türleri` sekmesinde tanımlanır.
+
+## Yeni sarf malzeme
+
+![Yeni Sarf Malzeme çekmecesi](/img/teknisyen/vrl-sarf-yeni.png)
+
+| # | Ne işe yarar |
+|---|---|
+| ❶ | `Adı`: Malzemenin adı. Zorunludur. |
+| ❷ | `Tür`: Sarf malzeme türü. İsteğe bağlıdır. |
+| ❸ | `Model No` ve **Kalem No (Item No)**: Malzemenin model ve kalem numarası. |
+| ❹ | **Stok Adedi** ve **Minimum Adet**: Eldeki adet (zorunlu) ve uyarı eşiği. Minimum adet 0 ise uyarı verilmez. |
+| ❺ | `Kaydet`: Kaydı oluşturur. |
+
+Sarf malzeme formu sabittir; varlıklardaki gibi özel form seçimi yoktur.
+
+## Sarf malzeme detayı
+
+![Sarf malzeme detay ekranı](/img/teknisyen/vrl-sarf-detay.png)
+
+| # | Ne işe yarar |
+|---|---|
+| ❶ | **Kalem numarası ve stok**: `Stok` etiketi, stok minimum adede eşit ya da altındaysa uyarı rengiyle gösterilir. |
+| ❷ | `Model No` ve **Kalem No (Item No)**: Ürün bilgileri. |
+| ❸ | **Stok Adedi** ve **Minimum Adet**: Stok bilgileri burada güncellenir. |
+| ❹ | `Güncelle` / `Sıfırla`: Değişiklikleri kaydeder ya da formu kaydedilmiş hâline döndürür. |

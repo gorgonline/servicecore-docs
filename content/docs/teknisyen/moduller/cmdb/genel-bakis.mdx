@@ -1,0 +1,62 @@
+---
+title: "Genel Bakış"
+description: "CMDB modülünün amacı, temel kavramları, ekranın yerleşimi ve diğer modüllerle bağlantısı."
+reviewed: "2026-10-07"
+owner: necatikekec
+---
+
+CMDB modülü, kurumunuzdaki varlıkların (donanım, yazılım, bulut kaynağı, belge vb.)
+ve bu varlıklardan oluşan hizmetlerin tek yerden takip edildiği envanter modülüdür.
+Her varlığın durumu, kime zimmetli olduğu, finansal bilgileri, sözleşmeleri ve
+diğer varlıklarla ilişkileri kayıt altında tutulur.
+
+Modüle üst menüdeki `CMDB` bağlantısı ile girilir.
+
+## Temel kavramlar
+
+| Kavram | Anlamı |
+|---|---|
+| **Varlık** | Envanterdeki tekil kayıt: bir dizüstü bilgisayar, telefon, sunucu, uygulama, sertifika… |
+| **Hizmet** | Bir veya daha çok varlığın birlikte sunduğu iş hizmeti (ör. e-posta, ERP). Varlıklarla ilişkilendirilir. |
+| **Lisans** | Yazılım lisansı. Kullanıcılara veya varlıklara atanır. |
+| **Aksesuar** | Adetle takip edilen çevre birimi (klavye, adaptör, USB bellek…). Kullanıcılara veya varlıklara atanır. |
+| **Sarf Malzeme** | Stokla takip edilen tüketim malzemesi (kâğıt, toner, pil…). |
+| **Varlık Türü** | Kayıtları sınıflandıran ağaç. Her sekmenin solundaki tür listesi buradan gelir. |
+| **Varlık Durumu** | Kaydın yaşam döngüsündeki yeri (`Aktif`, `Stokta`, `Depoda`…). Durumlar kurumunuza göre tanımlanır. |
+| **Zimmet** | Varlığın bir kullanıcıya verilmesi. Zimmetli kullanıcı, varlığın `Zimmetli Kullanıcı` alanında görünür. |
+| **İlişki** | İki varlık ya da varlık ile hizmet arasındaki bağımlılık (ör. "Şuna Bağımlı"). |
+| **Sayım** | Fiziksel envanter sayımı. Sayılan varlıklara nitelik (ör. `Sağlam`, `Arızalı`) verilir. |
+
+## Ekranın yerleşimi
+
+![CMDB ekranının bölümleri](/img/teknisyen/vrl-genel-yerlesim.png)
+
+| # | Ne işe yarar |
+|---|---|
+| ❶ | **Sabit sekmeler**: `Pano`, `Varlıklar`, `Hizmetler`, `Lisanslar`, `Aksesuarlar` ve `Sarf Malzeme`. Sekmeler arasında geçiş yapar. |
+| ❷ | **Kayıt sekmesi**: Listeden açtığınız her kayıt ayrı bir sekmede açılır (ör. `Varlık 12883`). Sekme adının yanındaki `×` ile kapatılır. |
+| ❸ | `Varlık Ekle`: Yeni kayıt oluşturur. Düğmenin adı seçili sekmeye göre değişir: `Hizmet Ekle`, `Lisans Ekle`, `Aksesuar Ekle`, `Yeni Sarf Malzeme`. `Pano` sekmesinde görünmez. |
+| ❹ | **Tür ağacı**: Listeyi varlık türüne göre daraltır. |
+| ❺ | **Araç çubuğu**: Arama, filtreler, sayım, zimmet ve dışa/içe aktarma işlemleri. |
+| ❻ | **Liste**: Kayıtlar. Kayıt numarasına tıklanınca kayıt yeni bir sekmede açılır. |
+
+Açık kayıt sekmeleri tarayıcınızda saklanır. Modüle daha sonra döndüğünüzde
+kaldığınız sekmeler yeniden açılır.
+
+## Bu bölümdeki konular
+
+- [Pano](/docs/teknisyen/moduller/cmdb/pano): özet kartları, dağılım grafikleri ve raporlar.
+- [Varlık Listesi](/docs/teknisyen/moduller/cmdb/varlik-listesi): arama, filtreler, sütunlar ve dışa/içe aktarma.
+- [Varlık Ekleme ve Düzenleme](/docs/teknisyen/moduller/cmdb/varlik-ekleme): ekleme, düzenleme ve klonlama.
+- [Varlık Detayı](/docs/teknisyen/moduller/cmdb/varlik-detayi): detay ekranının sekmeleri.
+- [Zimmet ve Toplu İşlemler](/docs/teknisyen/moduller/cmdb/zimmet-ve-toplu-islemler) ve [Sayım](/docs/teknisyen/moduller/cmdb/sayim).
+- [Hizmetler](/docs/teknisyen/moduller/cmdb/hizmetler), [Lisanslar](/docs/teknisyen/moduller/cmdb/lisanslar), [Aksesuarlar](/docs/teknisyen/moduller/cmdb/aksesuarlar) ve [Sarf Malzeme](/docs/teknisyen/moduller/cmdb/sarf-malzeme).
+
+## Diğer modüllerle bağlantı
+
+- Bir varlığa bağlı olay, problem, değişiklik, istek ve iyileştirme kayıtları,
+  varlık detayının `Süreçler` sekmesinde listelenir. Bkz. [İlişkiler ve Süreçler](/docs/teknisyen/moduller/cmdb/iliskiler-ve-surecler).
+- Tedarikçi ve destek sözleşmeleri varlığa bağlanabilir. Bkz. [Bağlı Kayıtlar ve Sözleşmeler](/docs/teknisyen/moduller/cmdb/bagli-kayitlar-ve-sozlesmeler).
+- Varlık türleri, durumlar, konumlar, ilişki türleri ve sayım nitelikleri yönetici
+  tarafından `Ayarlar` › `Varlık Yönetimi` ekranında tanımlanır. Bkz. [Varlık ve Konfigürasyon Ayarları](/docs/yonetici/varlikvekonfig).
+- Kimin hangi işlemi yapabileceği rollerle belirlenir. Bkz. [Yetkiler](/docs/teknisyen/moduller/cmdb/yetkiler).
