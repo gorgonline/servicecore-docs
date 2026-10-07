@@ -1,8 +1,15 @@
 {
   "title": "PROBLEMLER",
   "pages": [
-    "problemler4",
-    "problemler1",
-    "problemler2"
+    "genel-bakis",
+    "liste",
+    "filtreler",
+    "olusturma",
+    "detay",
+    "analiz-ve-cozumler",
+    "gorevler-ve-is-gunlukleri",
+    "bagintilar",
+    "durumlar-ve-kapatma",
+    "yetkiler"
   ]
 }
