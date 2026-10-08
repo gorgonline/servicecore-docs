@@ -871,62 +871,62 @@
   },
   {
     "source": "/docs/teknisyenkullanımkilavuzu/moduller/Değişiklikler/degisiklikler",
-    "destination": "/docs/teknisyen/moduller/degisiklikler/degisiklikler",
+    "destination": "/docs/teknisyen/moduller/degisiklikler/olusturma",
     "permanent": true
   },
   {
     "source": "/docs/teknisyenkullan%C4%B1mkilavuzu/moduller/De%C4%9Fi%C5%9Fiklikler/degisiklikler",
-    "destination": "/docs/teknisyen/moduller/degisiklikler/degisiklikler",
+    "destination": "/docs/teknisyen/moduller/degisiklikler/olusturma",
     "permanent": true
   },
   {
     "source": "/docs/teknisyenkullan%C4%B1mkilavuzu/moduller/Deg%CC%86is%CC%A7iklikler/degisiklikler",
-    "destination": "/docs/teknisyen/moduller/degisiklikler/degisiklikler",
+    "destination": "/docs/teknisyen/moduller/degisiklikler/olusturma",
     "permanent": true
   },
   {
     "source": "/docs/teknisyenkullanımkilavuzu/moduller/Değişiklikler/degisiklikler1",
-    "destination": "/docs/teknisyen/moduller/degisiklikler/degisiklikler1",
+    "destination": "/docs/teknisyen/moduller/degisiklikler/liste",
     "permanent": true
   },
   {
     "source": "/docs/teknisyenkullan%C4%B1mkilavuzu/moduller/De%C4%9Fi%C5%9Fiklikler/degisiklikler1",
-    "destination": "/docs/teknisyen/moduller/degisiklikler/degisiklikler1",
+    "destination": "/docs/teknisyen/moduller/degisiklikler/liste",
     "permanent": true
   },
   {
     "source": "/docs/teknisyenkullan%C4%B1mkilavuzu/moduller/Deg%CC%86is%CC%A7iklikler/degisiklikler1",
-    "destination": "/docs/teknisyen/moduller/degisiklikler/degisiklikler1",
+    "destination": "/docs/teknisyen/moduller/degisiklikler/liste",
     "permanent": true
   },
   {
     "source": "/docs/teknisyenkullanımkilavuzu/moduller/Değişiklikler/degisiklikler2",
-    "destination": "/docs/teknisyen/moduller/degisiklikler/degisiklikler2",
+    "destination": "/docs/teknisyen/moduller/degisiklikler/detay",
     "permanent": true
   },
   {
     "source": "/docs/teknisyenkullan%C4%B1mkilavuzu/moduller/De%C4%9Fi%C5%9Fiklikler/degisiklikler2",
-    "destination": "/docs/teknisyen/moduller/degisiklikler/degisiklikler2",
+    "destination": "/docs/teknisyen/moduller/degisiklikler/detay",
     "permanent": true
   },
   {
     "source": "/docs/teknisyenkullan%C4%B1mkilavuzu/moduller/Deg%CC%86is%CC%A7iklikler/degisiklikler2",
-    "destination": "/docs/teknisyen/moduller/degisiklikler/degisiklikler2",
+    "destination": "/docs/teknisyen/moduller/degisiklikler/detay",
     "permanent": true
   },
   {
     "source": "/docs/teknisyenkullanımkilavuzu/moduller/Değişiklikler/degisiklikler4",
-    "destination": "/docs/teknisyen/moduller/degisiklikler/degisiklikler4",
+    "destination": "/docs/teknisyen/moduller/degisiklikler/genel-bakis",
     "permanent": true
   },
   {
     "source": "/docs/teknisyenkullan%C4%B1mkilavuzu/moduller/De%C4%9Fi%C5%9Fiklikler/degisiklikler4",
-    "destination": "/docs/teknisyen/moduller/degisiklikler/degisiklikler4",
+    "destination": "/docs/teknisyen/moduller/degisiklikler/genel-bakis",
     "permanent": true
   },
   {
     "source": "/docs/teknisyenkullan%C4%B1mkilavuzu/moduller/Deg%CC%86is%CC%A7iklikler/degisiklikler4",
-    "destination": "/docs/teknisyen/moduller/degisiklikler/degisiklikler4",
+    "destination": "/docs/teknisyen/moduller/degisiklikler/genel-bakis",
     "permanent": true
   },
   {
@@ -1701,22 +1701,22 @@
   },
   {
     "source": "/docs/teknisyenkullanımkilavuzu/moduller/Değişiklikler/degisiklikler",
-    "destination": "/docs/teknisyen/moduller/degisiklikler/degisiklikler",
+    "destination": "/docs/teknisyen/moduller/degisiklikler/olusturma",
     "permanent": true
   },
   {
     "source": "/docs/teknisyenkullanımkilavuzu/moduller/Değişiklikler/degisiklikler1",
-    "destination": "/docs/teknisyen/moduller/degisiklikler/degisiklikler1",
+    "destination": "/docs/teknisyen/moduller/degisiklikler/liste",
     "permanent": true
   },
   {
     "source": "/docs/teknisyenkullanımkilavuzu/moduller/Değişiklikler/degisiklikler2",
-    "destination": "/docs/teknisyen/moduller/degisiklikler/degisiklikler2",
+    "destination": "/docs/teknisyen/moduller/degisiklikler/detay",
     "permanent": true
   },
   {
     "source": "/docs/teknisyenkullanımkilavuzu/moduller/Değişiklikler/degisiklikler4",
-    "destination": "/docs/teknisyen/moduller/degisiklikler/degisiklikler4",
+    "destination": "/docs/teknisyen/moduller/degisiklikler/genel-bakis",
     "permanent": true
   },
   {
@@ -1927,6 +1927,26 @@
   {
     "source": "/docs/CSSMAAdmin/Genel%20Panel%20Ayarlar%C4%B1/hakk%C4%B1nda",
     "destination": "/docs/admin-egitimleri/genel-panel-ayarlari/hakkinda",
+    "permanent": true
+  },
+  {
+    "source": "/docs/teknisyen/moduller/degisiklikler/degisiklikler",
+    "destination": "/docs/teknisyen/moduller/degisiklikler/olusturma",
+    "permanent": true
+  },
+  {
+    "source": "/docs/teknisyen/moduller/degisiklikler/degisiklikler1",
+    "destination": "/docs/teknisyen/moduller/degisiklikler/liste",
+    "permanent": true
+  },
+  {
+    "source": "/docs/teknisyen/moduller/degisiklikler/degisiklikler2",
+    "destination": "/docs/teknisyen/moduller/degisiklikler/detay",
+    "permanent": true
+  },
+  {
+    "source": "/docs/teknisyen/moduller/degisiklikler/degisiklikler4",
+    "destination": "/docs/teknisyen/moduller/degisiklikler/genel-bakis",
     "permanent": true
   }
 ]

@@ -1,0 +1,62 @@
+---
+title: "Planlama"
+description: "Planlama sekmesi: değişiklik gerekçesi, etkiler, uygulama ve kaçış planı, geri dönme testi, maliyetler, beklenen kesinti ve bakım pencereleri."
+reviewed: "2026-10-07"
+owner: DevTahsin
+---
+
+`Planlama` sekmesi, bir değişikliğin neden ve nasıl yapılacağını, bir şey ters giderse nasıl geri dönüleceğini ve ne kadara mal olacağını tek yerde toplar. Danışılacak kişiler değişikliği değerlendirirken bu sekmedeki bilgilere bakar.
+
+## Sekmenin bölümleri
+
+![Planlama sekmesinin bölümleri](/img/teknisyen/chg-planlama-yerlesim.png)
+
+| # | Açıklama |
+|---|---|
+| ❶ | **Plan metinleri** — Beş metin kartı: **Değişiklik Gerekçesi**, **Değişikliğin Etkileri**, **Değişiklik Uygulama Planı**, **Başarısız Durumda Kaçış Kurtarma Planı** ve **Değişiklikten Geri Dönme Test Detayları**. |
+| ❷ | **Efor ve maliyet** — **İnsan Gücü (Saat)**, **Donanım Maliyetleri**, **Kurulum Maliyetleri**, **Yazılım Maliyetleri** ve `Toplam Maliyet`. |
+| ❸ | **Beklenen kesinti** — **Beklenen Kesinti Başlangıcı** ve **Beklenen Kesinti Süresinin Sonu**: değişiklik sırasında hizmetin kullanılamayacağı aralık. |
+| ❹ | **Bakım Pencereleri** — Değişikliğin yapılmasına izin verilen zaman aralıkları (aşağıda). |
+
+Sağ sütundaki alanlar (❷ ❸) değeri girdiğiniz anda kaydedilir; ayrıca `Kaydet`e basmanız gerekmez. `Toplam Maliyet` diğer maliyetlerden kendiliğinden hesaplanmaz, elle girilir.
+
+Beklenen kesinti ve bakım pencereleri [takvimde](/docs/teknisyen/moduller/degisiklikler/takvim) değişikliğin çubuğuyla birlikte gösterilir.
+
+## Plan metinleri
+
+![Bir plan kartı](/img/teknisyen/chg-planlama-kart.png)
+
+| # | Açıklama |
+|---|---|
+| ❶ | **Kart başlığı** — Kartın konusu; burada `Değişiklik Gerekçesi`. |
+| ❷ | `Sil` — Kartın metnini siler; onay ister. |
+| ❸ | `Ekler` — Karta dosya ekler ve eklenmiş dosyaları gösterir. Eklenen dosyayı buradan indirebilir ya da silebilirsiniz. |
+| ❹ | `Düzenle` — Kartı zengin metin düzenleyicisine çevirir. Metni yazdıktan sonra kart başlığındaki kaydet simgesine basın. |
+| ❺ | **Metin** — Kaydedilmiş içerik. |
+
+Hangi kartın neyi anlatması beklenir:
+
+| Kart | İçerik |
+|---|---|
+| **Değişiklik Gerekçesi** | Değişikliğe neden ihtiyaç duyulduğu: destek süresi dolan bir yazılım, bir problemin kalıcı çözümü, yeni bir iş ihtiyacı. |
+| **Değişikliğin Etkileri** | Hangi hizmetlerin, kullanıcıların ya da sistemlerin etkileneceği ve nasıl. |
+| **Değişiklik Uygulama Planı** | Değişikliğin adım adım nasıl yapılacağı. |
+| **Başarısız Durumda Kaçış Kurtarma Planı** | Uygulama başarısız olursa eski duruma nasıl dönüleceği. |
+| **Değişiklikten Geri Dönme Test Detayları** | Geri dönüş planının denenip denenmediği ve sonucu. |
+
+## Bakım pencereleri
+
+Bir değişikliğin birden fazla bakım penceresi olabilir; örneğin her cumartesi gecesi bir şubede yapılacak bir geçiş için her gece ayrı bir pencere girilir.
+
+![Bakım Pencereleri](/img/teknisyen/chg-planlama-bakim.png)
+
+| # | Açıklama |
+|---|---|
+| ❶ | **Kayıtlı pencere** — Başlangıç ve bitiş zamanı. Sağdaki çöp kutusu simgesi pencereyi siler. |
+| ❷ | **Başlangıç Tarihi** — Yeni pencerenin başlangıcı. |
+| ❸ | **Bitiş Tarihi** — Yeni pencerenin bitişi; başlangıçtan sonra olmalıdır. |
+| ❹ | `Ekle` — Pencereyi ekler. İki tarih seçilmeden pasiftir. |
+
+<Callout type="info" title="ÖNEMLİ">
+Sistem yöneticiniz kapatma kuralları tanımlayarak bazı planlama alanlarını zorunlu tutabilir (örneğin gerekçe, etki açıklaması, uygulama ve geri dönüş planı ya da planlanan tarihler). Bu durumda alanlar doldurulmadan değişiklik kapatılamaz. Bkz. [Gözden Geçirme ve Kapatma](/docs/teknisyen/moduller/degisiklikler/gozden-gecirme-ve-kapatma#kapatma-kuralları).
+</Callout>

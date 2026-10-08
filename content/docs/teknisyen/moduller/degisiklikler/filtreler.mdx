@@ -1,0 +1,58 @@
+---
+title: "Filtreler"
+description: "Değişiklik listesini süzmek: Filtre Görünümleri, yeni filtre oluşturma ve Kontrol Paneli alanları."
+reviewed: "2026-10-07"
+owner: DevTahsin
+---
+
+Listenin sağındaki panel, değişiklikleri süzmek için iki araç sunar: kayıtlı filtreler (`Filtre Görünümleri`) ve anlık süzme alanları (`Kontrol Paneli`). İkisi de hem listeyi hem [takvimi](/docs/teknisyen/moduller/degisiklikler/takvim) süzer.
+
+## Filtre görünümleri
+
+![Filtre Görünümleri](/img/teknisyen/chg-filtre-gorunumleri.png)
+
+| # | Açıklama |
+|---|---|
+| ❶ | **Sıfırla** — Gizlediğiniz filtreleri yeniden gösterir ve filtrelerin sırasını varsayılana döndürür. |
+| ❷ | **Yeni filtre** — Yeni bir filtre tanımlama penceresini açar (aşağıda). |
+| ❸ | **Kayıtlı filtreler** — Filtrenin adına tıklayınca uygulanır. Üzerine gelince düzenleme ve silme simgeleri çıkar; silme onay ister. Herkesle paylaşılan filtrelerde bir de gizleme simgesi bulunur; gizlediğiniz filtre bu tarayıcıda listenizden kalkar. |
+
+### Yeni filtre oluşturma
+
+![Yeni Filtre penceresi](/img/teknisyen/chg-filtre-yeni.png)
+
+| # | Açıklama |
+|---|---|
+| ❶ | **Filtre Adı** — **Zorunlu.** `Filtre Görünümleri` listesinde görünecek ad. |
+| ❷ | `Herkes` — İşaretlerseniz filtre diğer kullanıcılarla paylaşılır; işaretlemezseniz yalnız siz görürsünüz. |
+| ❸ | **Koşullar** — `Bir alan seç` ile bir alan seçip koşulu tanımlayın; `+` ile yeni koşul eklenir. Koşulların hepsinin mi (`Ve`), birinin mi (`Veya`) sağlanacağını üstteki düğmeyle seçersiniz. |
+
+## Kontrol paneli
+
+`Kontrol Paneli`ndeki alanları doldurdukça liste anında süzülür.
+
+![Kontrol Paneli, üst bölüm](/img/teknisyen/chg-filtre-kontrol-paneli.png)
+
+| # | Açıklama |
+|---|---|
+| ❶ | **Kaydetme anahtarı** — Açıkken seçtiğiniz süzgeçler bu tarayıcıda saklanır; sayfayı yeniden açtığınızda aynı süzgeçle gelir. |
+| ❷ | **Değişiklik Numarası** ve `Konu` — Numaraya ya da konudaki bir kelimeye göre arar. |
+| ❸ | `Durum` ve `Aşama` — Birden fazla durum seçebilirsiniz. `Aşama` seçenekleri `Açık`, `Beklemede` ve `Kapalı`dır. |
+| ❹ | **Kişi ve kurum alanları** — `Teknisyen Grubu`, `Teknisyen`, `Şirket`, `Müşteri` ve `Kullanıcı`. |
+
+![Kontrol Paneli, alt bölüm](/img/teknisyen/chg-filtre-kontrol-paneli-alt.png)
+
+| # | Açıklama |
+|---|---|
+| ❶ | **Kategori, tarihler ve bölüm** — `Kategori` (değişiklik türü), `Oluşturulduğu Tarih` ve `Planlanan Başlangıç` tarih aralıkları ve `Bölüm`. |
+| ❷ | `Öncelik` ve `İş Etkisi` — İşaretlediğiniz değerlerdeki değişiklikler listelenir. |
+| ❸ | **Silinmiş mi?** ve **Arşivlenmiş mi?** — Silinen ya da arşivlenen değişiklikleri listeler; bu kayıtlar varsayılan listede görünmez. `Silinmiş mi?` yalnızca silinen kayıtları görme yetkisi olanlarda etkindir. |
+| ❹ | `Sıfırla` — Bütün alanları temizler. |
+
+<Callout type="info" title="İPUCU">
+Liste açılışta kapalı aşamadaki değişiklikleri göstermez. Kapatılan ya da reddedilen değişiklikleri görmek için `Aşama` alanından `Kapalı`yı seçin.
+</Callout>
+
+## Uygulama önerileri
+
+Panelin en altındaki `Uygulama Önerileri` kartı, değişiklik yönetimiyle ilgili kısa açıklamalar içerir. Başlığına tıklayarak açıp kapatabilirsiniz.
