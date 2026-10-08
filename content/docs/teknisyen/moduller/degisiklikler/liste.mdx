@@ -1,0 +1,102 @@
+---
+title: "Değişiklik Listesi"
+description: "Değişiklik kartları, kart simgeleri, hızlı güncelleme, toplu işlemler, sıralama ve listenin üst düğmeleri."
+reviewed: "2026-10-07"
+owner: DevTahsin
+---
+
+`Değişiklik` sekmesi değişiklikleri kartlar hâlinde listeler. Bir karta tıklamadan da durumu, önceliği ya da atamayı değiştirebilir, birden fazla değişikliği seçip birlikte güncelleyebilirsiniz.
+
+## Üst düğmeler
+
+![Listenin sağ üstündeki düğmeler](/img/teknisyen/chg-liste-ust-dugmeler.png)
+
+| # | Açıklama |
+|---|---|
+| ❶ | **Liste görünümü** ve **Takvim Görünümü** — Değişiklikleri kart listesi ya da takvim olarak gösterir. Seçiminiz bu tarayıcıda hatırlanır. Bkz. [Takvim Görünümü](/docs/teknisyen/moduller/degisiklikler/takvim). |
+| ❷ | **Yeni Değişiklik** — Yeni değişiklik formunu açar. Değişiklik oluşturma yetkiniz yoksa pasiftir. Bkz. [Değişiklik Oluşturma](/docs/teknisyen/moduller/degisiklikler/olusturma). |
+| ❸ | `Ara` — Bütün modüllerde arama yapılan genel arama penceresini açar. |
+| ❹ | **Grid Görünümü** — `Genel Grid Görünümü` penceresini açar: değişiklikleri problemler, sürekli iyileştirmeler gibi diğer kayıtlarla birlikte tek bir tabloda listeler. |
+
+## Değişiklik kartı
+
+![Bir değişiklik kartının bölümleri](/img/teknisyen/chg-liste-kart.png)
+
+| # | Açıklama |
+|---|---|
+| ❶ | **Değişiklik numarası** — `CHN` ile başlayan numara. Numaraya ya da konuya tıklayınca değişiklik yeni bir sekmede açılır; `Ctrl` (Mac'te `⌘`) ile tıklarsanız sekme arka planda açılır. Yeni değişikliklerde numaranın solunda kırmızı bir nokta görünür. |
+| ❷ | **Durum** — Değişikliğin durumu, renkli etiketle. |
+| ❸ | **Konu** — Değişikliğin başlığı ve ne zaman açıldığı (`3 ay önce` gibi). |
+| ❹ | **Açıklama** — Açıklamanın ilk satırı. |
+| ❺ | **Takip Et** ve **Sabitle** — Kartın üzerine gelince görünür. Yıldız değişikliği takip ettikleriniz arasına, iğne sabitledikleriniz arasına ekler; sabitlenen değişiklikler listenin en üstünde gösterilir. |
+| ❻ | **Kart alt satırı** — Hızlı işlem simgeleri, kişiler, departman ve öncelik (aşağıda). |
+
+Kartın sol kenarına geldiğinizde bir onay kutusu belirir; kartları seçip toplu işlem yapmak için bunu kullanın.
+
+### Kart alt satırı
+
+![Kart alt satırındaki simgeler](/img/teknisyen/chg-liste-kart-alt.png)
+
+| # | Açıklama |
+|---|---|
+| ❶ | **Hızlı işlemler** — `Bağlantıyı Kopyala`, `Detay sayfasına git` (değişikliği kendi sayfasında açar) ve `İş Günlüğü Ekle`. |
+| ❷ | **Hızlı Güncelleme** — Değişikliği açmadan durum, öncelik, kategori ve atama değiştirir (aşağıda). |
+| ❸ | `Ekler` — Değişikliğe eklenmiş dosyalar. |
+| ❹ | `Gelen Posta` — Değişiklik için gelen e-postalar. |
+| ❺ | `Giden Posta` — Değişiklikten gönderilen e-postalar. |
+| ❻ | **Not Göster ve Ekle** — Notları gösterir ve yeni not eklemenizi sağlar. |
+| ❼ | **Kişiler** — Atanan teknisyen, değişikliği isteyen kullanıcı, destek müşteri hesabı ve şirket. Satırın sağında departman adı ve öncelik yer alır. |
+
+![Hızlı işlemler menüsü](/img/teknisyen/chg-liste-kart-menu.png)
+
+Hızlı işlemler menüsü ❶ üç seçenek sunar: `Bağlantıyı Kopyala`, `Detay sayfasına git` ve `İş Günlüğü Ekle`.
+
+### Hızlı güncelleme
+
+`Hızlı Güncelleme` simgesi kartın altında küçük bir form açar. Alanları değiştirip `Kaydet`e basın.
+
+![Hızlı Güncelleme formu](/img/teknisyen/chg-liste-hizli-guncelleme.png)
+
+| # | Açıklama |
+|---|---|
+| ❶ | **Durum Değiştir** — Yalnızca açık ve beklemedeki durumlar listelenir. Değişikliği kapatmak için kapatma işlemini kullanın. |
+| ❷ | **Önceliği Değiştir** ve `Kategori` — Öncelik ve değişiklik türü (kategori). |
+| ❸ | **Grup Değiştir** ve **Teknisyen Değiştir** — Değişikliğin sorumlu grubu ve teknisyeni. |
+| ❹ | `Kaydet` — Değişiklikleri kaydeder. |
+
+## Toplu işlemler
+
+Bir ya da daha fazla kartı seçtiğinizde listenin üstünde toplu işlem çubuğu belirir.
+
+![Toplu işlem çubuğu](/img/teknisyen/chg-liste-toplu-cubuk.png)
+
+| # | Açıklama |
+|---|---|
+| ❶ | **Tümünü seç** — Ekrandaki bütün değişiklikleri seçer. |
+| ❷ | `Toplu İşlem` — Seçili değişikliklerin alanlarını birlikte değiştirir (aşağıda). |
+| ❸ | `Kapat` — Seçili değişiklikleri kapatır. Seçimde kapalı bir değişiklik varsa pasiftir. |
+| ❹ | `Sil` — Seçili değişiklikleri siler; bir `Silme Gerekçesi` yazmanız ve kapalı bir `Durum` seçmeniz istenir. |
+| ❺ | `Bana Ata` — Seçili değişikliklerin hepsini size atar; onay ister. |
+
+![Toplu İşlem penceresi](/img/teknisyen/chg-liste-toplu-islem.png)
+
+| # | Açıklama |
+|---|---|
+| ❶ | **Durum Değiştir**, **Önceliği Değiştir**, **Etkiyi Değiştir** — Seçili değişikliklerin durumu, önceliği ve iş etkisi. Yalnızca doldurduğunuz alanlar değişir. Kapalı değişiklikler toplu işlemle güncellenmez. |
+| ❷ | **Aciliyeti Değiştir** — Değişikliklerde aciliyet alanı bulunmadığı için bu alan bir şey değiştirmez. |
+| ❸ | **Grup Değiştir** ve **Teknisyen Değiştir** — Seçili değişikliklerin teknisyen grubu ve teknisyeni. |
+
+Kapatma ve silmenin ayrıntıları için bkz. [Gözden Geçirme ve Kapatma](/docs/teknisyen/moduller/degisiklikler/gozden-gecirme-ve-kapatma).
+
+## Sıralama ve sayfalama
+
+Listenin altındaki sabit çubukta kayıt sayısı, sayfalar ve sıralama bulunur.
+
+![Sayfalama ve sıralama](/img/teknisyen/chg-liste-siralama.png)
+
+| # | Açıklama |
+|---|---|
+| ❶ | **Kayıt sayısı** — Gösterilen aralık ve toplam değişiklik sayısı. |
+| ❷ | **Sayfa boyutu** — Sayfa başına gösterilecek değişiklik sayısı. |
+| ❸ | **Sıralama alanı** — `Oluşturulduğu Tarih`, `Planlanan Başlangıç`, `Değişiklik Numarası`, `Konu`, `Durum` ya da `Son Güncelleme Tarihi`. Varsayılan sıralama değişiklik numarasıdır. |
+| ❹ | **Sıralama yönü** — Artan ve azalan sıra arasında geçiş yapar. |

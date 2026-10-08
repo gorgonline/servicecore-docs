@@ -1,0 +1,47 @@
+---
+title: "Değişiklik Oluşturma"
+description: "Yeni değişiklik formu: özel form seçimi, başlık ve açıklama, dosya ekleme, diğer alanlar ve varsayılan değişiklik formu."
+reviewed: "2026-10-07"
+owner: DevTahsin
+---
+
+Yeni bir değişiklik kaydını listenin sağ üstündeki `Yeni Değişiklik` düğmesiyle açarsınız. Aynı forma üst menüdeki hızlı kayıt panelinden de ulaşılır. Form, sayfanın sağından açılan `Oluştur` panelinde gelir.
+
+## Yeni değişiklik formu
+
+![Oluştur paneli ve bir değişiklik formu](/img/teknisyen/chg-olustur-form.png)
+
+| # | Açıklama |
+|---|---|
+| ❶ | `Özel Form` — Kullanılacak form. Kurumunuzda varsayılan bir değişiklik formu varsa kendiliğinden seçilir; yoksa formu bu listeden siz seçersiniz. Görüntüde kurumun `Değişiklik varsa` formu seçilidir. |
+| ❷ | **Başlık ve açıklama** — **Zorunlu.** Değişikliğin kısa adı ve ayrıntılı tanımı. |
+| ❸ | **Dosya ekleme** — Plan, ekran görüntüsü gibi dosyaları sürükleyip bırakın ya da tıklayıp seçin. |
+| ❹ | **Diğer alanlar** — Katlanır bölüm: değişikliği isteyen kişi, teknisyen grubu ve teknisyen, değişiklik sahibi, yönetici, koordinatör, onaylayan, durum, öncelik, etki ve değişiklik türü gibi alanlar. Yıldızla işaretli alanlar zorunludur; bu formda değişikliği isteyen kişi ve teknisyen grubu zorunludur. |
+| ❺ | `Kaydet` — Değişikliği oluşturur. |
+
+Formdaki alanlar ve etiketleri kurumunuzun form tasarımından gelir; başka bir formda farklı alanlar görürsünüz. `Durum` alanı boş bırakılırsa değişiklik `Açık` durumunda oluşturulur.
+
+Kaydettiğiniz değişiklik listeye eklenir ama kendiliğinden açılmaz; açmak için listedeki kartına tıklayın. Planlama, danışma ve uygulama bilgilerini değişikliği açtıktan sonra ilgili sekmelerden girersiniz.
+
+<Callout type="warn" title="DİKKAT">
+Kurumunuzda varsayılan bir değişiklik formu tanımlı değilse `Oluştur` paneli boş açılır ve `Veri Yok` görünür. Bu durumda formu `Özel Form` listesinden seçin. Liste de boşsa sistem yöneticiniz bir değişiklik formu tanımlamalıdır.
+</Callout>
+
+## Varsayılan değişiklik formu
+
+ServiceCore ile gelen varsayılan değişiklik formu, sistem yöneticiniz varsayılan formları eklediğinde kullanılır. Bu formda şu alanlar bulunur:
+
+| Alan | Açıklama |
+|---|---|
+| **Başlık**, **Açıklama** | **Zorunlu.** Değişikliğin kısa adı ve ayrıntılı tanımı. |
+| **Dosya Ekle** | Değişikliğe eklenecek dosyalar. |
+| **Değişiklik Tipi** | **Zorunlu.** `Standart`, `Normal` ya da `Acil`. |
+| **İşi Yapacak Ekip** | **Zorunlu.** Değişikliği uygulayacak teknisyen grubu. |
+| **Değişiklik İsteyen** | **Zorunlu.** `Diğer Alanlar` bölümünde; değişikliği talep eden kullanıcı. |
+| Diğer alanlar | `Yönetici`, `Onaylayan`, `Değişiklik Sahibi`, `Durum`, `Koordinatör`, `Değişiklik Türü`, `Öncelik` ve `Etki`. |
+
+## Problemden değişiklik açma
+
+Bir problemin kalıcı çözümü bir değişiklik gerektiriyorsa değişikliği problemin içinden açabilirsiniz: problemin `Süreçler` sekmesinde `Değişiklik` alt sekmesine geçip `Bağıntı Ekle` › `Yeni Kayıt`ı seçin. Problemin bilgileriyle doldurulmuş bir değişiklik formu açılır; kaydettiğinizde değişiklik probleme bağlanır. Var olan bir değişikliği bağlamak için `Varolan Kayıt`ı kullanın.
+
+Bir değişikliğin içinden diğer kayıtlara bağlantı kurmak için bkz. [Bağıntılar ve Varlıklar](/docs/teknisyen/moduller/degisiklikler/bagintilar-ve-varliklar).

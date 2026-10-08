@@ -1,0 +1,35 @@
+---
+title: "Yetkiler"
+description: "Rol ekranındaki Değişiklik yetkileri: oluşturma, görme kapsamı, düzenleme, not düzenleme, silme, kapatma ve reddetme."
+reviewed: "2026-10-07"
+owner: DevTahsin
+---
+
+Bir teknisyenin Değişiklikler modülünde neler yapabileceğini rolündeki **Değişiklik** yetkileri belirler. Yetkiler `Ayarlar` › `Roller` ekranında, bir rolü açıp `Değişiklik` sekmesine geçerek düzenlenir.
+
+![Rol ekranında Değişiklik yetkileri](/img/teknisyen/chg-yetkiler.png)
+
+| # | Açıklama |
+|---|---|
+| ❶ | `Değişiklik` sekmesi — Rolün Değişiklikler modülüyle ilgili yetkileri. |
+| ❷ | **Değişiklik Oluşturabilir** — `Yeni Değişiklik` düğmesini etkinleştirir. |
+| ❸ | **Değişiklikleri Görebilir** — Modülün kendisi ve görme kapsamı: `Grubundakiler` ya da `Seçilen Gruplardakiler`. |
+| ❹ | **Düzenleme yetkileri** — **Değişiklikleri Düzenleyebilir** ve not düzenleme yetkileri. |
+| ❺ | **Diğer yetkiler** — Silme, kapatma, silinen kayıtları görme ve reddetme. |
+
+## Yetkilerin ayrıntısı
+
+- **Değişiklik Oluşturabilir** — Yeni değişiklik açma.
+- **Değişiklikleri Görebilir** — Değişiklik listesini, takvimi ve detayları görme. Kapalıysa üst menüde `Değişiklik` görünmez. Alt seçenekleriyle kapsam daraltılır: `Grubundakiler` yalnızca teknisyenin kendi grubundaki değişiklikleri, `Seçilen Gruplardakiler` yalnızca yanındaki listeden seçilen gruplardaki değişiklikleri gösterir.
+- **Değişiklikleri Düzenleyebilir** — Değişikliğin alanlarını, planlamasını, gözden geçirmesini, danışılacak kişilerini ve bağıntılarını değiştirme; hızlı ve toplu güncelleme, yeniden açma, takip etme ve sabitleme.
+- **Notları Düzenleyebilir** — Değişiklik notlarını düzenleme ve silme. `Herkesin Notlarını Düzenleyebilir` bütün notları, `Kendi Notlarını Düzenleyebilir` yalnızca kendi yazdığı notları kapsar.
+- **Değişiklikleri Silebilir** — Değişiklik silme.
+- **Değişikliği Kapatabilir** — Değişiklik kapatma (tek tek ve toplu).
+- **Silinen Kayıtları Görebilir** — `Kontrol Paneli`ndeki `Silinmiş mi?` kutusunu etkinleştirir.
+- **Değişiklik reddetme** — Listenin sonunda `CanRejectChange` adıyla görünen yetki; `Diğer Eylemler` › `Reddet`e izin verir.
+
+Ekran, yetkileri yalnızca iki yerde önceden denetler: yetkiniz yoksa `Yeni Değişiklik` düğmesi ve `Silinmiş mi?` kutusu pasif olur. Diğer düğmeler herkese görünür; yetkiniz olmayan bir işlemi denerseniz işlem gerçekleşmez.
+
+`Görev` sekmesindeki **Görevin Bağlı Olduğu İlgili Kaydı Sadece Okunabilir Olarak Görüntüleyebilir** yetkisi, değişiklik görme yetkisi olmayan bir teknisyenin, kendisine atanmış bir görevin bağlı olduğu değişikliği salt okunur açabilmesini sağlar.
+
+Üst menüde `Değişiklik`in görünmesi için kurumunuzun lisansında Değişiklik modülünün bulunması da gerekir.

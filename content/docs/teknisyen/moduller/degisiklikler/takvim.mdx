@@ -1,0 +1,43 @@
+---
+title: "Takvim Görünümü"
+description: "Değişiklikleri planlanan zamanlarına göre takvimde görme: gezinme, gün/hafta/ay görünümü, kesinti ve bakım pencereleri."
+reviewed: "2026-10-07"
+owner: DevTahsin
+---
+
+Takvim görünümü, planlanan değişiklikleri zaman çizelgesi üzerinde gösterir. Aynı güne denk gelen değişiklikleri, beklenen kesintileri ve bakım pencerelerini bir bakışta görür, çakışmaları planlama aşamasında yakalarsınız.
+
+Takvime geçmek için listenin sağ üstündeki `Takvim Görünümü` simgesine basın; listeye `Liste görünümü` ile dönersiniz. Seçiminiz bu tarayıcıda hatırlanır.
+
+## Ekranın bölümleri
+
+![Takvim görünümünün bölümleri](/img/teknisyen/chg-takvim-yerlesim.png)
+
+| # | Açıklama |
+|---|---|
+| ❶ | **Gezinme** — Önceki ve sonraki döneme geçer; `Bugün` içinde bulunduğunuz döneme döner. |
+| ❷ | **Tarih aralığı** — Gösterilen dönem. Tıklayınca açılan takvimden istediğiniz tarihe gidersiniz. |
+| ❸ | **Sıralama** — Satırların sırası: `Planlanan Başlangıç`, `Değişiklik Kodu` ya da `Konu`. |
+| ❹ | **Gün**, **Hafta**, **Ay** — Zaman çizelgesinin ölçeği. |
+| ❺ | **Lejant** — Çubuk renklerinin anlamı (aşağıda). Sağdaki sayı, gösterilen değişiklik sayısını toplamla birlikte verir. |
+| ❻ | **Değişiklikler** — Her satırda bir değişiklik: durum noktası, numara ve konu. |
+| ❼ | **Zaman çizelgesi** — Değişikliklerin çubukları. Bir çubuğa tıklayınca değişiklik yeni bir sekmede açılır; üzerine gelince planlanan zaman, kesinti, bakım, durum ve teknisyen bilgileri görünür. |
+
+## Çubuklar
+
+![Gün görünümünde bir değişiklik ve bakım pencereleri](/img/teknisyen/chg-takvim-gun.png)
+
+| # | Açıklama |
+|---|---|
+| ❶ | **Lejant** — `Bakım` (mor çizgili), `Tatiller ve Etkinlikler` (sarı bant), `Değişiklik Zamanı` (mavi) ve `Kesinti` (siyah çizgili). |
+| ❷ | **Bakım penceresi** — Değişikliğin bakım penceresi; örnekte 06:00–10:00. |
+| ❸ | **İkinci bakım penceresi** — Bir değişikliğin birden fazla bakım penceresi olabilir; örnekte 12:00–13:00. |
+
+Mavi çubuk, değişikliğin `Planlanan Başlangıç` ile `Planlanan Bitiş` arasındaki zamanıdır. Beklenen kesinti, mavi çubuğun içinde siyah çizgili bölge olarak çizilir. Kurumunuzun tatil günleri sarı bantla gösterilir.
+
+Bu değerler değişikliğin `Özellikler` panelinden ve `Planlama` sekmesinden girilir. Bkz. [Planlama](/docs/teknisyen/moduller/degisiklikler/planlama).
+
+## Takvimde hangi değişiklikler görünür
+
+- Yalnızca `Planlanan Başlangıç` tarihi girilmiş değişiklikler takvimde görünür. Kapatılmış değişiklikler de gösterilir; silinmiş değişiklikler gösterilmez.
+- Sağ paneldeki `Kontrol Paneli` ve `Filtre Görünümleri` takvimi de süzer. Örneğin yalnız bir teknisyen grubunun değişikliklerini görmek için `Teknisyen Grubu` alanını doldurun. Bkz. [Filtreler](/docs/teknisyen/moduller/degisiklikler/filtreler).

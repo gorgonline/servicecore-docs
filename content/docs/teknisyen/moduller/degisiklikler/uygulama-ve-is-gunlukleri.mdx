@@ -1,0 +1,55 @@
+---
+title: "Uygulama ve İş Günlükleri"
+description: "Değişikliği hayata geçiren görevler: görev ekleme, görev listesi, görev işlemleri ve değişikliğin iş günlükleri."
+reviewed: "2026-10-07"
+owner: DevTahsin
+---
+
+Değişiklik onaylandıktan sonra iş, `Uygulama` sekmesindeki görevlerle yürütülür. Her görev bir teknisyene atanır, başlangıç ve bitiş zamanı alır; görevler tamamlandıkça değişikliğin uygulaması ilerler. Harcanan efor `İş Günlükleri` sekmesinde toplanır.
+
+## Uygulama sekmesi
+
+Henüz görev yoksa sekmede **Görevler Ekleyin** başlığı ve `Görev Ekle` düğmesi görünür. Görev eklendikten sonra görevler bir tabloda listelenir.
+
+![Uygulama sekmesindeki görevler](/img/teknisyen/chg-uygulama-gorevler.png)
+
+| # | Açıklama |
+|---|---|
+| ❶ | **Aktif** ve **Tamamlanmış** — Sürmekte olan ve tamamlanan görevler arasında geçiş yapar; parantez içindeki sayı görev adedidir. |
+| ❷ | `Ekle` — Yeni görev penceresini açar (aşağıda). |
+| ❸ | `Diyagram` — Görevlerin sırasını ve birbirine bağlılığını bir akış diyagramında gösterir. |
+| ❹ | `Sütunlar` — Tabloda hangi sütunların görüneceğini seçer. |
+| ❺ | **Görev satırı** — Başlık, açıklama, grup, teknisyen, öncül görev, başlangıç ve bitiş, kullanıcı. Soldaki `+` satırı genişletir. |
+| ❻ | **Satır işlemleri** — Soldan sağa `İş Günlüğü Ekle`, `Tamamla`, `Düzenle` ve `Sil`. |
+
+Görevler, Görevler modülündeki görevlerdir; atanan teknisyen görevi kendi görev listesinde de görür.
+
+## Görev ekleme
+
+`Ekle` (görev yokken `Görev Ekle`) düğmesi `Yeni Görev Ekle` panelini açar. Aynı panele araç çubuğundaki `Diğer Eylemler` › `Görev Ekle` ile de ulaşılır.
+
+![Yeni Görev Ekle paneli](/img/teknisyen/chg-uygulama-gorev-ekle.png)
+
+| # | Açıklama |
+|---|---|
+| ❶ | `Başlık` — Görevin adı. Değişiklik numarasıyla doldurulmuş gelir; görevi anlatan bir adla değiştirin. |
+| ❷ | `Açıklama` — Görevde ne yapılacağı. |
+| ❸ | `Teknisyen` — **Zorunlu.** Görevi yapacak teknisyen; varsayılan olarak siz seçilirsiniz. |
+| ❹ | **Başlangıç - Bitiş Tarihi** — **Zorunlu.** Görevin planlanan zaman aralığı. Takvimden gün ve saat seçip `tamam`a basın. |
+
+Paneldeki diğer alanlar isteğe bağlıdır: `Kullanıcı`, `Tahmini Süre`, **Gerçekleşen Başlangıç Tarihi**, **Gerçekleşen Bitiş Tarihi** ve `Kategori`. `Kaydet`e bastığınızda görev oluşturulur ve değişikliğe bağlanır.
+
+## İş günlükleri
+
+`İş Günlükleri` sekmesi, değişikliğe ve değişikliğin görevlerine girilen iş günlüklerini birlikte listeler. Henüz iş günlüğü yoksa sekmede `İş Günlüğü Ekle` düğmesi görünür.
+
+İş günlüğünü şu yollardan ekleyebilirsiniz:
+
+- `İş Günlükleri` sekmesindeki `İş Günlüğü Ekle` düğmesi,
+- araç çubuğundaki `Diğer Eylemler` › `İş Günlüğü Ekle`,
+- listedeki kartın hızlı işlemler menüsündeki `İş Günlüğü Ekle`,
+- bir görevin satırındaki `İş Günlüğü Ekle` (iş günlüğü o göreve yazılır).
+
+<Callout type="info" title="ÖNEMLİ">
+Sistem yöneticiniz kapatma kuralları tanımlayarak değişikliği kapatmadan önce görevlerin kapatılmasını, değişikliğe ya da görevlere iş günlüğü girilmesini zorunlu tutabilir. Bkz. [Gözden Geçirme ve Kapatma](/docs/teknisyen/moduller/degisiklikler/gozden-gecirme-ve-kapatma#kapatma-kuralları).
+</Callout>
