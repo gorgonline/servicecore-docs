@@ -1,0 +1,74 @@
+---
+title: "Bağlı Kayıtlar ve Sözleşmeler"
+description: "Varlık detayında aksesuar ve lisans bağlama, finansal bilgi ekleme, tedarik ve destek sözleşmelerini varlığa bağlama."
+reviewed: "2026-10-07"
+owner: necatikekec
+---
+
+Varlık detay ekranındaki `Aksesuarlar`, `Lisanslar`, `Finansal Bilgiler`,
+`Tedarik Anlaşmaları` ve `Destek Anlaşması` sekmeleri varlığa bağlı kayıtları
+yönetir (bkz. [Varlık Detayı](/docs/teknisyen/moduller/cmdb/varlik-detayi)).
+
+## Aksesuarlar
+
+![Aksesuarlar sekmesi](/img/teknisyen/vrl-bagli-aksesuarlar.png)
+
+| # | Ne işe yarar |
+|---|---|
+| ❶ | **Aksesuar Ekle**: Var olan bir aksesuarı varlığa bağlama penceresini açar. |
+| ❷ | **Aksesuar**: Varlığa bağlı aksesuar; model numarası, türü, adedi ve bağlanma tarihiyle. |
+| ❸ | **Kaldır**: Aksesuarın varlıkla bağlantısını kaldırır. Aksesuar kaydı silinmez. |
+
+![Aksesuar bağlama penceresi](/img/teknisyen/vrl-bagli-aksesuar-ekle.png)
+
+| # | Ne işe yarar |
+|---|---|
+| ❶ | `Ara`: Aksesuarları adıyla arar. |
+| ❷ | **Liste**: Bağlanacak aksesuarları onay kutusuyla seçin. |
+| ❸ | **Bağlantı Ekle**: Seçilen aksesuarları varlığa bağlar. |
+
+Aksesuarların kendisi `Aksesuarlar` sekmesinde tanımlanır; bkz. [Aksesuarlar](/docs/teknisyen/moduller/cmdb/aksesuarlar).
+
+## Lisanslar
+
+`Lisanslar` sekmesi aynı şekilde çalışır: `Lisans Ekle` düğmesi var olan bir
+lisansı varlığa bağlama penceresini açar; pencerede her lisansın anahtar adedi ve
+atama adedi görünür. Seçilen lisanslar `Bağlantı Ekle` ile varlığa atanır.
+Sekmedeki bir lisansın bağlantısı kaldırılmadan önce onay istenir. Lisansların
+kendisi için bkz. [Lisanslar](/docs/teknisyen/moduller/cmdb/lisanslar).
+
+## Finansal bilgiler
+
+`Finansal Bilgiler` sekmesi varlığa ait maliyet kayıtlarını (bakım, taşıma,
+imha…) listeler. `Finansal Bilgi Ekle` yeni maliyet kaydı açar:
+
+![Finansal bilgi penceresi](/img/teknisyen/vrl-bagli-finansal.png)
+
+| # | Ne işe yarar |
+|---|---|
+| ❶ | **Maliyet Giriş Tarihi**: Maliyetin tarihi. Zorunludur; varsayılan olarak o anki tarih gelir. |
+| ❷ | **Maliyet Türü**: `Hizmet`, `Taşıma`, `İmha` ya da `Diğer`. Zorunludur. |
+| ❸ | **Varlık Şirketi**: Maliyetin ait olduğu şirket. |
+| ❹ | `Maliyet` ve **Para Birimi**: Tutar ve para birimi. Para birimi zorunludur. |
+| ❺ | **Dosya Ekle**: Faturayı ya da ilgili belgeyi maliyet kaydına ekler. |
+| ❻ | `Kaydet`: Maliyet kaydını oluşturur. |
+
+## Tedarik anlaşmaları
+
+`Tedarik Anlaşmaları` sekmesi, varlığın tedarikçisiyle yapılmış sözleşmeleri
+listeler.
+
+![Tedarik Anlaşmaları sekmesi](/img/teknisyen/vrl-bagli-tedarik.png)
+
+| # | Ne işe yarar |
+|---|---|
+| ❶ | **Uyarı**: Varlığın `Tedarikçi` alanı boşsa görünür. Sözleşme bağlamak için önce `Detaylar` sekmesinde varlığa tedarikçi seçin. Bağlantı, yönetimdeki tedarikçi ekranına götürür. |
+| ❷ | **Bağıntı Ekle**: `Varolan Kayıt` ile tanımlı bir sözleşmeyi bağlar, `Yeni Kayıt` ile yeni sözleşme oluşturur. Tedarikçi seçilmemişse pasiftir. |
+| ❸ | **Liste**: Bağlı sözleşmeler; tedarikçi, sözleşme türü, başlangıç ve bitiş tarihiyle. |
+
+## Destek anlaşması
+
+`Destek Anlaşması` sekmesi, varlığı kapsayan destek sözleşmelerini iki grupta
+gösterir: **Müşteri Hizmet Sözleşmeleri** (destek verdiğiniz müşterilerle yapılan
+sözleşmeler) ve **Kurum İçi Destek Sözleşmeleri**. Sözleşmeler sekmedeki
+`Bağıntı Ekle` ile varlığa bağlanır.
