@@ -1,0 +1,98 @@
+---
+title: "Filtreleme ve Filtre Görünümleri"
+description: "Kontrol Paneli ile iyileştirme listesini süzme, filtreyi kalıcı hâle getirme, kaydedilmiş filtre görünümleri ve yeni filtre görünümü oluşturma."
+reviewed: "2026-10-06"
+owner: berdanasen
+---
+
+İyileştirme listesinin sağındaki iki kutu listeyi süzmek için kullanılır: anlık filtreleme için
+`Kontrol Paneli`, sık kullandığınız filtreleri saklamak için `Filtre Görünümleri`.
+
+## Kontrol Paneli
+
+`Kontrol Paneli`'nde bir alanı doldurduğunuz anda liste süzülür. Birden fazla alan
+doldurduğunuzda liste, bütün koşulları birlikte sağlayan kayıtları gösterir.
+
+![Kontrol Paneli](/img/teknisyen/iyilestirme-filtre-kontrol-paneli.png)
+
+| # | Öge | Açıklama |
+|---|---|---|
+| ❶ | Kaydetme anahtarı | Açıksa panelde yaptığınız seçimler saklanır; ekranı daha sonra açtığınızda aynı filtre uygulanmış olarak gelir |
+| ❷ | `İyileştirme Numarası`, `Migration Numarası` | Numarayla tek bir kaydı bulur. `Migration Numarası`, başka bir sistemden aktarılan kayıtların eski numarasıdır |
+| ❸ | `Öncelik`, `Aciliyet`, `İş Etkisi` | Kutuları işaretleyerek bir ya da birden fazla değer seçersiniz |
+| ❹ | `Silinmiş mi?`, `Arşivlenmiş mi?` | Silinmiş ya da arşivlenmiş kayıtları listeler |
+| ❺ | `Sıfırla` | Paneldeki bütün seçimleri temizler |
+
+Paneldeki diğer alanlar: `Başlık`, `Durum`, `Aşama`, `Teknisyen Grubu`, `Teknisyen`, `Şirket`,
+`Müşteri`, `Kullanıcı`, `Kategori`, `Oluşturulduğu Tarih`, `Bölüm`, `Etiketler` ve `Kaynak`.
+
+Sık kullanılan filtreler:
+
+| Görmek istediğiniz | Yapmanız gereken |
+|---|---|
+| Kapatılmış iyileştirmeler | `Aşama` alanından `Kapalı` seçin |
+| Bir gruba atanmış öneriler | `Teknisyen Grubu` alanından grubu seçin |
+| Belirli bir konudaki öneriler | `Kategori` alanından kategoriyi seçin (örneğin `Bilgi Güvenliği`) |
+| Belirli bir dönemde gelen öneriler | `Oluşturulduğu Tarih` alanından tarih aralığı seçin |
+| Silinmiş iyileştirmeler | `Silinmiş mi?` kutusunu işaretleyin |
+
+<Callout type="info" title="ÖNEMLİ">
+`Silinmiş mi?` kutusu yalnızca `Silinen Kayıtları Görebilir` yetkisi olan kullanıcılarda
+etkindir. Kaydetme anahtarıyla saklanan filtre yalnızca kullandığınız tarayıcıda geçerlidir.
+</Callout>
+
+## Filtre Görünümleri
+
+`Filtre Görünümleri` kutusu, kaydedilmiş filtreleri listeler.
+
+![Filtre Görünümleri](/img/teknisyen/iyilestirme-filtre-gorunumleri.png)
+
+| # | Öge | Açıklama |
+|---|---|---|
+| ❶ | Görünümler | Kaydedilmiş filtre görünümleri. Adına tıkladığınızda liste o görünüme göre süzülür |
+| ❷ | `+` | Yeni filtre görünümü oluşturur (aşağıda) |
+
+Başlıktaki yenileme simgesi, sürükleyerek değiştirdiğiniz görünüm sırasını ve gizlediğiniz
+görünümleri ilk haline döndürür. Görünümleri sürükleyip bırakarak sıralarını
+değiştirebilirsiniz.
+
+Aşağıdaki örnekte `Yüksek Öncelikli İyileştirmeler` görünümü seçilmiştir.
+
+![Seçili filtre görünümü](/img/teknisyen/iyilestirme-filtre-gorunumu-secili.png)
+
+Seçili görünüm ❶ çerçeveyle işaretlenir, adı kutunun başlığında etiket olarak görünür ve liste
+❷ yalnızca bu görünüme uyan kayıtları gösterir.
+
+### Görünümü düzenleme ve silme
+
+Farenizi bir görünümün üzerine getirdiğinizde satırın sağında simgeler belirir.
+
+![Görünüm üzerindeki simgeler](/img/teknisyen/iyilestirme-filtre-gorunumu-islemler.png)
+
+| # | Öge | Ne yapar |
+|---|---|---|
+| ❶ | Görünüm | Tıklandığında görünümü uygular |
+| ❷ | Düzenle | Görünümün adını ve koşullarını değiştirir |
+| ❸ | Sil | Görünümü siler; işlemden önce onay sorulur |
+
+Herkesle paylaşılmış görünümlerde ayrıca bir **gizle** simgesi bulunur. Gizlediğiniz görünüm
+yalnızca sizin listenizden kalkar; başlıktaki yenileme simgesiyle geri getirebilirsiniz.
+
+### Yeni filtre görünümü oluşturma
+
+`+` simgesi `Yeni Filtre` panelini açar.
+
+![Yeni Filtre paneli](/img/teknisyen/iyilestirme-filtre-yeni.png)
+
+| # | Öge | Açıklama |
+|---|---|---|
+| ❶ | `Filtre Adı` | Görünümün listede görünecek adı. **Zorunludur** |
+| ❷ | `Herkes` | İşaretlenirse görünüm bütün teknisyenlerin listesinde çıkar; işaretlenmezse yalnızca siz görürsünüz |
+| ❸ | `Ve` / `Veya` | Koşulların hepsinin mi (`Ve`) yoksa herhangi birinin mi (`Veya`) sağlanacağını belirler |
+| ❹ | `+` | Yeni koşul ya da koşul grubu ekler |
+| ❺ | Koşul satırı | Alan, karşılaştırma ve değer. Örnekte `Teknisyen Grubu` `İçeren` `Sistem Destek` |
+
+Koşul satırında önce alanı seçin (örneğin `Öncelik`, `Durum`, `Kategori`, `Teknisyen Grubu`),
+sonra karşılaştırmayı ve değeri belirleyin. Satırın sonundaki çarpı simgesi koşulu siler.
+Koşulları tamamladıktan sonra panelin altındaki `Kaydet` butonuna basın; görünüm
+`Filtre Görünümleri` listesine eklenir.
