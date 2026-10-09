@@ -1,0 +1,79 @@
+---
+title: "Yeni İstek Oluşturma"
+description: "Teknisyenin kullanıcı adına hizmet katalogundan yeni istek açması ve belirli aralıklarla kendiliğinden açılan zamanlanmış istek tanımlaması."
+reviewed: "2026-09-24"
+owner: berdanasen
+---
+
+Kullanıcılar isteklerini genellikle son kullanıcı portalından ya da e-postayla iletir.
+Telefonla ya da yüz yüze gelen bir isteği kullanıcı adına siz de açabilirsiniz. Her istek bir
+**hizmet katalogu öğesine** bağlıdır; öğe, isteğin formunu, onay adımlarını ve görevlerini
+belirler.
+
+![Yeni İstek ve Yeni Zamanlanmış İstek butonları](/img/teknisyen/istek-yeni-buton.png)
+
+| # | Buton | Ne yapar |
+|---|---|---|
+| ❶ | `Yeni İstek` | Hizmet katalogunu açar; seçtiğiniz öğe için istek oluşturursunuz |
+| ❷ | `Yeni Zamanlanmış İstek` | Belirli aralıklarla kendiliğinden açılacak bir istek tanımlar |
+
+<Callout type="info" title="ÖNEMLİ">
+`Yeni İstek` butonu yalnızca `İstek Oluşturabilir` yetkisi olan kullanıcılarda etkindir.
+</Callout>
+
+## Katalogdan öğe seçme
+
+`Yeni İstek` butonuna tıklandığında hizmet katalogu açılır.
+
+![Hizmet katalogu](/img/teknisyen/istek-yeni-katalog.png)
+
+| # | Bölüm | Açıklama |
+|---|---|---|
+| ❶ | `Servis Ağacı` | Katalog kategorileri. Bir kategoriye tıklandığında yalnızca o kategorinin öğeleri listelenir |
+| ❷ | Arama | Öğe adına göre arama |
+| ❸ | Katalog öğesi | Öğenin adı ve kısa açıklaması. Karta tıklandığında istek formu açılır |
+
+Sağ üstteki liste simgesiyle öğeleri kart yerine liste olarak da görüntüleyebilirsiniz.
+
+## İstek formu
+
+Öğeye tıkladığınızda o öğe için tasarlanmış form açılır. Solda öğenin adı ve açıklaması,
+ortada doldurulacak alanlar bulunur.
+
+![Yeni istek formu](/img/teknisyen/istek-yeni-form.png)
+
+- Formdaki alanlar katalog öğesine göre değişir. Örnekteki `Bilgisayar Talebi` öğesinde
+  `Teslim Tarihi`, `Bilgisayar Adı`, `Ek Donanım` ve `Oda / Masa Numarası` alanları vardır.
+- `Diğer Alanlar` bölümünde isteğin kullanıcısını, teknisyen grubunu, teknisyenini, durumunu,
+  önceliğini, kaynağını, iş etkisini ve aciliyetini seçersiniz. İsteği bir kullanıcı adına
+  açıyorsanız `Kullanıcı` alanında o kişiyi seçin.
+- Yıldızlı (`*`) alanlar zorunludur; doldurulmadan istek kaydedilmez.
+
+Formu doldurduktan sonra `Kaydet` butonuna basın. İstek oluşturulur ve istek listesine
+dönülür. Katalog öğesinde onay adımları ya da görevler tanımlıysa bunlar istekle birlikte
+kendiliğinden başlar.
+
+<Callout type="warn" title="DİKKAT">
+Katalog öğesine bağlı bir form yoksa formun yerinde uyarı mesajı görünür ve istek
+oluşturulamaz. Bu durumda yöneticinizden öğeye bir form bağlamasını isteyin.
+</Callout>
+
+## Zamanlanmış istek
+
+Düzenli tekrarlanan işler için (örneğin her ay başında yazıcı sarf malzemesi siparişi) bir
+kez tanım yapıp isteğin belirlediğiniz aralıklarla kendiliğinden açılmasını
+sağlayabilirsiniz.
+
+![Tekrarlanan Bir İstek Oluşturun penceresi](/img/teknisyen/istek-yeni-zamanlanmis.png)
+
+Pencerede şu bilgiler girilir:
+
+| Alan | Açıklama |
+|---|---|
+| `Periyot` | İsteğin ne sıklıkla açılacağı (gün, hafta, ay gibi) |
+| `Saatler` ve `Dakikalar` | İsteğin günün hangi saatinde açılacağı |
+| `Servis Öğesi` | Açılacak isteğin katalog öğesi. Öğe seçildiğinde formu pencereye gelir |
+| `Kullanıcı` | İsteğin kimin adına açılacağı |
+
+`Kaydet` butonuna bastığınızda tanım kaydedilir; ilk istek, belirlediğiniz zaman geldiğinde
+açılır.
