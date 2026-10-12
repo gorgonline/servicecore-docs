@@ -2,6 +2,17 @@
   "title": "İSTEKLER",
   "pages": [
     "istekler5",
+    "liste",
+    "yeni-istek",
+    "detay",
+    "gorusmeler",
+    "sekmeler",
+    "onay",
+    "kapatma",
+    "toplu-islemler",
+    "filtreleme",
+    "bildirimler",
+    "yetkiler",
     "istekler",
     "istekler2",
     "istekler3"

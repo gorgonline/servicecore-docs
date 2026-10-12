@@ -1,0 +1,151 @@
+---
+title: "Detay Sekmeleri"
+description: "İstek detayındaki Görevler, İş Günlükleri, Çözümler, Süreçler, SLA ve Geçmiş sekmeleri."
+reviewed: "2026-09-24"
+owner: berdanasen
+---
+
+İstek detayının üstündeki sekmeler, isteğin görevlerini, harcanan emeği, çözümleri, bağlı
+kayıtları, SLA durumunu ve değişiklik geçmişini gösterir. Onay sekmeleri için
+[Onay Süreci](/docs/teknisyen/moduller/talepler/onay) sayfasına bakın.
+
+## Görevler
+
+Katalog öğesinde tanımlı görevler, istek açıldığında kendiliğinden oluşturulur. Gerekirse
+isteğe elle görev de ekleyebilirsiniz.
+
+![Görevler sekmesi](/img/teknisyen/istek-sekme-gorevler.png)
+
+- Sekmenin üstündeki filtrelerle görevleri durumlarına göre görürsünüz: `Aktif`,
+  `Tamamlanmış`, `Onay Bekleyen` ve `Öncül Bekleyen`.
+- `Ekle` ile yeni görev eklenir, `Diyagram` görevlerin sırasını ve bağlantılarını şema olarak
+  gösterir.
+- Tabloda her görevin `Başlık`, `Açıklama`, `Grup`, `Teknisyen`, `Öncül`, `Başlangıç`, `Bitiş`
+  ve `Kullanıcı` bilgisi bulunur. Görevi `Düzenleme` kolonundaki simgelerle düzenler,
+  tamamlar ya da silersiniz.
+- **Öncül görev:** Başka bir görevin bitmesini bekleyen görevdir. Öncül görev tamamlanmadan
+  başlamaz ve `Öncül Bekleyen` filtresinde görünür.
+
+### Görev ekleme
+
+`Ekle` butonu `Yeni Görev Ekle` panelini açar.
+
+![Yeni Görev Ekle paneli](/img/teknisyen/istek-sekme-gorev-ekle.png)
+
+- `Şablon` alanından önceden tanımlanmış bir görev şablonu seçerseniz alanlar şablondan dolar.
+- `Başlık` ve `Açıklama` zorunludur.
+- `Durum`, `Teknisyen Grubu`, `Teknisyen`, `Öncelik`, `Kullanıcı` ve `Kategori` ile görevi
+  sınıflandırıp atarsınız.
+- `Başlangıç - Bitiş Tarihi`, `Tamamlanma Yüzdesi` ve `Tahmini Süre` görevin planını belirler.
+- Göreve dosya ekleyebilirsiniz.
+
+### Diyagram
+
+`Diyagram` butonu, isteğin görevlerini şema olarak gösterir. Görevler arasındaki sırayı
+buradan görebilir ve düzenleyebilirsiniz.
+
+![Görev diyagramı](/img/teknisyen/istek-sekme-gorev-diyagram.png)
+
+## İş Günlükleri
+
+İstek üzerinde harcadığınız zamanı kayıt altına alırsınız. İş günlükleri raporlarda
+teknisyen emeğini ve maliyeti hesaplamak için kullanılır.
+
+![İş Günlükleri sekmesi](/img/teknisyen/istek-sekme-is-gunlukleri.png)
+
+`İş Günlüğü Ekle` butonu iş günlüğü panelini açar.
+
+![İş Günlüğü Ekle paneli](/img/teknisyen/istek-sekme-is-gunlukleri-ekle.png)
+
+| Alan | Açıklama |
+|---|---|
+| `Başlık` ve `Açıklama` | Yapılan işin kısa adı ve ayrıntısı |
+| `İş Günlüğü Türü` | Yapılan işin türü (kurumunuzda tanımlıysa) |
+| `İşi Yapan` | İşi yapan teknisyen. **Zorunludur**; sizin adınız kendiliğinden gelir |
+| `Saat` / `Dakika` | Harcanan süre. Alttaki `15dk`, `30dk`, `1s` gibi butonlarla süreyi hızlıca seçebilirsiniz |
+| `Tarih` | İşin yapıldığı tarih |
+| `İşi Yapanın Maliyeti`, `Diğer Masraflar` | Maliyet bilgisi |
+| `Tahmini Süre` | İşin tahmini süresi |
+| `Faturalandırılabilir` | İşin müşteriye faturalandırılıp faturalandırılmayacağı |
+
+İş günlüğünü liste ekranından da ekleyebilirsiniz: kart menüsündeki `İş Günlüğü Ekle`
+seçeneği aynı paneli açar.
+
+## Çözümler
+
+İsteği karşılamak için uygulanan çözümü kayıt altına alırsınız. Çözüm şablon olarak da
+kaydedilebilir; böylece benzer isteklerde tekrar kullanılır.
+
+![Çözümler sekmesi](/img/teknisyen/istek-sekme-cozumler.png)
+
+`Çözüm Ekle` butonu çözüm panelini açar.
+
+![Çözüm Ekle paneli](/img/teknisyen/istek-sekme-cozumler-ekle.png)
+
+- `Bilgi Bankasından Seç` ile daha önce kaydedilmiş bir çözümü seçebilirsiniz.
+- `Konu`, `Kısa Özet`, `Açıklama` ve `Anahtar Kelime` alanlarına çözümü yazın.
+- `Çözüm Türü` alanından çözümün türünü seçin (örneğin `İşe Yarayan Çözüm`).
+- `Çözüm Şablonu Olarak Ekle` işaretlenirse çözüm, sonraki kayıtlarda kullanılmak üzere şablon
+  olarak saklanır.
+- `Kaydet` çözümü ekler; `Kaydet ve Durumu Değiştir` çözümü eklerken isteğin durumunu da
+  değiştirir.
+
+## Süreçler
+
+İsteğin başka kayıtlarla ilişkisini gösterir: bir değişiklik kaydı, bir olay, bir proje, bir
+iyileştirme ya da başka bir istek.
+
+![Süreçler sekmesi](/img/teknisyen/istek-sekme-surecler.png)
+
+Sekmenin üstündeki alt sekmeler ilişki türlerini ayırır: `Proje`, `İyileştirme`, `Değişiklik`,
+`Olay` ve `İlişkiler` (başka istekler). Her alt sekmede bağlı kayıtlar tablo olarak listelenir;
+bağlantıyı tablodaki silme simgesiyle kaldırabilirsiniz.
+
+![Bağıntı Ekle menüsü](/img/teknisyen/istek-sekme-surecler-ekle.png)
+
+`Bağıntı Ekle` butonu iki seçenek sunar:
+
+- **Yeni Kayıt:** Seçili ilişki türünde yeni bir kayıt açar ve isteğe bağlar. İsteğin konusu ve
+  açıklaması yeni kayda aktarılır.
+- **Varolan Kayıt:** Daha önce açılmış bir kaydı arayıp isteğe bağlar.
+
+Aşağıda `Değişiklik` alt sekmesinden açılan yeni kayıt paneli görülüyor. İsteğin konusu ve
+açıklaması değişiklik formuna kendiliğinden gelmiştir; `Değişiklik İsteyen` alanında isteği
+açan kullanıcı seçilidir.
+
+![Yeni Kayıt paneli](/img/teknisyen/istek-sekme-surecler-yeni-kayit.png)
+
+`Varolan Kayıt` ile açılan pencerede bağlanabilecek kayıtlar listelenir. Aşağıdaki örnekte
+`İlişkiler` alt sekmesinden, isteği başka bir istekle ilişkilendirme penceresi açılmıştır.
+Bağlamak istediğiniz kaydı işaretleyip kaydedin.
+
+![Varolan Kayıt penceresi](/img/teknisyen/istek-sekme-surecler-varolan-kayit.png)
+
+## SLA
+
+İsteğe uygulanan SLA'nın (hizmet seviyesi anlaşması) hedeflerini ve bu hedeflere göre
+durumunu gösterir. Sekme yalnızca isteğe bir SLA uygulanmışsa görünür. Hedef süre aşıldığında
+sekme adı kırmızı ünlemle görünür.
+
+![SLA sekmesi](/img/teknisyen/istek-sekme-sla.png)
+
+- Sekmede SLA'nın adı, isteğin oluşturulma tarihi, **hedef cevap** ve **hedef çözüm**
+  tarihleri, bu hedeflerin tutturulup tutturulmadığı ve kalan ya da geçen süre yüzdeleri
+  bulunur.
+- `Sla Koşullar ve Değerleri` butonu, isteğe hangi SLA koşulunun neden uygulandığını gösterir.
+  Pencerede SLA'daki her koşul alanı ve değeri, istekteki karşılığıyla yan yana listelenir.
+  SLA koşulsuz tanımlandıysa liste boş görünür.
+
+![Sla Koşullar ve Değerleri penceresi](/img/teknisyen/istek-sekme-sla-kosullar.png)
+
+- `SLA Yeniden Çalıştır` butonu, isteğin önceliği ya da grubu değiştiğinde SLA hesabını
+  güncel bilgilere göre yeniden yapar.
+
+## Geçmiş
+
+İstek üzerinde yapılan bütün işlemler tarih sırasıyla listelenir: kim, ne zaman, ne yaptı.
+
+![Geçmiş sekmesi](/img/teknisyen/istek-sekme-gecmis.png)
+
+- Üstteki `Operasyon Tipi` ve `İşlem Tipi` filtreleriyle geçmişi daraltabilirsiniz.
+- `Harcanan Süre` sekmesi, istekte geçen süreleri durum değişikliklerine göre gösterir.

@@ -1,0 +1,74 @@
+---
+title: "Filtreleme ve Filtre Görünümleri"
+description: "Kontrol Paneli ile istek listesini süzme, filtreyi kalıcı hâle getirme, kaydedilmiş filtre görünümleri ve yeni filtre oluşturma."
+reviewed: "2026-09-24"
+owner: berdanasen
+---
+
+İstek listesinin sağındaki iki kutu listeyi süzmek için kullanılır: anlık filtreleme için
+`Kontrol Paneli`, sık kullandığınız filtreleri saklamak için `Filtre Görünümleri`.
+
+## Kontrol Paneli
+
+`Kontrol Paneli`'nde bir alanı doldurduğunuz anda liste süzülür. Birden fazla alan
+doldurduğunuzda liste, bütün koşulları birlikte sağlayan istekleri gösterir.
+
+![Kontrol Paneli](/img/teknisyen/istek-filtre-kontrol-paneli.png)
+
+| # | Öge | Açıklama |
+|---|---|---|
+| ❶ | Kaydetme anahtarı | Açıksa panelde yaptığınız seçimler saklanır; ekranı daha sonra açtığınızda aynı filtre uygulanmış olarak gelir |
+| ❷ | `Öncelik`, `Aciliyet`, `İş Etkisi` | Kutuları işaretleyerek bir ya da birden fazla değer seçersiniz |
+| ❸ | `Silinmiş mi?`, `Arşivlenmiş mi?` | Silinmiş ya da arşivlenmiş istekleri listeler |
+| ❹ | `Sıfırla` | Paneldeki bütün seçimleri temizler |
+| ❺ | `SLA Yeniden Çalıştır` | Uyguladığınız filtreye uyan isteklerin SLA hesabını yeniden yapar; işlemden önce onay sorulur |
+
+Paneldeki diğer alanlar: `İstek Numarası`, `Migration Numarası`, `İstek Adı`, `Durum`, `Aşama`,
+`Teknisyen Grubu`, `Teknisyen`, `Şirket`, `Müşteri`, `Kullanıcı`, `Servis Öğesi`,
+`Oluşturulduğu Tarih`, `Hedef Çözüm Tarihi`, `Etiketler`, `Bölüm`, `Kaynak` ve `Özel Form`.
+
+Sık kullanılan filtreler:
+
+| Görmek istediğiniz | Yapmanız gereken |
+|---|---|
+| Kapatılmış istekler | `Aşama` alanından `Kapalı` seçin |
+| Belirli bir katalog öğesinin istekleri | `Servis Öğesi` alanından öğeyi seçin |
+| Süresi geçmek üzere olan istekler | `Hedef Çözüm Tarihi` alanından tarih aralığı seçin |
+| Bir müşterinin istekleri | `Müşteri` alanından destek müşteri hesabını seçin |
+| Silinmiş istekler | `Silinmiş mi?` kutusunu işaretleyin |
+
+<Callout type="info" title="ÖNEMLİ">
+`Silinmiş mi?` kutusu yalnızca `Silinen Kayıtları Görebilir` yetkisi olan kullanıcılarda
+etkindir. Kaydetme anahtarıyla saklanan filtre yalnızca kullandığınız tarayıcıda geçerlidir.
+</Callout>
+
+## Filtre Görünümleri
+
+`Filtre Görünümleri` kutusu, daha önce kaydedilmiş filtreleri listeler.
+
+![Filtre Görünümleri](/img/teknisyen/istek-filtre-gorunumleri.png)
+
+Bir görünümün adına tıkladığınızda liste o filtreye göre süzülür. Aşağıdaki örnekte
+`Onay Bekleyen İstekler` görünümü seçilmiştir.
+
+![Seçili filtre görünümü](/img/teknisyen/istek-filtre-gorunumu-secili.png)
+
+Seçili görünümün adı ❶ kutunun başlığında etiket olarak görünür ve liste ❷ yalnızca bu
+görünüme uyan istekleri gösterir. Listede seçili görünümün satırında üç simge belirir: görünümü
+gizleme, düzenleme ve silme.
+
+Kutunun başlığındaki yenileme simgesi görünüm listesini yeniler, `+` simgesi yeni görünüm
+oluşturur.
+
+## Yeni filtre görünümü oluşturma
+
+`+` simgesine tıklandığında `Yeni Filtre` paneli açılır.
+
+![Yeni Filtre paneli](/img/teknisyen/istek-filtre-yeni.png)
+
+- `Filtre Adı` alanına görünümün listede görünecek adını yazın.
+- `Herkes` işaretlenirse görünüm diğer kullanıcılarla da paylaşılır.
+- Koşul alanında bir alan seçip değerini belirleyin; `+` ile yeni koşul eklenir. Koşulların
+  hepsinin sağlanması için `Ve`, herhangi birinin sağlanması yeterliyse `Veya` seçin.
+
+`Kaydet` butonuna bastığınızda görünüm `Filtre Görünümleri` listesine eklenir.
