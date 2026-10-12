@@ -1,0 +1,77 @@
+---
+title: "Varlık Detayı"
+description: "Varlık detay ekranının başlığı, sekmeleri, Detaylar formu, dosyalar, notlar, durum geçmişi ve değişiklik geçmişi."
+reviewed: "2026-10-07"
+owner: necatikekec
+---
+
+Listede `Varlık No` değerine tıklayınca varlık kendi kayıt sekmesinde açılır.
+Detay ekranı varlığın tüm bilgilerini sekmeler hâlinde gösterir.
+
+## Ekranın yerleşimi
+
+![Varlık detay ekranı](/img/teknisyen/vrl-detay-yerlesim.png)
+
+| # | Ne işe yarar |
+|---|---|
+| ❶ | `Geri`: Kayıt sekmesini kapatıp listeye döner. |
+| ❷ | **Başlık**: Varlığın adı, kayıt numarası ve durumu. |
+| ❸ | **Sekmeler**: Varlığa ait bilgi grupları. Sekme adının yanındaki sayı, o sekmedeki kayıt adedidir. Ekran darsa sığmayan sekmeler `…` menüsüne taşınır. |
+| ❹ | **Özel Form**: `Detaylar` sekmesinde varlığın hangi formla gösterileceğini seçer. |
+| ❺ | `Kaydet`: Formda yaptığınız değişiklikleri kaydeder. Düzenleme yetkisi gerektirir. |
+| ❻ | **Form**: Varlığın alanları. Alanlar ve zorunlu olanlar seçilen forma göre değişir. |
+
+| Sekme | İçerik |
+|---|---|
+| `Detaylar` | Varlığın formu ve `Dosyalar` bölümü. |
+| `Notlar` | Varlığa eklenen notlar. |
+| `İlişkiler` | Bağlı varlıklar ve hizmetler. Bkz. [İlişkiler ve Süreçler](/docs/teknisyen/moduller/cmdb/iliskiler-ve-surecler). |
+| `Süreçler` | Varlığa bağlı olay, problem, değişiklik, istek ve iyileştirme kayıtları. |
+| `Aksesuarlar`, `Lisanslar` | Varlığa atanmış aksesuar ve lisanslar. Bkz. [Bağlı Kayıtlar ve Sözleşmeler](/docs/teknisyen/moduller/cmdb/bagli-kayitlar-ve-sozlesmeler). |
+| **Finansal Bilgiler** | Varlığa ait maliyet kayıtları. |
+| **Tedarik Anlaşmaları**, **Destek Anlaşması** | Varlığa bağlı sözleşmeler. |
+| **Durum Geçmişi** | Durum ve zimmet değişiklikleri. Bkz. [Durum geçmişi](#durum-geçmişi). |
+| **Nitelik Geçmişi** | Sayımlarda varlığa verilen nitelikler. Bkz. [Sayım](/docs/teknisyen/moduller/cmdb/sayim#nitelik-geçmişi). |
+| `Geçmiş` | Varlıkta yapılan tüm değişiklikler. |
+
+## Dosyalar
+
+`Detaylar` sekmesinin altındaki `Dosyalar` bölümünde varlığa ait belgeler
+(fatura, garanti belgesi, fotoğraf…) tutulur.
+
+![Dosyalar bölümü](/img/teknisyen/vrl-detay-dosyalar.png)
+
+| # | Ne işe yarar |
+|---|---|
+| ❶ | **Yükleme simgesi**: Bilgisayarınızdan dosya seçip varlığa ekler. |
+
+## Notlar
+
+`Notlar` sekmesindeki `Not Ekle` düğmesi not penceresini açar. Eklenen notlar
+sekmede listelenir; her not düzenlenebilir ya da silinebilir. Not eklemek,
+düzenlemek ve silmek varlık düzenleme yetkisi gerektirir.
+
+![Not Ekle penceresi](/img/teknisyen/vrl-detay-not-ekle.png)
+
+| # | Ne işe yarar |
+|---|---|
+| ❶ | **Metin alanı**: Notun içeriği. Yazı biçimlendirme araç çubuğuyla düzenlenebilir. |
+| ❷ | `Kaydet`: Notu varlığa ekler. |
+
+## Durum geçmişi
+
+`Durum Geçmişi` sekmesi, varlığın durumunun ya da zimmetli kullanıcısının her
+değişikliğini zaman çizelgesi olarak gösterir.
+
+![Durum Geçmişi sekmesi](/img/teknisyen/vrl-detay-durum-gecmisi.png)
+
+| # | Ne işe yarar |
+|---|---|
+| ❶ | **Teknisyen ve tarih**: Değişikliği yapan teknisyen ve değişikliğin zamanı. |
+| ❷ | `Kullanıcı`: Önceki zimmetli kullanıcı → yeni zimmetli kullanıcı. |
+| ❸ | `Durum`: Önceki durum → yeni durum. |
+
+## Geçmiş
+
+`Geçmiş` sekmesi, varlıkta yapılan bütün değişiklikleri zamanı, işlem türü ve
+değişikliği yapan teknisyenle birlikte listeler. Sekme ilk açıldığında yüklenir.

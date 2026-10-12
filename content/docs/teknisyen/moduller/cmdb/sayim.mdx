@@ -1,0 +1,70 @@
+---
+title: "Sayım"
+description: "Fiziksel envanter sayımı: sayım oturumu açma, varlıkları sayıldı olarak işaretleme, nitelik verme ve nitelik geçmişi."
+reviewed: "2026-10-07"
+owner: necatikekec
+---
+
+Sayım, listedeki varlıkların fiziksel olarak yerinde olup olmadığını ve hangi
+durumda bulunduğunu kayda geçirmek için kullanılır. Sayımlar **oturum** altında
+tutulur; her oturum bir sayım dönemini (ör. "15 Mayıs 2026 Sayımı") temsil eder.
+
+## Sayıma başlama
+
+1. `Varlıklar` sekmesinde sayılacak varlıkları süzün: tür ağacından bir tür seçin,
+   hızlı aramayı ya da kolon filtrelerini kullanın. Filtre uygulanmadan `Sayım`
+   açılmaz.
+2. Araç çubuğundaki `Sayım` düğmesine basın. Pencere, filtreye uyan varlıkları
+   listeler. Filtre 5.000'den fazla varlığa uyuyorsa filtreyi daraltmanız istenir.
+
+![Sayım penceresi](/img/teknisyen/vrl-sayim-penceresi.png)
+
+| # | Ne işe yarar |
+|---|---|
+| ❶ | **Sayım Oturumu**: Sayımın kaydedileceği aktif oturum. Oturum seçilmeden sayım kaydedilemez. |
+| ❷ | **Yeni Oturum**: Yeni bir sayım oturumu açar. Bkz. [Yeni sayım oturumu](#yeni-sayım-oturumu). |
+| ❸ | **Bilgi notu**: Kaç varlığın listelendiği ve hangi satırların kaydedileceği. |
+| ❹ | `Durum`: Varlığın durumunu değiştirir. Değişiklik **anında** kaydedilir. |
+| ❺ | `Sayıldı`, `Nitelikler`, `Not`: Varlığın sayılıp sayılmadığı, sayımda gözlenen nitelikleri (ör. `Sağlam`, `Arızalı`) ve isteğe bağlı not. |
+| ❻ | **Sayımı Tamamla**: Satırları seçili oturuma kaydeder. Parantez içindeki sayı kaydedilecek satır adedidir. |
+
+`Sayıldı` kutusu her satırda varsayılan olarak işaretlidir. Yerinde bulamadığınız
+varlıklarda işareti kaldırın. **Sayımı Tamamla** yalnızca nitelik seçtiğiniz ya
+da `Sayıldı` işaretini kaldırdığınız satırları kaydeder.
+
+<Callout type="warn" title="DİKKAT">
+`Durum` sütununda yaptığınız değişiklik, **Sayımı Tamamla**'yı beklemeden
+varlığa hemen kaydedilir. Pencereyi `Vazgeç` ile kapatmak bu değişikliği geri
+almaz.
+</Callout>
+
+Nitelikler yönetici tarafından `Ayarlar` › `Varlık Yönetimi` ekranının
+`Nitelik Tanımı` sekmesinde tanımlanır.
+
+## Yeni sayım oturumu
+
+![Yeni Sayım Oturumu penceresi](/img/teknisyen/vrl-sayim-yeni-oturum.png)
+
+| # | Ne işe yarar |
+|---|---|
+| ❶ | **Oturum Adı**: Oturumun adı. Zorunludur. |
+| ❷ | `Açıklama`: İsteğe bağlı açıklama. |
+| ❸ | **Oluştur ve Başlat**: Oturumu oluşturur, başlatır ve sayım penceresinde seçili hâle getirir. |
+
+## Nitelik geçmişi
+
+Bir varlığın sayımlarda aldığı nitelikler, varlık detay ekranının
+`Nitelik Geçmişi` sekmesinde listelenir.
+
+![Nitelik Geçmişi sekmesi](/img/teknisyen/vrl-sayim-nitelik-gecmisi.png)
+
+| # | Ne işe yarar |
+|---|---|
+| ❶ | `Nitelik`: Sayımda verilen nitelik. |
+| ❷ | `Not`: Sayımda girilen not. |
+| ❸ | **Sayım Tarihi** ve `Sayan`: Niteliğin ne zaman ve kim tarafından verildiği. |
+| ❹ | **Sil**: Nitelik kaydını kaldırır. |
+
+Sayımların sonuçları panodaki sayım raporlarında da izlenir: **Sayım Raporu**,
+**Sayım Karşılaştırma**, **Sayılamayan Varlıklar** ve **Sayım Performansı**
+(bkz. [Pano](/docs/teknisyen/moduller/cmdb/pano#raporlar)).
