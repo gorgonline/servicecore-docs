@@ -1,0 +1,97 @@
+---
+title: "Problem Listesi"
+description: "Problem kartları, kart simgeleri, hızlı güncelleme, toplu işlemler, birleştirme, sıralama ve genel grid görünümü."
+reviewed: "2026-10-07"
+owner: oobcore
+---
+
+`Problemler` sekmesi problemleri kartlar hâlinde listeler. Bir karta tıklamadan da durumu, önceliği ya da atamayı değiştirebilir, birden fazla problemi seçip birlikte güncelleyebilirsiniz.
+
+## Problem kartı
+
+![Bir problem kartının bölümleri](/img/teknisyen/prb-liste-kart.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | Problem numarası | `PRB` ile başlayan numara. Numaraya ya da konuya tıklayınca problem yeni bir sekmede açılır; `Ctrl` (Mac'te `⌘`) ile tıklarsanız sekme arka planda açılır. |
+| ❷ | Durum | Problemin durumu, renkli etiketle. |
+| ❸ | Konu | Problemin başlığı ve ne zaman açıldığı (`bir ay önce` gibi); üzerine gelince tam tarih görünür. |
+| ❹ | Açıklama | Açıklamanın ilk satırı. |
+| ❺ | **Takip Et** ve **Sabitle** | Kartın üzerine gelince görünür. Yıldız problemi takip ettikleriniz arasına, iğne sabitledikleriniz arasına ekler; etkin olduklarında kartta sürekli görünürler. |
+| ❻ | Kart alt satırı | Hızlı işlem simgeleri, kişiler ve öncelik (aşağıda). |
+
+Kartın sol kenarına geldiğinizde bir onay kutusu belirir; kartları seçip toplu işlem yapmak için bunu kullanın.
+
+### Kart alt satırı
+
+![Kart alt satırındaki simgeler](/img/teknisyen/prb-liste-kart-alt.png)
+
+| # | Simge | Ne işe yarar |
+|---|---|---|
+| ❶ | Hızlı işlemler | `Bağlantıyı Kopyala`, `Detay sayfasına git` (problemi kendi sayfasında açar) ve `İş Günlüğü Ekle`. |
+| ❷ | **Hızlı Güncelleme** | Problemi açmadan durum, öncelik, kategori ve atama değiştirir (aşağıda). |
+| ❸ | `Ekler` | Probleme eklenmiş dosyalar. |
+| ❹ | `Gelen Posta` | Problem için gelen e-postalar. |
+| ❺ | `Giden Posta` | Problemden gönderilen e-postalar. |
+| ❻ | **Not Göster ve Ekle** | Notları gösterir ve yeni not eklemenizi sağlar; sağ üstteki kırmızı sayı not adedidir. |
+| ❼ | Kişiler | Atanan teknisyen, problemi bildiren kullanıcı, destek müşteri hesabı ve şirket. Satırın sağ ucunda öncelik yazar. |
+
+![Hızlı işlemler menüsü](/img/teknisyen/prb-liste-kart-menu.png)
+
+### Hızlı güncelleme
+
+`Hızlı Güncelleme` simgesi küçük bir form açar: `Durum Değiştir`, `Önceliği Değiştir`, `Kategori`, `Grup Değiştir` ve `Teknisyen Değiştir`. Alanları değiştirip `Kaydet`e basın. `Durum Değiştir` listesinde yalnızca açık aşamadaki durumlar bulunur; problemi kapatmak için kapatma işlemini kullanın. Kapalı problemlerde hızlı güncelleme kullanılamaz.
+
+![Hızlı Güncelleme formu](/img/teknisyen/prb-liste-hizli-guncelleme.png)
+
+## Toplu işlemler
+
+Bir ya da daha fazla kartı seçtiğinizde listenin üstünde toplu işlem çubuğu belirir.
+
+![Toplu işlem çubuğu](/img/teknisyen/prb-liste-toplu-cubuk.png)
+
+| # | Öğe | Ne yapar |
+|---|---|---|
+| ❶ | Tümünü seç | Ekrandaki bütün problemleri seçer. |
+| ❷ | `Toplu İşlem` | Seçili problemlerin durumunu, önceliğini, iş etkisini, aciliyetini, kategorisini, grubunu ve teknisyenini birlikte değiştirir. Yalnızca doldurduğunuz alanlar değişir. |
+| ❸ | `Kapat` | Seçili problemleri kapatır. Bu toplu kapatmada `Gerekçe` ve kapalı bir `Durum` seçmek zorunludur. |
+| ❹ | `Sil` | Seçili problemleri siler; bir `Silme Gerekçesi` yazmanız ve kapalı bir `Durum` seçmeniz istenir. |
+| ❺ | `Bana Ata` | Seçili problemlerin hepsini size atar; onay ister. |
+| ❻ | Birleştirme | En az iki problem seçildiğinde etkinleşir (aşağıda). Düğmenin etiketi ekranda `Birleştirilenler` olarak görünür. |
+
+![Toplu İşlem penceresi](/img/teknisyen/prb-liste-toplu-islem.png)
+
+Kapatma ve silmenin ayrıntıları için bkz. [Durumlar ve Kapatma](/docs/teknisyen/moduller/problemler/durumlar-ve-kapatma).
+
+### Problemleri birleştirme
+
+Aynı nedene sahip birden fazla problem açılmışsa onları tek bir problemde toplayabilirsiniz. İki ya da daha fazla problemi seçip birleştirme düğmesine basın.
+
+![Problemleri Birleştir penceresi](/img/teknisyen/prb-liste-birlestir.png)
+
+| # | Alan | Açıklama |
+|---|---|---|
+| ❶ | Birleştirilecek problemler | Seçtiğiniz problemlerin numaraları. |
+| ❷ | **Birincil Kaydı Seçiniz** | **Zorunlu.** Diğerlerinin içinde toplanacağı ana problem. |
+| ❸ | **Alt Olay Kaydını Güncelle** | **Zorunlu.** Birincil dışındaki problemlerin alacağı kapalı durum; bu problemler birleştirmeyle kapanır. |
+| ❹ | Taşıma seçenekleri | `Problemler Birleşirken Notları Taşı` notları, `Bağıntılı Olaylar Taşı` bağlı olayları birincil probleme taşır. |
+
+## Sıralama ve sayfalama
+
+Listenin altındaki sabit çubukta kayıt sayısı, sayfalar ve sıralama bulunur.
+
+![Sayfalama ve sıralama](/img/teknisyen/prb-liste-siralama.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | Kayıt sayısı | Gösterilen aralık ve toplam problem sayısı. |
+| ❷ | Sayfa boyutu | Sayfa başına 10, 20 ya da 50 problem. |
+| ❸ | Sıralama | `Oluşturulduğu Tarih`, `Son Güncelleme Tarihi`, `Problem Numarası`, `Konu` ya da `Durum`. Yanındaki simge artan ve azalan sıra arasında geçiş yapar. |
+
+## Genel grid görünümü
+
+Sağ üstteki `Grid Görünümü` simgesi, problemleri ve olayları **birlikte** listeleyen bir tablo açar. Her sütunun altındaki kutuyla o sütunda arama yapabilir, başlığa tıklayarak sıralayabilirsiniz. Numaraya tıklayınca kayıt açılır.
+
+![Genel Grid Görünümü](/img/teknisyen/prb-liste-grid.png)
+
+Yanındaki `Ara` simgesi ise bütün modüllerde (olay, problem, değişiklik, çözüm havuzu, varlık…) arama yapılan genel arama penceresini açar.
