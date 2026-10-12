@@ -1,0 +1,65 @@
+---
+title: "Analiz ve Çözümler"
+description: "Problemin kök nedenini, iş etkisini ve belirtilerini kayda geçirme; çözüm ekleme, çözüm türleri ve Bilgi Bankası ile bağlantı."
+reviewed: "2026-10-07"
+owner: oobcore
+---
+
+Bir problemin yaşam döngüsü iki adımda ilerler: önce nedeni anlaşılır (`Analiz`), sonra çözüm önerilir, uygulanır ve işe yarayıp yaramadığı görülür (`Çözümler`).
+
+## Analiz
+
+`Analiz` sekmesinde problemin neden ortaya çıktığını ve neyi etkilediğini üç başlıkta kayda geçirirsiniz.
+
+![Analiz sekmesi](/img/teknisyen/prb-analiz.png)
+
+| # | Kart | Ne yazılır |
+|---|---|---|
+| ❶ | `Kök Neden` | Sorunun asıl sebebi. Örnekte: belirli bir uygulama sürümündeki bellek sızıntısı. |
+| ❷ | `İş Etkisi` | Problemin işe etkisi: kimler etkileniyor, ne sıklıkla, ne kaybediliyor. |
+| ❸ | `Belirtiler` | Sorunun nasıl fark edildiği: ölçülen değerler, hata mesajları, gözlemler. |
+| ❹ | Düzenle | Kartı düzenleme moduna alır; zengin metinle yazıp kaydedersiniz. Her kartın kendi düzenle simgesi vardır. |
+
+Kurumunuz kapatma kurallarında kök nedeni, analizi ya da belirtileri zorunlu tuttuysa, bu kartlar dolmadan problem kapatılamaz. Bkz. [Durumlar ve Kapatma](/docs/teknisyen/moduller/problemler/durumlar-ve-kapatma#kapatma-kuralları).
+
+## Çözümler
+
+`Çözümler` sekmesi probleme karşı geliştirilen çözümleri listeler. Her çözümün bir **türü** vardır:
+
+| Tür | Anlamı |
+|---|---|
+| `Önerilen` | Henüz denenmemiş, önerilen çözüm. |
+| `Uygulanan` | Uygulanmış çözüm. Geçici çözümler (workaround) genellikle bu aşamada kalır. |
+| `İşe Yarayan` | Uygulanmış ve sorunu çözdüğü görülmüş çözüm. |
+
+![Çözümler sekmesi](/img/teknisyen/prb-cozumler.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | Tür süzgeci | `Tümü`, `Önerilen`, `Uygulanan` ya da `İşe Yarayan`. |
+| ❷ | `Çözüm Ekle` | Yeni çözüm penceresini açar (aşağıda). |
+| ❸ | `Türü` | Çözümün şu anki türü. |
+| ❹ | Çözüm açıklaması | Satırın solundaki `+` çözümün açıklamasını açar. |
+| ❺ | Satır işlemleri | `Geri Alma`, `Onayla`, `Sil` ve `Düzenle`. Bir çözümün türünü değiştirmek için `Düzenle` ile pencereyi açıp `Çözüm Türü`nü güncelleyin. `Geri Alma`, önerilen çözümlerde görünmez. |
+
+Silinen çözüm geri getirilemez.
+
+### Çözüm ekleme
+
+`Çözüm Ekle` düğmesi (ya da araç çubuğundaki `Diğer Eylemler` › `Çözüm Ekle`) aşağıdaki pencereyi açar.
+
+![Çözüm Ekle penceresi](/img/teknisyen/prb-cozum-ekle.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | **Bilgi Bankasından Seç** | Bilgi Bankası'ndaki bir sayfayı seçerseniz konu ve açıklama o sayfadan dolar. Yanındaki simge seçtiğiniz sayfayı önizler. Aynı sayfa bir probleme ikinci kez eklenemez. |
+| ❷ | `Konu`, `Kısa Özet`, `Açıklama` | Çözümün başlığı, tek satırlık özeti ve ayrıntısı. `Açıklama` zorunludur. |
+| ❸ | `Çözüm Türü` | **Zorunlu.** `Önerilen`, `Uygulanan Çözüm` ya da `İşe Yarayan Çözüm`. |
+| ❹ | **Çözüm Şablonu Olarak Ekle** | İşaretlerseniz bir `Çözüm Kategorisi` seçmeniz istenir ve çözüm Bilgi Bankası'na yeni bir sayfa olarak da eklenir. |
+| ❺ | **Kaydet ve Durumu Değiştir** | Çözümü kaydeder ve aynı anda problemin durumunu değiştirir; durumu yanındaki oktan seçersiniz. Yalnızca kaydetmek için `Kaydet`e basın. |
+
+`Anahtar Kelime` alanı çözümün aramada bulunmasını kolaylaştırır.
+
+<Callout type="info" title="İPUCU">
+Sık karşılaşılan bir sorunun çözümünü bulduysanız `Çözüm Şablonu Olarak Ekle` ile Bilgi Bankası'na da ekleyin. Böylece aynı sorun olay olarak geldiğinde teknisyenler çözümü olayın içinden bulabilir. Bkz. [Bilgi Bankası](/docs/teknisyen/moduller/bilgi-bankasi).
+</Callout>
