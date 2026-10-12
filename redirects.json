@@ -851,22 +851,22 @@
   },
   {
     "source": "/docs/teknisyenkullanımkilavuzu/moduller/Cmdb/cmdb1",
-    "destination": "/docs/teknisyen/moduller/cmdb/cmdb1",
+    "destination": "/docs/teknisyen/moduller/cmdb/varlik-detayi",
     "permanent": true
   },
   {
     "source": "/docs/teknisyenkullan%C4%B1mkilavuzu/moduller/Cmdb/cmdb1",
-    "destination": "/docs/teknisyen/moduller/cmdb/cmdb1",
+    "destination": "/docs/teknisyen/moduller/cmdb/varlik-detayi",
     "permanent": true
   },
   {
     "source": "/docs/teknisyenkullanımkilavuzu/moduller/Cmdb/cmdb3",
-    "destination": "/docs/teknisyen/moduller/cmdb/cmdb3",
+    "destination": "/docs/teknisyen/moduller/cmdb/genel-bakis",
     "permanent": true
   },
   {
     "source": "/docs/teknisyenkullan%C4%B1mkilavuzu/moduller/Cmdb/cmdb3",
-    "destination": "/docs/teknisyen/moduller/cmdb/cmdb3",
+    "destination": "/docs/teknisyen/moduller/cmdb/genel-bakis",
     "permanent": true
   },
   {
@@ -1942,6 +1942,16 @@
   {
     "source": "/docs/teknisyen/moduller/problemler/problemler4",
     "destination": "/docs/teknisyen/moduller/problemler/genel-bakis",
+    "permanent": true
+  },
+  {
+    "source": "/docs/teknisyen/moduller/cmdb/cmdb1",
+    "destination": "/docs/teknisyen/moduller/cmdb/varlik-detayi",
+    "permanent": true
+  },
+  {
+    "source": "/docs/teknisyen/moduller/cmdb/cmdb3",
+    "destination": "/docs/teknisyen/moduller/cmdb/genel-bakis",
     "permanent": true
   }
 ]

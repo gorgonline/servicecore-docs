@@ -1,0 +1,118 @@
+---
+title: "Varlık Listesi"
+description: "Varlıklar sekmesinde tür ağacı, arama, kolon filtreleri, kayıtlı filtreler, sütun ayarları, satır işlemleri ve Excel aktarımı."
+reviewed: "2026-10-07"
+owner: necatikekec
+---
+
+`Varlıklar` sekmesi envanterdeki tüm varlıkları listeler. Solda tür ağacı, sağda
+araç çubuğu ve liste bulunur. Ekranın genel yerleşimi için bkz. [Genel Bakış](/docs/teknisyen/moduller/cmdb/genel-bakis).
+
+## Tür ağacı
+
+![Varlık Türü ağacı](/img/teknisyen/vrl-liste-tur-agaci.png)
+
+| # | Ne işe yarar |
+|---|---|
+| ❶ | `Ara`: Ağaçta tür adı arar. |
+| ❷ | **Sıralama**: Türleri A → Z ya da Z → A sıralar. |
+| ❸ | **Tümünü daralt**: Açık alt dalları kapatır. Açık dal yoksa pasiftir. |
+| ❹ | `Daralt`: Ağaç panelini daraltarak listeye yer açar. |
+| ❺ | **Ağaç**: Bir türe tıklayınca liste o türe **ve alt türlerine** göre süzülür. Seçim varken başlıkta beliren temizle düğmesiyle süzgeç kaldırılır. |
+
+Türler yönetici tarafından tanımlanır. Rolünüzde tür kısıtı varsa listede
+yalnızca izin verilen türlerin varlıkları görünür (bkz. [Yetkiler](/docs/teknisyen/moduller/cmdb/yetkiler#tür-kısıtı)).
+
+## Araç çubuğu
+
+![Varlık listesinin araç çubuğu](/img/teknisyen/vrl-liste-arac-cubugu.png)
+
+| # | Ne işe yarar |
+|---|---|
+| ❶ | `Filtreler`: Sütun başlıklarının altındaki filtre kutularını açar ya da kapatır. Bkz. [Kolon filtreleri](#kolon-filtreleri). |
+| ❷ | `Sayım`: Listedeki varlıklar için sayım penceresini açar. Önce bir filtre uygulanmalıdır. Bkz. [Sayım](/docs/teknisyen/moduller/cmdb/sayim). |
+| ❸ | **Kayıtlı Filtreler**: Kaydettiğiniz ya da sizinle paylaşılan filtreleri açar. Bkz. [Kayıtlı filtreler](#kayıtlı-filtreler). |
+| ❹ | **Hızlı arama**: Soldaki seçiciyle aranacak alanı (`Varlık Adı`, `Barkod` ya da `Seri No`) seçip en az 3 karakter yazın. Virgülle ayırarak birden çok değer arayabilirsiniz. |
+| ❺ | **Dışa/İçe Aktar**: Excel'e aktarma ve Excel'den yükleme. Bkz. [Dışa ve içe aktarma](#dışa-ve-içe-aktarma). |
+| ❻ | **Sıfırla**: Tüm filtreleri temizler ve listeyi yeniler. |
+| ❼ | `Sütunlar` ve görünüm: Görünür sütunları ve listenin görünümünü ayarlar. Bkz. [Sütunlar ve görünüm](#sütunlar-ve-görünüm). |
+
+Listenin solunda toplam kayıt sayısı yazar. `Zimmet` ve `Zimmeti Kaldır`
+düğmeleri satır seçildiğinde etkinleşir; bkz. [Zimmet ve Toplu İşlemler](/docs/teknisyen/moduller/cmdb/zimmet-ve-toplu-islemler).
+
+## Satır işlemleri
+
+![Liste satırı ve satır işlemleri](/img/teknisyen/vrl-liste-satir-islemleri.png)
+
+| # | Ne işe yarar |
+|---|---|
+| ❶ | `Varlık No`: Varlığı yeni bir kayıt sekmesinde açar. Bkz. [Varlık Detayı](/docs/teknisyen/moduller/cmdb/varlik-detayi). |
+| ❷ | `Düzenle`: `Varlığı Düzenle` çekmecesini açar. Yalnızca düzenleme yetkisi olanlara görünür. |
+| ❸ | `Klon`: Varlığın bilgileriyle doldurulmuş `Varlığı Klonla` çekmecesini açar. Bkz. [Varlık Ekleme ve Düzenleme](/docs/teknisyen/moduller/cmdb/varlik-ekleme#klonlama). |
+| ❹ | **İlişki Haritası**: Varlığın ilişkilerini şema olarak gösterir. Bkz. [İlişki haritası](/docs/teknisyen/moduller/cmdb/iliskiler-ve-surecler#ilişki-haritası). |
+| ❺ | **Zimmet Raporu**: Varlığın zimmet belgesini PDF olarak üretir. Varlığa zimmetli bir kullanıcı yoksa pasiftir. |
+
+Listede tek bir varlığı silen satır işlemi yoktur. Silme, satırlar seçildiğinde
+araç çubuğunda beliren `Sil` düğmesiyle yapılır.
+
+## Kolon filtreleri
+
+`Filtreler` düğmesine basınca her sütunun başlığında bir filtre kutusu belirir.
+
+![Sütun başlıklarındaki filtre kutuları](/img/teknisyen/vrl-liste-kolon-filtreleri.png)
+
+| # | Ne işe yarar |
+|---|---|
+| ❶ | **Filtre kutusu**: Sütunda arar. `Adı`, `Seri No` ve `Barkod` sütunlarında virgülle ayrılmış birden çok değer yazılabilir. |
+| ❷ | **Durum filtresi**: Diğer sütunlar da aynı şekilde süzülür. |
+| ❸ | **Sıralama okları**: Sütuna göre artan ya da azalan sıralar. |
+
+## Kayıtlı filtreler
+
+`Kayıtlı Filtreler` çekmecesi kaydedilmiş filtreleri listeler; bir filtreye
+tıklayınca liste o filtreyle süzülür. Çekmecedeki **Mevcut Filtreyi Kaydet**,
+listede o an uygulanan kolon filtrelerini kaydeder. `Yeni Filtre` ise koşulları
+elle kurmanızı sağlar:
+
+![Yeni Filtre çekmecesi](/img/teknisyen/vrl-liste-kayitli-filtreler.png)
+
+| # | Ne işe yarar |
+|---|---|
+| ❶ | **Filtre Adı**: Filtrenin listede görünecek adı. Zorunludur. |
+| ❷ | `Herkes`: İşaretlenirse filtre tüm teknisyenlerle paylaşılır. |
+| ❸ | `Ve` / `Veya`: Koşulların hepsinin mi, birinin mi sağlanacağı. |
+| ❹ | `+`: Yeni koşul ya da koşul grubu ekler. |
+| ❺ | `Kaydet`: Filtreyi kaydeder ve listeye uygular. |
+
+## Sütunlar ve görünüm
+
+`Sütunlar` düğmesinin üstündeki sayı gizli sütun sayısıdır.
+
+![Sütunlar paneli](/img/teknisyen/vrl-liste-sutunlar.png)
+
+| # | Ne işe yarar |
+|---|---|
+| ❶ | `Kolon ara`: Sütun adıyla arar. |
+| ❷ | **Onay kutusu**: Sütunu gösterir ya da gizler. Satırı soldaki tutamaktan sürükleyerek sırasını değiştirebilirsiniz. |
+| ❸ | **Oklar**: Sütunu bir sıra yukarı ya da aşağı taşır. |
+| ❹ | **Tümünü Seç** ve `Temizle`: Bütün sütunları gösterir ya da gizler. |
+| ❺ | **Sütun Genişliklerini Sıfırla**: Elle değiştirilen sütun genişliklerini varsayılana döndürür. |
+
+Görünüm düğmesi (disket simgesi) ayarlarınızı saklar:
+
+![Görünüm menüsü](/img/teknisyen/vrl-liste-gorunum.png)
+
+| # | Ne işe yarar |
+|---|---|
+| ❶ | **Görünümü Kaydet**: Sütun seçimini, sırasını ve genişliklerini kaydeder. |
+| ❷ | **Varsayılana Dön**: Kaydedilmiş görünümü bırakıp varsayılan sütunlara döner. |
+| ❸ | **Satır yüksekliği**: Satırları normal ya da sıkışık gösterir. |
+
+## Dışa ve içe aktarma
+
+![Dışa/İçe Aktar menüsü](/img/teknisyen/vrl-liste-disa-ice-aktar.png)
+
+| # | Ne işe yarar |
+|---|---|
+| ❶ | **Sayfayı Dışa Aktar** ve **Tümünü Dışa Aktar**: İlki ekrandaki sayfayı hemen Excel dosyası olarak indirir. İkincisi filtrelenmiş tüm kayıtları arka planda hazırlar; dosya hazır olduğunda e-postayla bildirilirsiniz. İkisi de görünür sütunları aktarır. |
+| ❷ | **Şablon İndir** ve **Şablonla Yükle**: Varlık yükleme şablonunu indirir; doldurulmuş şablonu yükler. Yükleme sonunda her satırın sonucu bir pencerede listelenir. |
