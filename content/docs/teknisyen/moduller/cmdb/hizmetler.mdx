@@ -1,0 +1,56 @@
+---
+title: "Hizmetler"
+description: "Hizmetler sekmesi: hizmet listesi, hizmet ekleme ve hizmet detayının ilişkiler, bağıntılar, SLA ve sözleşme sekmeleri."
+reviewed: "2026-10-07"
+owner: necatikekec
+---
+
+Hizmet, bir veya daha çok varlığın birlikte sunduğu iş hizmetidir (ör. ERP,
+e-posta, yedekleme). `Hizmetler` sekmesi hizmetleri listeler; hizmetler
+varlıklarla ilişkilendirilerek hangi hizmetin hangi bileşenlere dayandığı
+izlenir.
+
+## Hizmet listesi
+
+![Hizmetler sekmesi](/img/teknisyen/vrl-hizmet-liste.png)
+
+| # | Ne işe yarar |
+|---|---|
+| ❶ | **Hizmet Ekle**: Yeni hizmet çekmecesini açar. |
+| ❷ | **Hizmet Türü**: Listeyi hizmet türüne göre süzer. Varlık ağacıyla aynı şekilde çalışır. |
+| ❸ | **Araç çubuğu**: `Filtreler`, **Kayıtlı Filtreler**, ada göre arama (en az 3 karakter), **Dışa/İçe Aktar** ve sağdaki dişli simgesiyle `Sütunlar`. |
+| ❹ | **Hizmet Numarası**: Hizmeti yeni bir kayıt sekmesinde açar. |
+| ❺ | **Satır işlemleri**: `Düzenle`, **İlişki Haritası** ve sil. Silmeden önce onay istenir. |
+
+Bu listede **Dışa/İçe Aktar** yalnızca dışa aktarmayı (**Sayfayı Dışa Aktar**,
+**Tümünü Dışa Aktar**) sunar. Filtrelerin ve sütun seçiminin kullanımı için bkz.
+[Varlık Listesi](/docs/teknisyen/moduller/cmdb/varlik-listesi).
+
+## Hizmet ekleme
+
+`Hizmet Ekle`, hizmet formunu bir çekmecede açar. Varlıklardaki gibi sağ üstteki
+**Özel Form** ile form seçilir; alanlar ve zorunlu olanlar forma göre değişir.
+Kayıt `Kaydet` ile oluşturulur.
+
+## Hizmet detayı
+
+![Hizmet detay ekranı](/img/teknisyen/vrl-hizmet-detay.png)
+
+| # | Ne işe yarar |
+|---|---|
+| ❶ | **Başlık**: Hizmetin adı, numarası ve durumu. |
+| ❷ | **Sekmeler**: Hizmete ait bilgi grupları; sayılar kayıt adedini gösterir. |
+| ❸ | **Özel Form** ve `Kaydet`: Formu seçer ve değişiklikleri kaydeder. |
+| ❹ | **Form**: Hizmetin alanları. |
+
+| Sekme | İçerik |
+|---|---|
+| `Detaylar` | Hizmetin formu. |
+| `İlişkiler` | Hizmetin bağlı olduğu varlıklar ve hizmetler. Varlıklardaki gibi çalışır; bkz. [İlişkiler ve Süreçler](/docs/teknisyen/moduller/cmdb/iliskiler-ve-surecler). |
+| `Bağıntılar` | Hizmete bağlı olay, problem, değişiklik, istek ve iyileştirme kayıtları. |
+| **İlişkili SLA'lar** | Hizmete bağlanan SLA politikaları. **İlişkili SLA Ekle** ile tanımlı bir SLA bağlanır. |
+| **Tedarik Anlaşmaları**, **Destek Anlaşması** | Hizmete bağlı sözleşmeler; bkz. [Bağlı Kayıtlar ve Sözleşmeler](/docs/teknisyen/moduller/cmdb/bagli-kayitlar-ve-sozlesmeler). |
+| `Geçmiş` | Hizmette yapılan değişiklikler. |
+
+Hizmetleri görmek, oluşturmak, düzenlemek ve silmek için ayrı yetkiler vardır;
+bkz. [Yetkiler](/docs/teknisyen/moduller/cmdb/yetkiler).

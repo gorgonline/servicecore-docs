@@ -1,0 +1,63 @@
+---
+title: "Roller ve Yetkiler"
+description: "Sürekli İyileştirme modülündeki yetkiler, görünürlük seçenekleri ve rol ekranından nasıl verildikleri."
+reviewed: "2026-10-06"
+owner: berdanasen
+---
+
+Teknisyenlerin Sürekli İyileştirme modülünde neleri görebileceği ve neler yapabileceği rollerle
+belirlenir. Yetkiler `Yönetici ▸ Roller` ekranında, rolün `Sürekli iyileştirme` sekmesinden
+verilir.
+
+![Rol ekranındaki Sürekli iyileştirme yetkileri](/img/teknisyen/iyilestirme-rol-yetkileri.png)
+
+## Görünürlük
+
+`Sürekli İyileştirmeyi Görebilir` yetkisi modüle girişin anahtarıdır. Bu yetkinin altındaki
+seçenekler, teknisyenin **hangi kayıtları** göreceğini daraltır:
+
+| Seçenek | Teknisyen neyi görür |
+|---|---|
+| `Grubundakiler` | Yalnızca üyesi olduğu teknisyen gruplarının iyileştirmelerini |
+| `Seçilen Gruplardakiler` | Yalnızca altındaki listeden seçilen teknisyen gruplarının iyileştirmelerini |
+| `Silinen Kayıtları Görebilir` | Silinmiş iyileştirmeleri (`Kontrol Paneli`'ndeki `Silinmiş mi?` kutusu) |
+
+`Grubundakiler` ile `Seçilen Gruplardakiler` arasındaki `Veya`, iki seçenekten birinin
+seçileceğini gösterir. İkisi de seçilmezse teknisyen bütün iyileştirmeleri görür. Biri
+seçildiğinde teknisyen, bu grupların kayıtlarına ek olarak teknisyen grubu boş olup kendisine
+atanmış kayıtları da görür.
+
+## İşlem yetkileri
+
+| Yetki | Ne sağlar |
+|---|---|
+| `İyileştirme Oluşturabilir` | `Yeni İyileştirme` butonuyla kayıt açma |
+| `İyileştirmeyi Düzenleyebilir` | Kaydın alanlarını, formunu, analiz ve değerlendirme bilgilerini düzenleme |
+| `Notları Düzenleyebilir` | Altındaki iki seçeneği açar: `Herkesin Notlarını Düzenleyebilir` ya da `Kendi Notlarını Düzenleyebilir`. Üst kutu tek başına yetki vermez; alt seçeneklerden birini de işaretleyin |
+| `İyileştirmeyi Silebilir` | Kaydı tek tek ya da toplu olarak silme |
+| `İyileştirmeyi Kapatabilir` | Kaydı tek tek ya da toplu olarak kapatma |
+| `İnisiyatif alarak kaydı onaylayabilir` | Danışılan kişi adına `Onayla` kararını kaydetme; bkz. [Tavsiyeler ve İş Akışı](/docs/teknisyen/moduller/iyilestirme/tavsiyeler) |
+| `İnisiyatif alarak kaydı reddedebilir` | Danışılan kişi adına `Reddet` kararını kaydetme |
+| `Onayları Silebilir` | `Tavsiyeler` sekmesinden danışılan kişiyi kaldırma |
+
+<Callout type="info" title="ÖNEMLİ">
+Rolde değişiklik yaptıktan sonra `Kaydet` butonuna basmayı unutmayın. Değişikliğin
+teknisyenin ekranına yansıması için teknisyenin oturumu kapatıp yeniden açması gerekebilir.
+</Callout>
+
+## Lisans
+
+Sürekli İyileştirme modülü **İyileştirme Modülü** eklenti lisansıyla açılır. Professional
+lisansa sahip teknisyenlerde modül eklenti lisansı olmadan da kullanılabilir. Modül menüde
+görünmüyorsa lisans durumunuzu yöneticinize sorun.
+
+## Yönetim ekranları
+
+Aşağıdaki ekranlar iyileştirme modülünü etkiler ancak yönetici yetkileriyle açılır:
+
+| Ekran | Ne için |
+|---|---|
+| `Ayarlar ▸ Kapatma Kuralları` | İyileştirmelerin kapatılma kuralları ve kapatma gerekçeleri; bkz. [Kapatma ve Kapatma Kuralları](/docs/teknisyen/moduller/iyilestirme/kapatma) |
+| `Ayarlar ▸ Bildirimler` | İyileştirme bildirimleri; bkz. [Bildirimler](/docs/teknisyen/moduller/iyilestirme/bildirimler) |
+| `Ayarlar ▸ Genel Ayarlar` | Yeni iyileştirme ekranlarının açılması (`Uygulama Ayarları` sekmesi) |
+| `Tavsiye ve Onay Kurulları` | Danışmada kullanılan `SI Danışma Kurulu` üyeleri |

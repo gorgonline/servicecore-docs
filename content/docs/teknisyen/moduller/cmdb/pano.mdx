@@ -1,0 +1,72 @@
+---
+title: "Pano"
+description: "CMDB panosundaki özet kartları, dağılım grafikleri ve 16 hazır envanter raporu."
+reviewed: "2026-10-07"
+owner: necatikekec
+---
+
+`Pano` sekmesi, envanterin genel durumunu özetler. Modülü açtığınızda ilk bu
+sekme görünür.
+
+## Özet kartları ve dağılımlar
+
+![Pano: özet kartları ve dağılım grafikleri](/img/teknisyen/vrl-pano-yerlesim.png)
+
+| # | Ne işe yarar |
+|---|---|
+| ❶ | **Seçili kart**: Altındaki grafikler bu kartın kayıtlarını gösterir. Seçili kartta "Seçili — dağılımlar aşağıda" yazar. |
+| ❷ | **Diğer kartlar**: `Hizmetler`, `Lisanslar` ve `Aksesuarlar` kayıt sayıları. Bir karta tıklayınca grafikler o kayıtlara göre yenilenir. |
+| ❸ | **Varlık Durumu**: Kayıtların duruma göre dağılımı. Sağ üstteki etiket aktif kayıtların oranını verir. |
+| ❹ | **Varlık Türü**: Kayıtların türe göre dağılımı. |
+
+Grafiklerin altında iki dağılım daha bulunur: `Konum` (konumu boş olan kayıt
+sayısı sağ üstte ayrıca yazar) ve `Nitelikler` (sayımda verilen niteliklerin
+dağılımı; bkz. [Sayım](/docs/teknisyen/moduller/cmdb/sayim)).
+
+## Raporlar
+
+`Raporlar` bölümü yalnızca `Varlıklar` kartı seçiliyken görünür. Her rapor bir
+kartta özetlenir; ayrıntısı `Detay` ile açılır.
+
+![Rapor kartları](/img/teknisyen/vrl-pano-raporlar.png)
+
+| # | Ne işe yarar |
+|---|---|
+| ❶ | **Rapor adı**: Kartın hangi raporu özetlediği. |
+| ❷ | `Detay`: Raporun tamamını bir pencerede açar. |
+| ❸ | **Özet değerler**: Raporun öne çıkan sayıları. |
+
+| Rapor | Gösterdiği |
+|---|---|
+| **Sayım Raporu** | Seçilen sayım oturumundaki varlıklar; sayılıp sayılmadıkları ve nitelikleri. |
+| **Sayım Karşılaştırma** | İki sayım oturumu arasındaki fark: yalnız ilk oturumda görülen (kayıp), yalnız ikincide görülen (yeni) ve durumu değişen varlıklar. |
+| **Sayılamayan Varlıklar** | Son oturumlarda "sayılamadı" işaretlenen varlıklar. Birden çok oturumda sayılamayanlar en üstte. |
+| **Sayım Performansı** | Oturumların tamamlanma oranı ve süresi. |
+| **Atanmamış Stok** | Hiçbir kullanıcıya zimmetlenmemiş varlıklar ve bu durumda geçen süre. |
+| **Varlık Durum Dağılımı** | Duruma göre varlık sayıları ve oranları. |
+| **Garanti Bitecek** | `Bitiş Tarihi` önümüzdeki 30/60/90 gün içinde dolan ya da geçmiş varlıklar. |
+| **Owner/Departman** | Hangi kullanıcının veya bölümün kaç varlık kullandığı. |
+| **Yaşam Döngüsü** | Varlıkların yaş grupları ve toplam maliyeti; yenilenmesi yaklaşanlar. |
+| **Kontrolsüz CI** | Kullanıcısı, bölümü ve konumu boş olan, hiçbir sözleşmeye ve hizmete bağlı olmayan varlıklar. |
+| **Varlık Türü Maliyet** | `Maliyet` alanının türe göre toplamı ve ortalaması. |
+| **Trend Analizi** | Modül ve tür bazında aylık kayıt sayıları. |
+| **Incident Korelasyon** | En çok olay açılan varlıklar ve ortalama çözüm süresi. |
+| **Lisans Uyumluluk** | Lisansların atama sayıları. |
+| **Kritik Servisler** | En çok bileşene bağlı hizmetler. |
+| **CI Değişiklik Geçmişi** | Varlıklarda kim, neyi, ne zaman değiştirdi. |
+
+<Callout type="info" title="ÖNEMLİ">
+`Garanti Bitecek` raporu, varlık formundaki `Garanti Bitiş Tarihi` alanına değil
+`Bitiş Tarihi` alanına bakar. Garanti takibini bu raporla yapacaksanız garanti
+bitişini `Bitiş Tarihi` alanına girin.
+</Callout>
+
+## Rapor penceresi
+
+![Varlık Durum Dağılım Raporu penceresi](/img/teknisyen/vrl-pano-rapor-penceresi.png)
+
+| # | Ne işe yarar |
+|---|---|
+| ❶ | **Özet etiketleri**: Raporun toplam değerleri. |
+| ❷ | **Tablo**: Raporun satırları. Sütun başlıklarından sıralanabilir. |
+| ❸ | `Yenile`, `Excel`, `Yazdır`, `Kapat`: Veriyi yeniden çeker, tabloyu Excel dosyası olarak indirir, yazdırır ya da pencereyi kapatır. |

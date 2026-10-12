@@ -1,0 +1,54 @@
+---
+title: "Yetkiler"
+description: "CMDB modülünde rol yetkileri, rol bazlı varlık türü kısıtı ve son kullanıcıların kendi varlıklarını görmesi."
+reviewed: "2026-10-07"
+owner: necatikekec
+---
+
+CMDB modülünde kimin neyi görüp değiştirebileceği rollerle belirlenir. Rol
+yetkileri `Ayarlar` › `Roller` ekranında, rolün düzenleme sayfasındaki
+`Varlıklar` sekmesinden verilir.
+
+![Rol düzenleme: Varlıklar sekmesi](/img/teknisyen/vrl-yetkiler-rol.png)
+
+| # | Ne işe yarar |
+|---|---|
+| ❶ | **Varlıkları Görebilir**: Modüle girme ve varlıkları görme yetkisi. |
+| ❷ | **Tür kısıtı**: Rolün görebileceği varlık türlerini sınırlar. Bkz. [Tür kısıtı](#tür-kısıtı). |
+| ❸ | **Varlık işlemleri**: **Varlık Oluşturabilir**, **Varlıkları Düzenleyebilir**, **Varlıkları Silebilir**, **Varlıkları Arşivleyebilir**. |
+| ❹ | **Hizmet yetkileri**: **Hizmetleri Görebilir** ve altındaki oluşturma, düzenleme, silme ve arşivleme yetkileri. |
+
+## Yetki ile açılan işlemler
+
+| Yetki | Açtığı işlemler |
+|---|---|
+| **Varlıkları Görebilir** | Modülün üst menüde (`CMDB`) görünmesi, varlık listesi ve detay ekranı. |
+| **Varlık Oluşturabilir** | Yeni varlık ekleme ve klonlama. |
+| **Varlıkları Düzenleyebilir** | Satırdaki `Düzenle`, detay formunu kaydetme, toplu güncelleme, `Zimmet`, **Zimmeti Kaldır** ve notlar. |
+| **Varlıkları Silebilir** | Seçili varlıkları `Sil` ile silme. |
+| **Hizmetleri Görebilir** ve alt yetkileri | `Hizmetler` sekmesindeki görme, ekleme, düzenleme ve silme işlemleri. |
+
+Modülün üst menüde görünmesi için kullanıcının **Varlıkları Görebilir** ya da
+**Hizmetleri Görebilir** yetkilerinden birine sahip olması gerekir. Süper
+yöneticiler tüm işlemleri yapabilir.
+
+**Varlıkları Arşivleyebilir** yetkisi rol ekranında bulunur, ancak yeni varlık
+ekranlarında arşivleme işlemi yoktur.
+
+## Tür kısıtı
+
+**Varlıkları Görebilir** altındaki `Seçiniz` alanında bir veya daha çok varlık
+türü seçilirse, o roldeki teknisyenler yalnızca seçilen türleri **ve alt
+türlerini** görür. Liste, detay ekranı ve panodaki dağılımlar bu kısıta göre
+süzülür.
+Alan boş bırakılırsa tüm türler görünür.
+
+Bu sayede örneğin ağ ekibi yalnızca ağ cihazlarını, masaüstü destek ekibi
+yalnızca son kullanıcı cihazlarını görecek şekilde ayrılabilir.
+
+## Son kullanıcılar
+
+Kurumunuzda son kullanıcı portalında `Varlıklarım` menüsü açıksa, son kullanıcılar
+kendilerine zimmetli varlıkları bu menüde görür. Yönetici ayrıca zimmet onay
+düğmelerini açtıysa son kullanıcı zimmeti kabul edebilir ya da reddedebilir;
+yanıtı varlığın **Zimmet Kabul Edildi mi?** alanına yansır.
