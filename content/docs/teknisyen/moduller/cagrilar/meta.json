@@ -1,7 +1,14 @@
 {
-  "title": "ÇAĞRILAR",
+  "title": "ÇAĞRI",
   "pages": [
     "cagrilar5",
+    "liste",
+    "yeni-cagri",
+    "detay",
+    "donusturme",
+    "cevapla-kapat-sil",
+    "toplu-islemler",
+    "filtreleme",
     "cagrilar",
     "cagrilar2",
     "cagrilar3"

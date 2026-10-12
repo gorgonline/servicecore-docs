@@ -1,0 +1,77 @@
+---
+title: "Filtreleme ve Filtre Görünümleri"
+description: "Kontrol Paneli ile çağrı listesini süzme, filtreyi kalıcı hâle getirme, kaydedilmiş filtre görünümleri ve yeni filtre oluşturma."
+reviewed: "2026-09-24"
+owner: berdanasen
+---
+
+Çağrı listesinin sağındaki iki kutu listeyi süzmek için kullanılır: anlık filtreleme için
+`Kontrol Paneli`, sık kullandığınız filtreleri saklamak için `Filtre Görünümleri`.
+
+## Kontrol Paneli
+
+`Kontrol Paneli`'nde bir alanı doldurduğunuz anda liste süzülür; ayrıca bir "Ara" butonuna
+basmanız gerekmez. Birden fazla alan doldurduğunuzda liste, **bütün koşulları birlikte**
+sağlayan çağrıları gösterir.
+
+![Kontrol Paneli](/img/teknisyen/cagri-filtre-kontrol-paneli.png)
+
+| # | Öge | Açıklama |
+|---|---|---|
+| ❶ | Kaydetme anahtarı | Açıksa panelde yaptığınız seçimler saklanır; ekranı daha sonra açtığınızda aynı filtre uygulanmış olarak gelir |
+| ❷ | `Çağrı No` ve `Konu` | Çağrı numarasıyla ya da konuda geçen bir kelimeyle arama |
+| ❸ | Seçim alanları | `Durum`, `Aşama`, `Teknisyen Grubu`, `Teknisyen`, `Müşteri`, `Kullanıcı`, `Oluşturulduğu Tarih`, `Kaynak` ve `Kategori`. `Oluşturulduğu Tarih` ve `Kategori` dışındaki alanlarda birden fazla değer seçebilirsiniz |
+| ❹ | `Silinmiş mi?` | İşaretlendiğinde silinmiş çağrılar listelenir |
+| ❺ | `Sıfırla` | Paneldeki bütün seçimleri temizler ve listeyi ilk hâline döndürür |
+
+Örnekte `Teknisyen Grubu` alanında `Sistem Destek`, `Kaynak` alanında `E-Mail` seçilmiştir;
+liste yalnızca Sistem Destek grubuna atanmış ve e-postayla gelen çağrıları gösterir.
+
+Sık kullanılan filtreler:
+
+| Görmek istediğiniz | Yapmanız gereken |
+|---|---|
+| Kapatılmış ve dönüştürülmüş çağrılar | `Aşama` alanından `Kapalı` seçin |
+| Yalnızca olaya dönüştürülen çağrılar | `Durum` alanından `Olaya Dönüştürülenler` seçin |
+| Belirli bir kişinin çağrıları | `Kullanıcı` alanında kişinin adını yazıp seçin |
+| Belirli bir tarih aralığında gelen çağrılar | `Oluşturulduğu Tarih` alanından başlangıç ve bitiş gününü seçin |
+| Silinmiş çağrılar | `Silinmiş mi?` kutusunu işaretleyin |
+
+<Callout type="info" title="ÖNEMLİ">
+`Silinmiş mi?` kutusu yalnızca `Silinen Kayıtları Görebilir` yetkisi olan kullanıcılarda
+etkindir. Kaydetme anahtarıyla saklanan filtre yalnızca kullandığınız tarayıcıda geçerlidir;
+başka bir bilgisayardan girdiğinizde filtre gelmez.
+</Callout>
+
+## Filtre Görünümleri
+
+`Filtre Görünümleri` kutusu, daha önce kaydedilmiş filtreleri listeler. Bir görünümün adına
+tıkladığınızda liste o filtreye göre süzülür.
+
+![Filtre Görünümleri](/img/teknisyen/cagri-filtre-gorunumleri.png)
+
+| # | Öge | Açıklama |
+|---|---|---|
+| ❶ | Kayıtlı görünümler | Size ait ve sizinle paylaşılan filtreler |
+| ❷ | Yenile | Görünüm listesini yeniler |
+| ❸ | `+` | Yeni bir filtre görünümü oluşturur |
+
+Aşağıdaki örnekte `E-postayla Gelen Çağrılar` görünümü seçilmiştir; listede yalnızca
+e-postayla gelen çağrılar görünür.
+
+![Seçili filtre görünümü](/img/teknisyen/cagri-filtre-gorunumu-secili.png)
+
+## Yeni filtre görünümü oluşturma
+
+`Filtre Görünümleri` kutusundaki `+` butonuna tıklandığında `Yeni Filtre` paneli açılır.
+
+![Yeni Filtre paneli](/img/teknisyen/cagri-filtre-yeni.png)
+
+| # | Alan | Açıklama |
+|---|---|---|
+| ❶ | `Filtre Adı` | Görünümün listede görünecek adı. **Zorunludur** |
+| ❷ | `Ortak` | İşaretlenirse görünüm diğer kullanıcılarla da paylaşılır |
+| ❸ | Koşullar | `Bir alan seç` listesinden bir alan seçip değerini belirleyin. `+` ile yeni koşul eklenir. Koşulların hepsinin sağlanması için `Ve`, herhangi birinin sağlanması yeterliyse `Veya` seçin |
+
+Koşulları belirledikten sonra panelin altındaki `Kaydet` butonuna basın. Yeni görünüm
+`Filtre Görünümleri` listesine eklenir.

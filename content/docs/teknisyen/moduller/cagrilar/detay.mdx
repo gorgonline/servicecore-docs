@@ -1,0 +1,83 @@
+---
+title: "Çağrı Detayı ve Düzenleme"
+description: "Çağrı kartına tıklandığında açılan detay: çağrı bilgilerini düzenleme, e-posta alıcıları (From, To, Cc), yazışmalar ve notlar."
+reviewed: "2026-09-24"
+owner: berdanasen
+---
+
+Çağrının ayrı bir detay sayfası yoktur. Listede bir çağrı kartına tıkladığınızda detayı
+kartın hemen altında açılır; karta yeniden tıkladığınızda kapanır. Böylece listeden
+ayrılmadan çağrıyı inceleyip güncelleyebilirsiniz.
+
+![Açılmış bir çağrının detayı](/img/teknisyen/cagri-detay-yerlesim.png)
+
+| # | Bölüm | Açıklama |
+|---|---|---|
+| ❶ | Çağrı kartı | Detayı açmak ve kapatmak için karta tıklayın |
+| ❷ | `Çağrı Konusu` | Çağrının konusu. Boş bırakılamaz |
+| ❸ | `Çağrı Açıklaması` | Kullanıcının yazdığı metin. E-postayla gelen çağrılarda e-postanın içeriği buraya aktarılır |
+| ❹ | Çağrı bilgileri | Kullanıcı, aciliyet, teknisyen grubu, teknisyen, kaynak, iş etkisi, kategori ve durum |
+| ❺ | E-posta bilgisi | E-postayla gelen çağrılarda gönderen ve alıcı adresleri |
+| ❻ | `Kaydet` | Yaptığınız değişiklikleri kaydeder |
+| ❼ | Yazışmalar ve notlar | Çağrıya gelen e-posta yanıtları ve teknisyen notları |
+
+## Çağrı bilgilerini düzenleme
+
+Detaydaki alanlar [Yeni Çağrı Ekleme](/docs/teknisyen/moduller/cagrilar/yeni-cagri)
+formundaki alanlarla aynıdır. Çağrıyı değerlendirirken genellikle şu alanları
+güncellersiniz:
+
+- **Teknisyen Grubu ve Teknisyen:** Çağrıyı ilgilenecek ekibe ve kişiye yönlendirin.
+  Teknisyen listesi, seçtiğiniz gruptaki teknisyenlerle sınırlıdır.
+- **Aciliyet ve İş Etkisi:** Kullanıcının bildirdiği sorunun önemine göre belirleyin.
+- **Kategori:** Çağrının konusunu seçin. Kategori, raporlarda ve filtrelerde çağrıları
+  gruplamak için kullanılır.
+- **Durum:** Açık bir çağrıyı `Beklemeye Alınanlar` durumuna alabilir ya da tekrar `Açık`
+  yapabilirsiniz. Çağrıyı kapatmak için bu alanı değil, karttaki `Kapat` butonunu kullanın.
+
+Değişiklikleri kaydetmek için detayın sağ altındaki `Kaydet` butonuna basın. Kayıt
+başarılı olduğunda "Yapılan değişiklikler başarıyla kaydedildi." mesajı görünür ve karttaki
+bilgiler hemen güncellenir.
+
+<Callout type="warn" title="DİKKAT">
+Kapatılmış ya da dönüştürülmüş bir çağrının detayı **salt okunurdur**: alanlar ve `Kaydet`
+butonu pasif görünür. Çağrıda değişiklik yapmanız gerekiyorsa önce kartındaki
+`Yeniden Aç` butonuyla çağrıyı açın.
+</Callout>
+
+Olaya, isteğe veya iyileştirmeye dönüştürülmüş çağrılarda detayda iki ek alan görünür:
+dönüştürme sırasında yazılan `Dönüştürme Açıklaması` ve `Kapatma Yorumu`.
+
+## E-posta bilgisi (From, To, Cc)
+
+Kullanıcının destek e-posta adresine gönderdiği her e-posta otomatik olarak bir çağrıya
+dönüşür. Bu çağrıların detayında e-postanın kimden geldiği ve kimlere gönderildiği ayrı
+bir kutuda gösterilir.
+
+![E-postayla gelen çağrının gönderen ve alıcı bilgileri](/img/teknisyen/cagri-detay-eposta-bilgisi.png)
+
+| # | Satır | Açıklama |
+|---|---|---|
+| ❶ | `From` | E-postayı gönderen kişinin adresi. Bu adres, çağrının kullanıcısıyla eşleştirilir |
+| ❷ | `To` | E-postanın gönderildiği adresler. Destek e-posta adresi (örnekte `berdansentestmail@gmail.com`) burada yer alır |
+| ❸ | `Cc` | E-postaya bilgi olarak eklenen kişiler |
+
+Adreslerden birine tıkladığınızda adres panoya kopyalanır ve "Panoya Kopyalandı" mesajı
+görünür. Böylece adresi başka bir e-postaya ya da kayda kolayca yapıştırabilirsiniz.
+
+<Callout type="info" title="ÖNEMLİ">
+Bu kutu yalnızca e-postayla gelen çağrılarda görünür. Telefonla ya da `Yeni Çağrı`
+butonuyla açılan çağrılarda e-posta bilgisi olmadığından kutu gösterilmez.
+</Callout>
+
+## Yazışmalar ve notlar
+
+Detayın en altında çağrıya ait yazışmalar ve notlar tarih sırasıyla listelenir. Her
+satırda yazan kişi ve tarih görünür; satıra tıkladığınızda içerik açılır.
+
+![Çağrının yazışmaları ve notları](/img/teknisyen/cagri-detay-yazismalar.png)
+
+| # | Kayıt | Açıklama |
+|---|---|---|
+| ❶ | Gelen e-posta | Kullanıcının çağrıya yanıt olarak gönderdiği e-posta. Gönderenin adı ve e-postanın geldiği saat görünür |
+| ❷ | Teknisyen notu | Teknisyenin çağrıya eklediği not. Kilit simgesi, notun kullanıcıyla paylaşılmayan bir **iç not** olduğunu gösterir |

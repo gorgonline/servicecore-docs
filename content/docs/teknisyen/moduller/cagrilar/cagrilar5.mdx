@@ -1,48 +1,88 @@
 ---
 title: "Genel Bakış"
-description: "Interaction katmanı: e-posta, telefon, chat ve web dahil tüm kanallardan gelen çağrıların tek noktada kaydı ve sınıflandırılması."
-reviewed: "2026-07-30"
-owner:
+description: "Çağrının nasıl oluştuğu, nasıl değerlendirildiği ve hangi sonuçla kapandığı."
+reviewed: "2026-10-12"
+owner: berdanasen
 ---
 
-Service desk modülü olarak da isimlendirdiğimiz, müşteri ile temasının başladığı yer olarak tasarlanan Interaction katmanı ile müşterilerinizin henüz sınıflandırılmamış her tür çağrısını kayıt altına alabilirsiniz.
+Çağrı, kullanıcıdan gelen ve henüz bir sürece bağlanmamış mesajın ServiceCore'daki ilk
+kaydıdır. Her çağrı bir teknisyen tarafından değerlendirilir; ya yanıtlanarak kapatılır ya da
+olay, istek veya sürekli iyileştirme kaydına dönüştürülür.
 
-Servis yönetimi ürün ailesinin müşteri/kullanıcı etkileşimlerinin kaydedildiği karşılama alanı olarak Service Desk / Interaction Management modülü ile tüm kanallardan gelen etkileşimlerin tekil iletişim ve temas noktası simule edilmiştir.
+```mermaid
+flowchart LR
+  A[E-posta] --> C[Çağrı]
+  B[Yeni Çağrı butonu] --> C
+  C --> D{Değerlendirme}
+  D -->|Yanıtla ve kapat| E[Kapatılan çağrı]
+  D -->|Dönüştür| F[Olay / İstek / Sürekli İyileştirme]
+```
 
-Email, telefon, chat, sosyal medya, web arayüzü ve doğrudan fiziksel başvuru gibi tüm kanallardan gelen her tür kullanıcı çağrısı tekilleştirilmiş bir alanda kaydedilmektedir.
+## E-postayla gelen çağrı
 
-Bu bölümde öncelikle kullanıcının omnichannel modeli ile tekilleştirilmiş ve birleştirilmiş çağrıları tek bir merkezi tekil iletişim noktasında işleme alınmaktadır.
+Uygulamaya tanımlı e-posta adreslerine gelen her mesaj otomatik olarak çağrıya dönüşür.
+E-postanın bilgileri çağrının alanlarına aktarılır:
 
-Bu aşamada sınıflandırma yapılarak gelen çağrıların ilgisiz olanları elenebilmektedir. İlgili çağrıların ise Olay, İstek, Şikayet, Öneri, Bilgi İsteği vb. farklı süreçlerden hangisi ile devam edeceği bu seviyede belirlenmektedir.
+![E-postayla gelen bir çağrının detayı](/img/teknisyen/cagri-genel-eposta.png)
 
-Çağrıların/ etkileşimlerin ne olduğu ve hangi süreçle devam edeceğine karar verildikten sonra Olay veya İstek modüllerine aktarımı bu aşamada gerçekleştirilmektedir.
+| # | Alan | E-postadan gelen bilgi |
+|---|---|---|
+| ❶ | `Çağrı Konusu` | E-postanın konusu |
+| ❷ | `Çağrı Açıklaması` | E-postanın içeriği |
+| ❸ | `Kullanıcı` | E-postayı gönderen kişi. Gönderen adres uygulamadaki bir kullanıcıya aitse alan kendiliğinden dolar |
+| ❹ | `Kaynak` | `E-Mail` |
+| ❺ | E-posta adresleri | Gönderen (`From`), alıcı (`To`) ve bilgi (`Cc`) adresleri |
 
-Olaya çevrilen çağrılar için aciliyet, etki, sınıflandırma, öncelik, bilgileri ile service desk personeli tarafından bu noktada detaylandırılmakta ve bu sayede Incident manager için hızlı ve kolay müdahale yapma imkanı doğmaktadır.
+E-postanın ekleri çağrının eklerine eklenir. Çağrı açıkken kullanıcının aynı e-postaya
+verdiği yanıt yeni bir çağrı açmaz, çağrının yazışmalarına eklenir.
 
-Incident management için esas katma değerin beklendiği hızlı teşhis ve çözüm bulmaya bu sayede daha fazla aman ayrılabilmektedir.
+<Callout type="info" title="ÖNEMLİ">
+Hangi e-posta adreslerine gelen mesajların çağrıya dönüşeceğini yöneticiniz
+`Sistem Ayarları` altındaki **E-Posta Yakalayıcısı** bölümünde belirler. Ayrıntılar için
+[Sistem Ayarları](/docs/admin-egitimleri/genel-panel-ayarlari/sistemayarlari) sayfasına bakın.
+</Callout>
 
-Yine aynı şekilde servis kataloğu ile ilişkilendirilme, doğru şablonların seçilmesi, ilgisiz ve baştan red edilmesi gereken işlerin ayıklanması, doğru ve yapılması uygun isteklerin sadece İstek Yöneticisine aktarılması sayesinde istek karşılamanın katma değerinin en yüksek olduğu iş akışlarının hızlıca tetiklenmesi sağlanabilmektedir. Bu sayede İstek Yöneticisinin ayıklama, red etme, onay toplama, kategorize etme, şablonla ilişkilendirme gibi süreç adımları hızlanmaktadır.
+## Telefonla ya da yüz yüze gelen talep
 
-Olay, Problem, İstek, Değişiklik, Sürüm yönetimi süreçlerinin tamamında ortak bir yük olan kullanıcı ile sürekli iletişim ise yine Interaction Management tarafından karşılanabilmektedir. Bu sayede bu kritik yönetim süreçleri gerçekten değerli olan esas faaliyetlerine odaklanırken, müşteri etkileşimi aşamaları Interaction Management tarafından hafifletilmektedir.
+Telefonla ya da yüz yüze iletilen talepler çağrı listesinin sağ üstündeki `Yeni Çağrı` ❶
+butonuyla kaydedilir. Ayrıntılar için [Yeni Çağrı Ekleme](/docs/teknisyen/moduller/cagrilar/yeni-cagri)
+sayfasına bakın.
 
-Soru, sorun/arıza, kesinti, hizmet isteği, bilgi isteği, şikayet, geliştirme isteği, değişim isteği, iş analizi, çözüm önerisi, iyileştirme önerisi gibi sınıflandırmalarla başlayan ve ardından Olay, Problem, İstek, Değişiklik, Sürüm, Konfigürasyon süreçleri ile devam eden değer akışının ilk başlangıç noktası ITIL4’de açıkça “Engagement” safhası olarak tanımlanmıştır. Bu engagement aşamasında hem kullanıcı hem de müşteri ile gerçekleştirilen tüm etkileşimler kayıt altına alınıp değerlendirilmelidir. ITIL4 ile birlikte vurgulanmaya başlanan bu etkileşim katmanında yine ITIL4 tarafından iş analisti, ilişiki yöneticisi, müşteri temsilcisi, servis seviye yöneticisi, service desk çalışanı gibi roller beraber çalışmaktadırlar.
+![Yeni Çağrı butonu](/img/teknisyen/cagri-yeni-buton.png)
 
-Geleneksel servis yönetimi yazılımlarında bu etkileşimlerin hem süreç hem de omnichannel olarak tekil iletişim notasında (SPOC) toplanması ve filtrelenip, önceliklendirilip doğru süreçler devam etmesini sağlayan bir akış veya modül bulunmamaktadır. Bu konuda ITIL4 uyumlu ilk çözüm ServiceCore tarafından sağlanmaktadır.
+## Çağrıyı sonuçlandırma
 
-Email ile ortak bir service desk adresine gönderilen tüm çağrılar öncelikle Interaction Management katmanına otomatik kayıt oluşturularak kayıt edilmektedir. İlk çağrının/ ilk etkileşimin başladığı andan itibaren tüm görüşmeler ve tüm etkileşimler artık service desk üzerinde yazılı olarak kayıt altına alınmış olmaktadır. Kullanıcı service desk ile etkileşimini yazılı olarak email üzerinden yapmayı tercih etmesi durumunda giden ve gelen tüm yazışmalar otomatik olarak sistemde görüşme geçmişi olarak tutulabilmektedir.
+Teknisyen çağrının kartına tıklayarak detayını açar, eksik bilgileri tamamlar ve kartın
+sağındaki butonlardan biriyle çağrıyı sonuçlandırır:
 
-Bu sayede kullanıcının etkileşime geçtiği ilk andan isteğinin karşılandığı ana kadar tüm görüşmeler tek bir iletişim noktasında görülebilir hale getirilmektedir.
+![Çağrı kartındaki işlem butonları](/img/teknisyen/cagri-liste-islem-butonlari.png)
 
-Telefonla service deske ulaşan tüm çağrılar da aynı şekilde hem manuel hem de otomatik call center entegrasyonları sayesinde doğrudan kayıt altına alınarak hizmet yaşam döngüsü boyunca tüm sözlü ve yazılı iletişim tek noktada yönetilebilmektedir.
+| # | Buton | Sonuç |
+|---|---|---|
+| ❶ | `Olay` | Çağrıdan olay kaydı açılır |
+| ❷ | `İstek` | Çağrıdan hizmet katalogundaki bir istek açılır |
+| ❸ | `Sürekli iyileştirme` | Çağrıdan sürekli iyileştirme kaydı açılır |
+| ❹ | `Cevapla ve Kapat` | Kullanıcıya e-posta ile cevap gider, çağrı kapanır |
+| ❺ | `Kapat` | Çağrı bir kapanış açıklamasıyla kapanır |
+| ❻ | `Sil` | Çağrı bir silme gerekçesiyle silinir |
 
-Web arayüzü üzerinden veya diğer yazılımlarla entegrasyonlarla gelen tüm çağrılar da ortak iletişim ve çözüm noktasının ilk karşılama alanında filtrelenecek ve koordine edilebilecek şekilde işlenmektedir.
+Dönüştürmede çağrının konusu, açıklaması, ekleri ve e-posta yazışmaları oluşan kayda
+aktarılır. Birden fazla çağrıyı tek seferde kapatmak, birleştirmek ya da dönüştürmek için
+[Toplu İşlemler](/docs/teknisyen/moduller/cagrilar/toplu-islemler) sayfasına bakın.
 
-ServiceCore tarafından sunulan ve ITIL4’e tam uyumlu bu “engagement” deneyimi ile öncelikli ve yüksek değerli etkileşimleri öne alıp, gereksiz ve anlamsız talepleri elimine ederek önemli ölçüde tasarruf ve verimlilik sağlanmaktadır.
+## Sonuçlanan çağrılar
 
-<Accordions type="single">
-<Accordion title="Süreç Şeması">
+Kapatılan ve dönüştürülen çağrılar açık çağrılar listesinden çıkar. Bu çağrıları görmek için
+`Kontrol Paneli`'nde `Aşama` alanından `Kapalı` seçin. Kartın durum etiketi çağrının nasıl
+sonuçlandığını gösterir:
 
-![Çağrılar Modülü](/img/teknisyen/cagrilarsurec.png)
+![Sonuçlanan çağrılar](/img/teknisyen/cagri-genel-sonuclar.png)
 
-</Accordion>
-</Accordions>
+| # | Durum | Anlamı |
+|---|---|---|
+| ❶ | `İsteğe Dönüştürülenler` | Çağrıdan istek açıldı; isteğin numarası (`#SR`) `Dönüştürüldü` alanında görünür |
+| ❷ | `İyileştirmeye Dönüştürülenler` | Çağrıdan sürekli iyileştirme kaydı açıldı (`#CI`) |
+| ❸ | `Olaya Dönüştürülenler` | Çağrıdan olay kaydı açıldı (`#INC`) |
+| ❹ | `Kapatılanlar` | Çağrı dönüştürülmeden kapatıldı |
+
+`Dönüştürüldü` alanındaki numaraya tıkladığınızda oluşan kayıt yeni bir sekmede açılır.
