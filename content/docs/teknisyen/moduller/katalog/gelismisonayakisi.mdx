@@ -1,0 +1,266 @@
+---
+title: "Gelişmiş Onay Akışı"
+description: "Onay sürecini sürükle-bırak bir şema ile tasarlama: onay adımları, aksiyonlar, koşullar, paralel onay ve HTTP entegrasyonu."
+reviewed: "2026-09-30"
+owner:
+---
+
+Gelişmiş onay akışı, bir katalog öğesinden istek açıldığında kimin hangi sırayla
+onay vereceğini sürükle-bırak bir şema ile tasarlamanızı sağlar. Şemayı bir kez
+çizersiniz; istek açıldığında sistem onu kendiliğinden çalıştırır, onaycılara
+bildirim gönderir ve sonuca göre kaydı günceller.
+
+Akış **isimli bir tanımdır** ve birden çok katalog öğesi aynı akışı kullanabilir.
+
+<Callout type="info" title="ÖNEMLİ">
+Gelişmiş onay akışı bugün yalnız **İstek** modülünde çalışır. Yönetim ekranında
+Değişiklik ve Sürekli İyileştirme modülleri görünür ama seçilemez.
+</Callout>
+
+## Akışı nereden açarsınız
+
+İki giriş noktası vardır ve **etkileri farklıdır**.
+
+| Yol | Ne zaman | Etkisi |
+|---|---|---|
+| Katalog öğesi ▸ `Gelişmiş Onay Akışı` ▸ akışı düzenle | Tek bir öğenin onayını değiştirmek | Akışı başka öğe de kullanıyorsa sistem **yeni bir ad ister** ve ayrı bir kopya oluşturur |
+| `Yönetim` ▸ `Gelişmiş Onay Akışları` | Akışı merkezî yönetmek | Değişiklik, o akışı kullanan **tüm katalog öğelerini** etkiler |
+
+Çalışan talepler her iki durumda da etkilenmez: istek açıldığı anda akışın o
+günkü hali kaydın üzerine kopyalanır ve o istek başladığı şemayı tamamlar.
+
+## Şemayı çizmek
+
+Paletten dört kategori düğüm eklenir: `Onay`, `Aksiyon`, `Akış Denetimi`, `Bitiş`.
+
+Yeni düğüm eklemeden önce bir düğüm ya da bağlantı seçin: seçili bağlantı varsa
+yeni düğüm **arasına** girer, seçili düğüm varsa **altına** bağlanır. Hiçbir şey
+seçili değilse düğüm bağlantısız eklenir.
+
+Bağlantı çizmek için bir düğümün altındaki noktadan diğerinin üstündeki noktaya
+sürükleyin. Silmek için düğümü ya da bağlantıyı seçip `Delete` tuşuna basın.
+`Otomatik yerleştir` şemayı düzenler, `Doğrula` kaydetmeden önce kontrol eder.
+
+<Callout type="info" title="ÖNEMLİ">
+Bir çıkıştan tek bağlantı çıkar. Aynı çıkışa ikinci bir bağlantı çizerseniz
+eskisi silinir. Tek istisna `Paralel Başlat` düğümüdür — oradaki her bağlantı
+ayrı bir daldır.
+</Callout>
+
+## Düğümler
+
+| Düğüm | Ne yapar | Çıkışları |
+|---|---|---|
+| `Onay adımı` | Seçtiğiniz kişilere onay gönderir ve cevabı bekler | Onaylandı / Reddedildi / Revize |
+| `Durumu`, `Önceliği`, `Teknisyeni`, `Teknisyen grubunu değiştir` | Kaydın ilgili alanını yazar | tek çıkış |
+| `Kaydı Kapat` | İsteği kapatır | tek çıkış |
+| `Otomatik Teknisyen Ata` | Kurumunuzun atama kurallarını çalıştırır | tek çıkış |
+| `E-posta Gönder` | Bilgilendirme yollar | tek çıkış |
+| `HTTP İsteği` | Dış sisteme çağrı yapar | tek çıkış |
+| `Koşul` | Kaydın bilgisine göre akışı ikiye ayırır | Doğru / Yanlış |
+| `Paralel Başlat` / `Paralel Birleştir` | Birden çok onayı aynı anda başlatır, sonra birleştirir | dal sayısı kadar / tek çıkış |
+| `Bitiş: Onaylandı` / `Bitiş: Reddedildi` | Akışı o sonuçla kapatır | yok |
+| `Bitiş: Revize Bekleniyor` | Akışı **bitirmez**; talep sahibinin düzeltmesini bekler | yok |
+
+Bitiş düğümlerinin çıkışı yoktur. Onaydan sonra akışı sürdürmek istiyorsanız
+devam edecek düğümü doğrudan onay adımının çıkış noktasına bağlayın — her uç
+için bitiş düğümü koymak zorunda değilsiniz.
+
+Çıkışları boş bırakmanın sonucu farklıdır:
+
+- **Onaylandı boş** → akış kaydedilemez.
+- **Reddedildi boş** → güvenli; istek reddedilmiş olarak kapanır.
+- **Revize boş** → güvenli; talep revize beklemeye geçer.
+
+<Callout type="error" title="KRİTİK">
+`Reddedildi` çıkışına aksiyon bağladıysanız, o yolun sonuna mutlaka bir
+`Bitiş: Reddedildi` düğümü koyun. Koymazsanız reddedilen talep **onaylanmış**
+olarak kapanır. Sistem bunu kaydederken uyarır.
+</Callout>
+
+## Onayı kime soracaksınız
+
+Onaycı, istek açıldığı anda hesaplanır. "Talep edenin yöneticisi" derseniz her
+istek kendi sahibinin yöneticisine gider; yönetici değişirse akışı güncellemeniz
+gerekmez.
+
+| Seçenek | Kime gider |
+|---|---|
+| `Yönetici zinciri` | Talep edenin yöneticisi, sonra onun yöneticisi |
+| `Departman yöneticisi` | Talep edenin departman yöneticisi |
+| `Lokasyon yöneticisi` | Talep edenin lokasyon yöneticisi |
+| `Şirket yöneticisi` | Talep edenin şirket yöneticisi |
+| `Destek hesabı yöneticisi` | Talep edenin destek hesabı yöneticisi |
+| `Seçilen kullanıcılar` | Tek tek seçtiğiniz kişiler |
+| `Onay grubu üyeleri` | Seçtiğiniz onay grubunun üyeleri |
+| `İstek onaylayıcı kullanıcılar` | Katalogda tanımlı onaycılar |
+| `Kayda Atanan Teknisyen` | İsteğin o anki teknisyeni |
+| `Talep Eden Kullanıcı` | İsteği açan kişi |
+| `E-posta ile Kullanıcı` | Adresini yazdığınız kullanıcı |
+| `Teknisyen Grubu` | Seçtiğiniz grubun üyeleri ya da kayda atanmış grup |
+
+`Yönetici zinciri` için dört durma kuralı vardır: **belirli kademe sayısı
+kadar**, **belirtilen unvana kadar**, **belirtilen kişiye kadar**, **zincirin en
+tepesine kadar**. Kademeler tek tek açılır; alt kademe onaylamadan üst kademeye
+gitmez.
+
+Birden çok onaycı çıkarsa adımın kipi belirler: **Bir onay yeterli** ya da
+**Herkes onaylamalı**.
+
+<Callout type="warn" title="DİKKAT">
+Adımdaki **Onaycı yoksa adımı atla** ayarı açıksa, onaycı bulunamadığında adım
+atlanır ve akış onaylandı yolundan devam eder. Kritik onaylarda bu ayarı
+**kapalı** bırakın — aksi halde eksik yönetici tanımı sessizce onaya dönüşür.
+Akışı yayına almadan önce seçtiğiniz kaynağın verisinin dolu olduğunu kontrol
+edin.
+</Callout>
+
+## Koşullar
+
+Koşul düğümü akışı `Doğru` ve `Yanlış` dallarına ayırır. Kurallar **VE** ya da
+**VEYA** ile birleştirilir; iki dal da bağlanmak zorundadır.
+
+Koşul iki kaynağın alanlarını görür:
+
+- **Talep sahibi** — ad soyad, e-posta, unvan, departman, lokasyon, şirket,
+  kullanıcı tipi, yöneticisi ve yöneticisinin unvanı, destek müşteri hesabı,
+  VIP kullanıcı, AD alanları ve 15 ek alan.
+- **İstek kaydı** — konu, açıklama, öncelik, durum, aciliyet, etki, destek
+  grubu, teknisyen, şirket, geliş kanalı, aşama, etiketler, talep tarihi,
+  termin tarihi, başkası adına, eki var, yeniden açılma sayısı.
+
+Kullanılabilen operatörler: eşittir, eşit değildir, içerir, içermez, ile başlar,
+ile biter, büyüktür, büyük veya eşittir, küçüktür, küçük veya eşittir,
+şunlardan biri, şunlardan biri değil, boş, dolu.
+
+<Callout type="warn" title="DİKKAT">
+Katalog formundaki **özel ek alanlar koşulda kullanılamaz**. "Tutar 50.000
+üzerindeyse" gibi bir kural doğrudan kurulamaz; ayrımı isteğin kendi
+alanlarından biri (Öncelik, Aciliyet, Etiketler) taşımalıdır.
+</Callout>
+
+Değerlendirme kuralları:
+
+- Metin karşılaştırması büyük/küçük harf duyarsızdır.
+- Sayı ondalığı nokta ile yazılır; virgül binlik ayracı sayılmaz.
+- Tarih `2026-08-05` ya da `05.08.2026` biçiminde yazılır; `05.08.2026` 5
+  Ağustos demektir.
+- **Değeri boş bırakılmış kural hiçbir kaydı geçirmez** ve akış kaydedilemez.
+
+## Paralel onay
+
+`Paralel Başlat` düğümünden çıkan her bağlantı ayrı bir daldır ve hepsi aynı
+anda başlar. Dallar `Paralel Birleştir` düğümünde buluşur.
+
+Birleştirme düğümünde bekleme kipi seçilir:
+
+- **Tüm dallar tamamlansın** (varsayılan) — gelen her dal sonuçlanana kadar akış
+  ilerlemez.
+- **Bir dal yeterli** — ilk tamamlanan dal akışı sürdürür, kalan dalların
+  bekleyen onayları iptal edilir.
+
+Bir dalda red gelirse tüm akış kapanır: kardeş dalların bekleyen onayları
+kapatılır ve talep reddedilmiş olarak sonuçlanır.
+
+Paralel bölgenin kuralları:
+
+- En az iki dal olmalı ve her dal aynı birleştirme düğümüne ulaşmalı.
+- Dal içindeki her adımın çıkışı bağlı olmalı.
+- Dal içinde kullanılabilecek tek bitiş ucu `Bitiş: Reddedildi`'dir.
+- Birleştirmeye gelen bağlantı sayısı, paralel başlatmadan çıkan dal sayısına
+  eşit olmalı.
+- Paralel bölge içinde ikinci bir `Paralel Başlat` olamaz.
+
+<Callout type="error" title="KRİTİK">
+Paralel daldaki onay adımlarında **Revize ayarını kapatın**. Açık bırakırsanız
+onaycı `Revize` düğmesini görür ve bastığında kardeş dalın onayı hâlâ beklerken
+**tüm talep** revize beklemeye geçer. Revize gereken onayı paralel bloğun önüne
+ya da birleştirmeden sonrasına alın.
+</Callout>
+
+## HTTP isteği ve akış değişkenleri
+
+`HTTP İsteği` düğümü dış bir sisteme çağrı yapar ve yanıttan değer çıkarıp akış
+değişkenine yazar. O değişkeni sonraki düğümlerde `{{ad}}` yazarak metne
+gömersiniz.
+
+Düğümde metot (varsayılan `GET`), adres, başlıklar ve gövde tanımlanır.
+Başlıklar JSON nesnesi olarak yazılır. Gövde daima `application/json` olarak
+gönderilir.
+
+Yanıttan değer çıkarmak için her değişkene bir **ad** ve bir **yol** verilir:
+
+| Yanıt | Yol | Değişkenin değeri |
+|---|---|---|
+| `{"data":{"id":7}}` | `data.id` | `7` |
+| `{"items":[{"name":"ilk"}]}` | `items[0].name` | `ilk` |
+| herhangi | boş bırakılır | yanıtın tamamı |
+| yol bulunamazsa | — | boş metin |
+
+Ayrıca bir **durum kodu değişkeni** tanımlayıp HTTP durum kodunu saklayabilirsiniz.
+
+### Değişken nerede kullanılır
+
+| Alan | Çalışır mı |
+|---|---|
+| HTTP adresi, başlıkları, gövdesi | Evet |
+| E-posta konusu ve gövdesi | Evet |
+| `Kaydı Kapat` notu | Evet |
+| **Koşul değeri** | **Hayır** |
+
+<Callout type="warn" title="DİKKAT">
+Koşulda değişken kullanılamaz. "HTTP 200 döndüyse şu dala git" gibi bir kurgu
+mümkün değildir; `{{http_status}}` yazarsanız düz metin olarak karşılaştırılır
+ve kural hiç eşleşmez.
+</Callout>
+
+### Örnek
+
+Onay verildikten sonra envanter sisteminden rezervasyon alınıp numarası talep
+sahibine bildirilecekse:
+
+1. `Onay adımı` — Yönetici zinciri, 1 kademe.
+2. `HTTP İsteği` — `POST`, adres envanter servisi; yanıt değişkeni
+   `rezervasyon_no`, yolu `data.reservationId`.
+3. `E-posta Gönder` — alıcı talep eden, gövdede `Rezervasyon numaranız {{rezervasyon_no}}`.
+4. `Bitiş: Onaylandı`.
+
+<Callout type="warn" title="DİKKAT">
+HTTP isteği yalnız dış adreslere çıkabilir. `localhost`, iç ağ adresleri ve
+çözülemeyen alan adları güvenlik gereği reddedilir; düğüm atlanır. İstek
+başarısız olursa akış durmaz, düğüm atlandı olarak işaretlenir ve durum kodu
+değişkenine `0` yazılır. Zaman aşımı 30 saniyedir.
+</Callout>
+
+## Kaydetme ve doğrulama
+
+`Doğrula` ve `Kaydet` aynı kontrolleri yapar ve **ilk buldukları hatayı**
+gösterir; biri düzeltilince sıradaki çıkabilir. Sık karşılaşılanlar:
+
+| Uyarı | Çözümü |
+|---|---|
+| Onay adımının `Onaylandı` çıkışını bağlayın | O çıkışı bir sonraki düğüme ya da bitiş düğümüne bağlayın |
+| Onaycı kaynağı ya da kullanıcı seçilmemiş | Adıma tıklayıp onaycıyı seçin |
+| Aksiyonun hedefi seçilmemiş | Durumu/önceliği/grubu seçin; e-postada alıcı, HTTP'de adres girin |
+| Koşulun bir dalı tanımsız | `Doğru` ve `Yanlış` dallarının ikisini de bağlayın |
+| `Reddedildi` yolundaki adımın çıkışı yok | Yolun sonuna `Bitiş: Reddedildi` ekleyin |
+| Bir dal birleştirme düğümüne ulaşmıyor | Dalın sonunu `Paralel Birleştir`'e bağlayın |
+| Paralel bölgedeki bitiş düğümü yalnız `Reddedildi` olabilir | Diğer uçları birleştirmeden sonrasına taşıyın |
+
+## Yayına almadan önce
+
+- Her onay adımında onaycı seçili mi?
+- Seçtiğiniz kaynağın verisi dolu mu? (Departman yöneticisi seçtiyseniz
+  departmanlarda yönetici tanımlı mı?)
+- Kritik adımlarda **Onaycı yoksa adımı atla** kapalı mı?
+- Reddedilince ne olacağı tanımlı mı? Kayıt kapansın istiyorsanız `Kaydı Kapat`
+  aksiyonu ve `Bitiş: Reddedildi` gerekir.
+- `Doğrula` temiz mi?
+- Katalog öğesinde bu akış seçili ve öğe kaydedildi mi?
+- Test kullanıcısıyla bir istek açıp onayın doğru kişiye gittiğini gördünüz mü?
+
+<Callout type="info" title="ÖNEMLİ">
+Bir katalog öğesi tarafından kullanılan akış **arşivlenemez**. Arşivlemek
+isterseniz önce o öğelerin akış bağını kaldırın. Aksi halde o katalogtan açılan
+istekler onaysız açılırdı; sistem buna izin vermez.
+</Callout>
