@@ -1,0 +1,112 @@
+---
+title: "Katalog Öğesi Oluşturma"
+description: "Yeni katalog öğesi oluşturma ve düzenleme: temel bilgiler, maliyet ve teslim süresi, atama, görünürlük ve ekler."
+reviewed: "2026-09-28"
+owner: berdanasen
+---
+
+Yeni bir katalog öğesi oluşturmak için katalog ekranında `Servis Ağacı`'nın sağ üstündeki
+`Öğe Ekle` (+) butonuna tıklayın. Öğe sayfası yeni bir tarayıcı sekmesinde açılır. Var olan bir
+öğeyi değiştirmek için öğe kartındaki `Düzenle` butonunu kullanın; aynı sayfa öğenin bilgileriyle
+dolu olarak açılır.
+
+![Yeni katalog öğesi sayfası](/img/teknisyen/katalog-yeni-oge.png)
+
+Yeni öğede iki sekme bulunur: `Detaylar` ❶ ve `Ek Alanlarla Form Özelleştirme` ❷.
+`Katalog İlişkileri` sekmesi öğe kaydedildikten sonra, düzenleme sayfasında görünür.
+
+## Sayfanın bölümleri
+
+![Katalog öğesi düzenleme sayfası](/img/teknisyen/katalog-oge-yerlesim.png)
+
+| # | Bölüm | Ne işe yarar |
+|---|---|---|
+| ❶ | `Detaylar` | Öğenin adı, açıklaması, maliyeti, kategorisi, ataması, onay akışı ve görevleri |
+| ❷ | `Ek Alanlarla Form Özelleştirme` | Bu öğeyle açılan isteklerde kullanılacak form; bkz. [Form ve Katalog İlişkileri](/docs/teknisyen/moduller/katalog/form-ve-iliskiler) |
+| ❸ | `Katalog İlişkileri` | Bu öğeyle birlikte açılacak diğer öğeler |
+| ❹ | `Servis Kataloğu Yönetimi` | Katalog yönetimiyle ilgili kısa açıklama |
+
+`Detaylar` sekmesi yukarıdan aşağıya şu bölümlerden oluşur: temel bilgiler, maliyet ve teslim
+süresi, atama ve görünürlük, `Ekler`, `Onay Akışı` ve `Servis İş Akışı - Ön Tanımlı Görevler`.
+Onay akışı ve görevler ayrı sayfalarda anlatılır:
+[Onay Akışı](/docs/teknisyen/moduller/katalog/onay-akisi) ve
+[Ön Tanımlı Görevler](/docs/teknisyen/moduller/katalog/gorevler).
+
+## Temel bilgiler
+
+![Öğenin temel bilgileri](/img/teknisyen/katalog-oge-temel.png)
+
+| # | Alan | Açıklama |
+|---|---|---|
+| ❶ | Öğe resmi | Katalog kartında görünen resim |
+| ❷ | Resim yükle | Öğeye resim yükler. Resim yüklemezseniz varsayılan resim kullanılır |
+| ❸ | `Hizmet Adı` | Öğenin katalogda ve isteklerde görünen adı. Zorunludur |
+| ❹ | `Kısa Açıklama` | Katalog kartında adın altında görünen kısa açıklama. Zorunludur |
+| ❺ | `Açıklama` | Öğenin ayrıntılı açıklaması. İstek formu açıldığında öğenin adıyla birlikte formun sol tarafında görünür |
+
+Açıklamaya kullanıcının bilmesi gerekenleri yazın: hizmetin kapsamı, kimlerin isteyebileceği,
+onay adımları ve teslim şekli gibi.
+
+## Maliyet ve teslim süresi
+
+![Maliyet, StoryPoint ve teslim süresi](/img/teknisyen/katalog-oge-maliyet.png)
+
+| # | Alan | Açıklama |
+|---|---|---|
+| ❶ | `Maliyet` | Hizmetin kuruma maliyeti |
+| ❷ | `Fiyat Bilgisi Kullanıcıya Gösterilsin` | İşaretliyse maliyet, istek formunda kullanıcıya gösterilir |
+| ❸ | `StoryPoint` | Hizmetin diğer öğelere göre ne kadar emek gerektirdiğini gösteren değer |
+| ❹ | `Teslim Süresi (Gün)` | Hizmetin kaç günde karşılanacağı |
+| ❺ | `Tahmini Teslim Süresi Kullanıcıya Gösterilsin` | İşaretliyse teslim süresi istek formunda kullanıcıya gösterilir |
+
+Bu alanlar zorunlu değildir; boş bırakılabilir.
+
+## Atama ve görünürlük
+
+![Kategori, öncelik, atama ve yetkili gruplar](/img/teknisyen/katalog-oge-atama.png)
+
+| # | Alan | Açıklama |
+|---|---|---|
+| ❶ | `Hizmet Kategorisi` | Öğenin `Servis Ağacı`'nda hangi kategoride görüneceği. Zorunludur |
+| ❷ | `Öncelik`, `Etki`, `Aciliyet` | Bu öğeyle açılan isteklerin varsayılan önceliği, etkisi ve aciliyeti |
+| ❸ | `Teknisyen Grubu`, `Teknisyen` | Bu öğeyle açılan isteğin kendiliğinden atanacağı grup ve teknisyen. Yalnızca grup seçerseniz istek teknisyene değil gruba atanır |
+| ❹ | `Yetkili Kullanıcı Grupları` | Öğeyi yalnızca seçilen kullanıcı gruplarındaki kullanıcılar görür ve isteyebilir |
+
+<Callout type="info" title="ÖNEMLİ">
+`Yetkili Kullanıcı Grupları` boş bırakılırsa öğe bütün kullanıcılara görünür. Bir veya daha
+fazla grup seçtiğinizde, bu gruplarda olmayan kullanıcılar öğeyi katalogda görmez.
+</Callout>
+
+## Ekler
+
+`Ekler` bölümünde `Dosya Ekle` ❶ butonuyla öğeye dosya ekleyebilirsiniz. Örneğin bir talep
+formu şablonunu ya da hizmetin kullanım kılavuzunu buraya ekleyebilirsiniz.
+
+![Ekler bölümü](/img/teknisyen/katalog-oge-ekler.png)
+
+## Kaydetme
+
+Sayfanın en altındaki butonlarla öğeyi kaydedin ya da değişikliklerden vazgeçin.
+
+![Vazgeç ve Kaydet butonları](/img/teknisyen/katalog-oge-kaydet.png)
+
+- `Vazgeç` ❶: Değişiklikleri kaydetmeden sayfadan çıkar.
+- `Kaydet` ❷: Öğeyi kaydeder ve katalog ekranına döner.
+
+Kaydedilen öğe, seçtiğiniz kategoride yüklediğiniz resimle birlikte katalogda görünür.
+Aşağıdaki örnekte `Donanım` kategorisine monitör resmiyle eklenen `Monitör Talebi` ❶ öğesi
+görülüyor.
+
+![Yeni öğenin katalogda görünmesi](/img/teknisyen/katalog-yeni-oge-katalogda.png)
+
+Karta tıklayarak yeni öğe için hemen istek açabilirsiniz. Katalog İlişkileri ve iş akış
+diyagramı gibi yalnızca kaydedilmiş öğelerde bulunan bölümler için öğeyi `Düzenle` ile açın.
+
+Öğede yaptığınız değişiklikler, **bundan sonra açılacak** isteklere uygulanır. Daha önce açılmış
+isteklerin formu, onay adımları ve görevleri değişmez.
+
+<Callout type="info" title="ÖNEMLİ">
+Yeni öğe oluşturmak için `Servis Öğesi Ekleyebilir`, var olan öğeyi değiştirmek için
+`Servis Öğelerini Düzenleyebilir` yetkisi gerekir; bkz.
+[Yetkiler](/docs/teknisyen/moduller/katalog/yetkiler).
+</Callout>
