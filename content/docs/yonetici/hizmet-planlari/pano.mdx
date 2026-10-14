@@ -1,0 +1,81 @@
+---
+title: "Pano"
+description: "Hizmet Planları panosu: kota sağlığı kartları, plan kataloğu sayaçları, kota analizi grafikleri ve kritik kota uyarısı tablosu."
+reviewed: "2026-10-14"
+owner: necatikekec
+---
+
+`Pano` sekmesi, planların sahada nasıl tüketildiğini tek ekranda gösterir. Hangi sözleşmelerin kotası azaldığını ya da aştığını, en çok hangi müşterinin tükettiğini buradan izlersiniz. Panoda tutar gösterilmez. Ücretlendirme yalnızca sözleşme içinde, [Sözleşmede Plan Kullanımı](/docs/yonetici/hizmet-planlari/sozlesmede-kullanim#hareketler-ve-ücretlendirme) sayfasında anlatılan `Ücretlendirme` bölümünde görünür.
+
+![Pano sekmesinin bölümleri](/img/yonetici/hp-pano-yerlesim.png)
+
+| # | Bölüm | Ne işe yarar |
+|---|---|---|
+| ❶ | Kota sağlığı kartları | Kotası izlenen sözleşme sayısı ve kota satırlarının sağlık dağılımı. |
+| ❷ | **Plan Kataloğu & Sözleşmeler** | Tanımlı plan, ek kota planı ve kural sayıları ile sözleşme sayaçları. |
+| ❸ | **Hizmet Planı Kota Analizi** | Kayıt tipine göre kullanım, sağlık dağılımı ve en çok tüketen müşteriler grafikleri. |
+| ❹ | **Kritik Kota Uyarısı** | Kotası %80'i geçen ya da aşılan satırların listesi. |
+
+## Kota satırı nedir
+
+Panodaki sayımlar **kota satırı** üzerinden yapılır. Kota satırı, bir sözleşmenin bir kayıt tipi için sahip olduğu haktır. Örneğin olay ve hizmet talebi kotası olan bir planla açılmış sözleşmenin iki kota satırı vardır. Satırın kullanım oranı, tüketimin o satırın tavanına bölümüdür. Tavan; plandaki kota, plan devrinden gelen kredi ve sözleşmeye uygulanmış ek kotaların toplamıdır.
+
+Hesaba yalnızca aktif, iptal edilmemiş ve silinmemiş, bir müşteri hesabına ve kota tanımlı bir plana bağlı sözleşmeler girer. Sınırsız kota satırları sağlık sayımlarına katılmaz; tüketimleri yalnızca grafiklerde görünür.
+
+## Kota sağlığı kartları
+
+![Kota sağlığı kartları](/img/yonetici/hp-pano-kota-kartlari.png)
+
+| # | Kart | Ne gösterir |
+|---|---|---|
+| ❶ | **Kotası Takip Edilen Sözleşme** | Kota tanımlı bir plana bağlı sözleşme sayısı. |
+| ❷ | `Sağlıklı Kota` | Kullanımı %50'nin altındaki kota satırı sayısı. |
+| ❸ | `Kritik Kota` | Kullanımı %80 ile %100 arasındaki satır sayısı. |
+| ❹ | `Aşılmış Kota` | Tüketimi tavanı geçmiş satır sayısı. |
+
+Kartlardaki renkli yüzde, o grubun sağlıklı, kritik ve aşılmış satırların toplamı içindeki payıdır.
+
+<Callout type="warn" title="DİKKAT">
+`Sağlıklı Kota` kartının altında "%80'in altında" yazar, ancak kart yalnızca kullanımı %50'nin altındaki satırları sayar. Kullanımı %50 ile %79 arasındaki satırlar hiçbir kartta görünmez. Bu satırları `Kota Sağlık Dağılımı` grafiğinde `İzlenmeli` diliminde bulursunuz. Kartlardaki yüzdeler de bu satırları hesaba katmadığı için grafikteki oranlardan farklı çıkabilir.
+</Callout>
+
+## Plan kataloğu ve sözleşme sayaçları
+
+![Plan kataloğu ve sözleşme sayaçları](/img/yonetici/hp-pano-katalog.png)
+
+| # | Kart | Ne gösterir |
+|---|---|---|
+| ❶ | **Tanımlı Hizmet Planı** | `Destek Planı` sekmesindeki plan sayısı. |
+| ❷ | **Tanımlı Ek Kota Planı** | `Ek Kota Planı` sekmesindeki paket sayısı. |
+| ❸ | **Faturalandırma Kuralı** | `Faturalandırma Kuralı` sekmesindeki kural sayısı. |
+| ❹ | **Aktif Destek Planı** | Bir destek planına bağlı, aktif ve silinmemiş sözleşme sayısı. Bu sayaç sözleşmenin tarih aralığına bakmaz. |
+| ❺ | **Bu Ay Yenilenecek Sözleşme** | Bitiş tarihi içinde bulunulan ay olan aktif sözleşme sayısı. Sözleşme türü ve plan ayrımı yapılmaz. |
+
+## Kota analizi grafikleri
+
+![Kota analizi grafikleri](/img/yonetici/hp-pano-grafikler.png)
+
+| # | Grafik | Ne gösterir |
+|---|---|---|
+| ❶ | **Ticket Tipine Göre Kota Kullanımı** | Her kayıt tipi için tüm sözleşmelerdeki toplam tüketim (`Tüketilen`) ve toplam tavan (`Kota`). Sınırsız satırların yalnızca tüketimi görünür. |
+| ❷ | **Kota Sağlık Dağılımı** | Sınırlı kota satırlarının dağılımı: `Sağlıklı` (%50'nin altı), `İzlenmeli` (%50–%79), `Kritik` (%80–%100), `Aşıldı`. |
+| ❸ | **En Çok Tüketen Müşteriler** | Tüm kayıt tiplerindeki toplam tüketime göre ilk 10 müşteri. |
+| ❹ | `⋮` menüsü | `Yenile` ile kota verisini yeniden yükler. Her grafik kartında ve `Kritik Kota Uyarısı` tablosunda bulunur. |
+
+Grafiklerde hizmet talepleri `İstek` adıyla görünür; plan formunda aynı tip `Hizmet Talebi` olarak adlandırılır.
+
+## Kritik kota uyarısı
+
+Tablo, kullanımı %80'i geçmiş ve aşılmış kota satırlarını kullanım oranına göre azalan sırada listeler. Sayfa başına 8 satır gösterilir.
+
+![Kritik Kota Uyarısı tablosu](/img/yonetici/hp-pano-kritik.png)
+
+| # | Sütun | Ne işe yarar |
+|---|---|---|
+| ❶ | `Sözleşme` | Sözleşme numarası; tıklayınca sözleşme açılır. |
+| ❷ | `Kullanım` | Tüketim ve tavan, ör. `68 / 70`. |
+| ❸ | `Kalan` | Tavana kalan; aşımda eksi ve kırmızı. |
+| ❹ | `%` | Kullanım oranı; başlıktan sıralanır. |
+| ❺ | `Durum` | `Kritik` ya da `Aşıldı`. |
+
+Sözleşmeyi açıp kotayı ek kotayla yükseltebilirsiniz (bkz. [Ek kota ekleme](/docs/yonetici/hizmet-planlari/sozlesmede-kullanim#ek-kota-ekleme)). Tablo boşsa "Kritik kota yok" yazar.

@@ -1,0 +1,68 @@
+---
+title: "Kayıt Kotaları"
+description: "Plan formundaki Kayıt Kotaları bölümü: kayıt tipi başına hak, sınırsız kota, kaydı sayma ya da efor kadar düşme ve kotanın nasıl tüketildiği."
+reviewed: "2026-10-14"
+owner: necatikekec
+---
+
+Kayıt kotası, planın her kayıt tipi için verdiği haktır: "Bu planla satılan pakette müşteri her kayıt tipinden kaç adet açabilir?" Kotalar plan formunun altındaki **Kayıt Kotaları** bölümünde tanımlanır. Plan bir sözleşmeye bağlandığında kota o sözleşme için tutulur; aynı planı kullanan her sözleşmenin tüketimi ayrı sayılır.
+
+## Kota satırları
+
+![Kayıt Kotaları bölümü](/img/yonetici/hp-kota-editor.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | Kayıt tipi | Kotası tutulacak tip. |
+| ❷ | `Sınırsız` | Tavanı kaldırır; tüketim yine sayılır. |
+| ❸ | Adet | Kayıt sayısı ya da toplam efor sınırı. |
+| ❹ | Düşme biçimi | `Kaydı say` ya da `Efor kadar düş`. |
+| ❺ | `✕` | Satırı kaldırır. |
+| ❻ | `+ Kayıt tipi ekle` | Yeni kota satırı ekler. |
+| ❼ | `Kaydet` | Planı ve kotaları birlikte kaydeder. |
+
+- **Kayıt tipi:** `Olay`, `Hizmet Talebi`, `Problem`, `Değişiklik`, `Görev` ya da `İş Günlüğü`. Her tip bir planda bir kez kullanılabilir; seçilmiş tipler diğer satırlarda listelenmez.
+- **Sınırsız:** Açıkken adet alanı kapanır.
+- **Düşme biçimi:** `Kaydı say` seçiliyse her kayıt kotadan 1 düşer. `Efor kadar düş` seçiliyse kaydın `Efor` değeri kadar düşer.
+- **Kayıt tipi ekle:** Henüz kullanılmayan ilk tip için 20 adetlik bir satır ekler.
+
+Kotayı değiştirip kaydettiğinizde yeni değer, plana bağlı bütün sözleşmelerde hemen geçerli olur. Bu sözleşmelerde o ana kadar tüketilen miktar korunur.
+
+## Kota nasıl düşülür
+
+Kota, sözleşmeye bağlı bir kayıt açıldığında kendiliğinden düşülür:
+
+- **Olay ve hizmet talebi:** Kayıt açılırken bir sözleşmeye bağlanırsa, o sözleşmenin planındaki ilgili satırdan düşülür.
+- **Görev ve iş günlüğü:** Bağlı oldukları olayın ya da hizmet talebinin sözleşmesinden, `Görev` ve `İş Günlüğü` satırlarına göre düşülür.
+- **Efor kadar düş:** Kaydın `Efor` değeri kadar düşülür. `Efor` değeri olmayan kayıt kotadan düşülmez.
+
+Kayıt şu durumlarda bir sözleşmeye bağlanır:
+
+- Son kullanıcı kaydı açarken bir sözleşme seçtiyse, seçilen sözleşmeye bağlanır.
+- Talep sahibi bir müşteri hesabının kişisiyse, o hesabın aktif ve tarih aralığı bugünü kapsayan sözleşmesine bağlanır.
+- Hesabın böyle bir sözleşmesi yoksa, bir üst hesabın uygun sözleşmesine bağlanır.
+
+Kayıt açıldıktan sonra tüketim şu durumlarda yeniden hesaplanır:
+
+- Kaydın talep sahibi değiştirilirse tüketim eski sözleşmeye iade edilir ve kayıt yeni sözleşmesine göre yeniden sayılır.
+- Bir görev ya da iş günlüğü silinirse, düştüğü miktar kotaya iade edilir.
+
+Her düşme ve iade, sözleşmedeki `Hareketler` listesine yazılır (bkz. [Sözleşmede Plan Kullanımı](/docs/yonetici/hizmet-planlari/sozlesmede-kullanim#hareketler-ve-ücretlendirme)).
+
+## Tavan
+
+Bir sözleşmenin bir kayıt tipi için tavanı üç değerin toplamıdır:
+
+| Bileşen | Kaynağı |
+|---|---|
+| Plandaki kota | Bu bölümde girilen adet. |
+| Devir kredisi | Sözleşme `Yeni plana devret` ile başka plana taşınırken aktarılan kalan kota. |
+| Ek kota | Sözleşmeye uygulanmış ek kota planlarının bu tipe eklediği adetler. |
+
+<Callout type="warn" title="DİKKAT">
+Kota bir sınır değil, bir sayaçtır. Tavan aşıldığında kayıt açılmaya devam eder; aşım panoda ve sözleşmede `Aşıldı` olarak görünür. Tüketim ay ya da dönem başında kendiliğinden sıfırlanmaz; yalnızca sözleşmedeki `Yeni plana devret` işlemiyle sıfırlanır. Plandaki **Faturalama Periyodu** bu sayacı etkilemez.
+</Callout>
+
+<Callout type="info" title="ÖNEMLİ">
+`Problem` ve `Değişiklik` satırları tanımlanabilir ancak şu an tüketilmez, çünkü bu kayıtlar bir sözleşmeye bağlanmaz. Kota izlemesi olay, hizmet talebi ve bunlara bağlı görev ile iş günlükleri için çalışır.
+</Callout>

@@ -1,0 +1,103 @@
+---
+title: "Faturalandırma Kuralları"
+description: "Faturalandırma Kuralı sekmesi: iş günlüklerini ücretlendiren kurallar, kriterler, dahil ve ücretli fiyatlandırma, sabit ve kademeli maliyet, çarpanlar."
+reviewed: "2026-10-14"
+owner: necatikekec
+---
+
+Faturalandırma kuralı, iş günlüklerinin nasıl ücretlendirileceğini belirler. Bir olaya ya da hizmet talebine iş günlüğü eklendiğinde ServiceCore uygun kuralı seçer ve tutarı hesaplar. Hesaplanan tutar, kaydın bağlı olduğu sözleşmenin `Hizmet Planı Kullanımı` sekmesinde, `Ücretlendirme` bölümünde görünür (bkz. [Hareketler ve ücretlendirme](/docs/yonetici/hizmet-planlari/sozlesmede-kullanim#hareketler-ve-ücretlendirme)).
+
+Kurallar bir plana ya da sözleşmeye bağlı değildir; tüm sistem için geçerlidir.
+
+## Kural listesi
+
+![Faturalandırma Kuralı listesi](/img/yonetici/hp-kural-yerlesim.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | **Faturalandırma Kuralı** | Yeni kural formunu açar. |
+| ❷ | `Fiyatlandırma` | `Dahil` ya da `Ücretli`; `Filtre` ile süzülür. |
+| ❸ | `Dahil` etiketi | Bu kurala uyan iş ücretlendirilmez. |
+| ❹ | Satır işlemleri | `Düzenle` ve `Sil`. |
+
+**Saatlik Maliyetlendirme** ve **Talep Başına Sabit Maliyet** sütunları gizlidir. Diğer liste araçları `Destek Planı` sekmesindekiyle aynıdır (bkz. [Liste araçları](/docs/yonetici/hizmet-planlari/destek-planlari#liste-araçları)).
+
+## Kural nasıl seçilir
+
+- Bir iş günlüğü için kurallar **oluşturulma sırasıyla**, en eskiden başlanarak denenir. Kriterleri uyan ilk kural uygulanır, diğerlerine bakılmaz. Listenin en yeni kural en üstte olacak biçimde sıralandığını unutmayın.
+- Hiçbir kural uymazsa iş günlüğü ücretlendirilmez.
+- Kriteri olmayan bir kural her iş günlüğüne uyar. Böyle bir kural kendisinden sonra oluşturulan kuralların hiçbirinin uygulanmasına izin vermez.
+- Tutar iş günlüğü eklenirken bir kez hesaplanır. İş günlüğü ya da kural sonradan değişse de hesaplanmış tutar yeniden hesaplanmaz.
+
+## Ad ve kriterler
+
+![Kural formunun ad ve kriter bölümü](/img/yonetici/hp-kural-form-kriter.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | **Faturalandırma Kuralı Adı** | Kuralın adı. Zorunludur. |
+| ❷ | `Açıklama` | Kuralın kısa tanımı. |
+| ❸ | `Kriterler` | `Tümü` ya da `Herhangi`. |
+| ❹ | Kriter satırı | Alan, koşul ve değer. |
+| ❺ | `⊖` | Kriter satırını kaldırır. |
+| ❻ | `Kriter Ekle` | Yeni kriter satırı ekler. |
+
+- **Kriterler:** `Tümü` seçiliyse bütün satırlar uymalıdır, `Herhangi` seçiliyse bir satırın uyması yeter.
+- **Alan:** `Tip`, `Öncelik`, `Kategori`, `Durum` ya da `Konu`.
+- **Koşul:** `eşittir`, **eşit değildir**, `İçeren`, `içermez`, `İle Başlayan` ya da `İle Biten`. Karşılaştırmalarda büyük/küçük harf ayrımı yapılmaz.
+- **Kriter Ekle:** `Öncelik` `eşittir` ile başlayan boş bir satır ekler.
+
+Alanların neyle karşılaştırıldığı:
+
+| Alan | Karşılaştırılan değer |
+|---|---|
+| `Konu` | Olayda olayın konusu, hizmet talebinde iş günlüğünün adı. |
+| `Tip` | Kayıt tipinin sistem adı: olay için `Incident`, hizmet talebi için `ServiceRequest`. |
+| `Öncelik`, `Kategori`, `Durum` | Olayın öncelik, kategori ve durum kayıtlarının **kimlik numarası**. Hizmet taleplerinde bu üç alan boş kabul edilir. |
+
+<Callout type="warn" title="DİKKAT">
+`Öncelik`, `Kategori` ve `Durum` kriterleri ekranda gördüğünüz adla (ör. "Yüksek") eşleşmez; kaydın kimlik numarasıyla karşılaştırılır. Güvenilir sonuç için `Konu` ya da `Tip` kriterlerini kullanın. `Kriter Ekle` ile gelen `Öncelik eşittir` satırını boş bırakmayın: Boş değer, önceliği olmayan her kayda uyar. Satırı doldurun ya da `⊖` ile kaldırın.
+</Callout>
+
+## Fiyatlandırma ve maliyet
+
+![Kural formunun fiyatlandırma bölümü](/img/yonetici/hp-kural-form-fiyat.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | `Fiyatlandırma` | `Dahil` ya da `Ücretli`. |
+| ❷ | **Maliyet Detayları** | `Sabit Maliyet` ya da **Kademeli Maliyet**. |
+| ❸ | Kademeli saat ücretleri | Dört zaman dilimi için saat ücreti. |
+| ❹ | Çarpanlar | `Yerinde`, `Şehir dışı`, `Yurt dışı`. |
+
+- **Dahil:** Uyan iş plan kapsamında sayılır. Tutarı 0'dır ve `Ücretlendirme` bölümünde `Dahil` olarak görünür.
+- **Ücretli:** Tutar aşağıdaki maliyetlerle hesaplanır. **Maliyet Detayları** yalnızca bu seçenekte görünür.
+- **Kademeli saat ücretleri:** **Operasyonel Saat Maliyeti**, **Operasyonel Olmayan Saat Maliyeti**, **Hafta Sonu Saat Maliyeti** ve **Tatil Saat Maliyeti**. Boş bırakılan dilim için operasyonel saat ücreti kullanılır.
+- **Teslim / Mesafe Çarpanları:** 1, ek ücret olmadığı anlamına gelir. Boş bırakılan çarpan 1 sayılır.
+
+Kademeli maliyette dilim, iş günlüğünün başlangıç anına ve kurumun varsayılan iş saatleri takvimine göre belirlenir:
+
+| Dilim | Ne zaman |
+|---|---|
+| Tatil | İş günlüğünün tarihi takvimde tatil günüyse. |
+| Hafta sonu | Gün, takvimde çalışma günü olarak açık değilse. Cumartesi ve pazar kendiliğinden hafta sonu sayılmaz; takvime bakılır. |
+| Operasyonel olmayan | Çalışma saatleri dışında ya da öğle arasındaysa. |
+| Operasyonel | Diğer bütün durumlar. Takvim 7/24 çalışıyorsa her zaman bu dilim kullanılır. |
+
+### Sabit maliyet
+
+![Sabit maliyet alanları](/img/yonetici/hp-kural-form-sabit.png)
+
+| # | Alan | Açıklama |
+|---|---|---|
+| ❶ | `Sabit Maliyet` | Saat ücreti zaman diliminden bağımsızdır. |
+| ❷ | **Talep Başına Sabit Maliyet** | Kuralla birlikte kaydedilir; şu an tutar hesabında kullanılmaz. |
+| ❸ | **Saatlik Maliyetlendirme** | İş günlüğünün her saati için ücret. |
+
+## Tutarın hesaplanması
+
+Tutar şu formülle hesaplanır: **iş günlüğündeki süre (saat) × saat ücreti × çarpan**.
+
+- **Yerinde çarpanı**, iş günlüğü türünün adında "yerinde", "sahada" ya da "on site" geçtiğinde uygulanır. Adında "uzaktan" ya da "remote" geçen türler uzaktan sayılır ve çarpan almaz.
+- **Şehir dışı ve yurt dışı çarpanları**, olayın konumu kurumun faturalandırma merkez konumuyla karşılaştırılarak uygulanır. İkisinden yalnızca biri uygulanır. Merkez konum tanımlı değilse ya da kaydın konumu yoksa bu çarpanlar uygulanmaz; hizmet taleplerinde konum karşılaştırması yapılmaz. Merkez konum şu an yönetim ekranlarından ayarlanamaz.
+- Boyutu belirlenemeyen bir durumda çarpan uygulanmaz. Bu sayede eksik bilgi yüzünden fazla ücret yazılmaz.
