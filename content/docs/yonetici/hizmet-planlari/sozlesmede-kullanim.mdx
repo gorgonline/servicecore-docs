@@ -1,0 +1,98 @@
+---
+title: "Sözleşmede Plan Kullanımı"
+description: "Sözleşmenin Hizmet Planı Kullanımı sekmesi: kota durumu, ek kota ekleme, yeni plana devretme, kota hareketleri ve iş günlüğü ücretlendirmesi."
+reviewed: "2026-10-14"
+owner: necatikekec
+---
+
+Planın bir müşteride nasıl tüketildiğini, o müşterinin sözleşmesinde görürsünüz. Müşteri hizmet sözleşmesini açın ve `Hizmet Planı Kullanımı` sekmesine geçin. Sekme yalnızca müşteri hizmet sözleşmelerinde bulunur. Plan, sözleşmenin `Özellikler` panelindeki `Destek Planı` alanında seçilir (bkz. [Sözleşme Detayı](/docs/teknisyen/moduller/sozlesmeler/detay)).
+
+Sekmedeki bilgileri görmek ve işlemleri yapmak için `Servis Planlarını Yönetebilir` yetkisi gerekir.
+
+## Sekmenin bölümleri
+
+![Hizmet Planı Kullanımı sekmesinin bölümleri](/img/yonetici/hp-sozlesme-yerlesim.png)
+
+| # | Bölüm | Ne işe yarar |
+|---|---|---|
+| ❶ | `Hizmet Planı Kullanımı` | Sözleşme detayındaki sekme. |
+| ❷ | Plan adı | Sözleşmenin bağlı olduğu destek hizmet planı. Tıklayınca `Hizmet Planları` ekranı, bu planın formu açık olarak gelir. |
+| ❸ | Kota satırları | Planın her kayıt tipi için tüketim, tavan ve durum. |
+| ❹ | `Ek kota ekle` | Sözleşmeye bir ek kota planı uygular. Bkz. [Ek kota ekleme](#ek-kota-ekleme). |
+| ❺ | `Yeni plana devret` | Sözleşmeyi başka bir plana taşır. Bkz. [Yeni plana devretme](#yeni-plana-devretme). |
+| ❻ | `Hareketler` ve `Ücretlendirme` | Kotayı hangi kaydın ne kadar tükettiği ve iş günlüklerinin hesaplanan tutarları. Başlığa tıklayınca açılır. |
+
+Sözleşmeye plan seçilmemişse `Ek kota ekle` ve `Yeni plana devret` görünmez. Planda kota tanımlı değilse "Bu sözleşmenin planında tanımlı bir kota yok." yazar.
+
+## Kota satırları
+
+![Kota satırlarının ayrıntısı](/img/yonetici/hp-sozlesme-kota-satirlari.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | `+10 ek kota` | Bu tipe uygulanmış ek kotaların toplamı. |
+| ❷ | Tüketim ve tavan | Örneğin `68 / 70`: 70'lik tavanın 68'i tüketildi. Tavan, plandaki kota, devir kredisi ve ek kotaların toplamıdır. |
+| ❸ | `Düşük bakiye` | Tavana kalan miktar %20'nin altına düştü. |
+| ❹ | İlerleme çubuğu | Kullanım oranı. Durum rengini alır. |
+| ❺ | `Aşıldı` | Tüketim tavanı geçti. Kayıt açılmaya devam eder. |
+| ❻ | `Sınırsız` | Bu tip için tavan yoktur; tüketim `12 / ∞` biçiminde gösterilir. |
+| ❼ | `Efor` | Bu tip kayıt sayısıyla değil, kayıtların `Efor` değeriyle düşülür. |
+
+Kalan miktar %20 ve üstündeyse satır `Sağlıklı` olarak görünür. Sözleşmeye plan devrinden kredi aktarılmışsa satırda `+N devir` etiketi de çıkar.
+
+Grafiklerde olduğu gibi burada da hizmet talepleri `İstek` adıyla görünür.
+
+<Callout type="info" title="İPUCU">
+Sözleşmedeki `Sağlıklı` ile panodaki `Sağlıklı Kota` aynı eşiği kullanmaz. Sözleşmede kullanımı %80'e kadar olan satır sağlıklıdır; panoda ise %50'nin altındaki satırlar sağlıklı sayılır (bkz. [Pano](/docs/yonetici/hizmet-planlari/pano#kota-sağlığı-kartları)).
+</Callout>
+
+## Ek kota ekleme
+
+![Ek kota ekle penceresi](/img/yonetici/hp-sozlesme-ekkota.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | `Ek Kota Planı` | Uygulanacak paket. Listede paket adı ve fiyatı birlikte görünür. Paketler `Ek Kota Planı` sekmesinde tanımlanır (bkz. [Ek Kota Planları](/docs/yonetici/hizmet-planlari/ek-kota-planlari)). |
+| ❷ | Bilgi notu | Ek kota mevcut hakkı yükseltir; tüketim sıfırlanmaz ve sözleşme süresi uzamaz. |
+| ❸ | `Uygula` | Paketi sözleşmeye uygular. Paket seçilmeden etkin olmaz. |
+
+Uygulanan ek kota hemen tavana eklenir ve kota satırında etiketle görünür. Uygulanmış bir ek kota arayüzden geri alınamaz.
+
+## Yeni plana devretme
+
+`Yeni plana devret`, sözleşmeyi başka bir hizmet planına taşır. Paket yükseltme ya da dönem yenileme gibi durumlarda kullanılır.
+
+![Yeni plana devret penceresi](/img/yonetici/hp-sozlesme-devret.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | **Hedef plan** | Sözleşmenin taşınacağı plan. Sözleşmenin şu anki planı listede yer almaz. |
+| ❷ | **Kalan kotayı yeni plana devret** | İşaretliyse eski plandaki kullanılmamış kota yeni plana kredi olarak aktarılır. Varsayılan olarak işaretlidir. |
+| ❸ | `Devret` | Devri yapar. Hedef plan seçilmeden basılırsa "Lütfen bir hedef plan seçin." uyarısı çıkar. |
+
+Devirde şunlar olur:
+
+- Sözleşmenin `Destek Planı` alanı hedef planla değişir.
+- Bütün kayıt tiplerinde tüketim sıfırlanır.
+- ❷ işaretliyse, sınırlı her kota satırında eski plana göre kalan miktar (plandaki kota + önceki devir kredisi − tüketim) yeni planda aynı tipe devir kredisi olarak eklenir. Sınırsız satırlardan kredi aktarılmaz.
+- O ana kadarki kota hareketleri `İade edildi` durumuyla kapatılır. Eski planda düşülmüş bir kayıt sonradan sözleşmeden ayrılsa bile yeni planın kotasına iade yapılmaz.
+- Sözleşmeye uygulanmış ek kotalar yerinde kalır.
+
+## Hareketler ve ücretlendirme
+
+![Hareketler ve Ücretlendirme tabloları](/img/yonetici/hp-sozlesme-hareketler.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | `Kayıt` | Kotayı tüketen kayıt; tıklayınca açılır. |
+| ❷ | `Miktar` | Düşülen `adet` ya da `efor`. |
+| ❸ | `Durum` | `Düşüldü` ya da `İade edildi`. |
+| ❹ | `Toplam` | Ücretlendirilen iş günlüklerinin toplamı. |
+| ❺ | `Boyutlar` | Zaman dilimi, teslim biçimi ve mesafe. |
+| ❻ | `Hesap` | Saat ücreti × çarpan. |
+
+- **Durum:** `Düşüldü`, miktarın kotadan düşülmüş olduğunu gösterir. `İade edildi`, hareketin kapandığını gösterir. Talep sahibi değiştiğinde ya da görev veya iş günlüğü silindiğinde miktar kotaya geri verilir. Plan devrinde de o ana kadarki bütün hareketler bu durumla kapanır; devirde tüketim zaten sıfırlandığı için ayrıca iade yapılmaz.
+- **Boyutlar:** Zaman dilimi `Mesai içi`, `Mesai dışı`, `Hafta sonu` ya da `Tatil`; teslim biçimi `Uzaktan` ya da `Yerinde`; mesafe `Şehir içi`, `Şehir dışı` ya da `Yurt dışı` olabilir. Belirlenemeyen boyut gösterilmez.
+- **Tutar:** Saat × saat ücreti × çarpan, örneğin `100,00 × 4.5` hesabıyla 2 saatlik iş günlüğü 900,00 eder.
+
+`Ücretlendirme` tablosundaki tutarlar [faturalandırma kurallarına](/docs/yonetici/hizmet-planlari/faturalandirma-kurallari) göre hesaplanır. `Dahil` bir kurala uyan iş günlüğü, tutarı yerine yeşil `Dahil` etiketiyle gösterilir.
