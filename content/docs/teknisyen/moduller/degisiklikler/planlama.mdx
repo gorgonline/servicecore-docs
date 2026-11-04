@@ -5,7 +5,7 @@ reviewed: "2026-10-07"
 owner: DevTahsin
 ---
 
-`Planlama` sekmesi, bir değişikliğin neden ve nasıl yapılacağını, bir şey ters giderse nasıl geri dönüleceğini ve ne kadara mal olacağını tek yerde toplar. Danışılacak kişiler değişikliği değerlendirirken bu sekmedeki bilgilere bakar.
+`Planlama` sekmesi; bir değişikliğin neden ve nasıl yapılacağını, bir sorun çıkarsa nasıl geri dönüleceğini ve maliyetini tek yerde toplar. Danışılacak kişiler değişikliği değerlendirirken bu sekmedeki bilgileri esas alır.
 
 ## Sekmenin bölümleri
 
@@ -13,12 +13,12 @@ owner: DevTahsin
 
 | # | Açıklama |
 |---|---|
-| ❶ | **Plan metinleri** — Beş metin kartı: **Değişiklik Gerekçesi**, **Değişikliğin Etkileri**, **Değişiklik Uygulama Planı**, **Başarısız Durumda Kaçış Kurtarma Planı** ve **Değişiklikten Geri Dönme Test Detayları**. |
-| ❷ | **Efor ve maliyet** — **İnsan Gücü (Saat)**, **Donanım Maliyetleri**, **Kurulum Maliyetleri**, **Yazılım Maliyetleri** ve `Toplam Maliyet`. |
-| ❸ | **Beklenen kesinti** — **Beklenen Kesinti Başlangıcı** ve **Beklenen Kesinti Süresinin Sonu**: değişiklik sırasında hizmetin kullanılamayacağı aralık. |
-| ❹ | **Bakım Pencereleri** — Değişikliğin yapılmasına izin verilen zaman aralıkları (aşağıda). |
+| ❶ | **Plan metinleri** — Beş metin kartından oluşur: **Değişiklik Gerekçesi**, **Değişikliğin Etkileri**, **Değişiklik Uygulama Planı**, **Başarısız Durumda Kaçış Kurtarma Planı** ve **Değişiklikten Geri Dönme Test Detayları**. |
+| ❷ | **Efor ve maliyet** — **İnsan Gücü (Saat)**, **Donanım Maliyetleri**, **Kurulum Maliyetleri**, **Yazılım Maliyetleri** ve `Toplam Maliyet` alanlarını içerir. |
+| ❸ | **Beklenen kesinti** — **Beklenen Kesinti Başlangıcı** ve **Beklenen Kesinti Süresinin Sonu** alanları, değişiklik sırasında hizmetin kullanılamayacağı aralığı belirtir. |
+| ❹ | `Bakım Pencereleri` — Değişikliğin yapılmasına izin verilen zaman aralıklarını listeler. |
 
-Sağ sütundaki alanlar (❷ ❸) değeri girdiğiniz anda kaydedilir; ayrıca `Kaydet`e basmanız gerekmez. `Toplam Maliyet` diğer maliyetlerden kendiliğinden hesaplanmaz, elle girilir.
+Sağ sütundaki alanlar (❷ ❸) değer girildiği anda kaydedilir; ayrıca `Kaydet` düğmesine basmanız gerekmez. `Toplam Maliyet` diğer maliyetlerden kendiliğinden hesaplanmaz, elle girilir.
 
 Beklenen kesinti ve bakım pencereleri [takvimde](/docs/teknisyen/moduller/degisiklikler/takvim) değişikliğin çubuğuyla birlikte gösterilir.
 
@@ -28,35 +28,35 @@ Beklenen kesinti ve bakım pencereleri [takvimde](/docs/teknisyen/moduller/degis
 
 | # | Açıklama |
 |---|---|
-| ❶ | **Kart başlığı** — Kartın konusu; burada `Değişiklik Gerekçesi`. |
-| ❷ | `Sil` — Kartın metnini siler; onay ister. |
-| ❸ | `Ekler` — Karta dosya ekler ve eklenmiş dosyaları gösterir. Eklenen dosyayı buradan indirebilir ya da silebilirsiniz. |
+| ❶ | **Kart başlığı** — Kartın konusunu gösterir; görseldeki kart `Değişiklik Gerekçesi` kartıdır. |
+| ❷ | `Sil` — Kartın metnini siler. İşlemden önce onay istenir. |
+| ❸ | `Ekler` — Karta dosya eklemenizi sağlar ve eklenmiş dosyaları gösterir. Eklenen dosyaları buradan indirebilir ya da silebilirsiniz. |
 | ❹ | `Düzenle` — Kartı zengin metin düzenleyicisine çevirir. Metni yazdıktan sonra kart başlığındaki kaydet simgesine basın. |
-| ❺ | **Metin** — Kaydedilmiş içerik. |
+| ❺ | **Metin** — Kartın kaydedilmiş içeriğini gösterir. |
 
-Hangi kartın neyi anlatması beklenir:
+Kartlara yazılması beklenen içerik:
 
 | Kart | İçerik |
 |---|---|
-| **Değişiklik Gerekçesi** | Değişikliğe neden ihtiyaç duyulduğu: destek süresi dolan bir yazılım, bir problemin kalıcı çözümü, yeni bir iş ihtiyacı. |
-| **Değişikliğin Etkileri** | Hangi hizmetlerin, kullanıcıların ya da sistemlerin etkileneceği ve nasıl. |
+| **Değişiklik Gerekçesi** | Değişikliğe neden ihtiyaç duyulduğu. Örneğin destek süresi dolan bir yazılım, bir problemin kalıcı çözümü ya da yeni bir iş ihtiyacı. |
+| **Değişikliğin Etkileri** | Hangi hizmetlerin, kullanıcıların ya da sistemlerin nasıl etkileneceği. |
 | **Değişiklik Uygulama Planı** | Değişikliğin adım adım nasıl yapılacağı. |
 | **Başarısız Durumda Kaçış Kurtarma Planı** | Uygulama başarısız olursa eski duruma nasıl dönüleceği. |
 | **Değişiklikten Geri Dönme Test Detayları** | Geri dönüş planının denenip denenmediği ve sonucu. |
 
 ## Bakım pencereleri
 
-Bir değişikliğin birden fazla bakım penceresi olabilir; örneğin her cumartesi gecesi bir şubede yapılacak bir geçiş için her gece ayrı bir pencere girilir.
+Bir değişikliğin birden fazla bakım penceresi olabilir. Örneğin her cumartesi gecesi farklı bir şubede yapılacak bir geçiş için her gece ayrı bir pencere girilir.
 
 ![Bakım Pencereleri](/img/teknisyen/chg-planlama-bakim.png)
 
 | # | Açıklama |
 |---|---|
-| ❶ | **Kayıtlı pencere** — Başlangıç ve bitiş zamanı. Sağdaki çöp kutusu simgesi pencereyi siler. |
-| ❷ | **Başlangıç Tarihi** — Yeni pencerenin başlangıcı. |
-| ❸ | **Bitiş Tarihi** — Yeni pencerenin bitişi; başlangıçtan sonra olmalıdır. |
-| ❹ | `Ekle` — Pencereyi ekler. İki tarih seçilmeden pasiftir. |
+| ❶ | **Kayıtlı pencere** — Pencerenin başlangıç ve bitiş zamanını gösterir. Sağdaki çöp kutusu simgesi pencereyi siler. |
+| ❷ | `Başlangıç Tarihi` — Yeni pencerenin başlangıç zamanıdır. |
+| ❸ | `Bitiş Tarihi` — Yeni pencerenin bitiş zamanıdır ve başlangıçtan sonra olmalıdır. |
+| ❹ | `Ekle` — Pencereyi ekler. İki tarih de seçilmeden düğme pasif kalır. |
 
 <Callout type="info" title="ÖNEMLİ">
-Sistem yöneticiniz kapatma kuralları tanımlayarak bazı planlama alanlarını zorunlu tutabilir (örneğin gerekçe, etki açıklaması, uygulama ve geri dönüş planı ya da planlanan tarihler). Bu durumda alanlar doldurulmadan değişiklik kapatılamaz. Bkz. [Gözden Geçirme ve Kapatma](/docs/teknisyen/moduller/degisiklikler/gozden-gecirme-ve-kapatma#kapatma-kuralları).
+Sistem yöneticiniz kapatma kuralları tanımlayarak bazı planlama alanlarını zorunlu tutabilir (örneğin gerekçe, etki açıklaması, uygulama ve geri dönüş planı ya da planlanan tarihler). Bu durumda ilgili alanlar doldurulmadan değişiklik kapatılamaz. Bkz. [Gözden Geçirme ve Kapatma](/docs/teknisyen/moduller/degisiklikler/gozden-gecirme-ve-kapatma#kapatma-kuralları).
 </Callout>

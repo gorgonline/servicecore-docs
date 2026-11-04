@@ -5,7 +5,7 @@ reviewed: "2026-10-07"
 owner: DevTahsin
 ---
 
-Bir değişiklik çoğu zaman başka bir kayıttan doğar: tekrarlayan bir problemin kalıcı çözümü, bir kullanıcı isteği ya da bir iyileştirme önerisi. `Süreçler` sekmesi bu bağlantıları, `Varlıklar` sekmesi ise değişiklikten etkilenen varlık ve hizmetleri tutar.
+Bir değişiklik çoğu zaman başka bir kayıttan doğar. Bu kayıt tekrarlayan bir problemin kalıcı çözümü, bir kullanıcı isteği ya da bir iyileştirme önerisi olabilir. `Süreçler` sekmesi bu bağlantıları, `Varlıklar` sekmesi ise değişiklikten etkilenen varlık ve hizmetleri tutar.
 
 ## Süreçler sekmesi
 
@@ -13,26 +13,26 @@ Bir değişiklik çoğu zaman başka bir kayıttan doğar: tekrarlayan bir probl
 
 | # | Açıklama |
 |---|---|
-| ❶ | **Alt sekmeler** — `Olay`, `Problem`, `Sürekli iyileştirme`, `İstek` ve `Proje`. Her alt sekme değişikliğe bağlı o türdeki kayıtları listeler; numaraya tıklayınca kayıt açılır. |
+| ❶ | **Alt sekmeler** — `Olay`, `Problem`, `Sürekli iyileştirme`, `İstek` ve `Proje` alt sekmelerinden oluşur. Her alt sekme, değişikliğe bağlı o türdeki kayıtları listeler. Numaraya tıkladığınızda kayıt açılır. |
 | ❷ | `Bağıntı Ekle` — Seçili alt sekmedeki kayıt türü için bağıntı kurar. |
-| ❸ | **Seçenekler** — `Yeni Kayıt` bu değişiklikten yeni bir kayıt açar ve değişikliğe bağlar. `Varolan Kayıt` daha önce açılmış bir kaydı arayıp değişikliğe bağlar. |
+| ❸ | **Seçenekler** — `Yeni Kayıt` bu değişiklikten yeni bir kayıt açar ve değişikliğe bağlar. `Varolan Kayıt` daha önce açılmış bir kaydı bulup değişikliğe bağlamanızı sağlar. |
 
-Bir değişikliğe birden fazla olay, problem, istek ya da sürekli iyileştirme kaydı bağlanabilir. Bu kayıtların her biri ise en fazla bir değişikliğe bağlanır. Değişiklik yalnızca bir projeyle ilişkilendirilir.
+Bir değişikliğe birden fazla olay, problem, istek ya da sürekli iyileştirme kaydı bağlanabilir. Buna karşılık bu kayıtların her biri en fazla bir değişikliğe bağlanabilir. Bir değişiklik ise yalnızca bir projeyle ilişkilendirilebilir.
 
-Bağıntı iki yönlüdür: örneğin bağlı bir problemi açtığınızda, problemin `Süreçler` sekmesindeki `Değişiklik` alt sekmesinde bu değişikliği görürsünüz. Bağıntıyı kaldırmak kayıtları silmez.
+Bağıntı iki yönlüdür. Örneğin bağlı bir problemi açtığınızda bu değişikliği problemin `Süreçler` sekmesindeki `Değişiklik` alt sekmesinde görürsünüz. Bağıntıyı kaldırmak kayıtları silmez.
 
 ## Varlıklar sekmesi
 
-Değişiklikten etkilenecek donanım, yazılım ve hizmetleri değişikliğe eklemek, etki analizini aynı ekrandan yapmanızı sağlar. Sekme, sekme çubuğunun sonundaki `…` menüsünde olabilir.
+Değişiklikten etkilenecek donanım, yazılım ve hizmetleri değişikliğe eklerseniz etki analizini aynı ekrandan yapabilirsiniz. Sekme çubuğuna sığmadığında bu sekme `…` menüsünde yer alır.
 
 ![Varlıklar sekmesi](/img/teknisyen/chg-bagintilar-varliklar.png)
 
 | # | Açıklama |
 |---|---|
-| ❶ | **Varlık Ekle** — Varlık listesinden seçim penceresini açar. Pencerede varlıklar numara, seri no, ad, tür, durum, etiket ve barkodla listelenir; **Kullanıcıya ait varlıklarda ara** seçeneğiyle aramayı kullanıcıya ait varlıklarla sınırlayabilirsiniz. |
-| ❷ | **Hizmet Ekle** — Hizmet listesinden seçim penceresini açar; hizmetler numara, ad, açıklama, hedefler ve sahibiyle listelenir. |
+| ❶ | `Varlık Ekle` — Varlık seçme penceresini açar. Pencerede varlıklar numara, seri no, ad, tür, durum, etiket ve barkod bilgileriyle listelenir. **Kullanıcıya ait varlıklarda ara** seçeneğiyle aramayı kullanıcıya ait varlıklarla sınırlayabilirsiniz. |
+| ❷ | `Hizmet Ekle` — Hizmet seçme penceresini açar. Hizmetler numara, ad, açıklama, hedefler ve sahip bilgileriyle listelenir. |
 
-Varlık ya da hizmet eklendikten sonra sekmede iki düğmenin altında hizmet ve varlık tabloları görünür.
+Henüz varlık ya da hizmet eklenmemişse sekmede **İlişkili Varlıkları Ekle** başlığı görünür. Varlık ya da hizmet eklendikten sonra iki düğmenin altında hizmet ve varlık tabloları yer alır.
 
 <Callout type="info" title="ÖNEMLİ">
 Sistem yöneticiniz kapatma kuralları tanımlayarak değişiklik kapatılmadan önce en az bir varlık ya da hizmet eklenmesini zorunlu tutabilir.

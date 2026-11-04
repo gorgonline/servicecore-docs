@@ -11,10 +11,6 @@ Değişiklikler modülünde bir değişiklik kaydı açar, planlamasını yapar,
 
 Modüle üst menüdeki `Değişiklik` simgesinden girilir.
 
-<Callout type="info" title="ÖNEMLİ">
-Bu bölüm yeni değişiklik ekranlarını anlatır. Yeni ekranlar, sistem yöneticinizin `Genel Ayarlar`'da açtığı **Yeni değişiklik sayfalarına yönlendir (beta)** ayarıyla kullanılır. Ayar açıldıktan sonra eski değişiklik adresleri yeni ekranlara yönlenir.
-</Callout>
-
 ## Temel kavramlar
 
 | Kavram | Anlamı |
@@ -34,17 +30,17 @@ Bu bölüm yeni değişiklik ekranlarını anlatır. Yeni ekranlar, sistem yöne
 
 | # | Açıklama |
 |---|---|
-| ❶ | **Sekmeler** — İlk sekme `Değişiklik` listesidir. Açtığınız her değişiklik buraya `Değişiklik 7` gibi ayrı bir sekme olarak eklenir; birkaç değişiklik arasında listeyi kaybetmeden geçiş yapabilirsiniz. |
-| ❷ | **Üst düğmeler** — Liste ile takvim arasında geçiş, `Yeni Değişiklik`, genel arama ve `Grid Görünümü`. Bkz. [Değişiklik Listesi](/docs/teknisyen/moduller/degisiklikler/liste). |
-| ❸ | **Değişiklik kartı** — Listedeki her değişiklik bir kart olarak görünür; numara, durum, konu, kişiler ve öncelik kartın üzerindedir. |
-| ❹ | **Filtre Görünümleri** — Kayıtlı filtreler; tek tıkla uygulanır. |
-| ❺ | **Kontrol Paneli** — Ayrıntılı süzme alanları. Bkz. [Filtreler](/docs/teknisyen/moduller/degisiklikler/filtreler). |
+| ❶ | **Sekmeler** — İlk sekme `Değişiklik` listesidir. Açtığınız her değişiklik buraya `Değişiklik 7` gibi ayrı bir sekme olarak eklenir. Böylece listeyi kaybetmeden birkaç değişiklik arasında geçiş yapabilirsiniz. |
+| ❷ | **Üst düğmeler** — Liste ile takvim arasında geçiş, `Yeni Değişiklik`, genel arama ve `Grid Görünümü` düğmelerini içerir. Bkz. [Değişiklik Listesi](/docs/teknisyen/moduller/degisiklikler/liste). |
+| ❸ | **Değişiklik kartı** — Listedeki her değişiklik bir kart olarak görünür. Kartta numara, durum, konu, kişiler ve öncelik yer alır. |
+| ❹ | **Filtre Görünümleri** — Kayıtlı filtreleri listeler. Bir filtre tek tıkla uygulanır. |
+| ❺ | **Kontrol Paneli** — Listeyi ayrıntılı olarak süzmeye yarayan alanları içerir. Bkz. [Filtreler](/docs/teknisyen/moduller/degisiklikler/filtreler). |
 
-Liste açılışta **kapalı aşamadaki** değişiklikleri göstermez. Kapatılan değişiklikleri görmek için `Kontrol Paneli`nde `Aşama` alanından `Kapalı`yı seçin.
+Liste açılışta **kapalı aşamadaki** değişiklikleri göstermez. Kapatılan değişiklikleri görmek için `Kontrol Paneli` içindeki `Aşama` alanından `Kapalı` seçeneğini seçin.
 
 ## Bir değişikliğin yolculuğu
 
-Değişiklikler modülü belirli bir sırayı zorunlu tutmaz; aşağıdaki adımlar tipik bir değişikliği gösterir ve her adım detay ekranındaki bir sekmeye karşılık gelir.
+Değişiklikler modülü belirli bir sırayı zorunlu tutmaz. Aşağıdaki adımlar tipik bir değişikliği gösterir; adımların çoğu detay ekranındaki bir sekmeye karşılık gelir.
 
 ```mermaid
 flowchart LR
@@ -65,7 +61,7 @@ flowchart LR
 ## Diğer modüllerle bağlantı
 
 - **Olaylar, problemler, istekler, sürekli iyileştirme ve projeler:** Değişikliği bu kayıtlara bağlayabilir ya da değişiklikten yeni ilgili kayıt açabilirsiniz. Bkz. [Bağıntılar ve Varlıklar](/docs/teknisyen/moduller/degisiklikler/bagintilar-ve-varliklar).
-- **Varlıklar ve hizmetler:** Değişiklikten etkilenen varlıkları ve hizmetleri değişikliğe ekleyerek etkiyi aynı ekrandan izlersiniz.
-- **Görevler:** Uygulama görevleri Görevler modülündeki görevlerdir; görevlerin iş günlükleri değişikliğin eforuna yansır.
+- **Varlıklar ve hizmetler:** Değişiklikten etkilenen varlıkları ve hizmetleri değişikliğe eklerseniz etkiyi aynı ekrandan izleyebilirsiniz.
+- **Görevler:** Uygulama görevleri, Görevler modülündeki görevlerdir. Görevlere girilen iş günlükleri değişikliğin eforuna yansır.
 
 Son kullanıcılar portalda kendilerine ait değişiklik kayıtlarını görüntüleyebilir ve kendilerine gönderilen danışma isteklerini yanıtlayabilir.
