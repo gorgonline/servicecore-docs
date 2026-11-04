@@ -1,0 +1,129 @@
+---
+title: "Destek Planları"
+description: "Destek Planı sekmesi: hizmet planı listesi, arama, sütun ve görünüm araçları, Excel'e aktarma, silme ve plan formundaki alanlar."
+reviewed: "2026-10-14"
+owner: necatikekec
+---
+
+`Destek Planı` sekmesi, müşterilerinize sunduğunuz hizmet planlarını listeler. Yeni plan buradan eklenir, var olan plan buradan düzenlenir ya da silinir.
+
+## Plan listesi
+
+![Hizmet Planları listesinin bölümleri](/img/yonetici/hp-destek-yerlesim.png)
+
+| # | Bölüm | Ne işe yarar |
+|---|---|---|
+| ❶ | Araç çubuğu | Başlık, kayıt sayısı ve liste araçları. |
+| ❷ | Başlık satırı | Başlığa tıklayınca sıralar; `Ara` ve `Filtre` süzer. |
+| ❸ | Plan satırı | Planın adı ve ticari bilgileri. |
+| ❹ | Satır işlemleri | `Düzenle` ve `Sil`. |
+| ❺ | Sayfalama | Sayfa başına 10–200 satır; varsayılan 20. |
+
+Araç çubuğu [Liste araçları](#liste-araçları) bölümünde anlatılır. `Düzenle` (kalem) planın formunu açar, `Sil` (çöp kutusu) planı siler.
+
+Listede `Hizmet Planı Başlığı`, `Ücretlendirme Methodu`, `Faturalama Metodu`, `Faturalama Periyodu` ve `Sabit Fatura` sütunları görünür. **Haftalık İzin Verilen Maksimum Saat**, **Kullanılmayan Kredileri Ötele** ve **Hizmet Planı Açıklaması** sütunları gizlidir; `Sütunlar` panelinden açabilirsiniz.
+
+Listedeki ücretlendirme ve periyot metinleri formdaki seçeneklerden farklı yazılır:
+
+| Formdaki seçenek | Listede görünen |
+|---|---|
+| `Saatlik Ücretlendirme` | `Saat Başına Ücret` |
+| **Çağrı Başına Ücretlendirme** | `İstek Başına Ücret` |
+| **Sabit Ücretlendirme** | `Sabit Ücret` |
+| **Adam Gün Ücretlendirme** | **Her Pazartesi Ücret** |
+| `3 Ayda Bir`, `6 Ayda Bir` | `Üç Ayda Bir`, `Altı Ayda Bir` |
+| **Her Sözleşme Bitiminde** | **Sözleşme Uzunluğu** |
+
+## Liste araçları
+
+Bu araçlar `Ek Kota Planı` ve `Faturalandırma Kuralı` sekmelerinde de aynıdır. Listenin tamamı tek seferde yüklenir; arama, süzme, sıralama ve sayfalama tarayıcıda anında yapılır.
+
+![Liste araç çubuğu](/img/yonetici/hp-destek-arac-cubugu.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | `Ara` | Listedeki satırlarda metin arar. |
+| ❷ | `Sütunlar` | Sütun panelini açar. Üzerindeki gri rozet, gizli sütun sayısını gösterir. |
+| ❸ | `Excel` | Listeyi Excel dosyası olarak indirir. Yalnızca görünen sütunlar, sizin belirlediğiniz sırayla yazılır; süzme ve sıralama da korunur. |
+| ❹ | Görünüm menüsü | Sütun düzenini kaydeder ya da varsayılana döndürür. İpucu metni `Grid Görünümü`dür. |
+| ❺ | `Yenile` | Listeyi sunucudan yeniden yükler. |
+| ❻ | **Destek Hizmet Planı** | Yeni plan formunu açar. Bkz. [Plan formu](#plan-formu). |
+
+### Sütun paneli
+
+![Sütun paneli](/img/yonetici/hp-destek-sutunlar.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | `Kolon ara` | Paneldeki sütunları adına göre süzer. |
+| ❷ | Sürükleme tutamağı | Sütunu tutup sürükleyerek listedeki sırasını değiştirirsiniz. |
+| ❸ | Onay kutuları | İşaretli sütunlar listede görünür, işaretsizler gizlenir. |
+| ❹ | Yukarı ve aşağı okları | Sütunu bir sıra yukarı ya da aşağı taşır. |
+| ❺ | **Tümünü Seç** ve `Temizle` | Bütün sütunları işaretler ya da işaretleri kaldırır. |
+| ❻ | **Sütun Genişliklerini Sıfırla** | Elle değiştirdiğiniz sütun genişliklerini varsayılana döndürür. |
+
+### Görünüm menüsü
+
+![Görünüm menüsü](/img/yonetici/hp-destek-gorunum.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | **Görünümü Kaydet** | Liste düzenini kaydeder. |
+| ❷ | **Varsayılana Dön** | Kayıtlı görünümü siler. |
+| ❸ | Satır yüksekliği | Normal ve sıkışık satır arasında geçer. |
+
+**Görünümü Kaydet**; sütun sırasını, gizli sütunları, sütun genişliklerini, sıralamayı ve sayfa boyutunu saklar. Yalnızca kaydedilmemiş bir değişiklik varken etkindir. Satır yüksekliği seçeneği `Normal satır yüksekliği` ile **Sıkışık satır yüksekliği** arasında değişir. Kaydedilen görünüm bu tarayıcıda ve yalnızca sizin kullanıcınız için saklanır. Başka bir bilgisayarda ya da tarayıcıda liste varsayılan düzeniyle açılır.
+
+## Planı silme
+
+![Plan silme onayı](/img/yonetici/hp-destek-sil.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | `Sil` | Satırdaki çöp kutusu simgesi. |
+| ❷ | `Hayır` ve `Evet` | "Emin misiniz?" sorusunu onaylar ya da vazgeçer. `Evet` planı siler. |
+
+Silinen plan listeden ve sözleşme formundaki `Destek Planı` seçeneklerinden kalkar.
+
+<Callout type="warn" title="DİKKAT">
+Silme işlemi planın sözleşmelerde kullanılıp kullanılmadığını denetlemez. Plana bağlı sözleşmeler silinen plana bağlı kalır ve kayıtları kotadan düşülmeye devam eder. Bir planı silmeden önce ona bağlı sözleşmeleri sözleşmedeki `Yeni plana devret` ile başka bir plana taşıyın (bkz. [Sözleşmede Plan Kullanımı](/docs/yonetici/hizmet-planlari/sozlesmede-kullanim#yeni-plana-devretme)).
+</Callout>
+
+## Plan formu
+
+`Destek Hizmet Planı` düğmesi boş formu, satırdaki `Düzenle` simgesi planın kayıtlı formunu açar. İki durumda da pencerenin başlığı `Destek Hizmet Planı`dır.
+
+![Plan formunun üst bölümü](/img/yonetici/hp-destek-form-ust.png)
+
+| # | Alan | Açıklama |
+|---|---|---|
+| ❶ | **Hizmet Planı Başlığı** | Planın adı. Zorunludur. |
+| ❷ | **Hizmet Planı Açıklaması** | Planın kısa tanımı. |
+| ❸ | Ücretlendirme, faturalama | Üç seçim alanı; seçenekler aşağıda. |
+| ❹ | `Sabit Fatura` | Dönemlik sabit ücret. |
+| ❺ | **Fazla Mesai Davranışı** | `Blok` ya da **Ek Faturaya İzin Ver**. |
+| ❻ | **Haftalık İzin Verilen Maksimum Saat** | Haftalık hizmet saati sınırı. |
+| ❼ | **Ek Kullanım Ücreti** | Seçime göre saatlik ücret alanı değişir. |
+
+- **Ücretlendirme Methodu:** `Saatlik Ücretlendirme`, **Çağrı Başına Ücretlendirme**, **Sabit Ücretlendirme** ya da **Adam Gün Ücretlendirme**.
+- **Faturalama Metodu:** **Hizmet Sonunda Ödeme** ya da `Ön Ödemeli`.
+- **Faturalama Periyodu:** `Haftalık`, `Aylık`, `3 Ayda Bir`, `6 Ayda Bir`, `Yıllık` ya da **Her Sözleşme Bitiminde**.
+- **Ek Kullanım Ücreti:** `Sabit Maliyet` seçiliyse **Saatlik Maliyetlendirme**, `Fark Maliyeti` seçiliyse **Saatlik Fark Maliyeti** alanı görünür.
+- **Hizmet Planı Başlığı** boş bırakılırsa "Gerekli Alan" uyarısı çıkar.
+
+![Plan formunun devir ve teknisyen ayarları](/img/yonetici/hp-destek-form-alt.png)
+
+| # | Alan | Açıklama |
+|---|---|---|
+| ❶ | **Kullanılmayan Kredileri Ötele** | Kullanılmayan hakların sonraki döneme aktarılacağını belirtir. |
+| ❷ | **Maksimum devir süresi (ay)** | Yalnızca ❶ açıkken görünür. Devredilen hakların en fazla kaç ay geçerli olacağı. |
+| ❸ | **Teknisyenin Ek Maliyet Girmesine İzin Ver** | Teknisyenin ek maliyet girebileceğini belirtir. |
+| ❹ | **Teknisyenin Harcanan Süreye İlave Yapmasına İzin Ver** | Teknisyenin harcanan süreyi artırabileceğini belirtir. |
+
+Yeni planda varsayılanlar `Saatlik Ücretlendirme`, **Hizmet Sonunda Ödeme**, `Haftalık`, `Blok` ve `Sabit Maliyet`tir; anahtarlar kapalıdır.
+
+<Callout type="info" title="ÖNEMLİ">
+Yukarıdaki alanlar planın ticari koşullarını kayıt altına alır. ServiceCore şu an bu değerlerle fatura üretmez, kota aşımını engellemez ve ücret hesaplamaz. Otomatik işleyen iki kısım vardır: Kayıtları sayan [Kayıt Kotaları](/docs/yonetici/hizmet-planlari/kayit-kotalari) ve iş günlüklerini ücretlendiren [Faturalandırma Kuralları](/docs/yonetici/hizmet-planlari/faturalandirma-kurallari).
+</Callout>
+
+Formun altındaki **Kayıt Kotaları** bölümünde planın kayıt tipi başına verdiği haklar tanımlanır. Bu bölüm [Kayıt Kotaları](/docs/yonetici/hizmet-planlari/kayit-kotalari) sayfasında anlatılır. `Kaydet` planı ve kotalarını birlikte kaydeder; `Vazgeç` değişiklikleri bırakıp pencereyi kapatır.

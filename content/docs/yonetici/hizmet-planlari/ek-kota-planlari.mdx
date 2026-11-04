@@ -1,0 +1,47 @@
+---
+title: "Ek Kota Planları"
+description: "Ek Kota Planı sekmesi: sözleşmenin kotasını yükselten hazır paketlerin listesi, formu ve sözleşmeye uygulanması."
+reviewed: "2026-10-14"
+owner: necatikekec
+---
+
+Ek kota planı, sözleşmenin kotasını yükselten hazır bir pakettir, örneğin "10 ek olay". Paketler bu sekmede tanımlanır ve sözleşmenin `Hizmet Planı Kullanımı` sekmesindeki `Ek kota ekle` ile uygulanır. Ek kota tavanı yükseltir; tüketimi sıfırlamaz ve sözleşmenin süresini uzatmaz.
+
+## Ek kota planı listesi
+
+![Ek Kota Planı listesi](/img/yonetici/hp-ekkota-yerlesim.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | `Ek Kota Planı` | Yeni paket formunu açar. |
+| ❷ | `Fiyat` | Paketin satış fiyatı. |
+| ❸ | `Talep Birimi` ve `Saat Birimi` | Ekranın eski sürümünden kalan alanlardır. Formda düzenlenmez ve kota hesabında kullanılmaz; yeni paketlerde `-` görünür. Paketin eklediği adetler formdaki **Eklenecek Kotalar** bölümündedir. |
+| ❹ | Satır işlemleri | `Düzenle` paketin formunu açar, `Sil` "Emin misiniz?" onayından sonra paketi siler. |
+
+**Gelecek Destek Planlarıyla İlişkilendir** ve `Açıklama` sütunları gizlidir. Arama, `Sütunlar`, `Excel`, görünüm menüsü ve `Yenile` araçları `Destek Planı` sekmesindekiyle aynıdır (bkz. [Liste araçları](/docs/yonetici/hizmet-planlari/destek-planlari#liste-araçları)).
+
+## Ek kota planı formu
+
+![Ek kota planı formu](/img/yonetici/hp-ekkota-form.png)
+
+| # | Alan | Açıklama |
+|---|---|---|
+| ❶ | **Ek Kota Planı Adı** | Paketin adı. Zorunludur. |
+| ❷ | `Açıklama` | Paketin kısa tanımı. |
+| ❸ | `Fiyat` | Paketin fiyatı. Sözleşmeye uygulanırken seçim listesinde paket adının yanında görünür. |
+| ❹ | **Gelecek Destek Planlarıyla İlişkilendir** | Paketle birlikte kaydedilir; şu an ek kotanın davranışını değiştirmez. |
+| ❺ | Kota satırı | Kayıt tipi (`Olay`, `Hizmet Talebi`, `Problem`, `Değişiklik`) ve tavana eklenecek adet. Adet en az 1'dir. |
+| ❻ | `✕` | Satırı kaldırır. |
+| ❼ | `+ Kayıt tipi ekle` | Henüz kullanılmayan ilk tip için 10 adetlik yeni bir satır ekler. |
+
+Ek kota yalnızca sözleşmenin planında aynı tip için bir kota satırı varsa anlam taşır. Örneğin planda `Hizmet Talebi` kotası yoksa, hizmet talebi ekleyen bir paket o sözleşmede görünür bir değişiklik yapmaz. `Görev` ve `İş Günlüğü` tipleri ek kotada bulunmaz.
+
+## Sözleşmeye uygulama
+
+Paketi bir sözleşmeye uygulamak için sözleşmenin `Hizmet Planı Kullanımı` sekmesinde `Ek kota ekle` düğmesini kullanın (bkz. [Ek kota ekleme](/docs/yonetici/hizmet-planlari/sozlesmede-kullanim#ek-kota-ekleme)). Uygulanan ek kota, sözleşmenin kota satırında `+10 ek kota` gibi bir etiketle görünür.
+
+Uygulama anında paketin adı, fiyatı ve adetleri sözleşmeye kopyalanır. Bu yüzden paketi sonradan düzenlemeniz ya da silmeniz, daha önce uygulanmış ek kotaları değiştirmez.
+
+<Callout type="warn" title="DİKKAT">
+Sözleşmeye uygulanmış bir ek kota arayüzden geri alınamaz. Paketi uygulamadan önce doğru sözleşmeyi ve paketi seçtiğinizden emin olun.
+</Callout>
