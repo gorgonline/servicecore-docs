@@ -1,9 +1,17 @@
 {
   "title": "DEĞİŞİKLİKLER",
   "pages": [
-    "degisiklikler4",
-    "degisiklikler",
-    "degisiklikler1",
-    "degisiklikler2"
+    "genel-bakis",
+    "liste",
+    "takvim",
+    "filtreler",
+    "olusturma",
+    "detay",
+    "planlama",
+    "tavsiyeler-ve-onaylar",
+    "uygulama-ve-is-gunlukleri",
+    "bagintilar-ve-varliklar",
+    "gozden-gecirme-ve-kapatma",
+    "yetkiler"
   ]
 }
