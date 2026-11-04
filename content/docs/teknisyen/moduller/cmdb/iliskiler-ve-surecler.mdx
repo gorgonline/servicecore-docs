@@ -1,0 +1,62 @@
+---
+title: "İlişkiler ve Süreçler"
+description: "Varlıklar ve hizmetler arasındaki ilişkiler, ilişki haritası ve varlığa bağlı olay, problem, değişiklik, istek ve iyileştirme kayıtları."
+reviewed: "2026-10-07"
+owner: necatikekec
+---
+
+Bir varlığın hangi varlık ve hizmetlerle bağlı olduğu `İlişkiler` sekmesinde,
+hangi süreç kayıtlarıyla bağlı olduğu `Süreçler` sekmesinde tutulur. İkisi de
+varlık detay ekranındadır (bkz. [Varlık Detayı](/docs/teknisyen/moduller/cmdb/varlik-detayi)).
+
+## İlişkiler sekmesi
+
+![İlişkiler sekmesi](/img/teknisyen/vrl-iliski-sekmesi.png)
+
+| # | Ne işe yarar |
+|---|---|
+| ❶ | `Varlık` / `Hizmet`: İlişkili varlıkları ve hizmetleri ayrı listelerde gösterir. Parantez içindeki sayı ilişki adedidir. |
+| ❷ | **İlişki Haritası**: İlişkileri şema olarak açar. Bkz. [İlişki haritası](#ilişki-haritası). |
+| ❸ | **İlişki Ekle**: Yeni ilişki penceresini açar. |
+| ❹ | `Adı`: İlişkili kayıt. Adına tıklayınca kayıt açılır. |
+| ❺ | **İlişki Türü**: İlişkinin bu varlık açısından adı ve yönü (`Aşağı Yönlü` ya da `Yukarı Yönlü`). |
+| ❻ | **Sil**: İlişkiyi kaldırır. İlişkili kayıt silinmez. |
+
+## İlişki ekleme
+
+![İlişki Ekle penceresi](/img/teknisyen/vrl-iliski-ekle.png)
+
+| # | Ne işe yarar |
+|---|---|
+| ❶ | **İlişki Türü**: İlişkinin türü. Her tür iki addan oluşur (ör. `Yazarı ↔ Yazan`); türler yönetici tarafından tanımlanır. |
+| ❷ | `Yön`: İlişkinin bu varlıktan hangi adla okunacağı. Soldaki seçenek aşağı yönlü, sağdaki yukarı yönlü ilişki kurar. |
+| ❸ | `Türü`: Bağlanacak kaydın varlık mı, hizmet mi olduğu. |
+| ❹ | `Ara`: Bağlanacak kayıtları adıyla arar. |
+| ❺ | **Liste**: Bağlanacak kayıtları onay kutusuyla seçin. Birden çok kayıt seçilebilir. |
+| ❻ | `Kaydet`: Seçilen kayıtlarla ilişkileri oluşturur. Seçim yoksa pasiftir. |
+
+İlişki iki taraflıdır: karşı kaydın `İlişkiler` sekmesinde de türün diğer adıyla
+görünür.
+
+## İlişki haritası
+
+İlişki haritası, varlığı merkeze alıp bağlı kayıtları ve ilişki türlerini şema
+olarak gösterir. Listede satırdaki `İlişki Haritası` simgesiyle ya da
+`İlişkiler` sekmesindeki düğmeyle (❷) açılır.
+
+- Haritanın açıldığı varlık en üstte, bağlı kayıtlar altında yer alır; hizmetler
+  ayrı renkte gösterilir.
+- Bir kutuya tıklayınca o kayıt yeni sekmede açılır.
+- Sol alttaki düğmelerle şema büyütülür, küçültülür ya da pencereye sığdırılır;
+  sağ alttaki küçük harita büyük şemalarda konumunuzu gösterir.
+- Varlığın ilişkisi yoksa pencerede "Bu varlık için ilişki yok" yazar.
+
+## Süreçler sekmesi
+
+![Süreçler sekmesi](/img/teknisyen/vrl-surecler.png)
+
+| # | Ne işe yarar |
+|---|---|
+| ❶ | **Süreç sekmeleri**: `Olay`, `Problem`, `Değişiklik`, `İstek` ve `İyileştirme` kayıtlarını ayrı listelerde gösterir. |
+| ❷ | **Bağıntı Ekle**: Seçili süreçte `Yeni Kayıt` açarak ya da `Varolan Kayıt` seçerek varlığa bağlar. |
+| ❸ | **Liste**: Bağlı kayıtlar; numarası, konusu, durumu, teknisyen grubu, teknisyeni ve oluşturulma tarihiyle. |

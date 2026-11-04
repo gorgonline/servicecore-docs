@@ -1,0 +1,49 @@
+---
+title: "Yeni Çağrı Ekleme"
+description: "Telefonla, yüz yüze ya da başka bir kanaldan gelen bir talebin Yeni Çağrı butonuyla çağrı olarak kaydedilmesi."
+reviewed: "2026-09-24"
+owner: berdanasen
+---
+
+E-postayla gelen talepler çağrı listesine kendiliğinden düşer. Telefonla aranan, yüz yüze
+iletilen ya da başka bir kanaldan gelen talepleri ise siz kaydedersiniz. Bunun için
+listenin sağ üstündeki `Yeni Çağrı` butonunu kullanın.
+
+![Yeni Çağrı butonu](/img/teknisyen/cagri-yeni-buton.png)
+
+<Callout type="info" title="ÖNEMLİ">
+`Yeni Çağrı` butonu yalnızca `Çağrı Ekleyebilir` yetkisi olan kullanıcılarda etkindir.
+</Callout>
+
+## Çağrı formu
+
+Butona tıklandığında sağ tarafta `Oluştur` paneli açılır.
+
+![Yeni çağrı paneli](/img/teknisyen/cagri-yeni-cekmece.png)
+
+| # | Bölüm | Açıklama |
+|---|---|---|
+| ❶ | Konu ve açıklama | `Çağrı Konusu` zorunludur. `Çağrı Açıklaması` alanına talebin ayrıntısını yazabilir; metni kalın, liste ya da tablo gibi biçimlerle düzenleyebilirsiniz |
+| ❷ | Çağrı bilgileri | Talebi ileten kullanıcı ve çağrının sınıflandırması |
+| ❸ | `Kaydet` | Çağrıyı oluşturur |
+
+Çağrı bilgileri alanları:
+
+| Alan | Açıklama |
+|---|---|
+| `Kullanıcı` | Talebi ileten kişi. **Zorunludur.** Adın ilk harflerini yazarak arayabilirsiniz |
+| `Aciliyet` | Talebin ne kadar acil olduğu (`Düşük`, `Orta`, `Yüksek`, `Çok Yüksek`) |
+| `Teknisyen Grubu` | Çağrıyla ilgilenecek ekip |
+| `Teknisyen` | Çağrıyla ilgilenecek kişi. Önce teknisyen grubu seçilirse yalnızca o gruptaki teknisyenler listelenir |
+| `Kaynak` | Talebin nereden geldiği: `Telefon`, `E-Mail` veya `Portal` |
+| `İş Etkisi` | Sorunun işe etkisi (`Düşük`, `Orta`, `Yüksek`, `Çok Yüksek`) |
+| `Kategori` | Çağrının konusu. Alt kategoriler `Donanım\Yazıcı` biçiminde görünür |
+| `Durum` | Çağrının başlangıç durumu (`Açık` veya `Beklemeye Alınanlar`) |
+
+<Callout type="warn" title="DİKKAT">
+`Teknisyen Grubu` değiştirildiğinde seçili teknisyen temizlenir. Grubu değiştirdikten sonra
+teknisyeni yeniden seçin.
+</Callout>
+
+`Kaydet` butonuna bastığınızda "Yapılan değişiklikler başarıyla kaydedildi." mesajı çıkar, panel kapanır ve
+yeni çağrı listeye eklenir. `Vazgeç` butonu paneli kaydetmeden kapatır.

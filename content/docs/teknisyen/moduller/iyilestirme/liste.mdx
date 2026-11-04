@@ -1,0 +1,112 @@
+---
+title: "İyileştirme Listesi"
+description: "Sürekli İyileştirme ekranının bölümleri, iyileştirme kartı, kart üzerindeki simgeler, iyileştirmeleri sekme olarak açma, sayfalama ve sıralama."
+reviewed: "2026-10-06"
+owner: berdanasen
+---
+
+Üst menüden `SI` seçildiğinde iyileştirme listesi açılır. Her iyileştirme listede bir kart
+olarak görünür. Liste varsayılan olarak iyileştirme numarasına göre, en yeni kayıt en üstte
+olacak şekilde sıralanır.
+
+![Sürekli İyileştirme ekranının bölümleri](/img/teknisyen/iyilestirme-liste-yerlesim.png)
+
+| # | Bölüm | Ne işe yarar |
+|---|---|---|
+| ❶ | `SI` sekmesi | İyileştirme listesi. Açtığınız her iyileştirme bu sekmenin yanına yeni bir sekme olarak eklenir |
+| ❷ | İyileştirme kartları | Her kart bir iyileştirmedir. Kartın başlığına tıklandığında kayıt yeni bir sekmede açılır |
+| ❸ | Üst butonlar | `Yeni İyileştirme`, `Ara` ve `Grid Görünümü` |
+| ❹ | `Filtre Görünümleri` | Kaydedilmiş filtreler. Birine tıklandığında liste o filtreye göre süzülür |
+| ❺ | `Kontrol Paneli` | İyileştirme numarası, başlık, durum, teknisyen, kategori gibi alanlara göre anlık filtreleme |
+
+Bir iyileştirme seçildiğinde listenin üstünde toplu işlem çubuğu belirir; bkz.
+[Toplu İşlemler](/docs/teknisyen/moduller/iyilestirme/toplu-islemler). Filtreleme için bkz.
+[Filtreleme ve Filtre Görünümleri](/docs/teknisyen/moduller/iyilestirme/filtreleme).
+
+## İyileştirme kartı
+
+![İyileştirme kartının yapısı](/img/teknisyen/iyilestirme-liste-kart.png)
+
+| # | Alan | Açıklama |
+|---|---|---|
+| ❶ | Numara ve durum | `#CI` ile başlayan iyileştirme numarası ve kaydın durumu (`Açık`, `Müşteri Cevap Bekliyor`, `Kapatılanlar` gibi) |
+| ❷ | Başlık | İyileştirmenin başlığı ve ne kadar önce açıldığı. Fareyle zamanın üzerine gelindiğinde tam tarih görünür |
+| ❸ | Açıklama | İyileştirme açıklamasının ilk satırı |
+| ❹ | Kart simgeleri | Kart menüsü, hızlı güncelleme, ekler, e-postalar ve notlar (aşağıda) |
+| ❺ | Kayıt bilgileri | `Teknisyen Grubu`, `Teknisyen`, `Kullanıcı`, `Destek Müşteri Hesabı`, `Şirket`, `Departman Adı`, `Kategori Adı`, `Sözleşme` ve `Öncelik` |
+
+<Callout type="info" title="ÖNEMLİ">
+Kartın alt satırı, ekran genişliğine göre sağa doğru kaydırılabilir. Bilgilerin tamamını
+görmek için tarayıcı penceresini genişletebilirsiniz.
+</Callout>
+
+## Kart simgeleri
+
+![Kartın sol altındaki simgeler](/img/teknisyen/iyilestirme-liste-kart-simgeler.png)
+
+| # | Simge | Ne yapar |
+|---|---|---|
+| ❶ | Kart menüsü (şimşek) | `Bağlantıyı Kopyala`, `Detay sayfasına git` ve `İş Günlüğü Ekle` seçeneklerini açar |
+| ❷ | `Hızlı Güncelleme` | İyileştirmeyi açmadan durum, öncelik, kategori, grup ve teknisyen bilgisini değiştirir |
+| ❸ | `Ekler` | İyileştirmeye eklenmiş dosyaları listeler |
+| ❹ | `Gelen Posta` | Kullanıcıdan gelen e-posta sayısı |
+| ❺ | `Giden Posta` | Kullanıcıya gönderilen e-posta sayısı |
+| ❻ | `Not Göster ve Ekle` | İyileştirmenin notlarını gösterir ve not ekler. Üzerindeki sayı not sayısıdır |
+
+### Kart menüsü
+
+![Kart menüsü](/img/teknisyen/iyilestirme-liste-kart-menu.png)
+
+- **Bağlantıyı Kopyala:** İyileştirmenin adresini panoya kopyalar; bağlantıyı bir e-postaya
+  ya da mesaja yapıştırabilirsiniz.
+- **Detay sayfasına git:** İyileştirmeyi listeden bağımsız, tam sayfa olarak açar.
+- **İş Günlüğü Ekle:** İyileştirmeyi açmadan iş günlüğü girer; bkz.
+  [Diğer Sekmeler](/docs/teknisyen/moduller/iyilestirme/sekmeler).
+
+### Hızlı güncelleme
+
+![Hızlı Güncelleme penceresi](/img/teknisyen/iyilestirme-liste-hizli-guncelleme.png)
+
+`Durum Değiştir`, `Önceliği Değiştir`, `Kategori`, `Grup Değiştir` ve `Teknisyen Değiştir`
+alanlarından değiştirmek istediklerinizi seçip `Kaydet`'e basın. Kapatılmış iyileştirmelerde
+hızlı güncelleme kullanılamaz.
+
+### Ekler
+
+`Ekler` simgesine tıklandığında kayda eklenmiş dosyalar ❷ listelenir; dosyanın adına tıklayarak
+indirebilirsiniz.
+
+![Ekler penceresi](/img/teknisyen/iyilestirme-liste-ekler.png)
+
+### Not ekleme
+
+![Not Ekle penceresi](/img/teknisyen/iyilestirme-liste-not.png)
+
+`Not Göster ve Ekle` simgesi `Not Ekle` penceresini açar. Pencerenin üst kısmında iyileştirmenin
+mevcut notları listelenir. `Açıklama` alanına notunuzu yazıp `Kaydet`'e basın. `Özel Not`
+işaretliyse not yalnızca teknisyenler tarafından görülür; işaret kaldırılırsa kullanıcı da notu
+görebilir.
+
+## İyileştirmeleri sekme olarak açma
+
+Bir kartın başlığına tıkladığınızda iyileştirme, listeden ayrılmadan yeni bir sekmede açılır.
+Böylece birden fazla iyileştirme üzerinde aynı anda çalışabilir, sekmeler arasında geçiş
+yapabilirsiniz.
+
+![İyileştirmenin sekme olarak açılması](/img/teknisyen/iyilestirme-liste-sekme.png)
+
+İyileştirmeyi tam sayfa açmak için kart menüsündeki `Detay sayfasına git` seçeneğini kullanın.
+Detay ekranı için bkz. [İyileştirme Detayı](/docs/teknisyen/moduller/iyilestirme/detay).
+
+## Sayfalama ve sıralama
+
+![Sayfalama ve sıralama](/img/teknisyen/iyilestirme-liste-sayfalama.png)
+
+Listenin altında toplam kayıt sayısı ve sayfa numaraları ❶, yanında sıralama seçeneği ❷ bulunur.
+Sıralama alanına tıklayarak listeyi farklı bir bilgiye göre sıralayabilirsiniz; yanındaki ok
+simgesi sıralamayı artan ya da azalan yapar.
+
+![Sıralama seçenekleri](/img/teknisyen/iyilestirme-liste-siralama.png)
+
+Sıralama seçenekleri: `Oluşturulduğu Tarih`, `İyileştirme Numarası`, `Başlık`, `Durum` ve
+`Son Güncelleme Tarihi`. Sayfa başına kayıt sayısını `10 / sayfa` alanından değiştirebilirsiniz.

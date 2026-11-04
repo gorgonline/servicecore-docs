@@ -1,0 +1,46 @@
+---
+title: "Genel Bakış"
+description: "Problem yönetimine genel bakış: problem nedir, olaydan farkı, temel kavramlar, ekranın bölümleri ve diğer modüllerle bağlantı."
+reviewed: "2026-10-07"
+owner: oobcore
+---
+
+Olay yönetimi bir kesintiyi olabildiğince çabuk gidermeye odaklanır. Problem yönetimi ise aynı kesintinin **neden tekrar ettiğini** bulup kalıcı olarak ortadan kaldırmaya odaklanır. Örneğin şube VPN tünelleri her gün birkaç kez kopuyorsa, her kopma bir olaydır. Bu olayların ortak nedenini araştırmak, geçici bir çözümle idare etmek ve kalıcı çözümü bir değişiklikle uygulamak ise bir problemin işidir.
+
+Problemler modülünde bir problem kaydı açar, ilgili olayları ona bağlar, kök nedeni ve belirtileri kayda geçirir, çözümleri önerir ve uygular, ekip için görevler açar ve harcanan eforu iş günlüğüyle takip edersiniz.
+
+Modüle üst menüdeki `Problem` simgesinden girilir.
+
+## Temel kavramlar
+
+| Kavram | Anlamı |
+|---|---|
+| **Problem** | Bir ya da daha fazla olayın altında yatan, henüz tam bilinmeyen neden. Her problemin `PRB` ile başlayan bir numarası vardır, örneğin `PRB17`. |
+| **Bağlı olay** | Bu problemden kaynaklandığı düşünülen olay kaydı. Bir olay en fazla bir probleme bağlanır; bir probleme ise birçok olay bağlanabilir. |
+| **Kök neden** | Sorunun asıl sebebi. `Analiz` sekmesinde `İş Etkisi` ve `Belirtiler` ile birlikte kayda geçirilir. |
+| **Çözüm** | Probleme karşı önerilen ya da uygulanan yol. Türü `Önerilen`, `Uygulanan` ya da `İşe Yarayan` olur. Bilgi Bankası'ndan seçilebilir ya da Bilgi Bankası'na eklenebilir. |
+| **Değişiklik** | Kalıcı çözümün uygulanması bir değişiklik gerektiriyorsa problem bir değişiklik kaydına bağlanır. |
+| **Durum ve aşama** | Problemin süreçteki yeri: `Açık`, `Atandı`, `İnceleme` (açık aşama) ya da `Çözülenler`, `Kapatılanlar` (kapalı aşama). Bkz. [Durumlar ve Kapatma](/docs/teknisyen/moduller/problemler/durumlar-ve-kapatma). |
+
+## Ekranın bölümleri
+
+![Problemler ekranının bölümleri](/img/teknisyen/prb-genel-yerlesim.png)
+
+| # | Bölüm | Ne işe yarar |
+|---|---|---|
+| ❶ | Sekmeler | İlk sekme `Problemler` listesidir. Açtığınız her problem buraya `Problem 17` gibi ayrı bir sekme olarak eklenir; birkaç problem arasında listeyi kaybetmeden geçiş yapabilirsiniz. |
+| ❷ | Üst düğmeler | `Yeni Problem`, genel arama ve `Grid Görünümü`. Bkz. [Problem Listesi](/docs/teknisyen/moduller/problemler/liste). |
+| ❸ | Problem kartı | Listedeki her problem bir kart olarak görünür; numara, durum, konu, kişiler ve öncelik kartın üzerindedir. |
+| ❹ | **Filtre Görünümleri** | Kayıtlı filtreler; tek tıkla uygulanır. |
+| ❺ | **Kontrol Paneli** | Ayrıntılı süzme alanları. Bkz. [Filtreler](/docs/teknisyen/moduller/problemler/filtreler). |
+
+Liste açılışta yalnızca **açık aşamadaki** problemleri gösterir. Çözülen ve kapatılan problemleri görmek için `Kontrol Paneli`nde `Aşama` alanından `Kapalı`yı seçin.
+
+## Diğer modüllerle bağlantı
+
+- **Olaylar:** Tekrarlayan bir olayın içinden doğrudan yeni problem açabilir ya da olayı var olan bir probleme bağlayabilirsiniz. Problemin `Süreçler` sekmesinde bağlı olaylar listelenir. Bkz. [Bağıntılar](/docs/teknisyen/moduller/problemler/bagintilar).
+- **Değişiklikler:** Kalıcı çözüm bir değişiklik gerektiriyorsa problemden yeni değişiklik kaydı açılır ya da var olan bir değişiklik bağlanır.
+- **Bilgi Bankası:** Çözüm eklerken Bilgi Bankası'ndaki bir sayfayı seçebilir ya da yazdığınız çözümü Bilgi Bankası'na şablon olarak ekleyebilirsiniz. Bkz. [Analiz ve Çözümler](/docs/teknisyen/moduller/problemler/analiz-ve-cozumler).
+- **Görevler:** Problem üzerinde ekip üyelerine görev atanır; görevlerin iş günlükleri problemin toplam eforuna yansır.
+
+Problemlerin son kullanıcı portalında bir karşılığı yoktur; problem yönetimi teknisyenlerin kullandığı bir modüldür.

@@ -1,0 +1,131 @@
+---
+title: "Kapatma ve Kapatma Kuralları"
+description: "İsteği kapatma, kapatmayı engelleyen kurallar ve uyarılar, yeniden açma, otomatik kapatma ve kapatma gerekçeleri."
+reviewed: "2026-09-24"
+owner: berdanasen
+---
+
+İstek karşılandığında araç çubuğundaki `Kapat` butonuyla kapatılır. Kurumunuzda **kapatma
+kuralları** tanımlıysa, kurallar sağlanmadan istek kapatılamaz. Böylece her istek, raporlama ve
+takip için gereken bilgiler tamamlanmış olarak kapanır.
+
+## İsteği kapatma
+
+`Kapat` butonuna bastığınızda `Kapatma Bilgileri` penceresi açılır.
+
+![Kapatma Bilgileri penceresi](/img/teknisyen/istek-kapat-pencere.png)
+
+| # | Alan | Açıklama |
+|---|---|---|
+| ❶ | `Gerekçe` | İsteğin neden kapatıldığı (örneğin `Talep karşılandı`, `Kullanıcı talebi geri çekti`). Gerekçeler yöneticiniz tarafından tanımlanır |
+| ❷ | `Durum` | İsteğin kapanış durumu (genellikle `Kapatılanlar`). **Zorunludur** |
+| ❸ | `Kapatma Açıklaması` | Talebin nasıl karşılandığına dair kısa açıklama |
+
+`Kapat` butonuna bastığınızda istek kapatılır. `Vazgeç` pencereyi kapatmadan çıkar.
+
+### Açık görevleri olan istekler
+
+İstekte tamamlanmamış görevler varsa `Kapat`'a bastığınızda önce `Görevler Kapatılacaktır!`
+uyarısı çıkar ve açık görevler listelenir.
+
+![Görevler Kapatılacaktır uyarısı](/img/teknisyen/istek-kapat.png)
+
+Uyarı, istekle birlikte listelenen görevlerin de kapatılacağını bildirir. `Tamam` derseniz
+kapatma işlemine devam edilir, `Vazgeç` derseniz istek açık kalır.
+
+## Kapatmayı engelleyen durumlar
+
+### Zorunlu form alanları
+
+İsteğin formunda doldurulmamış zorunlu bir alan varsa `Kapat` butonu pasif görünür. Farenizi
+butonun üzerine getirdiğinizde hangi alanın eksik olduğu yazılır.
+
+![Zorunlu alan uyarısı](/img/teknisyen/istek-kapat-zorunlu-alan.png)
+
+Örnekte `Ek Donanım` alanı boş olduğu için istek kapatılamıyor. Alanı doldurup `Kaydet`'e
+bastığınızda `Kapat` butonu etkinleşir.
+
+### Eksik kurallar
+
+İstek bir kapatma kuralını sağlamıyorsa araç çubuğunun sağında kırmızı bir ünlem simgesi
+belirir. Simgeye tıkladığınızda `Eksik kurallar` listesi açılır.
+
+![Eksik kurallar listesi](/img/teknisyen/istek-detay-eksik-kurallar.png)
+
+Listede sağlanmayan her kural bir satırda yazar (örnekte
+`İlişkili görevler kapatılmış olmalıdır.`). Kuralı sağladığınızda simge kaybolur.
+
+## Kapatma kuralları
+
+Kapatma kuralları `Ayarlar ▸ Kapatma Kuralları` ekranında, `İstekler` sekmesinden tanımlanır.
+Bu ekranda işaretli olan her kural, istek kapatılmadan önce sağlanmak zorundadır.
+
+![Kapatma Kuralları ekranı, İstekler sekmesi](/img/teknisyen/istek-kapatma-kurallari.png)
+
+| Kural | İstek kapatılmadan önce |
+|---|---|
+| `Notlar girilmiş olmalıdır.` | İsteğe en az bir not eklenmiş olmalı |
+| `İş günlükleri girilmiş olmalıdır.` | İsteğe en az bir iş günlüğü girilmiş olmalı |
+| `İlişkili görevler kapatılmış olmalıdır.` | İsteğin bütün görevleri tamamlanmış olmalı |
+| `Görevlerin iş günlükleri girilmiş olmalıdır.` | İsteğin görevlerine iş günlüğü girilmiş olmalı |
+| `Nihai Çözüm girilmiş olmalıdır.` | `Çözümler` sekmesine çözüm eklenmiş olmalı |
+| `Açıklama girilmiş olmalıdır.` | İsteğin açıklaması boş olmamalı |
+| `Etki tanımlanmış olmalıdır.` | `İş Etkisi` alanı seçilmiş olmalı |
+| `Kayıt kaynağı tanımlanmış olmalıdır.` | `Kaynak` alanı seçilmiş olmalı |
+| `Teknisyen tanımlanmış olmalıdır.` | İstek bir teknisyene atanmış olmalı |
+| `Teknisyen grubu tanımlanmış olmalıdır.` | İstek bir teknisyen grubuna atanmış olmalı |
+| `Aciliyet belirlenmiş olmalıdır.` | `Aciliyet` alanı seçilmiş olmalı |
+| `Varlık tanımlanmış olmalıdır.` | İsteğe en az bir varlık bağlanmış olmalı |
+| `Öncelik belirlenmiş olmalıdır.` | `Öncelik` alanı seçilmiş olmalı |
+| `Görev açılmış olmalıdır.` | İsteğe en az bir görev eklenmiş olmalı |
+| `Onaylanmış olmalıdır.` | İsteğin onay süreci tamamlanmış olmalı |
+| `Formdaki zorunlu alanları kontrol et` | Formdaki zorunlu alanların hepsi doldurulmuş olmalı |
+
+<Callout type="info" title="ÖNEMLİ">
+Kapatma kurallarını yalnızca bu ekrana yetkisi olan yöneticiler değiştirebilir. Kurallar
+her kayıt türü (olay, istek, problem, değişiklik…) için ayrı ayrı tanımlanır; ayrıntılar için
+[Yönetici Kılavuzu ▸ Kapatma Kuralları ve Gerekçeleri](/docs/yonetici/gelismis) sayfasına bakın.
+</Callout>
+
+## Kapatma gerekçeleri
+
+`Kapatma Bilgileri` penceresindeki `Gerekçe` listesi, aynı ekranın `Kapatma Gerekçeleri`
+sekmesinden, `İstek` başlığı altında tanımlanır.
+
+![Kapatma Gerekçeleri ekranı](/img/teknisyen/istek-kapatma-gerekceleri.png)
+
+`Yeni Kapatma Nedeni Ekle` butonuyla yeni gerekçe eklenir; mevcut gerekçeler `Düzenleme`
+kolonundan düzenlenir.
+
+## Otomatik kapatma
+
+Kullanıcıdan dönüş beklenmeden, çözülen isteklerin belirli bir süre sonra kendiliğinden
+kapanmasını sağlayabilirsiniz. Ayar `Ayarlar ▸ Genel Ayarlar` ekranındadır.
+
+![İstek Otomatik Kapatma Süresi ayarı](/img/teknisyen/istek-ayar-otomatik-kapatma.png)
+
+`İstek Otomatik Kapatma Süresi (Dakika)` alanına, istek çözüldü durumuna getirildikten kaç
+dakika sonra kapatılacağını yazın.
+
+![Çözüldü Durumuna Geçince Kapatma Kurallarını Yoksay ayarı](/img/teknisyen/istek-ayar-kapatma-kurallarini-yoksay.png)
+
+`Çözüldü Durumuna Geçince Kapatma Kurallarını Yoksay` seçeneği açıksa, çözüldü durumundaki
+istekler kapatılırken kapatma kuralları **dikkate alınmaz**.
+
+<Callout type="warn" title="DİKKAT">
+Bu seçenek açıkken otomatik kapatılan isteklerde yukarıdaki kuralların hiçbiri denetlenmez.
+Kapatma kurallarının her istekte uygulanmasını istiyorsanız seçeneği kapalı tutun.
+</Callout>
+
+## Yeniden açma
+
+Kapatılmış bir istekte araç çubuğunda `Kapat` yerine `Yeniden Aç` butonu bulunur.
+
+![Kapatılmış istekte araç çubuğu](/img/teknisyen/istek-detay-kapali-arac-cubugu.png)
+
+`Yeniden Aç` butonuna bastığınızda isteğin açılacağı durumu seçtiğiniz pencere açılır.
+
+![Yeniden Aç penceresi](/img/teknisyen/istek-yeniden-ac.png)
+
+`Durum` alanında isteğin yeniden açılacağı durumu (örneğin `Açık`) seçip `Yeniden Aç`
+butonuna basın. İstek yeniden açılır ve düzenlenebilir hâle gelir.

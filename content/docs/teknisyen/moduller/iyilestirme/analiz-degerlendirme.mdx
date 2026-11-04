@@ -1,0 +1,72 @@
+---
+title: "Analiz ve Değerlendirme"
+description: "İyileştirme önerisinin Analiz sekmesinde incelenmesi, Değerlendirme sekmesinde puanlanması ve sonuç puanının nasıl hesaplandığı."
+reviewed: "2026-10-06"
+owner: berdanasen
+---
+
+Bir iyileştirme önerisi karara bağlanmadan önce iki aşamadan geçer: **Analiz** sekmesinde
+önerinin gerekçesi ve etkileri yazılır, **Değerlendirme** sekmesinde öneri beş ölçüte göre
+puanlanır. Böylece birbirinden farklı öneriler aynı ölçütlerle karşılaştırılabilir.
+
+## Analiz
+
+![Analiz sekmesi](/img/teknisyen/iyilestirme-sekme-analiz.png)
+
+| # | Bölüm | Ne yazılır |
+|---|---|---|
+| ❶ | `İlgili İş Hedefleri` | Önerinin kurumun hangi hedefini desteklediği (örneğin ilk temasta çözülen kayıt oranını artırmak) |
+| ❷ | `Faydalar` | Öneri uygulandığında elde edilecek kazanımlar: zaman, maliyet, kullanıcı memnuniyeti |
+| ❸ | `Gereken İş Gücü` | Uygulama için kaç kişinin ne kadar süre çalışacağı |
+| ❹ | `Maliyetler` | Lisans, donanım, hizmet alımı gibi harcamalar |
+| ❺ | `Riskler` | Uygulamada ya da sonrasında ortaya çıkabilecek sorunlar |
+| ❻ | Düzenle | Bölümü düzenleme moduna alır |
+
+Bir bölümü düzenlemek için sağındaki kalem simgesine basın. Metin bir düzenleyicide açılır;
+değişikliği yaptıktan sonra sağ üstteki kaydet simgesine basın. Çarpı simgesi değişikliği
+kaydetmeden düzenlemeden çıkar.
+
+![Analiz bölümünün düzenlenmesi](/img/teknisyen/iyilestirme-sekme-analiz-duzenle.png)
+
+## Değerlendirme
+
+![Değerlendirme sekmesi](/img/teknisyen/iyilestirme-sekme-degerlendirme.png)
+
+| # | Ölçüt | Ne değerlendirilir |
+|---|---|---|
+| ❶ | `SI Risk Seviyesi` | Önerinin taşıdığı risk |
+| ❷ | `SI Maliyet Seviyesi` | Önerinin maliyeti |
+| ❸ | `SI İş Hedeflerine Katkı Seviyesi` | Önerinin kurum hedeflerine katkısı |
+| ❹ | `SI Uygulanabilme Hızı` | Önerinin ne kadar çabuk uygulanabileceği |
+| ❺ | `SI Yatırım Geri Dönüş Hızı` | Yapılan harcamanın ne kadar sürede geri kazanılacağı |
+| ❻ | `SI Değerlendirme Sonuç Puanı` | Beş ölçütün ortalaması; kendiliğinden hesaplanır |
+| ❼ | `Kaydet` | Değerlendirmeyi kaydeder |
+
+Her ölçüt için listeden bir seviye seçin:
+
+![Seviye seçenekleri](/img/teknisyen/iyilestirme-sekme-degerlendirme-secenek.png)
+
+### Sonuç puanı nasıl hesaplanır?
+
+Her seviye 20 ile 100 arasında bir puana karşılık gelir. Risk ve maliyette **düşük** seviye
+yüksek puan alır; diğer üç ölçütte **yüksek** seviye yüksek puan alır. Böylece sonuç puanı ne
+kadar yüksekse öneri o kadar elverişlidir.
+
+| Seviye | Risk ve Maliyet | Hedeflere Katkı, Uygulanabilme Hızı, Geri Dönüş Hızı |
+|---|---|---|
+| `Çok Düşük` | 100 | 20 |
+| `Düşük` | 80 | 40 |
+| `Orta` | 60 | 60 |
+| `Yüksek` | 40 | 80 |
+| `Çok Yüksek` | 20 | 100 |
+
+Sonuç puanı beş ölçütün puanlarının ortalamasıdır. Örnekteki öneride risk `Düşük` (80), maliyet
+`Orta` (60), hedeflere katkı `Yüksek` (80), uygulanabilme hızı `Yüksek` (80) ve geri dönüş hızı
+`Çok Yüksek` (100) seçildiği için sonuç puanı (80 + 60 + 80 + 80 + 100) / 5 = **%80** olur.
+
+Puan, seçim yaptıkça ekranda güncellenir; kalıcı olması için `Kaydet`'e basın.
+
+<Callout type="warn" title="DİKKAT">
+Boş bırakılan (`Seçiniz`) ölçütler ortalamaya 0 puan olarak girer. Doğru bir sonuç için beş
+ölçütün hepsini doldurun.
+</Callout>

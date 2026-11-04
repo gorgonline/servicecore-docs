@@ -1,0 +1,57 @@
+---
+title: "Roller ve Yetkiler"
+description: "İstek modülündeki yetkiler, görünürlük seçenekleri ve rol ekranından nasıl verildikleri."
+reviewed: "2026-09-24"
+owner: berdanasen
+---
+
+Teknisyenlerin istek modülünde neleri görebileceği ve neler yapabileceği rollerle belirlenir.
+Yetkiler `Yönetici ▸ Roller` ekranında, rolün `İstek` sekmesinden verilir.
+
+![Rol ekranındaki İstek yetkileri](/img/teknisyen/istek-rol-yetkileri.png)
+
+## Görünürlük
+
+`İstekleri Görebilir` yetkisi istek modülüne girişin anahtarıdır. Bu yetkinin altındaki
+seçenekler, teknisyenin **hangi istekleri** göreceğini daraltır:
+
+| Seçenek | Teknisyen neyi görür |
+|---|---|
+| `Atanmamış Kayıtları Görebilir` | Henüz kimseye atanmamış istekleri |
+| `Atanmış Kayıtları Görebilir` | Bir teknisyene atanmış istekleri |
+| `Grubundakiler` | Yalnızca üyesi olduğu teknisyen gruplarının isteklerini |
+| `Seçilen Gruplardakiler` | Yalnızca listeden seçilen teknisyen gruplarının isteklerini |
+| `Yetkili Olduğu Müşterilerin Kayıtları` | Yalnızca yetkili olduğu destek müşteri hesaplarının isteklerini |
+| `Kendi Teknisyen Grubunu Görebilir` | Kendi teknisyen grubunun isteklerini |
+| `Silinen Kayıtları Görebilir` | Silinmiş istekleri (`Kontrol Paneli`'ndeki `Silinmiş mi?` kutusu) |
+
+`Grubundakiler`, `Seçilen Gruplardakiler` ve `Yetkili Olduğu Müşterilerin Kayıtları`
+seçeneklerinden aynı anda yalnızca biri seçilebilir; birini işaretlediğinizde diğerleri
+kendiliğinden kaldırılır.
+
+## İşlem yetkileri
+
+| Yetki | Ne sağlar |
+|---|---|
+| `İstek Oluşturabilir` | `Yeni İstek` butonuyla istek açma |
+| `İstekleri Düzenleyebilir` | İsteğin alanlarını ve formunu düzenleme, not ekleme, varlık ve ilişki bağlama, yeniden açma |
+| `Notları Düzenleyebilir` | Notları düzenleme. Altındaki iki seçenekten biri seçilir: `Herkesin Notlarını Düzenleyebilir` ya da `Kendi Notlarını Düzenleyebilir` |
+| `İstekleri Silebilir` | İsteği silme |
+| `İsteği Kapatabilir` | İsteği tek tek ya da toplu olarak kapatma |
+| `Onay Akışını Yeniden Başlatabilir` | `Diğer Eylemler ▸ Onay Akışını Yenile` ile onay akışını baştan başlatma |
+| `İstek Onay Aşamasını Silebilir` | İsteğin onay aşamasını silme |
+
+<Callout type="info" title="ÖNEMLİ">
+Rolde değişiklik yaptıktan sonra `Kaydet` butonuna basmayı unutmayın. Değişikliğin
+teknisyenin ekranına yansıması için teknisyenin oturumu kapatıp yeniden açması gerekebilir.
+</Callout>
+
+## Yönetim ekranları için gereken yetkiler
+
+Aşağıdaki ekranlar istek modülünü etkiler ancak yönetici yetkileriyle açılır:
+
+| Ekran | Ne için |
+|---|---|
+| `Ayarlar ▸ Kapatma Kuralları` | İsteklerin kapatılma kuralları ve kapatma gerekçeleri; bkz. [Kapatma ve Kapatma Kuralları](/docs/teknisyen/moduller/talepler/kapatma) |
+| `Ayarlar ▸ Bildirimler` | İstek bildirimleri; bkz. [Bildirimler](/docs/teknisyen/moduller/talepler/bildirimler) |
+| `Ayarlar ▸ Genel Ayarlar` | Otomatik kapatma süresi ve yeni istek ekranlarının açılması |

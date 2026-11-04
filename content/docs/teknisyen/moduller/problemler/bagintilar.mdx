@@ -1,0 +1,59 @@
+---
+title: "Bağıntılar"
+description: "Problemi olaylara ve değişikliğe bağlama: Süreçler sekmesi, yeni ya da var olan kayıtla bağıntı kurma ve olay tarafındaki görünüm."
+reviewed: "2026-10-07"
+owner: oobcore
+---
+
+Bir problem tek başına yaşamaz: onu fark ettiren olaylar ve onu kalıcı olarak çözen değişiklik vardır. Problemin `Süreçler` sekmesi bu bağlantıları gösterir ve yönetir.
+
+| Bağıntı | Kural |
+|---|---|
+| Problem → olay | Bir probleme birçok olay bağlanabilir. Bir olay ise en fazla bir probleme bağlanır. |
+| Problem → değişiklik | Bir problem en fazla bir değişikliğe bağlanır. |
+
+Problemler istek, iyileştirme ya da projeyle bağlanmaz.
+
+## Bağlı olaylar
+
+`Süreçler` sekmesinde `Olay` alt sekmesini seçin.
+
+![Süreçler sekmesinde bağlı olaylar](/img/teknisyen/prb-bag-olay.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | Alt sekmeler | `Değişiklik` ve `Olay`. |
+| ❷ | `Bağıntı Ekle` | Yeni ya da var olan bir kayıtla bağıntı kurar (aşağıda). |
+| ❸ | Olay numarası | Tıklayınca olay açılır. Satırda olayın konusu, durumu, teknisyeni ve oluşturulma tarihi görünür. |
+| ❹ | Bağıntıyı kaldır | Olayı bu problemden ayırır. Olay silinmez. |
+
+Bağlı olayların bir kısmının kapalı, bir kısmının açık olması normaldir: olaylar kendi içinde giderilirken problem asıl nedeni araştırmaya devam eder.
+
+## Bağlı değişiklik
+
+`Değişiklik` alt sekmesi problemin bağlı olduğu değişiklik kaydını ❶ gösterir. Kalıcı çözüm bir sistem değişikliği gerektiriyorsa (yama, yapılandırma, sürüm yükseltme) bu değişiklik buradan açılır ya da bağlanır.
+
+![Süreçler sekmesinde bağlı değişiklik](/img/teknisyen/prb-bag-degisiklik.png)
+
+## Bağıntı ekleme
+
+`Bağıntı Ekle` düğmesi, hangi alt sekmedeyseniz o türde kayıt için iki seçenek sunar.
+
+![Bağıntı Ekle menüsü](/img/teknisyen/prb-bag-ekle-menu.png)
+
+| # | Seçenek | Ne yapar |
+|---|---|---|
+| ❶ | `Yeni Kayıt` | Problemin bilgileriyle önceden doldurulmuş yeni bir olay ya da değişiklik formu açar; kaydettiğinizde yeni kayıt probleme bağlanır. Bu seçenek için o kayıt türünü oluşturma yetkiniz olmalıdır. |
+| ❷ | **Varolan Kayıt** | Daha önce açılmış bir olayı ya da değişikliği arayıp bu probleme bağlar. Bu seçenek için o kayıt türünü görme yetkiniz olmalıdır. |
+
+## Olay tarafından görünüm
+
+Bağıntı iki yönlüdür. Bir olayı açıp `Süreçler` sekmesindeki `Problem` alt sekmesine ❶ geçtiğinizde, olayın bağlı olduğu problem ❷ listelenir. Problem numarasına tıklayarak probleme geçebilirsiniz.
+
+![Olayın Süreçler sekmesinde bağlı problem](/img/teknisyen/prb-bag-olay-tarafi.png)
+
+Olaydan yeni problem açmak ya da olayı var olan bir probleme bağlamak için bkz. [Problem Oluşturma](/docs/teknisyen/moduller/problemler/olusturma#olaydan-problem-açma).
+
+<Callout type="info" title="ÖNEMLİ">
+Problem kapatıldığında bağlı olayların da kapatılması, çözümün olaylara kopyalanması gibi davranışlar Genel Ayarlar'dan açılır. Bu ayarlar kapalıysa (varsayılan) problemi kapatmak bağlı olayları etkilemez. Bkz. [Durumlar ve Kapatma](/docs/teknisyen/moduller/problemler/durumlar-ve-kapatma#bağlı-olaylar-ne-olur).
+</Callout>
