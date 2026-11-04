@@ -56,6 +56,12 @@
 #nd-page .prose {
   overflow-wrap: anywhere;
 }
+/* Tablo hücrelerinde "anywhere" en dar sütun genişliğini harf genişliğine
+   indirir ve kelimeyi ortasından böler ("Kayde|t"); hücrede kelime bütün
+   kalsın, sığmazsa tablo zaten yatay kayar */
+#nd-page .prose table :where(th, td) {
+  overflow-wrap: break-word;
+}
 
 /* İçindekiler (TOC) olmayan sayfalarda sağ sütunu tamamen kapat */
 #nd-notebook-layout:not(:has(#nd-toc)) {
