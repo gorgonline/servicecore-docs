@@ -1,0 +1,55 @@
+---
+title: "Problem Oluşturma"
+description: "Yeni Problem formu, form alanları ve tekrarlayan bir olayın içinden yeni problem açma ya da olayı var olan probleme bağlama."
+reviewed: "2026-10-07"
+owner: oobcore
+---
+
+Bir problemi iki yoldan açabilirsiniz: Problemler modülündeki `Yeni Problem` düğmesiyle ya da tekrarlayan bir olayın içinden. İkinci yol, olayın bilgilerini forma hazır getirdiği ve olayı yeni probleme kendiliğinden bağladığı için genellikle daha hızlıdır.
+
+## Yeni Problem formu
+
+Listenin sağ üstündeki `Yeni Problem` düğmesi `Problemler Formu` sayfasını açar. Aynı forma üst menüdeki hızlı kayıt panelinden de ulaşılır.
+
+![Problemler Formu](/img/teknisyen/prb-olustur-form.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | `Özel Form` | Kullanılacak form. Varsayılan problem formu kendiliğinden seçilir; kurumunuz problem için başka formlar tasarladıysa buradan değiştirebilirsiniz. |
+| ❷ | **Konu** ve **Açıklama** | **Zorunlu.** Problemin kısa başlığı ve ayrıntılı tanımı. |
+| ❸ | `Dosya Yükle` | Ekran görüntüsü, log gibi dosyaları sürükleyip bırakın ya da tıklayıp seçin. |
+| ❹ | **Diğer Alanlar** | `Kullanıcı`, `Kategori`, `Öncelik`, `Teknisyen Grubu`, `Durum`, `İş Etkisi`, `Teknisyen` ve `Aciliyet`. |
+| ❺ | `Kaydet` | Problemi oluşturur ve listede yeni bir sekmede açar. |
+
+Formdaki alanlar kurumunuzun form tasarımına göre değişebilir; yukarıdaki görüntü varsayılan problem formudur.
+
+<Callout type="warn" title="DİKKAT">
+`Yeni Problem` sayfası, sistemde problem için tanımlı bir form olmasını gerektirir. Hiç form tanımlı değilse sayfa yalnızca boş bir `Özel Form` seçimiyle açılır ve `Kaydet` hiçbir şey yapmaz. Bu durumda sistem yöneticiniz varsayılan formları eklemelidir.
+</Callout>
+
+## Olaydan problem açma
+
+Aynı olay tekrar tekrar yaşanıyorsa, olaylardan birinin içinden problem açabilirsiniz.
+
+1. Olayı açın ve `Süreçler` sekmesine geçin.
+2. `Problem` alt sekmesini seçip `Bağıntı Ekle` düğmesine basın.
+
+![Olayın Süreçler sekmesinde Bağıntı Ekle menüsü](/img/teknisyen/prb-olustur-olay-menu.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | `Problem` alt sekmesi | Olayın bağlı olduğu problem burada listelenir. |
+| ❷ | `Bağıntı Ekle` | Probleme bağlama seçeneklerini açar. |
+| ❸ | Seçenekler | `Yeni Kayıt` olaydan yeni problem açar. `Yeni Kayıt Bana` aynısını yapar ve problemi size atar. `Varolan Kayıt` olayı daha önce açılmış bir probleme bağlar. |
+
+`Yeni Kayıt` seçildiğinde `Oluştur` paneli açılır. Olayın konusu, açıklaması, kullanıcısı, teknisyeni ve önceliği forma hazır gelir; gerekirse düzenleyip `Kaydet`e basın. Problem oluşturulur ve olay ona bağlanır.
+
+![Olaydan açılan Oluştur paneli](/img/teknisyen/prb-olustur-olaydan.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | **Konu** ve **Açıklama** | Olaydan kopyalanır. Problemin olaydan daha genel bir tanımı olacaksa burada değiştirin. |
+| ❷ | **Diğer Alanlar** | Kullanıcı, teknisyen ve öncelik olaydan gelir; diğer alanları doldurabilirsiniz. |
+| ❸ | `Kaydet` | Problemi oluşturur ve olayı ona bağlar. |
+
+Bir olay en fazla bir probleme bağlanabilir. Bir probleme ise birçok olay bağlanabilir; aynı nedenden kaynaklanan diğer olayları `Varolan Kayıt` ile aynı probleme bağlayın.

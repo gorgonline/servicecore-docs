@@ -1,0 +1,54 @@
+---
+title: "Varlık Ekleme ve Düzenleme"
+description: "Yeni varlık ekleme çekmecesi, özel formlar, zorunlu alanlar, düzenleme ve klonlama."
+reviewed: "2026-10-07"
+owner: necatikekec
+---
+
+Yeni varlık, `Varlıklar` sekmesinin sağ üstündeki `Varlık Ekle` düğmesiyle
+eklenir. Üst çubuktaki `+` menüsünden `Varlık` seçilerek de aynı çekmece açılır.
+
+## Yeni Varlık Ekle çekmecesi
+
+![Yeni Varlık Ekle çekmecesi](/img/teknisyen/vrl-ekleme-cekmece.png)
+
+| # | Ne işe yarar |
+|---|---|
+| ❶ | **Özel Form**: Çekmecede hangi formun kullanılacağını seçer. Seçim yapılmazsa kurumunuzun varsayılan varlık formu açılır. |
+| ❷ | `Varlık Adı`: Varlığın listede görünecek adı. |
+| ❸ | `Ek Alanlar`: Durum, konum, tür, zimmetli kullanıcı, şirket, üretici, seri numarası gibi alanlar. Alan grupları başlığına tıklanarak açılıp kapatılır. |
+| ❹ | `Vazgeç` / `Kaydet`: Çekmeceyi kaydetmeden kapatır ya da varlığı oluşturur. |
+
+Çekmecedeki alanlar ve hangilerinin zorunlu olduğu, seçilen forma göre değişir.
+Zorunlu alanlar `*` ile işaretlidir. Formlar yönetici tarafından tasarlanır.
+
+Kaydedilen varlığa otomatik bir kayıt numarası verilir; bu numara listede
+`Varlık No` sütununda ve detay ekranının başlığında görünür.
+
+<Callout type="warn" title="DİKKAT">
+Varlık durumu yönetici tarafından **depo** olarak işaretlenmiş bir durumdaysa
+(ör. `Depoda`) varlık bir kullanıcıya zimmetlenemez. Böyle bir durumla
+kaydettiğinizde `Zimmetli Kullanıcı` alanı temizlenir ve "Depoda bulunan varlık
+zimmetlenemez" uyarısı gösterilir.
+</Callout>
+
+<Callout type="info" title="İPUCU">
+Kurumunuzda "Varlık listesini, varlık tipine göre düzenle" ayarı açıksa, tür
+ağacında bir tür seçiliyken `Varlık Ekle` o türe tanımlanmış formu açar.
+</Callout>
+
+## Düzenleme
+
+Listede satırdaki `Düzenle` simgesine tıklayınca `Varlığı Düzenle` çekmecesi
+açılır. Alanlar eklemedeki gibidir; değişiklikler `Güncelle` ile kaydedilir.
+Varlık, detay ekranındaki `Detaylar` sekmesinden de düzenlenebilir (bkz.
+[Varlık Detayı](/docs/teknisyen/moduller/cmdb/varlik-detayi)).
+
+## Klonlama
+
+Benzer bir varlığı hızlıca eklemek için listede satırdaki `Klon` simgesini
+kullanın. `Varlığı Klonla` çekmecesi kaynak varlığın bilgileriyle dolu açılır;
+`Kaydet` yeni bir varlık oluşturur, kaynak varlık değişmez.
+
+`Seri Numarası` ve `Varlık No` alanları klonda boş gelir. Bu iki alan her
+varlıkta farklı olmalıdır; aynı değerle kaydetmek istendiğinde kayıt reddedilir.

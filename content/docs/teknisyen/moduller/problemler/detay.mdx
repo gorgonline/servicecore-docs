@@ -1,0 +1,100 @@
+---
+title: "Problem Detayı"
+description: "Problem detay ekranının bölümleri: sekmeler, araç çubuğu, Diğer Eylemler menüsü, Özellikler paneli, açıklama, dosyalar, görüşmeler ve geçmiş."
+reviewed: "2026-10-07"
+owner: oobcore
+---
+
+Listede bir probleme tıkladığınızda problem, `Problemler` sekmesinin yanında kendi sekmesinde açılır. Aynı ekran `Detay sayfasına git` ile tek başına da açılabilir.
+
+## Ekranın bölümleri
+
+![Problem detay ekranının bölümleri](/img/teknisyen/prb-detay-yerlesim.png)
+
+| # | Bölüm | Ne işe yarar |
+|---|---|---|
+| ❶ | Kayıt sekmeleri | `Problemler` listesi ve açık problemler. Bir problem sekmesini çarpıyla kapatırsınız; sekmeye sağ tıklayınca `Tüm sekmeleri kapat` çıkar. |
+| ❷ | İçerik sekmeleri | `Detaylar`, `Analiz`, `Görevler`, `İş Günlükleri`, `Çözümler`, `Süreçler` ve `Geçmiş`. Yanlarındaki sayılar o sekmedeki kayıt adedidir. |
+| ❸ | Problem numarası | Numara, aynı anda bu problemi görüntüleyen diğer teknisyenler ve bağlantı kopyalama. |
+| ❹ | Araç çubuğu | Kaydetme, atama, kapatma ve diğer işlemler (aşağıda). |
+| ❺ | Sekme içeriği | Seçili sekmenin içeriği; burada `Detaylar`. |
+| ❻ | **Kullanıcı / Bilgiler** | Problemi bildiren kişinin bilgileri (iş tanımı, e-posta, telefon, şirket…) ve problemin oluşturulma, kapatılma tarihleri ile kapatma açıklaması. |
+| ❼ | `Özellikler` | Problemin düzenlenebilir alanları (aşağıda). |
+
+## Araç çubuğu
+
+![Problem numarası ve araç çubuğu](/img/teknisyen/prb-detay-arac-cubugu.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | Problem numarası | Açık olan problemin numarası. |
+| ❷ | **Bağlantıyı Kopyala** | Problemin adresini panoya kopyalar. |
+| ❸ | `Kaydet` | `Özellikler` panelinde yaptığınız değişiklikleri kaydeder. Kaydedilmemiş değişiklik yoksa çerçeveli görünür. |
+| ❹ | `Bana Ata` | Problemi size atar; onay ister. Problem zaten size atanmışsa görünmez. |
+| ❺ | `Kapat` | Problemi kapatır. Kapalı problemde yerine `Yeniden Aç` çıkar. Bkz. [Durumlar ve Kapatma](/docs/teknisyen/moduller/problemler/durumlar-ve-kapatma). |
+| ❻ | **Diğer Eylemler** | Ek işlemler menüsü (aşağıda). |
+| ❼ | Sürükleme modu | Açıkken `Detaylar` sekmesindeki kartların sırasını sürükleyerek değiştirebilirsiniz; düzen bu tarayıcıda saklanır. |
+
+Siz problemi açtıktan sonra başka biri aynı problemi değiştirirse ekranda uyarı çıkar ve sayfayı yenilemeden kaydedemezsiniz.
+
+### Diğer eylemler
+
+![Diğer Eylemler menüsü](/img/teknisyen/prb-detay-diger-eylemler.png)
+
+| # | Grup | Öğeler |
+|---|---|---|
+| ❶ | Çözüm ve silme | `Çözüm Ekle` çözüm penceresini açar; `Sil` problemi siler. |
+| ❷ | Dosya ve e-posta | `Dosya Ekle`, `Cevapla` ve `İlet` sizi `Detaylar` sekmesine götürür; dosyayı `Dosyalar` kartından, e-postayı `Görüşmeler` kartından gönderirsiniz. |
+| ❸ | Kayıt ekleme | `Not Ekle`, `Görev Ekle` ve `İş Günlüğü Ekle` ilgili pencereyi açar. |
+| ❹ | Diğer | `Otomasyonlar` problem için tanımlanmış elle çalıştırılabilir otomasyon kurallarını listeler. `Çıktı Al` problemi bir yazdırma şablonuyla PDF olarak indirmenizi ya da dışa aktarmanızı sağlar. İkisi de kurumunuzda tanımlanmış kural ve şablon gerektirir. |
+
+## Özellikler paneli
+
+Sağdaki `Özellikler` paneli problemin temel alanlarını taşır. Değişiklik yaptıktan sonra araç çubuğundaki `Kaydet`e basın.
+
+![Özellikler paneli](/img/teknisyen/prb-detay-ozellikler.png)
+
+| # | Alanlar | Açıklama |
+|---|---|---|
+| ❶ | `Konu`, `Kullanıcı`, `Teknisyen Grubu`, `Teknisyen` | `Konu` zorunludur. Kullanıcı problemi bildiren kişidir; grup ve teknisyen problemin sorumlularıdır. |
+| ❷ | `Durum`, `Öncelik`, `Kategori` | `Durum` zorunludur. Açık bir problemde yalnızca açık aşamadaki durumlar listelenir. |
+| ❸ | **Hedef Kapanış** | Problemin çözülmesi hedeflenen tarih ve saat. Problemlerde SLA yoktur; bu tarih elle girilir. |
+| ❹ | `İş Etkisi`, `Aciliyet` | Problemin işe etkisi ve ne kadar acil olduğu. |
+
+Kapalı ya da silinmiş bir problemde alanlar salt okunur olur.
+
+## Detaylar sekmesi
+
+![Detaylar sekmesi](/img/teknisyen/prb-detay-detaylar.png)
+
+| # | Kart | Ne işe yarar |
+|---|---|---|
+| ❶ | Konu ve açıklama | Problemin tanımı. Kalem simgesiyle açıklamayı yerinde düzenleyip kaydedebilirsiniz. |
+| ❷ | `Dosyalar` | Probleme eklenen dosyalar. Sağdaki simgeyle yeni dosya yüklersiniz; her dosya indirilebilir ve silinebilir. |
+| ❸ | Görüşme süzgeci | `Notlar`, `Gelen Posta` ve `Giden Posta` kutularıyla görüşme listesinde ne gösterileceğini seçersiniz. |
+| ❹ | Görüşme düğmeleri | `Cevapla`, `Tümünü Cevapla` ve `İlet` e-posta yazar; `Not Ekle` probleme not ekler. |
+| ❺ | Görüşme listesi | Notlar ve e-postalar tarih sırasıyla. Kilit simgesi özel notu gösterir. Her satırda görüntüleme, düzenleme ve silme simgeleri bulunur. |
+
+Problemle ilgili sistem bildirimi varsa listenin altında `Sistem Bildirimleri` kartı da görünür. En alttaki kart, problemin özel form alanlarını gösterir.
+
+### Not ekleme
+
+`Not Ekle` penceresinde notunuzu yazıp `Kaydet`e basın.
+
+![Not Ekle penceresi](/img/teknisyen/prb-detay-not-ekle.png)
+
+`Özel Not` ❶ varsayılan olarak işaretlidir; özel notlar görüşme listesinde kilit simgesiyle gösterilir. Notu düzenleyip düzenleyemeyeceğiniz rolünüzdeki not yetkilerine bağlıdır; bkz. [Yetkiler](/docs/teknisyen/moduller/problemler/yetkiler).
+
+## Geçmiş
+
+`Geçmiş` sekmesi problemde yapılan her işlemi kimin ne zaman yaptığıyla birlikte listeler.
+
+![Geçmiş sekmesi](/img/teknisyen/prb-detay-gecmis.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | **Geçmiş** ve **Harcanan Süre** | `Geçmiş` işlem listesini, `Harcanan Süre` problemin her durumda ne kadar kaldığını gösterir. |
+| ❷ | **Operasyon Tipi** | Listeyi ekleme, güncelleme gibi operasyona göre süzer. |
+| ❸ | `İşlem Tipi` | Listeyi not, görev, çözüm gibi işlem türüne göre süzer. |
+| ❹ | Tarih aralığı | Belirli bir tarih aralığındaki işlemleri gösterir. |
+| ❺ | İşlem listesi | Tarih, işlem ve işlemi yapan kişi; en yeni işlem üstte. |

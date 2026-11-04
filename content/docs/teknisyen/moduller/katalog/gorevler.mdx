@@ -1,0 +1,112 @@
+---
+title: "Ön Tanımlı Görevler"
+description: "Katalog öğesiyle açılan isteklerde kendiliğinden oluşan görevler: görev ekleme, koşullar, görev onayları ve iş akış diyagramı."
+reviewed: "2026-09-28"
+owner: berdanasen
+---
+
+Bir hizmetin karşılanması çoğu zaman birden fazla ekibin işidir. Örneğin bilgisayar talebinde
+önce donanım siparişi verilir, ardından cihaz hazırlanır, en son kullanıcıya zimmetle teslim
+edilir. Bu adımları katalog öğesine **ön tanımlı görev** olarak eklerseniz, öğeyle açılan her
+istekte görevler kendiliğinden oluşur ve ilgili ekiplere atanır.
+
+Görevler öğe sayfasının `Detaylar` sekmesinde, en alttaki
+`Servis İş Akışı - Ön Tanımlı Görevler` bölümünde tanımlanır.
+
+![Ön tanımlı görevler bölümü](/img/teknisyen/katalog-gorevler.png)
+
+| # | Öge | Ne işe yarar |
+|---|---|---|
+| ❶ | `Görev Ekle` | Başlık, açıklama, grup, teknisyen, öncelik ve kategoriyle kısa bir görev tanımlar |
+| ❷ | `Özel Görev Ekle` | Görevi görev formuyla, daha fazla alanla tanımlar |
+| ❸ | `Diyagram` | Görevlerin hangi sırayla açılacağını belirler |
+| ❹ | `Görevleri istek onaylanınca ekle` | İşaretliyse görevler, istek onay sürecini tamamladıktan sonra oluşturulur. İşaretli değilse görevler istek açılır açılmaz oluşturulur |
+| ❺ | `Görevleri belirlenen sıraya göre oluştur` | İşaretliyse görevler diyagramdaki sırayla açılır: bir görev, kendinden önceki görev kapanana kadar bekler |
+| ❻ | Görev listesi | Öğeye tanımlı görevler; görevin atanacağı grup, teknisyen, kategori ve öncelik |
+
+<Callout type="info" title="ÖNEMLİ">
+Öğede onay adımları varsa `Görevleri istek onaylanınca ekle` seçeneğini işaretleyin. Böylece
+onaylanmayan isteklere boşuna görev açılmaz. Öğede onay adımı yoksa görevler seçenekten
+bağımsız olarak istekle birlikte oluşturulur.
+</Callout>
+
+## Görev ekleme
+
+`Görev Ekle` butonuna tıkladığınızda görev listesinin altında görev formu açılır.
+
+![Görev Ekle formu](/img/teknisyen/katalog-gorev-ekle.png)
+
+- `Görev Başlığı`: İstekte açılacak görevin adı. Zorunludur.
+- `Görev Açıklaması ve Prosedürü`: Görevi üstlenen teknisyenin yapacağı işin adımları.
+- `Grup`, `Teknisyen`: Görevin atanacağı teknisyen grubu ve teknisyen.
+- `Öncelik`, `Kategori`: Görevin önceliği ve kategorisi.
+
+`Kaydet`'e bastığınızda görev listeye eklenir.
+
+## Özel görev ekleme
+
+`Özel Görev Ekle` butonu `Yeni Görev Ekle` panelini açar. Bu panelde görev, kurumunuzun görev
+formundaki bütün alanlarla tanımlanır.
+
+![Yeni Görev Ekle paneli](/img/teknisyen/katalog-ozel-gorev.png)
+
+- `Şablon` listesinden daha önce kaydedilmiş bir görev şablonunu seçerseniz alanlar şablondaki
+  bilgilerle dolar.
+- `Başlık` ve `Açıklama` zorunludur.
+- `Durum`, `Öncelik`, `Kullanıcı`, `Teknisyen Grubu`, `Teknisyen`, `Kategori`, tarih ve süre
+  alanlarını isteğe göre doldurun. Görevle birlikte dosya da yükleyebilirsiniz.
+
+`Kaydet` görevi listeye ekler, `Vazgeç` paneli kapatır.
+
+## Görev satırındaki butonlar
+
+![Görev satırındaki butonlar](/img/teknisyen/katalog-gorev-satir.png)
+
+| # | Buton | Ne yapar |
+|---|---|---|
+| ❶ | `Düzenle` | Görevin bilgilerini değiştirir |
+| ❷ | `Koşullar` | Görevin hangi durumda oluşturulacağını belirler |
+| ❸ | `Onaylar` | Görev için onaycı seçer |
+| ❹ | `Sil` | Görevi öğeden kaldırır |
+
+### Koşullar
+
+Bir görevin her istekte değil, yalnızca belirli durumlarda açılmasını istiyorsanız koşul
+tanımlayın. Örneğin formda ek monitör istendiyse monitör hazırlama görevi açılsın.
+
+![Koşullar penceresi](/img/teknisyen/katalog-gorev-kosul.png)
+
+`Bir alan seç` listesinden isteğin bir alanını seçip değerini belirleyin. Birden fazla koşul
+eklemek için `+` butonunu kullanın; koşullardan hepsinin mi (`VE`) yoksa birinin mi (`VEYA`)
+sağlanması gerektiğini üstteki seçimle belirleyin. Koşul tanımlı bir görev, istek açıldığında
+koşul sağlanmıyorsa oluşturulmaz.
+
+### Onaylar
+
+`Onaylar` penceresinde seçtiğiniz kişiler, görev oluşturulduğunda görevin onaycısı olur. Görev
+açıldığında bu kişilerin onayına gönderilir.
+
+![Onaylar penceresi](/img/teknisyen/katalog-gorev-onaylar.png)
+
+## İş akış diyagramı
+
+`Diyagram` butonu `Servis İş Akış Diyagramı` penceresini açar. Diyagramda en solda katalog
+öğesi, sağında görevler bulunur. Oklar görevlerin sırasını gösterir: okun ucundaki görev,
+okun başındaki görevden sonra gelir.
+
+![Servis İş Akış Diyagramı](/img/teknisyen/katalog-diyagram.png)
+
+Örnekteki öğede önce `Donanım siparişi`, sonra `Cihazın hazırlanması`, en son
+`Teslim ve zimmet` görevi açılır. Sırayı değiştirmek için bir okun ucunu tutup başka bir
+görevin üzerine sürükleyin, ardından `Kaydet`'e basın. Aynı görevden çıkan birden fazla ok, o görevden sonra
+birden fazla görevin aynı anda açılacağı anlamına gelir.
+
+Diyagramdaki sıranın uygulanması için `Görevleri belirlenen sıraya göre oluştur` seçeneğinin
+işaretli olması gerekir. Seçenek işaretli değilse bütün görevler aynı anda açılır.
+
+<Callout type="info" title="ÖNEMLİ">
+Diyagram, öğe kaydedildikten sonra düzenlenebilir. Yeni bir öğede görevleri ekleyip öğeyi
+kaydedin, ardından öğeyi `Düzenle` ile açarak diyagramı hazırlayın.
+</Callout>
+
+![Yeni öğede diyagram uyarısı](/img/teknisyen/katalog-yeni-oge-diyagram.png)

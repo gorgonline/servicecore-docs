@@ -1,76 +1,59 @@
 ---
-title: "Katalog Yapısı ve Öğe Oluşturma"
-description: "Katalog içerisinde servis ağacı denilen yerde hizmet kategorileri bulunmaktadır."
-reviewed: "2026-07-30"
-owner:
+title: "KATALOG"
+description: "Hizmet katalogu: kullanıcıların istek açtığı hizmetlerin kategorileri, öğeleri, onay adımları ve görevleri."
+reviewed: "2026-09-28"
+owner: berdanasen
 ---
 
-Katalog içerisinde servis ağacı denilen yerde hizmet kategorileri bulunmaktadır. Hizmet katagorileri kırılımlı bir yapıda yapılmaktadır. Kategorilerin altına öğe girişleri gerçekleştirilmektedir. Aşağıdaki ekranda görülebileceği gibi herhangi bir kategori seçilmediği için tüm öğeleri getirmiştir. Bu öğelere istek butonuna tıklayarak istek kaydı açabilirsiniz. Açtığınız istek kaydı istekler modülü üzerinden yönetilecektir çünkü katalog ile istekler modülü eş zamanlı olarak çalışmaktadır.
+Hizmet katalogu, kullanıcıların talep edebileceği hizmetlerin listesidir. Bilgisayar talebi,
+yazılım kurulumu ya da VPN erişimi gibi her hizmet katalogda bir **öğe** olarak tanımlanır.
+Öğeler kategorilere ayrılır. Kullanıcı ya da teknisyen katalogdan bir öğe seçtiğinde o öğe için
+bir istek açılır; istek bundan sonra [İstekler](/docs/teknisyen/moduller/talepler) modülünde
+yönetilir.
 
-![Kata](/img/teknisyen/katalog1.png)
+Bir öğe, açılan isteğin nasıl ilerleyeceğini baştan belirler:
 
-`Öğe ekleme` işlemi aşağıdaki buton üzerinden sağlanmaktadır.
+- İsteğin **formu**: kullanıcıdan hangi bilgilerin isteneceği
+- İsteğin **onay adımları**: kimlerin onayından geçeceği
+- İsteğin **görevleri**: onaydan sonra hangi ekiplere hangi işlerin açılacağı
+- İsteğin **atanacağı** teknisyen grubu, varsayılan önceliği ve kimlerin göreceği
 
-![Kata](/img/teknisyen/katalog-g1.png)
+![Katalog ekranı](/img/teknisyen/katalog-yerlesim.png)
 
-Gelen ekran üzerinde hizmet adı, kısa açıklama, açıklama alanları doldurulur.
+<Callout type="info" title="ÖNEMLİ">
+Bu bölümdeki yeni sayfalar **yeni katalog ekranını** anlatır. Yeni ekran `Genel Ayarlar`
+altındaki **Yeni İstek V2 sayfasına yönlendir** seçeneği ile açılır. Seçenek kapalıysa katalog
+klasik ekranda görüntülenir; bu durumda "(Klasik Ekran)" ile işaretli sayfaya bakın.
+</Callout>
 
-`Maliyet` alanı öğenin yapılırken oluşturduğu maliyeti girmenize yarar. Girdiğiniz maliyeti kullanıcıya açabilirsiniz.
+## Bu bölümdeki sayfalar
 
-`Teslim süresi` öğenin hangi süre zarfı boyunca tam olarak yerine getirileceğini kapsar. Bu alanı kullanıcıya açabilirsiniz.
-
-`Storypoint` alanı öğenin diğer öğelere göre karşılaştırılması sonucu değeridir.
-
-![Kata](/img/teknisyen/katalog3.png)
-
-`Hizmet kategorisi` alanı üzerinden oluşturulan öğenin katalog sayfası üzerindeki servis ağacında bulunan hizmet kategorilerinin hangisinde yer alması gerektiği seçilir.
-
-`Öncelik` alanı açılan istek kayıtlarının aşamalandırılması için girilmesi gereken gerekli bir alandır.
-
-**Teknisyen grubu ve teknisyen** alanı istek oluştuğunda hangi teknisyen grubunun ve teknisyenin bu isteği yerine getireceğini seçmenize yarar.
-
-**Yetkili kullanıcı grupları** alanı bu isteğin hangi kullanıcı gruplarına görünsün veya gözükmesin işlemini yapmanıza yarar.
-
-![Kata](/img/teknisyen/katalog14.png)
-
-Yeni öğe içerisinde `onay süreçleri` oluşturulabilir.
-
-## Temel Onay Akışı
-
-- Müdür onayı
-
-- Gruplar için onay
-
-- Kullanıcılar için onay
-
-![Kata](/img/teknisyen/katalog6.png)
-
-Bu aşamada `insiyatif` özelliği açılır ise yetkili teknisyenler onaylayıcılar olmadan onların yerine onay verip reddedebilir. **Tüm aşamalar onaylanmalıdır** seçilirse her eklenen onaycının bu isteğin yapılabilmesi için onay vermesi gerekmektedir seçilmediği durumda herhangi bir onaycı onay verdiğinde işlem yapılacaktır.
-
-## Dinamik Onay Akışı
-
-Dinamik onay akışı `if-else` komutlarıyla oluşturulmuş bir yapıda kurulur. Buranın değer girişinin yapılabilmesi için admin tarafından şemayı çıkartmak gerekecektir. Şema çıkarıldıktan sonra aşağıdaki alan üzerinden eklenebilir.
-
-![Kata](/img/teknisyen/katalog9.png)
-
-**Servis iş akışı – görevler** alanı istek oluştuğu andan itibaren onay süreci sonrasında belli gruplara ve teknisyenlere atanan görevleri oluşturur. Görevler iş akışının takibi için gereklidir.
-
-![Kata](/img/teknisyen/katalog10.png)
-
-`Görev ekle` alanından görev ekleme `diyagram` alanından ise eklediğiniz görevleri `öncül-ardıl` ilişkilendirme yapabilirsiniz.
-
-`Özel ek alanlar` alanından istek kullanıcı tarafından açılırken belirtilen alanların dışında istediğiniz ek bir bilgi varsa ekleme işlemi gerçekleştirilir ve eklenen özel ek alan `zorunlu` kılınabilir. Bu sayede kullanıcı bilgi girişi yapmadan isteği açamayacaktır.
-
-![Kata](/img/teknisyen/katalog11.png)
-
-![Kata](/img/teknisyen/katalog12.png)
-
-![Kata](/img/teknisyen/katalog-g2.png)
-
-Yeni öğe eklendikten sonra aşağıdaki şekilde gözükmektedir. **Düzenlenebilir ve silinebilir** konumdadır.
-
-![Kata](/img/teknisyen/katalog4.png)
-
-Servis Ağacının altında bulunan `arama` bölümünden kategorileri ve öğeleri aratabilirsiniz.
-
-![Kata](/img/teknisyen/katalog-g3.png)
+<Cards>
+  <Card title="Genel Bakış" href="/docs/teknisyen/moduller/katalog/katalog2">
+    Servis katalogu yönetiminin amacı ve süreç şeması.
+  </Card>
+  <Card title="Katalog Ekranı" href="/docs/teknisyen/moduller/katalog/katalog-ekrani">
+    Servis ağacı, arama, öğe kartı, liste görünümü, düzenleme ve silme.
+  </Card>
+  <Card title="Katalog Öğesi Oluşturma" href="/docs/teknisyen/moduller/katalog/oge-olusturma">
+    Yeni öğe, temel bilgiler, maliyet ve teslim süresi, atama ve görünürlük.
+  </Card>
+  <Card title="Onay Akışı" href="/docs/teknisyen/moduller/katalog/onay-akisi">
+    Müdür onayı, grup ve kullanıcı onay aşamaları, iş akışı.
+  </Card>
+  <Card title="Ön Tanımlı Görevler" href="/docs/teknisyen/moduller/katalog/gorevler">
+    Görev ekleme, görev koşulları ve onayları, iş akış diyagramı.
+  </Card>
+  <Card title="Form ve Katalog İlişkileri" href="/docs/teknisyen/moduller/katalog/form-ve-iliskiler">
+    Öğeye özel form bağlama ve birlikte açılacak ilişkili öğeler.
+  </Card>
+  <Card title="Kategoriler ve Sıralama" href="/docs/teknisyen/moduller/katalog/kategoriler">
+    Servis ağacındaki kategorilerin ve öğelerin yönetimi.
+  </Card>
+  <Card title="Yetkiler" href="/docs/teknisyen/moduller/katalog/yetkiler">
+    Katalog yetkileri ve rol ekranından nasıl verildikleri.
+  </Card>
+  <Card title="Katalog Yapısı ve Öğe Oluşturma (Klasik Ekran)" href="/docs/teknisyen/moduller/katalog/katalog-klasik">
+    Klasik katalog ekranı ve öğe oluşturma.
+  </Card>
+</Cards>

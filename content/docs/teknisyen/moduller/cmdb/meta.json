@@ -1,7 +1,19 @@
 {
   "title": "CMDB (VARLIK VE ENVANTER)",
   "pages": [
-    "cmdb3",
-    "cmdb1"
+    "genel-bakis",
+    "pano",
+    "varlik-listesi",
+    "varlik-ekleme",
+    "varlik-detayi",
+    "iliskiler-ve-surecler",
+    "bagli-kayitlar-ve-sozlesmeler",
+    "zimmet-ve-toplu-islemler",
+    "sayim",
+    "hizmetler",
+    "lisanslar",
+    "aksesuarlar",
+    "sarf-malzeme",
+    "yetkiler"
   ]
 }

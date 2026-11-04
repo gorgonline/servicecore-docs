@@ -1,0 +1,35 @@
+---
+title: "Yetkiler"
+description: "Rol ekranındaki Problem yetkileri: problem oluşturma, görme kapsamı, düzenleme, not düzenleme, arşivleme, silme ve kapatma."
+reviewed: "2026-10-07"
+owner: oobcore
+---
+
+Bir teknisyenin Problemler modülünde neler yapabileceğini rolündeki **Problem** yetkileri belirler. Yetkiler `Ayarlar` › `Roller` ekranında, bir rolü açıp `Problem` sekmesine geçerek düzenlenir.
+
+![Rol ekranında Problem yetkileri](/img/teknisyen/prb-yetkiler.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | `Problem` sekmesi | Rolün Problemler modülüyle ilgili yetkileri. |
+| ❷ | **Problem Kaydı Oluşturabilir** | `Yeni Problem` düğmesini, hızlı kayıt panelindeki Problem kısayolunu ve olaydan yeni problem açmayı etkinleştirir. |
+| ❸ | **Problemleri Görebilir** | Modülün kendisi. Kapalıysa üst menüde `Problem` görünmez. |
+| ❹ | Düzenleme yetkileri | `Problemleri Düzenleyebilir` ve not düzenleme yetkileri. |
+| ❺ | Diğer yetkiler | Arşivleme, silme, kapatma ve silinen kayıtları görme. |
+
+## Yetkilerin ayrıntısı
+
+| Yetki | Neyi açar |
+|---|---|
+| **Problem Kaydı Oluşturabilir** | Yeni problem açma. |
+| **Problemleri Görebilir** | Problem listesini ve detaylarını görme. Alt seçenekleriyle kapsam daraltılır: `Grubundakiler` yalnızca teknisyenin kendi grubundaki problemleri, `Seçilen Gruplardakiler` yalnızca yanındaki listeden seçilen gruplardaki problemleri gösterir. |
+| **Problemleri Düzenleyebilir** | Problemin alanlarını değiştirme. |
+| **Notları Düzenleyebilir** | Problem notlarını düzenleme. `Herkesin Notlarını Düzenleyebilir` bütün notları, `Kendi Notlarını Düzenleyebilir` yalnızca kendi yazdığı notları düzenlemeye izin verir. |
+| **Problemleri Arşivleyebilir** | Problem arşivleme. Yeni problem ekranlarında bir arşivleme işlemi bulunmaz. |
+| **Problemleri Silebilir** | Problem silme (tek tek ve toplu). |
+| **Problemi Kapatabilir** | Problem kapatma (tek tek ve toplu). |
+| **Silinen Kayıtları Görebilir** | `Kontrol Paneli`ndeki `Silinmiş mi?` kutusunu etkinleştirir. |
+
+Diğer sekmelerde problemle ilgili iki yetki daha vardır: `Yönetici` sekmesindeki `Problem Şablonlarını Yönetebilir` ve `Görev` sekmesindeki `Görevin Bağlı Olduğu İlgili Kaydı Sadece Okunabilir Olarak Görüntüleyebilir`. İkincisi, problem görme yetkisi olmayan bir teknisyenin, kendisine atanmış bir görevin bağlı olduğu problemi salt okunur açabilmesini sağlar.
+
+Üst menüde `Problem`in görünmesi için kurumunuzun lisansında Problem modülünün bulunması da gerekir.

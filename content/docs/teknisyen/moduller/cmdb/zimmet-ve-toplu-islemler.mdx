@@ -1,0 +1,61 @@
+---
+title: "Zimmet ve Toplu İşlemler"
+description: "Seçili varlıklara toplu güncelleme, zimmet verme ve kaldırma, zimmet raporu, barkod yazdırma ve silme."
+reviewed: "2026-10-07"
+owner: necatikekec
+---
+
+`Varlıklar` listesinde satırları soldaki onay kutularıyla seçtiğinizde araç
+çubuğunda toplu işlem düğmeleri belirir. Parantez içindeki sayı seçili varlık
+adedidir. Seçim yalnızca ekrandaki sayfanın satırlarını kapsar.
+
+![Seçim yapılınca beliren düğmeler](/img/teknisyen/vrl-toplu-secim-cubugu.png)
+
+| # | Ne işe yarar |
+|---|---|
+| ❶ | **Toplu İşlem**: Seçili varlıkların ortak alanlarını tek seferde günceller. Bkz. [Toplu güncelleme](#toplu-güncelleme). |
+| ❷ | **Zimmet Raporu**: Seçili varlıklar için tek bir zimmet belgesi (PDF) üretir. Tüm seçili varlıklar aynı kullanıcıya zimmetli olmalıdır. |
+| ❸ | **Barkod Yazdır**: Seçili varlıkların barkod etiketlerini yazdırır. `Barkod` alanı boş olan varlıklar atlanır. |
+| ❹ | `Sil`: Seçili varlıkları siler. Onay istenir. Yalnızca silme yetkisi olanlara görünür. |
+| ❺ | `Zimmet`: Seçili varlıkları bir kullanıcıya zimmetler. Bkz. [Zimmet verme](#zimmet-verme). |
+| ❻ | **Zimmeti Kaldır**: Seçili varlıkların zimmetli kullanıcısını temizler. Onay istenir. |
+
+`Zimmet` ve **Zimmeti Kaldır** düğmeleri yalnızca varlık düzenleme yetkisi
+olanlara görünür.
+
+<Callout type="warn" title="DİKKAT">
+Silme kalıcıdır; silinen varlık geri alınamaz. Varlığın notları, geçmişi,
+finansal bilgileri ve ilişkileri de silinir.
+</Callout>
+
+## Toplu güncelleme
+
+![Toplu Güncelleme penceresi](/img/teknisyen/vrl-toplu-guncelleme.png)
+
+| # | Ne işe yarar |
+|---|---|
+| ❶ | **Bilgi notu**: Yalnızca doldurduğunuz alanlar seçili varlıklara uygulanır; boş bıraktığınız alanlar değişmez. |
+| ❷ | **Alanlar**: Durum, tür, konum, şirket, kullanıcı, üretici, tedarikçi, iş etkisi, varlık etiketi, alım ve bitiş tarihi ile açıklama. |
+| ❸ | `Güncelle`: Değişiklikleri seçili varlıklara uygular. |
+
+## Zimmet verme
+
+![Zimmet penceresi](/img/teknisyen/vrl-toplu-zimmet.png)
+
+| # | Ne işe yarar |
+|---|---|
+| ❶ | **Seçim sayısı**: Kaç varlığın zimmetleneceği. |
+| ❷ | `Kullanıcı`: Varlıkların zimmetleneceği kullanıcı. |
+| ❸ | `Kaydet`: Zimmeti kaydeder. Kullanıcı seçilmeden pasiftir. |
+
+<Callout type="warn" title="DİKKAT">
+Durumu **depo** olarak tanımlanmış (ör. `Depoda`) varlıklar kullanıcıya
+zimmetlenmez. Seçiminizde böyle bir varlık varsa ekranda başarı mesajı görünse de
+o varlığın zimmetli kullanıcısı değişmez. Zimmetten sonra listeyi kontrol edin
+ya da önce varlığın durumunu değiştirin.
+</Callout>
+
+Zimmet değişiklikleri varlığın `Durum Geçmişi` sekmesine yazılır (bkz.
+[Varlık Detayı](/docs/teknisyen/moduller/cmdb/varlik-detayi#durum-geçmişi)).
+Tek bir varlığın zimmeti, varlık formundaki `Zimmetli Kullanıcı` alanından da
+değiştirilebilir.

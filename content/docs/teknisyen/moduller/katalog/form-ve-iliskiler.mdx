@@ -1,0 +1,58 @@
+---
+title: "Form ve Katalog İlişkileri"
+description: "Katalog öğesine özel form bağlama ve öğeyle birlikte kendiliğinden açılacak ilişkili öğelerin tanımlanması."
+reviewed: "2026-09-28"
+owner: berdanasen
+---
+
+Öğe sayfasındaki iki sekme, öğeyle açılan isteğin **hangi bilgileri isteyeceğini** ve
+**hangi isteklerle birlikte açılacağını** belirler.
+
+## Ek Alanlarla Form Özelleştirme
+
+Her katalog öğesi bir forma bağlıdır. Kullanıcı öğeyi seçtiğinde bu form açılır; formdaki
+alanlar, hizmetin karşılanması için kullanıcıdan istenen bilgilerdir. Örneğin yazılım kurulum
+talebinde hangi programın kurulacağı ve bilgisayar adı istenir.
+
+![Ek Alanlarla Form Özelleştirme sekmesi](/img/teknisyen/katalog-oge-form.png)
+
+| # | Öge | Açıklama |
+|---|---|---|
+| ❶ | `Ek Alanlarla Form Özelleştirme` | Formun seçildiği sekme |
+| ❷ | `Özel Form` | Bu öğeyle açılan isteklerde kullanılacak form. Zorunludur |
+| ❸ | `Yeni özel form oluştur` | Özel formların hazırlandığı ekranı yeni bir tarayıcı sekmesinde açar |
+
+Aynı form birden fazla öğede kullanılabilir. Öğeye özel bir form yoksa varsayılan istek
+formunu seçebilirsiniz.
+
+## Katalog İlişkileri
+
+Bazı hizmetler genellikle birlikte istenir. Örneğin yeni bilgisayar isteyen bir çalışana
+çoğu zaman yazılım kurulumu da gerekir. `Katalog İlişkileri` sekmesinde bir öğeye ilişkili
+öğeler tanımlarsanız, öğe için istek açıldığında **ilişkili her öğe için de ayrı bir istek**
+kendiliğinden açılır ve ana istekle ilişkilendirilir.
+
+`Katalog İlişkileri` sekmesi yalnızca kaydedilmiş öğelerde bulunur.
+
+### İlişkili öğe ekleme
+
+![İlişkili öğe seçimi](/img/teknisyen/katalog-iliski-secim.png)
+
+1. Listeden ❶ ilişkilendirmek istediğiniz öğeleri seçin. Birden fazla öğe seçebilirsiniz.
+2. `Ekle` ❷ butonuna basın. İlişki hemen kaydedilir; öğe sayfasında ayrıca `Kaydet`'e basmanız
+   gerekmez.
+
+### İlişkili öğeler listesi
+
+![İlişkili öğeler](/img/teknisyen/katalog-iliskiler.png)
+
+| # | Öge | Açıklama |
+|---|---|---|
+| ❶ | İlişkili öğe | İlişkili öğenin adı ve kategorisi |
+| ❷ | `Detaylar` | İlişkili öğenin bilgilerini gösterir |
+| ❸ | `Sil` | İlişkiyi kaldırır. Öğenin kendisi silinmez |
+
+<Callout type="info" title="ÖNEMLİ">
+İlişkili öğeler için açılan isteklerin atanacağı grup, teknisyen ve öncelik, **ilişkili öğenin
+kendi ayarlarından** alınır. İsteği açan kullanıcı ve açıklama ana istekten aktarılır.
+</Callout>
