@@ -1,0 +1,62 @@
+---
+title: "Giriş ve Sunucu Bağlantısı"
+description: "Mobil uygulamayı kurumunuzun sunucusuna QR kodla bağlama, giriş yapma, şifre sıfırlama ve birim seçimi."
+reviewed: "2026-11-05"
+owner: boracetinservicecore
+---
+
+Uygulamayı ilk açtığınızda iki adım vardır: önce kurumunuzun ServiceCore sunucusuna bağlanırsınız, ardından kullanıcı adınız ve şifrenizle giriş yaparsınız. Sunucu bilgisi telefonda saklanır; bir sonraki açılışta doğrudan giriş ekranı gelir.
+
+## Sunucuya bağlanma
+
+![Sunucu bağlantı ekranının bölümleri](/img/teknisyen/mobil-giris-sunucu-yerlesim.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | Dil seçici | Uygulamanın dilini giriş yapmadan önce değiştirir. |
+| ❷ | `QR kodu tara` | Kamerayı açar. Sistem yöneticinizin verdiği sunucu QR kodunu çerçevenin içine getirin; kod okununca uygulama sunucuya bağlanır ve giriş ekranına geçer. |
+| ❸ | **Kayıtlı sunucular** | Daha önce bağlandığınız sunucular, en son kullanılan üstte. Satıra dokununca o sunucuya yeniden bağlanırsınız. |
+| ❹ | Sil | Sunucuyu listeden kaldırır; önce onay sorulur. |
+
+<Callout type="info" title="KAMERA İZNİ">
+QR kodu okutmak için uygulamaya kamera izni vermeniz gerekir. İzni daha önce reddettiyseniz ekranda **Kamera izni kapalı** uyarısı ve `Ayarları aç` düğmesi çıkar; izni telefonun ayarlarından açın.
+</Callout>
+
+QR kod `http://` ya da `https://` ile başlayan bir sunucu adresi içermelidir. İçermiyorsa uygulama kodun geçerli bir sunucu adresi içermediğini bildirir.
+
+## Giriş yapma
+
+![Giriş ekranının bölümleri](/img/teknisyen/mobil-giris-ekrani.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | Dil seçici | Giriş ekranından da dili değiştirebilirsiniz. |
+| ❷ | `Kullanıcı adı` | ServiceCore kullanıcı adınız, genellikle e-posta adresiniz. Zorunludur. |
+| ❸ | `Şifre` | Sağdaki göz simgesi şifreyi gösterir ya da gizler. Zorunludur. |
+| ❹ | `Şifremi unuttum` | Şifre sıfırlama penceresini açar (aşağıda). |
+| ❺ | `Giriş yap` | Bilgiler doğruysa uygulama [Pano](/docs/teknisyen/mobil/pano) ile açılır. Hatalıysa **Giriş yapılamadı** uyarısı çıkar. |
+
+Giriş düğmelerinin altında **Sunucu değiştir** düğmesi bulunur. Bu düğme kayıtlı sunucu adresini bırakıp sizi sunucu bağlantı ekranına geri götürür; başka bir kurumun sunucusuna geçmek için kullanılır.
+
+![Sunucu değiştir düğmesi](/img/teknisyen/mobil-giris-sunucu-degistir.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | `Sunucu değiştir` | Sunucu bağlantı ekranına döner. Daha önce bağlandığınız sunucular **Kayıtlı sunucular** listesinde kalmaya devam eder. |
+
+### Şifremi unuttum
+
+![Şifremi Unuttum penceresi](/img/teknisyen/mobil-giris-sifremi-unuttum.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | `E-posta` | Hesabınıza kayıtlı e-posta adresi. |
+| ❷ | `Bağlantı gönder` | Adres sistemde kayıtlıysa bu adrese şifre sıfırlama bağlantısı gönderilir. |
+
+Güvenlik nedeniyle uygulama adresin kayıtlı olup olmadığını söylemez; e-posta gelmezse adresi kontrol edip yeniden deneyin ya da sistem yöneticinize başvurun.
+
+## Birim seçimi
+
+Kurumunuz ServiceCore'u birden fazla birimle (kiracıyla) kullanıyorsa ve hesabınız birden çok birime bağlıysa, çalıştığınız birimi değiştirebilirsiniz. Bunun için [hesap menüsünden](/docs/teknisyen/mobil/genel-bakis#hesap-menüsü) **Birimi değiştir**'e dokunun ve listeden birimi seçin; uygulamayı seçtiğiniz birimde kullanmaya devam edersiniz.
+
+Hesabınız tek birime bağlıysa bu menü satırı görünmez.
