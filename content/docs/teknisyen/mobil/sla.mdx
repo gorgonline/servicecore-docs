@@ -1,0 +1,42 @@
+---
+title: "SLA"
+description: "Olay ve istek kayıtlarının SLA sekmesi: ilk yanıt ve çözüm süreleri, hedef tarihler, kalan süre ve eskalasyonlar."
+reviewed: "2026-11-05"
+owner: boracetinservicecore
+---
+
+`SLA` sekmesi, kayda uygulanan hizmet seviyesi anlaşmasının hedeflerini ve kaydın bu hedeflere göre nerede olduğunu gösterir. Sekme olay ve istek kayıtlarında, yalnız teknisyenlerde bulunur. Kayda SLA uygulanmıyorsa sekmede **Bu kayda SLA uygulanmıyor** yazar.
+
+## SLA sekmesi
+
+![SLA sekmesinin bölümleri](/img/teknisyen/mobil-sla-yerlesim.png)
+
+| # | Bölüm | Açıklama |
+|---|---|---|
+| ❶ | **İlk yanıt** | İlk yanıt süresinin ne kadarının kullanıldığı, çubuk ve yüzde olarak. |
+| ❷ | `Çözüm` | Çözüm süresinin ne kadarının kullanıldığı ve kalan süre, örneğin **53 sa 36 dk kaldı**. |
+| ❸ | **SLA bilgileri** | `SLA Adı`, **SLA Ölçü Birimi** (`Mesai saatleri` ya da 7/24) ve kaydın oluşturulma tarihi. Kayıt bir çağrıdan dönüştürüldüyse dönüştürülme tarihi de yazar. |
+| ❹ | **İlk yanıt** ayrıntıları | **Hedef Cevap Tarihi**, **İlk Cevap Tarihi**, yanıtın SLA içinde verilip verilmediği, kalan ve geçen süre (yüzde ve dakika) ve **Müdahale Eskalasyonları**. |
+
+Aşağı kaydırdığınızda **Çözüm** ayrıntıları gelir: **Hedef Çözüm Tarihi**, çözümün SLA içinde kalıp kalmadığı, kalan ve geçen süre ve **Çözüm Eskalasyonları**. Hedef aşıldıysa **Hedef Çözüm Tarihini Geçen Süre** de gösterilir. Kayıt beklemeye alındıysa SLA'nın durduğu ve bekleme ayrıntıları ayrı bir bölümde yer alır.
+
+Kalan ve geçen süre iki biçimde verilir: **Mesai saatine göre** (yalnız çalışma saatleri sayılır) ve **Toplam** (takvim süresi).
+
+## Durum renkleri
+
+İlk yanıt ve çözüm çubuklarının yanındaki etiket, sürenin durumunu gösterir:
+
+| Etiket | Anlamı |
+|---|---|
+| `Yolunda` | Kayıt hedef süre içinde ilerliyor. Çubuk yeşildir. |
+| `Riskte` | Hedef süreye yaklaşılıyor. |
+| **Süre aşıldı** | Hedef tarih geçti. Çubuk kırmızıdır. |
+
+Hedefi aşılmış bir kayıt şöyle görünür:
+
+![Süresi aşılmış SLA](/img/teknisyen/mobil-sla-asildi.png)
+
+| # | Bölüm | Açıklama |
+|---|---|---|
+| ❶ | **İlk yanıt** | İlk yanıt hedefi aşılmış; süre yüzde 100 kullanılmış. |
+| ❷ | `Çözüm` | Çözüm hedefi de aşılmış; çubuğun altında **Süre doldu** yazar. |

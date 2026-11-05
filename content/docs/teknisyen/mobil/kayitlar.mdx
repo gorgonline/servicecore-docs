@@ -1,0 +1,64 @@
+---
+title: "Kayıtlar"
+description: "Kayıt türlerine göre kayıt listesi: arama, rapor ve filtre seçimi, sayfa boyutu, kayıt kartı ve sayfalama."
+reviewed: "2026-11-05"
+owner: boracetinservicecore
+---
+
+`Kayıtlar` sekmesi tüm kayıtlarınızı türlerine göre listeler. Pano'daki bir karta ya da kayıtlı bir filtreye dokunduğunuzda da bu ekran açılır.
+
+## Ekranın bölümleri
+
+![Kayıtlar ekranının bölümleri](/img/teknisyen/mobil-kayitlar-yerlesim.png)
+
+| # | Bölüm | Ne işe yarar |
+|---|---|---|
+| ❶ | Kayıt türü sekmeleri | `Çağrı`, `Olay`, `Problem`, `İstek`, `İyileştirme`, `Değişiklik`, `Varlık`, `Sözleşme`, `Görev`. Sekmeler yana kaydırılır; seçili sekme altı çizili görünür. |
+| ❷ | Arama kutusu | Seçili türün kayıtları arasında arar. Arama sunucuda yapılır, yazmayı bıraktığınızda kendiliğinden başlar ve listeyi ilk sayfaya döndürür. |
+| ❸ | `Rapor seç` | Filtre panelini açar (aşağıda). |
+| ❹ | Kayıt sayısı | Listedeki toplam kayıt, örneğin **231 kayıt**. Bir filtre seçiliyse burada filtrenin adı görünür. |
+| ❺ | **Sayfa başına** | Bir sayfada kaç kayıt gösterileceğini seçer: 5, 10, 15 ya da 20. Varsayılan 10'dur. |
+| ❻ | Kayıt kartı | Kayda dokununca [Kayıt Detayı](/docs/teknisyen/mobil/kayit-detayi) açılır. |
+| ❼ | Sayfalama | `Önceki` ve `Sonraki` ile sayfalar arasında geçiş yapılır; ortada bulunduğunuz sayfa yazar. |
+
+`Problem`, `Değişiklik` ve `Görev` sekmeleri yalnız teknisyenlerde, `Sözleşme` sekmesi ise yalnız sözleşmeleri görme yetkisi olan teknisyenlerde görünür.
+
+## Kayıt kartı
+
+![Kayıt kartının bölümleri](/img/teknisyen/mobil-kayitlar-kart.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | Tür simgesi ve numara | Kaydın türü ve numarası, örneğin `#INC508`. |
+| ❷ | Durum | Kaydın durumu, kurumunuzda tanımlı renkle. |
+| ❸ | Konu | Kaydın başlığı. |
+| ❹ | Açıklama | Açıklamanın ilk iki satırı. |
+| ❺ | Grup ve teknisyen | Kaydın atandığı teknisyen grubu ve teknisyen. |
+| ❻ | Tarih | Kaydın oluşturulma tarihi ve saati. |
+| ❼ | Öncelik | Kaydın önceliği. |
+
+Başka bir kayda dönüştürülmüş çağrıların kartında ayrıca dönüştürüldüğü kaydın numarası bulunur; numaraya dokununca o kayıt açılır.
+
+## Rapor ve filtre seçimi
+
+![Filtre paneli](/img/teknisyen/mobil-kayitlar-filtre-paneli.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | Başlık | Panelin hangi tür için açıldığını gösterir, örneğin **Olay filtreleri**. |
+| ❷ | `Filtrelerim` | Bu türdeki kayıtlı filtreleriniz (bkz. [Pano › Filtrelerim](/docs/teknisyen/mobil/pano#filtrelerim)). |
+| ❸ | `Pano` | Hazır raporlar ve her birindeki kayıt sayısı, örneğin **Bana Atanan Açık Olaylarım (1)**. Seçili rapor onay işaretiyle görünür. |
+| ❹ | Kapat | Paneli seçim yapmadan kapatır. |
+
+Bir filtre seçtiğinizde liste yenilenir ve kayıt sayısının yerine filtrenin adı bir etiket olarak görünür:
+
+![Seçili filtre etiketi](/img/teknisyen/mobil-kayitlar-filtre-cipi.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | Filtre etiketi | Uygulanan filtrenin adı. Etikete dokununca filtre kaldırılır ve türün tüm kayıtları yeniden listelenir. |
+| ❷ | Süzülmüş liste | Yalnız filtreye uyan kayıtlar. Görseldeki örnekte **Açık Çağrılarım** filtresiyle size atanmış açık çağrılar listeleniyor. |
+
+## Boş liste
+
+Arama ya da filtre sonucunda kayıt yoksa **Veri bulunamadı** mesajı çıkar. Bir filtre uygulanmışsa mesajın altındaki `Filtreyi kaldır` düğmesiyle tüm kayıtlara dönebilirsiniz.

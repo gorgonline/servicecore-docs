@@ -1,0 +1,67 @@
+---
+title: "Genel Bakış"
+description: "ServiceCore mobil uygulamasına genel bakış: ekranın bölümleri, alt sekme çubuğu, tema düğmesi ve hesap menüsü."
+reviewed: "2026-11-05"
+owner: boracetinservicecore
+---
+
+ServiceCore mobil uygulaması, teknisyenlerin sahada ya da masa başı dışındayken kayıtlarını telefondan takip etmesi için hazırlanmıştır. Uygulamada size atanan kayıtları görür, kayıt açar, not ve e-posta yazar, görev ve iş günlüğü ekler, durum ve alanları günceller, bekleyen onaylarınızı sonuçlandırır ve duyuruları okursunuz.
+
+Uygulama, kurumunuzun ServiceCore sunucusuna bağlanır; web uygulamasında gördüğünüz kayıtlar ve yetkileriniz mobilde de aynıdır. İlk açılışta sunucuya nasıl bağlanacağınız [Giriş ve Sunucu Bağlantısı](/docs/teknisyen/mobil/giris) sayfasında anlatılır.
+
+## Temel kavramlar
+
+| Kavram | Anlamı |
+|---|---|
+| **Kayıt** | Uygulamada listelenen her iş öğesi: çağrı, olay, problem, istek, iyileştirme, değişiklik, varlık, sözleşme ya da görev. Her kaydın türünü belirten bir numarası vardır, örneğin `#INC298` (olay), `#SR452` (istek). |
+| **Pano** | Açılışta gelen ekran. Kayıt türlerine göre sayaçları ve size atanan açık kayıtların sayısını gösterir. |
+| **Rapor** | Kayıtlar listesini süzen hazır sorgu, örneğin **Bana Atanan Açık Olaylarım**. Pano kartlarının her biri bir rapordur. |
+| **Kayıtlı filtre** | Web uygulamasında kaydettiğiniz ya da kurumunuzda ortak kullanılan filtre görünümü. Mobilde `Filtrelerim` altında listelenir. |
+| **Durum** | Kaydın süreçteki yeri, örneğin `Atandı`, `Müşteri Bekleyen`, `Kapatılanlar`. Kayıt detayının sağ üstünde renkli etiketle görünür. |
+
+## Ekranın bölümleri
+
+![Mobil uygulamanın ana ekranının bölümleri](/img/teknisyen/mobil-genel-yerlesim.png)
+
+| # | Bölüm | Ne işe yarar |
+|---|---|---|
+| ❶ | Logo | Ana sekmelerde üst çubuğun solunda durur. |
+| ❷ | Tema düğmesi | Açık ve koyu tema arasında geçiş yapar. Ay simgesi `Koyu temaya geç`, güneş simgesi `Açık temaya geç` anlamına gelir. İlk açılışta uygulama telefonun temasını izler; düğmeye bir kez dokunduğunuzda seçiminiz sabitlenir. |
+| ❸ | Hesap menüsü | Profil resminize dokununca açılır. Bkz. [Hesap menüsü](#hesap-menüsü). |
+| ❹ | İçerik alanı | Seçili sekmenin içeriği. Görseldeki ekran [Pano](/docs/teknisyen/mobil/pano)'dur. |
+| ❺ | Alt sekme çubuğu | Uygulamanın beş ana bölümü arasında geçiş yapar (aşağıda). |
+
+## Alt sekme çubuğu
+
+| Sekme | Ne açar |
+|---|---|
+| `Pano` | Sayaç kartları ve kayıtlı filtreleriniz. Bkz. [Pano](/docs/teknisyen/mobil/pano). |
+| `Onay` | Size onay için gönderilen kayıtlar. Bkz. [Onaylar](/docs/teknisyen/mobil/onaylar). |
+| `Oluştur` | Bir sayfa açmaz; hangi türde kayıt açmak istediğinizi soran menüyü gösterir. Bkz. [Kayıt Oluşturma](/docs/teknisyen/mobil/kayit-olusturma). |
+| `Duyuru` | Kurumunuzda yayında olan duyurular. Bkz. [Duyurular](/docs/teknisyen/mobil/duyurular). |
+| `Kayıtlar` | Kayıt türlerine göre ayrılmış kayıt listesi. Bkz. [Kayıtlar](/docs/teknisyen/mobil/kayitlar). |
+
+Bir kaydın detayını, formu ya da duyuruyu açtığınızda alt sekme çubuğu yerini o ekranın kendi düğmelerine bırakır. Sol üstteki geri okuyla bir önceki ekrana dönersiniz.
+
+## Hesap menüsü
+
+![Hesap menüsü](/img/teknisyen/mobil-genel-hesap-menusu.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | Ad ve e-posta | Oturum açtığınız kullanıcı. |
+| ❷ | `Dil: Türkçe` | Uygulamanın dilini değiştirir (aşağıda). |
+| ❸ | `Çıkış yap` | Oturumu kapatır ve giriş ekranına döner. |
+
+Kurumunuz birden fazla birimle (kiracıyla) çalışıyorsa ve hesabınız birden çok birime bağlıysa menüde ayrıca **Birimi değiştir** satırı görünür. Bkz. [Birim seçimi](/docs/teknisyen/mobil/giris#birim-seçimi).
+
+### Dil seçimi
+
+![Dil seçimi](/img/teknisyen/mobil-genel-dil-secimi.png)
+
+| # | Seçenek | Açıklama |
+|---|---|---|
+| ❶ | `Türkçe` | Seçili dilin yanında onay işareti görünür. |
+| ❷ | `English` | Uygulamayı İngilizceye çevirir. |
+
+Ekran metinleri kurumunuzun sunucusundan indirilir. Bu yüzden web uygulamasında yapılan dil düzenlemeleri mobilde de görünür.

@@ -1,0 +1,133 @@
+---
+title: "Kayıt Türleri"
+description: "Mobilde kayıt türlerine göre farklar: hangi türde hangi sekmeler var; çağrı, problem, değişiklik, iyileştirme, görev, varlık ve sözleşme."
+reviewed: "2026-11-05"
+owner: boracetinservicecore
+---
+
+Bütün kayıt türlerinin detay ekranı aynı düzeni kullanır (bkz. [Kayıt Detayı](/docs/teknisyen/mobil/kayit-detayi)). Türler arasındaki fark, hangi sekmelerin ve işlemlerin bulunduğundadır.
+
+## Türlere göre sekmeler
+
+| Tür | Sekmeler |
+|---|---|
+| Çağrı | `Detay`, `Görüşmeler`, `Geçmiş` |
+| Olay | `Detay`, `SLA`, `Görüşmeler`, `Çözümler`, `Görevler`, `İş günlükleri`, `Süreçler`, `Geçmiş` |
+| İstek | `Detay`, `SLA`, `Görüşmeler`, `Çözümler`, `Görevler`, `İş günlükleri`, `Onay`, `Süreçler`, `Geçmiş` |
+| Problem | `Detay`, `Görüşmeler`, `Çözümler`, `Görevler`, `İş günlükleri`, `Süreçler`, `Geçmiş` |
+| Değişiklik | `Detay`, `Görüşmeler`, `Görevler`, `İş günlükleri`, `Plan`, `Onay`, `Süreçler`, `Geçmiş` |
+| İyileştirme | `Detay`, `Görüşmeler`, `İş günlükleri`, `Değerlendirme`, `Onay`, `Süreçler`, `Geçmiş` |
+| Görev | `Detay`, `Görüşmeler`, `İş günlükleri`, `Geçmiş` |
+| Varlık | `Detay`, `Görüşmeler`, `Geçmiş` |
+| Sözleşme | `Detay`, `Onay`, `Geçmiş` |
+
+`Onay` sekmesi yalnız kayıt için bir onay akışı varsa, `Plan` sekmesi yalnız değişikliğin plan bilgileri varsa görünür.
+
+## Çağrı
+
+Çağrı, kullanıcıdan gelen ilk başvurudur. Çağrıyı inceledikten sonra kapatabilir ya da bir olaya, isteğe veya iyileştirmeye dönüştürebilirsiniz.
+
+![Çağrı detayı](/img/teknisyen/mobil-turler-cagri-yerlesim.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | Çağrı numarası | `INT` ile başlayan numara, örneğin `#INT499`. |
+| ❷ | Sekmeler | Çağrıda yalnız `Detay`, `Görüşmeler` ve `Geçmiş` bulunur. |
+| ❸ | `Not ekle` | Çağrıya not ekler. |
+| ❹ | Dönüştürme düğmeleri | Soldan sağa `Olaya dönüştür`, `İsteğe dönüştür` ve `İyileştirmeye dönüştür`. Seçtiğiniz türün oluşturma formu çağrının bilgileriyle açılır; isteğe dönüştürmede önce katalogdan hizmet seçersiniz. Yalnız teknisyenlerde ve henüz dönüştürülmemiş çağrılarda görünür. |
+| ❺ | `Diğer işlemler` | `Kapat` ve `Kaydı sil`. |
+
+Dönüştürme formunu kaydettiğinizde çağrı kapanır ve yeni kayıt açılır. Yeni kaydın Süreçler sekmesinde çağrı **Dönüştürüldüğü kayıt** olarak görünür.
+
+## Problem
+
+Problem detayında açıklamanın altında problem yönetimine özgü üç kart bulunur:
+
+![Problem detayı](/img/teknisyen/mobil-turler-problem-yerlesim.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | Sekmeler | Problemde `SLA` sekmesi yoktur. |
+| ❷ | **Kök Neden** | Sorunun asıl nedeni. |
+| ❸ | `Belirtiler` | Problemin kullanıcılara nasıl yansıdığı. |
+| ❹ | **Etki Açıklaması** | Problemin işe etkisi. |
+
+Temel Bilgiler kartında ayrıca **Bilinen Hata** (`Evet` / `Hayır`) satırı vardır. Problemde not ekleme, e-posta, görev, dosya ekleme ve yeniden açma için problemi düzenleme yetkisi gerekir. **Diğer işlemler** menüsünde `Çöz` bulunmaz; problem `Kapat` ile kapatılır.
+
+## Değişiklik
+
+Değişikliğin planlama bilgileri `Plan` sekmesindedir:
+
+![Değişikliğin Plan sekmesi](/img/teknisyen/mobil-turler-degisiklik-plan-yerlesim.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | `Plan` sekmesi | Değişikliğin planlama bilgileri. |
+| ❷ | **Değişiklik Nedeni** | Değişikliğin neden yapıldığı. Altında **Etki Açıklaması** gelir. |
+| ❸ | **Uygulama Planı** | Değişikliğin nasıl uygulanacağı. |
+| ❹ | **Geri Alma Planı** ve **Geri Alma Testi** | Değişiklik başarısız olursa nasıl geri alınacağı ve bunun nasıl sınandığı. |
+
+Sekmenin devamında **İnceleme Açıklaması** ve **Maliyet Bilgileri** (`Toplam Maliyet`, **İç İşgücü (Saat)**, **Donanım Maliyeti**, **Yazılım Maliyeti**, **Kurulum Maliyeti**) bulunur. Değişiklikte de **Diğer işlemler** menüsünde `Çöz` yoktur.
+
+## İyileştirme
+
+Sürekli iyileştirme kayıtlarının değerlendirme bilgileri `Değerlendirme` sekmesindedir. İyileştirmede `Görevler` sekmesi yoktur.
+
+![İyileştirmenin Analiz bölümü](/img/teknisyen/mobil-turler-iyilestirme-analiz.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | **Analiz** | **İlgili İş Hedefleri**, `Faydalar`, **Gereken İş Gücü**, `Maliyetler` ve `Riskler`. |
+| ❷ | Düzenle | Her analiz alanının yanındaki kalem simgesi o alanı ayrı bir ekranda düzenler. |
+
+![İyileştirmenin Değerlendirme ve Gözden Geçirme bölümleri](/img/teknisyen/mobil-turler-iyilestirme-degerlendirme.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | **Toplam Skor** | Değerlendirme ölçütlerinden hesaplanan genel puan. |
+| ❷ | Değerlendirme ölçütleri | **Risk Seviyesi**, **Maliyet Seviyesi**, **Hedef Destek**, **Uygulama Hızı** ve **Yatırım Getirisi**. Her ölçüt 20–100 arası puan alır; çubuğun rengi olumlu, orta ya da olumsuz olduğunu gösterir. Kalem simgesiyle puanlar düzenlenir. |
+| ❸ | **Gözden Geçirme** | **Bir Sonraki Gözden Geçirme Tarihi** ve **Gözden Geçirme Notları**. Gözden geçirme bilgileri `Gözden Geçirmeyi Kaldır` ile silinebilir. |
+
+Sekmenin sonunda **Tahminler** (tahmini süre ve maliyet, bütçeli, KPI ve projelendirilmiş bilgileri) yer alır. İyileştirmenin Detay sekmesinde ayrıca **Kaynak Türü** alanı ve `Etiketler` kartı bulunur.
+
+## Görev
+
+Görevin kendi detay ekranı, bağlı olduğu kaydı da gösterir:
+
+![Görev detayı](/img/teknisyen/mobil-turler-gorev-yerlesim.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | Bağlı kayıt | Görevin açıldığı kayıt, örneğin `#INC298` olayı. Dokununca o kayıt açılır. |
+| ❷ | Sekmeler | `Detay`, `Görüşmeler`, `İş günlükleri` ve `Geçmiş`. |
+| ❸ | **Görev Adı** ve açıklama | Görevin adı kalem simgesiyle düzenlenir. |
+| ❹ | **Temel Bilgiler** | `Öncelik`, `Kategori`, `Durum`, `Tamamlanma` (%), **Tahmini Süre**, **Toplam Maliyet** ve `Tamamlandı`. |
+| ❺ | İşlem çubuğu | `Not ekle`, `İş günlüğü ekle`, `Dosya ekle` ve `Diğer işlemler`. |
+
+Görevde **Diğer işlemler** menüsünde `Tamamla` ve `Kaydı sil` bulunur; kapatma ve yeniden açma yoktur. `Tamamla` görevi tamamlandı olarak işaretler.
+
+## Varlık
+
+![Varlık detayı](/img/teknisyen/mobil-turler-varlik-yerlesim.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | Varlık numarası | Varlığın numarası, örneğin `DMB-2023-00412`. |
+| ❷ | Durum | Varlığın durumu, örneğin `Kullanımda`. Dokununca değiştirilir. |
+| ❸ | Sekmeler | Varlıkta `Detay`, `Görüşmeler` ve `Geçmiş` bulunur. |
+| ❹ | **Temel Bilgiler** | **Varlık Türü**, **İş Etkisi**, `Barkod`, `Seri No`, `Varlık No`, **Sipariş No** ve `Maliyet`. Kalem simgeli alanlar düzenlenir. |
+| ❺ | İşlem çubuğu | Yalnız `Not ekle` ve `Dosya ekle` bulunur. |
+
+Detay sekmesinin devamında **Kullanıcı Bilgileri**, **Konum Bilgileri**, **Tedarikçi / Üretici**, garanti ve kullanım bilgileri ile varlık türüne özgü alanlar (örneğin bellek, işletim sistemi) yer alır. İşlem çubuğu yalnız varlığı düzenleme yetkisi olan teknisyenlerde görünür.
+
+## Sözleşme
+
+![Sözleşme detayı](/img/teknisyen/mobil-turler-sozlesme-yerlesim.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | Sözleşme numarası | Örneğin `#CNR497`. |
+| ❷ | Sekmeler | `Detay`, `Onay` ve `Geçmiş`. |
+| ❸ | **Temel Bilgiler** | **Sözleşme Modeli**, **Sözleşme Tipi**, `Durum`, `Aktif`, **İptal Edildi**, **Otomatik Yenileme**, **Yenileme Süresi**, başlangıç ve bitiş tarihleri. |
+
+Devamında **Firma / Departman** (firma, bölüm, hesap, hizmet planı) ve atama bilgileri yer alır. Sözleşmelerde alanlar mobilde düzenlenmez; işlem çubuğunda yalnız `Dosya ekle` bulunur. Sözleşmeleri görmek için sözleşme görüntüleme yetkiniz olmalıdır.
