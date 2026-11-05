@@ -1,0 +1,100 @@
+---
+title: "Sayfaları Bulma"
+description: "Tüm sayfalar listesi, arama, sıralama, filtreler, kart ve liste görünümü, favoriler ve hızlı arama penceresi."
+reviewed: "2026-10-06"
+owner: oobcore
+---
+
+Bilgi Bankası'ndaki bir sayfaya üç yoldan ulaşırsınız: `Tüm sayfalar` listesinden, kenar çubuğundaki `Sayfalarda ara` ile açılan hızlı aramadan ya da yıldızladığınız sayfaları topladığınız `Favori` listesinden.
+
+## Tüm sayfalar
+
+Kenar çubuğunda `Tüm sayfalar`a tıkladığınızda görme yetkiniz olan bütün sayfalar listelenir. Başlığın yanındaki sayı toplam sayfa adedidir.
+
+![Tüm sayfalar ekranının bölümleri](/img/teknisyen/kb-tum-sayfalar-yerlesim.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | **Sayfa başlığında ara** | Yazdığınız kelime sayfa başlıklarında aranır, liste anında daralır. |
+| ❷ | Sıralama | `En yeni`, `Son güncellenen`, `En çok okunan` ya da `En faydalı`. En faydalı sıralaması okuyucuların "faydalı oldu" oylarına göre yapılır. |
+| ❸ | `Filtreler` | Ayrıntılı süzme panelini açar (aşağıda). |
+| ❹ | `Tümünü Seç` | Ekrandaki bütün sayfaları seçer. Tek tek seçmek için kartın sol üstündeki kutuyu işaretleyin. |
+| ❺ | Görünüm | Kart görünümü ile liste görünümü arasında geçiş yapar. |
+| ❻ | Sayfa kartı | Bir sayfanın özeti. Karta tıklayınca sayfa açılır. |
+
+Listenin altında kaç kayıttan kaçının gösterildiği ve sayfa başına kayıt sayısı seçimi yer alır.
+
+### Sayfa kartı
+
+![Sayfa kartının bölümleri](/img/teknisyen/kb-tum-sayfalar-kart.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | Sayfa numarası | Her sayfanın tekil `KB` numarası. Bir sayfayı arkadaşınıza tarif ederken bu numarayı kullanabilirsiniz. |
+| ❷ | Yıldız ve `Diğer işlemler` | Yıldız sayfayı favorilerinize ekler ya da çıkarır; `⋯` menüsü hızlı işlemleri açar. |
+| ❸ | Başlık | Sayfanın başlığı; altında içeriğin ilk satırları görünür. |
+| ❹ | Durum | Sayfanın durumu: `Onaylandı`, `Onay Bekliyor`, `Onaylanmadı`, `Kullanımdan Kalktı` ya da `Arşivde`. Yanında gerekirse bir uyarı daha çıkar: `Gözden geçirme bugün`, `Gözden geçirme: 5 gün`, `36 gün gecikti`, `Süresi doldu` ya da `Silindi`. |
+| ❺ | Yazar ve tarih | Sayfayı son güncelleyen kişi ve ne zaman güncellendiği. |
+
+### Hızlı işlemler
+
+Kartın `⋯` (`Diğer işlemler`) menüsünden sayfayı açmadan işlem yapabilirsiniz.
+
+![Kart menüsü](/img/teknisyen/kb-tum-sayfalar-kart-menu.png)
+
+Menü ❶ sayfanın durumuna göre değişir:
+
+| Sayfanın durumu | Menüde görünenler |
+|---|---|
+| **Onay Bekliyor** | `Onayla`, `Reddet`, `Düzenle`, `Sayfayı aç`, `Sil` |
+| `Onaylanmadı` | `Onayla`, `Düzenle`, `Sayfayı aç`, `Sil` |
+| `Onaylandı` | `Onayı geri al`, `Düzenle`, `Sayfayı aç`, `Sil` |
+
+Silinmiş bir sayfanın menüsünde yalnızca `Geri yükle` ve `Sayfayı aç` bulunur. Onay işlemlerini yalnızca onay yetkisi olan kullanıcılar görür. Onay sürecinin ayrıntıları için bkz. [Onay ve Yaşam Döngüsü](/docs/teknisyen/moduller/bilgi-bankasi/onay-ve-yasam-dongusu).
+
+### Toplu silme ve geri yükleme
+
+Bir ya da birden fazla kartı seçtiğinizde liste üstünde kaç sayfa seçtiğiniz yazar (`12 seçili` gibi) ve iki düğme belirir: `Sil` seçili sayfaların hepsini siler, `Seçimi Temizle` seçimi kaldırır. Silinen sayfaları listelediğinizde `Sil` yerine `Geri yükle` çıkar; böylece yanlışlıkla silinen sayfaları toplu olarak geri alabilirsiniz.
+
+### Liste görünümü
+
+Görünüm düğmelerinin ikincisi ❶ sayfaları tablo olarak gösterir. Çok sayıda sayfayı karşılaştırırken daha kullanışlıdır: başlık, `KB` numarası, durum, son güncelleme ve görüntülenme sayısı tek satırda görünür.
+
+![Liste görünümü](/img/teknisyen/kb-tum-sayfalar-liste.png)
+
+## Filtreler
+
+`Filtreler` düğmesi sağda bir panel açar. Birden fazla alanı birlikte kullanabilirsiniz; liste yalnızca hepsine uyan sayfaları gösterir. Filtre uyguladığınızda düğmenin adı `Filtre (2)` gibi kaç filtrenin açık olduğunu gösterir; panelin üstündeki `Temizle` hepsini sıfırlar.
+
+![Filtre paneli](/img/teknisyen/kb-tum-sayfalar-filtreler.png)
+
+| # | Grup | Alanlar |
+|---|---|---|
+| ❶ | `Ara` | `KB Numarası`, `Anahtar Kelime` ve `Etiketler`. |
+| ❷ | `Sınıflandır` | `Durum`, `Kategori` ve `Oluşturan`. |
+| ❸ | **Tarih ve okunma** | `Oluşturulduğu Tarih` aralığı ve `Görüntüleme Sayısı` (örneğin "daha büyük" 100). |
+| ❹ | **Silinen Kayıtlar** | İşaretlenirse silinmiş sayfalar da listeye gelir. Bu kutuyu yalnızca silinen makaleleri görme yetkisi olanlar görür. |
+
+`Durum` alanı varsayılan olarak `Etkin (arşiv hariç)` gelir; yani arşivlenmiş sayfalar siz istemedikçe listede görünmez. Diğer seçenekler: `Yayında`, `Onay Bekliyor`, `Taslak`, `Taslaklarım` (yalnızca sizin taslaklarınız), `Kullanımdan kalkan` ve `Arşiv`.
+
+## Hızlı arama
+
+Kenar çubuğundaki `Sayfalarda ara` kutusuna tıkladığınızda ya da herhangi bir Bilgi Bankası ekranında `⌘ K` (Windows'ta `Ctrl K`) tuşladığınızda `Hızlı bul` penceresi açılır. Henüz bir şey yazmadıysanız son görüntülediğiniz sayfaları ve favorilerinizi gösterir. Yazmaya başladığınız anda sonuçlar `Sayfalar`, `Alanlar` ve `Komutlar` gruplarında gelir; aradığınız kelime sonuçlarda vurgulanır.
+
+![Hızlı arama penceresi](/img/teknisyen/kb-hizli-arama.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | Arama kutusu | Aradığınız kelimeyi yazın. |
+| ❷ | `Sayfalar` | Eşleşen sayfalar; numarası, tarihi ve yayında olmayan sayfalarda durumu görünür. |
+| ❸ | **başlığıyla yeni sayfa oluştur** | Aradığınızı bulamadıysanız, yazdığınız kelimeyi başlık yapıp hemen yeni bir sayfa başlatır. |
+| ❹ | **Tüm modüllerde ara** | Aramayı Bilgi Bankası dışına taşır; olay, istek ve diğer kayıtlarda da arar. |
+| ❺ | Klavye kısayolları | `↑` `↓` ile sonuçlar arasında gezinin, `Enter` ile açın, `⌘ Enter` ile yeni sekmede açın, `Esc` ile kapatın. |
+
+## Favoriler
+
+Bir sayfayı sık kullanıyorsanız kartındaki ya da sayfanın içindeki yıldıza tıklayarak favorilerinize ekleyin. Kenar çubuğundaki `Favori` bağlantısı yalnızca yıldızladığınız sayfaları listeler; `Sizin için` sayfasındaki `İş listeniz` kartında da `Favoriler` sekmesi bulunur. Favorileriniz yalnızca size görünür.
+
+<Callout type="info" title="KLAVYE KISAYOLLARI">
+Bilgi Bankası'nda üç kısayol vardır: `⌘ K` / `Ctrl K` hızlı arama, `⌘ E` / `Ctrl E` açık sayfayı düzenleme, `⌘ S` / `Ctrl S` editörde kaydetme. Hızlı arama penceresinde `Klavye kısayolları` yazarak listeyi her zaman görebilirsiniz.
+</Callout>

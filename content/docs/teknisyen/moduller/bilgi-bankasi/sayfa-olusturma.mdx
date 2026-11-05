@@ -1,0 +1,128 @@
+---
+title: "Sayfa Oluşturma"
+description: "Boş sayfa, şablon, sihirbaz ya da dosyadan içe aktarmayla yeni Bilgi Bankası sayfası oluşturma; Ayrıntılar paneli ve onaya gönderme."
+reviewed: "2026-10-06"
+owner: oobcore
+---
+
+Yeni bir sayfaya dört yoldan başlayabilirsiniz: boş bir sayfayla, hazır bir şablonla, bir sihirbazla ya da elinizdeki bir dosyayı içe aktararak. Hepsinin sonunda aynı editör açılır ve sayfa onaya gönderilir.
+
+## Oluştur menüsü
+
+Kenar çubuğunun en üstündeki `Oluştur` düğmesi üç seçenek sunar.
+
+![Oluştur menüsü](/img/teknisyen/kb-olustur-menu.png)
+
+| # | Seçenek | Ne yapar |
+|---|---|---|
+| ❶ | `Sayfa` | Boş bir sayfayla editörü açar. |
+| ❷ | **Şablondan başla** | `Şablonlar` sayfasını açar; bir şablon seçip onunla başlarsınız. Bkz. [Şablonlar](/docs/teknisyen/moduller/bilgi-bankasi/sablonlar). |
+| ❸ | **Dosyadan içe aktar** | Word ya da Markdown dosyasından sayfa oluşturur (aşağıda). |
+
+Başka kısayollar da vardır: hızlı aramada bulamadığınız bir başlık için `"…" başlığıyla yeni sayfa oluştur`, bir alanın sayfa ağacında `Alt sayfa oluştur`.
+
+## Editör
+
+![Yeni sayfa editörünün bölümleri](/img/teknisyen/kb-editor-yerlesim.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | `Şablondan Oluştur` ve `Sihirbaz` | Boş sayfaya bir şablonun ya da sihirbazın içeriğini getirir (aşağıda). |
+| ❷ | `Kapat` | Editörü kapatır. Kaydedilmemiş değişiklik varsa uyarı çıkar; `Ayrıl` değişiklikleri bırakır, `Kal` editöre döner. |
+| ❸ | `Onaya gönder` | Sayfayı kaydeder ve onaya gönderir. Klavyeden `⌘ S` / `Ctrl S` ile de çalışır. |
+| ❹ | Başlık | Sayfanın başlığı. Boşken "Bu sayfaya bir başlık ekleyin" yazar. |
+| ❺ | Araç çubuğu | Biçimlendirme ve blok ekleme. Bkz. [Editör ve Bloklar](/docs/teknisyen/moduller/bilgi-bankasi/editor). |
+| ❻ | İçerik | Sayfanın gövdesi. Yazarken `/` tuşuna basarak blok menüsünü açabilirsiniz. |
+| ❼ | `Ayrıntılar` | Kategori, etiket, tarih ve yetki bilgileri (aşağıda). |
+
+Konum satırının yanında kaydedilmemiş değişiklik olup olmadığı yazar (`Kaydedilmemiş değişiklikler`).
+
+Var olan bir sayfayı `Düzenle` ile açtığınızda aynı editör gelir; tek fark ana düğmenin `Güncelle` olmasıdır. Yayındaki bir sayfayı güncellemek onu yeniden onaya göndermez.
+
+<Callout type="info" title="AYNI ANDA DÜZENLEME">
+Bir sayfayı birden fazla kişi aynı anda düzenleyebilir; diğer düzenleyenlerin baş harfleri editörün üst çubuğunda görünür. Siz düzenlerken sayfa başka biri tarafından kaydedilirse editör sizi uyarır ve devam etmek, üzerine yazmak ya da güncel sürümü yeni sekmede açmak arasında seçim yapmanızı ister.
+</Callout>
+
+## Ayrıntılar paneli
+
+İçeriğin altındaki `Ayrıntılar` paneli sayfanın sınıflandırma bilgilerini taşır. Sağ üstteki `»` simgesiyle paneli gizleyip açabilirsiniz.
+
+![Ayrıntılar paneli](/img/teknisyen/kb-editor-ayrintilar.png)
+
+| # | Alan | Açıklama |
+|---|---|---|
+| ❶ | `Kategori` | **Zorunlu.** Sayfanın ait olduğu kategori. Kategori, sayfanın kimlere görüneceğini de belirler (❼). |
+| ❷ | **Anahtar Kelime** | Sayfanın etiketleri. Var olan bir etiketi seçebilir ya da yenisini yazabilirsiniz. Altında, başlığa ve içeriğe göre `Önerilen etiketler` çıkar; tıklayınca eklenir. |
+| ❸ | `Gözden geçirme tarihi` ve `Son geçerlilik tarihi` | İçeriğin ne zaman kontrol edileceği ve ne zamana kadar geçerli olduğu. Bkz. [Onay ve Yaşam Döngüsü](/docs/teknisyen/moduller/bilgi-bankasi/onay-ve-yasam-dongusu#gözden-geçirme-ve-son-geçerlilik). |
+| ❹ | **Bilgi Alanları** | Sayfanın ekleneceği alan. Seçerseniz sayfa o alanın sayfa ağacına eklenir. |
+| ❺ | **Şablon Olarak Kaydet** | Açarsanız sayfa normal sayfa olarak değil, kurum şablonu olarak kaydedilir. Yalnızca şablon yönetme yetkisi olanlar görür. |
+| ❻ | `Ekler` | `Dosya Yükle` ile sayfaya dosya ekleyin. Ekler sayfanın altında listelenir. |
+| ❼ | **Yetki Tanımlama** | Seçtiğiniz kategorinin görünürlük ayarları (aşağıda). |
+
+### Yetki Tanımlama
+
+Bir kategori seçtiğinizde `Yetki Tanımlama` sekmesinde o kategorinin hangi gruplara açık olduğu görünür.
+
+![Yetki Tanımlama sekmesi](/img/teknisyen/kb-editor-yetki.png)
+
+- `Yetkili Kullanıcı Grupları`: son kullanıcı portalında bu kategorideki sayfaları görebilecek kullanıcı grupları.
+- `Teknisyen Grupları`: bu kategorideki sayfaları görebilecek teknisyen grupları.
+
+<Callout type="warn" title="DİKKAT">
+Bu ayar **kategoriye** aittir, yalnızca bu sayfaya değil. Burada yaptığınız değişiklik o kategorideki bütün sayfaları etkiler. Yalnızca bir sayfayı kısıtlamak istiyorsanız sayfanın `Paylaş` penceresini kullanın; bkz. [Paylaşım ve Erişim](/docs/teknisyen/moduller/bilgi-bankasi/paylasim-ve-erisim). Bu alanları değiştirmek için erişim kısıtlarını yönetme yetkisi gerekir; yetkiniz yoksa salt okunur görünür.
+</Callout>
+
+## Şablondan oluşturma
+
+Editörün üst çubuğundaki `Şablondan Oluştur` düğmesi `Şablon seçin` penceresini açar.
+
+![Şablon seçin penceresi](/img/teknisyen/kb-sablon-secici.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | **Şablonlarda ara** | Şablon adında arar. |
+| ❷ | **Tüm kategoriler** | Şablonları kategoriye göre süzer. |
+| ❸ | Şablon listesi | Önce `Kurumunuzun şablonları`, sonra ServiceCore ile gelen `Hazır şablonlar`. Tıkladığınız şablonun önizlemesi sağda görünür. |
+| ❹ | **Şablonu kullan** | Seçili şablonun içeriğini editöre aktarır. |
+
+Editörde zaten bir içerik varsa, şablonun içeriği değiştirmeden önce onay ister.
+
+## Sihirbazla oluşturma
+
+Bazı sayfa türleri için içeriğin bir kısmını sizin yerinize dolduran sihirbazlar vardır. Editördeki `Sihirbaz` düğmesine tıklayın ve bir sihirbaz seçin.
+
+![Sihirbazla oluştur penceresi](/img/teknisyen/kb-sihirbaz.png)
+
+| # | Sihirbaz | Ne sorar |
+|---|---|---|
+| ❶ | **Post-Mortem sihirbazı** | Olay, tarih, etki seviyesi ve etki özeti. Seçtiğiniz olayın bilgileri ve zaman çizelgesi sayfaya hazır gelir. |
+| ❷ | **Toplantı notu sihirbazı** | Toplantı başlığı, tarih ve katılımcılar. Katılımcılar sayfada etiketlenir. |
+
+![Post-Mortem sihirbazı](/img/teknisyen/kb-sihirbaz-postmortem.png)
+
+Alanları doldurup `Forma aktar` ❸ düğmesine basın; sihirbaz sonucu editöre yazar, siz de sayfayı tamamlayıp onaya gönderirsiniz. `Olay` ❶ alanında olay numarası ya da konusuyla arayabilirsiniz.
+
+<Callout type="warn" title="DİKKAT">
+Post-Mortem sihirbazı ❷ olayın konusunu, tarihlerini ve çözüm açıklamasını sayfaya **metin olarak** kopyalar. Sayfayı okuyan herkes, o olayı görme yetkisi olmayanlar dahil, bu bilgileri görür.
+</Callout>
+
+## Dosyadan içe aktarma
+
+Elinizde Word ya da Markdown belgeleri varsa onları tek tek kopyalamak yerine içe aktarabilirsiniz. `Oluştur` menüsünden `Dosyadan içe aktar`ı seçin.
+
+![İçe aktar penceresi](/img/teknisyen/kb-ice-aktar.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | Dosya alanı | Dosyayı sürükleyip bırakın ya da tıklayıp seçin. Desteklenen biçimler: `.md`, `.docx` ve `.zip`; en fazla 20 MB. |
+| ❷ | `Kategori` | **Zorunlu.** Oluşacak sayfaların kategorisi. |
+| ❸ | **Bilgi Alanı (isteğe bağlı)** | Seçerseniz sayfalar o alanın sayfa ağacına eklenir. |
+| ❹ | `İçe aktar` | Aktarımı başlatır. |
+
+Her `.md` ya da `.docx` dosyası bir sayfa olur. Bir `.zip` yüklediğinizde zip içindeki klasörler seçtiğiniz alanda bölüm, dosyalar da sayfa olur. İçe aktarılan sayfalar da onaya gider.
+
+`Dosyadan içe aktar`ı görmek için hem makale oluşturma hem de dosyadan içe aktarma yetkisi gerekir.
+
+## Onaya gönderme
+
+Sayfanız hazır olduğunda `Onaya gönder`e basın. Kategori seçmediyseniz editör uyarır. Gönderilen sayfa **İncelemede** durumuna geçer, onaylayanların listesine düşer ve siz de onu `Sizin için` sayfasındaki `Gönderdiklerim` sekmesinden izlersiniz. Bkz. [Onay ve Yaşam Döngüsü](/docs/teknisyen/moduller/bilgi-bankasi/onay-ve-yasam-dongusu).

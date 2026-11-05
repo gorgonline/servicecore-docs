@@ -1,20 +1,74 @@
 ---
 title: "Şablonlar"
-description: "Sık kullanılan çözüm türleri için hazır şablon havuzu ve şablondan yeni kayıt oluşturma."
-reviewed: "2026-08-18"
-owner:
+description: "Hazır ve kurum şablonları, şablon önizlemesi, şablonla sayfa başlatma ve kurum şablonu oluşturma."
+reviewed: "2026-10-06"
+owner: oobcore
 ---
 
-KB modülündeki `Şablonlar` sekmesi, tekrar eden çözüm türleri için hazırlanmış şablon kayıtlarını listeler.
+Şablon, yeni bir sayfaya hazır bir yapıyla başlamanızı sağlar: başlıklar, tablolar, paneller ve doldurulacak yerler hazırdır, siz yalnızca içeriği yazarsınız. Aynı türdeki sayfalar (sorun giderme, bilinen hata, toplantı notu…) böylece hep aynı düzende olur ve okuyan aradığını kolay bulur.
 
-![Şablonlar](/img/teknisyen/kb-sablonlar.jpg)
+İki tür şablon vardır:
 
-Bir kayıt, oluşturma veya düzenleme formundaki `Şablon Olarak Kaydet` seçeneği açılarak şablon havuzuna eklenir; bkz. [KB Kaydı Oluşturma](/docs/teknisyen/moduller/bilgi-bankasi/bilgibankasi).
+- **Hazır şablonlar:** ServiceCore ile gelir; destek, BT hizmet yönetimi, mühendislik, ekip, toplantı, proje, ürün, insan kaynakları, finans, pazarlama, satış, strateji ve hukuk konularında 100'ü aşkın şablon. Değiştirilemez, ama kopyalanıp kurum şablonuna dönüştürülebilir.
+- **Kurumunuzun şablonları:** Kurumunuzda oluşturulan şablonlar. Yetkili kullanıcılar bunları düzenleyip silebilir.
 
-<Callout type="info" title="ÖNEMLİ">
-Şablonlar da normal çözüm kayıtları gibi onay sürecinden geçer; yayınlanmadan önce `Onay Bekliyor` durumunda görünür. Bkz. [Onay Süreci](/docs/teknisyen/moduller/bilgi-bankasi/bilgibankasi3).
+## Şablonlar sayfası
+
+Kenar çubuğundaki `Şablonlar` bağlantısı tüm şablonları listeler.
+
+![Şablonlar sayfasının bölümleri](/img/teknisyen/kb-sablonlar-yerlesim.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | `Yeni şablon` | Boş bir kurum şablonu açar (aşağıda). Yalnızca şablon yönetme yetkisi olanlar görür. |
+| ❷ | **Şablonlarda ara** | Şablon adında arar. |
+| ❸ | Sıralama | `Önerilen` ya da `Ada göre`. |
+| ❹ | `Filtreler` | Şablonları `Kategori` ve `Etiketler`e göre süzer. |
+| ❺ | **Kurumunuzun şablonları** | Kurumunuzda oluşturulmuş şablonlar. |
+| ❻ | **Hazır şablonlar** | ServiceCore ile gelen şablonlar. |
+
+Arama kutusunun altında kaç şablondan kaçının gösterildiği yazar.
+
+## Şablon önizlemesi
+
+Bir şablon kartına tıkladığınızda sağda önizleme açılır.
+
+![Kurum şablonunun önizlemesi](/img/teknisyen/kb-sablon-onizleme-kurum.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | `Önceki şablon` / `Sonraki şablon` | Önizlemeyi kapatmadan şablonlar arasında gezinir. |
+| ❷ | Kaynak | Şablonun nereden geldiği; kurum şablonunda oluşturan kişi de yazar. |
+| ❸ | **Şablonu kullan** | Bu şablonla yeni bir sayfa açar. |
+| ❹ | `Düzenle` | Kurum şablonunu editörde açar. |
+| ❺ | **Kopyala ve düzenle** | Şablonun bir kopyasını yeni bir kurum şablonu olarak açar. |
+| ❻ | `Sil` | Kurum şablonunu siler. |
+
+Önizlemenin altında şablonun tam içeriği görünür.
+
+Hazır şablonlarda `Düzenle` ve `Sil` yoktur; önizlemede "ServiceCore ile gelir, düzenlenemez." yazar ❶. Bir hazır şablonu kurumunuza uyarlamak istiyorsanız `Kopyala ve düzenle` ❸ ile kopyasını alın; kopya `Kurumunuzun şablonları` arasına eklenir.
+
+![Hazır şablonun önizlemesi](/img/teknisyen/kb-sablon-onizleme-hazir.png)
+
+## Şablonla sayfa başlatma
+
+Şablonla yeni sayfa açmanın üç yolu vardır:
+
+- `Şablonlar` sayfasında bir şablonu açıp `Şablonu kullan`a tıklayın.
+- `Sizin için` sayfasındaki önerilen şablonlardan birine tıklayın.
+- Yeni sayfa editöründe `Şablondan Oluştur` ile şablon seçin; bkz. [Sayfa Oluşturma](/docs/teknisyen/moduller/bilgi-bankasi/sayfa-olusturma#şablondan-oluşturma).
+
+Şablondan açılan sayfa normal bir sayfadır: içeriği istediğiniz gibi değiştirip onaya gönderirsiniz. Şablonun kendisi değişmez.
+
+## Kurum şablonu oluşturma
+
+Kurum şablonu iki yoldan oluşturulur:
+
+- `Şablonlar` sayfasında `Yeni şablon`a tıklayın. Editör açılır; ana düğme `Şablonu kaydet` olur.
+- Yazdığınız bir sayfayı şablona dönüştürmek için editörün `Ayrıntılar` panelinde `Şablon Olarak Kaydet` anahtarını açın.
+
+Kurum şablonları onaya gitmez; kaydedildiği anda herkesin kullanımına açılır. Şablon oluşturmak, düzenlemek ve silmek için rolünüzde kurum şablonlarını yönetme yetkisi bulunmalıdır. Şablonu kullanmak için makale oluşturma yetkisi yeterlidir.
+
+<Callout type="info" title="İPUCU">
+Şablona doldurulacak yerleri açıkça yazın ("Belirtiyi buraya yazın" gibi) ve bölümleri başlıklarla ayırın. Şablona bir `İçindekiler` bloğu eklerseniz şablondan oluşan her sayfada içindekiler kendiliğinden oluşur.
 </Callout>
-
-## Şablondan Yeni Kayıt Oluşturma
-
-`KB` sekmesinde `Yeni Bilgi Kaydı` formunun sağ üstündeki `Şablondan Oluştur` bağlantısı ile, seçilen şablonun gövde içeriği taban alınarak yeni bir çözüm kaydı başlatılabilir.

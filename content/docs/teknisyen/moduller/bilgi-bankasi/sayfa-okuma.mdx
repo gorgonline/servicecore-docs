@@ -1,0 +1,104 @@
+---
+title: "Sayfayı Okuma"
+description: "Bir Bilgi Bankası sayfasının bölümleri: üst çubuk, sağ panel (içindekiler, ayrıntılar, bağlantılar), geri bildirim, etiketler ve Diğer işlemler menüsü."
+reviewed: "2026-10-06"
+owner: oobcore
+---
+
+Bir sayfaya listeden, hızlı aramadan ya da bir bağlantıdan tıkladığınızda sayfa okuma görünümünde açılır. İçerik ortada, kolay okunacak genişlikte durur; araçlar üstteki çubukta ve sağdaki dar panelde toplanır.
+
+## Sayfanın bölümleri
+
+![Sayfa okuma ekranının bölümleri](/img/teknisyen/kb-sayfa-okuma-yerlesim.png)
+
+| # | Bölüm | Ne işe yarar |
+|---|---|---|
+| ❶ | Konum | Sayfaya hangi listeden ya da alandan geldiğiniz. Bir öğeye tıklayarak oraya dönebilirsiniz. |
+| ❷ | İşlemler | Düzenleme, paylaşma ve diğer işlemler (aşağıda). |
+| ❸ | Başlık | Sayfanın başlığı, yazarı, tarihi ve tahmini okuma süresi. |
+| ❹ | İçerik | Sayfanın kendisi. Metin seçip yorum ekleyebilirsiniz; bkz. [Yorumlar ve Takip](/docs/teknisyen/moduller/bilgi-bankasi/yorumlar). |
+| ❺ | Sağ panel | `İçindekiler`, `Yorumlar`, `Ayrıntılar` ve `Bağlantılar` panelleri. Bir simgeye tıklayınca ilgili panel açılır; aynı anda tek panel açık kalır. |
+
+### Başlıktaki uyarılar
+
+Başlığın altında, gerektiğinde sizi uyaran şeritler çıkar:
+
+- **Arşivdeki sayfa:** "Bu makale arşivde. Listelerde, aramada ve önerilerde görünmez; yalnız bağlantıyla açılır."
+- **Kullanımdan kalkan sayfa:** "Bu makale kullanımdan kaldırıldı. İçerik güncel olmayabilir ve öneri olarak sunulmaz."
+- **Gözden geçirme zamanı:** "Gözden geçirmeye 5 gün kaldı", "Gözden geçirme tarihi bugün" ya da tarih geçmişse içeriğin güncel olmayabileceği uyarısı. Sayfayı düzenleme yetkiniz varsa şeritteki `Gözden geçirildi` düğmesiyle içeriği kontrol ettiğinizi kaydedebilirsiniz.
+- **Başkası düzenliyor:** "Şu an düzenleyen: …" Sayfa o anda başka biri tarafından düzenleniyorsa kim olduğunu gösterir.
+
+## Üst çubuk
+
+![Üst çubuktaki işlemler](/img/teknisyen/kb-sayfa-okuma-ust-cubuk.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | `Güncellendi` | Son güncelleme zamanı ve sayfaya katkı verenlerin baş harfleri. Geniş ekranda görünür. |
+| ❷ | `Düzenle` | Sayfayı editörde açar. Klavyeden `⌘ E` / `Ctrl E` ile de açılır. Bkz. [Editör](/docs/teknisyen/moduller/bilgi-bankasi/editor). |
+| ❸ | `Paylaş` | Sayfanın kimlere açık olduğunu ayarlar ve giriş gerektirmeyen dış bağlantı oluşturur. Kilit simgesi sayfanın kısıtlı olup olmadığını gösterir. Bkz. [Paylaşım ve Erişim](/docs/teknisyen/moduller/bilgi-bankasi/paylasim-ve-erisim). |
+| ❹ | **Bağlantıyı Kopyala** | Sayfanın adresini panoya kopyalar. |
+| ❺ | **Diğer işlemler** | Aşağıdaki menüyü açar. |
+
+Onay bekleyen bir sayfayı açtığınızda ve onay yetkiniz varsa bu çubukta `Onayla` ve `Reddet` düğmeleri de çıkar. Bkz. [Onay ve Yaşam Döngüsü](/docs/teknisyen/moduller/bilgi-bankasi/onay-ve-yasam-dongusu).
+
+## Diğer işlemler
+
+![Diğer işlemler menüsü](/img/teknisyen/kb-sayfa-okuma-diger-islemler.png)
+
+| # | Grup | Menü öğeleri |
+|---|---|---|
+| ❶ | Kişisel | `Favorilere ekle` sayfayı favorilerinize alır. `Takip et` ile sayfa her değiştiğinde e-posta alırsınız; takip ettiğiniz sayfada öğe `Takibi bırak` olur. |
+| ❷ | Geçmiş ve durum | `Sürüm geçmişi` sayfanın tüm sürümlerini gösterir (yanında güncel sürüm numarası yazar). `Durum işlemleri` sayfayı arşivleme, kullanımdan kaldırma, yeniden yayınlama gibi işlemleri içerir. `Kim okudu` sayfayı okuyan teknisyenleri listeler. |
+| ❸ | Kopya ve dışa aktarma | `Bir kopyasını oluştur` sayfanın "(Kopya)" ekli bir eşini açar; kopya onaya gider. `Dışa aktar` altında `Word olarak indir` ve `PDF olarak yazdır` seçenekleri vardır. |
+| ❹ | `Sil` | Sayfayı siler. Silinen sayfa, yetkili kullanıcılar tarafından `Tüm sayfalar` listesinden geri yüklenebilir. |
+
+Menüde yalnızca yetkinizin yettiği işlemler görünür. Sürüm geçmişi ve okuyanlar için bkz. [Sürüm Geçmişi](/docs/teknisyen/moduller/bilgi-bankasi/surum-gecmisi); durum işlemleri için bkz. [Onay ve Yaşam Döngüsü](/docs/teknisyen/moduller/bilgi-bankasi/onay-ve-yasam-dongusu).
+
+## Sayfanın altı
+
+İçeriğin bittiği yerde okuyucuların kullandığı üç bölüm vardır.
+
+![Sayfanın alt bölümü](/img/teknisyen/kb-sayfa-okuma-alt-bolum.png)
+
+| # | Bölüm | Ne işe yarar |
+|---|---|---|
+| ❶ | **Bu makale faydalı oldu mu?** | `Evet` ya da `Hayır` ile oy verirsiniz; yanlarında şimdiye kadarki oy sayısı yazar. `Hayır` dediğinizde neyin eksik ya da hatalı olduğunu yazabileceğiniz isteğe bağlı bir kutu açılır. Bu oylar `En faydalı` sıralamasını ve analitik raporlarını besler. |
+| ❷ | Etiketler | Sayfanın etiketleri. Bir etikete tıklayınca aynı etiketi taşıyan bütün sayfalar listelenir. |
+| ❸ | `Yorumlar` | Sayfa hakkındaki genel yorumlar ve yanıtları. Bkz. [Yorumlar ve Takip](/docs/teknisyen/moduller/bilgi-bankasi/yorumlar). |
+
+Sayfaya dosya eklenmişse bu bölümün üstünde `Ekler` listesi de görünür.
+
+## Sağ panel
+
+Sağ kenardaki simgeler sayfayla ilgili ek bilgileri açar. Paneli kapatmak için başlığındaki çarpıya ya da aynı simgeye tekrar tıklayın.
+
+### İçindekiler
+
+Sayfadaki başlıkların listesi. Bir başlığa tıklayınca sayfa o bölüme kayar. Sayfada yeterince başlık yoksa simge pasif görünür.
+
+![İçindekiler paneli](/img/teknisyen/kb-sayfa-okuma-icindekiler.png)
+
+### Ayrıntılar
+
+![Ayrıntılar paneli](/img/teknisyen/kb-sayfa-okuma-ayrintilar.png)
+
+| # | Bölüm | İçerik |
+|---|---|---|
+| ❶ | `Ayrıntılar` simgesi | Paneli açar. |
+| ❷ | `Kişiler` | Sayfayı oluşturan, son güncelleyen ve onaylayan kişi, tarihleriyle. |
+| ❸ | **İstatistikler** | Toplam görüntülenme, bu hafta ve bu ay okuyan teknisyen sayısı, sayfanın olay ve isteklerde kaç kez çözüm olarak kullanıldığı (`Kayıtlarda kullanım`) ve faydalı bulan kişi sayısı. |
+| ❹ | `Bilgi` | Durum, `KB` kodu (yanındaki simgeyle kopyalanır), kategori, etiketler, gözden geçirme ve son geçerlilik tarihleri, sürüm numarası ve ek sayısı. |
+
+### Bağlantılar
+
+![Bağlantılar paneli](/img/teknisyen/kb-sayfa-okuma-baglantilar.png)
+
+| # | Bölüm | İçerik |
+|---|---|---|
+| ❶ | `Bağlantılar` simgesi | Paneli açar. |
+| ❷ | **İlişkili tahtalar** | Sayfaya bağlı beyaz tahtalar. Henüz yoksa `İlk Beyaz Tahtayı Oluştur` ile çizim alanı açabilirsiniz. |
+| ❸ | **Bu sayfaya bağlananlar** | İçeriğinde bu sayfaya bağlantı veren diğer sayfalar. |
+| ❹ | **Benzer KB'ler** | Benzer konudaki, yayında olan diğer sayfalar. |
+
+Sayfa bir olay, problem ya da istek kaydında çözüm olarak kullanıldıysa panelin en üstünde `İlişkili kayıtlar` bölümü de çıkar; kayıtlar `Olaylar`, `Problemler` ve `İstekler` başlıkları altında gruplanır ve `Kaydı aç` ile ilgili kayda gidebilirsiniz.

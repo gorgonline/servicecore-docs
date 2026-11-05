@@ -1,0 +1,110 @@
+---
+title: "Yönetim Ekranları"
+description: "Bilgi Bankası'nın Sağlık, Analitik, Otomasyon ve Denetim ekranları: içerik sağlığı, okunma istatistikleri, arama boşlukları, otomatik kurallar ve denetim izi."
+reviewed: "2026-10-06"
+owner: oobcore
+---
+
+Kenar çubuğundaki `Yönetim` grubu, Bilgi Bankası'nın genel durumunu izleyen dört ekrandan oluşur. `Sağlık` ekranını herkes görür; diğer üçü için rolünüzde ilgili yetki bulunmalıdır (bkz. [Paylaşım ve Erişim](/docs/teknisyen/moduller/bilgi-bankasi/paylasim-ve-erisim#bilgi-bankası-yetkileri)).
+
+## Sağlık
+
+`Sağlık` ekranı, ilgilenilmesi gereken sayfaları dört başlıkta sayar. Bir kutuya tıklayınca o gruptaki sayfalar altta listelenir.
+
+![Sağlık ekranı](/img/teknisyen/kb-saglik.png)
+
+| # | Kutu | Hangi sayfaları sayar |
+|---|---|---|
+| ❶ | `Süresi dolan` | Son geçerlilik tarihi geçmiş, yayındaki sayfalar. |
+| ❷ | **Gözden geçirilecek** | Gözden geçirme tarihi geçmiş ya da önümüzdeki 7 gün içinde olan sayfalar. |
+| ❸ | `Bayat` | 180 gündür güncellenmemiş sayfalar. |
+| ❹ | `Sahipsiz` | Çözüm sahibi atanmamış sayfalar. |
+| ❺ | Liste | Seçili kutudaki sayfalar; gözden geçirme, son geçerlilik ve son güncelleme tarihleriyle. Sayfa adına tıklayınca sayfa açılır. |
+
+Aynı sayılar her alanın ana sayfasında da o alana göre gösterilir. Gözden geçirme ve son geçerlilik tarihlerinin nasıl çalıştığı için bkz. [Onay ve Yaşam Döngüsü](/docs/teknisyen/moduller/bilgi-bankasi/onay-ve-yasam-dongusu#gözden-geçirme-ve-son-geçerlilik).
+
+## Analitik
+
+`Analitik` ekranı, sayfaların ne kadar okunduğunu ve okuyucuların aradığını bulup bulamadığını gösterir.
+
+![Analitik ekranının üst bölümü](/img/teknisyen/kb-analitik-ust.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | Zaman aralığı | `Son 7 gün`, `Son 30 gün`, `Son 90 gün` ya da `Son 365 gün`. |
+| ❷ | `Tüm alanlar` | Raporu tek bir alanla sınırlar. |
+| ❸ | **Excel'e aktar** | Ekrandaki raporu Excel dosyası olarak indirir. |
+| ❹ | Özet kutuları | `Görüntülenme`, `Farklı okuyucu`, `Okunan makale` ve `Hiç okunmayan` sayıları. |
+| ❺ | **Günlük görüntülenme** | Seçili aralıkta günlük görüntülenme grafiği. |
+
+<Callout type="info" title="ÖNEMLİ">
+Görüntülenme, **teknisyen başına günde bir kez** sayılır: bir teknisyen aynı sayfayı aynı gün birkaç kez açsa da tek görüntülenme olarak yazılır. Görüntülenme izi Bilgi Bankası'nın bu sürümüyle başladığı için daha önceki günler grafikte boş görünür.
+</Callout>
+
+Özetin altında sayfa tabloları yer alır:
+
+![En çok okunan ve hiç okunmayan sayfalar](/img/teknisyen/kb-analitik-tablolar.png)
+
+- `En çok okunan` ❶ ve `Bu aralıkta hiç okunmayan` ❷ sayfalar,
+- okuyucu oylarına göre `En faydalı` ve `En az faydalı` sayfalar,
+- `Yazar katkısı` ve `Alan bazlı görüntülenme` tabloları.
+
+### Arama boşlukları
+
+Sayfanın en altındaki `Arama boşlukları`, okuyucuların aradığı ama bulamadığı konuları listeler. Eksik içeriği tespit etmenin en kısa yoludur.
+
+![Arama boşlukları](/img/teknisyen/kb-analitik-arama-bosluklari.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | Sekmeler ve kaynak | `Sonuçsuz aramalar` hiç sonuç getirmeyen aramaları, `Tıklanmayan aramalar` sonuç getirdiği hâlde hiçbir sonuca tıklanmayan aramaları gösterir. `Tüm kaynaklar` listesiyle aramanın nereden yapıldığını (`Hızlı arama`, `Bilgi bankası listesi`, `Portal`) seçebilirsiniz. |
+| ❷ | **Bu konuda makale yaz** | Aranan ifadeyi başlık yaparak yeni sayfa editörünü açar. |
+
+Tablonun üstünde seçili aralıktaki toplam arama, sonuçsuz arama ve tıklanan arama sayıları yazar.
+
+## Otomasyon
+
+`Otomasyon` ekranı, sayfalarda bir olay olduğunda ya da her gece yapılan taramada kendiliğinden çalışan kuralları yönetir. Örneğin uzun süredir güncellenmeyen sayfaya etiket koyup sahibine görev açabilir, olumsuz oy alan sayfanın sahibine e-posta gönderebilir ya da yayınlanan sayfayı bir Teams kanalına duyurabilirsiniz.
+
+![Otomasyon kuralları](/img/teknisyen/kb-otomasyon.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | `Yeni kural` | Boş bir kural ya da hazır bir şablon açar. |
+| ❷ | Kural | Kuralın adı ve açıklaması. Tıklayınca kural düzenleyicisi açılır. |
+| ❸ | `Tetikleyici` | Kuralı neyin çalıştırdığı: `Makale güncellendi`, `Olumsuz geri bildirim alındı`, `Makale N gündür güncellenmedi` gibi. |
+| ❹ | `Aktif` | Kuralı açar ya da kapatır; kapalı kural çalışmaz ama silinmez. |
+| ❺ | İşlemler | Kuralı düzenleme, `Çalışma günlüğü` (kuralın ne zaman çalıştığı ve sonucu) ve silme. |
+
+`Son çalışma` sütunu kuralın en son ne zaman çalıştığını gösterir; hiç çalışmamışsa `—` yazar.
+
+### Hazır kural şablonları
+
+`Yeni kural` menüsünde boş kuralın ❶ yanında üç hazır şablon ❷ bulunur:
+
+![Yeni kural menüsü](/img/teknisyen/kb-otomasyon-yeni-kural.png)
+
+| Şablon | Ne yapar |
+|---|---|
+| **Bayat içerik → sahibine görev** | 180 gündür güncellenmeyen makaleyi etiketler ve sahibine gözden geçirme görevi açar. Görevin açılacağı projeyi siz seçersiniz. |
+| **Yayınlandı → Teams / webhook** | Makale yayınlandığında verdiğiniz webhook adresine (örneğin bir Teams kanalına) mesaj gönderir. |
+| **3 olumsuz oy → sahibine e-posta** | Makale en az 3 "faydalı değil" oyu aldıktan sonra her yeni olumsuz oyda sahibine e-posta gönderir. |
+
+Şablon bir başlangıçtır; açıldıktan sonra koşulları ve işlemleri değiştirip kaydedebilirsiniz.
+
+## Denetim
+
+`Denetim` ekranı, Bilgi Bankası'nda kimin neyi ne zaman yaptığının kaydını tutar: görüntüleme, oluşturma, güncelleme, onay, silme, sürüme dönme gibi.
+
+![Denetim izi](/img/teknisyen/kb-denetim.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | Tarih aralığı | Kayıtları başlangıç ve bitiş tarihine göre süzer. |
+| ❷ | `Kim` ve `Eylem` | Kişiye ve işlem türüne göre süzer. |
+| ❸ | **Makale (KB no)** | Tek bir sayfanın kayıtlarını gösterir. |
+| ❹ | `Yenile` | Listeyi yeniden yükler. |
+| ❺ | **Excel'e aktar** | Süzülmüş kayıtları Excel dosyası olarak indirir. |
+| ❻ | Tablo | `Tarih`, `Eylem`, `Kim`, `Makale / alan` ve işlemin yapıldığı `IP`. Satırın solundaki ok, kaydın ayrıntısını açar. |
+
+Kayıtların ne kadar saklanacağı Genel Ayarlar'dan belirlenir ve ekranın üstünde yazar (örnekte 365 gün); süresi dolan kayıtlar her gece silinir.

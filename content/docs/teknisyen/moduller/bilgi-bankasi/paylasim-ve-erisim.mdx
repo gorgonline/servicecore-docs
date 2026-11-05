@@ -1,0 +1,103 @@
+---
+title: "Paylaşım ve Erişim"
+description: "Bir sayfayı belirli kişilere kısıtlama, giriş gerektirmeyen dış bağlantı oluşturma ve Bilgi Bankası yetkileri."
+reviewed: "2026-10-06"
+owner: oobcore
+---
+
+Bir sayfayı kimlerin görebileceği ve düzenleyebileceği üç katmanda belirlenir:
+
+1. **Rol yetkileri**, kullanıcının Bilgi Bankası'nda genel olarak neler yapabileceğini belirler (aşağıdaki tablo).
+2. **Kategori kapsamı**, bir kategorideki sayfaların hangi kullanıcı ve teknisyen gruplarına görüneceğini belirler. Editördeki `Yetki Tanımlama` sekmesinden ayarlanır.
+3. **Sayfa kısıtı**, tek bir sayfayı seçtiğiniz kişi ve gruplarla sınırlar. `Paylaş` penceresinden ayarlanır.
+
+Her katman yalnızca daraltır: kategori kapsamı dışındaki bir kişi, sayfa kısıtı ne derse desin o sayfayı göremez.
+
+## Paylaş penceresi
+
+Sayfanın üst çubuğundaki `Paylaş` düğmesi aşağıdaki pencereyi açar.
+
+![Paylaş penceresi](/img/teknisyen/kb-paylasim-pencere.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | `Erişim` seçenekleri | Sayfanın kısıtlama biçimi (aşağıda). |
+| ❷ | `Kaydet` | Erişim değişikliğini kaydeder. Bir şey değiştirmediyseniz pasiftir. |
+| ❸ | Dış bağlantı ayarları | `Geçerlilik` (bağlantı kaç gün açık kalsın), `Görüntüleme sınırı` (bağlantı en fazla kaç kez açılsın) ve isteğe bağlı `Şifre` (en az 6 karakter). |
+| ❹ | **Link oluştur ve kopyala** | Bu ayarlarla bir dış bağlantı oluşturur ve panoya kopyalar. |
+| ❺ | **Bağlantıyı Kopyala** | Sayfanın uygulama içi adresini kopyalar. Bu adresi yalnızca sayfayı görme yetkisi olanlar açabilir. |
+
+## Sayfayı kısıtlama
+
+`Erişim` bölümünde üç seçenek vardır:
+
+| Seçenek | Anlamı |
+|---|---|
+| `Kısıtsız` | Sayfayı görebilen herkes görüntüler ve düzenleyebilir (rol yetkileri ve kategori kapsamı geçerlidir). |
+| **Görüntüleme kısıtlı** | Sayfayı yalnızca seçtiğiniz teknisyenler ve gruplar görür. |
+| **Düzenleme kısıtlı** | Herkes görür, ama yalnızca seçtiğiniz kişiler düzenleyebilir. |
+
+`Görüntüleme kısıtlı` ya da `Düzenleme kısıtlı` seçtiğinizde kişi ekleme satırı açılır:
+
+![Sayfa kısıtına kişi ekleme](/img/teknisyen/kb-paylasim-kisit.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | Kişi / grup seçimi | Soldaki simge tek bir teknisyen, sağdaki simge bir teknisyen grubu eklemek içindir. |
+| ❷ | Teknisyen ya da grup | Eklenecek kişiyi ya da grubu seçin. |
+| ❸ | Yetki | `Görüntüleyebilir` ya da `Düzenleyebilir`. |
+| ❹ | `Ekle` | Seçimi aşağıdaki listeye ekler. Eklenenler `Kişi / grup` ve `Yetki` sütunlarında görünür; `Kaldır` ile listeden çıkarılır. |
+| ❺ | Bilgi notu | Kısıtın nasıl uygulandığını hatırlatır. |
+
+Listeyi tamamladıktan sonra `Kaydet`e tıklayın. Kısıtlı sayfalar listelerde kilit simgesiyle, sayfanın başlığında ise "Bu sayfa kısıtlı" notuyla görünür. Kısıtı tamamen kaldırmak için `Kısıtı kaldır` düğmesini kullanın.
+
+<Callout type="warn" title="DİKKAT">
+Görüntüleme kısıtı **alt sayfalara da uygulanır**. Sayfayı düzenleyebilenler onu her durumda görür. Görüntüleme kısıtlı bir sayfa son kullanıcı portalında ve dış bağlantılarda görünmez.
+</Callout>
+
+Kısıtları yalnızca sayfayı düzenleyebilen ve rolünde erişim kısıtlarını yönetme yetkisi olan kullanıcılar değiştirebilir; diğerleri bu bölümü salt okunur görür.
+
+## Dış bağlantı
+
+Dış bağlantı, ServiceCore hesabı olmayan birine (örneğin bir tedarikçiye) bir sayfayı göstermenin yoludur. Bağlantıyı açan kişi giriş yapmaz; sayfayı salt okunur görür.
+
+1. `Geçerlilik` alanında bağlantının kaç gün açık kalacağını seçin (`Süresiz` de seçilebilir).
+2. İsterseniz `Görüntüleme sınırı` ve `Şifre` girin.
+3. `Link oluştur ve kopyala`ya tıklayın. Bağlantı panoya kopyalanır ve pencerenin altındaki listeye eklenir.
+
+Listede her bağlantının durumu görünür: `Aktif`, `Süresi doldu`, `Sınır doldu`, `İptal edildi` ya da `Makale yayında değil`. Bir bağlantıyı hemen kapatmak için `İptal et`e tıklayın. Bağlantının her açılışı kayda geçer.
+
+Dış bağlantı şu durumlarda oluşturulamaz; pencere nedenini yazar:
+
+- Sayfa yayında değilse (yalnızca yayındaki ve kullanımdan kalkmış sayfalar dışarıya açılabilir).
+- Sayfa bir şablonsa.
+- Sayfa görüntüleme kısıtlıysa.
+
+<Callout type="info" title="ÖNEMLİ">
+Dış bağlantı bölümü yalnızca kurumunuzda dış paylaşım açıksa ve rolünüzde dış paylaşım linki oluşturma yetkisi varsa görünür.
+</Callout>
+
+## Bilgi Bankası yetkileri
+
+Rol tanımındaki Bilgi Bankası yetkileri, kullanıcının hangi düğmeleri göreceğini belirler. Alan içindeki işlemlerde ayrıca kişinin alandaki rolüne bakılır; bkz. [Alan Sayfası](/docs/teknisyen/moduller/bilgi-bankasi/alan-sayfasi).
+
+| Grup | Yetki | Neyi açar |
+|---|---|---|
+| Görüntüleme | Bilgi Bankasını görebilir | Modülün kendisi. Kapalıysa Bilgi Bankası hiç görünmez. |
+| | Yalnız kendi grubundaki makaleleri görebilir | Görünen sayfaları kişinin kendi grubuyla sınırlar. |
+| | Silinen makaleleri görebilir | Listede `Silinen Kayıtlar` süzgeci. |
+| İçerik | Makale oluşturabilir | Yeni sayfa, şablondan oluşturma, kopya oluşturma. |
+| | Makale düzenleyebilir (yalnız kendi / kendi grubu daraltmasıyla) | Düzenleme, durum işlemleri, sürüme dönme, `Gözden geçirildi`. |
+| | Makale silebilir (yalnız kendi daraltmasıyla) | Silme ve geri yükleme. |
+| | Kurum şablonlarını yönetebilir | Kurum şablonu oluşturma, düzenleme, silme ve `Şablon Olarak Kaydet`. |
+| | Dosyadan makale içe aktarabilir | `Dosyadan içe aktar`. Makale oluşturma yetkisi de gerekir. |
+| Onay ve yorum | Makaleleri onaylayabilir | `Onayla`, `Reddet`, `Yeniden yayınla`. |
+| | Yorum yazabilir ve düzenleyebilir (herkesin / yalnız kendinin) | Genel ve satır içi yorumlar. |
+| | Yorum silebilir | Yorum silme. |
+| Paylaşım ve erişim | Dış paylaşım linki oluşturabilir | Dış bağlantı. |
+| | Sayfa ve kategori erişim kısıtlarını yönetebilir | Sayfa kısıtı ve editördeki `Yetki Tanımlama`. |
+| Alanlar | Bilgi alanlarını görebilir; oluşturabilir / düzenleyebilir / silebilir / üye yönetebilir | Alanlar ve alan işlemleri. |
+| | Bilgi alanını toplu dışa aktarabilir | Alanın zip olarak dışa aktarımı. |
+| Yönetim ve denetim | Otomasyon kurallarını yönetebilir | `Otomasyon` ekranı. |
+| | Analitiği ve makaleleri okuyanları görebilir | `Analitik` ekranı ve sayfalardaki `Kim okudu`. |
+| | Denetim izini görebilir | `Denetim` ekranı. |
