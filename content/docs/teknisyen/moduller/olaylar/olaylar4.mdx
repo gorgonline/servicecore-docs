@@ -1,46 +1,93 @@
 ---
 title: "Genel Bakış"
-description: "ITIL4 uyumlu olay yönetimi: otomatik alarm ve e-postayla olay yakalama, bilgi bankası entegrasyonu ve üç katmanlı çözüm mimarisi."
-reviewed: "2026-07-30"
-owner:
+description: "Olayın nereden geldiği, nasıl takip edildiği ve nasıl çözülüp kapatıldığı; yeni olay ekranlarının bölümleri."
+reviewed: "2026-11-09"
+owner: berdanasen
 ---
 
-ITIL4’ün tanımladığı şekliyle olay yönetiminin öncelikli amacı kesinti ve arızaların işe etkisini azaltmak için olabildiğince hızlı müdahale edip, teşhis koyup, çözüm getirmek ve sorunu gidermektir. Bu amaçla olayların hızlı ve doğru kaydedilmesi, önceliklendirilmesi, sınıflandırılması işlemleri sürecin öncelikli adımlarıdır.
+Olay, bir hizmetin beklenmedik şekilde kesilmesi ya da kalitesinin düşmesidir. Olay modülünde
+amaç, hizmeti en kısa sürede normale döndürmektir: olay kaydedilir, bir teknisyene atanır, SLA
+süresi içinde çözülür ve kapatılır.
 
-Hem Çağrı modülünün desteği hem de entegre sistemlerden otomatik alınabilen alarm mekanizmaları ile ServiceCore Olay modülü, olayların hızlı tespit ve teşhisi için yenilikçi teknolojisiyle işleri kolaylaştırmaktadır.
+<Callout type="info" title="ÖNEMLİ">
+Bu sayfa **yeni olay ekranlarını** anlatır. Yeni ekranlar `Genel Ayarlar ▸ Uygulama Ayarları`
+altındaki **Yeni Olaylar sayfalarına yönlendir (beta)** seçeneğiyle açılır.
+</Callout>
 
-Sadece kullanıcılardan gelen olayları değil sistemlerden otomatik email ile veya entegrasyonlarla yaratılan olayları da tam zamanında yakalayabilen ServiceCore olay yönetimi modülü sayesinde gözden kaçan veya geç müdahale edilen olaylar tarihe karışacaktır.
+```mermaid
+flowchart LR
+  A[Yeni Olay butonu] --> O[Açık]
+  B[Çağrıdan dönüştürme] --> O
+  C[E-posta, portal] --> O
+  O --> H[Beklemede]
+  H --> O
+  O --> R[Çözüldü]
+  R --> K[Kapalı]
+  O --> K
+  K -.->|Yeniden aç| O
+```
 
-Olay yönetiminin en önemli sorumluluğu olan çözüm araştırma ve uygulama işlemlerinde de ServiceCore dahili modülü olan bilgi bankası ile ve dış bilgi bankaları ile entegrasyon sayesinde bu süreç adımı da hızlandırılmaktadır.
+## Olay listesi
 
-Sadece ServiceCore Incident Management modülünde bulunan üç katmanlı çözüm mimarisi ile önerilen, uygulanan ve işe yarayan çözümler ayrıştırılabilmektedir. Bu katmanlardan gelen çözümler entegre bilgi yönetimi modülünde otomatik sınıflandırılmakta ve tekrarlanan olaylara çok daha hızlı müdahale edilmesini sağlamaktadır.
+Üst menüden `Olay` seçildiğinde açık olaylar kart olarak listelenir; en yeni olay en üsttedir.
 
-Çözüm araştırma ve uygulama aşamasında sıkı bir takım işbirliği ve görev yönetimine ihtiyaç duyulmaktadır. ServiceCore Incident Management modülünde yer alan görev yönetimi özellikleri sayesinde merkezi olay yönetimi kolayca koordine edilebilmektedir.
+![Olay listesi](/img/teknisyen/olay-genel-liste.png)
 
-Gerekli durumlarda olayların geçici veya kalıcı çözümlerinin Problem Management modülü ile entegrasyonu sayesinde doğrudan olay kaydından otomatik olarak Problem kaydı üretilebilmektedir. Problem kaydı üzerinden yapılacak analiz ve çözüm çalışmaları hızlıca olay yönetimi modülüne geri aktarılabilmekte ve bu sayede olayların çözümü hızlandırılabilmektedir.
+| # | Bölüm | Ne işe yarar |
+|---|---|---|
+| ❶ | `Yeni Olay` | Telefonla ya da yüz yüze bildirilen arıza için olay kaydı açar |
+| ❷ | Yeni Zamanlanmış Olay | Belirli aralıklarla kendiliğinden açılacak bir olay tanımlar (ör. periyodik bakım kontrolü) |
+| ❸ | Olay numarası ve durum | `#INC` ile başlayan numara ve olayın durumu |
+| ❹ | Olay bilgileri | Teknisyen grubu, teknisyen, kullanıcı, hedef çözüm tarihi, kalan SLA süresi (yüzde) ve öncelik |
+| ❺ | `Filtre Görünümleri` ve `Kontrol Paneli` | Kaydedilmiş filtreler ve listeyi numara, konu, durum, teknisyen gibi alanlara göre süzme |
 
-Olaydan kaynaklanan problem ve değişiklikler, dahili ilişkilendirme özelliği sayesinde rahatlıkla değer akışı içerisinde takip edilebilmekte ve kullanıcının şeffaf şekilde sorunla ilgili yapılan çalışmaları görebilmesi sağlanabilmektedir.
+Olaylar listeye şu yollarla da gelir:
 
-ServiceCore Incident Management modülünde ayrıca yapılan tüm işlerin iş günlükleri tutularak aktif efor yönetimi takip edilebilmektedir. Yapılan tüm işlemlerin takip edildiği History tracking özelliği ile tüm faaliyetler geriye yönelik izlenebilmektedir.
+- **Çağrıdan:** Çağrı modülünde çağrı olaya dönüştürülünce. Bkz. [Çağrıyı Dönüştürme](/docs/teknisyen/moduller/cagrilar/donusturme).
+- **E-postadan:** Yöneticinizin e-posta yakalayıcısında tipi `Olay` seçtiği adreslere gelen mesajlar
+  doğrudan olay olur; tipi `Çağrı` olan adreslere gelenler önce çağrı listesine düşer.
+- **Son kullanıcı portalından** ve **entegrasyonlardan**.
 
-Olaylar Probleme veya Değişime ilişkilendirilebildiği gibi, benzer olay kayıtları birleştirilerek (ARM®) Auto Record Merge ile tekil bir olay kaydı olarak yönetilebilmektedir. Birbiri ile ilişkili olayların ise birbirine bağlanarak yönetilebilmesi için Incident Linkleme fonksiyonu geliştirilmiştir. Tekrarlanan kayıtlar bu sayede hızlı ve verimli şekilde birleştirilebilmekte veya bağlanabilmektedir.
+## Olay üzerinde çalışma
 
-Yenilikçi (ATS®) Auto Time Spent özelliği sayesinde bir olay kaydı üzerinde geçirilen zaman otomatik hesaplanabilmektedir.
+Karta tıklandığında olayın detayı açılır.
 
-Bir diğer özgün ServiceCore geliştirmesi olan (STE®) ServiceCore Time Engine ise aktif tasklar ve iş günlüklerinin zaman hesaplamasını ve timesheet girişlerini otomatize etmektedir. Teknik personellerin konforlu çalışması için gerekli tüm yenilikler yine servis yönetimi uzmanları ve teknik ekiplerce bu amaçla geliştirilmiştir.
+![Olay detayı](/img/teknisyen/olay-genel-detay.png)
 
-Teknisyenlerin kolayca işbirliği yapabilmesini sağlayan bir diğer yenilik ise olay kayıtlarının teknisyenler ve kullanıcılar arasında paylaştırılabilmesidir. Bu sayede aynı olay kaydı hakkındaki tüm bilgiler hem teknik ekiplerce hem de kullanıcılar arasında paylaşılabilmektedir. Öte yandan tüm yazışmalar (AMF®) otomatik mail fetcher (otomatik eposta ayrıştırıcısı) sayesinde hem teknik ekip, hem kullanıcı hem de dış paydaşlarla yapılan tüm görüşmeleri “Conversations” (Görüşmeler) bölümünde tarihsel olarak listeleyerek karmaşanın önüne geçilmiştir.
+| # | Bölüm | Ne işe yarar |
+|---|---|---|
+| ❶ | Sekmeler | `Görevler`, `İş Günlükleri`, `Çözümler`, `Süreçler` (bağlı problem, istek, değişiklik, iyileştirme ve diğer olaylar) ve `Geçmiş` |
+| ❷ | Konu ve açıklama | Kullanıcının bildirdiği sorun |
+| ❸ | `Görüşmeler` | `Cevapla`, `Tümünü Cevapla` ve `İlet` ile e-posta gönderilir, `Not Ekle` ile iç not yazılır. Kullanıcının bu e-postalara verdiği yanıtlar aynı olaya eklenir |
+| ❹ | `Kaydet`, `Bana Ata`, `Kapat` | Değişiklikleri kaydeder, olayı size atar, olayı kapatır. Yanındaki `⋮` menüsünde çözüm, görev ve iş günlüğü ekleme, paylaşma, arşivleme gibi diğer işlemler bulunur |
+| ❺ | `Kullanıcı / Bilgiler` | Olayı bildiren kişinin iletişim bilgileri |
+| ❻ | `SLA` | Uygulanan SLA politikası, hedef cevap ve çözüm tarihleri, beklemede geçen süre |
+| ❼ | `Özellikler` | Durum, öncelik, teknisyen grubu, teknisyen, kategori gibi alanlar |
 
-Teknik ekibin eposta üzerinden kullanıcı ve dış destek kurumları ile görüşmesine ihtiyaç kalmadığı gibi, bir olay kaydı üzerinde çalışacak yeni diğer teknisyenlerin de olaya hızlıca hakim olmasını sağlayan bir tarihsel bilgi birikimi sağlanmaktadır.
+- **Atama:** Teknisyen grubu ve teknisyen `Özellikler`'den seçilir. Yöneticiniz otomatik teknisyen
+  atama kuralı tanımladıysa olay kurala göre kendiliğinden atanır.
+- **Durum:** Durumlar kurumunuza göre tanımlanır ve her biri `Açık`, `Beklemede` ya da `Kapalı`
+  aşamalarından birine bağlıdır.
+- **SLA:** Hedef tarihler olayın önceliğine ve eşleşen SLA politikasına göre hesaplanır. Olay
+  beklemedeki bir duruma alındığında SLA süresi durur; beklemede geçen süre hedef tarihe eklenir.
 
-Kayıt üzerindeki hakimiyeti arttırmak üzere (RCP®) Kayıt Kontrol Paneli geliştirilmiştir. Tek panelden sürekli ve çok hızlı güncellemeler yapılabilmektedir. Bu sayede olay kayıtları üzerinden harcanan zamanın azaltılması sağlanmıştır. Hızlı takip ve kolay filtreleme için “Pinleme” ve “Takibe Alma” özellikleri geliştirilmiştir. Öncelikli işler için pinleme ve takibe alma yapılarak kolay kullanım amaçlanmıştır.
+## Çözme ve kapatma
 
-Olay kayıtlarında önemli konulardan biri olan varlık ve konfigürasyon ilişkisi de olay yönetim panelinde teknisyenin erişimine sunulmuştur. Aktif varlık eşleştirmesi sayesinde olayla ilgili tüm varlıkları tek ekranda görebilme ve işlem yapabilme imkanı sağlanmaktadır.
+Sorun giderildiğinde olayın durumu, kurumunuzda "çözüldü" kabul edilen duruma alınır. Denenen ve
+işe yarayan çözümler `Çözümler` sekmesine kaydedilir. Yöneticiniz otomatik kapatma süresi
+tanımladıysa çözülen olay bu sürenin sonunda kendiliğinden kapanır. Olayı hemen kapatmak için
+`Kapat` butonunu kullanın:
 
-<Accordions type="single">
-<Accordion title="Süreç Şeması">
+![Kapatma penceresi](/img/teknisyen/olay-genel-kapat.png)
 
-![Olaylar Modülü](/img/teknisyen/olaylarsurec.png)
+| # | Alan | Açıklama |
+|---|---|---|
+| ❶ | `Gerekçe` | Kapatma gerekçesi |
+| ❷ | `Durum` | Olayın alacağı kapalı durum. **Zorunludur** |
+| ❸ | `Kapatma Açıklaması` | Yapılan işin kısa açıklaması. Kurumunuzun ayarına göre zorunlu olabilir |
+| ❹ | `Kapat` | Olayı kapatır |
 
-</Accordion>
-</Accordions>
+Kurumunuzda kapatma kuralları tanımlıysa (ör. kategori seçilmiş ya da iş günlüğü girilmiş olmalı)
+eksik bilgi tamamlanmadan olay kapatılamaz; ekranda neyin eksik olduğu gösterilir. Kapalı bir olay
+`Yeniden Aç` butonuyla tekrar açılır; kullanıcının kapalı olaya e-postayla yanıt vermesi de kurum
+ayarına göre olayı yeniden açar.
