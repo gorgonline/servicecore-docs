@@ -1156,32 +1156,47 @@
   },
   {
     "source": "/docs/teknisyenkullanımkilavuzu/moduller/Olaylar/olaylar1",
-    "destination": "/docs/teknisyen/moduller/olaylar/olaylar1",
+    "destination": "/docs/teknisyen/moduller/olaylar/liste",
     "permanent": true
   },
   {
     "source": "/docs/teknisyenkullan%C4%B1mkilavuzu/moduller/Olaylar/olaylar1",
-    "destination": "/docs/teknisyen/moduller/olaylar/olaylar1",
+    "destination": "/docs/teknisyen/moduller/olaylar/liste",
     "permanent": true
   },
   {
     "source": "/docs/teknisyenkullanımkilavuzu/moduller/Olaylar/olaylar2",
-    "destination": "/docs/teknisyen/moduller/olaylar/olaylar2",
+    "destination": "/docs/teknisyen/moduller/olaylar/detay",
     "permanent": true
   },
   {
     "source": "/docs/teknisyenkullan%C4%B1mkilavuzu/moduller/Olaylar/olaylar2",
-    "destination": "/docs/teknisyen/moduller/olaylar/olaylar2",
+    "destination": "/docs/teknisyen/moduller/olaylar/detay",
     "permanent": true
   },
   {
     "source": "/docs/teknisyenkullanımkilavuzu/moduller/Olaylar/olaylar4",
-    "destination": "/docs/teknisyen/moduller/olaylar/olaylar4",
+    "destination": "/docs/teknisyen/moduller/olaylar/genel-bakis",
     "permanent": true
   },
   {
     "source": "/docs/teknisyenkullan%C4%B1mkilavuzu/moduller/Olaylar/olaylar4",
-    "destination": "/docs/teknisyen/moduller/olaylar/olaylar4",
+    "destination": "/docs/teknisyen/moduller/olaylar/genel-bakis",
+    "permanent": true
+  },
+  {
+    "source": "/docs/teknisyen/moduller/olaylar/olaylar1",
+    "destination": "/docs/teknisyen/moduller/olaylar/liste",
+    "permanent": true
+  },
+  {
+    "source": "/docs/teknisyen/moduller/olaylar/olaylar2",
+    "destination": "/docs/teknisyen/moduller/olaylar/detay",
+    "permanent": true
+  },
+  {
+    "source": "/docs/teknisyen/moduller/olaylar/olaylar4",
+    "destination": "/docs/teknisyen/moduller/olaylar/genel-bakis",
     "permanent": true
   },
   {

@@ -1,0 +1,119 @@
+---
+title: "Olay Detayı"
+description: "Olay detay ekranının bölümleri: araç çubuğu, özellikleri düzenleme, açıklama, dosyalar, görüşmeler, e-posta ile cevaplama ve sağ panel."
+reviewed: "2026-11-09"
+owner: berdanasen
+---
+
+Listede bir olaya tıkladığınızda olay, `Olaylar` sekmesinin yanında kendi sekmesinde açılır. Aynı
+ekran kart menüsündeki `Detay sayfasına git` ile tek başına da açılabilir.
+
+## Ekranın bölümleri
+
+![Olay detay ekranının bölümleri](/img/teknisyen/olay-detay-yerlesim.png)
+
+| # | Bölüm | Ne işe yarar |
+|---|---|---|
+| ❶ | Sekmeler | `Detaylar`, `Görevler`, `İş Günlükleri`, `Çözümler`, `Süreçler` ve `Geçmiş`. Yanlarındaki sayılar o sekmedeki kayıt adedidir. Bkz. [Detay Sekmeleri](/docs/teknisyen/moduller/olaylar/sekmeler) |
+| ❷ | Konu ve açıklama | Olayın konusu ve kullanıcının bildirdiği sorun |
+| ❸ | `Görüşmeler` | Kullanıcıyla e-posta yazışmaları ve notlar (aşağıda) |
+| ❹ | Araç çubuğu | Kaydetme, atama, kapatma ve diğer işlemler (aşağıda) |
+| ❺ | `Kullanıcı / Bilgiler` | Olayı bildiren kişinin bilgileri (aşağıda) |
+| ❻ | `SLA` | Olaya uygulanan SLA politikası ve hedef tarihler |
+| ❼ | `Özellikler` | Olayın düzenlenebilir alanları (aşağıda) |
+
+`Detaylar` sekmesinde konu ve açıklamanın altında `Dosyalar`, `Varlıklar-Hizmetler`, `Görüşmeler`,
+`Sistem Bildirimleri` ve olayın özel formu bulunur.
+
+## Araç çubuğu
+
+![Olay numarası ve araç çubuğu](/img/teknisyen/olay-detay-arac-cubugu.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | Olay numarası | Açık olan olayın numarası |
+| ❷ | Kim görüntülüyor | Aynı olayı o anda açmış olan diğer teknisyenleri gösterir |
+| ❸ | `Bağlantıyı Kopyala` | Olayın adresini panoya kopyalar |
+| ❹ | `Kaydet` | `Özellikler` panelinde ve özel formda yaptığınız değişiklikleri kaydeder. Kaydedilmemiş değişiklik yoksa çerçeveli görünür |
+| ❺ | `Bana Ata` | Olayı onay sormadan size atar. Olay zaten size atanmışsa görünmez. Olayın grubunda değilseniz olay varsayılan grubunuza taşınır |
+| ❻ | `Kapat` | Olayı kapatır. Kapalı olayda yerine `Yeniden Aç` çıkar. Bkz. [Durumlar ve Kapatma](/docs/teknisyen/moduller/olaylar/durumlar-ve-kapatma) |
+| ❼ | `⋮` | Çözüm ekleme, paylaşma, silme, klonlama, görev ve iş günlüğü ekleme gibi işlemler. Bkz. [Eylemler Menüsü](/docs/teknisyen/moduller/olaylar/eylemler) |
+| ❽ | Sürükleme modu | Açıkken `Detaylar` sekmesindeki kartların sırasını sürükleyerek değiştirebilirsiniz; düzen bu tarayıcıda saklanır |
+
+Siz olayı açtıktan sonra başka biri aynı olayı değiştirirse `Kaydet` pasif olur; değişikliklerinizi
+kaydetmek için sayfayı yenilemeniz gerekir.
+
+## Özellikleri düzenleme
+
+Sağdaki `Özellikler` paneli olayın temel alanlarını taşır. Değişiklik yaptıktan sonra araç
+çubuğundaki `Kaydet`e basın; alanlar tek tek kaydedilmez.
+
+![Özellikler paneli](/img/teknisyen/olay-detay-ozellikler.png)
+
+| # | Alanlar | Açıklama |
+|---|---|---|
+| ❶ | `Konu`, `Kullanıcı` | `Konu` zorunludur. Kullanıcı olayı bildiren kişidir |
+| ❷ | `Teknisyen Grubu`, `Teknisyen` | Olayın sorumluları |
+| ❸ | `Durum`, `Öncelik`, `Kaynak`, `Kategori` | `Durum` zorunludur. Açık bir olayda yalnızca açık ve beklemedeki durumlar listelenir. `Kaynak` olayın nereden geldiğini gösterir (telefon, e-posta, portal) |
+| ❹ | `Çözüm Tarihi`, `Hedef Cevap Tarihi - Hedef Çözüm Tarihi` | Olayın çözüldüğü tarih ve SLA'dan gelen hedef tarihler |
+| ❺ | `İş Etkisi`, `Aciliyet`, `Şirket`, `Etiketler` | Etki ve aciliyet önceliğin belirlenmesinde kullanılır; etiketler aramada ve filtrelemede işe yarar |
+
+Konu ve açıklama kartının sağ üstündeki kalem simgesiyle açıklamayı düzenleyebilir, yanındaki
+simgeyle açıklamayı büyük pencerede okuyabilirsiniz. Özel formun alanları da formun içinden
+düzenlenir ve aynı `Kaydet` ile kaydedilir.
+
+## Görüşmeler
+
+`Görüşmeler` kartı, kullanıcıyla e-posta yazışmalarını ve teknisyen notlarını tarih sırasıyla
+gösterir. Kullanıcının olaydan gönderilen e-postalara verdiği yanıtlar aynı olaya eklenir.
+
+![Görüşmeler kartı](/img/teknisyen/olay-detay-gorusmeler.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | `Notlar`, `Gelen Posta`, `Giden Posta` | İşaretli türler listelenir; kutuları kaldırarak listeyi süzün |
+| ❷ | `ReplyCore ile özetle` | Görüşmeleri yapay zekâ ile özetler. Yalnızca kurumunuzda yapay zekâ servisi açıksa görünür |
+| ❸ | `Cevapla`, `Tümünü Cevapla`, `İlet` | E-posta penceresini açar (aşağıda) |
+| ❹ | `Not Ekle` | İç not ekler. Not varsayılan olarak **özel**dir, kullanıcı görmez; özel işareti kaldırılırsa kullanıcı da görür |
+| ❺ | Gelen e-posta | Kullanıcının gönderdiği e-posta: kimden, kime, konu ve tarih bilgisiyle |
+| ❻ | Not | Teknisyenin yazdığı iç not |
+| ❼ | Giden e-posta | Olaydan kullanıcıya gönderilen e-posta |
+
+Her mesajın altındaki butonlarla o mesaja cevap verebilir, iletebilir ya da not ekleyebilirsiniz;
+notlarda `Düzenle` ve `Sil` de bulunur.
+
+### E-posta ile cevaplama
+
+`Cevapla`, `Tümünü Cevapla` ya da `İlet` e-posta penceresini açar.
+
+![Cevapla penceresi](/img/teknisyen/olay-detay-cevapla.png)
+
+| # | Alan | Açıklama |
+|---|---|---|
+| ❶ | `Kimden` | Cevabın gönderileceği destek e-posta adresi |
+| ❷ | `Kime` | Alıcılar. Olayın kullanıcısı kendiliğinden eklenir; sağdaki `BCC` gizli alıcı alanını açar |
+| ❸ | `CC` | Bilgi olarak eklenecek adresler |
+| ❹ | Mesaj | Kullanıcıya gidecek metin |
+| ❺ | Dosya ekleme | Cevaba dosya eklemek için dosyayı bu alana sürükleyin ya da tıklayıp seçin |
+| ❻ | `Gönder ve Durumu Değiştir` | E-postayı gönderir ve olayın durumunu seçtiğiniz durumla değiştirir |
+| ❼ | `Gönder` | E-postayı gönderir |
+
+<Callout type="warn" title="DİKKAT">
+`Gönder` e-postayı hemen kullanıcıya gönderir; gönderilen e-posta geri alınamaz. Gönderilen mesaj
+`Görüşmeler`de giden e-posta olarak saklanır.
+</Callout>
+
+## Sağ panel
+
+![Kullanıcı ve SLA panelleri](/img/teknisyen/olay-detay-sag-panel.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | Yeni kullanıcı | Olay için yeni bir kullanıcı oluşturma penceresini açar |
+| ❷ | Paneli gizle | `Kullanıcı / Bilgiler` panelini gizler; sağ alttaki kullanıcı simgesiyle geri açılır |
+| ❸ | Kullanıcı bilgileri | Kullanıcının e-postası, telefonu, şirketi, destek müşteri hesabı ve olayın oluşturulma tarihi |
+| ❹ | SLA'yı yeniden çalıştır | Olayın SLA hedeflerini yeniden hesaplar; onay sormaz |
+
+`SLA` paneli açıldığında SLA politikasının adı, olayın oluşturulma tarihi, beklemede geçen süre ve
+hedef cevap / çözüm tarihleri görünür. Sağ sütunun en altındaki üç küçük simge kullanıcıyı
+düzenlemenizi (yetkiniz varsa), kullanıcının ve müşteri hesabının diğer olaylarını görmenizi sağlar.

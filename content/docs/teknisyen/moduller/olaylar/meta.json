@@ -1,8 +1,14 @@
 {
   "title": "OLAYLAR",
   "pages": [
-    "olaylar4",
-    "olaylar1",
-    "olaylar2"
+    "genel-bakis",
+    "liste",
+    "filtreler",
+    "olusturma",
+    "detay",
+    "eylemler",
+    "sekmeler",
+    "durumlar-ve-kapatma",
+    "yetkiler"
   ]
 }
