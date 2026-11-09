@@ -1,0 +1,167 @@
+---
+title: "Portal Tasarımı"
+description: "Son Kullanıcı Ayarları ekranında portal ana sayfasının ve Bilgi Bankası sayfasının tasarımı: envanter, tuval, cihaz önizlemesi, şablon araçları ve kullanıcı gruplarına özel tasarım."
+reviewed: "2026-11-09"
+owner: berdanasen
+---
+
+Portalın ana sayfasında hangi kutuların bulunacağını, kutuların yerini ve boyutunu yönetici
+**Son Kullanıcı Ayarları** ekranında belirler. Aynı ekrandaki `Ayarlar` sekmesi portalın
+görünümünü ve kullanıcı yetkilerini yönetir; o sekme [Portal Ayarları](/docs/kullanici/portal-ayarlari)
+sayfasında anlatılmıştır.
+
+Ekran `Yönetim` panelindeki **Son Kullanıcı Ayarları** kartıyla açılır.
+
+![Yönetim panelindeki Son Kullanıcı Ayarları kartı](/img/kullanici/yonetim-son-kullanici-ayarlari.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | `Son Kullanıcı Ayarları` | Portal tasarım ekranını açar |
+
+## Ekranın bölümleri
+
+![Son Kullanıcı Ayarları ekranı](/img/kullanici/tasarim-genel.png)
+
+| # | Bölüm | Ne işe yarar |
+|---|---|---|
+| ❶ | `Yardımcı Menü` | Soldaki ayar paneli. Sağdaki çift ok paneli daraltır, tuvale daha çok yer açar |
+| ❷ | `Kullanıcı Grupları` | Tasarımın hangi kullanıcı grubu için yapıldığı (aşağıda) |
+| ❸ | `Sayfa` | Tasarlanan sayfa: `Ana sayfa` ya da `Bilgi Bankası` (aşağıda) |
+| ❹ | `Envanter`, `Ayarlar` | `Envanter` tuvale eklenebilecek kutuları listeler; `Ayarlar` görünüm ve yetki ayarlarını açar |
+| ❺ | Envanter listesi | Kutuların listesi (aşağıda) |
+| ❻ | `Kaydet` | Tasarımı ve ayarları kaydeder. Kaydetmeden ekrandan çıkarsanız değişiklikler kaybolur |
+| ❼ | Cihaz önizlemesi | Tuvali bilgisayar, tablet ya da telefon genişliğinde gösterir (aşağıda) |
+| ❽ | Tuval | Portalın ana sayfasının önizlemesi. Kutular burada taşınır ve boyutlandırılır |
+| ❾ | Şablon araçları | `Şablonu temizle`, `Şablonu sıfırla`, `Izgara görünümü` (aşağıda) |
+
+Tuvaldeki önizleme gerçek verilerle çalışır; `Veriler` ve `Bütün İşlemlerim` kutularında ekranı açan
+yöneticinin kayıtları ve sayıları görünür.
+
+## Kullanıcı grupları
+
+`Kullanıcı Grupları` boş bırakıldığında **varsayılan tasarım** düzenlenir; varsayılan tasarım
+bütün son kullanıcılara uygulanır.
+
+Bir ya da birden fazla kullanıcı grubu seçtiğinizde ekran o gruba ait tasarımı yükler. Bu durumda
+kaydettiğiniz düzen ve ayarlar yalnız seçili gruplardaki kullanıcılara uygulanır; diğer
+kullanıcılar varsayılan tasarımı görmeye devam eder. Böylece örneğin saha ekibine farklı
+butonlar, yönetim ekibine farklı modüller gösterebilirsiniz.
+
+## Envanter
+
+`Envanter` sekmesi tuvale eklenebilecek kutuları listeler.
+
+![Envanter listesi](/img/kullanici/tasarim-envanter.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | Tuvalde olan kutu | Sağında yeşil onay işareti vardır. Tıklayınca kutu tuvalden kaldırılır |
+| ❷ | Tuvalde olmayan kutu | Sağında kırmızı çarpı vardır. Tıklayınca kutu tuvale eklenir |
+
+Envanterdeki kutular:
+
+| Kutu | Portalda ne yapar |
+|---|---|
+| `Yeni Olay` | Olay formunu açan buton |
+| `Yeni Çağrı` | Çağrı formunu açan buton. `Modül Yetkileri ▸ Çağrı Yap` kapalıysa portalda görünmez |
+| `Yeni İstek` | Kataloğu açan buton |
+| `Yeni İyileştirme` | İyileştirme formunu açan buton |
+| `Yeni Değişiklik` | Değişiklik formunu açan buton |
+| `Çözüm Havuzu` | Çözümler sayfasına giden buton |
+| `Soru Sor` | Bilgi bankasında ve katalogda arama kutusu |
+| `Hızlı Çağrı` | Tek satırla çağrı açan kutu. Karakter sınırı ve bekleme süresi `Modül Yetkileri` bölümündedir |
+| `Başlık` | Sayfa başlığı. Metni `Görünüm Ayarları` bölümünden yazılır |
+| `Veriler` | Kullanıcının kayıtlarının listelendiği tablo |
+| `Bütün İşlemlerim` | Kayıt sayılarının gösterildiği filtre kutusu |
+| `Görsel Yükle` | Ana sayfaya bir görsel (ör. kurum logosu ya da afiş) koyar. Görsel tuvaldeki kutunun içinden yüklenir |
+| `ChatCoreAI` | Self servis yapay zekâ asistanı. Yalnız yapay zekâ özellikleri açık kurumlarda listelenir |
+
+Kutuların portalda nasıl çalıştığı [Ana Sayfa](/docs/kullanici/ana-sayfa) sayfasında anlatılmıştır.
+
+## Tuvalde kutuları düzenlemek
+
+Kutuları sürükleyerek taşıyabilir, boyutlarını değiştirebilirsiniz. Fareyle bir kutunun üzerine
+gelince düzenleme tutamaçları görünür.
+
+![Tuvaldeki bir kutu](/img/kullanici/tasarim-kutu.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | Kutu | Basılı tutup sürükleyerek yerini değiştirin. Diğer kutular kendiliğinden yer açar |
+| ❷ | Kaldır | Kutuyu tuvalden kaldırır. Kutu envanterde kalır; tekrar eklenebilir |
+| ❸ | Boyutlandırma | Sağ alt köşeden sürükleyerek kutuyu büyütün ya da küçültün |
+
+Kutular görünmez bir ızgaraya yerleşir. Her kutunun en küçük ve en büyük boyutu vardır; örneğin
+butonlar belirli bir genişlikten daha dar yapılamaz.
+
+## Şablon araçları ve ızgara
+
+Tuvalin sağ altındaki üç buton tasarımın tamamını etkiler.
+
+![Şablon araçları](/img/kullanici/tasarim-izgara.png)
+
+| # | Buton | Ne yapar |
+|---|---|---|
+| ❶ | `Şablonu temizle` | Tuvaldeki bütün kutuları kaldırır; boş bir tasarımla başlarsınız |
+| ❷ | `Şablonu sıfırla` | Tasarımı ürünün varsayılan düzenine döndürür |
+| ❸ | `Izgara görünümü` | Kutuların yerleştiği ızgarayı gösterir ya da gizler; kutuları hizalamayı kolaylaştırır |
+
+Bu butonların etkisi `Kaydet`e basana kadar yalnız ekranda kalır; kaydetmeden çıkarsanız tasarım
+değişmez.
+
+## Cihaz önizlemesi
+
+Tuvalin sağ üstündeki üç simge önizlemeyi bilgisayar, tablet ve telefon genişliğine getirir.
+Her cihaz için düzen **ayrı** tutulur: bilgisayarda yaptığınız yerleşim tablet ve telefon
+düzenini değiştirmez. Tasarımı kaydetmeden önce üç görünümü de kontrol etmenizi öneririz.
+
+Telefon gibi çok dar ekranlarda portal kutuları sabit bir sırayla alt alta dizer: önce görsel ve
+başlık, sonra arama ve hızlı çağrı, ardından kayıt butonları, filtreler ve tablo.
+
+## Bilgi Bankası sayfası
+
+`Sayfa` seçimi `Bilgi Bankası` yapıldığında ekran, portal için bir **bilgi bankası panosu**
+tasarlamaya geçer. Pano, seçtiğiniz kategorilerin makalelerini gruplar halinde gösterir.
+
+![Bilgi Bankası sayfasının tasarımı](/img/kullanici/tasarim-bilgi-bankasi.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | `KB Kategori Widget'ı` | Panoya kategori kutusu ekler. Aynı kutu birden çok kez eklenebilir; her biri farklı kategorileri gösterebilir |
+| ❷ | Sıralama ve kaldırma | `Sayfadaki widget'lar` listesinde kutuyu yukarı ya da aşağı taşır, kaldırır |
+| ❸ | Kutu ayarları | Seçili kutunun ayarları (aşağıdaki tablo) |
+| ❹ | Önizleme | Panonun görünümü |
+
+Kutu ayarları:
+
+| Ayar | Açıklama |
+|---|---|
+| `Başlık` | Kutunun başlığı (ör. `Sık Kullanılan Çözümler`) |
+| `KB kategorileri` | Kutuda makaleleri gösterilecek kategoriler. Kategori seçilmemiş kutu panoda gösterilmez |
+| `Alt kategorileri dahil et` | İşaretliyse seçilen kategorilerin alt kategorilerindeki makaleler de gösterilir |
+| `Gömülü makaleler` | Gömülü makalelerin yan yana kaydırmalı (`Carousel`) ya da alt alta (`Alt alta`) gösterilmesi |
+| `Gömülü sayısı` | Kutuda en fazla kaç gömülü makale gösterileceği |
+| `Kart sayısı` | Kutuda en fazla kaç makale kartı gösterileceği |
+| `Sıralama` | Makalelerin sırası: `Son güncellenen`, `En çok görüntülenen` ya da `Başlık` |
+| `Genişlik` | Kutunun sayfayı tam ya da yarım kaplaması (`Tam`, `Yarım`) |
+
+**Gömülü makale**, bilgi bankasında `Dashboard'da gömülü göster` seçeneği açık olan makaledir. Bu
+makaleler panoda kart olarak değil, içeriğiyle birlikte gösterilir; kısa duyuru niteliğindeki
+çözümler için kullanışlıdır. Diğer makaleler kart olarak listelenir.
+
+Her kullanıcı panoda yalnız görmeye yetkili olduğu makaleleri görür.
+
+### Bilgi Bankası sayfasının ayarları
+
+`Sayfa` seçimi `Bilgi Bankası` iken `Ayarlar` sekmesinde panonun portalda gösterilip
+gösterilmeyeceği yönetilir.
+
+![Bilgi Bankası sayfasının ayarları](/img/kullanici/tasarim-bilgi-bankasi-ayarlar.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | `Bilgi Bankası menüsü` | Portalda `Çözümler` menüsünü gösterir. Açıkken ve sayfada kategori seçilmiş bir kutu varsa portal açılışta bilgi bankası panosunu gösterir |
+| ❷ | Durum | Portalın açılışta neyi göstereceği ve nedeni (ör. `Bu sayfada kategori seçilmiş widget yok.`) |
+
+Pano açılış sayfası olduğunda kullanıcılar kayıtlarına üst menüdeki `Kayıtlarım` ile ulaşır.
+Portalın başlık, renk ve modül ayarları `Sayfa` seçimi `Ana sayfa` iken `Ayarlar` sekmesindedir.

@@ -1,0 +1,89 @@
+---
+title: "Varlıklarım, Hizmetlerim ve Proje"
+description: "Kullanıcıya zimmetli varlıklar, zimmet kabulü, kolon seçimi ve varlıktan olay açma; sahibi olunan hizmetler; üyesi olunan projelerin salt okunur görünümü."
+reviewed: "2026-11-09"
+owner: berdanasen
+---
+
+## Varlıklarım
+
+`Varlıklarım`, size zimmetlenmiş varlıkları (dizüstü bilgisayar, monitör, telefon gibi) listeler.
+Yeni zimmetlenen bir varlığı buradan kabul eder ya da reddeder, sorunlu bir varlık için doğrudan
+olay açarsınız.
+
+![Varlıklarım sayfası](/img/kullanici/varliklarim-genel.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | Kolonlar | Tabloda hangi kolonların görüneceğini seçtirir (aşağıda) |
+| ❷ | Ara | Varlıklarda arama yapar |
+| ❸ | Kolon başlıkları | Varsayılan kolonlar: `Varlık Adı`, `Seri No`, `Varlık Türü`, `Bitiş Tarihi`, `Zimmet Kabul Edildi mi?`, `Olay Oluştur` |
+| ❹ | Zimmet durumu | Kabul ettiğiniz varlıklarda `Evet` yazar |
+| ❺ | Zimmet onayı | Henüz kabul etmediğiniz varlıkta onay (✓) ve ret (✕) simgeleri görünür (aşağıda) |
+| ❻ | `Olay Oluştur` | Varlığa bağlı olay açar (aşağıda) |
+| ❼ | Yardım paneli | Sayfanın kısa açıklaması |
+
+### Zimmet kabulü
+
+Destek ekibi size yeni bir varlık zimmetlediğinde varlık listede `Zimmet Kabul Edildi mi?`
+kolonu boş olarak görünür ve satırda iki simge çıkar:
+
+- **✓ (onay):** Varlığı teslim aldığınızı onaylar; kolonda `Evet` yazar.
+- **✕ (ret):** Zimmeti reddeder; varlık sizde değilse ya da bilgiler yanlışsa kullanın.
+
+<Callout type="warn" title="Onay sorulmaz">
+Simgeye tıkladığınız anda kararınız kaydedilir; ayrıca onay penceresi çıkmaz.
+</Callout>
+
+### Kolon seçimi
+
+Kolonlar simgesi (`⁝`) kolon listesini açar. İşaretlediğiniz kolonlar tabloya eklenir; seçiminiz
+bu tarayıcıda saklanır.
+
+![Varlıklarım kolon seçimi](/img/kullanici/varliklarim-kolonlar.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | Kolon listesi | `Varlık No`, `Varlık Durumu`, `Varlık Adı`, `Kullanım Modeli İsmi`, `Açıklama`, `Konum`, `Seri No`, `Varlık Türü`, `Alım Tarihi`, `Barkod`, `Bitiş Tarihi`, `Garanti Bitiş Tarihi`, `Kontrol Tarihi`, `Zimmet Kabul Edildi mi?`, `Olay Oluştur` |
+
+### Varlıktan olay açmak
+
+Bir varlıkla ilgili sorun yaşıyorsanız satırdaki `Olay Oluştur` simgesine tıklayın. Yeni olay formu
+açılır (bkz. [Kayıt Oluşturma](/docs/kullanici/kayit-olusturma#yeni-olay)); olayı kaydettiğinizde
+olay bu varlığa bağlanır.
+
+`Olay Oluştur` kolonu yöneticinin ayarına bağlıdır: `Varlık Yetkileri ▸ Varlıktan Olay Oluşturmayı
+Gizle` açıksa kolon görünmez (bkz. [Portal Ayarları](/docs/kullanici/portal-ayarlari#varlık-yetkileri)).
+
+## Hizmetlerim
+
+`Hizmetlerim`, sahibi olarak tanımlandığınız hizmetleri (ör. bir uygulama ya da ortak klasör hizmeti)
+listeler. Sayfa salt okunurdur.
+
+![Hizmetlerim sayfası](/img/kullanici/hizmetlerim.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | Hizmet tablosu | `#`, `Adı`, `Durum`, `Hizmet Türü`, `Oluşturma Tarihi`, `Açıklama`. Kolon başlıklarındaki oklar tabloyu sıralar; sağ üstteki kutu hizmetlerde arar |
+| ❷ | Yardım paneli | Sayfanın kısa açıklaması |
+
+Hizmet tanımlanmamışsa tablo `Veri Yok` gösterir.
+
+## Proje
+
+`Proje` sayfası, üyesi olduğunuz projeleri gösterir. Sayfa **salt okunurdur**: projenin durumunu ve
+görevlerini izleyebilirsiniz, ancak değişiklik yapamazsınız. Projelerin iç yazışmaları, yorumları ve
+etkinlik kayıtları portalda gösterilmez.
+
+Hiçbir projeye üye değilseniz sayfa bunu belirtir:
+
+![Proje sayfası, üyelik yokken](/img/kullanici/projeler-bos.png)
+
+Proje üyesi olduğunuzda sayfada şunlar bulunur:
+
+| Bölüm | İçerik |
+|---|---|
+| Proje listesi | Projelerin adı, üye sayısı, görev sayısı, geciken ve tamamlanan görevler, son etkinlik tarihi. Üstteki kutu projelerde arar |
+| Proje panosu | Bir projeye tıklayınca açılır: tamamlanma yüzdesi, tamamlanma eğilimi, görev sayıları (toplam, açık, geciken, tamamlanan) ve etikete göre dağılım |
+| Görev listesi | Projenin görevleri; durum ve diğer alanlara göre süzülebilir |
+| Görev detayı | Göreve tıklayınca sağdan açılır: açıklama, başlangıç ve bitiş tarihleri, alt görevler, bağımlılıklar ve iş günlükleri |

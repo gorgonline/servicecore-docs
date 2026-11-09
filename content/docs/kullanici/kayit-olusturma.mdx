@@ -1,0 +1,107 @@
+---
+title: "Kayıt Oluşturma"
+description: "Portaldan yeni olay, çağrı, iyileştirme ve değişiklik açma: formlar, zorunlu alanlar, özel form seçimi ve başkası adına kayıt."
+reviewed: "2026-11-09"
+owner: berdanasen
+---
+
+Portaldan beş tür kayıt açılabilir. Hangisini açacağınız sorununuzun türüne bağlıdır:
+
+| Kayıt türü | Ne zaman açılır | Nereden |
+|---|---|---|
+| **Olay** | Bir şey bozuldu, çalışmıyor ya da hata veriyor | Ana sayfadaki `Yeni Olay`, `Soru Sor` önerisi ya da `Varlıklarım` |
+| **Çağrı** | Destek ekibine bir soru sormak ya da bilgi vermek istiyorsunuz | Ana sayfadaki `Yeni Çağrı` ya da `Hızlı Çağrı` |
+| **İstek** | Yeni bir şey istiyorsunuz (cihaz, yazılım, yetki) | [Katalog](/docs/kullanici/katalog) |
+| **İyileştirme** | Bir süreci ya da hizmeti iyileştirmek için fikriniz var | Ana sayfadaki `Yeni İyileştirme` |
+| **Değişiklik** | Bir sistemde değişiklik yapılmasını talep ediyorsunuz | Ana sayfadaki `Yeni Değişiklik` |
+
+Butonların ana sayfada görünmesi yöneticinin [portal tasarımına](/docs/kullanici/portal-tasarimi)
+ve [modül yetkilerine](/docs/kullanici/portal-ayarlari#modül-yetkileri) bağlıdır. Formların
+alanları ise yöneticinin tasarladığı özel formlardan gelir; bu sayfadaki görseller varsayılan
+formları gösterir.
+
+## Yeni olay
+
+`Yeni Olay` butonu olay formunu sağdan açar.
+
+![Yeni olay formu](/img/kullanici/olusturma-olay.png)
+
+| # | Alan | Açıklama |
+|---|---|---|
+| ❶ | `Özel Form` | Kurumda birden fazla olay formu varsa buradan seçilir. Varsayılan form otomatik seçili gelir |
+| ❷ | `Konu` | Sorunu tek cümleyle yazın. Zorunludur |
+| ❸ | `Açıklama` | Sorunu ayrıntılı anlatın: ne zaman başladı, kimleri etkiliyor, hata mesajı ne. Zorunludur |
+| ❹ | `Diğer Alanlar` | Formdaki ek alanlar (ör. `Aciliyet`, `Öncelik`, `İş Etkisi`, `Kategori`, `Konum`). Hangilerinin zorunlu olduğunu form belirler |
+| ❺ | `Vazgeç`, `Kaydet` | `Kaydet` olayı açar ve olayın detay sayfasına geçer. `Vazgeç` formu kapatır |
+
+Formun en üstünde **başkası adına** kayıt açmaya yarayan bir anahtar bulunabilir. Anahtar açıldığında
+olayın kimin adına açılacağı seçilir; olay o kişinin kayıtlarında görünür.
+
+<Callout type="info" title="Form boş açılıyorsa">
+Yönetici varsayılan olay formunu "yalnız teknisyenlere göster" olarak işaretlediyse form portalda
+listelenmez. Bu durumda çekmece boş açılır ve `Kaydet` pasif kalır; `Özel Form` listesinden bir
+form seçtiğinizde alanlar görünür.
+</Callout>
+
+## Yeni çağrı
+
+Çağrı, destek ekibiyle en hızlı iletişim yoludur. Destek ekibi çağrıyı inceler, gerekirse olaya ya
+da isteğe dönüştürür.
+
+![Yeni çağrı formu](/img/kullanici/olusturma-cagri.png)
+
+| # | Alan | Açıklama |
+|---|---|---|
+| ❶ | `Çağrı Konusu` | Çağrının konusu. Zorunludur |
+| ❷ | `Çağrı Açıklaması` | Ayrıntılar. Metin düzenleyiciyle biçimlendirilebilir, görsel eklenebilir |
+| ❸ | `Vazgeç`, `Kaydet` | `Kaydet` çağrıyı açar |
+
+Tek satırlık bir konu yeterliyse ana sayfadaki [Hızlı Çağrı](/docs/kullanici/ana-sayfa#hızlı-çağrı)
+kutusu daha hızlıdır.
+
+## Yeni iyileştirme
+
+İyileştirme, bir süreci, hizmeti ya da ürünü daha iyi hale getirmek için yapılan öneridir.
+
+![Yeni iyileştirme formu](/img/kullanici/olusturma-iyilestirme.png)
+
+| # | Alan | Açıklama |
+|---|---|---|
+| ❶ | `Özel Form` | Kurumda birden fazla iyileştirme formu varsa buradan seçilir |
+| ❷ | `İyileştirme Numarası` | Kayda verilecek numaranın alanıdır; boş bırakın, numara kayıt açılınca verilir |
+| ❸ | `Başlık` | Önerinizin kısa adı. Zorunludur |
+| ❹ | `Açıklama` | Önerinin ne olduğu ve hangi faydayı sağlayacağı. Zorunludur |
+| ❺ | `Dosya Yükle` | Öneriyi destekleyen dosyalar (teklif, ekran görüntüsü). Tıklayarak ya da sürükleyerek eklenir |
+
+Formun altındaki `Diğer Alanlar` bölümünde `Kullanıcı`, `Kategori`, `Öncelik`, `İş Etkisi`, `Aciliyet`
+gibi alanlar bulunur. Kaydetmek için formun en altındaki `Kaydet` kullanılır.
+
+## Yeni değişiklik
+
+![Yeni değişiklik formu](/img/kullanici/olusturma-degisiklik.png)
+
+| # | Alan | Açıklama |
+|---|---|---|
+| ❶ | `Özel Form` | Kurumda birden fazla değişiklik formu varsa buradan seçilir |
+| ❷ | `Değişiklik Numarası` | Kayda verilecek numaranın alanıdır; boş bırakın |
+| ❸ | `Başlık` | Değişikliğin kısa adı. Zorunludur |
+| ❹ | `Açıklama` | Ne değişecek ve neden gerekiyor. Zorunludur |
+| ❺ | `Dosya Ekle` | Değişikliği destekleyen dosyalar |
+
+`Diğer Alanlar` bölümünde formun gerektirdiği ek alanlar bulunur (varsayılan formda `Değişiklik
+İsteyen` ve `Teknisyen Grubu` zorunludur). Zorunlu alanlar doldurulmadan kayıt açılmaz.
+
+## Varlıktan olay açmak
+
+Size zimmetli bir cihazla ilgili sorun bildirirken olayı `Varlıklarım` sayfasından açabilirsiniz.
+Bu durumda aynı olay formu açılır ve olay seçtiğiniz varlığa bağlanır; destek ekibi hangi cihazın
+sorunlu olduğunu doğrudan görür. Bkz.
+[Varlıklarım, Hizmetlerim ve Proje](/docs/kullanici/varliklar-hizmetler-projeler#varlıktan-olay-açmak).
+
+## Kayıt açıldıktan sonra
+
+- Kayıt `Veriler` tablosunun ilgili sekmesine eklenir ve `Bütün İşlemlerim` sayıları güncellenir.
+- Kayıt üzerindeki gelişmeler (atama, not, çözüm, kapanış) profilinizde e-posta bildirimi açıksa
+  e-postayla gelir.
+- Kayda not, dosya eklemek ya da kaydı kapatmak için [Kayıt Detayı](/docs/kullanici/kayit-detayi)
+  sayfasına bakın.

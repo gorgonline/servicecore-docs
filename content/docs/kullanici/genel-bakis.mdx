@@ -1,0 +1,114 @@
+---
+title: "Genel Bakış"
+description: "Yeni son kullanıcı portalını açmak, portala giriş, üst menü, kullanıcı menüsü, dil seçimi, yardım panelleri ve duyuru bildirimleri."
+reviewed: "2026-11-09"
+owner: berdanasen
+---
+
+Son kullanıcı portalı, kurum çalışanlarının teknisyen ekranlarına girmeden destek aldığı ekrandır.
+Kullanıcı portala girdiğinde kendi kayıtlarını, açabileceği kayıt türlerini ve kurumun duyurularını
+tek sayfada görür. Portalın hangi bölümleri gösterdiğine ve kullanıcının kayıtlarda neler
+yapabileceğine yönetici karar verir (bkz. [Portal Ayarları](/docs/kullanici/portal-ayarlari)).
+
+## Yeni portalı açmak
+
+Yeni portal ekranları bir uygulama ayarıyla açılır. Ayar `Genel Ayarlar ▸ Uygulama Ayarları`
+sekmesindedir.
+
+![Yeni son kullanıcı sayfalarına yönlendir (beta) ayarı](/img/kullanici/ayar-yeni-son-kullanici-sayfalari.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | **Yeni son kullanıcı sayfalarına yönlendir (beta)** | Açıkken son kullanıcılar girişten sonra yeni portala yönlendirilir. Simgenin üzerine gelince ayarın açıklaması görünür |
+| ❷ | Anahtar | Ayarı açar. Değişiklik, sayfanın altındaki kaydetme butonuyla kaydedilir |
+
+<Callout type="warn" title="Ayar geri alınamaz">
+Ayar bir kez açılıp kaydedildikten sonra anahtar ekranda pasif görünür; aynı ekrandan tekrar
+kapatılamaz. Eski portala dönmeniz gerekirse destek ekibinize başvurun. Yeni ekranlar beta
+aşamasındadır; zaman zaman küçük değişiklikler olabilir.
+</Callout>
+
+## Portala giriş
+
+Son kullanıcılar teknisyenlerle aynı giriş sayfasını kullanır: e-posta adresini yazıp `İleri`ye
+basar, ardından parolasını girer. Giriş yapan kişi teknisyen değilse doğrudan portalın açılış
+sayfasına gelir.
+
+Açılış sayfası normalde [Ana Sayfa](/docs/kullanici/ana-sayfa)dır. Yönetici bir
+[Bilgi Bankası sayfası](/docs/kullanici/portal-tasarimi#bilgi-bankası-sayfası) tasarladıysa ve
+`Çözümler` menüsü açıksa portal o sayfayla açılır; bu durumda kayıtlara üst menüdeki `Kayıtlarım` ile
+ulaşılır.
+
+## Üst menü
+
+Portalın her sayfasında aynı üst menü bulunur.
+
+![Portalın üst menüsü](/img/kullanici/genel-ust-menu.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | Logo | Açılış sayfasına döner. Yönetici kurumun logosunu yükleyebilir |
+| ❷ | Modül menüsü | Portalın bölümleri (aşağıdaki tablo). Yöneticinin kapattığı bölümler menüde görünmez |
+| ❸ | Dil | Portalın dilini değiştirir (aşağıda) |
+| ❹ | Kullanıcı menüsü | Ad soyad ve profil fotoğrafı. Tıklayınca kullanıcı menüsü açılır (aşağıda) |
+
+Modül menüsündeki öğeler:
+
+| Menü | Açılan sayfa |
+|---|---|
+| `Kayıtlarım` | Açtığınız ve sizinle paylaşılan kayıtlar. Bkz. [Ana Sayfa](/docs/kullanici/ana-sayfa) |
+| `Katalog` | Servis kataloğu ve katalogdan istek açma. Bkz. [Katalog ve Yeni İstek](/docs/kullanici/katalog) |
+| `Çözümler` | Bilgi bankası makaleleri. Bkz. [Çözümler](/docs/kullanici/cozumler) |
+| `Varlıklarım` | Size zimmetli varlıklar. Bkz. [Varlıklarım, Hizmetlerim ve Proje](/docs/kullanici/varliklar-hizmetler-projeler) |
+| `Hizmetlerim` | Sahibi olduğunuz hizmetler. Bkz. [Varlıklarım, Hizmetlerim ve Proje](/docs/kullanici/varliklar-hizmetler-projeler#hizmetlerim) |
+| `Onaylarım` | Kararınızı bekleyen onaylar. Bkz. [Onaylarım](/docs/kullanici/onaylarim) |
+| `Duyurular` | Kurumun yayınladığı duyurular. Bkz. [Duyurular](/docs/kullanici/duyurular) |
+| `Proje` | Üyesi olduğunuz projeler (salt okunur). Bkz. [Varlıklarım, Hizmetlerim ve Proje](/docs/kullanici/varliklar-hizmetler-projeler#proje) |
+
+Menünün hangi öğeleri göstereceği `Son Kullanıcı Ayarları ▸ Ayarlar ▸ Modül Yetkileri` bölümünden
+belirlenir. Bkz. [Portal Ayarları](/docs/kullanici/portal-ayarlari#modül-yetkileri).
+
+## Kullanıcı menüsü
+
+Sağ üstteki adınıza tıklayınca kullanıcı menüsü açılır.
+
+![Kullanıcı menüsü](/img/kullanici/genel-kullanici-menusu.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | E-posta adresi | Giriş yaptığınız hesabın e-posta adresi (yalnız bilgi) |
+| ❷ | `Profilim` | Kişisel bilgiler, dil ve bildirim ayarları, ofis dışında ve parola. Bkz. [Profil ve Dosya Geçmişi](/docs/kullanici/profil) |
+| ❸ | `Dosya Geçmişi` | Excel'e aktardığınız kayıt listeleri. Bkz. [Profil ve Dosya Geçmişi](/docs/kullanici/profil#dosya-geçmişi) |
+| ❹ | `Çıkış Yap` | Oturumu kapatır |
+
+Menüde duruma göre iki ek satır görünebilir:
+
+- **Vekili olduğunuz kişiler:** Ofis dışında olan bir çalışan sizi vekil olarak atadıysa, adı
+  e-posta adresinizin altında listelenir. Ada tıklayınca portal o kişi adına açılır; onun bekleyen
+  onaylarını görebilir ve onun adına karar verebilirsiniz. Bu sırada menüde vekâleti bitiren bir
+  seçenek bulunur. Vekâlet profil ayarlarını değiştirmeye izin vermez.
+- **`Teknisyen`:** Teknisyen hesabıyla portala girdiyseniz bu seçenek sizi teknisyen ekranlarına
+  geri götürür.
+
+## Dil seçimi
+
+Üst menüdeki dil simgesine tıklayınca portalın dilleri listelenir.
+
+![Dil menüsü](/img/kullanici/genel-dil-menusu.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | Dil simgesi | Dil menüsünü açar |
+| ❷ | Diller | Seçtiğiniz dil hemen uygulanır ve hesabınıza kaydedilir. Aynı ayar `Profilim ▸ Ayarlar ▸ Dil Seçimi` alanında da bulunur |
+
+## Yardım panelleri
+
+`Varlıklarım`, `Hizmetlerim`, `Onaylarım`, `Dosya Geçmişi` ve katalogdan açılan `Yeni İstek` gibi
+sayfaların sağında, sayfanın ne işe yaradığını anlatan kısa bir bilgi paneli bulunur. Panel salt
+okunurdur; sayfayı ilk kez kullanan kişiye yol gösterir.
+
+## Duyuru bildirimleri
+
+Portal açılırken süresi dolmamış duyurular sağ üstte bildirim olarak görünür. Bildirimdeki
+`Yoksay` ve `Kapat` butonlarının farkı [Duyurular](/docs/kullanici/duyurular#açılış-bildirimleri)
+sayfasında anlatılmıştır.
