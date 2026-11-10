@@ -1,0 +1,61 @@
+---
+title: "Çağrı Listesi"
+description: "Çağrı listesi: görünümler, arama, süzgeç, sütunlar, satır menüsü ve sayfalama."
+reviewed: "2026-11-10"
+owner: necatikekec
+---
+
+`Çağrılar` sayfası çağrıları tablo olarak listeler. Okunmamış çağrının konusunun önünde `Yeni` etiketi, VIP kullanıcının adının yanında `VIP` etiketi görünür.
+
+![Çağrı listesinin bölümleri](/img/teknisyen/cgr2-liste-yerlesim.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | Görünüm sekmeleri | `Bütün çağrılar`, `Açık`, `Bana atananlar`, `Yeniler` ve kayıtlı görünümler. `+` yeni görünüm oluşturur. |
+| ❷ | `Filtrele` | Süzgeç alanlarını açar (aşağıda). |
+| ❸ | `Yenile` | Listeyi yeniden yükler. Solundaki büyüteç arama kutusunu açar; konuya ya da çağrı numarasına göre arar. |
+| ❹ | `Sütunlar` | Gösterilecek sütunları seçer. |
+
+Varsayılan sütunlar `Çağrı No`, `Konu`, `Durum`, `Kullanıcı`, `Teknisyen` ve `Oluşturulma`'dır. **Teknisyen grubu**, **Destek müşteri hesabı**, `Şirket`, `Kaynak`, **Ek sayısı**, **Gelen e-posta** ve **Kapatma tarihi** sonradan eklenebilir. Sütun başlığına basınca liste o sütuna göre sıralanır.
+
+Dönüştürülmüş ya da birleştirilmiş çağrının satırında hedef kaydın numarası bağlantı olarak görünür.
+
+## Görünümler
+
+Süzgeci, aramayı ya da sıralamayı değiştirince sekmelerin yanında `Sıfırla` düğmesi çıkar. Kendi görünümünüzde ayrıca `Kaydet`, hazır bir görünümde `Farklı kaydet` görünür.
+
+![Görünüm oluşturma penceresi](/img/teknisyen/cgr2-liste-gorunum.png)
+
+`Herkesle paylaş` işaretlenen görünüm öbür kullanıcılara **Paylaşılan görünümler** altında görünür. Kendi görünümünüzün ⋯ menüsünde `Yeniden adlandır`, `Herkesle paylaş` / `Paylaşımı kaldır` ve `Sil` vardır.
+
+## Süzgeç
+
+![Filtrele kutusu](/img/teknisyen/cgr2-liste-filtre.png)
+
+`Temel` sekmesinde şu alanlar var:
+- Durum, Aşama
+- Teknisyen grubu, Teknisyen
+- Müşteri, Kullanıcı
+- Oluşturulduğu tarih, Kaynak, Kategori
+- Aciliyet, İş etkisi
+- **Okunmamış mı?**
+- **Silinmiş mi?**: yalnız silinmiş çağrıları görme yetkisi olanlara çıkar.
+
+`Gelişmiş` sekmesinde çağrı numarası, konu ve oluşturulma günü üzerinden koşul yazılır. Koşullar `ve` ya da `veya` ile bağlanır.
+
+Süzgeç sonucu boşsa **Eşleşen çağrı yok** yazar; `Süzgeçleri temizle` ile bütün süzgeçler kaldırılır.
+
+## Satır menüsü
+
+![Satır menüsü](/img/teknisyen/cgr2-liste-satir-menu.png)
+
+Satırın ⋯ düğmesi ya da satıra sağ tıklamak şu işlemleri açar:
+- **Cevapla ve kapat** ve `Kapat`. Kapalı çağrıda bunların yerine `Yeniden aç` görünür.
+- **Olaya dönüştür**, **İsteğe dönüştür** ve **İyileştirmeye dönüştür**
+- `Sil`
+
+Dönüştürülmüş ya da silinmiş çağrıda menüde yalnız pasif bir `İşlem yok` maddesi görünür.
+
+## Sayfalama
+
+Listenin altında sayfa başına 20, 50 ya da 100 çağrı seçilir ve sayfalar arasında geçilir.

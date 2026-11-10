@@ -1,0 +1,34 @@
+---
+title: "Toplu İşlemler"
+description: "Birden çok çağrıyı birlikte güncelleme, kapatma, birleştirme, dönüştürme ve silme."
+reviewed: "2026-11-10"
+owner: necatikekec
+---
+
+Listedeki onay kutularıyla çağrı seçince tablonun üstünde toplu işlem şeridi açılır.
+
+![Toplu işlem şeridi](/img/teknisyen/cgr2-toplu-serit.png)
+
+Şeritte solda seçili çağrı sayısı ve **Tümünü seç** düğmesi bulunur. Sağdaki işlemler şunlardır: `Güncelle`, `Kapat`, `Birleştir` (en az iki seçimde), `Dönüştür` ve `Sil`. En sağdaki `Vazgeç` seçimi kaldırır.
+
+Dönüştürülmüş ya da silinmiş çağrıların onay kutusu kapalıdır; üzerine gelince nedeni yazar.
+
+## Toplu güncelleme
+
+![Toplu güncelleme paneli](/img/teknisyen/cgr2-toplu-guncelle.png)
+
+Şu alanlar seçili çağrıların hepsine birden yazılabilir:
+- Durum
+- Aciliyet, İş etkisi
+- Kategori, Kaynak
+- Teknisyen grubu, Teknisyen
+
+Boş bıraktığınız alan (`Değiştirme`) değişmez. Toplu güncellemede bir alanı boşaltmak mümkün değildir.
+
+## Toplu kapatma ve silme
+
+`Kapat`, seçili çağrıları aynı kapatma durumu ve yorumuyla kapatır. `Sil` hepsini birlikte siler; tek çağrıda olduğu gibi `Geri al` ile geri getirilebilir.
+
+## Uygulanamayan çağrılar
+
+Seçimdeki bazı çağrılara işlem uygulanamıyorsa pencerenin üstünde bunlar nedenleriyle sayılır, ör. "3 çağrı kapatılamaz: kapalı (2), yetkiniz yok (1)." İşlem kalan çağrılara uygulanır. İşlem sırasında bazı çağrılar başarısız olursa tablonun üstünde sonuç bildirimi çıkar. Başarısız çağrılar seçili kalır ve `Yeniden dene` ile tekrar denenebilir.
