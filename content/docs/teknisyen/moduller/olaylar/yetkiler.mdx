@@ -1,0 +1,44 @@
+---
+title: "Yetkiler"
+description: "Rol ekranındaki Olay yetkileri: olay ekleme, görme kapsamı, kapatma, cevaplama, not düzenleme, birleştirme, düzenleme, arşivleme ve silme."
+reviewed: "2026-11-09"
+owner: berdanasen
+---
+
+Bir teknisyenin Olay modülünde neler yapabileceğini rolündeki **Olay** yetkileri belirler. Yetkiler
+`Ayarlar ▸ Roller` ekranında, bir rolü açıp `Olay` sekmesine geçerek düzenlenir.
+
+## Rol ekranı
+
+![Rol ekranında Olay yetkileri](/img/teknisyen/olay-yetkiler.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | `Olay` sekmesi | Rolün Olay modülüyle ilgili yetkileri |
+| ❷ | **Olay Ekleyebilir** | `Yeni Olay` butonunu etkinleştirir |
+| ❸ | **Olayları Görebilir** ve görme kapsamı | Modülün kendisi ve hangi olayların görüleceği (aşağıda) |
+| ❹ | İşlem yetkileri | Kapatma, cevaplama, notlar, birleştirme, düzenleme, arşivleme, silme ve diğerleri |
+
+### Yetkilerin ayrıntısı
+
+| Yetki | Neyi açar |
+|---|---|
+| **Olayları Görebilir** | Olay listesini ve detaylarını görme. Alt seçeneklerle kapsam daraltılır: `Atanmamış Kayıtları Görebilir` / `Atanmış Kayıtları Görebilir`, `Grubundakiler` (teknisyenin kendi gruplarındaki olaylar) / `Seçilen Gruplardakiler` (yanındaki listeden seçilen gruplar) ve `Yetkili Olduğu Müşterilerin Kayıtları`. Seçenekler "Veya" ile birleşir |
+| **Olayı Kapatabilir** | Olayı kapatma, çözme ve reddetme (tek tek ve toplu) |
+| **Cevap Yazabilir** | Olaydan kullanıcıya e-posta ile cevap verme ve iletme |
+| **Notları Düzenleyebilir** | Not düzenleme. `Herkesin Notlarını Düzenleyebilir` bütün notları, `Kendi Notlarını Düzenleyebilir` yalnızca kendi yazdığı notları düzenlemeye izin verir |
+| **Görüşmeleri Silebilir** | Görüşmelerdeki mesajları silme |
+| **Olayları Birleştirebilir** | Listede olayları birleştirme |
+| **Özellikleri Değiştirebilir** | `Kaydet`, hızlı ve toplu güncelleme, açıklamayı düzenleme, çözüm ekleme, paylaşma, klonlama ve yeniden açma |
+| **Olay Görevlerini Düzenleyebilir** | Olay üzerindeki görevleri düzenleme |
+| **Süre Kayıtları Girebilir** | İş günlüğü girme |
+| **Olayları Arşivleyebilir** | Olayı arşivleme |
+| **Olayları Silebilir** | Olayı silme (tek tek ve toplu) |
+| **Kendi Teknisyen Grubunu Görebilir** | Görme kapsamını teknisyenin kendi grubuyla sınırlar |
+| **Silinen Kayıtları Görebilir** | `Kontrol Paneli`ndeki `Silinmiş mi?` kutusunu etkinleştirir |
+| **Bildirimsiz Kapatma Özelliğini Kullanabilir** | Kapatma penceresindeki `Bildirimsiz Kapat/Çöz` kutusu (ayar açıksa) |
+| **SLA yeniden çalıştırabilir** | SLA'yı yeniden çalıştırma yetkisi |
+
+Görev ekleme, tamamlama ve silme için ayrıca `Görev` sekmesindeki görev yetkileri gerekir.
+Tekrarlanan olay tanımlamak için `Yönetici` sekmesindeki **Zamanlanmış Kayıtları Yönetebilir**
+yetkisi gerekir.

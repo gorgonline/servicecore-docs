@@ -1,0 +1,130 @@
+---
+title: "Eylemler Menüsü"
+description: "Olay detayındaki üç nokta (Eylemler) menüsü: çözüm ekleme, paylaşma, silme, klonlama, not, görev ve iş günlüğü ekleme, arşivleme, reddetme, takip, otomasyonlar ve çıktı alma."
+reviewed: "2026-11-09"
+owner: berdanasen
+---
+
+Araç çubuğundaki `⋮` butonu olayla ilgili diğer işlemleri açar. Öğelerin çoğu bir pencere açar ve
+yalnızca penceredeki kaydetme butonuyla işlem yapar; `Arşivle` ve `Takip Et` ise tıklanır tıklanmaz
+uygulanır.
+
+![Eylemler menüsü](/img/teknisyen/olay-detay-eylemler.png)
+
+| # | Grup | Öğeler |
+|---|---|---|
+| ❶ | Çözüm ve kayıt | `Çözüm Ekle`, `Paylaş`, `Sil` ve `Klon` birer pencere açar (aşağıda) |
+| ❷ | Dosya ve e-posta | `Dosya Ekle`, `Cevapla` ve `İlet` sizi `Detaylar` sekmesine götürür; dosyayı `Dosyalar` kartından, e-postayı `Görüşmeler` kartından gönderirsiniz. `Not Ekle` not penceresini açar |
+| ❸ | Görev ve efor | `Görev Ekle` ve `İş Günlüğü Ekle` sağdan bir panel açar |
+| ❹ | Durum | `Arşivle` olayı onay sormadan arşivler; olay listeden kalkar ve yalnızca `Arşivlenmiş mi?` filtresiyle görünür. `Reddet` olayı kapatma penceresine benzer bir pencereyle kapatır. `Takip Et` olayı takip ettikleriniz arasına ekler; tekrar tıklayınca takip bırakılır |
+| ❺ | Diğer | `Otomasyonlar` olay için elle çalıştırılabilen otomasyon kurallarını listeler; satırdaki çalıştır simgesi kuralı onay sormadan çalıştırır. `Çıktı Al` olayı bir yazdırma şablonuyla PDF olarak indirmenizi ya da dışa aktarmanızı sağlar |
+
+Kapalı, birleştirilmiş ya da silinmiş olaylarda menünün çoğu öğesi pasiftir. Kurumunuzda
+**Kapatılmış Kaydı Düzenleyebilir** ayarı açıksa kapalı olaylara da çözüm, not ve iş günlüğü
+eklenebilir ve olay paylaşılabilir.
+
+## Çözüm ekleme
+
+Olay için bulunan çözümü kayda geçirir. Çözümler `Çözümler` sekmesinde listelenir.
+
+![Çözüm Ekle penceresi](/img/teknisyen/olay-eylem-cozum-ekle.png)
+
+| # | Alan | Açıklama |
+|---|---|---|
+| ❶ | `Bilgi Bankasından Seç` | Bilgi Bankası'ndaki bir sayfayı seçince çözüm alanları o sayfadan dolar |
+| ❷ | `Konu` | Çözümün başlığı |
+| ❸ | `Kısa Özet` | Çözümün tek cümlelik özeti |
+| ❹ | `Açıklama` | **Zorunlu.** Yapılanın ayrıntısı |
+| ❺ | `Anahtar Kelime` | Çözümü aramada bulmayı kolaylaştıran kelimeler |
+| ❻ | `Çözüm Türü` | **Zorunlu.** `Önerilen`, `Uygulanan Çözüm` ya da `İşe Yarayan Çözüm` |
+| ❼ | `Çözüm Şablonu Olarak Ekle` | Açılırsa çözüm, `Çözüm Kategorisi` seçilerek çözüm şablonu olarak da kaydedilir |
+| ❽ | `Kaydet ve Durumu Değiştir` | Çözümü kaydeder ve olayın durumunu seçtiğiniz durumla değiştirir |
+| ❾ | `Kaydet` | Çözümü kaydeder |
+
+`Kaydet ve Durumu Değiştir` ile kurumunuzda "çözüldü" kabul edilen durumu seçtiğinizde kapatma
+kuralları kontrol edilir; eksik bir kural varsa çözüm kaydedilir ama durum değişmez.
+
+## Paylaşma
+
+Olayı başka teknisyenlerle ve kullanıcılarla paylaşır. Paylaşılan kişilere bildirim gider.
+
+![Kayıt Paylaşımı penceresi](/img/teknisyen/olay-eylem-paylas.png)
+
+| # | Alan | Açıklama |
+|---|---|---|
+| ❶ | `Teknisyenler` | Olayın paylaşılacağı teknisyenler |
+| ❷ | `Kullanıcılar` | Olayın paylaşılacağı kullanıcılar |
+| ❸ | `Yorum` | Paylaşımla birlikte gidecek açıklama |
+| ❹ | `Paylaş` | Paylaşımı kaydeder |
+
+Pencere olayın mevcut paylaşımlarını listeyle birlikte kaydeder: listeden çıkardığınız kişiyle
+paylaşım kaldırılır.
+
+## Silme
+
+![Sil penceresi](/img/teknisyen/olay-eylem-sil.png)
+
+| # | Alan | Açıklama |
+|---|---|---|
+| ❶ | `Silme Gerekçesi` | **Zorunlu.** Silme nedeni |
+| ❷ | `Durum` | **Zorunlu.** Silinen olayın alacağı kapalı durum |
+| ❸ | `Kaydet` | Olayı siler |
+
+Silinen olay kapanır ve listeden kalkar; olaya bağlı görevler de silinir. Silinen olaylar
+`Kontrol Paneli`ndeki `Silinmiş mi?` kutusuyla görülebilir. Silmek için **Olayları Silebilir**
+yetkisi gerekir.
+
+## Klonlama
+
+Olayın aynısından bir ya da birden fazla yeni olay açar.
+
+![Klon penceresi](/img/teknisyen/olay-eylem-klon.png)
+
+| # | Alan | Açıklama |
+|---|---|---|
+| ❶ | `Klon Sayısı` | **Zorunlu.** Kaç kopya açılacağı |
+| ❷ | `Durum` | Kopyaların durumu (`Açık` ya da beklemedeki bir durum); boş bırakılabilir |
+| ❸ | `Klon` | Kopyaları oluşturur |
+
+Kopyalar arka planda oluşturulur; başarı mesajından kısa bir süre sonra listede görünürler. Her
+kopyaya olayın özel alanları taşınır ve kaynak olaya bağlantı veren bir sistem notu eklenir.
+Kopyalar için normal bildirimler gönderilir.
+
+## Not ekleme
+
+![Not Ekle penceresi](/img/teknisyen/olay-eylem-not-ekle.png)
+
+| # | Alan | Açıklama |
+|---|---|---|
+| ❶ | `Özel Not` | Varsayılan olarak işaretlidir; özel notu kullanıcı görmez ve bildirim gitmez. İşaret kaldırılırsa "Kullanıcı tarafından görüntülenebilir!" uyarısı çıkar ve not kullanıcıya bildirilir |
+| ❷ | `Açıklama` | **Zorunlu.** Notun metni |
+| ❸ | `Kaydet` | Notu `Görüşmeler` kartına ekler |
+
+## İş günlüğü ekleme
+
+Olay için harcanan süreyi kaydeder. Kayıtlar `İş Günlükleri` sekmesinde listelenir.
+
+![İş Günlüğü Ekle paneli](/img/teknisyen/olay-eylem-is-gunlugu-ekle.png)
+
+| # | Alan | Açıklama |
+|---|---|---|
+| ❶ | `Başlık` ve `Açıklama` | Yapılan işin özeti |
+| ❷ | `İş Günlüğü Türü` | Kurumunuzda tanımlı iş türleri |
+| ❸ | `İşi Yapan` | **Zorunlu.** İşi yapan teknisyen; varsayılan olarak siz |
+| ❹ | Süre | **Zorunlu.** `Saat` ve `Dakika`; altındaki hazır butonlarla (`15dk`, `1s 30dk`…) tek tıkla doldurulur |
+| ❺ | `Tarih` | İşin yapıldığı tarih |
+| ❻ | Maliyet ve diğer alanlar | `İşi Yapanın Maliyeti`, `Diğer Masraflar`, `Tahmini Süre` ve `Faturalandırılabilir` |
+| ❼ | `Kaydet` | İş günlüğünü kaydeder |
+
+`Görev Ekle` de aynı şekilde sağdan bir panel açar: görev şablonu, başlık, açıklama, teknisyen
+grubu, teknisyen, durum ve tarihler girilir. Paneldeki alanlar kurumunuzun görev formuna göre
+değişir; görevin durumunu boş bırakmayın. Görevler `Görevler` sekmesinde listelenir.
+
+## Çıktı alma
+
+`Çıktı Al`, kurumunuzda tanımlı yazdırma şablonlarını listeler.
+
+![Şablonlar penceresi](/img/teknisyen/olay-eylem-cikti-al.png)
+
+Satırdaki `Ön İzleme` çıktıyı ekranda gösterir, `PDF İndir` tarayıcının yazdırma penceresini açar,
+`Dışa Aktar` çıktıyı HTML dosyası olarak indirir.

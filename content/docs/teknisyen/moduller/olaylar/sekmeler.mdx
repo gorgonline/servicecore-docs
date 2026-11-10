@@ -1,0 +1,87 @@
+---
+title: "Detay Sekmeleri"
+description: "Olay detayındaki Görevler, İş Günlükleri, Çözümler, Süreçler, Geçmiş ve SLA sekmeleri."
+reviewed: "2026-11-09"
+owner: berdanasen
+---
+
+Olay detayında `Detaylar` dışındaki sekmeler olayın görevlerini, harcanan eforu, çözümleri, bağlı
+kayıtları ve işlem geçmişini gösterir. Sekme adının yanındaki sayı o sekmedeki kayıt adedidir.
+
+Olaya bir SLA politikası uygulanmışsa sekmelerin arasında `SLA` sekmesi de görünür: SLA politikasının
+adı ile hedef cevap ve çözüm tarihleri burada bulunur, olay beklemedeyse uyarı gösterilir. Sekme
+beklemedeyken turuncu, hedef aşıldığında kırmızıdır. `Sla Koşullar ve Değerleri` politikanın
+koşullarını gösterir, `SLA Yeniden Çalıştır` hedefleri onay sormadan yeniden hesaplar. Kurumunuzda
+yapay zekâ servisi açıksa `SolveCoreAI` sekmesi olayın metnine göre çözüm önerileri sunar; öneri
+almak olayı değiştirmez.
+
+## Görevler
+
+Olay üzerinde teknisyenlere açılan görevler.
+
+![Görevler sekmesi](/img/teknisyen/olay-sekme-gorevler.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | `Aktif` / `Tamamlanmış` | Açık ve tamamlanmış görevler arasında geçiş |
+| ❷ | `Ekle` | Yeni görev panelini açar |
+| ❸ | `Diyagram` | Görevlerin sırasını ve birbirine bağlılığını şema olarak gösterir |
+| ❹ | Görev | Başlık, açıklama, grup, teknisyen, öncül görev, başlangıç ve bitiş tarihleri |
+| ❺ | Satır işlemleri | Göreve iş günlüğü ekleme, görevi tamamlama, düzenleme ve silme. Tamamlama ve silme onay ister |
+| ❻ | Süre özeti | Görevlerin ve olayın toplam iş günlüğü süresi (dakika) |
+
+## İş Günlükleri
+
+Olay için girilen iş günlükleri.
+
+![İş Günlükleri sekmesi](/img/teknisyen/olay-sekme-is-gunlukleri.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | `İş Günlükleri` / `Görev İş Günlükleri` | Doğrudan olaya girilen iş günlükleri ile olayın görevlerine girilenler ayrı listelenir |
+| ❷ | `İş Günlüğü Ekle` | İş günlüğü panelini açar. Bkz. [Eylemler Menüsü](/docs/teknisyen/moduller/olaylar/eylemler) |
+| ❸ | İş günlüğü | Başlık, açıklama, tür, teknisyen, başlangıç ve bitiş tarihi, süre |
+| ❹ | Satır işlemleri | Düzenleme ve silme; silme onay ister |
+
+## Çözümler
+
+Olay için önerilen, uygulanan ve işe yarayan çözümler.
+
+![Çözümler sekmesi](/img/teknisyen/olay-sekme-cozumler.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | Tür filtresi | `Tümü`, `Önerilen`, `Uygulanan` ya da `İşe Yarayan` |
+| ❷ | `Çözüm Ekle` | Çözüm penceresini açar |
+| ❸ | Çözüm | Konu, tür, ekleyen teknisyen ve tarihler. Satırın başındaki `+` çözümün açıklamasını açar |
+| ❹ | Satır işlemleri | Önerilen çözümü onaylama (türünü ilerletme) ya da onayı geri alma, silme ve düzenleme. Onaylama, geri alma ve silme onay ister |
+
+Kurumunuzda olay–problem bağıntısının ileri seviye ayarı açıksa burada bir de `Senkronize Et` butonu
+bulunur; olayın bağlı olduğu problemin çözümlerini olaya getirir.
+
+## Süreçler
+
+Olayın bağlı olduğu problem, istek, değişiklik, iyileştirme, diğer olay ve proje kayıtları.
+
+![Süreçler sekmesi](/img/teknisyen/olay-sekme-surecler.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | Alt sekmeler | `Problem`, `İstek`, `Değişiklik`, `İyileştirme`, `İlişkiler` (diğer olaylar) ve `Proje` |
+| ❷ | `Bağıntı Ekle` | Üzerine gelince açılır: `Yeni Kayıt` seçili türde yeni bir kayıt açar ve olaya bağlar; `Varolan Kayıt` daha önce açılmış bir kaydı bağlar. `Problem` sekmesinde ayrıca `Yeni Kayıt Bana` yeni problemi açıp size atar |
+| ❸ | Bağlı kayıtlar | Seçili türdeki bağlı kayıtlar. Satırdaki sil simgesi bağı kaldırır |
+
+`Yeni Kayıt` ile açılan kayda olayın konusu, açıklaması, önceliği, grubu, teknisyeni ve kullanıcısı
+hazır gelir. Menüde yalnızca o modülde kayıt açma ya da görme yetkiniz olan seçenekler görünür.
+
+## Geçmiş
+
+Olay üzerinde yapılan bütün işlemler: kim, ne zaman, ne yaptı.
+
+![Geçmiş sekmesi](/img/teknisyen/olay-sekme-gecmis.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | `Geçmiş` / `Harcanan Süre` | İşlem listesi ile olay üzerinde geçen sürenin dökümü arasında geçiş |
+| ❷ | Filtreler | `Operasyon Tipi`, `İşlem Tipi` ve tarih aralığına göre filtreleme |
+| ❸ | İşlemler | Tarih, işlem ve işlemi yapan kişi, en yenisi üstte |

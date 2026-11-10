@@ -1,0 +1,51 @@
+---
+title: "Olay Oluşturma"
+description: "Yeni olay formu, form alanları ve belirli aralıklarla kendiliğinden açılan tekrarlanan (zamanlanmış) olay."
+reviewed: "2026-11-09"
+owner: berdanasen
+---
+
+Telefonla ya da yüz yüze bildirilen bir arızayı `Yeni Olay` butonuyla kaydedersiniz. Düzenli
+aralıklarla yapılması gereken işler (ör. haftalık yedek kontrolü) için tekrarlanan olay
+tanımlanır. Çağrıdan ve e-postadan gelen olaylar için bkz. [Genel Bakış](/docs/teknisyen/moduller/olaylar/genel-bakis).
+
+## Yeni olay formu
+
+Listenin sağ üstündeki `Yeni Olay` butonu sağdan `Olay Kaydı Aç` panelini açar. Aynı panele üst
+menüdeki hızlı kayıt (`+`) simgesinden de ulaşılır. Buton yalnızca **Olay Ekleyebilir** yetkisi
+olanlarda etkindir.
+
+![Olay Kaydı Aç paneli](/img/teknisyen/olay-olustur-form.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | `Özel Form` | Kullanılacak form. Varsayılan olay formu kendiliğinden seçilir; kurumunuz olay için başka formlar tasarladıysa buradan değiştirebilirsiniz |
+| ❷ | `Konu` ve `Açıklama` | Olayın kısa başlığı ve ayrıntılı tanımı |
+| ❸ | `Dosya Yükle` | Ekran görüntüsü, günlük dosyası gibi dosyaları sürükleyip bırakın ya da tıklayıp seçin |
+| ❹ | `Kayıt Bilgileri` | `Kullanıcı`, `Kategori Adı`, `Öncelik`, `Teknisyen Grubu`, `Durum`, `İş Etkisi`, `Teknisyen`, `Kaynak` ve `Aciliyet` |
+| ❺ | `Etkilenen Hizmet` | Olaydan etkilenen hizmet |
+| ❻ | `Kaydet` | Olayı oluşturur; olay listede yeni bir sekmede açılır |
+
+Formdaki alanlar ve hangilerinin zorunlu olduğu kurumunuzun form tasarımına göre değişir;
+yukarıdaki görüntü varsayılan olay formudur. Zorunlu bir alan boşsa `Kaydet` olayı oluşturmaz ve
+eksik alanı gösterir.
+
+## Tekrarlanan olay
+
+Listenin sağ üstünde `Yeni Olay`ın yanındaki saat simgesi (`Yeni Zamanlanmış Olay`), belirlediğiniz
+aralıkta kendiliğinden açılacak bir olay tanımlar. Panelin başlığı `Tekrarlanan Bir Olay Oluşturun`dur.
+
+![Tekrarlanan Bir Olay Oluşturun paneli](/img/teknisyen/olay-olustur-zamanlanmis.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | `Olay Şablonu Seçiniz` | **Zorunlu.** Açılacak olayların konu, açıklama ve diğer bilgileri bu şablondan gelir |
+| ❷ | `Teknisyen Grubu`, `Teknisyen`, `Kullanıcı` | **Zorunlu.** Açılan olayların atanacağı grup ve teknisyen ile olayın kullanıcısı |
+| ❸ | `Özel Form` | **Zorunlu.** Açılacak olayların formu |
+| ❹ | `Özel Ek Alanlar` | `Yeni Özel Alan Ekle` ile forma ait alanlara değer verilir |
+| ❺ | `Periyot` | **Zorunlu.** Tekrar sıklığı: gün, saat ve dakika olarak seçilir |
+| ❻ | `Toplam Tekrarlanma Sayısı` | Kaç kez olay açılacağı. Boş bırakılırsa zamanlama sınırsız çalışır; bir sayı girilirse o kadar olay açıldıktan sonra durur |
+| ❼ | `Kaydet` | Zamanlamayı kaydeder |
+
+Tekrarlanan olay tanımlamak için **Zamanlanmış Kayıtları Yönetebilir** yetkisi gerekir. Tanımlanan
+zamanlamalar yönetim tarafındaki `Zamanlanmış Kayıtlar` ekranında listelenir.

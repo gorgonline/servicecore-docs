@@ -1,0 +1,69 @@
+---
+title: "Filtreler"
+description: "Olay listesini filtrelemek için filtre görünümleri, kontrol paneli alanları, filtrenin hatırlanması ve kayıtlı filtre oluşturma."
+reviewed: "2026-11-09"
+owner: berdanasen
+---
+
+Listenin sağındaki iki kart olayları filtrelemenizi sağlar: sık kullandığınız filtreleri tek tıkla
+uygulayan `Filtre Görünümleri` ve alan alan filtreleme yapılan `Kontrol Paneli`.
+
+## Filtre görünümleri
+
+![Filtre Görünümleri kartı](/img/teknisyen/olay-filtre-gorunumleri.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | Sıfırla | Görünümlerin sırasını ve gizlediğiniz görünümleri ilk hâline getirir |
+| ❷ | `+` | Yeni kayıtlı filtre oluşturur (aşağıda) |
+| ❸ | Görünüm listesi | Bir görünüme tıklayınca o filtre listeye uygulanır. Üzerine gelince `Düzenle` ve `Sil` simgeleri çıkar; herkese açık görünümleri kendi listenizden `Gizle` ile kaldırabilirsiniz. Görünümleri sürükleyerek sıralayabilirsiniz |
+
+`Sil` onay ister ve görünümü kalıcı olarak siler.
+
+### Yeni filtre oluşturma
+
+`+` butonu `Yeni Filtre` panelini açar.
+
+![Yeni Filtre paneli](/img/teknisyen/olay-filtre-yeni.png)
+
+| # | Alan | Açıklama |
+|---|---|---|
+| ❶ | `Filtre Adı` | **Zorunlu.** Görünüm listesinde görünecek ad |
+| ❷ | `Herkes` | İşaretlerseniz filtre bütün teknisyenlerin görünüm listesine eklenir; işaretlemezseniz yalnızca siz görürsünüz |
+| ❸ | Koşullar | `Bir alan seç` ile alanı, ardından koşulu ve değeri belirleyin. `+` ile yeni koşul ya da koşul grubu ekleyin; `Ve` tüm koşulların, `Veya` herhangi birinin sağlanmasını ister |
+| ❹ | `Kaydet` | Filtreyi `Filtre Görünümleri` listesine ekler |
+
+## Kontrol paneli
+
+`Kontrol Paneli`ndeki alanlardan birini doldurduğunuz anda liste filtrelenir. Birden fazla alanı
+birlikte kullanabilirsiniz.
+
+![Kontrol Paneli: üst alanlar](/img/teknisyen/olay-filtre-kontrol-paneli.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | Filtreyi hatırla | Açıksa uyguladığınız filtre bu tarayıcıda saklanır; sayfayı yenileseniz de kaybolmaz |
+| ❷ | Numara ve konu | `Olay Numarası`, eski sistemden aktarılan kayıtlar için `Migration Numarası` ve `Konu` |
+| ❸ | `Durum` ve `Aşama` | `Durum` birden fazla seçilebilir. `Aşama` durumları gruplar: `Açık`, `Beklemede`, `Kapalı` |
+| ❹ | Kişiler | `Teknisyen Grubu`, `Teknisyen`, `Şirket`, `Müşteri` ve `Kullanıcı` |
+
+![Kontrol Paneli: alt alanlar](/img/teknisyen/olay-filtre-kontrol-paneli-alt.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | Sınıflandırma | `Kategori`, `Oluşturulduğu Tarih` aralığı, `Etiketler`, `Bölüm`, `Kaynak` ve `Özel Form` |
+| ❷ | `Öncelik`, `Aciliyet`, `İş Etkisi` | Kutuları işaretleyerek bir ya da birden fazla değeri seçin |
+| ❸ | `Silinmiş mi?` ve `Arşivlenmiş mi?` | Silinmiş ya da arşivlenmiş olayları listeler. `Silinmiş mi?` yalnızca silinen kayıtları görme yetkisi olanlarda etkindir |
+| ❹ | `Özel Filtre Ekle` | Özel form alanlarına göre koşul ekler |
+| ❺ | `Sıfırla` | Bütün alanları temizler |
+| ❻ | `SLA Yeniden Çalıştır` | Listedeki olayların SLA hedeflerini yeniden hesaplar (aşağıdaki uyarıya bakın) |
+
+<Callout type="warn" title="DİKKAT">
+`SLA Yeniden Çalıştır`, onayınızdan sonra **o anki filtreye uyan bütün olayların** SLA'sını yeniden
+çalıştırır; yalnızca ekrandaki sayfayla sınırlı değildir. Filtreyi daraltmadan kullanmayın.
+</Callout>
+
+<Callout type="info" title="ÖNEMLİ">
+Liste silinmiş ve arşivlenmiş olaylar dışındaki bütün olayları gösterir. Yalnızca açık olayları
+görmek için `Aşama` alanından `Açık`ı seçin ya da bir filtre görünümü kullanın.
+</Callout>
