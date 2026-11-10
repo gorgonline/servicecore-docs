@@ -1,0 +1,31 @@
+---
+title: "Pano"
+description: "AssetCore panosu: modül seçimi, özet kareleri ve dikkat gerektiren kayıtlar."
+reviewed: "2026-11-10"
+owner: necatikekec
+---
+
+Pano, AssetCore'un açılış ekranıdır ve seçtiğiniz modülün özetini gösterir. Her kare ve her satır, ilgili listeyi süzülmüş olarak açar.
+
+![Pano ekranının bölümleri](/img/teknisyen/cmdb2-pano-yerlesim.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | `Raporlar` | Hazır raporların listesini açar. Bkz. [Raporlar](/docs/teknisyen/moduller/cmdb-v2/raporlar). |
+| ❷ | `Modül` | Panonun hangi modülü özetleyeceğini seçer. Yanında o modüldeki kayıt sayısı yazar. |
+| ❸ | Özet kareleri | Modülün temel sayıları. Kareye basınca liste o süzgeçle açılır. |
+| ❹ | **Dikkat gerektirenler** | Garantisi biten varlıklar, süresi ya da koltuğu dolan lisanslar ve en az stoğun altına düşen aksesuar ve sarf malzemeleri. Hiç kayıt yoksa `Dikkat gerektiren bir şey yok` yazar. |
+
+## Modüle göre kareler
+
+![Modül seçimi](/img/teknisyen/cmdb2-pano-modul.png)
+
+| Modül | Kareler |
+|---|---|
+| Varlıklar | `Varlık` (toplam), `Aktif`, `Depoda bekleyen`, **Garantisi 90 günde biten**, **Son 30 günde eklenen** |
+| Hizmetler | `Aktif`, **Sahibi olmayan**, **En kritik hizmet**, **Son 30 günde eklenen** |
+| Lisanslar | **Koltuk kullanımı**, **Koltuğu aşılan**, **90 günde süresi dolacak**, **Toplam maliyet** |
+| Aksesuarlar | `Dağıtılan`, `Düşük stokta` |
+| Sarf malzemeleri | `Düşük stokta`, **Son 30 günde tüketilen** |
+
+`Aktif` oranı, durumu `Aktif` kategorisindeki kayıtların toplama oranıdır. Kategoriler [Ayarlar](/docs/teknisyen/moduller/cmdb-v2/ayarlar) › `Durumlar` ekranında tanımlanır.

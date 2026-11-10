@@ -1,0 +1,87 @@
+---
+title: "Varlık Detayı"
+description: "Varlık kayıt sayfası: başlık, bildirimler, işlemler menüsü ve Detaylar, İlişkiler, Bağlı kayıtlar, Atamalar, Finans sekmeleri."
+reviewed: "2026-11-10"
+owner: necatikekec
+---
+
+Listede bir varlığa basınca kayıt sayfası açılır. Hizmet, lisans, aksesuar ve sarf sayfaları aynı iskeleti kullanır, yalnız sekmeleri farklıdır.
+
+![Varlık sayfasının bölümleri](/img/teknisyen/cmdb2-detay-yerlesim.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | Ad | Üzerine basarak yerinde düzenlenir. Altında numara, tür yolu ve seri no yazar. |
+| ❷ | Durum | Durumu değiştirir. Varlık bir depo durumuna alınırsa zimmeti kalkar ve bunu bildiren bir uyarı görünür. |
+| ❸ | İşlemler menüsü | Aşağıda. |
+| ❹ | Bildirimler | Dikkat gerektiren durumlar: zimmet kabulü bekleniyor ya da reddedildi, garantisi bitti, arşivde. |
+| ❺ | Sekmeler | `Detaylar`, `Aktivite`, `İlişkiler`, **Bağlı kayıtlar**, `Sözleşmeler`, `Atamalar`, `Finans`, `Sayım`. Sayılar sekmedeki kayıt adedidir. |
+| ❻ | Sekme içeriği | `Detaylar`'da sol sütunda özellikler, ek alanlar ve dosyalar; sağ sütunda zimmet, özet ve kayıt bilgisi bulunur. |
+
+Düzenleme yetkiniz yoksa ya da kayıt arşivdeyse alanlar düzenlenemez. Arşivdeki kayıtta üstte `Arşivde` bildirimi ve `Arşivden çıkar` düğmesi görünür.
+
+## İşlemler menüsü
+
+![Varlığın işlemler menüsü](/img/teknisyen/cmdb2-detay-menu.png)
+
+`Kopyala`, zimmet işleri (`Zimmet ver`, `Zimmeti al`, `Zimmet formu`), `Barkod etiketi`, `İlişki haritası`, `Arşivle` ve `Sil`. Zimmet ve barkod için bkz. [Zimmet ve Barkod](/docs/teknisyen/moduller/cmdb-v2/zimmet).
+
+`Sil`, silmeden önce varlığa bağlı olanları (zimmet, aksesuar, lisans koltuğu, ilişki) sayarak gösterir. Silinen kayıt için çıkan bildirimdeki `Geri al` ile silme geri alınabilir.
+
+## Aktivite
+
+![Aktivite sekmesi](/img/teknisyen/cmdb2-detay-aktivite.png)
+
+Kayıttaki değişiklikler ve notlar bir akışta listelenir. Üstteki seçiciyle `Hepsi`, `Notlar` ya da `Olaylar` gösterilir. `Not ekle` ile not yazılır. Notun ⋯ menüsünde `Düzenle` ve `Sil` bulunur.
+
+## İlişkiler
+
+![İlişkiler sekmesi](/img/teknisyen/cmdb2-detay-iliskiler.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | **İlişki haritası** | Varlığın bağlı olduğu varlık ve hizmetleri katman katman gösteren paneli açar. |
+| ❷ | `İlişki ekle` | `İlişki türü`, `Yön` ve `Kayıt türü` seçerek başka bir varlık ya da hizmetle ilişki kurar. |
+
+Tablonun `İlişki` sütunu ilişkinin bu kayıttan bakınca okunuşudur, ör. `Yedeklenir`, `Kullanır`. İlişki türleri ve karşıt adları [Ayarlar](/docs/teknisyen/moduller/cmdb-v2/ayarlar) › `İlişki türleri` ekranında tanımlanır. Satır ⋯ menüsündeki `İlişkiyi kaldır` ilişkiyi siler.
+
+![İlişki haritası](/img/teknisyen/cmdb2-detay-harita.png)
+
+## Bağlı kayıtlar
+
+![Bağlı kayıtlar sekmesi](/img/teknisyen/cmdb2-detay-bagli.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | **Kayıt bağla** | Var olan bir olay, istek, problem, değişiklik ya da sürekli iyileştirme kaydını bağlar ya da yenisini açar. |
+
+Kayıt kodu ServiceCore'daki kaydı yeni sekmede açar. Satır ⋯ menüsündeki `Bağı kaldır` yalnız bağı siler, kaydı silmez. Destek hesabı ve ortam bağları salt okunurdur.
+
+## Sözleşmeler
+
+Varlığın tedarik, müşteri destek ve kurum içi destek sözleşmeleri ayrı ayrı listelenir. `Sözleşme bağla` ile var olan sözleşme bağlanır ya da yenisi açılır. Sözleşmenin durumu `Etkin`, `Başlamadı`, **Süresi geçti** ya da `Pasif` olur.
+
+<Callout type="info" title="İPUCU">Tedarik sözleşmesi bağlamak için önce varlığın `Tedarikçi` alanını doldurun. Tedarikçi yoksa `Sözleşme bağla` pasiftir.</Callout>
+
+## Atamalar
+
+![Atamalar sekmesi](/img/teknisyen/cmdb2-detay-atamalar.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | `Lisans ata` | Varlığa bir lisans koltuğu atar. Koltuğu dolu lisans atanamaz. |
+| ❷ | `Aksesuar ata` | Varlığa stoktan aksesuar verir. Satır ⋯ menüsünde **Adedi ya da notu değiştir** ve `Aksesuarı kaldır` bulunur. |
+
+## Finans
+
+![Finans sekmesi](/img/teknisyen/cmdb2-detay-finans.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | **Mali kayıt ekle** | Varlığa maliyet ekler. Maliyet türü `Hizmet`, `Taşıma`, `İmha` ya da `Diğer`; para birimi `TRY`, `EUR` ya da `USD` olur. |
+
+Tablonun altındaki `Toplam` satırı tutarları para birimi başına toplar. Para birimleri arasında kur çevrimi yapılmaz.
+
+## Sayım
+
+Varlığın hangi sayım oturumlarında sayıldığını, sonucunu ve niteliklerini listeler. Bkz. [Sayım](/docs/teknisyen/moduller/cmdb-v2/sayim).

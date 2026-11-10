@@ -1,0 +1,27 @@
+---
+title: "Aksesuar ve Sarf Malzemeleri"
+description: "Stoklu öğeler: aksesuar atama, sarf tüketimi, stok girişi ve en az stok uyarıları."
+reviewed: "2026-11-10"
+owner: necatikekec
+---
+
+Aksesuarlar ve sarf malzemeleri stok adediyle tutulur. İkisinin de bir **En az stok** değeri vardır. Stok bu değerin altına düşünce kayıtta `Düşük stok`, sıfıra inince **Stokta yok** bildirimi çıkar ve kayıt panodaki **Dikkat gerektirenler** listesine girer.
+
+## Aksesuarlar
+
+Aksesuar sayfasının sekmeleri `Detaylar`, `Aktivite` ve `Atamalar`'dır. Aksesuar bir varlığa, varlığın `Atamalar` sekmesindeki `Aksesuar ata` ile verilir. Verilen adet stoktan düşer. Atamanın ⋯ menüsünde **Adedi ya da notu değiştir** ve **Atamayı geri al** bulunur.
+
+## Sarf malzemeleri
+
+Sarf malzemesinin sekmeleri `Detaylar`, `Aktivite` ve `Hareketler`'dir.
+
+![Hareketler sekmesi](/img/teknisyen/cmdb2-sarf-hareketler.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | `Tüket` | Stoktan düşer. Tüketim bir varlığa ya da kişiye yazılır. Stok 0 ise pasiftir. |
+| ❷ | **Stok girişi** | Stoğa adet ekler. |
+
+![Tüketim yazın penceresi](/img/teknisyen/cmdb2-sarf-tuket.png)
+
+Hareketler `Tüketim`, **Stok girişi** ya da **Geri alma** türündedir. Yanlış girilen bir hareketi satır ⋯ menüsündeki **Geri al** ile geri alırsınız; geri alma da listede **Geri alma** hareketi olarak görünür.

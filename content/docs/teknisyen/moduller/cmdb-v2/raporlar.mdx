@@ -1,0 +1,39 @@
+---
+title: "Raporlar"
+description: "AssetCore'daki 16 hazır rapor: dağılım, garanti, yaşam döngüsü, lisans uyumu, kritik hizmetler ve sayım raporları."
+reviewed: "2026-11-10"
+owner: necatikekec
+---
+
+`Raporlar` sayfası hazır raporları gruplar hâlinde listeler: `Genel`, `Varlıklar`, `Lisanslar`, `Hizmetler` ve `Sayım`. Her kartın altında raporun güncel özeti yazar. Karta basınca rapor kendi sayfasında açılır ve seçtiğiniz süzgeçler adreste saklanır.
+
+![Raporlar sayfası](/img/teknisyen/cmdb2-raporlar-yerlesim.png)
+
+## Rapor sayfası
+
+![Garanti raporu](/img/teknisyen/cmdb2-raporlar-garanti.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | **Rapor işlemleri** | **Excel olarak indir**, **CSV olarak indir** ve `Yazdır`. `Yazdır` raporun yazdırılabilir görünümünü bir panelde açar. |
+
+## Rapor listesi
+
+| Rapor | Ne gösterir |
+|---|---|
+| `Dağılım` | Seçilen modülün kayıtlarını durum, tür, konum ya da nitelik başına adet ve yüzdeyle gösterir. |
+| `Eklenenler` | Son tam aylarda eklenen kayıtlar, modül ve tür başına. Son ay bir önceki ayla karşılaştırılır. |
+| **Atanmamış stok** | Depoda bekleyen, kişiye ve departmana zimmetsiz varlıklar ve ne kadar süredir boşta oldukları. |
+| `Garanti` | Garantisi bitmiş ya da seçilen sürede bitecek varlıklar. |
+| **Sahibe göre varlıklar** | Kişi ya da departman başına varlık sayısı ve tür dağılımı. |
+| **Yaşam döngüsü** | Varlıkların yaşı, maliyeti ve kullanım süresi sonu. |
+| **Tür maliyeti** | Tür başına adet ve mali kayıt toplamı, para birimi başına (kur çevrimi yapılmaz). |
+| **Olaylardan etkilenen varlıklar** | Bağlı olay kaydı olan varlıklar, olay sayısı ve ortalama çözüm süresi. |
+| **Varlık değişiklikleri** | Seçilen dönemde varlıklarda yapılan değişiklikler; satır açılınca alan alan fark görünür. |
+| **Bağsız varlıklar** | Kişisiz, departmansız, konumsuz, sözleşmesiz ve hizmet ilişkisiz varlıklar. |
+| **Lisans uyumu** | Lisansların koltuk, kullanım ve uyum durumu, yenileme tarihi. |
+| **Kritik hizmetler** | Hizmetlerin bağımlı ve bağlı kayıt sayıları; toplamı eşik ve üstündeyse `Kritik`. |
+| **Sayım raporu** | Seçilen oturumun kayıtları, sayılan ve sayılamayan sayıları. |
+| **Sayım karşılaştırma** | İki oturumdan yalnız birinde olan ya da sonucu veya niteliği değişen varlıklar. |
+| **Sayılamayan varlıklar** | Son kapalı oturumlarda ya da seçilen oturumlarda en az bir kez sayılamayan varlıklar. |
+| **Sayım performansı** | Seçilen dönemdeki oturumların tamamlanma oranı ve süresi. |
