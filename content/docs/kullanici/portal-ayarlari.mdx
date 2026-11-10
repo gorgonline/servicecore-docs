@@ -1,7 +1,7 @@
 ---
 title: "Portal Ayarları"
-description: "Son Kullanıcı Ayarları ekranının Ayarlar sekmesi: görünüm ayarları, modül yetkileri, hızlı çağrı sınırları ve olay, istek, iyileştirme, çağrı ve varlık için son kullanıcı yetkileri."
-reviewed: "2026-11-09"
+description: "Son Kullanıcı Ayarları ekranının Ayarlar sekmesi: görünüm ayarları, iş birimi seçim sayfası, modül yetkileri, hızlı çağrı sınırları ve olay, istek, iyileştirme, çağrı ve varlık için son kullanıcı yetkileri."
+reviewed: "2026-11-10"
 owner: berdanasen
 ---
 
@@ -44,6 +44,30 @@ değişiklikler `Kaydet`e basınca portala uygulanır.
 | `Kutular Arası Boşluk` | Ana sayfadaki kutuların arasındaki boşluk (piksel). Varsayılan 16 |
 | `Duyuruları Resim Olarak Göster` | Duyuruların resim olarak gösterilmesi için kaydedilen ayar; bu sürümde portal sayfalarına uygulanmıyor |
 | `Duyuru Filigranı Etkinleştir` | Duyurulara filigran eklenmesi için kaydedilen ayar; bu sürümde portal sayfalarına uygulanmıyor |
+
+### Portaldaki iş birimi seçim sayfası
+
+İş birimli kurulumlarda `Görünüm Ayarları` listesinin başında iki satır daha bulunur. Bu satırlar,
+portalın girişte gösterdiği iş birimi seçim sayfasının metinleridir (bkz.
+[Genel Bakış](/docs/kullanici/genel-bakis#portalda-iş-birimi-seçimi)).
+
+![Görünüm Ayarları, iş birimi seçim sayfası satırları](/img/kullanici/ayarlar-gorunum-is-birimi.png)
+
+| # | Ayar | Açıklama |
+|---|---|---|
+| ❶ | `MultiTenant Başlık Yazısı` | Seçim sayfasının başlığı. Boş bırakılırsa `Müşteri Destek ve Hizmet Merkezi` yazar |
+| ❷ | `MultiTenant Tab Açıklaması` | Başlığın altındaki açıklama (ör. `Devam etmek için hizmet almak istediğiniz iş birimini seçin`) |
+
+Başlık ve açıklama beyaz yazılır; okunabilmeleri için `Arka Plan Resmi Seç` ile portala bir arka
+plan resmi seçin.
+
+<Callout type="warn" title="Açıklamayı boş bırakmayın">
+Bu sürümde `MultiTenant Tab Açıklaması` boş bırakılırsa seçim sayfasında açıklama yerine çevrilmemiş
+bir metin anahtarı görünür.
+</Callout>
+
+Her iş biriminin portal ayarları ayrıdır; ekran, teknisyen ekranında o an seçili olan iş biriminin
+ayarlarını açar ve `Kaydet` yalnız o iş birimine uygulanır.
 
 ## Modül yetkileri
 

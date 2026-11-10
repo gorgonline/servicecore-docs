@@ -1,6 +1,6 @@
 ---
 title: "Portal Tasarımı"
-description: "Son Kullanıcı Ayarları ekranında portal ana sayfasının ve Bilgi Bankası sayfasının tasarımı: envanter, tuval, cihaz önizlemesi ve telefon görünümü, şablon araçları ve kullanıcı gruplarına özel tasarım."
+description: "Son Kullanıcı Ayarları ekranında portal ana sayfasının ve Bilgi Bankası sayfasının tasarımı: envanter, tuval, bilgisayar, tablet ve telefon önizlemesi, şablon araçları ve kullanıcı gruplarına özel tasarım."
 reviewed: "2026-11-10"
 owner: berdanasen
 ---
@@ -37,6 +37,9 @@ Ekran `Yönetim` panelindeki **Son Kullanıcı Ayarları** kartıyla açılır.
 Tuvaldeki önizleme gerçek verilerle çalışır; `Veriler` ve `Bütün İşlemlerim` kutularında ekranı açan
 yöneticinin kayıtları ve sayıları görünür.
 
+İş birimli kurulumlarda her iş biriminin kendi portal tasarımı vardır. Ekran, teknisyen ekranında o
+an seçili olan iş biriminin tasarımını açar; `Kaydet` yalnız o iş birimine uygulanır.
+
 ## Kullanıcı grupları
 
 `Kullanıcı Grupları` boş bırakıldığında **varsayılan tasarım** düzenlenir; varsayılan tasarım
@@ -57,6 +60,9 @@ butonlar, yönetim ekibine farklı modüller gösterebilirsiniz.
 |---|---|---|
 | ❶ | Tuvalde olan kutu | Sağında yeşil onay işareti vardır. Tıklayınca kutu tuvalden kaldırılır |
 | ❷ | Tuvalde olmayan kutu | Sağında kırmızı çarpı vardır. Tıklayınca kutu tuvale eklenir |
+
+Ekleme ve kaldırma yalnız o an seçili cihaz görünümüne (bilgisayar, tablet ya da telefon)
+uygulanır; bkz. [Cihaz önizlemesi](#cihaz-önizlemesi).
 
 Envanterdeki kutular:
 
@@ -102,8 +108,8 @@ Tuvalin sağ altındaki üç buton tasarımın tamamını etkiler.
 
 | # | Buton | Ne yapar |
 |---|---|---|
-| ❶ | `Şablonu temizle` | Tuvaldeki bütün kutuları kaldırır; boş bir tasarımla başlarsınız |
-| ❷ | `Şablonu sıfırla` | Tasarımı ürünün varsayılan düzenine döndürür |
+| ❶ | `Şablonu temizle` | Seçili cihaz görünümündeki bütün kutuları kaldırır; o görünüme boş bir tasarımla başlarsınız. Diğer görünümler değişmez |
+| ❷ | `Şablonu sıfırla` | Bilgisayar, tablet ve telefon düzenlerinin üçünü de ürünün varsayılan düzenine döndürür |
 | ❸ | `Izgara görünümü` | Kutuların yerleştiği ızgarayı gösterir ya da gizler; kutuları hizalamayı kolaylaştırır |
 
 Bu butonların etkisi `Kaydet`e basana kadar yalnız ekranda kalır; kaydetmeden çıkarsanız tasarım
@@ -111,27 +117,38 @@ değişmez.
 
 ## Cihaz önizlemesi
 
-Tuvalin sağ üstündeki üç simge önizlemeyi bilgisayar, tablet ve telefon genişliğine getirir.
-Her cihaz için düzen **ayrı** tutulur: bilgisayarda yaptığınız yerleşim tablet ve telefon
-düzenini değiştirmez. Tasarımı kaydetmeden önce üç görünümü de kontrol etmenizi öneririz.
+Tuvalin sağ üstündeki üç simge önizlemeyi değiştirir: `Bilgisayar`, `Tablet` ve `Telefon`.
+Simgenin üzerine gelince adı görünür. Her cihaz için düzen **ayrı** tutulur: bilgisayarda yaptığınız
+yerleşim tablet ve telefon düzenini değiştirmez. Envanterden kutu eklemek ya da kaldırmak ve
+`Şablonu temizle` de yalnız seçili görünümü etkiler; bir kutuyu portaldan tamamen kaldırmak için onu
+üç görünümde de kaldırın. Tasarımı kaydetmeden önce üç görünümü de kontrol etmenizi öneririz.
 
-### Telefonda portal
+### Tablet görünümü
 
-Telefon gibi çok dar ekranlarda portal kutuları sabit bir sırayla alt alta dizer: önce görsel ve
-başlık, sonra arama ve hızlı çağrı, ardından kayıt butonları (iki sütun hâlinde), filtreler ve
-tablo. Üst menü tek bir menü simgesine toplanır; dil seçimi ve kullanıcı menüsü üst çubukta kalır.
+`Tablet` seçildiğinde tuval tablet ekranı genişliğine (996 piksel) iner ve kutular tablet düzenine
+göre yerleşir.
 
-![Portalın telefondaki görünümü](/img/kullanici/tasarim-telefon.png)
+![Tablet önizlemesi](/img/kullanici/tasarim-tablet.png)
 
 | # | Öğe | Açıklama |
 |---|---|---|
-| ❶ | Menü simgesi | Dar ekranda üst menünün yerini alır; dokununca menü açılır |
+| ❶ | `Tablet` | Tablet önizlemesini açar; seçili simge mavi çerçevelidir |
+| ❷ | Tablet düzeni | Kutuların tabletteki yeri ve boyutu. Burada taşıdığınız ya da boyutlandırdığınız kutular yalnız tablet düzenini değiştirir |
 
-<Callout type="warn" title="Bu sürümde telefon menüsü görünmüyor">
-Menü simgesine dokunulduğunda açılan menü sayfa içeriğinin arkasında kalıyor ve bağlantıları
-görünmüyor. Kullanıcılar telefonda kayıt açmak ve kayıtlarını izlemek için ana sayfadaki kayıt
-butonlarını ve `Veriler` tablosunu kullanabilir.
-</Callout>
+### Telefon görünümü
+
+`Telefon` seçildiğinde tuval telefon genişliğine (480 piksel) iner. Telefonda kutular genellikle alt
+alta dizilir; sıralarını ve boyutlarını bu görünümde belirlersiniz.
+
+![Telefon önizlemesi](/img/kullanici/tasarim-telefon.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | `Telefon` | Telefon önizlemesini açar |
+| ❷ | Telefon çerçevesi | Portal ana sayfasının telefondaki önizlemesi. Burada yaptığınız yerleşim yalnız telefon düzenine uygulanır |
+
+Bilgisayar düzenine dönmek için `Bilgisayar` simgesini seçin. Hangi görünümde olursanız olun
+`Kaydet` üç düzeni birlikte kaydeder.
 
 ## Bilgi Bankası sayfası
 

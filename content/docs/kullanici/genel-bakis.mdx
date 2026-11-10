@@ -1,6 +1,6 @@
 ---
 title: "Genel Bakış"
-description: "Yeni son kullanıcı portalını açmak, portala giriş, üst menü, kullanıcı menüsü, dil seçimi, yardım panelleri ve duyuru bildirimleri."
+description: "Yeni son kullanıcı portalını açmak, portala giriş, iş birimi seçimi, üst menü, kullanıcı menüsü, dil seçimi, yardım panelleri ve duyuru bildirimleri."
 reviewed: "2026-11-10"
 owner: berdanasen
 ---
@@ -40,6 +40,46 @@ Açılış sayfası normalde [Ana Sayfa](/docs/kullanici/ana-sayfa)dır. Yöneti
 `Çözümler` menüsü açıksa portal o sayfayla açılır; bu durumda kayıtlara üst menüdeki `Kayıtlarım` ile
 ulaşılır.
 
+## Portalda iş birimi seçimi
+
+Kurum ServiceCore'u birden çok iş birimiyle (ör. Bilgi Teknolojileri, İnsan Kaynakları, Lojistik)
+kullanıyorsa her iş biriminin kendi portalı vardır: kayıtlar, katalog ve portalın görünümü iş
+birimine aittir. Birden çok iş biriminde kullanıcı olarak tanımlı kişi, girişten sonra önce iş
+birimi seçim sayfasına gelir. Yalnız bir iş biriminde tanımlı kişi için bu sayfa atlanır ve portal
+doğrudan açılır.
+
+<Callout type="info" title="Yalnız iş birimli kurulumlarda">
+Bu bölümdeki sayfa, simge ve menü öğesi yalnız birden çok iş birimiyle çalışan kurulumlarda
+bulunur.
+</Callout>
+
+![İş birimi seçim sayfası](/img/kullanici/is-birimi-secimi.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | `Anasayfa` | Üst menünün ilk öğesi. İş birimi seçim sayfasını açar |
+| ❷ | Başlık ve açıklama | Sayfanın başlığı ve alt yazısı. Yönetici `Son Kullanıcı Ayarları`ndan yazar (bkz. [Portal Ayarları](/docs/kullanici/portal-ayarlari#portaldaki-iş-birimi-seçim-sayfası)) |
+| ❸ | İş birimi kartı | İş biriminin logosu, adı, açıklaması ve kodu. Tıklayınca portal o iş biriminde açılır |
+
+Sayfada yalnız kullanıcı olarak tanımlı olduğunuz iş birimleri listelenir. Logosu yüklenmemiş iş
+biriminin kartında görsel simgesi görünür.
+
+### İş birimini değiştirmek
+
+Portalın her sayfasında iş birimini üst menüden değiştirebilirsiniz.
+
+![Üst menüdeki iş birimi listesi](/img/kullanici/is-birimi-menusu.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | İş birimi simgesi | Logonun solundaki simge. Fareyle üzerine gelince iş birimi listesi açılır |
+| ❷ | Geçerli iş birimi | Portalın şu an açık olduğu iş birimi; listenin en üstünde yer alır |
+| ❸ | Diğer iş birimleri | Tıkladığınız iş birimine geçilir |
+
+İş birimini değiştirdiğinizde portal yeni iş biriminde, açılış sayfasından yeniden yüklenir. Portal
+tarayıcının başka sekmelerinde de açıksa o sekmeler de kendiliğinden yenilenir; böylece hiçbir
+sekmede eski iş biriminin kayıtları kalmaz.
+
 ## Üst menü
 
 Portalın her sayfasında aynı üst menü bulunur.
@@ -57,6 +97,7 @@ Modül menüsündeki öğeler:
 
 | Menü | Açılan sayfa |
 |---|---|
+| `Anasayfa` | İş birimi seçim sayfası. Yalnız iş birimli kurulumlarda bulunur; bu kurulumlarda logonun solunda iş birimi simgesi de yer alır (yukarıda) |
 | `Kayıtlarım` | Açtığınız ve sizinle paylaşılan kayıtlar. Bkz. [Ana Sayfa](/docs/kullanici/ana-sayfa) |
 | `Katalog` | Servis kataloğu ve katalogdan istek açma. Bkz. [Katalog ve Yeni İstek](/docs/kullanici/katalog) |
 | `Çözümler` | Bilgi bankası makaleleri. Bkz. [Çözümler](/docs/kullanici/cozumler) |
