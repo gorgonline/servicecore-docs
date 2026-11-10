@@ -526,62 +526,62 @@
   },
   {
     "source": "/docs/enduser/enduser1",
-    "destination": "/docs/kullanici/enduser1",
+    "destination": "/docs/kullanici/cozumler",
     "permanent": true
   },
   {
     "source": "/docs/enduser/enduser10",
-    "destination": "/docs/kullanici/enduser10",
+    "destination": "/docs/kullanici/onaylarim",
     "permanent": true
   },
   {
     "source": "/docs/enduser/enduser11",
-    "destination": "/docs/kullanici/enduser11",
+    "destination": "/docs/kullanici/duyurular",
     "permanent": true
   },
   {
     "source": "/docs/enduser/enduser2",
-    "destination": "/docs/kullanici/enduser2",
+    "destination": "/docs/kullanici/kayit-detayi",
     "permanent": true
   },
   {
     "source": "/docs/enduser/enduser3",
-    "destination": "/docs/kullanici/enduser3",
+    "destination": "/docs/kullanici/ana-sayfa",
     "permanent": true
   },
   {
     "source": "/docs/enduser/enduser4",
-    "destination": "/docs/kullanici/enduser4",
+    "destination": "/docs/kullanici/katalog",
     "permanent": true
   },
   {
     "source": "/docs/enduser/enduser5",
-    "destination": "/docs/kullanici/enduser5",
+    "destination": "/docs/kullanici/katalog",
     "permanent": true
   },
   {
     "source": "/docs/enduser/enduser6",
-    "destination": "/docs/kullanici/enduser6",
+    "destination": "/docs/kullanici/varliklar-hizmetler-projeler",
     "permanent": true
   },
   {
     "source": "/docs/enduser/enduser7",
-    "destination": "/docs/kullanici/enduser7",
+    "destination": "/docs/kullanici/cozumler",
     "permanent": true
   },
   {
     "source": "/docs/enduser/enduser8",
-    "destination": "/docs/kullanici/enduser8",
+    "destination": "/docs/kullanici/varliklar-hizmetler-projeler",
     "permanent": true
   },
   {
     "source": "/docs/enduser/enduser9",
-    "destination": "/docs/kullanici/enduser9",
+    "destination": "/docs/kullanici/varliklar-hizmetler-projeler",
     "permanent": true
   },
   {
     "source": "/docs/enduser/flexiportal",
-    "destination": "/docs/kullanici/flexiportal",
+    "destination": "/docs/kullanici/genel-bakis",
     "permanent": true
   },
   {
@@ -1927,6 +1927,66 @@
   {
     "source": "/docs/CSSMAAdmin/Genel%20Panel%20Ayarlar%C4%B1/hakk%C4%B1nda",
     "destination": "/docs/admin-egitimleri/genel-panel-ayarlari/hakkinda",
+    "permanent": true
+  },
+  {
+    "source": "/docs/kullanici/enduser1",
+    "destination": "/docs/kullanici/cozumler",
+    "permanent": true
+  },
+  {
+    "source": "/docs/kullanici/enduser2",
+    "destination": "/docs/kullanici/kayit-detayi",
+    "permanent": true
+  },
+  {
+    "source": "/docs/kullanici/enduser3",
+    "destination": "/docs/kullanici/ana-sayfa",
+    "permanent": true
+  },
+  {
+    "source": "/docs/kullanici/enduser4",
+    "destination": "/docs/kullanici/katalog",
+    "permanent": true
+  },
+  {
+    "source": "/docs/kullanici/enduser5",
+    "destination": "/docs/kullanici/katalog",
+    "permanent": true
+  },
+  {
+    "source": "/docs/kullanici/enduser6",
+    "destination": "/docs/kullanici/varliklar-hizmetler-projeler",
+    "permanent": true
+  },
+  {
+    "source": "/docs/kullanici/enduser7",
+    "destination": "/docs/kullanici/cozumler",
+    "permanent": true
+  },
+  {
+    "source": "/docs/kullanici/enduser8",
+    "destination": "/docs/kullanici/varliklar-hizmetler-projeler",
+    "permanent": true
+  },
+  {
+    "source": "/docs/kullanici/enduser9",
+    "destination": "/docs/kullanici/varliklar-hizmetler-projeler",
+    "permanent": true
+  },
+  {
+    "source": "/docs/kullanici/enduser10",
+    "destination": "/docs/kullanici/onaylarim",
+    "permanent": true
+  },
+  {
+    "source": "/docs/kullanici/enduser11",
+    "destination": "/docs/kullanici/duyurular",
+    "permanent": true
+  },
+  {
+    "source": "/docs/kullanici/flexiportal",
+    "destination": "/docs/kullanici/genel-bakis",
     "permanent": true
   }
 ]

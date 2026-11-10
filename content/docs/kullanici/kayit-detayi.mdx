@@ -1,0 +1,261 @@
+---
+title: "Kayıt Detayı"
+description: "Olay, istek, değişiklik, çağrı ve iyileştirme detay sayfaları: Düzenleme menüsü, not ve dosya ekleme, açıklamayı düzenleme, görüşmeler, paylaşma, kapatma, yeniden açma, onay aşamaları, gelişmiş onay akışı, revize ve otomasyonlar."
+reviewed: "2026-11-10"
+owner: berdanasen
+---
+
+Bir kaydın detayı, `Veriler` tablosundaki karta ya da kayıt numarasına tıklayınca açılır. Detay
+sayfasında kaydın açıklamasını, dosyalarını, destek ekibiyle yazışmalarını ve kaydın durumunu
+görürsünüz. Hangi butonların görüneceği kayıt türüne ve yöneticinin o kayıt türü için verdiği
+yetkilere bağlıdır (bkz. [Portal Ayarları](/docs/kullanici/portal-ayarlari)).
+
+Bu sayfa önce olay detayını ayrıntılı anlatır; istek, değişiklik, çağrı ve iyileştirme
+detaylarının farkları sonraki başlıklardadır.
+
+## Olay detayı
+
+![Olay detay sayfası](/img/kullanici/detay-olay.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | Kayıt numarası ve konu | Olayın numarası ve konusu |
+| ❷ | `Tüm Kayıtlarım` | Ana sayfaya, kayıt listesine döner |
+| ❸ | `Düzenleme` | Not ekleme, dosya ekleme, açıklamayı düzenleme ve gözden geçirme menüsü (aşağıda) |
+| ❹ | `Paylaş` | Kaydı başka bir kullanıcıyla paylaşır (aşağıda) |
+| ❺ | `Kapat` | Kaydı kapatır (aşağıda). Kapalı kayıtta yerine `Yeniden Aç` görünür |
+| ❻ | `Açıklama` | Kaydı açarken yazdığınız açıklama |
+| ❼ | Gözden Geçirme, Düzenle | Açıklamayı büyük pencerede okur ya da açıklamayı düzenler |
+| ❽ | `Dosyalar` | Kayda eklenmiş dosyalar. `Dosya Ekle` dosya seçtirir; seçilen dosya hemen eklenir |
+| ❾ | `Görüşmeler` | Sizinle destek ekibi arasındaki yazışmalar ve notlar (aşağıda) |
+| ❿ | `Özel Ek Alan` | Kaydın formundaki alanlar ve değerleri. Başlığa tıklayınca açılır |
+| ⓫ | Bilgi paneli | `Kullanıcı`, `Teknisyen Grubu`, `Teknisyen`, `Durum`, `Öncelik` ve kaydın açıldığı tarih |
+
+`Teknisyen` ve `Teknisyen Grubu`, kaydınızla ilgilenen kişiyi ve ekibi gösterir; kayıt henüz
+atanmadıysa `Atanmamış` yazar.
+
+## Düzenleme menüsü
+
+`Düzenleme` butonu kayıtta yapabileceğiniz işlemleri listeler.
+
+![Düzenleme menüsü](/img/kullanici/detay-duzenleme-menusu.png)
+
+| # | İşlem | Ne yapar |
+|---|---|---|
+| ❶ | `Not Ekle` | Kayda not yazar (aşağıda) |
+| ❷ | `Dosya Ekle` | Dosya seçtirir; seçilen dosya hemen kayda eklenir |
+| ❸ | `Düzenle` | Açıklamayı düzenler (aşağıda) |
+| ❹ | `Gözden Geçirme` | Açıklamayı büyük pencerede, salt okunur gösterir |
+
+İstek detayında menüde ayrıca `Otomasyonlar` bulunur (bkz. [Otomasyonlar](#otomasyonlar)). Yönetici
+bir işlemi o kayıt türü için kapattıysa işlem yapılamaz.
+
+## Açıklamayı düzenleme
+
+`Düzenleme ▸ Düzenle` ya da açıklama kartındaki kalem simgesi açıklamayı düzenleme penceresinde açar.
+
+![Açıklamayı düzenleme](/img/kullanici/detay-aciklama-duzenle.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | `Gönder` | Değiştirdiğiniz açıklamayı kaydeder |
+
+Bu işlem için yöneticinin o kayıt türünde `Açıklamayı düzenleyebilir` yetkisini açmış olması gerekir.
+
+## Görüşmeler
+
+`Görüşmeler` bölümü, sizinle destek ekibi arasındaki e-postaları ve notları tarih sırasıyla listeler.
+Her satırda yazan kişi ve tarih görünür; satırın sağındaki ok mesajı açar.
+
+![Görüşmeler bölümü](/img/kullanici/detay-gorusmeler.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | `Not Ekle` | Kayda yeni not yazar |
+| ❷ | Açılmış mesaj | Mesajın tam metni |
+| ❸ | `Gözden Geçirme`, `Not Ekle` | Mesajı büyük pencerede okur ya da mesaja yanıt olarak not yazar |
+
+Destek ekibinin kayıttan size gönderdiği e-postayı yanıtladığınızda, yanıtınız da bu bölüme eklenir.
+Destek ekibinin özel (gizli) olarak işaretlediği notlar portalda görünmez.
+
+## Not ekleme
+
+`Not Ekle` not penceresini açar.
+
+![Not ekleme penceresi](/img/kullanici/detay-not-ekle.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | `Gönder` | Notu kayda ekler. Not `Görüşmeler` bölümünde görünür ve destek ekibine iletilir |
+
+Not metni biçimlendirilebilir; tablo, bağlantı ve görsel eklenebilir.
+
+## Paylaşma
+
+`Paylaş`, kaydı başka bir kullanıcıyla paylaşır. Paylaşılan kişi kaydı kendi portalında
+`Benimle Paylaşılan` filtrelerinde görür ve gelişmeleri izler.
+
+![Paylaş penceresi](/img/kullanici/detay-paylas.png)
+
+| # | Alan | Açıklama |
+|---|---|---|
+| ❶ | `Kullanıcı` | Kaydı paylaşacağınız kişiler. Ad yazarak aranır; birden fazla kişi seçilebilir |
+| ❷ | `Yorum` | Paylaşım notunuz (en fazla 200 karakter) |
+| ❸ | `Gönder` | Kaydı seçilen kişilerle paylaşır |
+
+Kaydı paylaştığınız kişiler detayın bilgi panelindeki `Paylaşılan Kullanıcılar` listesinde
+görünür; listedeki çöp kutusu simgesi paylaşımı kaldırır.
+
+## Kapatma
+
+Sorununuz çözüldüyse kaydı kendiniz kapatabilirsiniz. `Kapat`a basınca önce onay istenir.
+
+![Kapatma onayı](/img/kullanici/detay-kapat-onayi.png)
+
+| # | Buton | Açıklama |
+|---|---|---|
+| ❶ | `Hayır` | Vazgeçer |
+| ❷ | `Evet` | Kapatma bilgileri penceresini açar |
+
+![Kapatma bilgileri](/img/kullanici/detay-kapatma-nedeni.png)
+
+| # | Alan | Açıklama |
+|---|---|---|
+| ❶ | Kapatma nedeni | Kurumun tanımladığı kapatma nedenlerinden biri |
+| ❷ | `Kapatma Açıklaması` | Kaydı neden kapattığınız. Zorunludur |
+| ❸ | `Gönder` | Kaydı kapatır |
+
+Kapatma için yöneticinin o kayıt türünde `Kapatabilir` yetkisini açmış olması gerekir.
+
+## Yeniden açma
+
+Kapalı bir kayıtta `Kapat`ın yerinde `Yeniden Aç` görünür. Kapalı kayıtta `Düzenleme`, `Paylaş`
+ve `Dosya Ekle` kullanılamaz; sorun tekrar ettiyse kaydı yeniden açarsınız.
+
+![Kapalı olayı yeniden açma](/img/kullanici/detay-yeniden-ac.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | `Yeniden Aç` | Kaydı yeniden açar |
+| ❷ | `Emin misiniz?` | `Evet` kaydı yeniden açar, `Hayır` vazgeçer |
+| ❸ | `Durum` | Kaydın şu anki durumu; kapalı kayıtta kapalı durumlardan biri yazar (görselde `Kapatılanlar`) |
+
+Olayda `Evet`ten sonra kayıt hemen yeniden açılır; istekte ayrıca yeniden açma açıklaması istenir.
+
+Yeniden açma için yöneticinin o kayıt türünde `Yeniden açabilir` yetkisini açmış olması gerekir.
+Kurum ayarına göre, kayıt kapandıktan belirli bir süre sonra `Yeniden Aç` artık görünmez.
+
+## İstek detayı
+
+İstek detayı olay detayıyla aynı düzendedir; onay sürecini izlemeye yarayan ek öğeler taşır.
+
+![İstek detay sayfası](/img/kullanici/detay-istek.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | `Servis Ön Onay Aşamaları` | İsteğin onay aşamalarını ve kararları gösterir (aşağıda) |
+| ❷ | `Kategori` | İsteğin açıldığı katalog kalemi |
+| ❸ | `Onay durumu` | Tamamlanan ve toplam onay aşaması sayısı (ör. `1/1`) |
+| ❹ | `Paylaşılan Kullanıcılar` | İsteği paylaştığınız kişiler; çöp kutusu paylaşımı kaldırır |
+
+![Servis Ön Onay Aşamaları](/img/kullanici/detay-istek-onay-asamalari.png)
+
+Pencerede her aşama numarası, adı ve sonucuyla (`Onaylandı`, `Reddedildi`, `Onay Bekliyor`)
+listelenir. Satırın solundaki ok, aşamadaki onaycıları ve kararlarını açar.
+
+### Gelişmiş onay akışı
+
+Katalog kalemi gelişmiş onay akışıyla çalışıyorsa detayda `Gelişmiş Onay Akışı` kartı görünür. Kart akışın adını, durumunu ve verilen son kararı gösterir.
+Aşağıdaki görselde onaycı istekte düzeltme istemiştir (revize).
+
+![Gelişmiş Onay Akışı kartı, revize durumunda](/img/kullanici/detay-istek-revize.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | Durum etiketleri | Akışın durumu (görselde `Revize bekleniyor`) ve isteğin kaç kez revizeye gönderildiği (`Revize sayısı`) |
+| ❷ | `Onay Detayları` | Akıştaki onay adımlarını ve kararları pencerede açar (aşağıda) |
+| ❸ | Akış adı ve başlangıç | İsteğe uygulanan onay akışının adı ve akışın başladığı zaman |
+| ❹ | Düzeltme isteği | Onaycının yazdığı düzeltme notu, onaycının adı ve tarih |
+| ❺ | `Tekrar Onaya Gönder` | Düzeltmeleri yaptıktan sonra isteği onaycıya geri gönderir |
+| ❻ | `Son karar` | Akışta verilen son karar, kararı veren kişi ve tarih |
+
+`Onay Detayları` penceresi akışın her adımını adı, sonucu ve tarihiyle listeler; adımın altında
+onaycının kararı ve açıklaması yer alır.
+
+![Onay Detayları penceresi](/img/kullanici/detay-istek-onay-detaylari.png)
+
+### Revize: düzeltip tekrar onaya göndermek
+
+Onaycı revize istediğinde istek reddedilmez, size geri döner. Kartta onaycının ne istediği yazar.
+Düzeltmeyi açıklamayı değiştirerek, dosya ya da not ekleyerek yapabilirsiniz. Yönetici
+`İstek Yetkileri ▸ Form alanlarını güncelleyebilir` yetkisini açtıysa, `Özel Ek Alan` bölümündeki
+form da revize süresince düzenlenebilir hâle gelir.
+
+![Revize sırasında düzenlenebilir form](/img/kullanici/detay-istek-revize-form.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | `Konu`, `Açıklama` | İsteğin konusu ve açıklaması düzeltilebilir |
+| ❷ | `Diğer Alanlar` | Formun son kullanıcıya açık diğer alanları (görselde `Konum`, `Aciliyet`, `İş Etkisi`) |
+| ❸ | `Form değişikliklerini kaydet` | Düzelttiğiniz alanları kaydeder |
+
+Değişiklikleri kaydettikten sonra karttaki `Tekrar Onaya Gönder`e basın. İstek yeni bir tur olarak
+onaycıya gider ve form yeniden salt okunur olur. Yetki kapalıysa revize sırasında da form salt
+okunurdur.
+
+### Otomasyonlar
+
+`Düzenleme ▸ Otomasyonlar`, yöneticinin portaldan çalıştırılmasına izin verdiği istek
+otomasyonlarını `Otomasyon Çalıştır` penceresinde listeler.
+
+![Otomasyon Çalıştır penceresi](/img/kullanici/detay-istek-otomasyonlar.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | Otomasyon satırı | Çalıştırabileceğiniz otomasyonun adı |
+| ❷ | Çalıştır simgesi | Otomasyonu bu istek üzerinde hemen çalıştırır |
+
+Listede yalnız elle çalıştırılmak üzere tanımlanmış ve son kullanıcılara açılmış istek
+otomasyonları görünür. Görseldeki örnek otomasyon isteğin önceliğini değiştirir.
+
+## Çağrı detayı
+
+Çağrı detayı daha sadedir: açıklama, bilgi paneli ve `Düzenleme` menüsü bulunur. Çağrı portaldan
+paylaşılamaz ve kapatılamaz.
+
+![Çağrı detay sayfası](/img/kullanici/detay-cagri.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | `Düzenleme` | `Düzenle` (açıklamayı düzenler) ve `Gözden Geçirme`. Düzenleme için yöneticinin `Çağrı Yetkileri ▸ Düzenleyebilir` yetkisini açmış olması gerekir |
+| ❷ | `Açıklama` | Çağrının açıklaması |
+| ❸ | Bilgi paneli | `Kullanıcı`, `Teknisyen Grubu`, `Teknisyen`, `Durum`, `Aciliyet`, `İş Etkisi` ve tarih |
+
+## İyileştirme detayı
+
+İyileştirme detayında `Tüm Kayıtlarım`, `Düzenleme` ve `Paylaş` bulunur; iyileştirme portaldan
+kapatılamaz, kapanış destek ekibi tarafından yapılır.
+
+![İyileştirme detay sayfası](/img/kullanici/detay-iyilestirme.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | Butonlar | `Tüm Kayıtlarım`, `Düzenleme`, `Paylaş` |
+| ❷ | `Dosyalar` | Öneriye eklenmiş dosyalar; dosya adına tıklayınca açılır |
+
+## Değişiklik detayı
+
+Değişiklik detayında `Tüm Kayıtlarım` ve `Düzenleme` bulunur. Değişiklik portaldan paylaşılamaz
+ve kapatılamaz; değişikliğin onayı, planlaması ve kapanışı destek ekibi tarafından yürütülür.
+
+![Değişiklik detay sayfası](/img/kullanici/detay-degisiklik.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | Kayıt numarası ve konu | Değişikliğin numarası (`CHN…`) ve konusu |
+| ❷ | Butonlar | `Tüm Kayıtlarım` ve `Düzenleme` (not ekleme, dosya ekleme, açıklamayı düzenleme, gözden geçirme) |
+| ❸ | `Görüşmeler` | Destek ekibinin değişiklikle ilgili size yazdığı notlar. `Not Ekle` ile yanıt yazarsınız |
+| ❹ | Bilgi paneli | `Kullanıcı`, `Teknisyen Grubu`, `Teknisyen`, `Durum`, `Öncelik` ve tarih |
+
+Bilgi panelindeki `Tarih` değişikliğin açıldığı zamandır. Değişikliğin planlanan uygulama
+tarihleri portalda gösterilmez.
