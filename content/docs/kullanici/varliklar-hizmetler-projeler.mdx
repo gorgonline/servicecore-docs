@@ -1,7 +1,7 @@
 ---
 title: "Varlıklarım, Hizmetlerim ve Proje"
 description: "Kullanıcıya zimmetli varlıklar, zimmet kabulü, kolon seçimi ve varlıktan olay açma; sahibi olunan hizmetler; üyesi olunan projelerin salt okunur görünümü."
-reviewed: "2026-11-09"
+reviewed: "2026-11-10"
 owner: berdanasen
 ---
 
@@ -79,11 +79,57 @@ Hiçbir projeye üye değilseniz sayfa bunu belirtir:
 
 ![Proje sayfası, üyelik yokken](/img/kullanici/projeler-bos.png)
 
-Proje üyesi olduğunuzda sayfada şunlar bulunur:
+### Proje listesi
 
-| Bölüm | İçerik |
-|---|---|
-| Proje listesi | Projelerin adı, üye sayısı, görev sayısı, geciken ve tamamlanan görevler, son etkinlik tarihi. Üstteki kutu projelerde arar |
-| Proje panosu | Bir projeye tıklayınca açılır: tamamlanma yüzdesi, tamamlanma eğilimi, görev sayıları (toplam, açık, geciken, tamamlanan) ve etikete göre dağılım |
-| Görev listesi | Projenin görevleri; durum ve diğer alanlara göre süzülebilir |
-| Görev detayı | Göreve tıklayınca sağdan açılır: açıklama, başlangıç ve bitiş tarihleri, alt görevler, bağımlılıklar ve iş günlükleri |
+Proje üyesi olduğunuzda sayfa, üyesi olduğunuz projeleri kart olarak listeler.
+
+![Proje listesi](/img/kullanici/projeler-liste.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | `Proje ara` | Projelerde ada göre arar |
+| ❷ | Durum seçimi | Listeyi projenin durumuna göre süzer; `Tümü` bütün projeleri gösterir |
+| ❸ | Proje kartı | Projenin adı, durumu, açıklaması, tamamlanma yüzdesi, tamamlanan ve toplam görev sayısı, geciken görev sayısı, üye sayısı, bitiş tarihi ve son etkinliğin ne kadar önce olduğu |
+
+Karta tıklayınca projenin panosu açılır.
+
+### Proje panosu
+
+![Proje panosu](/img/kullanici/projeler-pano.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | Proje adı ve tarihleri | Projenin adı, başlangıç ve bitiş tarihi |
+| ❷ | `Yalnızca okunabilir` | Projede değişiklik yapamayacağınızı belirtir |
+| ❸ | İlerleme | Tamamlanma yüzdesi ve tamamlanan / toplam görev sayısı |
+| ❹ | Görev sayıları | `TOPLAM`, `AÇIK GÖREVLER`, `TAMAMLANMIŞ GÖREVLER` ve `GECİKEN` görev sayısı |
+| ❺ | `Duruma göre` | Görevlerin durumlara dağılımı: her durumda kaç görev olduğu ve oranı |
+| ❻ | `Tamamlanma eğilimi (son 30 gün)` | Son 30 günde her gün tamamlanan görev sayısı |
+
+### Görev listesi
+
+Panonun altında projenin görevleri listelenir.
+
+![Proje görev listesi](/img/kullanici/projeler-gorevler.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | Süzgeçler | `Görev ara`, `Durum`, `Öncelik`, `Türü`, `Takım`, başlangıç–bitiş tarih aralığı, `Gecikmiş` (yalnız geciken görevler) ve gruplama seçimi |
+| ❷ | `Sütunlar` | Tabloda hangi kolonların görüneceğini seçtirir |
+| ❸ | Görev satırı | Görev kodu, başlığı, durumu, önceliği ve takımı. Başlığın yanındaki sayı alt görev adedidir |
+| ❹ | `Bitiş` | Bitiş tarihine kalan gün ya da gecikme süresi |
+| ❺ | `Tamamlama` | Görevin tamamlanma yüzdesi |
+
+Kolon başlıklarındaki oklar tabloyu sıralar. Satıra tıklayınca görevin detayı sağdan açılır.
+
+### Görev detayı
+
+![Görev detayı](/img/kullanici/projeler-gorev-detayi.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | `YALNIZCA OKUNABİLİR` | Görevde değişiklik yapamayacağınızı belirtir |
+| ❷ | Görev bilgileri | Durum, öncelik, atanan kişi, bitişe kalan süre, başlangıç ve bitiş tarihi, tamamlanma yüzdesi |
+| ❸ | `Açıklama` | Görevin açıklaması |
+| ❹ | Sekmeler | `İş Günlükleri`, `Alt Görevler`, `Bağımlılıklar`; parantez içinde kayıt sayısı |
+| ❺ | Sekme içeriği | Görselde iş günlükleri: kimin, hangi gün, kaç saat çalıştığı |

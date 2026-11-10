@@ -1,7 +1,7 @@
 ---
 title: "Kayıt Detayı"
-description: "Olay, istek, çağrı ve iyileştirme detay sayfaları: Düzenleme menüsü, not ve dosya ekleme, açıklamayı düzenleme, görüşmeler, paylaşma, kapatma, yeniden açma ve onay aşamaları."
-reviewed: "2026-11-09"
+description: "Olay, istek, değişiklik, çağrı ve iyileştirme detay sayfaları: Düzenleme menüsü, not ve dosya ekleme, açıklamayı düzenleme, görüşmeler, paylaşma, kapatma, yeniden açma, onay aşamaları, gelişmiş onay akışı, revize ve otomasyonlar."
+reviewed: "2026-11-10"
 owner: berdanasen
 ---
 
@@ -10,8 +10,8 @@ sayfasında kaydın açıklamasını, dosyalarını, destek ekibiyle yazışmala
 görürsünüz. Hangi butonların görüneceği kayıt türüne ve yöneticinin o kayıt türü için verdiği
 yetkilere bağlıdır (bkz. [Portal Ayarları](/docs/kullanici/portal-ayarlari)).
 
-Bu sayfa önce olay detayını ayrıntılı anlatır; istek, çağrı ve iyileştirme detaylarının farkları
-sonraki başlıklardadır.
+Bu sayfa önce olay detayını ayrıntılı anlatır; istek, değişiklik, çağrı ve iyileştirme
+detaylarının farkları sonraki başlıklardadır.
 
 ## Olay detayı
 
@@ -47,7 +47,7 @@ atanmadıysa `Atanmamış` yazar.
 | ❸ | `Düzenle` | Açıklamayı düzenler (aşağıda) |
 | ❹ | `Gözden Geçirme` | Açıklamayı büyük pencerede, salt okunur gösterir |
 
-İstek detayında menüde ayrıca `Otomasyonlar` bulunur (bkz. [İstek detayı](#istek-detayı)). Yönetici
+İstek detayında menüde ayrıca `Otomasyonlar` bulunur (bkz. [Otomasyonlar](#otomasyonlar)). Yönetici
 bir işlemi o kayıt türü için kapattıysa işlem yapılamaz.
 
 ## Açıklamayı düzenleme
@@ -125,12 +125,25 @@ Sorununuz çözüldüyse kaydı kendiniz kapatabilirsiniz. `Kapat`a basınca ön
 | ❷ | `Kapatma Açıklaması` | Kaydı neden kapattığınız. Zorunludur |
 | ❸ | `Gönder` | Kaydı kapatır |
 
-**Yeniden açma:** Kapalı bir kayıtta `Kapat`ın yerinde `Yeniden Aç` görünür. Olayda onay sorusundan
-sonra kayıt yeniden açılır; istekte yeniden açma açıklaması istenir. Kurum ayarına göre, kayıt
-kapandıktan belirli bir süre sonra `Yeniden Aç` artık görünmeyebilir.
+Kapatma için yöneticinin o kayıt türünde `Kapatabilir` yetkisini açmış olması gerekir.
 
-Kapatma ve yeniden açma için yöneticinin o kayıt türünde `Kapatabilir` ve `Yeniden açabilir`
-yetkilerini açmış olması gerekir.
+## Yeniden açma
+
+Kapalı bir kayıtta `Kapat`ın yerinde `Yeniden Aç` görünür. Kapalı kayıtta `Düzenleme`, `Paylaş`
+ve `Dosya Ekle` kullanılamaz; sorun tekrar ettiyse kaydı yeniden açarsınız.
+
+![Kapalı olayı yeniden açma](/img/kullanici/detay-yeniden-ac.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | `Yeniden Aç` | Kaydı yeniden açar |
+| ❷ | `Emin misiniz?` | `Evet` kaydı yeniden açar, `Hayır` vazgeçer |
+| ❸ | `Durum` | Kaydın şu anki durumu; kapalı kayıtta kapalı durumlardan biri yazar (görselde `Kapatılanlar`) |
+
+Olayda `Evet`ten sonra kayıt hemen yeniden açılır; istekte ayrıca yeniden açma açıklaması istenir.
+
+Yeniden açma için yöneticinin o kayıt türünde `Yeniden açabilir` yetkisini açmış olması gerekir.
+Kurum ayarına göre, kayıt kapandıktan belirli bir süre sonra `Yeniden Aç` artık görünmez.
 
 ## İstek detayı
 
@@ -150,15 +163,60 @@ yetkilerini açmış olması gerekir.
 Pencerede her aşama numarası, adı ve sonucuyla (`Onaylandı`, `Reddedildi`, `Onay Bekliyor`)
 listelenir. Satırın solundaki ok, aşamadaki onaycıları ve kararlarını açar.
 
-İstekte ayrıca şu öğeler bulunabilir:
+### Gelişmiş onay akışı
 
-- **`Düzenleme ▸ Otomasyonlar`:** Yöneticinin portaldan çalıştırılmasına izin verdiği otomasyonları
-  listeler. Bir otomasyonu çalıştırdığınızda işlem hemen yapılır.
-- **Gelişmiş onay akışı:** Katalog kalemi gelişmiş onay akışıyla çalışıyorsa akışın hangi adımda
-  olduğu detayda bir kartta gösterilir.
-- **Revize:** Onaycı isteği revizeye gönderdiyse istekte `Tekrar Onaya Gönder` görünür. Yönetici
-  `Form alanlarını güncelleyebilir` yetkisini açtıysa revize sırasında formdaki alanları da
-  düzeltebilirsiniz; düzelttikten sonra isteği tekrar onaya gönderin.
+Katalog kalemi gelişmiş onay akışıyla çalışıyorsa detayda `Gelişmiş Onay Akışı` kartı görünür. Kart akışın adını, durumunu ve verilen son kararı gösterir.
+Aşağıdaki görselde onaycı istekte düzeltme istemiştir (revize).
+
+![Gelişmiş Onay Akışı kartı, revize durumunda](/img/kullanici/detay-istek-revize.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | Durum etiketleri | Akışın durumu (görselde `Revize bekleniyor`) ve isteğin kaç kez revizeye gönderildiği (`Revize sayısı`) |
+| ❷ | `Onay Detayları` | Akıştaki onay adımlarını ve kararları pencerede açar (aşağıda) |
+| ❸ | Akış adı ve başlangıç | İsteğe uygulanan onay akışının adı ve akışın başladığı zaman |
+| ❹ | Düzeltme isteği | Onaycının yazdığı düzeltme notu, onaycının adı ve tarih |
+| ❺ | `Tekrar Onaya Gönder` | Düzeltmeleri yaptıktan sonra isteği onaycıya geri gönderir |
+| ❻ | `Son karar` | Akışta verilen son karar, kararı veren kişi ve tarih |
+
+`Onay Detayları` penceresi akışın her adımını adı, sonucu ve tarihiyle listeler; adımın altında
+onaycının kararı ve açıklaması yer alır.
+
+![Onay Detayları penceresi](/img/kullanici/detay-istek-onay-detaylari.png)
+
+### Revize: düzeltip tekrar onaya göndermek
+
+Onaycı revize istediğinde istek reddedilmez, size geri döner. Kartta onaycının ne istediği yazar.
+Düzeltmeyi açıklamayı değiştirerek, dosya ya da not ekleyerek yapabilirsiniz. Yönetici
+`İstek Yetkileri ▸ Form alanlarını güncelleyebilir` yetkisini açtıysa, `Özel Ek Alan` bölümündeki
+form da revize süresince düzenlenebilir hâle gelir.
+
+![Revize sırasında düzenlenebilir form](/img/kullanici/detay-istek-revize-form.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | `Konu`, `Açıklama` | İsteğin konusu ve açıklaması düzeltilebilir |
+| ❷ | `Diğer Alanlar` | Formun son kullanıcıya açık diğer alanları (görselde `Konum`, `Aciliyet`, `İş Etkisi`) |
+| ❸ | `Form değişikliklerini kaydet` | Düzelttiğiniz alanları kaydeder |
+
+Değişiklikleri kaydettikten sonra karttaki `Tekrar Onaya Gönder`e basın. İstek yeni bir tur olarak
+onaycıya gider ve form yeniden salt okunur olur. Yetki kapalıysa revize sırasında da form salt
+okunurdur.
+
+### Otomasyonlar
+
+`Düzenleme ▸ Otomasyonlar`, yöneticinin portaldan çalıştırılmasına izin verdiği istek
+otomasyonlarını `Otomasyon Çalıştır` penceresinde listeler.
+
+![Otomasyon Çalıştır penceresi](/img/kullanici/detay-istek-otomasyonlar.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | Otomasyon satırı | Çalıştırabileceğiniz otomasyonun adı |
+| ❷ | Çalıştır simgesi | Otomasyonu bu istek üzerinde hemen çalıştırır |
+
+Listede yalnız elle çalıştırılmak üzere tanımlanmış ve son kullanıcılara açılmış istek
+otomasyonları görünür. Görseldeki örnek otomasyon isteğin önceliğini değiştirir.
 
 ## Çağrı detayı
 
@@ -185,4 +243,19 @@ kapatılamaz, kapanış destek ekibi tarafından yapılır.
 | ❶ | Butonlar | `Tüm Kayıtlarım`, `Düzenleme`, `Paylaş` |
 | ❷ | `Dosyalar` | Öneriye eklenmiş dosyalar; dosya adına tıklayınca açılır |
 
-Değişiklik detayları da aynı düzendedir.
+## Değişiklik detayı
+
+Değişiklik detayında `Tüm Kayıtlarım` ve `Düzenleme` bulunur. Değişiklik portaldan paylaşılamaz
+ve kapatılamaz; değişikliğin onayı, planlaması ve kapanışı destek ekibi tarafından yürütülür.
+
+![Değişiklik detay sayfası](/img/kullanici/detay-degisiklik.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | Kayıt numarası ve konu | Değişikliğin numarası (`CHN…`) ve konusu |
+| ❷ | Butonlar | `Tüm Kayıtlarım` ve `Düzenleme` (not ekleme, dosya ekleme, açıklamayı düzenleme, gözden geçirme) |
+| ❸ | `Görüşmeler` | Destek ekibinin değişiklikle ilgili size yazdığı notlar. `Not Ekle` ile yanıt yazarsınız |
+| ❹ | Bilgi paneli | `Kullanıcı`, `Teknisyen Grubu`, `Teknisyen`, `Durum`, `Öncelik` ve tarih |
+
+Bilgi panelindeki `Tarih` değişikliğin açıldığı zamandır. Değişikliğin planlanan uygulama
+tarihleri portalda gösterilmez.

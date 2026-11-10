@@ -1,7 +1,7 @@
 ---
 title: "Onaylarım"
 description: "Kararınızı bekleyen istek, değişiklik, iyileştirme, sözleşme ve görev onayları: listeleme, kaydı inceleme, onaylama, reddetme, revize, toplu karar ve vekâlet."
-reviewed: "2026-11-09"
+reviewed: "2026-11-10"
 owner: berdanasen
 ---
 
@@ -59,9 +59,31 @@ dosyaları ve form alanlarını buradan inceleyebilirsiniz.
 Onaylarken açıklama isteğe bağlıdır. Pencerenin onay butonuna bastığınızda karar kaydedilir ve kayıt
 listeden çıkar.
 
-**Revize İste:** Kayıt gelişmiş onay akışıyla çalışıyorsa ve akışın o adımı revizeye izin veriyorsa
-satırda üçüncü bir buton, `Revize İste` görünür. Revize, kaydı reddetmeden talep sahibine geri
-gönderir; talep sahibi düzeltip kaydı tekrar onaya gönderir. Revize isterken de açıklama zorunludur.
+## Revize istemek
+
+Kayıt gelişmiş onay akışıyla çalışıyorsa ve akışın o adımı revizeye izin veriyorsa satırda üçüncü
+bir buton, `Revize İste` görünür. Revize, kaydı reddetmeden talep sahibine düzeltme için geri
+gönderir.
+
+![Satırda Revize İste butonu](/img/kullanici/onaylarim-revize-iste.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | `Revize İste` | Revize penceresini açar |
+
+![Revize İste penceresi](/img/kullanici/onaylarim-revize-penceresi.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | `Açıklama` | Neyin düzeltilmesi gerektiği (en fazla 2500 karakter). Bu metin talep edene gider ve kayıt detayındaki onay kartında görünür. Zorunludur |
+| ❷ | `Revize İste` | Kaydı talep edene geri gönderir |
+
+Revize istediğiniz kayıt listeden çıkar. Talep eden kaydı düzeltip tekrar onaya gönderdiğinde kayıt
+yeni bir tur olarak listenize geri gelir. Talep edenin gördüğü ekran için bkz.
+[Kayıt Detayı](/docs/kullanici/kayit-detayi#gelişmiş-onay-akışı).
+
+Revize yalnız gelişmiş onay akışıyla gelen satırlarda bulunur; sözleşme ve görev onaylarında ve
+paralel onay dallarındaki adımlarda revize istenemez.
 
 ## Toplu karar
 
