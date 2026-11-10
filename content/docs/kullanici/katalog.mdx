@@ -1,0 +1,101 @@
+---
+title: "Katalog ve Yeni İstek"
+description: "Servis kataloğu: servis ağacı, arama, favoriler, tüm iş birimlerinin kataloğu ve katalog kaleminden yeni istek açma; başkası adına istek."
+reviewed: "2026-11-10"
+owner: berdanasen
+---
+
+İstekler servis kataloğundan açılır. Katalog, kurumun sunduğu hizmetlerin (bilgisayar, yazılım,
+yetki, telefon gibi) listesidir. Her katalog kalemi kendi formunu, onay aşamalarını ve görevlerini
+taşır; doğru kalemi seçtiğinizde isteğiniz doğru ekibe ve doğru onaycıya gider.
+
+Katalog üst menüdeki `Katalog` ile ya da ana sayfadaki `Yeni İstek` butonuyla açılır.
+
+## Katalog sayfası
+
+![Katalog sayfası](/img/kullanici/katalog-genel.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | Ara | Kalem adına göre arama yapar |
+| ❷ | Yenile | Servis ağacını ve kalemleri yeniden yükler |
+| ❸ | `Servis Ağacı` | Katalog kategorileri. `Servis Ağacı` satırı tüm kalemleri, kategori satırları yalnız o kategoriyi listeler |
+| ❹ | `Favorilerim` | Yıldızladığınız kalemler. Bölüm, en az bir favoriniz varsa ve kategori ya da arama seçili değilken görünür |
+| ❺ | Katalog kalemi | Kalemin adı, görseli ve kısa açıklaması. Tıklayınca bu kalemle yeni istek sayfası açılır |
+| ❻ | Yıldız | Kalemi favorilerinize ekler ya da çıkarır. Seçim hemen kaydedilir ve yalnız sizin için geçerlidir |
+
+Kalem adı ya da açıklaması karta sığmıyorsa üzerine gelince tamamı görünür. Katalogda yalnız sizin
+görmeye yetkili olduğunuz kalemler listelenir.
+
+## Kategoriye göre listeleme
+
+Servis ağacında bir kategoriye tıklayınca yalnız o kategorinin kalemleri listelenir.
+
+![Kategori seçilmiş katalog](/img/kullanici/katalog-kategori.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | Seçili kategori | Mavi zeminle gösterilir. Tüm kalemlere dönmek için `Servis Ağacı`na tıklayın |
+| ❷ | Kalemler | Seçili kategorideki kalemler |
+
+## Arama
+
+![Katalogda arama](/img/kullanici/katalog-arama.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | Ara | Aramak istediğiniz kelimeyi yazıp `Enter`a ya da büyütece basın |
+| ❷ | Sonuçlar | Adı aradığınız kelimeyi içeren kalemler |
+
+## Tüm iş birimlerinin kataloğu
+
+İş birimli kurulumlarda katalog normalde portalın açık olduğu iş biriminin kalemlerini listeler
+(bkz. [Genel Bakış](/docs/kullanici/genel-bakis#portalda-iş-birimi-seçimi)). `Servis Ağacı` başlığının
+yanındaki anahtarla diğer iş birimlerinin kalemleri de listeye eklenir.
+
+![Tüm iş birimleri anahtarı açık katalog](/img/kullanici/katalog-tum-is-birimleri.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | `Tüm iş birimleri` | Açıkken servis ağacı ve kalemler bütün iş birimlerinden gelir. Seçiminiz bu tarayıcıda hatırlanır |
+
+Başka bir iş birimine ait kalemi seçtiğinizde istek formu o iş biriminin formuyla açılır. Kartlarda
+kalemin hangi iş birimine ait olduğu yazmaz; birden çok iş biriminde aynı adlı kalem varsa hepsi
+listede görünür.
+
+Anahtar, yönetici `Genel Ayarlar ▸ Kullanıcı Portal Ayarları ▸ Yeni İstek Alanları Yetkileri`
+bölümündeki **Katalogtaki Tüm İş Birimleri Ayarını Gizle** seçeneğini açtıysa görünmez.
+
+## Yeni istek sayfası
+
+Bir kaleme tıklayınca o kalemin istek formu açılır.
+
+![Yeni istek sayfası](/img/kullanici/katalog-yeni-istek.png)
+
+| # | Alan | Açıklama |
+|---|---|---|
+| ❶ | Kalem bilgisi | Seçtiğiniz kalemin görseli, adı ve açıklaması. Kalem için tanımlıysa teslim süresi de burada görünür |
+| ❷ | `Başkası Adına İstek Açılacak` | Açınca isteğin kimin adına açılacağı seçilir (aşağıda) |
+| ❸ | `Konu` | `Yeni İstek : <kalem adı>` olarak dolu gelir; isterseniz değiştirebilirsiniz. Zorunludur |
+| ❹ | `Açıklama` | Kalemin açıklamasıyla dolu gelir. Silip ihtiyacınızı ayrıntılı yazın. Zorunludur |
+| ❺ | `Dosya Yükle` | İsteği destekleyen dosyalar |
+| ❻ | `Diğer Alanlar` | Kalemin formundaki ek alanlar (ör. `Konum`, `Aciliyet`, `İş Etkisi`). Form, kaleme göre değişir |
+| ❼ | `Kaydet` | İsteği açar ve isteğin detay sayfasına geçer |
+| ❽ | Yardım paneli | Sayfanın kısa açıklaması |
+
+İstek kaydedildiğinde kalemin onay aşamaları ve görevleri başlar. Kalem onay gerektiriyorsa istek
+önce onaycılara gider; onay durumunu isteğin detayından izleyebilirsiniz (bkz.
+[Kayıt Detayı](/docs/kullanici/kayit-detayi#i%CC%87stek-detay%C4%B1)).
+
+## Başkası adına istek
+
+Bir ekip arkadaşınız için istek açacaksanız `Başkası Adına İstek Açılacak` anahtarını açın.
+
+![Başkası adına istek](/img/kullanici/katalog-baskasi-adina.png)
+
+| # | Alan | Açıklama |
+|---|---|---|
+| ❶ | `Başkası Adına İstek Açılacak` | Anahtar açılınca kullanıcı alanı görünür |
+| ❷ | `Kullanıcı (Başkası)` | İsteğin açılacağı kişi. Ad yazarak aranır. Zorunludur |
+
+İstek seçtiğiniz kişinin adına açılır ve onun kayıtlarında görünür.
