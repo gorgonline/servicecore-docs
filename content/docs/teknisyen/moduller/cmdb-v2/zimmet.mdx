@@ -1,0 +1,42 @@
+---
+title: "Zimmet ve Barkod"
+description: "Varlığı kişiye zimmetleme, zimmeti alma, zimmet formu ve barkod etiketi basma."
+reviewed: "2026-11-10"
+owner: necatikekec
+---
+
+Zimmet işlemleri varlığın `Detaylar` sekmesindeki `Zimmet` kartından, ⋯ menüsünden ya da listede birden çok varlık seçerek toplu olarak yapılır.
+
+![Zimmet kartı](/img/teknisyen/cmdb2-zimmet-kart.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | **Başkasına zimmet ver** | Varlığı başka bir kişiye zimmetler. Zimmetsiz varlıkta düğmenin adı `Zimmet ver`'dir. |
+| ❷ | `Zimmeti al` | Zimmeti bitirir. Pencerede **Zimmetin bittiği gün** ve not girilir. |
+| ❸ | `Zimmet formu` | Zimmet formunu PDF olarak üretir. Formun şablonu [Ayarlar](/docs/teknisyen/moduller/cmdb-v2/ayarlar) › `Zimmet formu` ekranında tanımlanır. |
+
+Kartta zimmetli kişi, bölümü ve çalışan numarası, zimmet tarihi ve **Zimmet kabulü** görünür.
+
+## Zimmet verme
+
+![Zimmet verin penceresi](/img/teknisyen/cmdb2-zimmet-ver.png)
+
+`Kişi` ve `Zimmet tarihi` zorunludur. Varlık depodaysa **Yeni durumu** alanında, zimmetlendiğinde geçeceği durum seçilir. Pasif bir kullanıcı seçerseniz pencere uyarı gösterir.
+
+Zimmet kuralları:
+- `Kayıp`, `Hurda` ve arşivdeki varlıklar zimmetlenmez.
+- Varlık zaten o kişiye zimmetliyse işlem atlanır.
+- Zimmet verilince **Zimmet kabulü** `Bekliyor` olur. Kişi zimmeti kendi tarafında kabul eder ya da reddeder; bu yanıt teknisyen ekranından verilemez. Kabul bekleniyorsa ya da reddedildiyse varlığın sayfasında bildirim görünür.
+- Varlığın durumu bir depo durumuna alınınca zimmet kendiliğinden kalkar.
+
+## Barkod etiketi
+
+![Barkod etiketi paneli](/img/teknisyen/cmdb2-zimmet-barkod.png)
+
+`Barkod etiketi` bir ya da birden çok varlık için basılabilir bir etiket PDF'i üretir. Panelde şunları seçersiniz:
+- **Boy**: A4 etiket kâğıdı ya da 50 × 25 mm veya 70 × 37 mm etiket yazıcısı
+- Sütun sayısı ve varlık başına kopya sayısı
+- **Etikette yazanlar**: Ad, Varlık No, Seri No, Konum, Şirket
+- Kod türü: **Barkod (Code 128)** ya da **QR (kaydın adresi)**
+
+`İndir` dosyayı indirir.

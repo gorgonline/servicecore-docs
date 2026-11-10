@@ -1,0 +1,18 @@
+{
+  "title": "CMDB (YENİ ARAYÜZ)",
+  "pages": [
+    "genel-bakis",
+    "pano",
+    "listeler",
+    "varlik-olusturma",
+    "varlik-detayi",
+    "zimmet",
+    "hizmetler",
+    "lisanslar",
+    "aksesuar-ve-sarf",
+    "sayim",
+    "raporlar",
+    "ayarlar",
+    "yetkiler"
+  ]
+}

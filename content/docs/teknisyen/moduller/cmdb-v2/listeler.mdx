@@ -1,0 +1,70 @@
+---
+title: "Listeler"
+description: "Varlık, hizmet, lisans, aksesuar ve sarf listeleri: görünümler, tür paneli, süzgeç, sütunlar, toplu işlemler, içe ve dışa aktarma."
+reviewed: "2026-11-10"
+owner: necatikekec
+---
+
+Beş modülün listesi aynı düzendedir. Bu sayfada örnek olarak `Varlıklar` listesi kullanılmıştır.
+
+![Varlık listesinin bölümleri](/img/teknisyen/cmdb2-liste-yerlesim.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | Görünüm sekmeleri | Hazır ve kayıtlı görünümler. Sığmayanlar `Daha fazla` menüsündedir; `+` yeni görünüm oluşturur. |
+| ❷ | `Tür paneli` | Soldaki `Varlık türleri` ağacını açar ya da kapatır. Bir türe basınca liste o türe (ve alt türlerine) süzülür. |
+| ❸ | `Filtrele` | Alan bazlı süzgeç penceresini açar (aşağıda). |
+| ❹ | `Sayım başlat` | Yalnız varlık listesinde vardır. Ekrandaki süzülmüş listeyi kapsam alan bir sayım oturumu açar. Liste süzülmemişse ya da arşiv gösteriliyorsa düğme pasiftir; nedeni ipucunda yazar. |
+| ❺ | `Yeniden yükle` | Listeyi sunucudan yeniden alır. Solundaki büyüteç arama kutusunu açar. |
+| ❻ | `Diğer işlemler` | Dışa ve içe aktarma (aşağıda). |
+
+Arama kutusu ad, seri no ve barkodda arar. Birden çok değeri virgülle ayırarak birlikte arayabilirsiniz.
+
+## Görünümler
+
+Varlık listesinin hazır görünümleri şunlardır: `Tüm varlıklar`, `Benim varlıklarım`, **Garantisi 30 günde bitenler**, **Garantisi 60 günde bitenler**, **Garantisi 90 günde bitenler**, `Yeni` ve `Arşivlenmiş`. Öbür modüllerin de kendi hazır görünümleri vardır, ör. lisanslarda **Dolu ya da aşımda** ve **Süresi yaklaşanlar**, aksesuar ve sarfta **Düşük stoklu**.
+
+Süzgeç, arama ve sıralamayı ayarladıktan sonra `+` (`Görünüm oluştur`) ile bunu adlandırılmış bir görünüm olarak saklayın.
+
+![Görünüm oluşturma penceresi](/img/teknisyen/cmdb2-liste-gorunum.png)
+
+`Herkesle paylaş` işaretlenirse görünüm, öbür kullanıcıların `Daha fazla` menüsünde **Paylaşılan görünümler** altında görünür. Kendi görünümünüzün ⋯ menüsünde `Yeniden adlandır`, `Herkesle paylaş` / `Paylaşımı kaldır` ve `Sil` vardır.
+
+## Süzgeç
+
+![Filtrele penceresi](/img/teknisyen/cmdb2-liste-filtre.png)
+
+`Filtrele` penceresinde iki sekme vardır:
+- `Temel`: Durum, Konum, Zimmetli kişi, Kullanıcı durumu, Zimmet kabulü, Şirket, Üretici, Tedarikçi, Kullanım modeli, Bölüm ve İş etkisi.
+- `Gelişmiş`: metin, tarih ve tutar alanları (Seri No, Barkod, Garanti bitişi, Satın alma tarihi, Maliyet vb.).
+
+Türe bağlı ek alanlar `Ek alanlar` bölümünde listelenir. Uygulanan süzgeç sayfa adresine yazılır, bu yüzden adresi paylaşarak aynı listeyi başkasına da açabilirsiniz.
+
+## Sütunlar
+
+Tablonun sağ üstündeki `Sütunlar` simgesi gösterilecek sütunları seçer. Varlıkta varsayılan sütunlar `Varlık No`, `Ad`, `Durum`, `Tür`, `Seri No`, **Zimmetli kişi**, `Konum` ve **Garanti bitişi**'dir. Barkod, üretici, maliyet, son sayım gibi alanlar ve ek alanlar sonradan eklenebilir. Sütunları sürükleyerek taşıyabilir, kenarından genişliklerini ayarlayabilirsiniz.
+
+## Toplu işlemler
+
+Satırların solundaki onay kutularıyla kayıt seçince tablonun üstünde toplu işlem şeridi açılır.
+
+![Toplu işlem şeridi](/img/teknisyen/cmdb2-liste-toplu.png)
+
+Şeritte soldan sağa şunlar bulunur:
+- `Toplu güncelle`
+- Modülün kendi işleri. Varlıkta bunlar `Zimmet ver`, `Zimmeti al`, `Zimmet formu` ve `Barkod etiketi`dir.
+- `Excel olarak indir`, `Arşivle` ve `Sil`
+
+`Toplu güncelle` penceresinde yalnız değiştirdiğiniz alanlar yazılır. Öbür alanlar `Değiştirme` olarak kalır, `Boşalt` seçeneği ise alanı temizler. `Tür` alanı boşaltılamaz. İşlem bazı kayıtlarda yapılamazsa pencere nedenleri tek tek listeler.
+
+Satır ⋯ menüsünde, kayıt sayfasındaki ⋯ menüsünün işlemleri bulunur. Aynı menü satıra sağ tıklayınca da açılır.
+
+## İçe ve dışa aktarma
+
+![Diğer işlemler menüsü](/img/teknisyen/cmdb2-liste-diger.png)
+
+| İşlem | Ne yapar |
+|---|---|
+| **Excel olarak indir**, **CSV olarak indir** | Ekrandaki süzülmüş listeyi, görünen sütunlarla indirir. |
+| `İçe aktar` | Dört adımlı sihirbazı açar: **Dosyayı seçin**, **Sütunları eşleyin**, `Önizleyin`, `Sonuç`. |
+| `Şablonu indir` | İçe aktarma için boş şablon dosyası. |

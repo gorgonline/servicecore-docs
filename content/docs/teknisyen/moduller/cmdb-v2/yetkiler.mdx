@@ -1,0 +1,19 @@
+---
+title: "Yetkiler"
+description: "AssetCore'da hangi işlemi kimin yapabildiği: modül, tür, ayar, sayım ve lisans anahtarı yetkileri."
+reviewed: "2026-11-10"
+owner: necatikekec
+---
+
+AssetCore, yetkiniz olmayan işlemleri pasif göstermez, hiç göstermez. Bir düğmeyi ya da menüyü göremiyorsanız rolünüzde o yetki yoktur.
+
+| Yetki | Etkisi |
+|---|---|
+| Modül yetkileri | Her modül (varlık, hizmet, lisans, aksesuar, sarf) için ayrı ayrı görme, oluşturma, düzenleme, silme ve arşivleme. Görme yetkisi olmayan modül kenar çubuğunda görünmez. |
+| **İzinli türler** | Rol belirli türlerle sınırlanabilir. Bu durumda yalnız o türlerdeki kayıtları görürsünüz. |
+| Ayar yetkileri | Ayar ekranları için ayrı ayrı. Hiçbiri yoksa `Ayarlar` görünmez. |
+| Sayım yetkileri | Sayım yapma (okutma, işaretleme) ve oturum yönetme (oluşturma, başlatma, kapatma, iptal, silme). `Sayım` bölümü, varlık görme ve sayım yapma yetkisi olanlara görünür. |
+| Görünüm paylaşma | Kayıtlı görünümü herkesle paylaşma. |
+| Lisans anahtarı | Lisans anahtarını görme. Bu yetki yoksa `Anahtar` sütunu ve alanı gizlenir. |
+
+Düzenleme yetkiniz olsa bile arşivdeki bir kayıt düzenlenemez. Önce `Arşivden çıkar` ile arşivden çıkarılması gerekir.

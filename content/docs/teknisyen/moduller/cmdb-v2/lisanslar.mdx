@@ -1,0 +1,38 @@
+---
+title: "Lisanslar"
+description: "Lisans kayıtları: koltuklar, süre, lisans anahtarı ve koltukları varlıklara ya da kişilere atama."
+reviewed: "2026-11-10"
+owner: necatikekec
+---
+
+`Lisanslar`, koltuk sayısıyla takip edilen yazılım lisanslarının listesidir.
+
+![Lisans listesi](/img/teknisyen/cmdb2-lisans-liste.png)
+
+Hazır görünümler şunlardır: `Tüm lisanslar`, **Dolu ya da aşımda**, **Süresi yaklaşanlar**, **Süresi dolmuş**, `Yeni` ve `Arşivlenmiş`.
+
+## Lisans sayfası
+
+![Lisans sayfası](/img/teknisyen/cmdb2-lisans-detay.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | Bildirimler | Atanan koltuk sayısı kapasiteyi geçtiyse **Kapasite aşıldı**, bitiş tarihi geçtiyse **Süresi doldu**. |
+| ❷ | Sekmeler | `Detaylar`, `Aktivite`, `Atamalar`. |
+
+`Detaylar` sekmesi üç bölümden oluşur:
+- `Özellikler`
+- `Koltuklar`: koltukların varlıklara ve kişilere dağılımı
+- `Süre`
+
+Lisans anahtarı varsayılan olarak gizlidir; göster ve kopyala düğmeleriyle okunur. Anahtarı yalnız lisans anahtarı yetkisi olan kullanıcılar görür.
+
+## Koltuk atama
+
+![Lisans atamaları](/img/teknisyen/cmdb2-lisans-atamalar.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | **Atama ekle** | **Varlığa ata** ya da **Kişiye ata** seçilir. |
+
+Kapasiteyi aşacak atama yapılamaz. Satır ⋯ menüsündeki **Koltuğu boşalt** atamayı kaldırır. Uyum durumunu toplu görmek için [Raporlar](/docs/teknisyen/moduller/cmdb-v2/raporlar) › **Lisans uyumu** raporunu kullanın.

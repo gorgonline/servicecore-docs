@@ -1,0 +1,35 @@
+---
+title: "Ayarlar"
+description: "AssetCore tanımları: türler, durumlar, konumlar, şirketler, üreticiler, kullanım modelleri, ilişki türleri, ek alanlar, sayım nitelikleri ve zimmet formu."
+reviewed: "2026-11-10"
+owner: necatikekec
+---
+
+`Ayarlar`, modülün tanım listelerini yönetir. Kenar çubuğunda yalnız en az bir ayar yetkisi olan kullanıcılar bu bölümü görür. Hangi ekranların listeleneceği de yetkinize göre değişir.
+
+![Ayarlar ekranının bölümleri](/img/teknisyen/cmdb2-ayarlar-yerlesim.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | Ayar menüsü | Tanım ekranları (aşağıdaki tablo). |
+| ❷ | `Modül` | Türler ve ek alanlar modüle göre ayrı tutulur; düzenlenecek modül buradan seçilir. |
+| ❸ | Ekle düğmesi | Yeni tanım ekler, ör. `Tür ekle`. |
+
+Tablolarda her satırın ⋯ menüsünde `Düzenle` ve `Sil` bulunur. Ağaç olarak tutulan tanımlarda (türler, konumlar) alt öğe ekleme seçeneği de vardır.
+
+## Ayar ekranları
+
+| Ekran | Ne tanımlanır |
+|---|---|
+| `Türler` | Modülün tür ağacı. Her türün bir ikonu, bir üst türü ve kendine bağlı ek alanları vardır. |
+| `Durumlar` | Durumlar, kategorileri (`Aktif`, `Bekliyor`, `Pasif`) ve depo durumu olup olmadıkları. Panodaki hesaplar kategoriye göre yapılır. |
+| `Konumlar` | Konum ağacı, ör. `İstanbul / Kartal Depo`. |
+| `Şirketler` | Grup şirketleri. |
+| `Üreticiler` | Üretici adı, ülkesi ve iletişim bilgileri. Pasif üretici seçim listelerinde çıkmaz. |
+| **Kullanım modelleri** | Varlığın kullanım biçimi, ör. `Ofis bilgisayarı`. |
+| **İlişki türleri** | İlişkinin adı ve karşıt adı, ör. `Barındırır` / `Barındırılır`. Karşıt ad boşsa iki yönde de aynı ad kullanılır. |
+| **Ek alanlar** | Türlere bağlı ek alanlar. Alan türü sonradan değiştirilemez. |
+| **Sayım nitelikleri** | Sayımda varlığa verilen nitelikler, ör. `Sağlam`, `Hasarlı`. Pasif nitelik yeni sayımlarda seçilemez. |
+| **Zimmet formu** | Zimmet formunun HTML şablonu ve kullanılabilecek yer tutucular. |
+
+![Durumlar ekranı](/img/teknisyen/cmdb2-ayarlar-durumlar.png)
