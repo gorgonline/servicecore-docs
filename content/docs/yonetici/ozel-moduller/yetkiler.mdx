@@ -1,0 +1,82 @@
+---
+title: "Yetkiler ve kayıt görünürlüğü"
+description: "Tasarım ve yayın izinleri, rol × modül eylemleri, görme ve değiştirme kapsamı (Tümü / Grubunun / Kendi)."
+reviewed: "2026-11-11"
+owner: DevTahsin
+---
+
+Özel modüllerde iki katmanlı yetki vardır:
+
+1. **Platform izinleri:** Kimin modül tasarlayıp yayınlayabileceği.
+2. **Modül yetkileri:** Her rolün her modülde hangi eylemleri yapabileceği ve hangi kayıtları görüp değiştirebileceği.
+
+## Rol ekranı
+
+Rol düzenleme ekranında (`Yönetim ▸ Roller`, rolü düzenle) **Özel Modüller** sekmesi iki katmanı birlikte gösterir.
+
+![Rol ekranında Özel Modüller sekmesi](/img/yonetici/om-yetki-rol.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | Platform izinleri | `Özel modülleri tasarlayabilir` ve `Özel modül yayınlarını onaylayabilir`. |
+| ❷ | **Modül yetkileri** | Rolün bütün modüllerdeki eylemleri tek tabloda; rol ekranının `Kaydet`'iyle birlikte yazılır. |
+| ❸ | **Görme kapsamı**, **Değiştirme kapsamı** | Rolün hangi kayıtları göreceği ve değiştireceği (aşağıda). |
+
+## Platform izinleri
+
+| İzin | Verdiği yetki |
+|---|---|
+| **Özel modülleri tasarlayabilir** | Modül oluşturma, Stüdyo'da düzenleme, taslağı kaydetme, onaya gönderme, geri çekme, sürümden taslak oluşturma, dışa ve içe aktarma, pazar yeri, sırlar, Stüdyo'da yetkiler, cm-cli. |
+| **Özel modül yayınlarını onaylayabilir** | `Onayla ve yayınla` ve `Reddet`. Tasarım izni olmayan onaycı Stüdyo'yu salt okunur görür. |
+
+<Callout type="warn" title="DİKKAT">
+Taslağı onaya gönderen kişi onaylayamaz. Bu yüzden bir modülün yayınlanması için en az iki yetkili kişi gerekir. Kural süper yönetici için de geçerlidir.
+</Callout>
+
+Pazar yerindeki uygulamaların Custom Endpoint'lerini kurmak ve Custom Endpoint'leri yönetmek ayrı bir yönetici izni gerektirir.
+
+## Modül yetkileri
+
+Bir rol, bir modülde yalnız kendisine verilen eylemleri yapabilir. Varsayılan olarak bütün eylemler kapalıdır: Yetki verilmeyen rol modülü göremez.
+
+| Eylem | Açıklama |
+|---|---|
+| **Görüntüle** | Modülü ve kayıtları görür. |
+| **Oluştur** | Yeni kayıt açar. |
+| **Düzenle** | Kaydı değiştirir, aşama geçişi yapar, panoda kart sürükler. |
+| **Sil** | Kaydı siler. |
+| **Dışa aktar** | Listeyi Excel'e aktarır. |
+| **Hassas alanları gör** | Maskeli alanları açar (açma geçmişe yazılır). |
+
+Her eylem Görüntüle'yi de verir; Görüntüle kaldırılınca diğerleri de kalkar. Bir kullanıcının birden çok rolü varsa yetkiler birleşir.
+
+Aynı yetkiler Stüdyo'da `Ayarlar ▸ Yetkiler`'den de verilir. Orada modülün bütün rolleri tek tabloda görünür; değişiklikler hemen kaydedilir ve modül yayında olduğu sürece geçerlidir.
+
+## Kayıt görünürlüğü (kapsam)
+
+Eylemlere ek olarak her rol için iki kapsam seçilir:
+
+- **Görme kapsamı:** Rolün hangi kayıtları göreceği.
+- **Değiştirme kapsamı:** Rolün hangi kayıtları değiştirip silebileceği.
+
+| Kapsam | Anlamı |
+|---|---|
+| **Tümü** | Modüldeki bütün kayıtlar. |
+| **Grubunun** | Kullanıcının kendi kayıtları ile grup alanlarında üyesi olduğu teknisyen grubunun bulunduğu kayıtlar. |
+| **Kendi** | Sahip alanlarından birinde (ör. Oluşturan, Sahibi, Teknisyen) kullanıcının kendisi olan kayıtlar. |
+
+Kurallar:
+
+- Değiştirme kapsamı görme kapsamından geniş olamaz; yalnız Düzenle ya da Sil yetkisi olan rolde açılır.
+- Birden çok rolde **en geniş** kapsam geçerlidir.
+- Süper yönetici her zaman bütün kayıtları görür.
+- Kapsamın çalışması için veri setinin **Erişim** bölümünde sahip ve grup alanları bildirilmiş olmalıdır ([Veri setleri ▸ Erişim](/docs/yonetici/ozel-moduller/veri-setleri#erişim-sahiplik)). Erişim bildirmeyen veri seti kapsamdan etkilenmez. Kalem veri setleri ana kaydı izler.
+
+### Kapsam dışı kayıtlar
+
+- Kapsam dışı bir kayıt adresle açılırsa **"Kayıt bulunamadı."** döner; kaydın varlığı belli edilmez.
+- Liste, sayımlar, göstergeler, grafikler, sorgular, pano, takvim ve Excel yalnız görünen kayıtları kullanır.
+- Görünmeyen bir kayda verilen referansta yalnız **kayıt numarası** görünür, başlık görünmez. Seçiciler yalnız görünen kayıtları listeler.
+- Yeni kayıt açmak kapsamdan bağımsızdır; Oluştur yetkisi yeterlidir.
+- Sunucu betikleri (uç, tetikleyici, doğrulama) isteği yapan kullanıcının kapsamıyla okur. Zamanlanmış betik ve onay akışı kapsamsız çalışır.
+- Onay adımı bekleyen onaycı, kaydı kapsamı dışında olsa da o adım sürerken salt okunur görür ([Aşamalar ve onay](/docs/yonetici/ozel-moduller/asamalar-ve-onay#kullanıcı-tarafında-onay)).

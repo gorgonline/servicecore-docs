@@ -1,0 +1,170 @@
+---
+title: "Ekranlar"
+description: "Sayfa tasarımcısı ve bloklar, form tasarımcısı, liste / pano / takvim görünümleri, gezinme, tema ve menü ayarları."
+reviewed: "2026-11-11"
+owner: DevTahsin
+---
+
+Stüdyo'nun `Ekranlar` alanında üç tür öğe vardır: **Sayfalar**, **Formlar** ve **Listeler** (görünümler).
+
+## Sayfalar
+
+Sayfalar uygulamanın gezinmesinde görünen ekranlardır. Sayfanın kendi verisi yoktur; içindeki her blok kendi veri setini kullanıcının yetkisiyle okur.
+
+![Sayfalar tablosu](/img/yonetici/om-ekran-sayfalar.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | Yeni sayfa satırı | **Sayfa adı**, sayfa türü, `Gezinmeye ekle` ve `Sayfa ekle`. |
+| ❷ | `Kod sayfası: …` | Kodla yazılmış bir bileşeni sayfa olarak gösterir. |
+| ❸ | `Kayıt formu: …` | Bir veri setinin formunu tam sayfa olarak açar. |
+| ❹ | `Gezinmede değil` | Sayfa uygulamanın menüsünde yok; `Gezinmede` olanlar menüdedir. |
+| ❺ | Satır düğmeleri | Kalem sayfa tasarımcısını açar, çöp kutusu sayfayı kaldırır. |
+
+Sayfa türleri: **Pano (bloklar)** sayfa tasarımcısında bloklarla kurulur; **Kayıt formu** ve **Kod sayfası** yukarıdaki gibidir.
+
+## Sayfa tasarımcısı
+
+Bir pano sayfası seçilince orta bölgede tuval açılır.
+
+![Sayfa tasarımcısı](/img/yonetici/om-ekran-tasarimci.png)
+
+| # | Bölüm | Ne işe yarar |
+|---|---|---|
+| ❶ | Blok ağacı | Sayfanın blokları iç içe; tıklayınca blok seçilir. |
+| ❷ | Tasarımcı başlığı | `Canlı veri` açıkken bloklar yayındaki gerçek veriyi gösterir; `Blok ekle` paleti açar. |
+| ❸ | Uygulama gezinmesi | Tuvalin üstünde uygulamanın menüsü; başka sayfaya geçmek için. |
+| ❹ | Tuval | Sayfanın kendisi; bloklar sürüklenerek yerleştirilir. |
+| ❺ | Sağ panel | Seçili bloğun ayarları. |
+
+![Blok ekle paleti](/img/yonetici/om-ekran-blok-ekle.png)
+
+| # | Grup | Bloklar |
+|---|---|---|
+| ❶ | **Veri blokları** | Gösterge, Grafik, Aşama çubuğu, Kısa liste, Liste, Düğme |
+| ❷ | **Girdiler** | Seçim, Tarih aralığı, Arama |
+
+Paletin devamında **Kod bileşenleri** (modülde kod bileşeni varsa) ve **Yerleşim** grupları vardır: Kart, Izgara, Sekmeler, Açılır bölümler, Form düzeni, Yan yana, Metin.
+
+### Blok ayarları
+
+![Liste bloğunun ayarları](/img/yonetici/om-ekran-blok-ayar.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | `Veri`, `Görünüm`, `Davranış` | Ayar sekmeleri. |
+| ❷ | **Veri seti** | Bloğun okuduğu veri seti; liste bloğunda altında **Görünüm** ve **Başlık**. |
+| ❸ | `Süzgeç ekle` | Bloğun gösterdiği kayıtları süzer. |
+
+| Blok | Başlıca ayarlar |
+|---|---|
+| Ortak | **Başlık**; **Sorgu** (bloğu adlandırılmış bir sorguya bağlar); **Süzgeçler** |
+| **Gösterge** | Ölçü (Kayıt sayısı / Toplam / Ortalama / En küçük / En büyük), ölçülen alan, listeye bağlantı, birim, ondalık |
+| **Grafik** | Grafik türü (Çubuk / Çizgi / Halka), gruplama, tarih aralığı (Gün / Hafta / Ay), en çok grup, yükseklik, yatay çubuklar |
+| **Kısa liste** | Başlık alanı, ek alanlar (en çok 3), sıralama, gösterilecek kayıt (1–20) |
+| **Aşama çubuğu** | Aşama alanı |
+| **Liste** | Görünüm (liste, pano ya da takvim), yeni kayıt düğmesi, sayfa boyutu |
+| **Düğme** | Etiket; eylem (Yeni kayıt / Sayfaya git / Bağlantı aç); görünüş |
+| **Girdiler** | Ad (ifadelerde kullanılır, ör. `secim1.value`), etiket, yer tutucu, seçenekler, varsayılan değer / aralık |
+
+### Sayfa mantığı
+
+- **İfadeler** `{{…}}` biçiminde yazılır; girdilerin değerleri, sorgu sonuçları ve değişkenler kullanılabilir.
+- **Gizleme koşulu** bloğu koşula göre gizler. Gizleme bir yetki değildir; veriyi korumaz.
+- **Tıklayınca** eylemleri (en çok 10): Sayfaya git, Kayıt aç, Verileri yenile, Bildirim göster, Değişkene yaz, Bağlantı aç, Veri kaynağını çağır.
+- **Değişkenler** (durum çubuğundan): Metin / Sayı / Evet-Hayır / JSON tipinde sayfa değişkenleri.
+
+## Formlar
+
+Her veri setinin bir formu vardır. Tasarlanmamış form **otomatik** oluşur (alanlar tanım sırasıyla). Formu tasarlamak için `Ekranlar ▸ Formlar`'dan veri setini seçin.
+
+![Form tasarımcısı](/img/yonetici/om-ekran-form.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | `Otomatik formdan başla`, `Alan ekle` | Mevcut alanlarla bir başlangıç düzeni kurar; henüz forma konmamış alanları listeler. |
+| ❷ | Adımlar | Adımlı formun adımları (Temel, Kişiler ve kurum…). |
+| ❸ | `Adım ekle` | Forma yeni adım ekler; `Sütun ekle` ızgaraya sütun ekler. |
+| ❹ | **Form ayarları** | **Açılış**: `Sayfa`, `Yan çekmece` ya da `Pencere`. Kayıt listelerden, bloklardan ve koddan bu biçimde açılır; doğrudan bağlantı her zaman sayfadır. |
+
+- Yerleşim blokları: Kart, Izgara, Sekmeler, Adımlar, Açılır bölümler, Form düzeni, Yan yana, Metin, Zaman çizelgesi.
+- Alt veri seti formda **Kalem tablosu** olarak durur.
+- Alanın **Davranış** sekmesi: görünürlük (Görünür / Gizli / Yok / Üst bloktan), düzenleme (Düzenlenebilir / Devre Dışı / Salt okunur / Yalnız metin), **Tepkiler** (başka alana göre değişen davranış).
+
+## Listeler (görünümler)
+
+Görünüm, bir veri setinin kayıtlarının nasıl listeleneceğidir.
+
+![Görünümler tablosu](/img/yonetici/om-ekran-gorunumler.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | `Görünüm ekle` | Yeni görünüm penceresini açar. |
+| ❷ | Varsayılan liste notu | Görünümü olmayan veri setlerinde varsayılan liste kullanılır (kayıt no, başlık, ilk alanlar, oluşturma tarihi). |
+| ❸ | `Tür` | `Liste`, `Pano` ya da `Takvim`. |
+| ❹ | Satır düğmeleri | Kalem görünümü düzenler, çöp kutusu kaldırır. |
+
+![Görünümü düzenle: Pano](/img/yonetici/om-ekran-gorunum-pano.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | **Tür** | Görünümün biçimi. |
+| ❷ | Pano notu | Sütunlar veri setinin aşamalarıdır; kart sürüklenince geçişin kuralları uygulanır. |
+| ❸ | **Kartta görünen alanlar** | En çok 6 alan; kayıt numarası ve başlık her zaman görünür. |
+
+| Tür | Açıklama |
+|---|---|
+| **Liste** | Kolonlar (1–30; seçim sırası kolon sırasıdır) ve sıralama. |
+| **Pano** | Yalnız aşaması olan veri setinde kullanılabilir. Kart sürüklenince aşama geçişinin kuralları (zorunlu alan, gerekçe, onay) uygulanır. |
+| **Takvim** | Kayıt seçilen **Tarih alanının** gününde görünür; kart başka güne sürüklenince alan değişir. Kartta en çok 6 alan. |
+
+Bir veri setinin birden çok görünümü varsa kayıt listesinde başlığın yanında görünüm seçici çıkar ve seçim adrese `?view=<anahtar>` olarak yazılır.
+
+## Gezinme ve tema
+
+`Ayarlar ▸ Gezinme ve tema` uygulamanın kendi menüsünü ve görünüşünü belirler. Gezinme tanımlanmamışsa modülün veri setleri sekme olarak gösterilir.
+
+![Gezinme](/img/yonetici/om-ekran-gezinme.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | **Yerleşim** | `Üst sekmeler`, `Yan menü` ya da `Kod bileşeni`. |
+| ❷ | **Düzen bileşeni** | Yalnız Kod bileşeni yerleşiminde: uygulamanın başlığı ve menüsü yerine çizilen bileşen; `Hazır düzenle başla` ve `Kodu aç`. Bileşen hata verirse varsayılan düzene dönülür. |
+| ❸ | Gezinme öğeleri | Her satır bir menü öğesi ya da grup: simge, görünen ad, hedef (sayfa ya da liste), sıralama okları. Altında `Öğe ekle` ve grup ekleme. |
+
+Öğelerin altında **Açılış öğesi** (uygulama açıldığında gösterilen öğe) seçilir.
+
+![Tema ve özel CSS](/img/yonetici/om-ekran-tema.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | Tema renkleri | **Ana renk**, **Menü zemini**, **Menü yazısı**. Tema yalnız bu uygulamanın renklerini değiştirir. |
+| ❷ | **Özel CSS** | Uygulamaya özel stiller; seçiciler uygulamanın kabuğuyla sınırlanır. |
+
+## Ad ve menü
+
+`Ayarlar ▸ Ad ve menü` modülün ServiceCore menüsündeki yerini belirler.
+
+![Ad ve menü](/img/yonetici/om-ekran-ad-menu.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | **Modül adı** | Menüde ve sayfa başlığında görünür. |
+| ❷ | **Menüdeki yeri** | `Uygulamalar grubunda` ya da `Üst seviye menü öğesi`. |
+| ❸ | **Menü sırası** | Küçük sayı önce gelir; boşsa ada göre sıralanır. |
+| ❹ | **Menü ikonu** | İkon seçimi ve önizlemesi. |
+
+<Callout type="info" title="ÖNEMLİ">
+Uygulamaların ServiceCore menüsünde görünmesi ayrıca **Uygulamaları menüde göster** genel ayarına bağlıdır (varsayılan kapalı). Bkz. [Menüde gösterme](/docs/yonetici/ozel-moduller/kayit-ekranlari#menüde-gösterme).
+</Callout>
+
+## Uygulama adresleri
+
+| Adres | Ne açılır |
+|---|---|
+| `/CustomModule` | Uygulamalar listesi |
+| `/CustomModule/<modül>` | Uygulamanın açılış öğesi |
+| `/CustomModule/<modül>/_p/<sayfa>` | Tasarlanan sayfa |
+| `/CustomModule/<modül>/<veriSeti>` | Kayıt listesi |
+| `/CustomModule/<modül>/<veriSeti>/new` | Yeni kayıt |
+| `/CustomModule/<modül>/<veriSeti>/<id>` | Kayıt detayı |

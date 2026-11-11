@@ -1,0 +1,80 @@
+---
+title: "Genel Bakış"
+description: "Özel modül nedir: veri seti, aşama, form, sayfa, sorgu ve yayın kavramları, ekrana ulaşma ve kimin ne yapabildiği."
+reviewed: "2026-11-11"
+owner: DevTahsin
+---
+
+Özel Modüller, yöneticinin ServiceCore'un içinde kendi iş uygulamasını kurmasını sağlar. Bir uygulama; kayıt tipleri (veri setleri), formlar, listeler, panolar, takvimler, aşamalı iş akışı, onay akışı ve rol yetkilerinden oluşur. Gerekirse kod da yazılır. Uygulama tek bir **modül** olarak paketlenir, menüde görünür, rol bazında yetkilendirilir ve ortamlar arasında taşınır.
+
+Özellik ek bir ayar ya da lisans gerektirmez; kurulumda açıktır. Yalnız menüde görünme ayrı bir ayardır ve varsayılan olarak kapalıdır (bkz. [Kayıt ekranları](/docs/yonetici/ozel-moduller/kayit-ekranlari#menüde-gösterme)).
+
+## Ekrana ulaşma
+
+Özel modüller yönetim ayarlarındadır. `Ayarlar` sayfasını açın, ardından `Gelişmiş` bölümündeki `Özel Modüller` kartına tıklayın. Doğrudan adres `/AdminCustomModule/IndexV2`'dir.
+
+![Ayarlar sayfasındaki Özel Modüller kartı](/img/yonetici/om-genel-ayarlar.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | `Gelişmiş` | Özel modüllerin bulunduğu ayar bölümü. |
+| ❷ | `Özel Modüller` | Modül listesini açar. |
+
+Kullanıcılar yayındaki uygulamaları `/CustomModule` adresinden açar (bkz. [Kayıt ekranları](/docs/yonetici/ozel-moduller/kayit-ekranlari)).
+
+## Modül listesi
+
+![Özel Modüller listesi](/img/yonetici/om-genel-yerlesim.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | `Pazar yeri` | Ürünle gelen hazır uygulamaları açar (bkz. [Pazar yeri](/docs/yonetici/ozel-moduller/pazar-yeri)). |
+| ❷ | `İçe aktar` | Başka bir ortamdan dışa aktarılan modül paketini yükler. |
+| ❸ | `Yeni modül` | Boş bir modül açar (bkz. [İlk modülünüzü oluşturun](/docs/yonetici/ozel-moduller/baslangic)). |
+| ❹ | **Modül adı** | Modülü Uygulama Stüdyosu'nda açar. |
+| ❺ | `Durum` | `Taslak v1`, `Yayında v9` gibi; onaya gönderilen taslakta **Onay bekliyor**. |
+| ❻ | **Düzenleme** | Kalem simgesi Stüdyo'yu açar. Çöp kutusu yalnız hiç yayınlanmamış modülde görünür. |
+
+## İki tasarım yolu, tek tanım
+
+- **Uygulama Stüdyosu:** Tarayıcıda, kod yazmadan ya da kodla tasarım yapılan tam ekran düzenleyici (bkz. [Uygulama Stüdyosu](/docs/yonetici/ozel-moduller/studyo)).
+- **cm-cli:** Modülü dosya ağacı olarak bilgisayarınıza çekip kendi düzenleyicinizde (VS Code vb.) geliştirdiğiniz komut satırı aracı (bkz. [Kaynak kodlu modül ve cm-cli](/docs/yonetici/ozel-moduller/gelistirici/kaynak-kodlu-modul)).
+
+İki yol aynı modül tanımına yazar; Stüdyo'da yapılan değişiklik cm-cli'de, cm-cli'den gönderilen değişiklik Stüdyo'da görünür.
+
+## Temel kavramlar
+
+| Kavram | Anlamı |
+|---|---|
+| **Modül** | Uygulamanın kendisi: anahtarı, adı, menü yeri, veri setleri, ekranları, kodu ve yetkileri. |
+| **Veri seti** | Bir kayıt tipi, ör. "Talep". Veritabanında kendi tablosu vardır. Ana veri setine bağlanırsa onun **kalemi** olur. |
+| **Alan** | Veri setinin bir kolonu. 23 alan tipi vardır. |
+| **Aşama** | Kaydın iş akışındaki durumu, ör. Taslak, Onayda. Geçişlere kural konur; aşama onay akışına bağlanabilir. |
+| **Form** | Kaydın oluşturma ve düzenleme ekranı; sayfada, yan çekmecede ya da pencerede açılır. |
+| **Sayfa** | Bloklardan kurulan pano, kayıt formu ya da kodla yazılmış sayfa. |
+| **Görünüm** | Kayıt listesinin biçimi: Liste, Pano ya da Takvim. |
+| **Sorgu** | Adlandırılmış, parametre alabilen veri okuması: Özet ya da Kayıt listesi. |
+| **Veri kaynağı** | Dış sisteme yapılan çağrı: Dış adres (HTTP) ya da Custom Endpoint. |
+| **Sunucu betiği** | Sunucuda çalışan JavaScript ya da TypeScript: Doğrulama, Uç, Tetikleyici, Zamanlanmış. |
+| **Kod bileşeni** | React ile yazılan sayfa, blok ya da uygulama düzeni. |
+| **Taslak** | Üzerinde çalışılan, henüz yayınlanmamış sürüm. |
+| **Yayın** | Taslağın dört göz onayından geçip kullanıma açılması; veritabanı değişiklikleri bu anda uygulanır. |
+| **Sürüm** | Her yayın numaralı bir sürümdür (v1, v2…). Eski sürümden yeni taslak açılabilir. |
+
+## Veri nerede durur
+
+- Her veri setinin kayıtları aynı veritabanında, **`cm`** şemasında kendi tablosunda durur. Kayıtlar raporlanabilir, indekslenebilir ve diğer ServiceCore verileriyle aynı yedeğe girer.
+- Tablo ve kolon değişikliklerini sunucu üretir; ekrandan SQL yazılmaz. Değişiklikler yalnız yayın onayıyla, ayrı ve kısıtlı bir veritabanı kullanıcısıyla uygulanır.
+- Şema değişiklikleri **yalnız ekleme** yapar: kaldırılan alan ya da veri seti gizlenir, verisi silinmez.
+- Kayıt silme yumuşaktır; silinen kayıt listeden kalkar, veritabanında iz olarak kalır.
+- Dosya ve görsel alanlarına yüklenen dosyalar veritabanında saklanır; sunucu diskine yazılmaz.
+
+## Kimler kullanabilir
+
+| Rol | Yapabildikleri |
+|---|---|
+| **Tasarımcı** | Rolünde `Özel modülleri tasarlayabilir` izni olan kişi. Modül açar, Stüdyo'da düzenler, onaya gönderir, pazar yerinden kurar, dışa ve içe aktarır, modül yetkilerini verir. |
+| **Yayın onaycısı** | Rolünde `Özel modül yayınlarını onaylayabilir` izni olan kişi. Taslağı inceler, **Onayla ve yayınla** ya da **Reddet** der. Taslağı gönderen kişi onaylayamaz. |
+| **Kullanıcı** | Teknisyen. Rolüne verilen eylemlerle uygulamanın kayıt ekranlarını kullanır. |
+
+Ayrıntı: [Yetkiler ve kayıt görünürlüğü](/docs/yonetici/ozel-moduller/yetkiler).

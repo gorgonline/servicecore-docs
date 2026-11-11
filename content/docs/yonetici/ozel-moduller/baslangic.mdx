@@ -1,0 +1,139 @@
+---
+title: "İlk modülünüzü oluşturun"
+description: "Yeni bir özel modül açın, alan ekleyin, taslağı kaydedin ve dört göz onayına gönderin."
+reviewed: "2026-11-11"
+owner: DevTahsin
+---
+
+Bu sayfada örnek olarak **Ekipman Talebi** adlı bir modül kuruyoruz: teknisyenler ekipman ister; talep tarihi, ekipman türü, talep eden ve adet tutulur.
+
+<Callout type="info" title="ÖNEMLİ">
+Bu adımlar için rolünüzde `Özel modülleri tasarlayabilir` izni olmalıdır. Yayının onaylanması için `Özel modül yayınlarını onaylayabilir` iznine sahip **ikinci bir kişi** gerekir.
+</Callout>
+
+## 1. Yeni modül açın
+
+Modül listesinde (bkz. [Genel Bakış](/docs/yonetici/ozel-moduller/genel-bakis#modül-listesi)) `Yeni modül`'e basın.
+
+![Yeni modül penceresi](/img/yonetici/om-baslangic-yeni-modul.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | **Modül adı** | Modülün görünen adı. Anahtar (`ekipman_talebi`) ve ilk veri seti bu addan oluşturulur. |
+| ❷ | `Kaydet` | Modülü taslak olarak açar ve Uygulama Stüdyosu'na geçer. |
+
+İlk veri setinde tek alan vardır: zorunlu **Başlık**. Bu alan kaydı listede ve sekme başlığında adlandırır.
+
+![Yeni modül Stüdyo'da](/img/yonetici/om-baslangic-yerlesim.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | Durum rozeti | Modülün durumu; yeni modülde **Taslak · henüz yayınlanmadı**. |
+| ❷ | `Başlık` | Hazır gelen başlık alanı; `Başlık alanı` rolünü taşır. |
+| ❸ | Yeni alan satırı | Yeni alanlar buradan eklenir. |
+| ❹ | `Kaydet` | Taslağı kaydeder (Ctrl S). Kaydedilmemiş değişiklik yokken kapalıdır. |
+
+## 2. Alanları ekleyin
+
+Alan tablosunun son satırında alanın adını yazın, tipini seçin ve `Alan ekle`'ye basın. Enter da çalışır.
+
+![Yeni alan satırı ve alan tipi listesi](/img/yonetici/om-baslangic-alan-tipi.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | **Yeni alanın adı** | Alanın görünen adı; anahtarı addan üretilir. |
+| ❷ | Alan tipi listesi | Tipler gruplara ayrılmıştır (Metin, Sayı, Tarih, Seçim, Kişi ve kurum, İlişki, Dosya). Yazarak arayabilirsiniz. |
+| ❸ | `Alan ekle` | Alanı tabloya ekler. Ad yazılmadan kapalıdır. |
+
+Örnek modül için şu alanları ekleyin:
+
+| Alan adı | Alan tipi |
+|---|---|
+| Talep tarihi | Tarih |
+| Ekipman türü | Tek seçim |
+| Talep eden | Kullanıcı (Kişi ve kurum grubunda) |
+| Adet | Tam sayı |
+
+Bütün alan tipleri [Veri setleri ve alanlar](/docs/yonetici/ozel-moduller/veri-setleri#alan-tipleri) sayfasındadır.
+
+## 3. Seçenekleri tanımlayın
+
+Bir alana tıklayınca ayarları sağdaki panelde açılır. **Ekipman türü** bir seçim alanıdır ve en az bir seçenek ister; seçeneği olmayan seçim alanı taslakta sorun olarak görünür ve yayına göndermeyi engeller.
+
+![Ekipman türü alanının ayarları](/img/yonetici/om-baslangic-secenekler.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | **Alan adı** | Görünen ad; anahtar değişmez. |
+| ❷ | **Alan tipi** | Alanın tipi. |
+| ❸ | `Zorunlu` | Alan boş bırakılamaz. |
+| ❹ | `Hassas` | Değer maskeli görünür (bkz. [Hassas alanlar](/docs/yonetici/ozel-moduller/kayit-ekranlari#hassas-alanlar)). |
+| ❺ | **Seçenek adı**, `Seçenek ekle` | Yeni seçenek ekler; seçeneğin anahtarı addan üretilir. Oklar sırayı değiştirir. |
+
+Örnek için `Dizüstü bilgisayar`, `Monitör` ve `Telefon` seçeneklerini ekleyin.
+
+## 4. Taslağı kaydedin
+
+Üst çubuktaki `Kaydet`'e basın ya da Ctrl S kullanın. Kaydetmek yalnız taslağı saklar; kullanıcılar henüz hiçbir şey görmez. Stüdyo taslağı kaydederken denetler; sonucu alt durum çubuğunda görürsünüz.
+
+![Durum çubuğu](/img/yonetici/om-baslangic-durum-cubugu.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | `Sorun yok` | Taslakta eksik yoksa yeşil yazar; varsa kırmızı **Sorunlar** sayısı görünür ve tıklayınca liste açılır. Sorun varken yayına gönderilemez. |
+| ❷ | `Şema değişikliği` | Yayında veritabanında yapılacak değişikliklerin sayısı. |
+| ❸ | **Son kayıt** | Taslağın son kaydedildiği saat. |
+
+`Şema değişikliği`'ne basınca yayın anında veritabanında ne yapılacağı listelenir:
+
+![Şema değişikliği özeti](/img/yonetici/om-baslangic-sema.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | **Yayınlanınca** | Aşağıdaki değişikliklerin yayın onayıyla uygulanacağını belirtir. |
+| ❷ | Değişiklik etiketleri | Örnekte `açılacak tablo` ve `indeks değişikliği`. Diğerleri: eklenecek alan, genişletilecek alan, gizlenen ya da geri gelen öğe. |
+
+## 5. Önizleyin (isteğe bağlı)
+
+Üst çubuktaki `Önizle` taslak ekranları kaydetmeden ve yayınlamadan sağ bölmede gösterir. Önizleme varsayılan olarak salt okunurdur (bkz. [Önizleme](/docs/yonetici/ozel-moduller/studyo#önizleme)).
+
+<Callout type="warn" title="DİKKAT">
+Hiç yayınlanmamış modülün tabloları henüz oluşmadığı için önizlemede kayıt görünmez.
+</Callout>
+
+## 6. Onaya gönderin
+
+Üst çubukta `Yayına gönder`'e basın. Sağda **Yayın** çekmecesi açılır.
+
+![Yayın çekmecesi](/img/yonetici/om-baslangic-yayin.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | `Onaya gönder` | Taslağı yayın onaycısına gönderir. Taslak kaydedilmemişse ya da sorun varsa kapalıdır. |
+| ❷ | **Tanım değişiklikleri** | Eklenen, kaldırılan ve değişen öğeler. |
+| ❸ | **Dosya değişiklikleri** | Modül dosyalarının satır farkı; satıra tıklayınca fark açılır. |
+| ❹ | **SQL betiği** | Yayında çalışacak veritabanı betiği; kopyalama ve indirme simgeleriyle. |
+
+Onaya gönderilen taslak kilitlenir; durum rozetinde **Onay bekliyor · düzenlenemez** yazar. Değişiklik yapmak isterseniz aynı çekmecedeki `Geri çek` ile taslağı yeniden düzenlenebilir yapın.
+
+<Callout type="warn" title="DİKKAT">
+**Dört göz kuralı:** Taslağı onaya gönderen kişi için `Onayla ve yayınla` kapalıdır; süper yönetici de bu kurala tabidir. Onaya gönderilen taslak için onaycıya otomatik bildirim **gitmez**; onaycıya haber verin. Onaycı bekleyen işi modül listesindeki **Onay bekliyor** etiketinden görür.
+</Callout>
+
+## 7. Onaycı yayınlar
+
+Yayın izni olan ikinci kişi modülü Stüdyo'da açar, `Yayına gönder` çekmecesinde değişiklikleri ve SQL betiğini inceler ve `Onayla ve yayınla`'ya basar. Onay penceresi SQL betiğinin veritabanında çalışacağını ve yeni sürümün hemen kullanıma açılacağını hatırlatır. Gerekirse `Reddet` ile bir notla geri gönderir.
+
+Yayından sonra:
+
+- Modül **Yayında v1** olur; tablolar oluşturulur.
+- Rollere [modül yetkisi](/docs/yonetici/ozel-moduller/yetkiler) verin. Yetkisi olmayan kullanıcı modülü göremez.
+- Kullanıcılar uygulamayı `/CustomModule/ekipman_talebi` adresinden açar. Menüde görünmesi için [menü ayarını](/docs/yonetici/ozel-moduller/kayit-ekranlari#menüde-gösterme) açın.
+
+Ayrıntı: [Yayın ve sürümler](/docs/yonetici/ozel-moduller/yayin-ve-surumler).
+
+## Sonraki adımlar
+
+- Kayda aşama ve onay akışı ekleyin: [Aşamalar ve onay](/docs/yonetici/ozel-moduller/asamalar-ve-onay)
+- Formu ve listeyi düzenleyin, pano sayfası kurun: [Ekranlar](/docs/yonetici/ozel-moduller/ekranlar)
+- Hazır bir uygulamadan başlayın: [Pazar yeri](/docs/yonetici/ozel-moduller/pazar-yeri)
