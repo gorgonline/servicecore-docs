@@ -1,7 +1,7 @@
 ---
 title: "Yönetim Ekranları"
 description: "Bilgi Bankası'nın Sağlık, Analitik, Otomasyon ve Denetim ekranları: içerik sağlığı, okunma istatistikleri, arama boşlukları, otomatik kurallar ve denetim izi."
-reviewed: "2026-10-06"
+reviewed: "2026-11-11"
 owner: oobcore
 ---
 
@@ -20,6 +20,8 @@ Kenar çubuğundaki `Yönetim` grubu, Bilgi Bankası'nın genel durumunu izleyen
 | ❸ | `Bayat` | 180 gündür güncellenmemiş sayfalar. |
 | ❹ | `Sahipsiz` | Çözüm sahibi atanmamış sayfalar. |
 | ❺ | Liste | Seçili kutudaki sayfalar; gözden geçirme, son geçerlilik ve son güncelleme tarihleriyle. Sayfa adına tıklayınca sayfa açılır. |
+
+Liste en fazla 50 sayfa gösterir; daha fazlası varsa ekranda "İlk 50 makale gösteriliyor" ve toplam sayı yazar. Ekran yalnızca izleme içindir: bir sayfayı gözden geçirildi olarak işaretlemek için sayfayı açıp `Durum işlemleri` altındaki `Gözden geçirildi`yi kullanın.
 
 Aynı sayılar her alanın ana sayfasında da o alana göre gösterilir. Gözden geçirme ve son geçerlilik tarihlerinin nasıl çalıştığı için bkz. [Onay ve Yaşam Döngüsü](/docs/teknisyen/moduller/bilgi-bankasi/onay-ve-yasam-dongusu#gözden-geçirme-ve-son-geçerlilik).
 
@@ -64,33 +66,9 @@ Tablonun üstünde seçili aralıktaki toplam arama, sonuçsuz arama ve tıklana
 
 ## Otomasyon
 
-`Otomasyon` ekranı, sayfalarda bir olay olduğunda ya da her gece yapılan taramada kendiliğinden çalışan kuralları yönetir. Örneğin uzun süredir güncellenmeyen sayfaya etiket koyup sahibine görev açabilir, olumsuz oy alan sayfanın sahibine e-posta gönderebilir ya da yayınlanan sayfayı bir Teams kanalına duyurabilirsiniz.
+`Otomasyon` ekranı, sayfalarda bir olay olduğunda ya da her gece ve her sabah yapılan taramada kendiliğinden çalışan kuralları yönetir. Örneğin uzun süredir güncellenmeyen sayfayı etiketleyip sahibine görev açabilir, olumsuz oy alan sayfanın sahibine e-posta gönderebilir ya da az okunan eski sayfayı kullanımdan kaldırabilirsiniz.
 
-![Otomasyon kuralları](/img/teknisyen/kb-otomasyon.png)
-
-| # | Öğe | Ne işe yarar |
-|---|---|---|
-| ❶ | `Yeni kural` | Boş bir kural ya da hazır bir şablon açar. |
-| ❷ | Kural | Kuralın adı ve açıklaması. Tıklayınca kural düzenleyicisi açılır. |
-| ❸ | `Tetikleyici` | Kuralı neyin çalıştırdığı: `Makale güncellendi`, `Olumsuz geri bildirim alındı`, `Makale N gündür güncellenmedi` gibi. |
-| ❹ | `Aktif` | Kuralı açar ya da kapatır; kapalı kural çalışmaz ama silinmez. |
-| ❺ | İşlemler | Kuralı düzenleme, `Çalışma günlüğü` (kuralın ne zaman çalıştığı ve sonucu) ve silme. |
-
-`Son çalışma` sütunu kuralın en son ne zaman çalıştığını gösterir; hiç çalışmamışsa `—` yazar.
-
-### Hazır kural şablonları
-
-`Yeni kural` menüsünde boş kuralın ❶ yanında üç hazır şablon ❷ bulunur:
-
-![Yeni kural menüsü](/img/teknisyen/kb-otomasyon-yeni-kural.png)
-
-| Şablon | Ne yapar |
-|---|---|
-| **Bayat içerik → sahibine görev** | 180 gündür güncellenmeyen makaleyi etiketler ve sahibine gözden geçirme görevi açar. Görevin açılacağı projeyi siz seçersiniz. |
-| **Yayınlandı → Teams / webhook** | Makale yayınlandığında verdiğiniz webhook adresine (örneğin bir Teams kanalına) mesaj gönderir. |
-| **3 olumsuz oy → sahibine e-posta** | Makale en az 3 "faydalı değil" oyu aldıktan sonra her yeni olumsuz oyda sahibine e-posta gönderir. |
-
-Şablon bir başlangıçtır; açıldıktan sonra koşulları ve işlemleri değiştirip kaydedebilirsiniz.
+Kural listesi, `Yeni kural` ile açılan hızlı kural penceresi, `Hazır tarifler`, gelişmiş kurucu (tetikleyiciler, koşullar, aksiyonlar, değişkenler), çalışma günlüğü ve örnek kurallar için bkz. [Otomasyon Kuralları](/docs/teknisyen/moduller/bilgi-bankasi/otomasyon).
 
 ## Denetim
 
@@ -106,5 +84,16 @@ Tablonun üstünde seçili aralıktaki toplam arama, sonuçsuz arama ve tıklana
 | ❹ | `Yenile` | Listeyi yeniden yükler. |
 | ❺ | **Excel'e aktar** | Süzülmüş kayıtları Excel dosyası olarak indirir. |
 | ❻ | Tablo | `Tarih`, `Eylem`, `Kim`, `Makale / alan` ve işlemin yapıldığı `IP`. Satırın solundaki ok, kaydın ayrıntısını açar. |
+
+`Makale (KB no)` kutusuna sayfa numarasını `KB604` ya da yalnızca `604` biçiminde yazabilirsiniz. Satırı açtığınızda kaydın ayrıntısı görünür. Otomasyon kuralının yaptığı değişikliklerde `Kim` sütununda `Sistem (otomasyon)` yazar.
+
+`Eylem` süzgecindeki eylemler dört grupta toplanır:
+
+| Grup | Eylemler |
+|---|---|
+| **Erişim ve paylaşım** | `Görüntüleme`, `Dış paylaşım`, `Dışa aktarma`, `Paylaşım iptali` |
+| `İçerik` | `Oluşturma`, `Güncelleme`, `Silme`, `Geri yükleme`, `İçe aktarma`, `Sürüme dönme` |
+| **Onay ve yaşam döngüsü** | `Onay`, `Ret`, `Arşivleme`, `Durum değişikliği`, `Gözden geçirildi` |
+| **Yetki ve yapılandırma** | `Yetki değişikliği`, `Otomasyon kuralı değişikliği`, `Alan üyeliği değişikliği`, `Alan değişikliği` |
 
 Kayıtların ne kadar saklanacağı Genel Ayarlar'dan belirlenir ve ekranın üstünde yazar (örnekte 365 gün); süresi dolan kayıtlar her gece silinir.

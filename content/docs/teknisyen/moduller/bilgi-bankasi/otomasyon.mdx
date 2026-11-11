@@ -1,0 +1,262 @@
+---
+title: "Otomasyon Kuralları"
+description: "Bilgi Bankası otomasyonu: hazır tarifler, hızlı kural, gelişmiş kurucu, tetikleyiciler, koşullar, aksiyonlar, değişkenler ve örnek kurallar."
+reviewed: "2026-11-11"
+owner: oobcore
+---
+
+Otomasyon kuralları, bir sayfada bir olay olduğunda (oluşturma, yayınlama, olumsuz oy, yorum…) ya da her gece yapılan taramada kendiliğinden çalışır ve sizin yerinize iş yapar: sayfayı etiketler, sahibine e-posta gönderir, bir projede görev açar ya da sayfayı arşive alır. Kurallar kurumunuzun bütün Bilgi Bankası için geçerlidir; bir alana ya da kişiye bağlı değildir.
+
+`Otomasyon` ekranı kenar çubuğundaki `Yönetim` grubundadır ve yalnızca rolünde **Otomasyon kurallarını yönetebilir** yetkisi olanlara görünür; bkz. [Paylaşım ve Erişim](/docs/teknisyen/moduller/bilgi-bankasi/paylasim-ve-erisim#bilgi-bankası-yetkileri).
+
+## Kural listesi
+
+![Otomasyon ekranının bölümleri](/img/teknisyen/kb-otomasyon-yerlesim.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | **Hazır tarifler** | Boş bir kuralı ya da hazır bir tarifi gelişmiş kurucuda açar; bkz. [Hazır tarifler](#hazır-tarifler). |
+| ❷ | **Yeni kural** | İki adımlı hızlı kural penceresini açar; bkz. [Hızlı kural](#hızlı-kural). |
+| ❸ | Kural tablosu | Her kuralın adı ve açıklaması (`Kural`), onu çalıştıran olay (`Tetikleyici`), en son ne zaman çalıştığı (`Son çalışma`) ve açık olup olmadığı (`Aktif`). |
+
+Henüz kural yoksa tabloda "Henüz otomasyon kuralı yok. Hazır bir şablonla başlayabilirsiniz." yazar. Kural eklendikçe her satırın sağında üç simge belirir:
+
+- `Düzenle`: kuralı gelişmiş kurucuda açar. Kuralın adına tıklamak da aynı işi yapar.
+- `Çalışma günlüğü`: kuralın ne zaman, hangi sayfada çalıştığını ve sonucunu gösterir; bkz. [Çalışma günlüğü](#çalışma-günlüğü).
+- Çöp kutusu: kuralı siler. "Kural silinsin mi?" sorusunu `Sil` ile onaylamanız gerekir.
+
+`Aktif` anahtarını kapattığınız kural çalışmaz ama silinmez; anahtarı yeniden açtığınızda kaldığı yerden devam eder. Hiç çalışmamış kuralın `Son çalışma` sütununda `—` yazar.
+
+## Hızlı kural
+
+`Yeni kural`, tek bir olaya tek bir işlem bağlayan kısa bir pencere açar. Koşul eklemek ya da birden çok işlem tanımlamak için bu pencereden gelişmiş kurucuya geçebilirsiniz.
+
+![Yeni kural penceresi](/img/teknisyen/kb-otomasyon-sihirbaz.png)
+
+| # | Alan | Açıklama |
+|---|---|---|
+| ❶ | `Ne olunca?` | Kuralı çalıştıracak olay; dokuz tetikleyiciden biri. Bkz. [Tetikleyiciler](#tetikleyiciler). |
+| ❷ | **Güncellenmeden geçen gün** | Yalnızca `Makale N gündür güncellenmedi` seçildiğinde çıkar. Varsayılan 180 gündür. |
+| ❸ | `Ne yapılsın?` | Yapılacak işlem; aşağıdaki tablodaki dört işlemden biri. |
+| ❹ | İşlemin ayarları | Seçtiğiniz işleme göre değişir. Örnekte görevin açılacağı proje ve görev başlığı. |
+| ❺ | `Kural adı` | Siz değiştirmedikçe "olay → işlem" biçiminde kendiliğinden yazılır. |
+| ❻ | **Gelişmiş kurucuda aç** | Doldurduklarınızı gelişmiş kurucuya taşır; koşul ya da ikinci bir işlem eklemek için kullanın. |
+| ❼ | `Kaydet` | Kuralı oluşturur. Bu pencere var olan bir kuralı düzenlemez; her kayıt yeni bir kural oluşturur. |
+
+| İşlem | Ayarları | Ne yapar |
+|---|---|---|
+| `Etiket ekle` | `Etiket` | Sayfaya etiketi ekler. |
+| **Makale durumunu değiştir** | `Yeni durum` | Sayfayı `Arşivlendi` ya da `Kullanımdan Kalktı` durumuna alır. |
+| **Sahibine e-posta gönder** | `E-posta konusu`, `E-posta gövdesi` | Sayfanın sahibine e-posta gönderir. Konu ve gövde hazır gelir; isterseniz değiştirebilirsiniz. |
+| **Sahibine görev aç** | `Görevin açılacağı proje`, `Görev başlığı` | Seçtiğiniz projede bir görev açar ve sayfanın sahibine atar. Proje seçmek zorunludur. |
+
+<Callout type="info" title="SAYFANIN SAHİBİ">
+Kurallarda "sahip", sayfaya çözüm sahibi atanmışsa o kişidir; atanmamışsa sayfayı oluşturan kişidir.
+</Callout>
+
+## Hazır tarifler
+
+`Hazır tarifler` menüsünden seçtiğiniz tarif, alanları doldurulmuş olarak gelişmiş kurucuda açılır. Kaydetmeden önce tarifin her parçasını değiştirebilirsiniz.
+
+![Hazır tarifler menüsü](/img/teknisyen/kb-otomasyon-tarifler.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | `Boş kural` | Gelişmiş kurucuyu boş açar. |
+| ❷ | Tarifler | Hazır kurallar (aşağıdaki tablo). |
+
+| Tarif | Ne zaman ve hangi koşulda | Ne yapar |
+|---|---|---|
+| **Bayat içerik → sahibine görev** | `Makale N gündür güncellenmedi` (180 gün); koşul yok. | Sayfaya `bayat` etiketini ekler ve sahibine "Gözden geçir: …" başlıklı bir görev açar. Görevin açıklamasında güncellenmeden geçen gün sayısı ve sayfanın bağlantısı yer alır. |
+| **3 olumsuz oy → sahibine e-posta** | `Olumsuz geri bildirim alındı`; koşul: `Olumsuz oy sayısı` 2'den büyük. | Sahibine, olumsuz oy sayısını ve sayfanın bağlantısını içeren bir e-posta gönderir. Üçüncü olumsuz oydan itibaren her yeni olumsuz oyda tekrarlanır. |
+
+<Callout type="warn" title="DİKKAT">
+**Bayat içerik → sahibine görev** tarifinde görevin açılacağı proje boş gelir. `Görev Oluştur` aksiyonunda bir proje seçmeden `Kural Oluştur`a basarsanız kural kaydedilmez ve "Görev açma aksiyonu için bir proje seçin." uyarısı çıkar.
+</Callout>
+
+## Gelişmiş kurucu
+
+Gelişmiş kurucu, kuralı yukarıdan aşağıya üç blokla kurmanızı sağlar: **ne zaman** çalışacağı, **hangi koşulda** çalışacağı ve **ne yapacağı**. `Hazır tarifler`, `Gelişmiş kurucuda aç` ya da bir kuralın `Düzenle` simgesiyle açılır.
+
+![Gelişmiş kurucunun bölümleri](/img/teknisyen/kb-otomasyon-kurucu.png)
+
+| # | Bölüm | Ne işe yarar |
+|---|---|---|
+| ❶ | `Kural adı` ve açıklama | Kural adı zorunludur. Açıklama isteğe bağlıdır ve listede adın altında görünür. |
+| ❷ | `NE ZAMAN` | Kuralı çalıştıran olay; bkz. [Tetikleyiciler](#tetikleyiciler). |
+| ❸ | `EĞER` | Koşullar. Koşul eklemezseniz kural her tetiklemede çalışır; bkz. [Koşullar](#koşullar). |
+| ❹ | `O ZAMAN` | Sırayla uygulanacak aksiyonlar. En az bir aksiyon gerekir; bkz. [Aksiyonlar](#aksiyonlar). |
+| ❺ | **Gelişmiş Ayarlar** | Kuralın açık olup olmadığı ve çalışma sınırları; bkz. [Gelişmiş ayarlar](#gelişmiş-ayarlar). |
+| ❻ | **Kural Oluştur** | Kuralı kaydeder. Var olan bir kuralı düzenlerken düğmenin adı `Kuralı Güncelle` olur. |
+
+Koşul ve aksiyon kartları başlıklarına tıklanınca açılıp kapanır. Kaydetmediğiniz değişiklikler varken çekmeceyi kapatırsanız `Kaydedilmemiş Değişiklikler` uyarısı çıkar; `Düzenlemeye Devam` ile geri dönebilirsiniz.
+
+<Callout type="info" title="İPUCU">
+Bilgi Bankası kurallarını kaydetmeden deneme imkânı yoktur. Yeni bir kuralı önce dar bir koşulla kurun (örneğin yalnızca belirli bir etiketi taşıyan sayfalar), birkaç gün `Çalışma günlüğü`nden izleyin, sonra koşulu genişletin.
+</Callout>
+
+### Tetikleyiciler
+
+`NE ZAMAN` bloğundaki liste, tetikleyicileri `Makale olayları` ve `Zamanlanmış` diye iki grupta gösterir.
+
+| Tetikleyici | Ne zaman çalışır |
+|---|---|
+| `Makale oluşturuldu` | Yeni bir sayfa kaydedildiğinde. |
+| `Makale güncellendi` | Sayfa düzenlenip kaydedildiğinde ve eski bir sürüme dönüldüğünde. |
+| `Makale yayınlandı` | Sayfa onaylanıp yayına çıktığında ya da `Durum işlemleri` ile yeniden yayınlandığında. |
+| `Makale arşivlendi` | Sayfa `Durum işlemleri` ile arşivlendiğinde. |
+| **Makale kullanımdan kaldırıldı** | Sayfa `Durum işlemleri` ile kullanımdan kaldırıldığında. Son geçerlilik tarihi geçtiği için kendiliğinden kullanımdan kalkan sayfalarda çalışmaz. |
+| **Olumsuz geri bildirim alındı** | Bir okuyucu sayfaya "faydalı değil" oyu verdiğinde ya da olumlu oyunu olumsuza çevirdiğinde. Teknisyenlerin ve son kullanıcıların oyları sayılır. |
+| `Makaleye yorum eklendi` | Sayfaya genel ya da satır içi yorum eklendiğinde. |
+| **Gözden geçirme zamanı geldi** | Her sabah yapılan taramada, yayındaki sayfanın gözden geçirme tarihi geçmişse ya da 7 gün içindeyse. Aynı gözden geçirme tarihi için yalnızca bir kez çalışır. |
+| **Makale N gündür güncellenmedi** | Her gece yapılan taramada, yayındaki sayfa verdiğiniz gün sayısı (1–3650) boyunca güncellenmediyse. Bir sayfa için bir kez çalışır; sayfa güncellenince sayaç sıfırlanır. |
+
+Olay tetikleyicileri olaydan hemen sonra arka planda çalışır. `Zamanlanmış` gruptakiler ise günlük taramayı bekler; bu yüzden etkileri ertesi taramada görünür.
+
+### Koşullar
+
+`EĞER` bloğundaki koşullar, kuralın hangi sayfalarda çalışacağını daraltır.
+
+![Bir koşul kartı](/img/teknisyen/kb-otomasyon-kosul.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | Koşul türü | Karşılaştırmanın türü (aşağıdaki liste). |
+| ❷ | `Alan Adı` | Karşılaştırılacak sayfa bilgisi (aşağıdaki liste). |
+| ❸ | `Değer` | Karşılaştırılacak değer. Örnekteki koşul "olumsuz oy sayısı 2'den büyükse" anlamına gelir. |
+| ❹ | DEĞİL anahtarı | Açıkken koşulun tersi aranır. Fareyle üzerine gelince `Olumsuzla (DEĞİL)` yazar. |
+| ❺ | `Koşul Ekle` | Yeni bir koşul ekler. Alt alta eklenen koşulların **hepsi** sağlanmalıdır. |
+| ❻ | `Grup Ekle` | Bir koşul grubu ekler (aşağıda). |
+
+Koşul türleri listede üç grupta toplanır:
+
+- **Alan**: `Alan Eşittir`, `Alan Eşit Değildir`, `Alan İçerir`, `Alan Boş`, `Alan Dolu`, `Alan Değişti`, `Alan Şundan Değişti`, `Alan Şuna Değişti`
+- **Karşılaştırma**: `Sayı Büyüktür`, `Sayı Küçüktür`, `Tarih Öncesinde`, `Tarih Sonrasında`, `Tarih Aralığında`
+- **Kullanıcı/Rol**: `Kullanıcı Şudur`, olayı yapan kişi seçtiğiniz kişiyse sağlanır.
+
+`Alan Adı` listesinde şu sayfa bilgileri vardır: `Başlık`, `Makale kodu`, `Durum`, `Kategori`, `Sahip`, `Oluşturan`, `Etiketler`, `Alanlar`, `Görüntülenme sayısı`, `Faydalı oy sayısı`, `Olumsuz oy sayısı`, `Son güncellemeden bu yana gün`, `Son güncelleme tarihi`, `Gözden geçirme tarihi` ve `Son geçerlilik tarihi`.
+
+Koşul yazarken şunlara dikkat edin:
+
+- Metin karşılaştırmalarında büyük/küçük harf fark etmez. `Etiketler` için `Alan İçerir` kullanın; sayfanın etiketleri tek bir metin olarak karşılaştırılır.
+- `Kategori`, `Sahip` ve `Oluşturan` alanlarında değer olarak adı değil, kaydın numarasını (kimliğini) yazmanız gerekir.
+- Tarih koşullarında `Tarih Değeri` kutusuna tarihi `2026-12-31` biçiminde yazın. Kutudaki ipucu göreli ifadeden söz etse de `+7d` gibi göreli ifadeler Bilgi Bankası kurallarında çalışmaz. `Tarih Aralığında` ise bugünden itibaren verdiğiniz gün sayısı kadar ileriyi kapsar.
+- `Alan Değişti`, `Alan Şundan Değişti` ve `Alan Şuna Değişti` yalnızca değişikliğin önceki değeri bilinen olaylarda anlamlıdır: `Makale güncellendi` tetikleyicisinde `Başlık`, `Kategori`, `Etiketler`, `Gözden geçirme tarihi` ve `Son geçerlilik tarihi`; `Durum işlemleri` ile gelen yayınlama, arşivleme ve kullanımdan kaldırmada `Durum`.
+- `Kullanıcı Şudur`, `Zamanlanmış` tetikleyicilerde hiçbir zaman sağlanmaz; çünkü bu olayları bir kişi değil gece ya da sabah taraması başlatır.
+
+**Koşul grupları:** `Grup Ekle` ile eklenen kartın üstünde iki seçenek bulunur: `ALL match` seçiliyse gruptaki koşulların hepsi, `ANY match` seçiliyse herhangi biri sağlanmalıdır. Grubun içine `Koşul` ile koşul, `Grup` ile iç içe yeni bir grup ekleyebilirsiniz. "Etiketi `vpn` **ya da** `uzak-erisim` olan sayfalar" gibi "veya"lı koşulları grupla kurarsınız.
+
+<Callout type="warn" title="DİKKAT">
+`ANY match` seçili bir grubu başka koşullarla birlikte kullanacaksanız grubu `EĞER` bloğuna **ilk** olarak ekleyin, diğer koşulları sonra ekleyin. Grup başka bir koşulun altına eklenirse, üstündeki koşullarla "ve" yerine "veya" ile birleşir ve kural beklediğinizden çok daha fazla sayfada çalışır. Koşulların sırası sonradan değiştirilemez.
+</Callout>
+
+### Aksiyonlar
+
+`O ZAMAN` bloğundaki aksiyonlar, kartların sırasıyla yukarıdan aşağıya uygulanır.
+
+![Bir aksiyon kartı](/img/teknisyen/kb-otomasyon-aksiyon.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | Aksiyon türü | Yapılacak işlem (aşağıdaki tablo). |
+| ❷ | `Kime` | Alıcılar. Birden çok adresi virgülle ya da noktalı virgülle ayırın; adres yerine değişken de yazabilirsiniz. |
+| ❸ | `Konu` | E-postanın konusu. |
+| ❹ | `Gövde` | E-postanın metni; HTML desteklenir. |
+| ❺ | `Değişkenler` | Alana, kural çalışırken sayfanın bilgisiyle dolacak bir değişken ekler; bkz. [Değişkenler](#değişkenler). |
+| ❻ | **Hata durumunda devam et** | Açıkken bu aksiyon hata verse de sonraki aksiyonlar uygulanır. Kapalıyken hata kuralın geri kalanını durdurur. |
+| ❼ | Sıra ve silme | Oklarla aksiyonun sırasını değiştirir, çöp kutusuyla aksiyonu kaldırır. |
+
+| Aksiyon | Ayarları | Ne yapar |
+|---|---|---|
+| `E-posta Gönder` | `Kime`, `Konu`, `Gövde` | E-posta gönderir. |
+| `Webhook Çağrısı` | `URL`, `Yöntem` (varsayılan `POST`), `Başlıklar`, `Gövde` | Verdiğiniz adrese istek gönderir; başka bir sisteme haber vermek için. |
+| `HTTP İsteği` | `URL`, `Yöntem` (varsayılan `GET`), `Başlıklar`, `Gövde` | Verdiğiniz adrese HTTP isteği gönderir. `DELETE` yöntemi de seçilebilir. |
+| `Görev Oluştur` | `Görevin açılacağı proje` (zorunlu), `Görev Başlığı`, `Görev Türü`, `Açıklama`, **Makale sahibine ata** | Seçtiğiniz projede, projenin varsayılan açık durumunda bir görev açar. `Görev Türü` proje seçilince çıkar. **Makale sahibine ata** açıkken görev sayfanın sahibine atanır. |
+| `Etiket Ekle` | `Etiket` | Sayfaya etiketi ekler. |
+| `Etiket Kaldır` | **Kaldırılacak Etiket** | Sayfadan etiketi kaldırır. |
+| **Makale durumunu değiştir** | `Yeni durum` | Sayfayı `Arşivlendi` ya da `Kullanımdan Kalktı` durumuna alır. Otomasyon sayfayı yayınlayamaz ya da onaylayamaz. Bu değişiklik `Denetim` ekranında `Sistem (otomasyon)` adıyla görünür. |
+
+### Değişkenler
+
+`{{Knowledge.Subject}}` gibi değişkenler, kural çalışırken o sayfanın bilgisiyle değiştirilir. `Kime`, `Konu`, `Gövde`, görev başlığı ve açıklaması gibi alanlarda kullanabilirsiniz. Elle yazabilir ya da alanın üstündeki `Değişkenler` menüsünden seçebilirsiniz.
+
+- `{{Knowledge.Id}}`: sayfa numarası
+- `{{Knowledge.Code}}`: sayfanın KB kodu, örneğin `KB507`
+- `{{Knowledge.Subject}}`: başlık
+- `{{Knowledge.ShortSummary}}`: kısa özet
+- `{{Knowledge.Url}}`: sayfanın adresi
+- `{{Knowledge.State}}`: durum
+- `{{Knowledge.Category}}`: kategori
+- `{{Knowledge.Labels}}`: etiketler
+- `{{Knowledge.Spaces}}`: sayfanın bulunduğu alanlar
+- `{{Knowledge.OwnerName}}`: sahibin adı
+- `{{Knowledge.OwnerEmail}}`: sahibin e-posta adresi
+- `{{Knowledge.CreatedByName}}`: oluşturan
+- `{{Knowledge.WatcherEmails}}`: sayfayı izleyenlerin e-posta adresleri, virgülle ayrılmış
+- `{{Knowledge.ViewCount}}`: görüntülenme sayısı
+- `{{Knowledge.HelpfulCount}}`: faydalı oy sayısı
+- `{{Knowledge.NotHelpfulCount}}`: faydasız oy sayısı
+- `{{Knowledge.DaysSinceUpdate}}`: son güncellemeden bu yana geçen gün
+- `{{Knowledge.LastUpdatedShort}}`: son güncelleme tarihi
+- `{{Knowledge.ReviewDateShort}}`: gözden geçirme tarihi
+- `{{Knowledge.ExpiryDateShort}}`: son geçerlilik tarihi
+- `{{Knowledge.Description}}`: sayfanın içeriği (HTML)
+- `{{Today.Short}}` ve `{{Today.Long}}`: bugünün tarihi, kısa ve uzun biçimde
+- `{{PortalUrl}}`: uygulamanın adresi
+
+### Gelişmiş ayarlar
+
+| Ayar | Açıklama |
+|---|---|
+| `Aktif` | Kapalı kural çalışmaz. Listedeki `Aktif` anahtarıyla aynıdır. |
+| **Maks. Çalıştırma / Saat** | Kuralın bir saatte en fazla kaç kez çalışacağı. Varsayılan 100'dür; sınır aşılınca o saatteki diğer çalışmalar atlanır ve günlüğe yazılır. |
+| **Bekleme Süresi (saniye)** | Kural bir sayfa için çalıştıktan sonra, bu süre dolmadan aynı sayfa için yeniden çalışmaz. Varsayılan 0'dır, yani bekleme yoktur. |
+
+## Kurallar hangi sayfalarda çalışır
+
+- Bir kural yalnızca, kuralı **oluşturan** ve **en son değiştiren** kişinin ikisinin de görebildiği sayfalarda çalışır. Bu kişilerden biri sayfayı göremiyorsa kural o sayfa için hiç çalışmaz ve çalışma günlüğüne de satır yazılmaz. Kısıtlı sayfalarda da çalışmasını istediğiniz kuralları, o sayfaları görebilen biri oluşturmalıdır.
+- Silinmiş sayfalarda ve şablonlarda kural çalışmaz.
+- `Zamanlanmış` tetikleyiciler yalnızca yayındaki sayfalara bakar.
+- Bir kuralın kendi yaptığı değişikliğin aynı kuralı tekrar tekrar tetiklemesi engellenir; bu durumda günlükte "döngü koruması" nedeniyle atlandığı yazar.
+
+## Çalışma günlüğü
+
+Kural listesindeki `Çalışma günlüğü` simgesi, o kuralın son 200 çalışmasını bir çekmecede gösterir. Kural henüz hiç çalışmadıysa "Bu kural henüz çalışmadı." yazar. Günlükteki sütunlar şunlardır:
+
+- **Çalıştırıldı**: kuralın çalıştığı tarih ve saat.
+- **Durum**: `Başarılı`, `Başarısız` ya da `Atlandı`.
+- **Makale**: kuralın çalıştığı sayfa; numarasına tıklayınca sayfa açılır.
+- **Mesaj**: sonucun açıklaması; örneğin "Uygulanan aksiyonlar: …", "Kural çalıştı; uygulanacak bir değişiklik yoktu." ya da "Atlandı: …" ile nedeni (koşullar sağlanmadı, bekleme süresi dolmadı, saatlik çalışma sınırı aşıldı, sayfa henüz bayat değil gibi).
+- **Süre**: çalışmanın kaç milisaniye sürdüğü.
+
+## Örnek kurallar
+
+Aşağıdaki kurallar gelişmiş kurucuda, bu sayfada anlatılan tetikleyici, koşul ve aksiyonlarla kurulur. Adları ve metinleri kendi kurumunuza göre değiştirin.
+
+### Gözden geçirme zamanı gelen sayfayı ekibe iş olarak açmak
+
+- **Ne zaman:** `Gözden geçirme zamanı geldi`
+- **Eğer:** koşul yok.
+- **O zaman:** ① `Etiket Ekle`: `gozden-gecir`. ② `Görev Oluştur`: içerik ekibinizin projesi; başlık `Gözden geçir: {{Knowledge.Code}} {{Knowledge.Subject}}`; açıklama `{{Knowledge.Url}}`; **Makale sahibine ata** açık.
+
+Etiket sayesinde gözden geçirilmeyi bekleyen sayfaları `Tüm sayfalar` listesinde etiket süzgeciyle de bulursunuz. Gözden geçirildikten sonra etiketi kaldırmayı unutmayın.
+
+### Güvenlikle ilgili yeni sayfayı güvenlik ekibine duyurmak
+
+- **Ne zaman:** `Makale yayınlandı`
+- **Eğer:** `Alan İçerir`: `Etiketler`, değer `güvenlik`.
+- **O zaman:** `E-posta Gönder`: `Kime` ekibin ortak adresi; `Konu` `Yeni güvenlik sayfası: {{Knowledge.Subject}}`; `Gövde` `<p>{{Knowledge.ShortSummary}}</p><p>{{Knowledge.Url}}</p>`.
+
+### Az okunan eski sayfayı kullanımdan kaldırmak
+
+- **Ne zaman:** `Makale N gündür güncellenmedi`, `Güncellenmeden geçen gün` 365.
+- **Eğer:** `Sayı Küçüktür`: `Görüntülenme sayısı`, değer 10.
+- **O zaman:** ① **Makale durumunu değiştir**: `Kullanımdan Kalktı`. ② `E-posta Gönder`: `Kime` `{{Knowledge.OwnerEmail}}`; `Konu` `{{Knowledge.Code}} kullanımdan kaldırıldı`; `Gövde` sayfanın neden kaldırıldığını ve bağlantısını (`{{Knowledge.Url}}`) anlatan bir metin.
+
+Kullanımdan kalkan sayfa silinmez; içerik hâlâ geçerliyse sahibi sayfayı yeniden yayınlayabilir. Bkz. [Onay ve Yaşam Döngüsü](/docs/teknisyen/moduller/bilgi-bankasi/onay-ve-yasam-dongusu#kullanımdan-kalkan-ve-arşivdeki-sayfalar).
+
+### Arşivlenen sayfayı izleyenlere haber vermek
+
+- **Ne zaman:** `Makale arşivlendi`
+- **Eğer:** koşul yok.
+- **O zaman:** `E-posta Gönder`: `Kime` `{{Knowledge.WatcherEmails}}`; `Konu` `{{Knowledge.Code}} arşive alındı`; `Gövde` `<p>{{Knowledge.Subject}} sayfası {{Today.Short}} tarihinde arşive alındı.</p>`.

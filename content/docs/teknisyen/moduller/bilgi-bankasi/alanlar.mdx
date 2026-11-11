@@ -1,7 +1,7 @@
 ---
 title: "Alanlar"
-description: "Ekip ve hizmet sayfalarını kendi ağacıyla toplayan alanlar: alan listesi, süzme, alan oluşturma ve alan şablonları."
-reviewed: "2026-10-06"
+description: "Ekip ve hizmet sayfalarını kendi ağacıyla toplayan alanlar: alan listesi, filtreler, alan oluşturma, alan şablonları ve herkese açık portal."
+reviewed: "2026-11-11"
 owner: oobcore
 ---
 
@@ -17,14 +17,31 @@ Kenar çubuğundaki `Alanlar` bağlantısı görebildiğiniz tüm alanları list
 
 | # | Öğe | Ne işe yarar |
 |---|---|---|
-| ❶ | `Alan oluştur` | Yeni alan açar (aşağıda). Yalnızca alan oluşturma yetkisi olanlar görür. |
-| ❷ | **Alanlarda ara** | Alan adında arar. |
-| ❸ | Tür süzgeci | `Tümü`, `Bilgi Bankası`, `Dokümantasyon` ya da `Proje`. Yanlarında her türdeki alan sayısı yazar. |
-| ❹ | `Favoriler` | Yalnızca yıldızladığınız alanları gösterir. |
-| ❺ | Sıralama | `Ada göre` ya da `Favoriler önce`. |
+| ❶ | **Alan oluştur** | Yeni alan açar (aşağıda). Yalnızca alan oluşturma yetkisi olanlar görür. |
+| ❷ | `⋯` | `Genel portal` öğesiyle herkese açık portal ayarlarını açar (aşağıda). Yalnızca genel ayarları yönetme yetkisi olanlar görür. |
+| ❸ | **Alanlarda ara** | Alan adında arar. |
+| ❹ | Sıralama | `Ada göre` ya da `Favoriler önce`. |
+| ❺ | **Filtreler** | Alanları türe, etikete, görünürlüğe, sahibine ve tarihe göre süzer (aşağıda). Bir süzgeç açıkken düğmede kaç süzgeç seçtiğiniz yazar, örneğin `Filtre (1)`. |
 | ❻ | Alan kartı | Alanın adı, kodu ve açıklaması. Yalnızca üyelerin görebildiği alanlarda `Özel alan` etiketi bulunur. Sağ alttaki yıldız alanı favorilerinize ekler. |
 
+Yıldızladığınız alanlar kenar çubuğundaki `Favori alanlar` listesinde de görünür; böylece sık çalıştığınız alana tek tıkla girersiniz. Bir alanı alanın kendi sayfasındaki yıldızla ya da alan menüsündeki `Favorilere ekle` ile de favorilere ekleyebilirsiniz.
+
 Bir karta tıklayınca alanın ana sayfası açılır; bkz. [Alan Sayfası](/docs/teknisyen/moduller/bilgi-bankasi/alan-sayfasi).
+
+## Filtreler
+
+`Filtreler` düğmesi sağda bir panel açar.
+
+![Alan filtreleri](/img/teknisyen/kb-alanlar-filtreler.png)
+
+| # | Süzgeç | Ne işe yarar |
+|---|---|---|
+| ❶ | `Alan Tipi` | `Bilgi Bankası`, `Dokümantasyon` ya da `Proje`. Listede yalnızca kurumunuzda kullanılan türler, yanlarında alan sayılarıyla görünür. |
+| ❷ | `Etiketler` | Alana verilen etiketler. |
+| ❸ | `Görünürlük` | `Herkese açık alan` ya da `Özel alan`. |
+| ❹ | `Sahibi` | Alanın sahibi olan kişi. |
+| ❺ | **Oluşturulduğu Tarih** ve **Son Güncelleme Tarihi** | Başlangıç ve bitiş tarihiyle aralık. |
+| ❻ | `Favoriler` | Yalnızca yıldızladığınız alanları gösterir. |
 
 ## Alan oluşturma
 
@@ -35,7 +52,7 @@ Bir karta tıklayınca alanın ana sayfası açılır; bkz. [Alan Sayfası](/doc
 | # | Alan | Açıklama |
 |---|---|---|
 | ❶ | `Şablon` | Alanın başlangıç klasörleri. `Boş alan` klasörsüz başlar; diğer üç şablon klasörleri hazır açar (aşağıdaki tablo). |
-| ❷ | `Alan Adı` ve `Alan Kodu (4 karakter)` | **Zorunlu.** Kod dört harften oluşur; sistem sonuna dört haneli bir numara ekleyerek alanın kalıcı anahtarını üretir (örneğin `TBLA` → `TBLA0007`). |
+| ❷ | `Alan Adı` ve `Alan Kodu (4 karakter)` | **Zorunlu.** Kod dört karakterdir; yalnızca A–Z harfleri ve 0–9 rakamları kullanılır, Türkçe harfler karşılıklarına çevrilir (`Ş` → `S` gibi). Sistem sonuna dört haneli bir numara ekleyerek alanın kalıcı anahtarını üretir (örneğin `TBLA` → `TBLA0007`). |
 | ❸ | `Alan Tipi` | **Zorunlu.** `Bilgi Bankası`, `Dokümantasyon` ya da `Proje`. Listede süzmek için kullanılır. |
 | ❹ | **Herkese açık alan** | Açıksa alanı Bilgi Bankası'nı görebilen herkes görür. Kapalıysa alan **özeldir**: yalnızca üyeleri görür. |
 | ❺ | `Oluştur` | Alanı oluşturur. Oluşturan kişi alanın yöneticisi olur. |
@@ -50,4 +67,22 @@ Bir karta tıklayınca alanın ana sayfası açılır; bkz. [Alan Sayfası](/doc
 
 <Callout type="info" title="İPUCU">
 Alanı ekip mi yoksa hizmet etrafında mı kuracağınıza okuyucuya göre karar verin. Son kullanıcılara yönelik rehberleri tek bir hizmet alanında, ekibin kendi iç prosedürlerini ise ayrı bir ekip alanında tutmak, yetkileri de sadeleştirir.
+</Callout>
+
+## Herkese açık portal
+
+Herkese açık portal, Bilgi Bankası'ndaki uygun sayfaları **giriş yapmadan** okunabilen tek bir sayfada yayınlar. Alan listesinin sağ üstündeki `⋯` menüsünden `Genel portal`ı seçin. Bu menüyü yalnızca genel ayarları yönetme yetkisi olanlar görür.
+
+![Herkese açık portal penceresi](/img/teknisyen/kb-alanlar-portal.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | Uyarı | Genel Ayarlar'daki **Bilgi bankası dış paylaşım linkleri** ayarı kapalıysa çıkar. Bu ayar kapalıyken portal açık olsa da ziyaretçiler sayfayı göremez. |
+| ❷ | `Portal açık` | Portalı açar ya da kapatır. Açıkken altında portalın adresi, adresi panoya alan `Kopyala` ve `Yeni adres` düğmeleri çıkar. |
+| ❸ | Makale sayısı | Şu an portalda kaç sayfanın göründüğü. |
+
+Portalda yalnızca pencerede yazan koşulların hepsini sağlayan sayfalar görünür: yayındaki, durumu herkese açık olan, kategorisi bir gruba kısıtlanmamış ve özel bir alanda bulunmayan sayfalar. `Paylaş` penceresinde `Görüntüleme kısıtlı` yapılan sayfalar da portalda görünmez; bkz. [Paylaşım ve Erişim](/docs/teknisyen/moduller/bilgi-bankasi/paylasim-ve-erisim#sayfayı-kısıtlama).
+
+<Callout type="warn" title="DİKKAT">
+`Yeni adres` portala yeni bir adres verir ve eski adres **hemen** çalışmaz olur. Adresi bir yerde paylaştıysanız (intranet, e-posta imzası…) oradaki bağlantıları da güncellemeniz gerekir.
 </Callout>
