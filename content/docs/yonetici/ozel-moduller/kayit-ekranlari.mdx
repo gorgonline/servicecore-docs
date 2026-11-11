@@ -1,0 +1,141 @@
+---
+title: "Kayıt ekranları"
+description: "Kullanıcıların yayındaki uygulamaları kullandığı ekranlar: uygulamalar, kayıt listesi, pano, takvim, yeni kayıt, kayıt detayı, hassas alanlar ve menü ayarı."
+reviewed: "2026-11-11"
+owner: DevTahsin
+---
+
+Yayındaki uygulamaları oturum açmış **teknisyenler**, rollerine verilen [modül yetkileriyle](/docs/yonetici/ozel-moduller/yetkiler) kullanır. Portal (son kullanıcı) ekranı yoktur.
+
+## Uygulamalar
+
+`/CustomModule` adresi kullanıcının görebildiği yayındaki uygulamaları listeler.
+
+![Uygulamalar](/img/yonetici/om-kayit-uygulamalar.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | Uygulama adı | Uygulamanın açılış öğesini açar. |
+| ❷ | Veri setleri | Birden çok veri seti olan uygulamada veri setlerinin kayıt listelerine doğrudan bağlantılar. |
+
+## Menüde gösterme
+
+Uygulamaların ServiceCore üst menüsünde görünmesi için `Ayarlar ▸ Genel Ayarlar ▸ Uygulama Ayarları` sekmesindeki ayarı açın. Ayar **varsayılan olarak kapalıdır**.
+
+![Uygulamaları menüde göster ayarı](/img/yonetici/om-kayit-menu-ayari.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | **Uygulamaları menüde göster** | Ayarın adı. |
+| ❷ | Anahtar | Ayarı açar ve kapatır. |
+
+- Açıkken yayındaki uygulamalar, görme yetkisi olan teknisyenlere üst menüde gösterilir. **Üst seviye menü öğesi** olarak ayarlanan uygulama kendi menü öğesiyle, diğerleri tek bir **Uygulamalar** öğesi altında görünür (bkz. [Ad ve menü](/docs/yonetici/ozel-moduller/ekranlar#ad-ve-menü)).
+- Kapalıyken uygulamalar menüde görünmez; adresleri, sayfaları ve yetkileri değişmeden çalışır.
+
+## Kayıt listesi
+
+![Kayıt listesi](/img/yonetici/om-kayit-liste.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | Uygulama menüsü | Uygulamanın kendi gezinmesi; yerleşimi tasarımcı belirler. |
+| ❷ | Görünüm seçici | Veri setinin birden çok görünümü varsa çıkar (ör. Örnek kayıtlar / Örnek panosu / Örnek takvimi). |
+| ❸ | Arama | **Kayıt no ya da başlıkta ara**. |
+| ❹ | `Yeni kayıt` | Oluştur yetkisiyle görünür. |
+| ❺ | `Stüdyo'da aç` | Uygulamayı Uygulama Stüdyosu'nda açar. |
+
+- `Sütunlar`: kolon seçme, sıralama, boyutlandırma; seçimleriniz saklanır.
+- `Excel`: yalnız Dışa aktar yetkisiyle görünür. En çok 10.000 satır aktarılır; hassas alanlar maskeli çıkar.
+- Aşama alanı renkli etiketle gösterilir.
+
+## Pano
+
+Sütunlar veri setinin aşamalarıdır.
+
+![Pano görünümü](/img/yonetici/om-kayit-pano.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | Görünüm seçici | Pano görünümü seçili. |
+| ❷ | İpucu | Kartı başka bir aşamaya sürükleyerek kaydın aşamasını değiştirirsiniz; yalnız geçilebilen sütunlar kartı kabul eder. |
+| ❸ | Kart | Kayıt numarası, başlık ve görünümde seçilen alanlar. |
+
+Sürükleme Düzenle yetkisi ister; geçişin kuralları (zorunlu alan, gerekçe, onay) uygulanır.
+
+## Takvim
+
+Kayıtlar seçili tarih alanının gününde ay görünümünde gösterilir.
+
+![Takvim görünümü](/img/yonetici/om-kayit-takvim.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | Ay gezinmesi | Önceki ay, sonraki ay ve `Bugün`. |
+| ❷ | Kart | Kayıt; başka güne sürüklemek kaydın tarihini değiştirir. |
+
+Günde 3 kart görünür, fazlası "+N daha" olarak açılır.
+
+## Yeni kayıt
+
+Form, tasarımcının seçtiği açılış biçimine göre sayfada, yan çekmecede ya da pencerede açılır. Zorunlu alanlar yıldızla işaretlidir.
+
+![Yeni kayıt formu](/img/yonetici/om-kayit-yeni.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | Adımlar | Adımlı formda adımlar; formun altındaki `Geri` ve `İleri` ile ilerlenir. |
+| ❷ | `Vazgeç`, `Kaydet` | Formu kapatır ya da kaydı oluşturur. |
+
+## Kayıt detayı
+
+![Kayıt detayı](/img/yonetici/om-kayit-detay.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | Aşama çubuğu | Kaydın aşamaları; bulunduğu aşama dolu görünür. |
+| ❷ | Geçiş düğmeleri | Bulunulan aşamadan tanımlı geçişler (ör. `Tamamla`, `İptal et`); Düzenle yetkisiyle görünür. |
+| ❸ | `Hassas alanları aç` | Yalnız kayıtta maskeli alan varsa ve kullanıcının Hassas alanları gör yetkisi varsa görünür. |
+| ❹ | `Sil`, `Düzenle` | Sil ve Düzenle yetkisiyle görünür. |
+| ❺ | Sekmeler | `Kayıt`, `Ekler (n)`, `Geçmiş`, `Onay`; bu kayda referans veren kayıt varsa **İlişkili kayıtlar**. |
+
+- **Kayıt:** alanlar ve kalem tablosu.
+- **Ekler (n):** dosya alanlarındaki ekler; buradan indirilir, yükleme ve silme formda yapılır.
+
+<Callout type="info" title="ÖNEMLİ">
+Kaydı siz düzenlerken başka biri değiştirmişse kaydetme reddedilir: "Kayıt siz düzenlerken başka biri tarafından değiştirildi. Güncel hâli yüklendi; değişikliğinizi yeniden yapın."
+</Callout>
+
+### Geçmiş sekmesi
+
+![Geçmiş sekmesi](/img/yonetici/om-kayit-gecmis.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | `Geçmiş` | Oluşturma, güncelleme, aşama geçişleri (gerekçesiyle) ve hassas alan açmaları. |
+| ❷ | Değişiklik tablosu | Alan bazında eski ve yeni değer. |
+
+### Onay sekmesi
+
+Kayıt bir onay akışındaysa akışın durumu burada görünür; sırası gelen onaycı karar düğmelerini (**Onayla**, **Reddet**, **Revize İste**) burada görür.
+
+![Onay sekmesi](/img/yonetici/om-kayit-onay.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | **Gelişmiş Onay Akışı** | Kayda bağlı onay akışının adı. |
+| ❷ | Sonuç | Akışın durumu, ör. Onaylandı. |
+| ❸ | `Akış Diyagramı`, `Onay Zaman Çizelgesi` | Akışın diyagramı ve adım adım zaman çizelgesi. |
+
+## Hassas alanlar
+
+- Hassas alanlar herkese **•••** olarak maskeli görünür (süper yönetici dahil): listede, detayda, Excel'de, seçicilerde ve betiklerde.
+- Açma işlemi kaydın geçmişine **Hassas alanlar açıldı** olarak yazılır; yalnız alan adları kaydedilir, değerler kaydedilmez.
+- Hassas alanlar sıralamada, süzgeçte, göstergede, sahiplikte, takvim tarihinde, geçişte zorunlu alanda ve onay akışı koşulunda kullanılamaz.
+
+## Hata iletileri
+
+| İleti | Anlamı |
+|---|---|
+| "Kayıt bulunamadı." | Kayıt yok ya da kullanıcının görme kapsamı dışında. |
+| "Bu işlem için yetkiniz yok." | Rolde gerekli eylem yetkisi yok. |
+| "Kayıt kaydedildi ama bir tetikleyici çalışamadı. Başvuru numarasını modülün tasarımcısına iletin." | Kayıt yazıldı; arkasından çalışan sunucu betiği hata verdi. Tasarımcı başvuru numarasıyla `Konsol ▸ Çalışma anı`'nda arar. |
