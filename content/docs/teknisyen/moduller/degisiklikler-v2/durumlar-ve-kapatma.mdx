@@ -1,0 +1,101 @@
+---
+title: "Durumlar ve Kapatma"
+description: "Değişikliğin durumunu değiştirme, kapatma, reddetme, kapanış kuralları, yeniden açma, arşivleme ve silme."
+reviewed: "2026-11-16"
+owner: necatikekec
+---
+
+Durumlar ve aşamaları için bkz. [Genel Bakış](/docs/teknisyen/moduller/degisiklikler-v2/genel-bakis#durumlar-ve-aşamalar). Bu sayfa durumların nasıl değiştiğini anlatır.
+
+| İşlem | Nereden | Ne olur |
+|---|---|---|
+| **Durumu değiştir** | `⋯` menüsü, `Detaylar` sekmesindeki `Durum` alanı | Değişiklik açık ya da beklemedeki başka bir duruma geçer. |
+| `Kapat` | Başlıktaki düğme, `⋯` menüsü | Değişiklik `Tamamlandı` ya da **İptal edildi** durumuna geçer. |
+| `Reddet` | `⋯` menüsü | Değişiklik `Reddedildi` durumuna geçer ve kapanır. |
+| **Yeniden aç** | Kapalı değişiklikte başlıktaki düğme | Değişiklik seçtiğiniz açık ya da beklemedeki duruma döner. |
+| `Arşivle` | Kapalı değişiklikte `⋯` menüsü | Değişiklik salt okunur olur. Geri alınamaz. |
+| `Sil` | `⋯` menüsü | Değişiklik listeden kalkar; hemen `Geri al` ile geri getirilebilir. |
+
+**Durumu değiştir** ile ya da `Detaylar` sekmesinden değişikliği kapatamazsınız; kapalı durumlar orada seçilemez.
+
+Kurumunuzda tanımlı otomasyonlar da durumu değiştirebilir; ör. **Uygulamaya al** otomasyonu değişikliği `Uygulanıyor` durumuna alır. Otomasyonlar `⋯` menüsündeki `Otomasyonlar` ile çalıştırılır.
+
+## Durumu değiştirme
+
+![Durumu değiştirin penceresi](/img/teknisyen/chg2-durum-degistir.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | **Şimdiki durum** | Değişikliğin şu anki durumu. |
+| ❷ | **Yeni durum** | Açık ve beklemedeki durumlar. `Değiştir` ile kaydedilir. |
+
+## Değişikliği kapatma
+
+![Değişikliği kapatın penceresi](/img/teknisyen/chg2-kapat.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | **Kapatma durumu** | `Tamamlandı` ya da **İptal edildi**. |
+| ❷ | **Onay akışı iptal edilecek** | Değişikliğin onayı sürüyorsa çıkar. Değişiklik kapanınca onay iptal edilir; onaycılar karar veremez ve değişiklik yeniden açılsa da onay kendiliğinden başlamaz. |
+| ❸ | **Kapatma yorumu** | Zorunlu, en çok 2.000 karakter. Yorum `Görüşmeler`'e not olarak eklenir. |
+| ❹ | `Kapat` | Değişikliği kapatır. |
+
+### Açık görevler
+
+Değişikliğin açık görevleri varsa `Kapat`'a bastığınızda pencerede uyarı çıkar.
+
+![Açık görevler uyarısı](/img/teknisyen/chg2-kapat-gorev.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | **Açık görevler var** | Değişikliğin kaç açık görevi olduğu. |
+| ❷ | **Görevleri tamamla ve kapat** | Açık görevleri tamamlar, sonra değişikliği kapatır. |
+
+### Kapanış kuralları
+
+Kurumunuzda kapanış kuralı tanımlıysa kural sağlanmadan değişiklik kapanmaz. Pencerede hangi kuralın sağlanmadığı yazar.
+
+![Kapanış kuralı sağlanmadı](/img/teknisyen/chg2-kapat-kural.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | **Kapanış kuralları sağlanmadı** | Eksik alan ve yapılması gereken, ör. **Teknisyen: Kapatmak için teknisyen atayın.** |
+| ❷ | **Detaylar'a git** | `Detaylar` sekmesini açar; eksik alanı doldurup yeniden kapatın. |
+
+## Değişikliği reddetme
+
+`Reddet`, değişikliği yapılmayacak olarak kapatır. Onaydaki **Onayı reddet** ile karıştırmayın: o yalnız sizin onay kararınızdır, değişikliği kapatmaz.
+
+![Değişikliği reddedin penceresi](/img/teknisyen/chg2-reddet.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | **Ret durumu** | Değişikliğin geçeceği ret durumu. |
+| ❷ | **Ret gerekçesi** | Zorunlu. Gerekçe `Görüşmeler`'e not olarak eklenir. |
+| ❸ | `Reddet` | Değişikliği reddeder ve kapatır. |
+
+Onay sürüyorsa kapatmada olduğu gibi **Onay akışı iptal edilecek** uyarısı çıkar.
+
+## Kapalı değişiklik
+
+Kapalı değişiklik değiştirilemez. Sayfanın üstünde bunu söyleyen bir bildirim durur.
+
+![Kapalı bir değişiklik](/img/teknisyen/chg2-kapali.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | Başlık | Kapalı durum, ör. `Reddedildi`, ve onayın sonucu. |
+| ❷ | Bildirim | **Değişiklik kapalı** ya da **Değişiklik reddedildi**: **Kapalı değişiklik değiştirilemez; değiştirmek için yeniden açın.** |
+| ❸ | **Yeniden aç** | **Değişikliği yeniden açın** penceresini açar. **Yeni durum** seçip `Yeniden aç`'a basın. İptal edilen onay kendiliğinden yeniden başlamaz. |
+
+Kapalı değişikliğe not eklenebilir; görev ve iş günlüğü eklenemez.
+
+## Arşivleme
+
+Kapalı değişikliğin `⋯` menüsünde `Arşivle` bulunur. Arşivlenen değişiklik salt okunur olur ve listede **Arşivlenmiş mi?** filtresiyle bulunur. Arşivlenmiş değişiklikte yalnız `Yazdır` kalır. Arşivleme geri alınamaz.
+
+## Silme
+
+`Sil`, onaydan sonra değişikliği siler ve ekranın altında **#CHG… silindi** bildirimi çıkar. Bildirimdeki `Geri al` değişikliği hemen geri getirir; bildirim kapandıktan sonra silinen değişiklik geri getirilemez. Silinen değişiklikler listede görünmez; silinmiş değişiklikleri görme yetkiniz varsa **Silinmiş mi?** filtresiyle bulabilirsiniz. Silinmiş değişiklik değiştirilemez.
+
+Süren onay silmede de iptal edilir.

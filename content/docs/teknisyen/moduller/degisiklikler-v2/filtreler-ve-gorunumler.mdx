@@ -1,0 +1,75 @@
+---
+title: "Filtreler ve Görünümler"
+description: "Değişiklik listesini filtreleme: temel ve gelişmiş filtre, hazır görünümler, görünümü kaydetme ve yeni görünüm oluşturma."
+reviewed: "2026-11-16"
+owner: necatikekec
+---
+
+## Hazır görünümler
+
+Listenin üstündeki sekmeler hazır görünümlerdir:
+
+| Görünüm | Ne gösterir |
+|---|---|
+| **Bütün değişiklikler** | Silinmemiş bütün değişiklikler. |
+| `Açık` | Açık ve beklemedeki değişiklikler. |
+| `Değişikliklerim` | Size atanmış açık ve beklemedeki değişiklikler. |
+| **Takip ettiklerim** | Takibe aldığınız değişiklikler. |
+| **Onay bekleyenler** | Onayı süren ya da revize istenmiş değişiklikler. |
+| **Onayımı bekleyenler** | Sizin kararınızı bekleyen değişiklikler. |
+| **Bu hafta planlananlar** | Planlanan aralığı bu haftaya düşen açık ve beklemedeki değişiklikler. |
+
+## Filtreleme
+
+`Filtrele` filtre panelini açar. Panelde iki sekme vardır: `Temel` sık kullanılan alanları, `Gelişmiş` ise koşul yazarak filtrelemeyi sunar.
+
+![Temel filtre](/img/teknisyen/chg2-filtre-temel.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | `Temel`, `Gelişmiş` | Filtreleme biçimi. |
+| ❷ | Alan | Filtrelenecek alan. Basınca seçenekleri açılır. |
+| ❸ | Arama | Seçenekler arasında arar. |
+| ❹ | Seçenekler | İşaretlediğiniz değerler filtreye eklenir. Bir alanda birden çok değer seçebilirsiniz. |
+
+`Temel` sekmesindeki alanlar: `Durum`, `Aşama`, **Onay durumu**, **Onayımı bekliyor**, **Değişiklik türü**, `Risk`, **Planlandığı dönem**, `Ortamlar`, `Öncelik`, **İş etkisi**, `Aciliyet`, **Teknisyen grubu**, `Teknisyen`, `Kullanıcı`, `Hesap`, `Departman`, **Oluşturulduğu tarih**, **Okunmamış mı?**, **Arşivlenmiş mi?** ve **Silinmiş mi?**. **Silinmiş mi?** yalnız silinmiş değişiklikleri görme yetkiniz varsa görünür.
+
+`Gelişmiş` sekmesinde değişiklik numarası, konu, oluşturulma günü, planlanan başlangıç ve bitiş günü gibi alanlarla koşul yazabilirsiniz. Koşulların hepsinin mi birinin mi sağlanacağını seçersiniz. **Tümünü temizle** bütün filtreleri kaldırır.
+
+## Görünümü kaydetme
+
+Bir görünümde filtreyi değiştirince sekme değişmiş olarak işaretlenir ve araç çubuğunda kaydetme düğmeleri çıkar.
+
+![Değiştirilmiş görünümün düğmeleri](/img/teknisyen/chg2-gorunum-kaydet.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | Görünüm sekmesi | Değiştirilen görünüm. |
+| ❷ | `Sıfırla` | Görünümün kayıtlı filtresine döner. |
+| ❸ | **Farklı kaydet** | Değiştirilmiş filtreyi yeni bir görünüm olarak kaydeder. |
+| ❹ | `Filtrele` | Filtre panelini yeniden açar. |
+
+## Yeni görünüm
+
+**Görünüm oluştur** (sekmelerin yanındaki **+**) boş bir görünüm açar.
+
+![Görünüm oluşturun penceresi](/img/teknisyen/chg2-gorunum-olustur.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | Ad | Görünümün sekmede görünecek adı. |
+| ❷ | **Görünüm oluştur** | Görünümü oluşturur. Ardından filtreleri seçin. |
+
+Kendi görünümünüzün sekmesindeki menüden görünümü yeniden adlandırabilir ya da silebilirsiniz.
+
+## Sütunlar
+
+`Sütunlar` hangi sütunların görüneceğini seçer.
+
+![Sütun seçimi](/img/teknisyen/chg2-liste-sutunlar.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | Arama | Sütun adıyla arar. |
+| ❷ | Varsayılan sütunlar | `No`'dan `Açılış`'a, listede açılışta görünen sütunlar. |
+| ❸ | Ek sütunlar | **Teknisyen grubu**, `Kullanıcı`, `Öncelik`, **İş etkisi**, `Aciliyet`, `Ortamlar`, **Beklenen kesinti**, `Şirket`, `Departman`, `Aşama`, **Not sayısı**, **Son güncelleme**, **Kapatma tarihi**. |

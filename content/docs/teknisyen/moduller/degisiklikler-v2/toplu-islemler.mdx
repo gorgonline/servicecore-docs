@@ -1,0 +1,44 @@
+---
+title: "Toplu İşlemler"
+description: "Birden çok değişikliği birlikte güncelleme, kendine atama, kapatma, yeniden açma ve silme."
+reviewed: "2026-11-16"
+owner: necatikekec
+---
+
+Listede satırların başındaki kutuları işaretleyince listenin üstünde toplu işlem şeridi çıkar. Başlıktaki kutu sayfadaki bütün değişiklikleri seçer.
+
+![Toplu işlem şeridi](/img/teknisyen/chg2-toplu-serit.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | **2 değişiklik seçildi** | Seçili değişiklik sayısı. Yanındaki **Tümünü seç** sayfadaki seçilebilir bütün değişiklikleri seçer. |
+| ❷ | İşlemler | Seçili değişikliklere uyan işlemler. Açık değişikliklerde `Güncelle`, **Bana ata**, `Kapat`, `Sil`; kapalı değişikliklerde **Yeniden aç** ve `Sil`. |
+| ❸ | `Vazgeç` | Seçimi kaldırır. |
+
+Silinmiş ve arşivlenmiş değişikliklerin kutusu pasiftir; üzerine gelince nedeni yazar, ör. **Arşivlenmiş değişiklikte toplu işlem yok.**
+
+## Güncelleme
+
+`Güncelle` yan panelde seçili değişikliklerin alanlarını birlikte değiştirir.
+
+![Değişiklikleri güncelleyin paneli](/img/teknisyen/chg2-toplu-guncelle.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | `Durum` | Yalnız açık ve beklemedeki durumlar; kapatmak için `Kapat`'ı kullanın. |
+| ❷ | Diğer alanlar | `Aciliyet`, **İş etkisi**, **Teknisyen grubu**, `Teknisyen`, `Öncelik`. |
+
+Her alan `Değiştirme` ile başlar. Boş bıraktığınız alan değişmez; seçtiğiniz değer seçili değişikliklerin hepsine yazılır.
+
+Engelleyen bir dondurma penceresine düşen değişiklikler güncellenmez; sonuçta hangi değişikliğin neden atlandığı yazar.
+
+## Kapatma, yeniden açma, atama ve silme
+
+| İşlem | Ne istenir |
+|---|---|
+| `Kapat` | **Kapatma durumu** (`Tamamlandı` ya da **İptal edildi**) ve zorunlu **Kapatma yorumu**. Toplu kapatmada değişiklik reddedilemez. |
+| **Yeniden aç** | **Yeni durum**. |
+| **Bana ata** | Onay. Seçili değişikliklerin teknisyeni siz olursunuz. |
+| `Sil` | Onay. Bildirimdeki `Geri al` silmeyi geri alır. |
+
+Toplu kapatmada teknisyeni atanmamış ya da açık görevi olan değişiklikler atlanır ve sonuçta nedeni yazar. Bu değişiklikleri tek tek kapatın. Bkz. [Durumlar ve Kapatma](/docs/teknisyen/moduller/degisiklikler-v2/durumlar-ve-kapatma#değişikliği-kapatma).

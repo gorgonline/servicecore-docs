@@ -1,0 +1,56 @@
+---
+title: "Değişiklik Sayfası"
+description: "Değişikliğin kendi sayfası: başlık, işlem düğmeleri, sekmeler, Detaylar sekmesi ve diğer işlemler menüsü."
+reviewed: "2026-11-16"
+owner: necatikekec
+---
+
+Değişikliğin sayfası, listede satır menüsündeki ya da önizleme panelindeki **Tam sayfada aç** ile açılır. Sayfanın adresi değişikliğin numarasını taşır; adresi **Bağlantıyı kopyala** ile paylaşabilirsiniz.
+
+## Sayfanın bölümleri
+
+![Değişiklik sayfasının bölümleri](/img/teknisyen/chg2-detay-yerlesim.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | Başlık ve etiketler | Konu; yanında durum, onay durumu, risk (`Yüksek risk`) ve takipteyseniz `Takipte`. Başlığın altında onayın özeti yazar, ör. **Onay: 1/3, Beklemede**. |
+| ❷ | Numara ve öncelik | Değişiklik numarası (`#CHG0320`) ve öncelik. |
+| ❸ | İşlem düğmeleri | **Bana ata**, `Kapat` (kapalı değişiklikte **Yeniden aç**), **Bağlantıyı kopyala** ve `⋯` diğer işlemler. |
+| ❹ | Sekmeler | Değişikliğin bölümleri. Sekmedeki sayı içindeki kayıtların adedidir. |
+| ❺ | `İçerik` | `Konu` ve `Açıklama`. Altında değişikliğin ekleri bulunur; her dosya en çok 10 MB olabilir. |
+| ❻ | `Özellikler` | Kullanıcı, teknisyen grubu, teknisyen, durum, öncelik, değişiklik türü, departman, etki, risk, planlanan aralık ve ortamlar. |
+
+**Bana ata**, değişiklik size atanmışsa görünmez.
+
+`Detaylar` sekmesinde bir alanı değiştirince sayfanın altında **Kaydedilmemiş değişiklikler var.** şeridi çıkar; `Kaydet` ile kaydedin, `Vazgeç` ile geri alın. `Durum` alanında yalnız açık ve beklemedeki durumlar seçilebilir; değişikliği kapatmak için `Kapat`'ı kullanın.
+
+Siz sayfayı açtıktan sonra başka biri değişikliği kaydettiyse kaydederken **Bu değişiklik siz açtıktan sonra değişti** uyarısı çıkar. **Değişikliklerimi göster** neyi değiştirdiğinizi gösterir, **Yeniden yükle** değişikliğin güncel hâlini açar.
+
+## Sekmeler
+
+| Sekme | İçerik |
+|---|---|
+| `Detaylar` | İçerik, ekler ve özellikler. |
+| `Planlama` | Neden, etki, yayılım ve geri dönüş planları, emek ve maliyet, kesinti, bakım pencereleri. Bkz. [Planlama](/docs/teknisyen/moduller/degisiklikler-v2/planlama). |
+| **Onay (CAB)** | CAB üyeleri ya da onay akışı. Kararınız bekleniyorsa sekme vurgulanır. Bkz. [Onay (CAB)](/docs/teknisyen/moduller/degisiklikler-v2/onay). |
+| `Görüşmeler` | Notlar ve e-postalar. Bkz. [Görüşmeler](/docs/teknisyen/moduller/degisiklikler-v2/gorusmeler). |
+| `Uygulama` | Değişikliğin görevleri. Bkz. [Uygulama ve İş Günlükleri](/docs/teknisyen/moduller/degisiklikler-v2/uygulama-ve-is-gunlukleri). |
+| **İş günlükleri** | Harcanan süre. |
+| `Süreçler` | Bağlı kayıtlar ve sürümler. Bkz. [Süreçler](/docs/teknisyen/moduller/degisiklikler-v2/surecler). |
+| **Gözden geçirme** | Değişikliğin sonucunun değerlendirmesi. Bkz. [Gözden Geçirme ve Geçmiş](/docs/teknisyen/moduller/degisiklikler-v2/gozden-gecirme-ve-gecmis). |
+| `Geçmiş` | Değişiklik üzerinde yapılan her şey. |
+
+## Diğer işlemler
+
+![Diğer işlemler menüsü](/img/teknisyen/chg2-detay-diger.png)
+
+| # | İşlemler | Ne işe yarar |
+|---|---|---|
+| ❶ | `Reddet` … `Otomasyonlar` | Değişikliği reddetme, **Durumu değiştir** ve kurumunuzda tanımlı otomasyonları çalıştırma. Bkz. [Durumlar ve Kapatma](/docs/teknisyen/moduller/degisiklikler-v2/durumlar-ve-kapatma). |
+| ❷ | `Yazdır` | Değişikliği yazdırır. |
+| ❸ | **Not ekle** … **İş günlüğü ekle** | İlgili sekmeyi açar: **Not ekle**, **Görev ekle**, **İş günlüğü ekle**. |
+| ❹ | **Takip et**, `Sil` | Değişikliği takibe alır ya da siler. |
+
+Başlıkta düğme olarak duran işlemler (**Bana ata**, `Kapat`) menüde tekrarlanmaz. Kapalı değişiklikte menüde `Arşivle` bulunur; **Görev ekle** ve **İş günlüğü ekle** pasif görünür ve altında **Kapalı değişikliğe eklenmez.** yazar.
+
+`Otomasyonlar`, **Otomasyon çalıştırın** penceresini açar. Örnek kurulumda **Uygulamaya al** değişikliği `Uygulanıyor` durumuna alır, **Beklemeye al** beklemeye alır; listedeki otomasyonlar kurumunuzun tanımına göre değişir.

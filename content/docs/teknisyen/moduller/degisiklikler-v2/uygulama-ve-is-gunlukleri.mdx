@@ -1,0 +1,50 @@
+---
+title: "Uygulama ve İş Günlükleri"
+description: "Değişikliğin Uygulama sekmesinde görevler, görev akışı ve süre özeti; İş günlükleri sekmesinde harcanan süre."
+reviewed: "2026-11-16"
+owner: necatikekec
+---
+
+Bir değişikliği uygulamak çoğu zaman birkaç kişinin işini gerektirir: yedeği almak, değişikliği yapmak, sonucu doğrulamak. Bu işler değişikliğin görevleridir ve `Uygulama` sekmesinde tutulur.
+
+## Görevler
+
+![Uygulama sekmesi](/img/teknisyen/chg2-uygulama.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | Süre özeti | **Toplam süre**, **Değişikliğin iş günlükleri**, **Aktif görevler** ve **Tamamlanan görevler** için girilen süreler. |
+| ❷ | `Aktif`, `Tamamlanmış` | Görevleri durumuna göre gösterir. Parantezdeki sayı görev adedidir. |
+| ❸ | **Akış diyagramı** | **Görev akışı** penceresinde görevlerin sırasını ve birbirine bağlılığını şema olarak gösterir. |
+| ❹ | **Görev ekle** | Yeni görev açar. |
+| ❺ | Görev | Numara, başlık, durum, atanan kişi, son tarih, grup ve harcanan süre. Satırın başındaki ok ayrıntıyı açar. |
+| ❻ | `⋯` | Görevin işlemleri. |
+
+**Görev ekle** penceresinde görevin başlığı, açıklaması, teknisyen grubu ve atanan teknisyeni, **Öncül görev**'i, başlangıç ve son tarihi, tahmini süresi ve ortamı girilir. **Şablondan doldur** ile kurumunuzda tanımlı bir görev şablonunu kullanabilirsiniz. Öncül görevi olan görev, öncülü tamamlanmadan tamamlanamaz.
+
+### Görevin işlemleri
+
+![Görevin menüsü](/img/teknisyen/chg2-gorev-menu.png)
+
+| # | İşlemler | Ne işe yarar |
+|---|---|---|
+| ❶ | `Düzenle` … `Tamamla` | Görevi düzenler, göreve iş günlüğü girer ya da görevi tamamlar. |
+| ❷ | `Sil` | Görevi siler. |
+
+Tamamlanmış görevin menüsünde `Tamamla` yerine `Yeniden aç` bulunur.
+
+Değişikliği kapatırken açık görevi varsa görevler de tamamlanır. Bkz. [Durumlar ve Kapatma](/docs/teknisyen/moduller/degisiklikler-v2/durumlar-ve-kapatma#değişikliği-kapatma). Kapalı değişikliğe görev eklenmez.
+
+## İş günlükleri
+
+`İş günlükleri` sekmesi değişiklik üzerinde harcanan süreyi listeler.
+
+![İş günlükleri sekmesi](/img/teknisyen/chg2-is-gunlukleri.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | Filtre | `Hepsi`, `Değişikliğin` (doğrudan değişikliğe girilenler), `Görevlerin` (görevlere girilenler). |
+| ❷ | **İş günlüğü ekle** | Harcadığınız süreyi kaydeder. |
+| ❸ | İş günlüğü | Kişi, gün, süre, tür, açıklama ve günlüğün girildiği görev. |
+
+Bir göreve iş günlüğü girmek için görevin `⋯` menüsünde **İş günlüğü ekle**'yi de kullanabilirsiniz; günlük hem görevin hem değişikliğin toplamına eklenir.

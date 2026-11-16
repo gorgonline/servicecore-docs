@@ -1,0 +1,37 @@
+---
+title: "Süreçler"
+description: "Değişikliğin Süreçler sekmesi: olay, problem, istek, sürekli iyileştirme, proje, varlık ve hizmet bağları; değişikliği taşıyan sürümler."
+reviewed: "2026-11-16"
+owner: necatikekec
+---
+
+`Süreçler` sekmesi değişikliğin başka kayıtlarla bağlarını listeler: değişikliğe yol açan olay ve problemler, değişikliği isteyen istekler, değişikliğin dokunduğu varlıklar ve hizmetler.
+
+![Süreçler sekmesi](/img/teknisyen/chg2-surecler.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | **Kayıt bağla** | Var olan bir kaydı değişikliğe bağlar ya da yeni kayıt açıp bağlar. |
+| ❷ | `Tür` | Bağlı kaydın türü: `Olay`, `Problem`, `İstek`, **Sürekli iyileştirme**, `Proje`, `Varlık`, `Hizmet`. |
+| ❸ | `⋯` | **Bağı kaldır**. |
+| ❹ | **Bu değişikliği taşıyan sürümler** | Değişikliği içeren sürümler; numara, ad, durum ve hedef tarih. Numaraya basınca sürüm açılır. Bu liste salt okunurdur. |
+
+Kapalı ya da düzenleme yetkiniz olmayan bir değişikliğin bağları değiştirilemez.
+
+## Kayıt bağlama
+
+![Kayıt bağlayın penceresi](/img/teknisyen/chg2-surec-bagla.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | **Kaydın türü** | Bağlanacak kaydın türü. |
+| ❷ | Arama | Kaydı numarası ya da konusuyla bulur. |
+| ❸ | **Yeni olay oluştur** | Yeni bir olay açıp değişikliğe bağlar. `Problem` türünde **Yeni problem oluştur** görünür. |
+| ❹ | Başka değişikliğe bağlı kayıt | Başka bir değişikliğe bağlı kayıt seçilemez; altında hangi değişikliğe bağlı olduğu yazar. |
+| ❺ | `Seçilenler` | Bağlanacak kayıtlar. Pencerenin altındaki `Bağla` hepsini bağlar. |
+
+`Olay` türünde aynı anda birden çok olay seçebilirsiniz; **Tümünü seç** listedeki seçilebilir olayların hepsini seçer. Değişikliğin yalnız bir proje bağı olur: proje bağı varken seçtiğiniz proje var olanın yerine geçer.
+
+Yeni olay ya da problem açmak için o modülde kayıt oluşturma yetkiniz olmalıdır.
+
+Değişiklikler birbirine bağlanamaz.

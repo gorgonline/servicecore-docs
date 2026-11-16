@@ -1,0 +1,47 @@
+---
+title: "Değişiklik Oluşturma"
+description: "Yeni değişiklik paneli: konu ve açıklama, sınıflandırma ve atama, planlanan aralık ve ortamlar."
+reviewed: "2026-11-16"
+owner: necatikekec
+---
+
+Listenin sağ üstündeki **Yeni değişiklik** yan panelde oluşturma formunu açar. Panelde değişikliğin temel bilgileri girilir; plan, onay ve görevler değişiklik açıldıktan sonra kendi sekmelerinde eklenir. Düğme yalnız değişiklik oluşturma yetkiniz varsa görünür.
+
+## Form
+
+![Yeni değişiklik paneli](/img/teknisyen/chg2-olustur-form.png)
+
+| # | Bölüm | Ne işe yarar |
+|---|---|---|
+| ❶ | `Değişiklik` | `Konu` (zorunlu, en çok 250 karakter) ve `Açıklama`. |
+| ❷ | **Sınıflandırma ve atama** | Kullanıcı, teknisyen grubu, teknisyen, öncelik, değişiklik türü, etki ve risk. |
+| ❸ | `Vazgeç`, **Değişikliği oluştur** | Paneli kapatır ya da değişikliği oluşturur. |
+
+**Sınıflandırma ve atama** alanları:
+
+| Alan | Açıklama |
+|---|---|
+| `Kullanıcı` | Değişikliği talep eden ya da değişiklikten etkilenen kişi. Adı ya da e-posta adresiyle arayın. |
+| **Teknisyen grubu**, `Teknisyen` | Grup seçilirse yalnız grubun teknisyenleri listelenir. |
+| `Öncelik` | `Çok düşük`'ten `Kritik`'e; doğrudan seçilir. |
+| **Değişiklik türü** | Kurumunuzun tanımladığı tür ağacından seçilir, ör. **Altyapı / Sunucu**. |
+| `Etki`, `Risk` | `Düşük`, `Orta` ya da `Yüksek`. |
+
+Bütün alanlar isteğe bağlıdır; yalnız konu zorunludur.
+
+## Plan
+
+![Plan bölümü](/img/teknisyen/chg2-olustur-plan.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | Planlanan aralık | Planlanan başlangıç ve bitiş günü ile saatleri. Saat boş bırakılırsa başlangıç 09:00, bitiş 18:00 olur. Bitiş başlangıçtan önce olamaz. |
+| ❷ | `Ortamlar` | Değişikliğin dokunduğu ortamlar: `Üretim`, `Hazırlık`, `Test`, `Geliştirme`. Dondurma pencereleri bu ortamlara bakar. |
+
+Planlanan aralık ve ortamlar engelleyen bir dondurma penceresine denk gelirse panelde **Dondurma penceresi: kaydedilemez** uyarısı çıkar ve değişiklik oluşturulmaz. Aralığı ya da ortamları değiştirin. Bkz. [Takvim](/docs/teknisyen/moduller/degisiklikler-v2/takvim#dondurma-pencereleri).
+
+**Değişikliği oluştur**'a basınca değişiklik `Yeni` durumuyla açılır, ekranın altında **#CHG… oluşturuldu** bildirimi çıkar ve değişikliğin sayfası açılır. Sonraki adımlar:
+
+1. `Planlama` sekmesinde nedeni, etkiyi, yayılım ve geri dönüş planlarını yazın. Bkz. [Planlama](/docs/teknisyen/moduller/degisiklikler-v2/planlama).
+2. `Onay (CAB)` sekmesinde CAB üyelerini ekleyip onaya gönderin. Kurumunuzda gelişmiş onay akışı tanımlıysa akış kendiliğinden yürür. Bkz. [Onay (CAB)](/docs/teknisyen/moduller/degisiklikler-v2/onay).
+3. `Uygulama` sekmesinde değişikliğin görevlerini açın. Bkz. [Uygulama ve İş Günlükleri](/docs/teknisyen/moduller/degisiklikler-v2/uygulama-ve-is-gunlukleri).

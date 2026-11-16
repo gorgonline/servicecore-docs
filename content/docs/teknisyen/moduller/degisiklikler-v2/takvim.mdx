@@ -1,0 +1,53 @@
+---
+title: "Takvim"
+description: "Değişikliklerin takvimde gösterimi: planlanan aralık, beklenen kesinti, bakım pencereleri, dondurma pencereleri ve tatiller."
+reviewed: "2026-11-16"
+owner: necatikekec
+---
+
+Takvim, değişikliklerin ne zaman yapılacağını bir arada gösterir. Araç çubuğunda takvim simgesine basınca açılır. Takvim, seçili görünümün ve filtrenin değişikliklerini gösterir; her değişiklik bir satırdır.
+
+Takvim salt okunurdur: değişikliği sürükleyerek taşıyamaz, takvimden değişiklik açamazsınız. Bir çubuğa basınca değişiklik önizleme panelinde açılır.
+
+## Takvimin bölümleri
+
+![Değişiklik takvimi](/img/teknisyen/chg2-takvim-yerlesim.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | Liste, Takvim | Liste ile takvim arasında geçer. |
+| ❷ | Sayaç | Takvimde gösterilen değişikliklerin sayısı. |
+| ❸ | Dondurma penceresi | Değişiklik yapılmasını kısıtlayan dönem. Pencerenin kapsadığı günler taralı gösterilir. |
+| ❹ | Tatil | Tatil günü; sütun renkli gösterilir. |
+| ❺ | Değişiklik satırı | Konu, numara ve durum. Sağındaki çubuklar değişikliğin planlanan aralığı, beklenen kesintisi ve bakım pencereleridir. |
+| ❻ | **Görünüm ayarları** | `Sıralama`: satırları planlanan başlangıca, değişiklik numarasına ya da konuya göre dizer. |
+| ❼ | Gezinti | Önceki ve sonraki dönem, `Bugün`, tarih seçimi ve `Gün`, `Hafta`, `Ay` ölçekleri. |
+
+Gezinti çubuğundaki **Açıklama** (ⓘ) takvimdeki renklerin anlamını, **Klavye kısayolları** ise takvimde klavyeyle gezinmeyi gösterir.
+
+## Takvimin işaretleri
+
+![Takvimin işaretleri](/img/teknisyen/chg2-takvim-isaretler.png)
+
+| # | İşaret | Anlamı |
+|---|---|---|
+| ❶ | Çubuklar | Mavi: **Planlanan aralık**. Kırmızı: **Beklenen kesinti**. Turkuaz: **Bakım penceresi**. |
+| ❷ | `Tatil`, `Kapalı` | Tatil günü ve dondurma penceresinin kapsadığı, değişikliğe kapalı dönem. |
+| ❸ | Ok, `Şimdi` | Ok, çubuğun görünen dönemin dışına taştığını gösterir. Dikey çizgi şimdiki zamandır. |
+
+Takvim, görünen döneme denk gelen bütün dondurma pencerelerini gösterir; pencerenin hangi ortamlara ya da projeye ait olduğuna bakmaz. Bir değişikliğin pencereye takılıp takılmadığını değişikliğin kendi uyarısı söyler.
+
+## Dondurma pencereleri
+
+Değişikliğin planlanan aralığı bir dondurma penceresine denk gelirse önizleme panelinde ve değişikliğin sayfasında uyarı çıkar. Uyarıda pencerenin adı, türü ve aralığı yazar.
+
+![Dondurma penceresi uyarısı](/img/teknisyen/chg2-dondurma.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | Uyarının başlığı | Engelleyen pencerede **Dondurma penceresi: kaydedilemez**, uyaran pencerede **Dondurma penceresiyle çakışıyor**. |
+| ❷ | Ne yapmalı | Engelleyen pencerede değişiklik kaydedilmez: **Planlanan aralığı ya da ortamları değiştirin.** Uyaran pencerede değişiklik kaydedilir; zorunlu değilse pencerenin dışına alın. |
+
+Bir dondurma penceresi belirli ortamlara (ör. `Üretim`) ya da bir projeye ait olabilir. Ortamı tanımlı pencere yalnız o ortamlardan birine dokunan değişiklikleri, projeye ait pencere yalnız o projenin değişikliklerini etkiler. Ortamı ve projesi tanımlı olmayan pencere, aralığa düşen bütün değişiklikleri etkiler.
+
+Takvim, değişikliklerin birbirleriyle çakışıp çakışmadığını denetlemez. Aynı aralıkta birden çok değişiklik planlanabilir.

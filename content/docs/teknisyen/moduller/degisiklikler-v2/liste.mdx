@@ -1,0 +1,70 @@
+---
+title: "Değişiklik Listesi"
+description: "Değişiklik listesi: araç çubuğu, sütunlar, satırdaki etiketler, satır menüsü, yan panelde önizleme, Excel'e aktarma ve sayfalama."
+reviewed: "2026-11-16"
+owner: necatikekec
+---
+
+Kenar çubuğunda `Değişiklikler`'e basınca değişiklik listesi açılır. Liste açılışta **Bütün değişiklikler** görünümünü gösterir; kapalı, iptal edilmiş ve reddedilmiş değişiklikler de listededir.
+
+## Listenin bölümleri
+
+![Değişiklik listesinin bölümleri](/img/teknisyen/chg2-liste-yerlesim.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | Görünüm sekmeleri | Hazır ve kayıtlı görünümler. Bkz. [Filtreler ve Görünümler](/docs/teknisyen/moduller/degisiklikler-v2/filtreler-ve-gorunumler). |
+| ❷ | **Görünüm oluştur** | Kendi görünümünüzü oluşturur. |
+| ❸ | `Filtrele` | Filtre panelini açar. |
+| ❹ | Liste, Takvim | Liste ile [Takvim](/docs/teknisyen/moduller/degisiklikler-v2/takvim) arasında geçer. Seçiminiz bir sonraki açılışta hatırlanır. |
+| ❺ | Arama | Konu ya da değişiklik numarasıyla arar. `#CHG0310` de `310` de yazılabilir. |
+| ❻ | `Yenile`, **Diğer işlemler** | Listeyi yeniler; **Diğer işlemler** menüsünde **Excel olarak indir** bulunur. |
+| ❼ | `Sütunlar` | Sütunları gösterir ya da gizler. |
+| ❽ | Sayfalar | Sayfada kaç değişiklik görüneceği (20, 50, 100) ve sayfalar arası geçiş. |
+
+**Excel olarak indir**, görünümün ve filtrenin bütün değişikliklerini dosyaya aktarır; yalnız ekrandaki sayfayı değil.
+
+## Satırlar
+
+![Değişiklik listesinin satırları](/img/teknisyen/chg2-liste-satirlar.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | `Yeni` | Değişikliği henüz açmadınız. Açınca etiket kalkar. |
+| ❷ | `Takipte` | Değişikliği takip ediyorsunuz. |
+| ❸ | `Durum` | Değişikliğin durumu. Bkz. [Genel Bakış](/docs/teknisyen/moduller/degisiklikler-v2/genel-bakis#durumlar-ve-aşamalar). |
+| ❹ | `Onay` | Onay durumu; **Onayınızı bekliyor** sizin kararınızın beklendiğini gösterir. |
+| ❺ | `Risk` | `Düşük`, `Orta` ya da `Yüksek`. |
+| ❻ | `Başlangıç`, `Bitiş` | Planlanan başlangıç ve bitiş. Planlanmamış değişiklikte `Yok` yazar. |
+| ❼ | `⋯` | Satırın işlemleri. Satıra sağ tıklayarak da açılır. |
+
+Sütun başlığına basınca liste o sütuna göre sıralanır; ikinci basış sırayı tersine çevirir. Varsayılan sütunlar: `No`, `Konu`, `Durum`, `Onay`, `Tür`, `Risk`, `Başlangıç`, `Bitiş`, `Teknisyen`, `Açılış`.
+
+## Satır menüsü
+
+![Satır menüsü](/img/teknisyen/chg2-liste-satir-menu.png)
+
+| # | İşlemler | Ne işe yarar |
+|---|---|---|
+| ❶ | **Tam sayfada aç**, `Güncelle` | Değişikliği kendi sayfasında açar; `Güncelle` alanlarını yan panelde düzenler. |
+| ❷ | `Onayla`, **Onayı reddet** | Yalnız kararınız bekleniyorsa görünür. Bkz. [Onay (CAB)](/docs/teknisyen/moduller/degisiklikler-v2/onay). |
+| ❸ | **Bana ata** … `Otomasyonlar` | **Bana ata**, `Kapat`, `Reddet`, **Durumu değiştir**, `Otomasyonlar`. Bkz. [Durumlar ve Kapatma](/docs/teknisyen/moduller/degisiklikler-v2/durumlar-ve-kapatma). |
+| ❹ | `Yazdır` … **İş günlüğü ekle** | Yazdırma ve ilgili sekmeye kısayollar: **Not ekle**, **Görev ekle**, **İş günlüğü ekle**. |
+| ❺ | **Takip et**, `Sil` | Değişikliği takibe alır ya da siler. |
+
+Menüde yalnız değişikliğin hâline uyan işlemler görünür. Kapalı bir değişiklikte örneğin `Kapat` yerine **Yeniden aç** ve `Arşivle` bulunur.
+
+## Önizleme
+
+Satıra basınca değişiklik sağdaki panelde açılır. Panel salt okunurdur; değişiklik yapmak için değişikliği tam sayfada açın.
+
+![Değişikliğin önizleme paneli](/img/teknisyen/chg2-liste-onizleme.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | **Tam sayfada aç** | Değişikliğin sayfasını açar. Bkz. [Değişiklik Sayfası](/docs/teknisyen/moduller/degisiklikler-v2/detay). |
+| ❷ | **Takip et** | Değişikliği takibe alır; takipteyse **Takibi bırak** yazar. |
+| ❸ | Dondurma uyarısı | Planlanan aralık bir dondurma penceresine denk geliyorsa çıkar. Bkz. [Takvim](/docs/teknisyen/moduller/degisiklikler-v2/takvim#dondurma-pencereleri). |
+| ❹ | Plan özeti | **Değişiklik türü**, **Planlanan aralık**, **Beklenen kesinti** ve `Ortamlar`. |
+| ❺ | `Bilgiler` | Kullanıcı, teknisyen, grup, öncelik, iş etkisi, departman ve oluşturulma tarihi. |
+| ❻ | Kapat (×) | Paneli kapatır. |

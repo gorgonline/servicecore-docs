@@ -1,0 +1,116 @@
+---
+title: "Onay (CAB)"
+description: "Onay (CAB) sekmesi: klasik CAB üyeleri ve kararları, gelişmiş onay akışı, revize ve inisiyatif."
+reviewed: "2026-11-16"
+owner: necatikekec
+---
+
+`Onay (CAB)` sekmesi değişikliğin onayını yürütür. Değişikliğin onayı kurumunuzun yapılandırmasına göre iki biçimden biriyle yürür; sekmenin başlığı hangisinin kullanıldığını yazar:
+
+- **Klasik CAB**: CAB üyelerini siz eklersiniz ve onaya gönderirsiniz.
+- **Gelişmiş onay akışı**: kurumunuzda tanımlı akış adım adım ilerler.
+
+Onayın sonucu değişikliğin durumunu kendiliğinden değiştirmez. Onaylanan değişikliği `Onaylandı` ya da `Planlandı` durumuna siz alırsınız.
+
+## Klasik CAB
+
+![Klasik CAB](/img/teknisyen/chg2-onay-cab.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | Onayın özeti | Onay biçimi, onay durumu ve verilen karar sayısı, ör. **0/4, Beklemede**. |
+| ❷ | **CAB üyesi ekle** | Kişi ya da dış e-posta adresi ekler. |
+| ❸ | **Kararınız bekleniyor** | CAB üyesiyseniz ve kararınızı vermediyseniz çıkar. |
+| ❹ | `Onayla`, `Reddet` | Kararınızı verir. Açıklama zorunludur; tabloda görünür. |
+| ❺ | Üyeler tablosu | Her üyenin durumu, onaya gönderen, istenme ve karar tarihi, açıklama. |
+| ❻ | **Gönderilmeyi bekliyor** | Üye eklendi ama henüz onaya gönderilmedi. |
+| ❼ | `⋯` | Üyenin işlemleri: **Onaya gönder** ve `Sil`. |
+
+Bir üyenin durumu sırasıyla **Gönderilmeyi bekliyor**, **Onay bekliyor** ve son olarak `Onaylandı` ya da `Reddedildi` olur.
+
+CAB'ın sonucu şöyle belirlenir:
+
+- Üyelerin **hepsi** onaylarsa değişiklik onaylanır.
+- Bir üyenin reddi bütün CAB'ı reddeder. Karar bekleyen öbür üyelerin onayı sona erer.
+- Hiç üye yoksa onay durumu **Onay gerekmez** olur.
+
+Değişikliği düzenleme yetkiniz varsa bir üyenin kararını onun adına kaydedebilirsiniz. Bu karar tabloda ve geçmişte **(… adına)** notuyla görünür. Dış e-posta adresiyle eklenen üye kararını yalnız kendisine gönderilen e-postadaki bağlantıdan verir.
+
+### CAB üyesi ekleme
+
+![CAB üyesi ekleyin penceresi](/img/teknisyen/chg2-onay-cab-ekle.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | `Kişiler` | ServiceCore kullanıcılarından üye seçer. |
+| ❷ | **Dış e-postalar** | ServiceCore kullanıcısı olmayan danışmanların e-posta adresleri. |
+| ❸ | `Ekle` | Üyeleri ekler. Eklenen üyeler onaya gönderilmeyi bekler. |
+
+Üyeyi onaya göndermek için satırındaki `⋯` menüsünden **Onaya gönder**'i seçin; isterseniz bir not ekleyin. Not, üyenin satırında **Gönderenin notu** olarak görünür.
+
+## Gelişmiş onay akışı
+
+Kurumunuzda değişiklikler için onay akışı tanımlıysa akış adımlarıyla ilerler. Her adımda bir ya da birden çok onaycı vardır.
+
+![Gelişmiş onay akışı](/img/teknisyen/chg2-onay-akis.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | Onayın özeti | Onay durumu ve verilen karar sayısı. |
+| ❷ | `Diyagram` | Akışı şema olarak gösterir. |
+| ❸ | Akışın adı | Kullanılan akış; inisiyatif açıksa **İnisiyatif açık** etiketi. |
+| ❹ | Akışın durumu | `Çalışıyor`, sonuçlandıysa sonucu, ve başlama zamanı. |
+| ❺ | `İnisiyatif` | Onaycıların yerine karar verir. Yalnız akış izin veriyorsa görünür. |
+| ❻ | `Adımlar`, **Zaman çizelgesi** | Akışı adım adım ya da olaylar sırasıyla gösterir. |
+| ❼ | Adım | Adımın adı, durumu, kipi ve onaycıların kararları. |
+
+Bir adımın **kipi**, adımın kaç kararla sonuçlanacağını belirler:
+
+| Kip | Adım ne zaman sonuçlanır |
+|---|---|
+| **Herhangi biri** | Bir onay yeter; kimse onaylamazsa adım reddedilir. |
+| `Hepsi` | Bütün onaycılar onaylamalıdır; bir ret yeter. |
+| **İlk karar** | İlk verilen karar adımın sonucudur. |
+
+### Karar verme
+
+Kararınız beklenen adımda adınızın yanında **Sizin kararınız** yazar ve karar düğmeleri görünür.
+
+![Kararınızı bekleyen adım](/img/teknisyen/chg2-onay-karar.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | Kip | Adımın kipi. |
+| ❷ | **Sizin kararınız** | Bu adımda sizin kararınız bekleniyor. |
+| ❸ | **Gönderenin notu** | Onaya gönderenin onaycıya notu. |
+| ❹ | `Onayla`, `Reddet`, **Revize iste** | Kararınızı verir. Pencerede açıklama yazılır. |
+
+**Revize iste**, değişikliğin düzeltilmesini ister; gerekçe en çok 450 karakterdir. Akış revize beklerken düzeltmeleri yapın ve **Yeniden onaya gönder** ile akışı yeni bir turda başlatın.
+
+### Zaman çizelgesi
+
+**Zaman çizelgesi** akıştaki her olayı sırasıyla bir tabloda gösterir.
+
+![Onayın zaman çizelgesi](/img/teknisyen/chg2-onay-zaman-cizelgesi.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | `Sonuç` | Her kararın sonucu. |
+| ❷ | `Onayla`, `Reddet` | Kararınızı bu tablodan da verebilirsiniz. |
+
+### İnisiyatif
+
+`İnisiyatif`, onaycıların yerine karar vermenizi sağlar. Onaylarsanız akış bitene dek sonraki adımlar da onaylanır; reddederseniz akış reddedilir.
+
+![İnisiyatif kullanın penceresi](/img/teknisyen/chg2-onay-inisiyatif.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | `Karar` | `Onayla` ya da `Reddet`. |
+| ❷ | `Açıklama` | En çok 900 karakter. Reddederken zorunludur. |
+
+Pencere, kararınızın hangi adımları sonuçlandıracağını **Karara bağlanacak adımlar** altında listeler.
+
+## İş akışı
+
+Bazı kurulumlarda değişikliğin onayı bir iş akışıyla yürür. Bu durumda sekme akışın adımlarını ve onay günlüğünü salt okunur gösterir; kararlar iş akışı ekranında verilir. **İş akışını ServiceCore'da aç** akışın kendi ekranını açar.
