@@ -1,85 +1,60 @@
 ---
-title: "Müşteri Listesi, Filtreler ve Eylemler"
-description: "Aktif ve pasif müşteri listeleri; sütun filtreleri, sıralama, görünür sütun seçimi, satır eylemleri ve toplu eylemler."
-reviewed: "2026-08-18"
-owner:
+title: "Müşteri Listesi"
+description: "Aktif ve pasif müşteri listeleri: sütunlar ve süzgeçler, satır işlemleri, toplu devre dışı bırakma, aktif etme ve silme."
+reviewed: "2026-11-17"
+owner: necatikekec
 ---
 
-`Müşteriler` sekmesi, hesapların listelendiği ve gündelik işlemlerin yapıldığı
-ekrandır. Liste iki alt sekmeye ayrılır: `Aktif Müşteriler` ve `Pasif Müşteriler`.
+`Müşteriler` sekmesi hesapları iki listede gösterir: **Aktif Müşteriler** ve **Pasif Müşteriler**. Liste açılışta en son eklenen hesapla başlar, sayfa başına 10 kayıt gösterir.
 
-![Müşteri listesi](/img/teknisyen/musteriler-liste.png)
+![Müşteri listesi](/img/teknisyen/mus-liste-yerlesim.png)
 
-1. **Aktif Müşteriler / Pasif Müşteriler** — listeyi duruma göre ayırır.
-2. **Toplu seçim kutusu** — başlıktaki kutu sayfadaki tüm kayıtları işaretler.
-3. **Sıralama okları** — sütun başlığındaki oklarla artan/azalan sıralama yapılır.
-4. **Sütun filtre satırı** — her sütunun altındaki `Ara...` kutusuna yazılan metin o sütunda aranır; `Sektör` bir açılır listedir.
-5. **Sütunlar** — listede görünecek sütunların seçildiği menüyü açar.
-6. **Satır eylemleri** — `Düzenleme` sütunundaki işlem ikonları.
-7. **Sayfalama** — sayfa numaraları ve sayfa başına kayıt sayısı (`10 / sayfa`).
-
-## Sütunlar
-
-Varsayılan listede **Durum**, **Müşteri Adı**, **Müşteri Alan Adı**, **Açıklama**,
-**Sektör**, **Adres**, **E-Posta Alan Adı**, **Gelir** ve **Düzenleme** sütunları yer alır.
-
-Sağ üstteki dişli düğmesi ile açılan `Sütunlar` menüsünden görünür sütunlar
-işaretlenip kaldırılabilir.
-
-![Sütun seçimi](/img/teknisyen/musteriler-sutunlar.png)
-
-1. **Sütunlar** düğmesi.
-2. Görünür sütun listesi — `Aktif`, `Müşteri Adı`, `Müşteri Alan Adı`, `Kayıt Açıklaması`, `Sektör Adı`, `Adres`, `E-Posta Alan Adı`, `Gelir`, `Posta Kodu`, `Düzenleme`.
-
-## Filtreleme
-
-Sütun başlıklarının altındaki `Ara...` kutularına yazılan metin anında uygulanır;
-birden fazla sütunda aynı anda filtre verilebilir. Filtre sonrası sayfalama da
-sonuç sayısına göre güncellenir.
-
-![Listede filtreleme](/img/teknisyen/musteriler-filtre.png)
-
-1. Filtre kutusuna yazılan arama metni.
-2. Filtreye uyan kayıtlar.
-3. Sonuca göre güncellenen sayfalama.
-
-## Satır eylemleri
-
-Aktif müşteri listesinde her satırın `Düzenleme` sütununda dört işlem bulunur:
-
-| İkon | Eylem | Açıklama |
+| # | Öğe | Ne işe yarar |
 |---|---|---|
-| Kalem | `Düzenle` | Hesap bilgilerinin düzenlendiği paneli açar |
-| Göz | `Devre Dışı` | Hesabı pasif duruma alır |
-| Çöp kutusu | `Sil` | Hesap kaydını siler |
-| Liste | `Detaylar` | Kaydı yeni bir çalışma alanı sekmesinde açar |
+| ❶ | Liste sekmeleri | **Aktif Müşteriler** ve **Pasif Müşteriler**. |
+| ❷ | `?` | **Müşteriler Yardım** penceresini açar. |
+| ❸ | Sütunlar | Listede görünecek sütunları seçer. |
+| ❹ | Sütun başlıkları | Başlıktaki oklarla sıralanır, altındaki kutuyla süzülür. Baştaki kutu sayfadaki bütün hesapları seçer. |
+| ❺ | `Düzenleme` | Satır işlemleri; aşağıya bakın. |
 
-Müşteri adına tıklandığında da kayıt detayı yeni sekmede açılır. Bkz.
-[Müşteri Detayı](/docs/teknisyen/moduller/musteriler/detay).
+Görünen sütunlar `Durum`, **Müşteri Adı** (basınca hesap yeni sekmede açılır), **Müşteri Alan Adı**, `Açıklama` ve `Sektör`'dür. `Adres`, **E-Posta Alan Adı**, `Gelir`, **Posta Kodu** ve hesabın özel form alanları sütun seçiminden açılır. Özel alan sütunlarında süzme ve sıralama yoktur.
 
-## Toplu eylemler
+## Satır işlemleri
 
-Satır başındaki kutular işaretlendiğinde listenin üstünde seçim şeridi belirir.
-Şeritte seçili kayıt sayısı ile `Devre Dışı Bırak` ve `Sil` düğmeleri yer alır.
+![Satır işlemleri](/img/teknisyen/mus-liste-satir.png)
 
-![Toplu eylem şeridi](/img/teknisyen/musteriler-toplu-eylem.png)
+| # | İşlem | Ne olur |
+|---|---|---|
+| ❶ | `Düzenle` | Hesabın düzenleme panelini açar. |
+| ❷ | **Devre Dışı** | Hesabı onay sormadan devre dışı bırakır. |
+| ❸ | `Sil` | **Emin misiniz?** onayından sonra hesabı siler. |
+| ❹ | `Detaylar` | Hesabı yeni bir sekmede açar. |
 
-1. Satır seçim kutusu.
-2. Seçim şeridi — seçili kayıt sayısı ve toplu eylem düğmeleri.
+<Callout type="warn" title="DİKKAT">Devre dışı bırakma hesabın aktif sözleşmelerini iptal eder, kullanıcılarını pasif yapar ve kişilerinin açık olay ve isteklerini kapatır. Bu işlem onay sormaz ve aktif etmekle geri alınmaz. Bkz. [Genel Bakış](/docs/teknisyen/moduller/musteriler/genel-bakis#aktif-ve-pasif-hesaplar).</Callout>
 
-<Callout type="warn" title="DİKKAT">
-`Sil` ve `Devre Dışı Bırak` seçili tüm kayıtlara uygulanır. İşlemden önce seçim
-şeridindeki kayıt sayısını kontrol edin.
-</Callout>
+Silinen hesap listelerden ve panodan kalkar. Silme hesabın sözleşmelerine ve kullanıcılarına dokunmaz.
+
+## Toplu işlemler
+
+Satırların başındaki kutuları işaretleyince listenin üstünde seçim şeridi çıkar.
+
+![Toplu işlem şeridi](/img/teknisyen/mus-liste-toplu.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | Seçim şeridi | Seçili hesap sayısı ve toplu işlemler: aktif listede **Devre Dışı Bırak** ve `Sil`, pasif listede **Aktif Et** ve `Sil`. |
+| ❷ | Seçili satırlar | İşaretlediğiniz hesaplar. |
+
+Toplu işlemler uygulanmadan önce onay ister.
 
 ## Pasif müşteriler
 
-`Pasif Müşteriler` sekmesinde durumu pasife alınmış hesaplar listelenir. Bu
-listede satır eylemleri farklıdır: düzenleme ve devre dışı bırakma yerine
-`Aktif Duruma Getir` seçeneği bulunur.
+![Pasif müşteriler listesi](/img/teknisyen/mus-liste-pasif.png)
 
-![Pasif müşteriler](/img/teknisyen/musteriler-pasif.png)
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | **Pasif Müşteriler** | Devre dışı bırakılmış hesaplar. |
+| ❷ | `Pasif` | Hesabın durumu. |
+| ❸ | Satır işlemleri | **Aktif Duruma Getir**, `Sil`, `Detaylar`. |
 
-1. `Pasif Müşteriler` sekmesi.
-2. **Pasif** durum rozeti.
-3. Satır eylemleri — `Aktif Duruma Getir`, `Sil`, `Detaylar`.
+**Aktif Duruma Getir** yalnız hesabı aktif yapar. Devre dışı bırakırken iptal edilen sözleşmeler ve pasif yapılan kullanıcılar eski hâline dönmez; bunları ayrıca düzenleyin.

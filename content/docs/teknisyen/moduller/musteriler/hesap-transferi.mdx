@@ -1,27 +1,33 @@
 ---
 title: "Hesap Transferi"
-description: "Kullanıcıların domain ve müşteri hesabı kırılımında listelendiği, taşıma ve kaldırma işlemlerinin yapıldığı ekran."
-reviewed: "2026-08-18"
-owner:
+description: "Kullanıcıları alan adı ve müşteri hesabı kırılımında gösteren, aynı alan adındaki hesaplar arasında taşıyan ve hesaptan kaldıran ekran."
+reviewed: "2026-11-17"
+owner: necatikekec
 ---
 
-Müşteriler ekranının sağ üst köşesindeki transfer ikonu `Hesap Transferi`
-ekranını açar. Bu ekranda kullanıcılar; domain, ardından o domaine bağlı müşteri
-hesabı kırılımında listelenir.
+**Hesap Transferi** ekranı, kullanıcıları alan adına ve o alan adındaki müşteri hesaplarına göre gruplar. Aynı alan adını paylaşan hesaplar arasında kullanıcı taşımak ya da kullanıcıyı hesaptan ayırmak için kullanılır. Ekran, müşteri listesinin sağ üstündeki `Devret` simgesiyle açılır.
 
-![Hesap transferi](/img/teknisyen/musteriler-hesap-transferi.png)
+![Hesap Transferi ekranı](/img/teknisyen/mus-transfer.png)
 
-1. `Geri` — Müşteriler ekranına döner.
-2. **Domain Ara** — domain adına göre arama yapılır, `Ara` düğmesi ile uygulanır.
-3. **Domain başlığı** — kullanıcıların gruplandığı domain.
-4. **Müşteri hesabı ve kullanıcıları** — domaine bağlı hesap ve altında listelenen kullanıcılar.
-5. **Kullanıcı işlemleri** — `Kullanıcı Taşı` ve `Kullanıcı Kaldır` düğmeleri.
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | `Geri` | Müşteri listesine döner. |
+| ❷ | **Domain Ara...**, `Ara` | Alan adını tam olarak yazıp arayın; kısmi arama yapılmaz. |
+| ❸ | Alan adı | Hesapların `Müşteri Alan Adı` alanına göre gruplandığı alan adı. |
+| ❹ | Hesap | Bu alan adındaki müşteri hesabı. Başlıktaki kutu hesabın bütün kullanıcılarını seçer. |
+| ❺ | **Kullanıcı Taşı** | Kullanıcıyı aynı alan adındaki başka bir hesaba taşır. |
+| ❻ | **Kullanıcı Kaldır** | Kullanıcının hesapla bağını onaydan sonra kaldırır. |
 
-Hesap ve kullanıcı satırlarının başındaki kutular ile birden fazla kayıt
-işaretlenebilir.
+Yalnız `Müşteri Alan Adı` dolu hesaplar listelenir. Kullanıcıları seçtiğinizde hesap başlığında toplu **Kullanıcı Taşı** ve **Kullanıcı Kaldır** düğmeleri çıkar.
 
-<Callout type="warn" title="DİKKAT">
-`Kullanıcı Taşı` ve `Kullanıcı Kaldır`, kullanıcının müşteri hesabıyla olan
-bağını değiştiren işlemlerdir. Uygulamadan önce doğru kullanıcının ve hedef
-hesabın seçildiğinden emin olun.
-</Callout>
+## Kullanıcı taşıma
+
+**Kullanıcı Taşı**, kullanıcının hangi hesaptan hangi hesaba taşınacağını gösteren bir pencere açar; **Hedef Hesap** listesinden yeni hesabı seçin. Hedef yalnız aynı alan adındaki hesaplardan seçilebilir. Alan adında başka hesap yoksa **Bu domain grubunda taşınacak başka hesap yok.** uyarısı çıkar.
+
+## Taşıma ile kaldırma farkı
+
+| İşlem | Sonuç |
+|---|---|
+| **Kullanıcı Taşı** | Kullanıcı eski hesaptan ayrılır, hedef hesabın kişisi olur. |
+| **Kullanıcı Kaldır** | Kullanıcı hesaptan ayrılır; kullanıcı aktif kalır. |
+| Hesabın `Kişiler` sekmesinden silme | Kullanıcı hesaptan ayrılır ve pasif olur. |

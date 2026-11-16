@@ -1,0 +1,65 @@
+---
+title: "Sözleşmeler, Varlıklar ve Süreçler"
+description: "Müşteri hesabının sözleşmeleri, hizmet planı kota kullanımı, bağlı varlıkları ve hesabın kişilerinin açtığı kayıtlar."
+reviewed: "2026-11-17"
+owner: necatikekec
+---
+
+## Sözleşmeler
+
+`Sözleşmeler` sekmesi hesabın müşteri hizmet sözleşmelerini listeler.
+
+![Sözleşmeler sekmesi](/img/teknisyen/mus-sozlesmeler.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | **Yeni Anlaşma Ekle** | Yeni bir sözleşme oluşturma panelini açar. **Sözleşme Ekleyebilir** yetkisi gerekir. |
+| ❷ | **Var Olan Sözleşmeyi Ekle** | Sistemde tanımlı bir sözleşmeyi hesaba bağlar. Pencerede sözleşmeyi arayıp seçin ve `Ekle`'ye basın. |
+| ❸ | **Sözleşme Adı** | Basınca sözleşme yeni bir tarayıcı sekmesinde açılır. |
+| ❹ | `Kaldır` | Sözleşmenin hesapla bağını kaldırır; sözleşme silinmez. |
+
+Tablonun öbür sütunları `Açıklama`, **Başlangıç Tarihi**, **Bitiş Tarihi**, **Sözleşme Türü** ve `Aktif`'tir. Sözleşmenin kendisi için bkz. [Sözleşmeler](/docs/teknisyen/moduller/sozlesmeler).
+
+## Hizmet planı kullanımı
+
+**Hizmet Planı Kullanımı** sekmesi, hesabın kota tanımlı her aktif sözleşmesi için bir kart gösterir. Sekme salt okunurdur; ek kota ve plan devri sözleşmenin kendi sekmesinden yapılır (bkz. [Sözleşmede Kullanım](/docs/yonetici/hizmet-planlari/sozlesmede-kullanim)).
+
+![Hizmet Planı Kullanımı sekmesi](/img/teknisyen/mus-kota.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | Başlık | Sözleşmenin adı ve bağlı destek hizmet planı. |
+| ❷ | **+10 ek kota** | Bu kayıt türüne eklenmiş ek kota. |
+| ❸ | **Düşük bakiye** | Kalan kota yüzde 20'nin altına inmiştir. |
+| ❹ | `Aşıldı` | Kullanım kotayı geçmiştir. |
+| ❺ | `Sınırsız` | Bu kayıt türü için kota tanımlı değildir. |
+
+Kartın altındaki `Hareketler` kotayı hangi kaydın ne kadar tükettiğini gösterir. Hesabın kota tanımlı aktif sözleşmesi yoksa sekmede **Bu müşterinin kota tanımlı aktif bir sözleşmesi yok.** yazar. Sekmenin verisi için **Servis Planlarını Yönetebilir** yetkisi gerekir.
+
+## Varlıklar
+
+`Varlıklar` sekmesi hesaba bağlı varlık, hizmet, lisans, aksesuar ve sarf malzemeleri tutar. Hiç bağ yoksa sekmede yalnız ekleme düğmeleri görünür.
+
+![Varlıklar sekmesi](/img/teknisyen/mus-varliklar.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | Ekleme düğmeleri | **Varlık Ekle**, **Hizmet Ekle**, **Lisans Ekle**, **Aksesuar Ekle**, **Sarf Malzeme Ekle**. |
+
+Kayıt bağlandıktan sonra sekme beş katlanabilir bölüme ayrılır; her bölümün başlığında kayıt sayısı ve kendi ekleme düğmesi bulunur.
+
+Bağlarken bir sözleşme seçmek zorunludur. Hesabın aktif sözleşmesi yoksa **Aktif sözleşme bulunamadı** uyarısı çıkar; önce `Sözleşmeler` sekmesinden bir sözleşme bağlayın. Pasif hesaba varlık bağlanamaz.
+
+## Süreçler
+
+`Süreçler` sekmesi, talep sahibi hesabın kişisi olan kayıtları türlerine göre listeler. Projelerde ise projenin müşteri hesabına bakılır.
+
+![Süreçler sekmesi](/img/teknisyen/mus-surecler.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | Kayıt türleri | `Çağrı`, `Olay`, `Problem`, `İstek`, `Değişiklik`, `SI`, `Görev`, `Proje`. |
+| ❷ | **Excel'e Aktar** | **Geçerli Sayfayı Excel'e Aktar** ya da **Tümünü Excel'e Aktar**. |
+| ❸ | **Bağıntı Ekle** | Seçili türde yeni kayıt açar. |
+
+<Callout type="info" title="ÖNEMLİ">**Bağıntı Ekle** ile açılan kayıt hesaba kendiliğinden bağlanmaz. Kayıt, talep sahibi hesabın kişilerinden biriyse listede görünür.</Callout>

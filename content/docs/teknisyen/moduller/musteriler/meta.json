@@ -2,9 +2,12 @@
   "title": "MÜŞTERİLER",
   "pages": [
     "genel-bakis",
+    "pano",
     "liste",
     "yeni-hesap",
     "detay",
+    "kisiler-ve-yetkililer",
+    "sozlesmeler-ve-varliklar",
     "hesap-transferi"
   ]
 }

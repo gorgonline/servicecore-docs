@@ -1,72 +1,60 @@
 ---
-title: "Müşteri Detayı"
-description: "Müşteri kaydının detay sekmeleri: kişiler, yetkili teknisyenler, hesap sözleşmeleri, CMDB ve süreçler."
-reviewed: "2026-08-18"
-owner:
+title: "Müşteri Sayfası"
+description: "Müşteri hesabı sayfasının bölümleri: sekmeler, araç çubuğu, hesap formu, özet paneli ve müşterinin olayları."
+reviewed: "2026-11-17"
+owner: necatikekec
 ---
 
-Listeden bir müşteri adına ya da satırdaki `Detaylar` düğmesine tıklandığında
-kayıt, çalışma alanında yeni bir sekmede açılır. Sekme adı `Müşteriler` ve kayıt
-numarasından oluşur; sekme sağındaki `×` ile kapatılır.
+Hesap, listede adına ya da `Detaylar`'a basınca yeni bir sekmede açılır. Solda sekmeler, sağda araç çubuğu ve hesabın özet paneli bulunur. Hesap sekmeler olmadan tek başına da açılabilir: `/SupportCenter/SupportAccounts/DetailV2/<numara>`.
 
-![Müşteri detayı](/img/teknisyen/musteriler-detay.png)
+![Müşteri sayfasının bölümleri](/img/teknisyen/mus-detay-yerlesim.png)
 
-1. **Kayıt sekmeleri** — `Detay`, `Kişiler`, `Yetkili Teknisyen Grupları`, `Kapsanan Müşteriler`, `Yetkili Teknisyenler`, `Hesap Sözleşmeleri`, `CMDB` ve `Süreçler`. Sekme adının yanındaki rozet o sekmedeki kayıt sayısını gösterir.
-2. **Durum rozeti** — hesabın aktif/pasif durumu ve kayıt bağlantısını kopyalama düğmesi.
-3. **Kayıt işlemleri** — kayıt başlığı ve açıklaması üzerindeki işlem ikonları.
-4. **Özet bilgi paneli** — **Domain Adı**, **Açıklama**, **E-Posta Alan Adı**, **Adres**, **Posta Kodu**, **Gelir**, **Uygulama URL'si** ve **CRM No**.
-5. **Firma yapısı** — hesabın kendisi ve varsa bağlı alt firmaları.
+| # | Bölüm | Ne işe yarar |
+|---|---|---|
+| ❶ | Sekmeler | `Detay`, `Kişiler`, **Teknisyen Grupları**, **Alt Firmalar**, `Teknisyenler`, `Sözleşmeler`, **Hizmet Planı Kullanımı**, `Varlıklar`, `Süreçler`. Sığmayanlar `⋯` altındadır. Kaydı olan sekmede sayı rozeti çıkar. |
+| ❷ | Durum | `Aktif` ya da `Pasif`; yanındaki düğme hesabın bağlantısını kopyalar. |
+| ❸ | Araç çubuğu | `Kaydet`, `⋮` menüsü ve kartları taşıma. |
+| ❹ | Ad ve açıklama | Hesabın adı ve açıklaması. Açıklama kalemle düzenlenir ve kendi düğmesiyle kaydedilir. |
+| ❺ | Hesap formu | Hesabın özel form alanları. Değişiklikler araç çubuğundaki `Kaydet` ile kaydedilir. |
+| ❻ | Özet paneli | Hesabın özeti; aşağıya bakın. |
 
-## Kişiler
+Pasif hesapta açıklama ve hesap formu salt okunurdur. Kartları taşıma düğmesiyle sürükleyerek sıralayabilirsiniz.
 
-Müşteriye ait son kullanıcılar bu sekmede listelenir; **Tam Adı**, **E-Mail**,
-**Telefon** ve **İş Tanımı** sütunları gösterilir.
+Kişiler, teknisyenler ve gruplar için bkz. [Kişiler ve Yetkililer](/docs/teknisyen/moduller/musteriler/kisiler-ve-yetkililer). Sözleşmeler, kota, varlıklar ve süreçler için bkz. [Sözleşmeler, Varlıklar ve Süreçler](/docs/teknisyen/moduller/musteriler/sozlesmeler-ve-varliklar).
 
-- `+ Kişi Ekle` — yeni bir kişi oluşturur.
-- `+ Var Olan Kişileri Ekle` — sistemde kayıtlı bir kullanıcıyı bu hesaba bağlar.
+## Özet paneli
 
-## Yetkili Teknisyen Grupları
+![Hesabın özet paneli](/img/teknisyen/mus-detay-ozet.png)
 
-Hesaptan sorumlu teknisyen grupları burada tutulur. `+ Teknisyen Grubu Ekle`
-ile grup eklenir; liste **Grup Adı** sütunundan oluşur.
+| # | Bölüm | Ne işe yarar |
+|---|---|---|
+| ❶ | Hesap bilgileri | **Domain Adı**, **E-Posta Alan Adı**, **Uygulama URL'si**, `Adres`. |
+| ❷ | `Sözleşmeler` | Hesabın sözleşmesi ve bitişine kalan gün. 30 gün ve altı uyarı rengiyle, geçmiş tarih **Süresi Doldu** olarak gösterilir. |
+| ❸ | `Bağıntılar` | Sözleşme, kişi, alt firma, teknisyen, grup, varlık, hizmet, olay ve istek sayıları. Bir sayıya basınca ilgili sekme açılır. |
+| ❹ | `Açıklama` | Hesabın açıklaması. |
+| ❺ | Müşteri olayları | Hesabın olaylarını bir pencerede açar; aşağıya bakın. |
 
-## Kapsanan Müşteriler
+Panelin başlığındaki ok paneli daraltır; daraltınca sağda ince bir şerit kalır ve tercihiniz saklanır.
 
-Sözleşmeleri kapsayan alt müşterilerin eklendiği sekmedir. Bir üst firmanın
-sözleşmesi altında birden fazla firmaya hizmet veriliyorsa, kapsam bu sekmeden
-tanımlanır.
+## Diğer işlemler
 
-## Yetkili Teknisyenler
+![Diğer işlemler menüsü](/img/teknisyen/mus-detay-menu.png)
 
-Hesapla ilgilenecek teknisyenler tek tek eklenir. Liste **Ad**, **Soyad** ve
-**E-Mail** sütunlarından oluşur; `+ Yetkili Teknisyenler` düğmesi ile ekleme
-yapılır.
+| # | İşlem | Ne işe yarar |
+|---|---|---|
+| ❶ | `Sil` | **Silme Gerekçesi** ve `Durum` isteyen silme penceresini açar. |
+| ❷ | Sekme kısayolları | `Kişiler`, **Teknisyen Grupları**, `Teknisyenler`, `Sözleşmeler`, `Varlıklar`, `Süreçler` sekmelerine geçer. |
 
-## Hesap Sözleşmeleri
+<Callout type="warn" title="DİKKAT">Hesap sayfasındaki `Sil` penceresinin `Durum` listesi boş gelebilir; bu durumda silme tamamlanamaz. Hesabı listedeki `Sil` ile silin (bkz. [Müşteri Listesi](/docs/teknisyen/moduller/musteriler/liste#satır-işlemleri)).</Callout>
 
-Müşteriye ait destek anlaşmalarının tutulduğu sekmedir. Kayıt yokken iki seçenek
-sunulur:
+## Müşteri olayları
 
-- `Yeni Anlaşma Ekle` — sıfırdan sözleşme oluşturur.
-- `Var Olan Sözleşmeyi Ekle` — sistemde tanımlı bir sözleşmeyi bu hesaba bağlar.
+![Müşteri olayları penceresi](/img/teknisyen/mus-detay-olaylar.png)
 
-## CMDB
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | Sekmeler | **Son 24 Saat içerisindeki olaylar** ve **Tüm olaylar**. |
+| ❷ | **Özel Alan Seçiniz** | Listeye bir özel alan sütunu ekler. |
+| ❸ | `Sütunlar` | Görünecek sütunları seçer. |
 
-Müşteriyle ilişkili envanter kalemleri bu sekmede takibe alınır:
-`Varlık Ekle`, `Hizmet Ekle`, `Lisans Ekle`, `Aksesuar Ekle` ve `Sarf Malzeme Ekle`.
-
-## Süreçler
-
-Müşteriye ait tüm kayıtların modül modül izlendiği sekmedir.
-
-![Müşteri süreçleri](/img/teknisyen/musteriler-surecler.png)
-
-1. **Kayıt sekmeleri** — `Süreçler` sekmesi seçili.
-2. **Modül sekmeleri** — `Çağrı`, `Olay`, `Problem`, `İstek`, `Değişiklik`, `SI`, `Görev` ve `Proje`.
-3. **Filtre satırı** — kayıt numarası, durum, konu, oluşturulma tarihi, teknisyen ve kullanıcıya göre filtreleme.
-4. `Excel'e Aktar` ve `Yeni Kayıt` — listeyi dışa aktarır veya seçili modülde müşteri adına yeni kayıt açar.
-
-<Callout type="info" title="ÖNEMLİ">
-Süreçler sekmesindeki modül sekmeleri, müşterinin o modüldeki kayıtlarını
-gösterir. Kayıt yoksa liste boş görünür.
-</Callout>
+Liste olay numarası, konu, durum, kategori, öncelik, teknisyen ve kullanıcı sütunlarıyla gelir; sütun başlıklarının altındaki kutularla süzülür.

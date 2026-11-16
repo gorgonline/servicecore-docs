@@ -1,0 +1,34 @@
+---
+title: "Müşteri Panosu"
+description: "Müşteriler modülünün Pano sekmesi: toplam, aktif ve pasif müşteri sayıları, toplam gelir ve dağılım grafikleri."
+reviewed: "2026-11-17"
+owner: necatikekec
+---
+
+Modül açıldığında `Pano` sekmesi gelir. Pano müşteri portföyünü özetler; hiçbir kaydı değiştirmez. Silinmiş hesaplar sayılmaz; aktif ve pasif hesapların hepsi sayılır.
+
+![Müşteri panosu](/img/teknisyen/mus-pano-yerlesim.png)
+
+| # | Bölüm | Ne işe yarar |
+|---|---|---|
+| ❶ | Özet kartları | Toplam, aktif ve pasif müşteri sayısı, toplam gelir; aşağıya bakın. |
+| ❷ | **Sektöre göre dağılım** | Her sektördeki müşteri sayısı. Sektörü boş olanlar `N/A` altında toplanır. |
+| ❸ | **Zaman dilimine göre dağılım** | Müşterilerin zaman dilimlerine dağılımı; ortada toplam sayı. |
+| ❹ | **En yüksek gelirli ilk 10** | `Gelir` alanı dolu müşterilerden en yüksek gelirli on tanesi. |
+| ❺ | **Aktif Oranı** | Aktif müşterilerin tüm müşterilere oranı. |
+| ❻ | **Domain & firma yapısı** | Alan adı tanımlı, e-posta alan adı tanımlı, bağlı olduğu müşteri tanımlı (ana firma) ve alt firma olan hesap sayıları. |
+
+Grafik kartlarının sağ üstündeki `⋮` menüsünde yalnız `Yenile` vardır; kartın verisini yeniden çeker.
+
+## Özet kartları
+
+![Panodaki özet kartları](/img/teknisyen/mus-pano-kartlar.png)
+
+| # | Kart | Ne gösterir |
+|---|---|---|
+| ❶ | **Toplam Müşteri** | Aktif ve pasif bütün hesaplar. |
+| ❷ | **Aktif Müşteri** | Aktif hesaplar; yeşil çip aktiflerin toplama oranıdır. |
+| ❸ | **Pasif Müşteri** | Pasif hesaplar; kırmızı çip pasiflerin toplama oranıdır. |
+| ❹ | **Toplam Gelir** | Bütün hesapların `Gelir` alanlarının toplamı. |
+
+Çiplerdeki oklar bir değişimi değil, oranı gösterir; aktif çipinde ok her zaman yukarı, pasif çipinde aşağı bakar.

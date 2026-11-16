@@ -1,60 +1,51 @@
 ---
 title: "Genel Bakış"
-description: "Müşteriler modülünün çalışma alanı sekmeleri ve müşteri portföyünü özetleyen Pano ekranı."
-reviewed: "2026-08-18"
-owner:
+description: "Müşteriler modülü: destek verdiğiniz dış müşteri hesapları, ekranın bölümleri, aktif ve pasif hesaplar, yetkiler ve diğer modüllerle bağlantı."
+reviewed: "2026-11-17"
+owner: necatikekec
 ---
 
-Müşteriler modülünde birden fazla harici müşteri hesabı yönetilir. Kurumunuza ait
-destek hesapları eklenebilir, düzenlenebilir ve durumları (aktif / devre dışı)
-kontrol edilebilir. Böylece her müşteri için farklı alan adları ve açıklamalarla
-detaylı yönetim sağlanır.
+Müşteriler modülü, destek verdiğiniz dış müşteri hesaplarını yönetir. Her hesabın alan adı, kişileri, hesaptan sorumlu teknisyenleri, alt firmaları, sözleşmeleri, varlıkları ve kayıtları hesap sayfasında bir arada izlenir.
 
-Modüle üst menüdeki `Müşteriler` bağlantısı ile girilir.
+Modüle üst menüdeki `Müşteriler` ile girilir.
 
-## Ekranın yapısı
+<Callout type="info" title="ÖNEMLİ">Bu bölüm müşterilerin yeni ekranlarını anlatır. Yeni ekranlar `Genel Ayarlar` altındaki **Yeni destek hesabı sayfalarına yönlendir (beta)** seçeneğiyle açılır. Seçenek bir kez açıldıktan sonra ayar ekranından kapatılamaz.</Callout>
 
-Modül, sekmeli bir çalışma alanı olarak çalışır: `Pano` ve `Müşteriler` sabit
-sekmelerdir, açtığınız her müşteri kaydı için ise ayrı bir sekme eklenir. Böylece
-birden fazla müşteri kaydı aynı anda açık tutulabilir.
+## Ekranın bölümleri
 
-![Müşteriler Panosu](/img/teknisyen/musteriler-pano.png)
+![Müşteriler modülünün bölümleri](/img/teknisyen/mus-genel-yerlesim.png)
 
-1. **Çalışma alanı sekmeleri** — `Pano`, `Müşteriler` ve açık müşteri kayıtları. Kayıt sekmeleri, sekme adının yanındaki `×` ile kapatılır.
-2. `Yeni Müşteri Hesabı` — yeni hesap oluşturma panelini açar. Bkz. [Yeni Müşteri Hesabı Oluşturma](/docs/teknisyen/moduller/musteriler/yeni-hesap).
-3. **Hesap transferi** ikonu — kullanıcıların hesaplar arasında yönetildiği ekranı açar. Bkz. [Hesap Transferi](/docs/teknisyen/moduller/musteriler/hesap-transferi).
-4. **Özet kartları** — portföyün sayısal özeti.
-5. **Grafikler** — dağılım ve kırılım grafikleri.
-6. **Hizmet Planı & Faturalama** — destek planı ve faturalama göstergeleri.
+| # | Bölüm | Ne işe yarar |
+|---|---|---|
+| ❶ | Sekmeler | `Pano`, `Müşteriler` ve açtığınız her müşteri hesabı için bir sekme. Hesap sekmeleri `×` ile kapanır. |
+| ❷ | **Yeni Müşteri Hesabı** | Yeni hesap panelini açar. Bkz. [Müşteri Hesabı Oluşturma](/docs/teknisyen/moduller/musteriler/yeni-hesap). |
+| ❸ | `Devret` | **Hesap Transferi** ekranını açar. Bkz. [Hesap Transferi](/docs/teknisyen/moduller/musteriler/hesap-transferi). |
+| ❹ | Liste sekmeleri | **Aktif Müşteriler** ve **Pasif Müşteriler**. |
+| ❺ | Liste | Hesaplar; sütun başlıklarındaki kutularla süzülür. Bkz. [Müşteri Listesi](/docs/teknisyen/moduller/musteriler/liste). |
 
-## Özet kartları
+Modül her açılışta `Pano` ile başlar. Açtığınız hesap sekmeleri tarayıcınızda saklanır.
 
-| Kart | Gösterdiği bilgi |
+## Aktif ve pasif hesaplar
+
+Bir hesap ya aktiftir ya pasif. Pasif hesaplar **Pasif Müşteriler** listesinde durur; açıklaması, özel form alanları, kişileri ve varlıkları değiştirilemez.
+
+<Callout type="warn" title="DİKKAT">Bir hesabı devre dışı bırakmak yalnız hesabı pasif yapmakla kalmaz: hesabın aktif sözleşmeleri iptal edilir, hesaptaki kullanıcıların hepsi pasif olur ve hesabın kişilerine ait açık olay ve istekler kapatılır. Hesabı yeniden aktif yapmak bunları geri getirmez. Listedeki tek satırlık **Devre Dışı** düğmesi onay sormaz.</Callout>
+
+## Yetkiler
+
+| Yetki | Ne sağlar |
 |---|---|
-| **Toplam Müşteri** | Aktif ve pasif müşterilerin toplam sayısı |
-| **Aktif Müşteri** | Aktif müşteri sayısı ve aktif oranı |
-| **Pasif Müşteri** | Pasif müşteri sayısı ve pasif oranı |
-| **Toplam Gelir** | Tüm müşterilerin gelir alanlarının toplamı |
+| **Müşteri Hesaplarını Yönetebilir** | Modüle girme ve hesapları yönetme. Menüde görünmesi için kurumunuzda müşteri hizmetleri eklentisi de olmalıdır. |
+| **Kendi Müşteri Hesaplarını Yönetebilir** | Kullanıcıyı, `Teknisyenler` sekmesinde yetkili olduğu hesaplarla sınırlamak içindir. Bu kısıt yeni listeye ve panoya uygulanmaz. |
+| **Sözleşme Ekleyebilir** | Hesabın `Sözleşmeler` sekmesinden yeni anlaşma oluşturma. |
+| **Servis Planlarını Yönetebilir** | `Hizmet Planı Kullanımı` sekmesinin verisi. |
 
-## Grafikler
+## Son kullanıcı tarafı
 
-- **Sektöre göre dağılım** — müşterilerin sektör bazında sayısı.
-- **Zaman dilimine göre dağılım** — müşterilerin zaman dilimi kırılımı ve toplam sayısı.
-- **En yüksek gelirli ilk 10** — gelire göre sıralanmış ilk on müşteri.
-- **Aktif Oranı** — aktif müşterilerin toplam içindeki yüzdesi.
-- **Domain & firma yapısı** — domaini tanımlı, e-posta domaini tanımlı, bağlı olduğu müşteri ve alt firma kırılımları.
+Son kullanıcı portalında müşteri hesabı ekranı yoktur. Hesap, kişilerin açtığı kayıtlarda ve formlardaki müşteri seçim alanlarında kullanılır.
 
-Her grafik kartının sağ üstündeki `⋮` menüsünden `Yenile` ile o kartın verisi
-yeniden çekilir.
+## Diğer modüllerle bağlantı
 
-<Callout type="info" title="ÖNEMLİ">
-Grafik ve kartlar sayfa açıldıktan sonra arka planda yüklenir. Değerler ilk anda
-boş görünüyorsa yükleme tamamlanana kadar bekleyin veya kartın `⋮` menüsünden
-`Yenile` deyin.
-</Callout>
-
-## Hizmet Planı & Faturalama
-
-Sayfanın alt şeridinde destek planı ve faturalama göstergeleri yer alır:
-**Aktif Destek Planı**, **Bu Ay Faturalanacak Tutar**, **Kullanılan Destek Saati**,
-**Kalan Destek Kredisi**, **Kapsam Dışı İş Sayısı** ve **Bu Ay Yenilenecek Sözleşme**.
+- **Sözleşmeler:** Hesabın müşteri hizmet sözleşmeleri `Sözleşmeler` sekmesinde listelenir. Bkz. [Sözleşmeler](/docs/teknisyen/moduller/sozlesmeler).
+- **Kayıtlar:** Hesabın kişilerinin açtığı olay, istek ve diğer kayıtlar `Süreçler` sekmesinde görünür.
+- **CMDB:** Hesaba varlık, hizmet, lisans, aksesuar ve sarf malzeme bağlanır.

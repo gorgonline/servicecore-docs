@@ -1,0 +1,73 @@
+---
+title: "Kişiler ve Yetkililer"
+description: "Müşteri hesabının kişileri, hesaptan sorumlu teknisyen grupları ve teknisyenleri, hesabın kapsadığı alt firmalar."
+reviewed: "2026-11-17"
+owner: necatikekec
+---
+
+Bu sayfa hesabın kimlerle ilişkili olduğunu tanımlayan dört sekmeyi anlatır: hesabın kişileri, hesaptan sorumlu teknisyen grupları ve teknisyenler, hesabın alt firmaları.
+
+## Kişiler
+
+`Kişiler` sekmesi hesaba bağlı son kullanıcıları listeler. Hesabın `Süreçler` sekmesinde görünen kayıtlar bu kişilerin açtığı kayıtlardır.
+
+![Kişiler sekmesi](/img/teknisyen/mus-kisiler.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | **Kişi Ekle** | Yeni bir kullanıcı oluşturup hesaba bağlar. |
+| ❷ | **Var Olan Kişileri Ekle** | Sistemde kayıtlı kullanıcıları hesaba bağlar; aşağıya bakın. |
+| ❸ | Sütunlar | **Tam Adı** (basınca kullanıcı kaydı açılır), **E-Mail**, `Telefon`, **İş Tanımı**. |
+| ❹ | `Sil` | Kişiyi onaydan sonra hesaptan çıkarır. |
+
+<Callout type="warn" title="DİKKAT">Kişiyi bu sekmeden silmek kullanıcıyı pasif yapar. Kullanıcıyı yalnız hesaptan ayırmak istiyorsanız [Hesap Transferi](/docs/teknisyen/moduller/musteriler/hesap-transferi) ekranındaki **Kullanıcı Kaldır**'ı kullanın.</Callout>
+
+### Var olan kişileri ekleme
+
+![Kullanıcılar penceresi](/img/teknisyen/mus-kisi-var.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | Sütun başlıkları | Kullanıcıları ad, e-posta, iş tanımı, bölüm, şirket ve telefona göre süzer. |
+| ❷ | Satır | Kutuyu işaretleyerek kullanıcıyı seçin. |
+| ❸ | **Kişi Ekle (n)** | Seçili kullanıcıları hesaba bağlar; parantez içinde seçili sayısı. |
+
+Bir kullanıcı aynı anda yalnız bir hesabın kişisi olabilir. Başka bir hesaba bağlı kullanıcıyı eklerseniz eski hesabıyla bağı kalkar.
+
+Pasif hesaba kişi eklenemez.
+
+## Teknisyen grupları
+
+**Teknisyen Grupları** sekmesi hesaptan sorumlu teknisyen gruplarını tutar.
+
+![Teknisyen Grupları sekmesi](/img/teknisyen/mus-gruplar.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | **Teknisyen Grubu Ekle** | Grup seçme penceresini açar; birden çok grup seçilebilir. |
+| ❷ | Gruplar | Hesaba yetkili gruplar. |
+| ❸ | Kaldır | Grubu onaydan sonra hesaptan çıkarır. |
+
+## Teknisyenler
+
+`Teknisyenler` sekmesi hesaptan sorumlu teknisyenleri tek tek tutar.
+
+![Teknisyenler sekmesi](/img/teknisyen/mus-teknisyenler.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | `Teknisyenler` | Teknisyen seçme penceresini açar. Liste boşken düğmenin adı **Yeni Yetkili Teknisyen**'dir. |
+| ❷ | Sütunlar | `Ad`, `Soyad`, **E-Mail**, **Aktif Mi**. |
+| ❸ | Kaldır | Teknisyeni onaydan sonra hesaptan çıkarır. |
+
+## Alt firmalar
+
+**Alt Firmalar** sekmesi, bu hesabın sözleşmesi kapsamında hizmet verilen diğer müşteri hesaplarını listeler. Alt firmanın `Bağlı Olduğu Müşteri` alanı bu hesaptır.
+
+![Alt Firmalar sekmesi](/img/teknisyen/mus-alt-firmalar.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | **Kapsanan Müşteri Ekle** | Alt firma olarak eklenecek hesapları seçme penceresini açar. |
+| ❷ | Alt firmalar | **Müşteri Adı**, **Müşteri Alan Adı**, `Sektör`. Yalnız aktif alt firmalar listelenir. |
+| ❸ | Kaldır | Hesabın alt firma bağını kaldırır; hesap silinmez. |
