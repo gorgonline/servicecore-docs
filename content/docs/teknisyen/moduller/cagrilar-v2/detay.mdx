@@ -1,0 +1,42 @@
+---
+title: "Çağrı Paneli"
+description: "Çağrının yan paneli: işlem satırı, bilgiler, açıklama, ekler, konuşma ve salt okunur çağrılar."
+reviewed: "2026-11-10"
+owner: necatikekec
+---
+
+Listede bir çağrıya basınca çağrı sağdaki panelde açılır; liste arkada kalır. Okunmamış bir çağrı panel açılınca okundu sayılır ve `Yeni` etiketi kalkar. Panelin adresi paylaşılabilir; adres çağrının numarasını taşır.
+
+![Çağrı paneli](/img/teknisyen/cgr2-detay-yerlesim.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | İşlem satırı | `Düzenle`, **Cevapla ve kapat**, `Kapat`, `Dönüştür` ve `Sil`. Kapalı çağrıda yalnız `Yeniden aç` ve `Sil` görünür. Yetkiniz olmayan işlem gösterilmez. |
+| ❷ | `Bilgiler` | Kullanıcı, teknisyen, grup, kaynak, kategori, aciliyet, iş etkisi, destek müşteri hesabı, şirket ve oluşturulma zamanı. E-postayla gelen çağrıda `Kimden`, `Kime` ve varsa `Bilgi` (Cc) adresleri de görünür. |
+
+<Callout type="warn" title="DİKKAT">Panelin sağ üstündeki ✕ düğmesinin adı **Çağrıyı kapat**'tır ama yalnız paneli kapatır. Çağrıyı kapatmak için işlem satırındaki `Kapat`ı kullanın.</Callout>
+
+## Açıklama, ekler ve konuşma
+
+`Bilgiler`in altında üç bölüm bulunur:
+- `Açıklama`
+- `Ekler`: dosyalar indirilebilir.
+- `Konuşma`: çağrının yazışması.
+
+![Konuşma bölümü](/img/teknisyen/cgr2-detay-konusma.png)
+
+Konuşmadaki her mesajda gönderen, `Gelen` ya da `Giden` etiketi, alıcılar ve zaman görünür. Yanıtlar, yanıtladıkları mesajın altında içeriden başlar. Teknisyenlerin notları `Not` ya da `Özel not` olarak listelenir.
+
+## Salt okunur çağrılar
+
+Bazı çağrılar değiştirilemez. Panelin üstündeki bildirim bunun nedenini söyler:
+
+| Bildirim | Anlamı |
+|---|---|
+| **Çağrı kapalı** | Kapatma yorumu görünür. `Yeniden aç` ile açılabilir. |
+| **Çağrı olay kaydına dönüştürüldü** (ya da hizmet talebine / sürekli iyileştirmeye) | Hedef kaydın numarası ve dönüştürme notu görünür. |
+| **Çağrı birleştirildi** | Yazışmanın hangi çağrıda sürdüğü yazar. |
+| **Çağrı silinmiş** | Silinmiş çağrı değiştirilemez. |
+| **Çağrıyı düzenleyemezsiniz** | Düzenleme yetkiniz yok. |
+
+![Dönüştürülmüş bir çağrı](/img/teknisyen/cgr2-detay-donusturulmus.png)

@@ -1,0 +1,30 @@
+---
+title: "Dönüştürme ve Birleştirme"
+description: "Çağrıyı olay, istek ya da sürekli iyileştirme kaydına dönüştürme ve aynı konudaki çağrıları birleştirme."
+reviewed: "2026-11-10"
+owner: necatikekec
+---
+
+## Dönüştürme
+
+Çağrı bir arıza ya da talep içeriyorsa onu ilgili sürecin kaydına dönüştürün. Bunun için paneldeki `Dönüştür`ü ya da satır menüsündeki **Olaya dönüştür**, **İsteğe dönüştür** veya **İyileştirmeye dönüştür** maddelerini kullanın.
+
+![Çağrıyı dönüştürün paneli](/img/teknisyen/cgr2-donustur.png)
+
+- **Hedef tür:** `Olay`, `İstek` ya da **Sürekli iyileştirme**.
+- **Olayda:** `Kategori`, `Aciliyet` ve **İş etkisi** çağrınınkiyle dolu gelir.
+- **İstekte:** **Servis öğesi** zorunludur, katalogdan aranarak seçilir.
+- **Dönüştürme notu:** isteğe bağlıdır ve çağrının panelinde görünür.
+
+Konu, açıklama, kullanıcı, kaynak, teknisyen ve grup hedef kayda taşınır. Hedef modülün kendine özgü alanları kayıt açıldıktan sonra doldurulur. Dönüştürülen çağrı `Dönüştürüldü` durumuna geçer; listede ve panelde hedef kaydın numarası (`#INC…`, `#SR…`, `#CI…`) bağlantı olarak görünür. Bu çağrı bir daha değiştirilemez ve toplu işlemlerde seçilemez.
+
+## Birleştirme
+
+Aynı sorun için birden çok çağrı açıldıysa onları tek çağrıda toplayın:
+
+1. Listede en az iki açık ya da beklemedeki çağrıyı seçin.
+2. Toplu işlem şeridindeki `Birleştir`e basın.
+
+![Çağrıları birleştirin penceresi](/img/teknisyen/cgr2-birlestir.png)
+
+**Hedef çağrı** zorunludur. Hedef çağrı açık kalır, öbürleri `Birleştirildi` olur. Birleştirilen çağrıların panelinde yazışmanın hangi çağrıda sürdüğü yazar.
