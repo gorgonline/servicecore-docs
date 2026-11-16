@@ -1,0 +1,66 @@
+---
+title: "Görevler ve İş Günlükleri"
+description: "Kayıt üzerinde görev açma, görevi tamamlama ve silme; iş günlüğü ile harcanan süreyi kaydetme."
+reviewed: "2026-11-05"
+owner: boracetinservicecore
+---
+
+Bir kaydın çözümü birden fazla adım ya da kişi gerektiriyorsa kayıt üzerinde görevler açarsınız. Kayıt için harcadığınız süreyi ise iş günlüğüyle kaydedersiniz. Her iki sekme de yalnız teknisyenlerde bulunur.
+
+## Görevler sekmesi
+
+`Görevler` sekmesi olay, istek, problem ve değişiklik kayıtlarında bulunur.
+
+![Görevler sekmesi](/img/teknisyen/mobil-gorevler-liste.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | `Görev ekle` | Görev formunu açar. İşlem çubuğundaki onay kutusu simgesi de aynı işi yapar. |
+| ❷ | Açık görev | Görev numarası (`TASK2317` gibi), adı, başlangıç ve bitiş zamanı ve atanan teknisyen. Karta dokununca görev düzenlenir. |
+| ❸ | Görev durumu | Görevin durumu, örneğin `Devam Etmekte`. |
+| ❹ | Tamamla | Görevi tamamlandı olarak işaretler; önce onay sorulur. |
+| ❺ | Sil | Görevi siler; önce onay sorulur. |
+| ❻ | Tamamlanan görev | Tamamlanan görevlerin adı üstü çizili görünür; bunlar düzenlenemez. |
+
+Görevin kendi detayını açmak için Kayıtlar ekranındaki `Görev` sekmesini kullanın. Bkz. [Kayıt Türleri › Görev](/docs/teknisyen/mobil/kayit-turleri#görev).
+
+### Görev ekleme
+
+![Görev ekle formu](/img/teknisyen/mobil-gorevler-form-yerlesim.png)
+
+| # | Alan | Açıklama |
+|---|---|---|
+| ❶ | `Başlık` | Görevin adı. |
+| ❷ | `Açıklama` | Görevde yapılacak işin ayrıntısı. |
+| ❸ | `Durum` ve `Öncelik` | Görevin başlangıç durumu ve önceliği. |
+| ❹ | `Teknisyen Grubu` ve `Teknisyen` | Görevin atanacağı grup ve kişi. Altında görevin ilgili olduğu `Kullanıcı` seçilir. |
+
+Formun devamında `Başlangıç - Bitiş Tarihi`, `Toplam Maliyet`, `Gerçekleşen Bitiş Tarihi`, `Tahmini Süre` ve `Tamamlanma Yüzdesi` alanları bulunur. En alttaki `Kaydet` görevi kayda ekler. Görev formu kurumunuzun web uygulamasında tasarladığı formdan oluşur; alanlar farklı olabilir.
+
+## İş günlükleri sekmesi
+
+`İş günlükleri` sekmesi olay, istek, problem, değişiklik, iyileştirme ve görev kayıtlarında bulunur. Sekmeyi görmek için zaman kayıtlarını görme ya da düzenleme yetkiniz olmalıdır.
+
+![İş günlükleri sekmesi](/img/teknisyen/mobil-is-gunlukleri-liste.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | `İş günlüğü ekle` | İş günlüğü formunu açar. İşlem çubuğundaki saat simgesi de aynı işi yapar. |
+| ❷ | **Toplam süre** | Kayıttaki bütün iş günlüklerinin toplamı. |
+| ❸ | İş günlüğü kartı | Numara, başlık, başlangıç ve bitiş zamanı ve işi yapan kişi. Karta dokununca iş günlüğü düzenlenir. |
+| ❹ | Süre | Bu iş günlüğünün süresi, örneğin `3 sa 25 dk`. |
+| ❺ | Sil | İş günlüğünü siler; önce onay sorulur. |
+
+### İş günlüğü ekleme
+
+![İş günlüğü ekle formu](/img/teknisyen/mobil-is-gunlukleri-form-yerlesim.png)
+
+| # | Alan | Açıklama |
+|---|---|---|
+| ❶ | `Başlık` ve `Açıklama` | Yaptığınız işin kısa adı ve ayrıntısı. |
+| ❷ | **İş Günlüğü Türü** | İşin türü, kurumunuzun tanımladığı listeden. |
+| ❸ | `İşi Yapan` | İşi yapan kişi; siz seçili gelirsiniz. Zorunludur. |
+| ❹ | Süre | Harcanan süre saat ve dakika olarak. İkisi de zorunludur. |
+| ❺ | Hızlı süre düğmeleri | `15dk`, `30dk`, `1s` gibi düğmeler süre alanlarını tek dokunuşla doldurur. |
+
+Formun devamında işin yapıldığı `Tarih` ve maliyet alanları bulunur. En alttaki `Kaydet` iş günlüğünü kayda ekler ve toplam süre güncellenir. İş günlüğü formu da kurumunuzun web uygulamasında tasarladığı formdan oluşur.

@@ -1,0 +1,61 @@
+---
+title: "Pano"
+description: "Mobil uygulamanın açılış ekranı: kayıt türlerine göre sayaçlar, size atanan açık kayıtlar ve kayıtlı filtreleriniz."
+reviewed: "2026-11-05"
+owner: boracetinservicecore
+---
+
+Pano, uygulamaya giriş yaptığınızda açılan ekrandır. Kayıt türlerine göre toplam sayıları ve size atanmış açık kayıtları bir bakışta gösterir. Bir karta dokunduğunuzda o kartın kayıtları [Kayıtlar](/docs/teknisyen/mobil/kayitlar) ekranında listelenir.
+
+Ekranın üstünde iki bölüm vardır: `Pano` ve `Filtrelerim`.
+
+## Sayaç kartları
+
+![Pano sayaç kartları](/img/teknisyen/mobil-pano-yerlesim.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | `Pano` ve `Filtrelerim` | Sayaç kartları ile kayıtlı filtreleriniz arasında geçiş yapar. |
+| ❷ | Tür sayacı | O türdeki kayıtların sayısı, örneğin **Çağrılar**. Dokununca Kayıtlar ekranı bu türün listesiyle açılır. |
+| ❸ | Size atanan sayaç | O türde size atanmış açık kayıtların sayısı, örneğin **Bana Atanan Açık Çağrılarım**. Dokununca yalnız bu kayıtlar listelenir. |
+
+Kartlar iki sütun hâlinde sıralanır: solda türün tamamı, sağda size atanan açık kayıtlar. Sırasıyla çağrılar, olaylar, problemler, istekler, sürekli iyileştirmeler ve değişiklikler için birer çift kart vardır.
+
+Aşağı kaydırdığınızda tür dışı kartlar gelir:
+
+![Pano alt kartları](/img/teknisyen/mobil-pano-alt-kartlar.png)
+
+| # | Kart | Ne gösterir |
+|---|---|---|
+| ❶ | **Bana Atanan Açık Görevlerim** | Size atanmış, tamamlanmamış görevler. |
+| ❷ | **Bana Atanan Varlıklarım** | Kullanıcısı siz olan varlıklar (zimmetinizdeki cihazlar). |
+| ❸ | **Bana Atanan Destek Sözleşmelerim** | Destek sözleşmeleri. Yalnız sözleşmeleri görme yetkisi olan teknisyenlerde görünür. |
+| ❹ | `Bekleyen Onaylar` | Sizin onayınızı bekleyen kayıtlar. Bu karta dokununca Kayıtlar yerine [Onaylar](/docs/teknisyen/mobil/onaylar) ekranı açılır. |
+
+Sayıları yenilemek için ekranı aşağı çekip bırakın.
+
+## Filtrelerim
+
+![Filtrelerim bölümü](/img/teknisyen/mobil-pano-filtrelerim.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | `Filtrelerim` | Kayıtlı filtrelerinizi listeler. |
+| ❷ | Kayıt türü başlığı | Filtreler kayıt türüne göre gruplanır: `Çağrı`, `Olay`, `Problem`, `İstek`, `Değişiklik`. |
+| ❸ | Filtre | Dokununca Kayıtlar ekranı ilgili türün sekmesinde, bu filtre uygulanmış olarak açılır. |
+
+Burada web uygulamasındaki kayıt listelerinde kaydettiğiniz filtreler ile kurumunuzda herkese açık tanımlanmış filtreler görünür. Herkese açık filtrelerin yanında **Ortak** etiketi bulunur. Yeni filtreyi web uygulamasında kaydettiğinizde mobilde de listelenir.
+
+Kurulumla birlikte gelen hazır filtreler şunlardır:
+
+| Tür | Hazır filtreler |
+|---|---|
+| Çağrı | **Çağrılarım**, **Açık Çağrılarım**, **Geciken Çağrılarım**, **Açık Çağrılar**, **Geciken Çağrılar**, **Bugünkü Çağrılar**, **Atanmamış Çağrılar** |
+| Olay | **Olaylarım**, **Açık Olaylarım**, **Geciken Olaylarım**, **Açık Olaylar**, **Geciken Olaylar**, **Bugünkü Olaylar**, **Atanmamış Olaylar** |
+| Problem | **Problemlerim** |
+| İstek | **Taleplerim**, **Açık Taleplerim**, **Geciken Taleplerim**, **Açık Talepler**, **Geciken Talepler**, **Bugünkü Talepler**, **Atanmamış Talepler** |
+| Değişiklik | **Değişikliklerim** |
+
+<Callout type="info" title="ÖNEMLİ">
+Varlık ve proje filtreleri mobilde listelenmez.
+</Callout>

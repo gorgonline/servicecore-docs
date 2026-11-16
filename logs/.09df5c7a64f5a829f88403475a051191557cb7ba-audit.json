@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "/Users/boracetin/Documents/servicecore-docs/logs/.09df5c7a64f5a829f88403475a051191557cb7ba-audit.json",
+    "files": [
+        {
+            "date": 1793891400256,
+            "name": "/Users/boracetin/Documents/servicecore-docs/logs/mcp-puppeteer-2026-11-05.log",
+            "hash": "10cf76672d9f76268a3c8af2ac22011cc8d3d5c93cd27a3b184097c794b43a33"
+        }
+    ],
+    "hashType": "sha256"
+}
