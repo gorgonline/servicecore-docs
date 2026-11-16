@@ -1,0 +1,118 @@
+---
+title: "Onay"
+description: "İsteğin Onay sekmesi: gelişmiş onay akışı, adımlar ve zaman çizelgesi, onaylama, reddetme, revize ve eski onay aşamaları."
+reviewed: "2026-11-16"
+owner: necatikekec
+---
+
+Katalog öğesi onay gerektiriyorsa istek açılınca onay akışı başlar. Akışın durumu ve kararlar isteğin `Onay` sekmesindedir. Sekmenin yanında sayı varsa akışta sizin kararınız bekleniyordur.
+
+İstek, öğenin tanımına göre üç onay türünden birini kullanır:
+
+| Tür | Bu sekmede ne yapılır |
+|---|---|
+| **Gelişmiş onay akışı** | Adımlar ve kararlar görünür; kararınızı buradan verirsiniz. |
+| **Onay aşamaları** | Eski aşama motoru. Aşamalar ve durumları görünür, karar burada verilmez. |
+| **İş akışı** | Akışın durumu görünür; ayrıntısı **İş akışını ServiceCore'da aç** bağlantısıyla açılır. |
+
+Onay gerektirmeyen istekte sekmede **Bu istek onay gerektirmiyor** yazar.
+
+## Gelişmiş onay akışı
+
+![Gelişmiş onay akışı](/img/teknisyen/ist2-onay-adimlar.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | Özet | Onay türü, onay etiketi ve kaç adımın tamamlandığı. |
+| ❷ | `Diyagram` | Akışın şemasını açar. |
+| ❸ | Akışın hâli | `Çalışıyor`, **Revize bekliyor** gibi; akışın ne zaman başladığı. |
+| ❹ | `Adımlar`, **Zaman çizelgesi** | Akışı adım kartları ya da tablo olarak gösterir. |
+| ❺ | Adım | Adımın adı, sonucu ve kipi; altında onaycılar, ne zaman istendiği, kararın tarihi ve açıklaması. |
+
+Adım etiketindeki **Kip** adımın nasıl sonuçlandığını söyler:
+
+| Kip | Adım ne zaman sonuçlanır |
+|---|---|
+| **Herhangi biri** | Bir onay yeter; kimse onaylamazsa ret. |
+| `Hepsi` | Herkes onaylamalı; bir ret yeter. |
+| **İlk karar** | İlk verilen karar geçer. |
+
+**Paralel dal** etiketli adımlar aynı anda yürür. Onaycı izindeyse adının altında vekili yazar, ör. **İzinde; vekili Murat Ece**; vekil karar verdiyse **… vekil olarak karar verdi** görünür.
+
+### Diyagram
+
+`Diyagram`, **Onay akışının diyagramı** penceresini açar. Kutular adımların şimdiki durumunu, oklardaki onay işareti akışın geçtiği yolu gösterir. Bir adıma basınca o adımın kararları yanda açılır. Sağ alttaki düğmelerle şemayı **Yakınlaştır**, `Uzaklaştır` ya da **Şemayı sığdır**.
+
+## Karar verme
+
+Kararınızın beklendiği adımda adınız ya da vekili olduğunuz kişinin satırı **Sizin kararınız** etiketiyle işaretlenir ve altında karar düğmeleri çıkar.
+
+![Kararınızın beklendiği adım](/img/teknisyen/ist2-onay-karar.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | **Karar bekliyor** | Adım henüz sonuçlanmadı. |
+| ❷ | **Sizin kararınız** | Bu satırda karar sizden bekleniyor. |
+| ❸ | Vekâlet | Onaycı izinde ve vekili sizsiniz; onun yerine karar veriyorsunuz. |
+| ❹ | `Onayla`, `Reddet` | Kararı verir. |
+
+`Onayla` ya da `Reddet`'e basınca açıklama penceresi açılır.
+
+![İsteği onaylayın penceresi](/img/teknisyen/ist2-onay-onayla.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | `Açıklama` | Zorunlu, en az 3 harf. Zaman çizelgesinde kararın gerekçesi olarak görünür. |
+| ❷ | `Onayla` | Kararı kaydeder. Ret penceresinde düğmenin adı `Reddet`'tir. |
+
+Adım ek istiyorsa pencerede **Bu adım ek ister** uyarısı çıkar; ek eklemeden karar verilemez. Gelişmiş akışta kararınız bekleniyorsa `Onayla` ve `Reddet` liste satırının menüsünde de bulunur.
+
+Adım revizeye açıksa karar düğmelerinin yanında **Revize iste** de görünür. Gerekçe yazmanız istenir; akış revize beklemeye geçer.
+
+## Zaman çizelgesi
+
+**Zaman çizelgesi** akışın her kararını bir satırda gösterir.
+
+![Onay zaman çizelgesi](/img/teknisyen/ist2-onay-zaman-cizelgesi.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | Satırı aç | Kararın ayrıntısını açar. |
+| ❷ | `Sonuç` | Onaycının kararı. |
+| ❸ | `İşlem` | Kararınızın beklendiği satırda `Onayla` ve `Reddet`. |
+
+Sütunlar: `Adım`, `Gönderen`, `Onaycı`, `İstendi`, `Sonuç`, **Karar tarihi**, `Açıklama`, `İşlem`.
+
+## Revize
+
+Bir onaycı revize istediğinde akış durur ve isteğin onay etiketi **Revize istendi** olur. Gerekçe akışın hâlinde yazar.
+
+![Revize bekleyen akış](/img/teknisyen/ist2-onay-revize.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | **1 kez revize istendi** | Bu akışta kaç kez revize istendiği. |
+| ❷ | **Revize bekliyor** | Onaycının gerekçesi ve akışın başlama tarihi. |
+| ❸ | **Yeniden onaya gönder** | İstenen düzeltmeyi yaptıktan sonra isteği aynı adıma yeniden gönderir. İsteğe bağlı bir not yazabilirsiniz; not zaman çizelgesinde görünür. |
+
+## Akışın diğer işlemleri
+
+Yetkiniz ve akışın hâline göre akışın üstünde şu düğmeler de çıkabilir:
+
+| İşlem | Ne yapar |
+|---|---|
+| `İnisiyatif` | Akışta inisiyatif açıksa bekleyen adımları tek kararla onaylar ya da reddeder. Hangi adımların karara bağlanacağını seçersiniz; retde açıklama zorunludur. Akış etiketlerinde **İnisiyatif açık** yazar. |
+| **Akışı yeniden çalıştır** | Onaylanmış akışı katalog öğesinin güncel tanımıyla baştan başlatır. Önceki kararlar geçmişte kalır. |
+
+## Onay aşamaları
+
+Eski aşama motorunu kullanan isteklerde sekme aşamaları tablo olarak gösterir.
+
+![Onay aşamaları](/img/teknisyen/ist2-onay-asamalar.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | **Kararınız bekleniyor** | Bu istekte kararınız bekleniyor; ancak eski aşama motorunda karar bu ekranda verilmez. Kararınızı ServiceCore'daki onay ekranından verin. |
+| ❷ | Aşamalar | Her aşamanın sırası, adı, türü, grubu ve durumu. Satırı açınca onaycılar görünür. |
+
+İstek kapatılır, silinir ya da birleştirilirse süren onay akışı iptal edilir. İstek yeniden açılsa da akış kendiliğinden yeniden başlamaz.

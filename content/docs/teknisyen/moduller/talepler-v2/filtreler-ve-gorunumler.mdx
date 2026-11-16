@@ -1,0 +1,62 @@
+---
+title: "Filtreler ve Görünümler"
+description: "İstek listesini filtreleme: temel ve gelişmiş filtre, hazır görünümler, görünümü kaydetme, farklı kaydetme ve yeni görünüm oluşturma."
+reviewed: "2026-11-16"
+owner: necatikekec
+---
+
+Görünüm, listenin kayıtlı bir hâlidir: araması, filtresi, sıralaması, sütunları ve sayfa boyu birlikte saklanır. Filtre ise o an listeye uyguladığınız koşuldur; kaydetmezseniz görünüm değişmez.
+
+## Hazır görünümler
+
+| Görünüm | Gösterdiği istekler |
+|---|---|
+| **Bütün istekler** | Silinmemiş bütün istekler. |
+| `Açık` | Açık ve beklemedeki istekler. |
+| `İsteklerim` | Size atanmış, açık ya da beklemedeki istekler. |
+| **Takip ettiklerim** | Takibe aldığınız istekler. |
+| **Onay bekleyenler** | Onay akışı süren ya da revize bekleyen istekler. |
+| **Onayımı bekleyenler** | Akışta sizin kararınızın beklendiği istekler. |
+
+## Filtreleme
+
+`Filtrele`'ye basınca filtre paneli açılır. Soldan bir alan seçin, sağda değerlerini işaretleyin. Liste her seçimde hemen güncellenir.
+
+![Filtre paneli](/img/teknisyen/ist2-filtre-temel.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | `Temel`, `Gelişmiş` | `Temel`'de hazır alanlardan değer seçilir. `Gelişmiş`'te `Filtre ekleyin` ile koşul yazılır: **İstek No**, `Konu`, **Oluşturulma günü**, **Hedef çözüm günü**. |
+| ❷ | Alanlar | `Durum`, `Aşama`, **Onay durumu**, **Onayımı bekliyor**, **Katalog öğesi**, `SLA`, `Öncelik`, **Teknisyen grubu**, `Teknisyen`, **Talep eden**, `Hesap`, `Aciliyet`, **İş etkisi**, `Kaynak`, `Sözleşme`, **Oluşturulduğu tarih**, **Takip ettiklerim**, **Okunmamış mı?**, **Arşivlenmiş mi?**, **Silinmiş mi?** |
+| ❸ | Değer arama | Uzun değer listelerinde arar. |
+| ❹ | Değerler | Birden çok değer işaretlenebilir. Yanındaki sayı o değerdeki istek sayısıdır. |
+
+Panelin altındaki `Tümünü temizle` bütün filtreleri kaldırır. Silinmiş istekler listede görünmez; görmek için **Silinmiş mi?** filtresini kullanın. Arşivlenmiş istekleri ayırmak için **Arşivlenmiş mi?** filtresi vardır.
+
+Filtre adres çubuğuna da yazılır. Adresi paylaşarak bir arkadaşınıza aynı listeyi gösterebilirsiniz.
+
+## Görünümü kaydetme
+
+Bir görünümde filtreyi, sıralamayı ya da sütunları değiştirince sekmelerin sağında iki düğme belirir.
+
+![Değiştirilmiş görünüm](/img/teknisyen/ist2-gorunum-kaydet.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | Etkin görünüm | Değiştirdiğiniz görünüm. |
+| ❷ | `Sıfırla` | Değişiklikleri atar, görünümün kayıtlı hâline döner. |
+| ❸ | **Farklı kaydet** | Hazır görünümlerde görünür; değişikliği yeni bir görünüm olarak kaydeder. Kendi görünümünüzde düğmenin adı `Kaydet`'tir ve görünümün üzerine yazar. |
+| ❹ | `Filtrele` | Uygulanan filtre. |
+
+Kendi görünümünüzün sekmesindeki menüde **Yeniden adlandır** ve `Sil` bulunur. Hazır görünümler değiştirilemez ve silinemez. Görünümler kişiseldir, başkalarıyla paylaşılmaz.
+
+## Görünüm oluşturma
+
+Görünüm sekmelerinin sonundaki `+` düğmesi o anki listeyi yeni bir görünüm olarak kaydeder.
+
+![Görünüm oluşturun penceresi](/img/teknisyen/ist2-gorunum-olustur.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | **Görünüm adı** | Sekmede görünecek ad. |
+| ❷ | **Görünüm oluştur** | Görünümü kaydeder ve sekmesini açar. |

@@ -1,0 +1,82 @@
+---
+title: "İstek Listesi"
+description: "İstek listesi: araç çubuğu, sütunlar, satırdaki etiketler, satır menüsü, yan panelde önizleme, Excel'e aktarma ve sayfalama."
+reviewed: "2026-11-16"
+owner: necatikekec
+---
+
+Kenar çubuğunda `İstekler`'e basınca istek listesi açılır. Liste varsayılan olarak `Bütün istekler` görünümünde, en yeni istek en üstte olacak şekilde gelir.
+
+## Ekranın bölümleri
+
+![İstek listesinin bölümleri](/img/teknisyen/ist2-liste-yerlesim.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | Görünüm sekmeleri | `Bütün istekler`, `Açık`, `İsteklerim`, **Takip ettiklerim**, **Onay bekleyenler**, **Onayımı bekleyenler** ve sizin kaydettiğiniz görünümler. |
+| ❷ | `+` | Yeni görünüm oluşturur. Bkz. [Filtreler ve Görünümler](/docs/teknisyen/moduller/talepler-v2/filtreler-ve-gorunumler#görünüm-oluşturma). |
+| ❸ | `Filtrele` | Listeyi alan alan filtreler. |
+| ❹ | Arama | Konuya ya da istek numarasına göre arar. |
+| ❺ | `Yenile` | Listeyi yeniden yükler. Yanındaki yazı son yüklemenin ne zaman yapıldığını gösterir. |
+| ❻ | `Diğer işlemler` | `Excel olarak indir`: görünümün ve filtrenin bütün isteklerini indirir, yalnız ekrandaki sayfayı değil. |
+| ❼ | `Sütunlar` | Gösterilecek sütunları seçer. |
+| ❽ | Sayfalama | Sayfa başına 20, 50 ya da 100 satır; toplam istek sayısı ve sayfalar arasında geçiş. |
+
+Bir sütun başlığına basınca liste o sütuna göre sıralanır; ikinci basış sırayı tersine çevirir.
+
+## Satırdaki bilgiler
+
+![İstek satırları](/img/teknisyen/ist2-liste-satirlar.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | `Yeni` | İstek henüz açılıp okunmadı. İsteği açınca etiket kalkar. |
+| ❷ | `Takipte` | İsteği takip ediyorsunuz. |
+| ❸ | `Durum` | İsteğin durumu. Etiketin rengi aşamayı gösterir. |
+| ❹ | `Onay` | Onay durumu, ör. **Onayınızı bekliyor** ya da **Onaylandı · 2/2**. |
+| ❺ | `SLA` | `Zamanında`, `Riskte`, `İhlal`, `Beklemede` ya da `SLA yok`. |
+| ❻ | `⋯` | Satır menüsü. Satıra sağ tıklayınca da açılır. |
+
+Konunun yanında açıklamanın ilk satırı soluk renkle görünür. Başka bir isteğe birleştirilmiş isteklerde konunun önünde hedef isteğin numarası yer alır.
+
+### Sütunlar
+
+![Sütunlar menüsü](/img/teknisyen/ist2-liste-sutunlar.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | Arama | Sütunu adıyla bulur. |
+| ❷ | Gösterilen sütunlar | Varsayılan sütunlar: `No`, `Konu`, `Durum`, `Onay`, `Katalog`, `Grup`, `Teknisyen`, **Talep eden**, `SLA`, `Açılış`. |
+| ❸ | Eklenebilen sütunlar | `Öncelik`, `Şirket`, **Adına açılan**, `Aciliyet`, `İş etkisi`, `Sözleşme`, `Kaynak`, `Etiketler`, **Ek sayısı**, **Not sayısı**, **Kapatma tarihi**. |
+
+Görünüm kaydedilirken sütun seçimi de saklanır.
+
+## Satır menüsü
+
+![Satır menüsü](/img/teknisyen/ist2-liste-satir-menu.png)
+
+| # | İşlemler | Ne işe yarar |
+|---|---|---|
+| ❶ | **Tam sayfada aç**, `Güncelle` | İsteği kendi sayfasında açar; `Güncelle` bu isteğin alanlarını tek pencerede değiştirir. |
+| ❷ | `Onayla`, `Reddet` | Yalnız gelişmiş onay akışında sizin kararınız beklenirken görünür. Bkz. [Onay](/docs/teknisyen/moduller/talepler-v2/onay). |
+| ❸ | **Bana ata**, `Kapat`, **Durumu değiştir** | Atama ve durum işlemleri. Bkz. [Durumlar ve Kapatma](/docs/teknisyen/moduller/talepler-v2/durumlar-ve-kapatma). |
+| ❹ | `Klonla`, `Paylaş`, `Otomasyonlar`, `Yazdır` | Kayıt işlemleri. Bkz. [İstek Sayfası](/docs/teknisyen/moduller/talepler-v2/detay#diğer-işlemler). |
+| ❺ | **Takip et**, `Sil` | İsteği takibe alır ya da siler. |
+
+Menü isteğin hâline göre değişir: kapalı istekte `Kapat` yerine **Yeniden aç** ve `Arşivle` görünür; takip ettiğiniz istekte **Takip et** yerine **Takibi bırak** yazar.
+
+## Yan panelde önizleme
+
+İstek numarasına basınca istek, listenin üstünde bir yan panelde açılır. Liste arkada kalır; paneli kapatınca kaldığınız yere dönersiniz.
+
+![İsteğin yan paneli](/img/teknisyen/ist2-liste-onizleme.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | **Tam sayfada aç** | İsteği kendi sayfasında açar. Bkz. [İstek Sayfası](/docs/teknisyen/moduller/talepler-v2/detay). |
+| ❷ | **Takip et** | İsteği takibe alır. Takip ettiğiniz istekler `Takip ettiklerim` görünümünde toplanır. |
+| ❸ | Durum satırı | Durum, onay ve SLA. |
+| ❹ | `Bilgiler` | Katalog öğesi, talep eden, öncelik, teknisyen, grup, aciliyet, iş etkisi, sözleşme ve tarihler. Altında açıklama, form yanıtları ve ekler gelir. |
+| ❺ | `×` | Paneli kapatır (`İsteği kapat`); isteğin durumuna dokunmaz. |
+
+Panel salt okunurdur; isteği değiştirmek için tam sayfada açın.

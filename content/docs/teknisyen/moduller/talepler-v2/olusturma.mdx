@@ -1,0 +1,51 @@
+---
+title: "İstek Oluşturma"
+description: "Yeni istek hizmet katalogundan açılır: katalogda öğe bulma, istek formu, talep eden ve atama alanları."
+reviewed: "2026-11-16"
+owner: necatikekec
+---
+
+Yeni istek her zaman bir katalog öğesinden açılır. Listedeki `Yeni istek` düğmesi ya da kenar çubuğundaki `Katalog` sizi kataloga götürür; bir öğeye basınca istek formu yan panelde açılır.
+
+## Katalogda öğe bulma
+
+![Katalog ekranı](/img/teknisyen/ist2-olustur-katalog.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | Kategori ağacı | `Tüm öğeler`, `Favorilerim` ve kategoriler. Parantezdeki sayı kategorideki öğe sayısıdır. |
+| ❷ | **Katalogda ara** | Katalogda öğe arar. |
+| ❸ | `Sıra` | Öğelerin sırası, ör. **Önerilen sıra**. |
+| ❹ | `Kartlar`, `Liste` | Öğeleri kart ya da liste olarak gösterir. |
+| ❺ | Öğe kartı | Öğenin adı, kısa açıklaması ve kategori yolu. Basınca istek formu açılır. |
+| ❻ | **Kategorileri yönet**, **Öğe ekle** | Katalog yönetimi. Yalnız katalogu düzenleme yetkisi olanlar görür. |
+
+## İstek formu
+
+![İstek formu](/img/teknisyen/ist2-olustur-form.png)
+
+| # | Bölüm | Ne işe yarar |
+|---|---|---|
+| ❶ | **Katalog öğesi** | Seçtiğiniz öğe, etiketleri ve açıklaması. Yıldız öğeyi favorilerinize ekler. |
+| ❷ | **Onay gerekir** | Öğe onay istiyor; istek açılınca onay akışı başlar. |
+| ❸ | `İstek` | `Konu` ve `Açıklama`. İkisi de öğeden dolu gelir, değiştirebilirsiniz. Konu zorunludur, en çok 250 karakter. |
+| ❹ | `Vazgeç`, **İsteği aç** | `İsteği aç` isteği kaydeder. |
+
+**Öğeyi düzenle** ve **Öğeyi sil** katalog yönetimi içindir; yalnız yetkisi olanlar görür.
+
+### Talep eden ve atama
+
+Formun alt bölümü isteğin kimin için açıldığını ve kime atanacağını belirler.
+
+![Talep eden ve atama bölümü](/img/teknisyen/ist2-olustur-atama.png)
+
+| # | Alan | Ne işe yarar |
+|---|---|---|
+| ❶ | **Talep eden** | Zorunlu. İsteği talep eden kullanıcı; adı ya da e-posta adresiyle aranır. |
+| ❷ | **Başkası adına** | İstek başka biri için açılıyorsa o kişi. Talep edenle aynı kişi olamaz. |
+| ❸ | `Aciliyet`, **İş etkisi** | İsteğin ne kadar acil olduğu ve işe etkisi. |
+| ❹ | **Teknisyen grubu**, `Teknisyen` | Atama. Grup öğeden dolu gelebilir; teknisyen listesinde yalnız seçili grubun teknisyenleri çıkar. |
+
+`İsteği aç`'a basınca ekranın altında **#SR… açıldı** bildirimi çıkar. Bildirimdeki `İsteği aç` yeni isteği açar.
+
+<Callout type="info" title="İPUCU">Var olan bir isteğe benzer bir istek açmak için isteği klonlayın. Klon aynı formu kaynak isteğin alanlarıyla dolu açar; notlar, ekler, form yanıtları ve onay kararları kopyalanmaz. Bkz. [İstek Sayfası](/docs/teknisyen/moduller/talepler-v2/detay#diğer-işlemler).</Callout>

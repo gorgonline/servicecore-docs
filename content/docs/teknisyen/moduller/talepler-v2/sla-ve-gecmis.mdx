@@ -1,0 +1,53 @@
+---
+title: "SLA ve Geçmiş"
+description: "İsteğin SLA sekmesinde politika, cevap ve çözüm hedefleri, beklemeler; Geçmiş sekmesinde değişiklik akışı ve harcanan süre."
+reviewed: "2026-11-16"
+owner: necatikekec
+---
+
+## SLA
+
+`SLA` sekmesi isteğin hizmet seviyesi hedeflerini gösterir. Sekme yalnız SLA'sı olan açık ya da beklemedeki isteklerde görünür. SLA politikası isteğin sözleşmesinden gelir.
+
+![SLA sekmesi](/img/teknisyen/ist2-sla.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | Bekleme bildirimi | İstek beklemedeyse beklemenin ne zaman başladığı ve ne kadar sürdüğü. Beklemede SLA sayacı durur; hedefler bekleme bitince yeniden hesaplanır. |
+| ❷ | **SLA'yı yeniden hesapla** | Hedefleri isteğin güncel bilgileriyle yeniden hesaplar. Yalnız düzenlenebilir isteklerde görünür. |
+| ❸ | **Cevap hedefi** | Hedefin tutup tutmadığı, hedef sürenin ne kadarının geçtiği, hedef tarih ve ilk cevabın zamanı. |
+
+`Politika` bölümünde politikanın adı ve türü (**Mesai saatli** ya da 7/24), SLA'nın hâli, toplam bekleme ve son hesaplama zamanı yazar. **Çözüm hedefi** cevap hedefiyle aynı biçimdedir. Altta `Beklemeler` ve politikanın `Koşullar`'ı listelenir.
+
+İsteğin SLA durumu listede ve başlıkta da görünür:
+
+| Durum | Anlamı |
+|---|---|
+| `Zamanında` | Hedefe süre var. |
+| `Riskte` | Hedefe az kaldı. |
+| `İhlal` | Hedef aşıldı; yanında ne kadar geçtiği yazar. |
+| `Beklemede` | İstek beklemede, sayaç durdu; yanında kalan süre yazar. |
+| **SLA yok** | İsteğin SLA'sı yok. |
+
+## Geçmiş
+
+`Geçmiş` sekmesi istek üzerinde yapılan her şeyi kaydeder: alan değişiklikleri, durum geçişleri, atamalar, onay olayları, paylaşma ve arşivleme.
+
+![Geçmiş sekmesinin akışı](/img/teknisyen/ist2-gecmis.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | `Akış`, **Harcanan süre** | Değişiklik akışı ile süre tabloları arasında geçer. |
+| ❷ | Kayıt | Kimin ne yaptığı, değişen alanın eski ve yeni değeri, ne zaman olduğu. Kayıtlar gün gün gruplanır. Sistemin yaptıkları dişli simgesiyle gösterilir. |
+
+### Harcanan süre
+
+**Harcanan süre** isteğin ne kadar zamanı hangi aşamada, hangi durumda, hangi grupta ve kimde geçirdiğini gösterir.
+
+![Harcanan süre tabloları](/img/teknisyen/ist2-gecmis-sure.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | **Harcanan süre** | Süre tablolarını açar: `Aşama`, `Durum`, **Teknisyen grubu**, `Teknisyen`. |
+| ❷ | **Mesai içi** | Yalnız mesai saatlerinde geçen süre. |
+| ❸ | `Takvim` | Gece ve tatiller dahil, takvimde geçen süre. |

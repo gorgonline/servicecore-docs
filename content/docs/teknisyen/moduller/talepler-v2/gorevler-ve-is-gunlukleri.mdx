@@ -1,0 +1,48 @@
+---
+title: "Görevler ve İş Günlükleri"
+description: "İsteğin Görevler ve İş günlükleri sekmeleri: görev listesi, görev onayı, öncül görevler, iş günlüğü girme ve harcanan süre özeti."
+reviewed: "2026-11-16"
+owner: necatikekec
+---
+
+Bir isteği karşılamak birden çok kişinin işini gerektirebilir: donanımı tedarik etmek, kurmak, kullanıcıya teslim etmek. Bu işler isteğin görevleridir. Katalog öğesinde hazır görevler tanımlıysa istek açılırken görevler kendiliğinden eklenir.
+
+## Görevler
+
+![Görevler sekmesi](/img/teknisyen/ist2-gorevler.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | Süre özeti | **Toplam süre**, **İsteğin iş günlükleri**, **Aktif görevler** ve **Tamamlanan görevler** için girilen süreler. |
+| ❷ | Görev filtresi | `Aktif`, `Tamamlanmış`, **Onay bekleyen**, **Öncül bekleyen**. Parantezdeki sayı görev adedidir. |
+| ❸ | **Akış diyagramı** | Görevlerin sırasını ve birbirine bağlılığını şema olarak gösterir. |
+| ❹ | **Görev ekle** | Yeni görev açar. |
+| ❺ | Görev | Numara, başlık, durum, atanan kişi, son tarih, grup ve harcanan süre. Satırın başındaki ok ayrıntıyı açar. |
+| ❻ | `⋯` | Görevin işlemleri: `Düzenle`, **İş günlüğü ekle**, `Tamamla`, `Yeniden aç`, `Sil`. |
+
+**Öncül bekleyen** görevler, kendilerinden önce bitmesi gereken bir görevi bekler. Öncül görev tamamlanmadan bu görevler tamamlanamaz; menüde `Tamamla` pasif görünür ve altında **Önce öncül görev tamamlanmalı.** yazar.
+
+### Görev onayı
+
+Bazı görevler tamamlanmadan önce onay ister. Bu görevler **Onay bekleyen** filtresinde toplanır.
+
+![Onay bekleyen görevin menüsü](/img/teknisyen/ist2-gorev-onay.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | `Tamamla` | Pasiftir: **Görev onay bekliyor; onaylanınca tamamlanır.** |
+| ❷ | `Onayla`, `Reddet` | Görevin onaycısıysanız kararınızı verir. Onaylanan görev tamamlanır. |
+
+## İş günlükleri
+
+`İş günlükleri` sekmesi istek üzerinde harcanan süreyi listeler.
+
+![İş günlükleri sekmesi](/img/teknisyen/ist2-is-gunlukleri.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | Filtre | `Hepsi`, **İsteğin** (doğrudan isteğe girilenler), **Görevlerin** (görevlere girilenler). |
+| ❷ | **İş günlüğü ekle** | Harcadığınız süreyi kaydeder. |
+| ❸ | İş günlüğü | `Kişi`, `Gün`, `Süre`, `Tür`, `Açıklama` ve günlüğün girildiği `Görev`. |
+
+Bir göreve iş günlüğü girmek için görevin `⋯` menüsünde **İş günlüğü ekle**'yi de kullanabilirsiniz; günlük hem görevin hem isteğin toplamına eklenir.

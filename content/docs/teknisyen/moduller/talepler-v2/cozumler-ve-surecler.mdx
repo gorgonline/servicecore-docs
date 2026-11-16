@@ -1,0 +1,62 @@
+---
+title: "Çözümler ve Süreçler"
+description: "İsteğin Çözümler sekmesinde çözüm türleri ve bilgi bankası; Süreçler sekmesinde olay, değişiklik, proje, varlık ve hizmet bağları."
+reviewed: "2026-11-16"
+owner: necatikekec
+---
+
+## Çözümler
+
+`Çözümler` sekmesi isteği karşılamak için önerilen ve uygulanan çözümleri tutar. Bir çözüm üç türden birindedir: **Önerilen**, **Uygulanan**, **İşe yarayan**.
+
+![Çözümler sekmesi](/img/teknisyen/ist2-cozumler.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | Tür filtresi | `Hepsi`, `Önerilen`, `Uygulanan`, **İşe yarayan**. |
+| ❷ | **Çözüm ekle** | Yeni çözüm yazar ya da bilgi bankasından seçer. |
+| ❸ | Çözüm | Konu, tür, teknisyen, oluşturma tarihi ve türün değiştiği tarih. Satırı açınca çözümün metni görünür. |
+| ❹ | `⋯` | Çözümün işlemleri. |
+
+### Çözümün işlemleri
+
+![Çözümün menüsü](/img/teknisyen/ist2-cozum-menu.png)
+
+| # | İşlemler | Ne işe yarar |
+|---|---|---|
+| ❶ | **İşe yaradı say**, **Önerilen türüne geri al** | Çözümün türünü bir ileri ya da bir geri alır. Önerilen çözümde ilk işlem **Uygulandı say**'dır. |
+| ❷ | **Bilgi bankasına ekle** | Çözümü bilgi bankasına makale olarak ekler. |
+
+Menüde ayrıca `Düzenle` ve `Sil` bulunur.
+
+**Çözüm ekle** penceresinde **Bilgi bankasından seçin** ile var olan bir makaleyi çözüm olarak ekleyebilirsiniz. Pencerede isteğin durumunu da değiştirebilirsiniz; bunun için **Kaydet ve durumu değiştir**'i kullanın.
+
+## Süreçler
+
+`Süreçler` sekmesi isteğin başka kayıtlarla bağlarını listeler.
+
+![Süreçler sekmesi](/img/teknisyen/ist2-surecler.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | **Kayıt bağla** | Var olan bir kaydı isteğe bağlar ya da yeni kayıt açıp bağlar. |
+| ❷ | `Tür` | Bağlı kaydın türü: `Proje`, **Sürekli iyileştirme**, `Değişiklik`, `Olay`, `İstek`, `Varlık`, `Hizmet`. |
+| ❸ | `Bağ` | İki istek arasındaki bağda bağı hangi isteğin kurduğu: **Bu istek bağladı** ya da **Öbür istek bağladı**. |
+| ❹ | `⋯` | **Bağı kaldır**. |
+
+### Kayıt bağlama
+
+![Kayıt bağlayın penceresi](/img/teknisyen/ist2-surec-bagla.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | **Kaydın türü** | Bağlanacak kaydın türü. |
+| ❷ | Arama | Kaydı numarası ya da konusuyla bulur. |
+| ❸ | Sonuçlar | Basınca kayıt seçilir. |
+| ❹ | `Seçilenler` | Bağlanacak kayıtlar. Pencerenin altındaki `Bağla` hepsini bağlar. |
+
+İsteğin `Proje`, `Değişiklik` ve **Sürekli iyileştirme** türlerinden yalnız birer bağı olur. Bu türlerde bağ varken seçtiğiniz kayıt var olanın yerine geçer; pencere bunu baştan söyler ve bağlamadan önce **… bağı değiştirilsin mi?** diye sorar. Olay türünde aynı anda birden çok olay seçebilirsiniz.
+
+Bir olay yalnız bir isteğe bağlanabilir. Başka bir isteğe bağlı olay listede **Başka isteğe bağlı (#SR…)** notuyla görünür ve seçilemez.
+
+Bağlanacak olay henüz yoksa `Olay` türünde **Yeni olay oluştur** ile yeni bir olay açıp isteğe bağlayabilirsiniz.

@@ -1,0 +1,17 @@
+{
+  "title": "İSTEK (YENİ ARAYÜZ)",
+  "pages": [
+    "genel-bakis",
+    "liste",
+    "filtreler-ve-gorunumler",
+    "olusturma",
+    "detay",
+    "onay",
+    "gorusmeler",
+    "gorevler-ve-is-gunlukleri",
+    "cozumler-ve-surecler",
+    "sla-ve-gecmis",
+    "durumlar-ve-kapatma",
+    "toplu-islemler"
+  ]
+}

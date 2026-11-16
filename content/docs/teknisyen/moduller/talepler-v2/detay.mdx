@@ -1,0 +1,70 @@
+---
+title: "İstek Sayfası"
+description: "İsteğin kendi sayfası: başlık, işlem düğmeleri, sekmeler, Detaylar sekmesinde içerik, ekler ve özellikler, diğer işlemler menüsü."
+reviewed: "2026-11-16"
+owner: necatikekec
+---
+
+İstek sayfası, listede **Tam sayfada aç**'a basınca ya da isteğin adresiyle açılır. İsteği değiştirmek, onaylamak ve kapatmak bu sayfada yapılır.
+
+## Ekranın bölümleri
+
+![İstek sayfasının bölümleri](/img/teknisyen/ist2-detay-yerlesim.png)
+
+| # | Bölüm | Ne işe yarar |
+|---|---|---|
+| ❶ | Başlık | İsteğin konusu, durumu ve onay durumu. Takip ettiğiniz istekte `Takipte` etiketi de görünür. |
+| ❷ | Bilgi satırı | İstek numarası, SLA durumu ve öncelik. Çağrıdan açılan istekte kaynak çağrının numarası da yazar. |
+| ❸ | İşlem düğmeleri | **Bana ata**, `Kapat` (kapalı istekte **Yeniden aç**), **Bağlantıyı kopyala** ve `⋯` menüsü. Bkz. [Diğer işlemler](#diğer-işlemler). |
+| ❹ | Sekmeler | `Detaylar`, `Onay`, `Görüşmeler`, `Görevler`, **İş günlükleri**, `Çözümler`, `Süreçler`, `SLA`, `Geçmiş`. Yanlarındaki sayı kayıt adedidir. |
+| ❺ | `İçerik` | İsteğin konusu ve açıklaması. |
+| ❻ | **Katalog öğesi** | İsteğin açıldığı öğe ve etiketleri. Öğenin adına basınca katalogda açılır. |
+| ❼ | `Özellikler` | Talep eden, durum, aciliyet, iş etkisi, atama, sözleşme ve hedef tarihler. Bkz. [Özellikler](#özellikler). |
+| ❽ | Ekler | **Ek ekle** alanına dosya sürükleyin ya da basıp seçin; her dosya en çok 10 MB. Eklenen dosyalar altta listelenir. |
+
+`SLA` sekmesi yalnız SLA'sı olan açık isteklerde görünür. Onay sekmesindeki sayı sizin kararınızın beklendiğini gösterir.
+
+## Detaylar sekmesi
+
+İçerik ve özelliklerdeki bir alanı değiştirince **Kaydedilmemiş değişiklikler var.** yazısıyla `Kaydet` ve `Vazgeç` düğmeleri çıkar. `Kaydet` değişiklikleri yazar, `Vazgeç` geri alır.
+
+### Özellikler
+
+| Alan | Açıklama |
+|---|---|
+| **Talep eden** | Zorunlu. Altında kişinin ünvanı, şirketi ve VIP olup olmadığı yazar. |
+| **Başkası adına** | İstek başka biri için açıldıysa o kişi. Talep edenle aynı olamaz. |
+| `Durum` | Yalnız açık ve beklemedeki durumlar seçilebilir. İsteği kapatmak için `Kapat`'ı kullanın. |
+| `Aciliyet`, **İş etkisi** | İsteğin aciliyeti ve işe etkisi. |
+| **Teknisyen grubu**, `Teknisyen` | Atama. Teknisyen listesinde yalnız seçili grubun teknisyenleri çıkar. |
+| `Sözleşme` | İsteğin SLA politikası sözleşmeden gelir. |
+| **Hedef cevap**, **Hedef çözüm** | Hedef tarihler. İsteğin oluşturulma tarihinden önce olamaz. |
+
+Alanların altında talep edenin ve varsa adına açılan kişinin iletişim bilgileri gösterilir.
+
+<Callout type="warn" title="DİKKAT">Siz sayfayı açtıktan sonra başka biri isteği değiştirirse kaydederken **Bu istek siz açtıktan sonra değişti** uyarısı çıkar. **Değişikliklerimi göster** sizin yaptığınız değişiklikleri listeler; **Yeniden yükle** isteğin son hâlini yükler, sonra değişikliğinizi yeniden yaparsınız.</Callout>
+
+## Diğer işlemler
+
+Başlıktaki `⋯` düğmesi isteğin diğer işlemlerini açar.
+
+![Diğer işlemler menüsü](/img/teknisyen/ist2-detay-diger.png)
+
+| # | İşlemler | Ne işe yarar |
+|---|---|---|
+| ❶ | **Bana ata**, `Kapat`, **Durumu değiştir** | Atama ve durum işlemleri. Bkz. [Durumlar ve Kapatma](/docs/teknisyen/moduller/talepler-v2/durumlar-ve-kapatma). |
+| ❷ | `Klonla`, `Paylaş`, `Otomasyonlar`, `Yazdır` | Aşağıda. |
+| ❸ | **Takip et**, `Sil` | Takibe alma ve silme. |
+
+| İşlem | Ne olur |
+|---|---|
+| **Bana ata** | **İsteği kendinize atayın** penceresi açılır; onaylayınca teknisyen siz olursunuz. İstek zaten size atanmışsa düğme görünmez. |
+| `Klonla` | **İsteği klonla** paneli, bu isteğin alanlarıyla dolu yeni istek formunu açar. Notlar, ekler, form yanıtları ve onay kararları kopyalanmaz. |
+| `Paylaş` | **İsteği paylaşın** penceresinde en az bir teknisyen seçip isteğe bağlı bir mesaj yazarsınız. |
+| `Otomasyonlar` | **Otomasyon çalıştırın** penceresinde kurumunuzda tanımlı otomasyonlardan birini seçip `Çalıştır`'a basarsınız. Her otomasyonun altında ne yaptığı yazar. |
+| `Yazdır` | İsteğin çıktısını yeni sekmede PDF olarak açar. |
+| **Takip et** | İsteği `Takip ettiklerim` görünümüne ekler. Takip ettiğiniz istekte işlemin adı **Takibi bırak** olur. |
+| `Sil` | İsteği siler. Ekranın altındaki bildirimde `Geri al` ile hemen geri getirebilirsiniz. |
+| **Bağlantıyı kopyala** | İsteğin adresini panoya kopyalar. |
+
+Kapalı istekte menüde **Yeniden aç** ve `Arşivle` de bulunur. Bkz. [Durumlar ve Kapatma](/docs/teknisyen/moduller/talepler-v2/durumlar-ve-kapatma).

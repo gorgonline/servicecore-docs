@@ -1,0 +1,54 @@
+---
+title: "Toplu İşlemler"
+description: "Birden çok isteği birlikte güncelleme, kendine atama, kapatma, yeniden açma, birleştirme ve silme."
+reviewed: "2026-11-16"
+owner: necatikekec
+---
+
+Listede satırların başındaki kutuları işaretleyince listenin üstünde toplu işlem şeridi çıkar. Başlıktaki kutu sayfadaki bütün istekleri seçer.
+
+![Toplu işlem şeridi](/img/teknisyen/ist2-toplu-serit.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | **2 istek seçildi** | Seçili istek sayısı. Yanındaki **Tümünü seç** sayfadaki seçilebilir bütün istekleri seçer. |
+| ❷ | İşlemler | Seçili isteklere uyan işlemler. Açık isteklerde `Güncelle`, **Bana ata**, `Kapat`, `Birleştir`, `Sil`; kapalı isteklerde **Yeniden aç** ve `Sil`. |
+| ❸ | `Vazgeç` | Seçimi kaldırır. |
+
+Silinmiş ve arşivlenmiş isteklerin kutusu pasiftir; üzerine gelince nedeni yazar, ör. **Arşivlenmiş istekte toplu işlem yok.**
+
+## Güncelleme
+
+`Güncelle` yan panelde seçili isteklerin alanlarını birlikte değiştirir.
+
+![İstekleri güncelleyin paneli](/img/teknisyen/ist2-toplu-guncelle.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | `Durum` | Yalnız açık ve beklemedeki durumlar; kapatmak için `Kapat`'ı kullanın. |
+| ❷ | Diğer alanlar | `Aciliyet`, **İş etkisi**, **Teknisyen grubu**, `Teknisyen`, `Sözleşme`. |
+
+Her alan **Değiştirme** ile başlar. Boş bıraktığınız alan değişmez; seçtiğiniz değer seçili isteklerin hepsine yazılır. Hiçbir alan seçmeden `Güncelle`'ye basarsanız **Alan seçilmedi** uyarısı çıkar.
+
+## Kapatma, yeniden açma, atama ve silme
+
+| İşlem | Pencere | Ne istenir |
+|---|---|---|
+| `Kapat` | **n isteği kapatın** | **Kapatma durumu** ve zorunlu **Kapatma yorumu**. Onay akışı süren istekler varsa akışların iptal edileceği yazar. |
+| **Yeniden aç** | **n isteği yeniden açın** | **Yeni durum**. |
+| **Bana ata** | **n isteği kendinize atayın** | Onay. Seçili isteklerin teknisyeni siz olursunuz. |
+| `Sil` | **n isteği silin** | Onay. Bildirimdeki `Geri al` silmeyi geri alır. |
+
+## Birleştirme
+
+Aynı konuda açılmış istekleri tek istekte toplamak için birleştirin. Seçtiğiniz hedef istek açık kalır; öbürleri kapanır ve hedefin bağlantısını gösterir.
+
+![İstekleri birleştirin penceresi](/img/teknisyen/ist2-toplu-birlestir.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | **Hedef istek** | İşin süreceği istek. Kapalı bir istek hedef olamaz. |
+| ❷ | Taşınacaklar | Üç kutu, sırasıyla öbür isteklerin notlarını, bağlarını ve görevlerini hedefe taşır. Üçü de işaretli gelir. |
+| ❸ | `Birleştir` | İstekleri birleştirir. |
+
+Birleştirmek için en az iki istek seçmelisiniz. Birleştirilen isteklerin süren onay akışları iptal edilir. Görevler taşınmazsa birleştirilen isteğin açık görevleri tamamlanır.

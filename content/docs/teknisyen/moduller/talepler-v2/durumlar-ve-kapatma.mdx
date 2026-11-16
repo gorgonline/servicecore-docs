@@ -1,0 +1,83 @@
+---
+title: "Durumlar ve Kapatma"
+description: "İsteğin durumunu değiştirme, kapatma, kapanış kuralları, yeniden açma, arşivleme, silme ve birleştirilmiş istekler."
+reviewed: "2026-11-16"
+owner: necatikekec
+---
+
+Durumlar ve aşamaları için bkz. [Genel Bakış](/docs/teknisyen/moduller/talepler-v2/genel-bakis#durumlar-ve-aşamalar). Bu sayfa durumların nasıl değiştiğini anlatır.
+
+| İşlem | Nereden | Ne olur |
+|---|---|---|
+| **Durumu değiştir** | `⋯` menüsü, `Detaylar` sekmesindeki `Durum` alanı | İstek açık ya da beklemedeki başka bir duruma geçer. |
+| `Kapat` | Başlıktaki düğme, `⋯` menüsü | İstek kapalı bir duruma geçer. Kapatma yorumu zorunludur. |
+| **Yeniden aç** | Kapalı istekte başlıktaki düğme | İstek seçtiğiniz açık ya da beklemedeki duruma döner. |
+| `Arşivle` | Kapalı istekte `⋯` menüsü | İstek salt okunur olur. Geri alınamaz. |
+| `Sil` | `⋯` menüsü | İstek listeden kalkar; hemen `Geri al` ile geri getirilebilir. |
+
+Durumu değiştir ile ya da `Detaylar` sekmesinden isteği kapatamazsınız; kapalı durumlar orada seçilemez.
+
+## Durumu değiştirme
+
+![Durumu değiştirin penceresi](/img/teknisyen/ist2-durum-degistir.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | **Şimdiki durum** | İsteğin şu anki durumu. |
+| ❷ | **Yeni durum** | Açık ve beklemedeki durumlar. `Değiştir` ile kaydedilir. |
+
+## İsteği kapatma
+
+![İsteği kapatın penceresi](/img/teknisyen/ist2-kapat.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | **Kapatma durumu** | `Tamamlandı` ya da **İptal edildi**. |
+| ❷ | **Onay akışı iptal edilecek** | İsteğin onay akışı sürüyorsa çıkar. İstek kapanınca akış iptal edilir; onaycılar karar veremez ve istek yeniden açılsa da akış kendiliğinden başlamaz. |
+| ❸ | **Kapatma yorumu** | Zorunlu, en çok 2.000 karakter. Yorum `Görüşmeler`'e not olarak eklenir. |
+| ❹ | `Kapat` | İsteği kapatır. |
+
+İsteğin açık görevleri varsa pencerede **Açık görevler var** uyarısı çıkar ve düğmenin adı **Görevleri tamamla ve kapat** olur: onaylarsanız açık görevler tamamlanır, sonra istek kapanır.
+
+### Kapanış kuralları
+
+Kurumunuzda kapanış kuralı tanımlıysa kural sağlanmadan istek kapanmaz. Pencerede hangi kuralın sağlanmadığı yazar.
+
+![Kapanış kuralı sağlanmadı](/img/teknisyen/ist2-kapat-kural.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | **Kapanış kuralları sağlanmadı** | Eksik olan alan ve yapılması gereken, ör. **Teknisyen: Kapatmak için teknisyen atayın.** |
+| ❷ | **Detaylar'a git** | `Detaylar` sekmesini açar; eksik alanı doldurup yeniden kapatın. |
+
+## Kapalı istek
+
+Kapalı istek değiştirilemez. Sayfanın üstünde bunu söyleyen bir bildirim durur ve `Detaylar` sekmesi salt okunur gösterilir.
+
+![Kapalı bir istek](/img/teknisyen/ist2-kapali.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | Başlık | Kapalı durum, ör. `Tamamlandı`, ve onay sonucu. |
+| ❷ | **İstek kapalı** | **Kapalı istek değiştirilemez; değiştirmek için yeniden açın.** |
+| ❸ | **Yeniden aç** | **İsteği yeniden açın** penceresini açar. **Yeni durum** seçip `Yeniden aç`'a basın. İptal edilmiş onay akışı kendiliğinden yeniden başlamaz. |
+
+Kapalı isteğin `⋯` menüsünde `Arşivle` de bulunur. Arşivlenen istek salt okunur olur ve listede **Arşivlenmiş mi?** filtresiyle bulunur. Arşivleme geri alınamaz.
+
+## Silme
+
+`Sil`, onaydan sonra isteği siler ve ekranın altında **#SR… silindi** bildirimi çıkar. Bildirimdeki `Geri al` isteği hemen geri getirir. Silinen istekler listede görünmez; görmek için **Silinmiş mi?** filtresini kullanın. Silinmiş istek değiştirilemez.
+
+Süren onay akışı silmede de iptal edilir.
+
+## Birleştirilmiş istek
+
+Aynı konudaki istekler tek istekte birleştirilebilir. Bkz. [Toplu İşlemler](/docs/teknisyen/moduller/talepler-v2/toplu-islemler#birleştirme). Birleştirilen isteğin sayfasında hangi isteğe birleştirildiği yazar.
+
+![Birleştirilmiş isteğin bildirimi](/img/teknisyen/ist2-birlesik.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | Hedef istek | İşin sürdüğü istek. Numaraya basınca açılır. |
+
+Birleştirilmiş istek salt okunurdur; yalnız paylaşılabilir ya da silinebilir.
