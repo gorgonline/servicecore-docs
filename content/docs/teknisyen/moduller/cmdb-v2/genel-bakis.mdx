@@ -1,0 +1,41 @@
+---
+title: "Genel Bakış"
+description: "Yeni CMDB arayüzü (AssetCore): modüller, temel kavramlar, ekranın bölümleri ve ortak liste/kayıt düzeni."
+reviewed: "2026-11-10"
+owner: necatikekec
+---
+
+CMDB'nin yeni arayüzü **AssetCore** adıyla ayrı bir ürün kabuğunda açılır. Varlıkları, hizmetleri, lisansları, aksesuarları ve sarf malzemelerini aynı düzende listeler. Ayrıca sayım oturumlarını, hazır raporları ve modülün tanımlarını da bu kabuktan yönetirsiniz.
+
+<Callout type="info" title="ÖNEMLİ">Bu bölüm CMDB'nin yeni arayüzünü anlatır. Mevcut arayüz için bkz. [CMDB (Varlık ve Envanter)](/docs/teknisyen/moduller/cmdb/genel-bakis).</Callout>
+
+## Temel kavramlar
+
+| Kavram | Anlamı |
+|---|---|
+| **Varlık** | Donanım ya da altyapı öğesi, ör. dizüstü, sunucu, yazıcı. Numarası `VRL` ile başlar (`VRL-000001`). |
+| **Hizmet** | Kurumun sunduğu bir BT hizmeti, ör. kurumsal e-posta, VPN. Numarası `HZM` ile başlar. |
+| **Lisans** | Koltuk sayısı olan bir yazılım lisansı. Koltuklar varlıklara ya da kişilere atanır. Numarası `LSN` ile başlar. |
+| **Aksesuar** | Stoklu tutulan ve varlıklara verilen öğe, ör. mouse, dock. Numarası `AKS` ile başlar. |
+| **Sarf malzemesi** | Tüketildikçe stoktan düşen öğe, ör. toner. Numarası `SRF` ile başlar. |
+| **Tür** | Kaydın sınıfı, ağaç olarak tanımlanır (`Donanım / Bilgisayar / Dizüstü`). Ek alanlar türe bağlıdır. |
+| **Durum** | `Kullanımda`, `Depoda`, `Onarımda`, `Kayıp`, `Hurda` gibi. Her durumun bir kategorisi (`Aktif`, `Bekliyor`, `Pasif`) vardır. |
+| **Zimmet** | Varlığın bir kişiye verilmesi. Kişi zimmeti kabul edene kadar `Zimmet kabulü` alanı `Bekliyor` olarak kalır. |
+| **Sayım oturumu** | Belirli bir kapsamdaki varlıkların okutularak sayıldığı oturum. Bkz. [Sayım](/docs/teknisyen/moduller/cmdb-v2/sayim). |
+
+## Ekranın bölümleri
+
+![AssetCore ekranının bölümleri](/img/teknisyen/cmdb2-genel-yerlesim.png)
+
+| # | Bölüm | Ne işe yarar |
+|---|---|---|
+| ❶ | Kenar çubuğu | `Pano`, `Varlıklar`, `Hizmetler`, `Lisanslar`, `Aksesuarlar`, `Sarf malzemeleri`, `Sayım`, `Raporlar` ve `Ayarlar`. Yalnız görme yetkiniz olan bölümler listelenir. |
+| ❷ | `Ürünler` | Ürün menüsü. ProjectCore, AssetCore ve ServiceCore arasında geçiş yapar. |
+| ❸ | `Oluştur` | Hangi ekranda olursanız olun yeni varlık formunu açar. |
+| ❹ | Görünüm sekmeleri | Listenin hazır ve kayıtlı görünümleri. Bkz. [Listeler](/docs/teknisyen/moduller/cmdb-v2/listeler). |
+| ❺ | Araç çubuğu | Tür paneli, süzgeç, arama ve diğer liste işlemleri. |
+| ❻ | Tablo | Kayıtlar. Satıra tıklayınca kayıt sayfası açılır. |
+
+Beş modülün (varlık, hizmet, lisans, aksesuar, sarf) listesi ve kayıt sayfası aynı düzendedir. Bir modülde öğrendiğiniz işlem öbürlerinde de aynı yerdedir.
+
+Kenar çubuğunu sol üstteki `Kenar çubuğunu gizle` düğmesiyle daraltabilirsiniz.

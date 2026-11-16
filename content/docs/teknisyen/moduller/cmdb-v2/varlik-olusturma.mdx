@@ -1,0 +1,35 @@
+---
+title: "Varlık Oluşturma"
+description: "Yeni varlık formu: bölümler, zorunlu alanlar, doğrulamalar ve varlığı kopyalama."
+reviewed: "2026-11-10"
+owner: necatikekec
+---
+
+Yeni varlık için listedeki `Varlık oluştur` düğmesini ya da üst çubuktaki `Oluştur`u kullanın. Form sağdan açılan bir panelde gelir.
+
+![Varlık oluşturma formu](/img/teknisyen/cmdb2-olusturma-form.png)
+
+| # | Bölüm | Alanlar |
+|---|---|---|
+| ❶ | `Kimlik` | `Ad`, `Tür`, `Durum`, `Seri No`, `Barkod`, `Varlık etiketi` |
+| ❷ | **Yer ve sahiplik** | `Konum`, `Şirket`, `İş etkisi`, **Kullanım modeli** |
+
+Formun devamında şu bölümler gelir:
+- `Satın alma`: Üretici, Tedarikçi, Satın alma tarihi, Sipariş No, Satın alma bedeli, Para birimi
+- **Kullanım ve garanti**
+- **Ek alanlar**: seçtiğiniz türe bağlı alanlar
+- `Dosyalar`
+
+## Kurallar
+
+- **Zorunlu alanlar yalnız `Ad` ve `Tür`'dür.** Boş bırakılırsa formda `Varlığın adını yazın.` ve `Türü seçin.` uyarıları çıkar.
+- `Varlık No`'yu sistem verir.
+- `Seri No` aynı tür içinde, `Barkod` ise bütün varlıklarda benzersiz olmalıdır.
+- `Satın alma bedeli` `52.000,50` biçiminde yazılır ve varlığın ilk mali kaydı olur. Bkz. [Varlık Detayı](/docs/teknisyen/moduller/cmdb-v2/varlik-detayi#finans).
+- Garanti süresi ay cinsinden, 0 ya da daha büyük bir tam sayıdır.
+
+## Varlığı kopyalama
+
+Kayıt sayfasının ⋯ menüsündeki `Kopyala`, aynı formu **Varlığı kopyalayın** başlığıyla ve alanları dolu olarak açar. Gerekli alanları değiştirip `Kopyayı oluştur`a basın.
+
+Hizmet, lisans, aksesuar ve sarf formları da aynı düzendedir. Hizmet ve lisansta yalnız `Ad`, aksesuar ve sarfta `Ad` ve `Tür` zorunludur.
