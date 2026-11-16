@@ -1,0 +1,167 @@
+---
+title: "Ana Sayfa"
+description: "Portalın ana sayfası: Soru Sor araması, Hızlı Çağrı, kayıt açma butonları, Veriler tablosu (kart ve liste görünümü, Excel) ve Bütün İşlemlerim filtreleri."
+reviewed: "2026-11-09"
+owner: berdanasen
+---
+
+Ana sayfa, üst menüdeki `Kayıtlarım` ile açılır. Kullanıcı burada yeni kayıt açar, bilgi bankasında
+arama yapar ve açtığı kayıtları izler.
+
+Sayfadaki kutuların hangileri olacağına ve nerede duracağına yönetici karar verir (bkz.
+[Portal Tasarımı](/docs/kullanici/portal-tasarimi)). Bu nedenle sizin portalınızda bazı kutular
+olmayabilir ya da başka bir yerde olabilir.
+
+## Sayfanın bölümleri
+
+![Ana sayfanın bölümleri](/img/kullanici/ana-sayfa-genel.png)
+
+| # | Bölüm | Ne işe yarar |
+|---|---|---|
+| ❶ | Başlık | Yöneticinin yazdığı karşılama metni |
+| ❷ | `Soru Sor` | Bilgi bankasında, katalogda arama yapar ve sonuca göre kayıt açtırır (aşağıda) |
+| ❸ | `Hızlı Çağrı` | Tek satırlık metinle hemen çağrı açar (aşağıda) |
+| ❹ | Kayıt butonları | `Yeni Olay`, `Yeni Çağrı`, `Yeni İstek`, `Yeni İyileştirme`, `Yeni Değişiklik` ve `Çözüm Havuzu` (aşağıda) |
+| ❺ | `Veriler` | Açtığınız ve sizinle paylaşılan kayıtlar (aşağıda) |
+| ❻ | `Bütün İşlemlerim` | Kayıtlarınızın duruma göre sayıları; tıklayınca o kayıtlar listelenir (aşağıda) |
+
+## Soru Sor
+
+`Soru Sor` kutusuna yazmaya başladığınızda, yazdığınız ifadeye uyan öneriler kutunun altında listelenir.
+
+![Soru Sor önerileri](/img/kullanici/ana-sayfa-soru-sor.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | Arama kutusu | Aramak istediğiniz konuyu yazın (ör. `vpn`). Öneriler siz yazdıkça güncellenir |
+| ❷ | Öneriler | Bir öneriye tıklayınca ilgili işlem başlar (aşağıdaki tablo). Sağdaki mavi metin, önerinin bulunduğu kategoridir |
+
+| Öneri | Tıklayınca |
+|---|---|
+| `… için ticket oluştur` | Yeni olay formu açılır; yazdığınız ifade olayın konusuna gelir |
+| `<makale adı> Çözümüne Git` | Bilgi bankası makalesi açılır. Çoğu sorunun çözümü burada bulunur |
+| `<katalog kalemi> -> için servis isteği oluştur` | O katalog kalemiyle yeni istek sayfası açılır |
+
+Önce makale önerilerine bakmanızı öneririz; sorun makaleyle çözülürse kayıt açmanız gerekmez.
+
+## Hızlı Çağrı
+
+`Hızlı Çağrı`, form doldurmadan kayıt açmanın en kısa yoludur. Kısa bir konu yazıp `Enter`a
+bastığınızda, yazdığınız metin konusu olan bir **çağrı** açılır.
+
+![Hızlı Çağrı kutusu](/img/kullanici/ana-sayfa-hizli-cagri.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | Metin kutusu | Sorununuzu kısa bir cümleyle yazın. `Enter` çağrıyı hemen açar |
+| ❷ | Mikrofon | Konuyu sesle yazdırır. Tarayıcınızın mikrofon izni gerekir; tarayıcı ses tanımayı desteklemiyorsa çalışmaz |
+
+<Callout type="warn" title="Enter onay sormaz">
+Metni yazıp `Enter`a bastığınız anda çağrı açılır; ayrıca onay istenmez. Yeni çağrı `Veriler`
+tablosunun `Çağrı` sekmesinde görünür.
+</Callout>
+
+İki sınır vardır; ikisini de yönetici `Modül Yetkileri` bölümünden belirler (bkz.
+[Portal Ayarları](/docs/kullanici/portal-ayarlari#modül-yetkileri)):
+
+- **Karakter sınırı:** Kutuya en fazla bu kadar karakter yazılabilir. Ayar boşsa ya da `0` ise sınır 64 karakterdir.
+- **Bekleme süresi:** Bir hızlı çağrı açtıktan sonra bu süre dolmadan yenisi açılamaz. Ayar boşsa ya da `0` ise süre 180 saniyedir.
+
+## Kayıt butonları
+
+| Buton | Tıklayınca |
+|---|---|
+| `Yeni Olay` | Olay formu sağdan açılır. Bir şey bozulduğunda ya da çalışmadığında kullanılır |
+| `Yeni Çağrı` | Çağrı formu sağdan açılır. Destek ekibine soru sormak ya da bilgi vermek için kullanılır |
+| `Yeni İstek` | [Katalog](/docs/kullanici/katalog) açılır; istekler katalogdan seçilen kalemle açılır |
+| `Yeni İyileştirme` | İyileştirme formu açılır. Bir fikir ya da öneri bildirmek için kullanılır |
+| `Yeni Değişiklik` | Değişiklik formu açılır |
+| `Çözüm Havuzu` | [Çözümler](/docs/kullanici/cozumler) sayfasına gider |
+
+Formların ayrıntısı [Kayıt Oluşturma](/docs/kullanici/kayit-olusturma) sayfasındadır.
+
+## Veriler tablosu
+
+`Veriler` kutusu açtığınız kayıtları ve sizinle paylaşılan kayıtları listeler. Varsayılan görünüm kartlardır.
+
+![Veriler tablosu, kart görünümü](/img/kullanici/ana-sayfa-veriler-kart.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | Sekmeler | `Tümü`, `Olay`, `Çağrı`, `İstek`, `Değişiklik`, `İyileştirme`. Yalnız yöneticinin açtığı modüllerin sekmesi görünür |
+| ❷ | Görünüm | Kart görünümü ile liste görünümü arasında geçiş yapar |
+| ❸ | Ara | Tabloda arama kutusunu açar; yazdığınız ifadeye uyan kayıtlar listelenir |
+| ❹ | Kayıt numarası ve durum | Kaydın numarası (ör. `#INC2173`) ve durumu (`Açık`, `Onaylandı` gibi) |
+| ❺ | `Not Ekle`, `Dosya Yükle` | Fareyle kartın üzerine gelince görünür. Kayda girmeden not ya da dosya eklemenizi sağlar (aşağıda) |
+
+Kartta kaydın konusu, açıklamanın ilk satırı, `Kullanıcı`, `Teknisyen`, `Teknisyen Grubu` ve
+`Oluşturulduğu Tarih` bulunur. Karta tıklayınca kaydın detayı açılır (bkz.
+[Kayıt Detayı](/docs/kullanici/kayit-detayi)). Sayfanın altındaki çubuktan bir sayfada kaç kayıt
+gösterileceğini seçebilir ve sayfalar arasında geçebilirsiniz.
+
+### Karttan not ekleme
+
+Kartın üzerine gelip `Not Ekle` simgesine tıklayınca not penceresi sağdan açılır.
+
+![Karttan not ekleme](/img/kullanici/ana-sayfa-not-ekle.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | Metin düzenleyici | Notunuzu yazın; kalın, liste, tablo, bağlantı ve görsel ekleyebilirsiniz |
+| ❷ | `İptal` | Notu kaydetmeden pencereyi kapatır |
+| ❸ | `Kaydet` | Notu kayda ekler. Not, kaydın `Görüşmeler` bölümünde görünür ve destek ekibine iletilir |
+
+`Dosya Yükle` simgesi dosya seçme penceresini açar; seçtiğiniz dosya hemen kayda eklenir. Yönetici
+o kayıt türünde not ya da dosya eklemeyi kapattıysa bu işlemler yapılamaz (bkz.
+[Portal Ayarları](/docs/kullanici/portal-ayarlari)).
+
+### Liste görünümü
+
+Liste görünümü kayıtları satır satır gösterir ve iki ek araç sunar.
+
+![Veriler tablosu, liste görünümü](/img/kullanici/ana-sayfa-veriler-liste.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | `Excel` | O anki sekmedeki ve aramadaki kayıtları Excel dosyasına aktarır (aşağıda) |
+| ❷ | Kolonlar | Tabloda hangi kolonların görüneceğini seçtirir (aşağıda) |
+| ❸ | Kayıt numarası | Tıklayınca kaydın detayı açılır |
+
+**Excel'e aktarma:** Dosya arka planda hazırlanır. Hazır olduğunda e-posta adresinize gönderilir ve
+`Dosya Geçmişi` sayfasına eklenir; dosyayı oradan da indirebilirsiniz (bkz.
+[Profil ve Dosya Geçmişi](/docs/kullanici/profil#dosya-geçmişi)).
+
+**Kolonlar:** Dişli simgesine tıklayınca kolon listesi açılır. İşaretini kaldırdığınız kolon tablodan kalkar.
+
+![Kolon seçimi](/img/kullanici/ana-sayfa-kolonlar.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | Kolon listesi | `Kod`, `Konu`, `Durum`, `Türü`, `Kullanıcı`, `Teknisyen`, `Teknisyen Grubu`, `Oluşturulduğu Tarih` |
+
+## Bütün İşlemlerim
+
+`Bütün İşlemlerim` kutusu (sayfada `Filtreler` başlığıyla görünür) kayıtlarınızı türüne ve durumuna
+göre gruplar ve her grubun yanında kaç kayıt olduğunu gösterir.
+
+![Bütün İşlemlerim filtreleri](/img/kullanici/ana-sayfa-filtreler.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | Yenile | Sayıları yeniden hesaplar |
+| ❷ | Filtre | Filtre adı ve parantez içinde kayıt sayısı. Tıklayınca `Veriler` tablosu yalnız o kayıtları listeler |
+
+Kutudaki filtreler:
+
+| Kayıt türü | Filtreler |
+|---|---|
+| Çağrılar | `Açık Çağrılarım`, `Kapanan Çağrılarım`, `Tüm Çağrılarım` |
+| Değişiklikler | `Açık Değişikliklerim`, `Bekleyen Değişikliklerim`, `Kapanan Değişikliklerim`, `Reddedilen Değişikliklerim`, `Tüm Değişikliklerim` |
+| Olaylar | `Açık Olaylarım`, `Bekleyen Olaylarım`, `Kapanan Olaylarım`, `Benimle Paylaşılan Açık Olaylar`, `Benimle Paylaşılan Kapalı Olaylar`, `Tüm Olaylarım` |
+| İstekler | `Açık İsteklerim`, `Bekleyen İsteklerim`, `Kapatılan İsteklerim`, `Onaylanan İsteklerim`, `Onay Bekleyen İsteklerim`, `Reddedilen İsteklerim`, `Benimle Paylaşılan Açık İstekler`, `Benimle Paylaşılan Kapalı İstekler`, `Tüm İsteklerim` |
+| İyileştirmeler | `Açık İyileştirmelerim`, `Bekleyen İyileştirmelerim`, `Kapanan İyileştirmelerim`, `Reddedilen Sürekli İyileştirmelerim`, `Benimle Paylaşılan Açık İyileştirmeler`, `Benimle Paylaşılan Kapalı İyileştirmeler`, `Tüm İyileştirmelerim` |
+| Genel | `Tüm Kayıtlarım`, `Bekleyen Onaylarım`, `Tamamlanan Onaylarım` |
+
+"Bekleyen" filtreleri, destek ekibinin sizden ya da üçüncü bir taraftan yanıt beklediği (beklemeye
+alınmış) kayıtları gösterir. "Benimle Paylaşılan" filtreleri, başka bir kullanıcının size paylaştığı
+kayıtlardır (bkz. [Kayıt Detayı](/docs/kullanici/kayit-detayi#paylaşma)).

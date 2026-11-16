@@ -1,17 +1,17 @@
 {
-  "title": "Kullanıcı Kılavuzu",
+  "title": "Son Kullanıcı Portalı",
   "pages": [
-    "enduser1",
-    "enduser2",
-    "enduser3",
-    "enduser4",
-    "enduser5",
-    "enduser6",
-    "enduser7",
-    "enduser8",
-    "enduser9",
-    "enduser10",
-    "enduser11",
-    "flexiportal"
+    "genel-bakis",
+    "ana-sayfa",
+    "kayit-olusturma",
+    "katalog",
+    "kayit-detayi",
+    "onaylarim",
+    "cozumler",
+    "duyurular",
+    "varliklar-hizmetler-projeler",
+    "profil",
+    "portal-tasarimi",
+    "portal-ayarlari"
   ]
 }

@@ -1,0 +1,118 @@
+---
+title: "Olay Listesi"
+description: "Olay kartları, kart simgeleri, hızlı güncelleme, toplu işlemler, birleştirme, sıralama ve genel grid görünümü."
+reviewed: "2026-11-09"
+owner: berdanasen
+---
+
+`Olaylar` sekmesi olayları kartlar hâlinde listeler. Bir karta tıklamadan da durumu, önceliği ya
+da atamayı değiştirebilir, birden fazla olayı seçip birlikte güncelleyebilirsiniz.
+
+## Olay kartı
+
+![Bir olay kartının bölümleri](/img/teknisyen/olay-liste-kart.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | Olay numarası | `#INC` ile başlayan numara. Numaraya ya da konuya tıklayınca olay, listenin yanında `Olay 2174` gibi yeni bir sekmede açılır; `Ctrl` (Mac'te `⌘`) ile tıklarsanız sekme arka planda açılır |
+| ❷ | Durum | Olayın durumu, renkli etiketle |
+| ❸ | Konu | Olayın başlığı ve ne zaman açıldığı (`bir gün önce` gibi); üzerine gelince tam tarih görünür |
+| ❹ | Açıklama | Açıklamanın ilk satırı |
+| ❺ | **Takip Et** ve **Sabitle** | Kartın üzerine gelince görünür. Yıldız olayı takip ettikleriniz arasına, raptiye sabitledikleriniz arasına ekler; tek tıkla uygulanır ve etkinken kartta sürekli görünür |
+| ❻ | Kart alt satırı | Hızlı işlem simgeleri ve olay bilgileri (aşağıda) |
+
+Yeni gelen ve henüz açılmamış olayların numarasının solunda kırmızı bir nokta bulunur. Kartın sol
+kenarına geldiğinizde bir onay kutusu belirir; kartları seçip toplu işlem yapmak için bunu kullanın.
+
+Açtığınız olay sekmeleri listeyle birlikte durur; birkaç olay arasında listeyi kaybetmeden
+geçiş yapabilirsiniz. `Olaylar` sekmesine sağ tıklayınca `Tüm sekmeleri kapat` çıkar.
+
+### Kart alt satırı
+
+![Kart alt satırındaki simgeler](/img/teknisyen/olay-liste-kart-alt.png)
+
+| # | Simge | Ne işe yarar |
+|---|---|---|
+| ❶ | Hızlı işlemler | Üzerine gelince açılır: `Bağlantıyı Kopyala`, `Detay sayfasına git` (olayı yeni tarayıcı sekmesinde kendi sayfasında açar) ve `İş Günlüğü Ekle` |
+| ❷ | **Hızlı Güncelleme** | Olayı açmadan durum, öncelik, kategori, grup, teknisyen ve sözleşme değiştirir (aşağıda) |
+| ❸ | `Ekler` | Olaya eklenmiş dosyalar; sayı ek adedidir |
+| ❹ | `Gelen Posta` | Kullanıcıdan olaya gelen e-posta sayısı |
+| ❺ | `Giden Posta` | Olaydan gönderilen e-posta sayısı |
+| ❻ | **Not Göster ve Ekle** | Notları bir pencerede gösterir; aynı pencereden yeni not eklenir |
+| ❼ | Çözümler | Olaya eklenmiş çözümleri bir pencerede gösterir |
+| ❽ | Olay bilgileri | Teknisyen grubu, teknisyen, kullanıcı, destek müşteri hesabı, şirket, hedef çözüm tarihi, kalan SLA süresi (yüzde), sözleşme ve öncelik |
+
+### Hızlı güncelleme
+
+`Hızlı Güncelleme` simgesi küçük bir form açar. Alanları değiştirip `Kaydet`e basın.
+
+![Hızlı Güncelleme formu](/img/teknisyen/olay-liste-hizli-guncelleme.png)
+
+| # | Alan | Açıklama |
+|---|---|---|
+| ❶ | `Durum Değiştir` | Olayın yeni durumu |
+| ❷ | `Önceliği Değiştir` | Öncelik; SLA hedefleri önceliğe göre hesaplanır |
+| ❸ | `Kategori` | Olayın kategorisi |
+| ❹ | `Grup Değiştir` | Teknisyen grubu |
+| ❺ | `Teknisyen Değiştir` | Atanan teknisyen |
+| ❻ | `Sözleşme` | Olayın bağlı olduğu sözleşme |
+| ❼ | `Kaydet` | Değişiklikleri kaydeder |
+
+Kapalı olaylarda hızlı güncelleme kullanılamaz. Kurumunuzda "çözüldü" kabul edilen durumu
+seçerseniz önce kapatma kuralları kontrol edilir. Bkz. [Durumlar ve Kapatma](/docs/teknisyen/moduller/olaylar/durumlar-ve-kapatma).
+
+## Toplu işlemler
+
+Bir ya da daha fazla kartı seçtiğinizde listenin üstünde toplu işlem çubuğu belirir.
+
+![Toplu işlem çubuğu](/img/teknisyen/olay-liste-toplu-cubuk.png)
+
+| # | Öğe | Ne yapar |
+|---|---|---|
+| ❶ | Tümünü seç | Ekrandaki bütün olayları seçer |
+| ❷ | `Toplu İşlem` | Seçili olayların durumunu, önceliğini, etkisini, aciliyetini, kategorisini, grubunu ve teknisyenini birlikte değiştirir (aşağıda) |
+| ❸ | `Kapat` | Seçili olayları kapatır; tek olay kapatmayla aynı pencere açılır |
+| ❹ | `Sil` | Seçili olayları siler; `Silme Gerekçesi` yazmanız ve kapalı bir `Durum` seçmeniz istenir |
+| ❺ | `Bana Ata` | Seçili olayların hepsini onay sormadan size atar |
+| ❻ | Birleştirme | Aynı sorun için açılmış olayları tek olayda toplar (aşağıda). Butonun etiketi ekranda `Birleştirilenler` olarak görünür |
+| ❼ | `Yeniden Aç` | Seçili kapalı olayları, seçtiğiniz durumla yeniden açar |
+
+`Toplu İşlem` penceresinde hiçbir alan zorunlu değildir; yalnızca doldurduğunuz alanlar değişir.
+
+![Toplu İşlem penceresi](/img/teknisyen/olay-liste-toplu-islem.png)
+
+Kapatma ve silmenin ayrıntıları için bkz. [Durumlar ve Kapatma](/docs/teknisyen/moduller/olaylar/durumlar-ve-kapatma).
+
+### Olayları birleştirme
+
+Aynı arıza için birden fazla olay açılmışsa (örneğin aynı yazıcı için üç kullanıcının açtığı
+olaylar) onları tek olayda toplayın. İki ya da daha fazla olayı seçip birleştirme butonuna basın.
+
+![Olayları Birleştir penceresi](/img/teknisyen/olay-liste-birlestir.png)
+
+| # | Alan | Açıklama |
+|---|---|---|
+| ❶ | `Birleştirilecek Olaylar` | Seçtiğiniz olayların numaraları |
+| ❷ | `Birincil Kaydı Seçiniz` | **Zorunlu.** Diğerlerinin içinde toplanacağı ana olay; açık kalır |
+| ❸ | `Alt Olay Kaydını Güncelle` | **Zorunlu.** Birincil dışındaki olayların alacağı durum; bu olaylar birleştirmeyle kapanır |
+| ❹ | `Olaylar Birleşirken Notları Taşı` | İşaretlenirse diğer olayların notları birincil olaya taşınır |
+| ❺ | `Birleştir` | Birleştirmeyi yapar |
+
+## Sıralama ve sayfalama
+
+Listenin altındaki sabit çubukta kayıt sayısı, sayfalar ve sıralama bulunur.
+
+![Sayfalama ve sıralama](/img/teknisyen/olay-liste-siralama.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | Kayıt sayısı | Gösterilen aralık ve toplam olay sayısı |
+| ❷ | Sayfa boyutu | Sayfa başına gösterilecek olay sayısı |
+| ❸ | Sıralama | `Oluşturulduğu Tarih`, `Son Güncelleme Tarihi`, `Olay Numarası`, `Konu`, `Durum` ya da `Hedef Çözüm Tarihi`. Yanındaki simge artan ve azalan sıra arasında geçiş yapar |
+
+Sıralama ve sayfa boyutu tarayıcınızda saklanır; ekranı tekrar açtığınızda aynı düzende gelir.
+Liste varsayılan olarak olay numarasına göre, en yeni olay en üstte sıralanır.
+
+Listenin sağ üstündeki büyüteç bütün modüllerde arama yapılan genel arama penceresini, yanındaki
+`Grid Görünümü` simgesi ise kayıtları modül modül tablo hâlinde listeleyen `Genel Grid Görünümü`
+penceresini açar.

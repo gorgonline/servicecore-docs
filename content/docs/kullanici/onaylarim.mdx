@@ -1,0 +1,123 @@
+---
+title: "Onaylarım"
+description: "Kararınızı bekleyen istek, değişiklik, iyileştirme, sözleşme ve görev onayları: listeleme, kaydı inceleme, onaylama, reddetme, revize, toplu karar ve vekâlet."
+reviewed: "2026-11-10"
+owner: berdanasen
+---
+
+`Onaylarım`, sizin onayınıza ya da görüşünüze sunulan bütün kayıtları tek listede toplar. İstek
+onayları, değişikliklere ve iyileştirmelere verilen görüşler, sözleşme ve görev onayları burada
+yönetilir. Karar verdiğiniz kayıtlar da bir ay boyunca bu sayfada izlenebilir.
+
+## Sayfanın bölümleri
+
+![Onaylarım sayfası](/img/kullanici/onaylarim-genel.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | Modül sekmeleri | `Tümü`, `İstekler`, `Değişiklikler`, `İyileştirmeler`, `Sözleşmeler`, `Görevler`. Sekmenin yanındaki kırmızı sayı bekleyen kayıt adedidir |
+| ❷ | Özet ve hızlı filtreler | Kaç kaydın beklediği ve en eskisinin ne kadar süredir beklediği. `Bekleyen`, `7 günü aştı` ve `Bugün geldi` butonları listeyi o gruba daraltır |
+| ❸ | Görünüm | `Onay Bekleyen Kayıtları Göster`, `Karar verdiklerim`, `Onay Bekleyen Vekil Kullanıcıların Kayıtlarını Göster` (aşağıda) |
+| ❹ | Ara | Listede arama yapar |
+| ❺ | `Sırala` | `En uzun bekleyen`, `Öncelik`, `En yeni`, `Konu` |
+| ❻ | Seçim kutusu | Toplu karar için kaydı seçer (aşağıda) |
+| ❼ | Kayıt bilgisi | Modül, kayıt numarası, öncelik, karar türü (`ONAY` ya da `GÖRÜŞ`), konu, talep eden ve şirketi, onay durumu, kayıt durumu ve katalog kategorisi ▸ kalemi |
+| ❽ | Bekleme süresi | Kaydın ne kadar süredir kararınızı beklediği |
+| ❾ | `Reddet`, `Onayla` | Kararınızı verir (aşağıda) |
+
+Kayıtlar geliş zamanına göre `BUGÜN`, `BU HAFTA` gibi gruplar halinde listelenir. Satırın solundaki
+renkli çizgi kaydın önceliğini gösterir.
+
+**`ONAY` ve `GÖRÜŞ`:** İstek, sözleşme ve görev satırları onaydır; kararınız süreci ilerletir ya da
+durdurur. Değişiklik ve iyileştirme satırları görüştür; kararınız değerlendirmeye katılır.
+Butonların adı iki durumda da `Onayla` ve `Reddet`tir.
+
+## Kaydı incelemek
+
+Satırdaki konuya tıklayınca kaydın detayı bir pencerede açılır. Karar vermeden önce açıklamayı,
+dosyaları ve form alanlarını buradan inceleyebilirsiniz.
+
+![Onay penceresinde kayıt detayı](/img/kullanici/onaylarim-kayit-detayi.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | `Servis Ön Onay Aşamaları` | İsteğin onay aşamalarını ve diğer onaycıların kararlarını gösterir |
+| ❷ | `Onay durumu` | Tamamlanan ve toplam onay aşaması sayısı (ör. `0/1`) |
+| ❸ | `Reddet`, `Onayla` | Kararı doğrudan bu pencereden verir |
+
+## Onaylamak ve reddetmek
+
+`Onayla` ya da `Reddet`e bastığınızda karar penceresi açılır.
+
+![Reddetme penceresi](/img/kullanici/onaylarim-reddet.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | Uyarı | Reddederken açıklama yazmak zorunludur |
+| ❷ | `Açıklama` | Kararınızın gerekçesi (en fazla 2500 karakter). Talep sahibi ve destek ekibi bu açıklamayı görür |
+
+Onaylarken açıklama isteğe bağlıdır. Pencerenin onay butonuna bastığınızda karar kaydedilir ve kayıt
+listeden çıkar.
+
+## Revize istemek
+
+Kayıt gelişmiş onay akışıyla çalışıyorsa ve akışın o adımı revizeye izin veriyorsa satırda üçüncü
+bir buton, `Revize İste` görünür. Revize, kaydı reddetmeden talep sahibine düzeltme için geri
+gönderir.
+
+![Satırda Revize İste butonu](/img/kullanici/onaylarim-revize-iste.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | `Revize İste` | Revize penceresini açar |
+
+![Revize İste penceresi](/img/kullanici/onaylarim-revize-penceresi.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | `Açıklama` | Neyin düzeltilmesi gerektiği (en fazla 2500 karakter). Bu metin talep edene gider ve kayıt detayındaki onay kartında görünür. Zorunludur |
+| ❷ | `Revize İste` | Kaydı talep edene geri gönderir |
+
+Revize istediğiniz kayıt listeden çıkar. Talep eden kaydı düzeltip tekrar onaya gönderdiğinde kayıt
+yeni bir tur olarak listenize geri gelir. Talep edenin gördüğü ekran için bkz.
+[Kayıt Detayı](/docs/kullanici/kayit-detayi#gelişmiş-onay-akışı).
+
+Revize yalnız gelişmiş onay akışıyla gelen satırlarda bulunur; sözleşme ve görev onaylarında ve
+paralel onay dallarındaki adımlarda revize istenemez.
+
+## Toplu karar
+
+Aynı kararı birden fazla kayda vermek için satırların solundaki kutuları işaretleyin. Sayfanın
+altında seçim çubuğu belirir.
+
+![Toplu karar çubuğu](/img/kullanici/onaylarim-toplu.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | Seçim kutusu | Kaydı seçer |
+| ❷ | Seçim çubuğu | Seçilen kayıt sayısı, `Vazgeç` (seçimi temizler), `Reddet` ve `Onayla` |
+
+Toplu reddederken de açıklama istenir.
+
+## Karar verdiklerim
+
+`Karar verdiklerim` görünümü son bir ayda karar verdiğiniz kayıtları listeler.
+
+![Karar verdiklerim görünümü](/img/kullanici/onaylarim-karar-verdiklerim.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | `Karar verdiklerim` | Görünümü değiştirir |
+| ❷ | Kayıt | Karar verdiğiniz kayıt ve kaydın güncel onay durumu (ör. `Onaylandı`) |
+
+## Vekil olduğunuz kişilerin onayları
+
+Bir kullanıcı ofis dışına çıkarken sizi vekil olarak atadıysa (bkz.
+[Profil](/docs/kullanici/profil#ofis-dışında-ve-vekil)), onun bekleyen onayları
+`Onay Bekleyen Vekil Kullanıcıların Kayıtlarını Göster` görünümünde listelenir. Bu kayıtlara onun
+adına karar verebilirsiniz. Vekâlet, kişinin belirttiği ofise dönüş tarihine kadar geçerlidir.
+
+<Callout type="info" title="E-postayla onay">
+Onay e-postalarındaki bağlantılarla verdiğiniz kararlar da bu sayfaya yansır; karar verilen kayıt
+bekleyenler listesinden çıkar ve `Karar verdiklerim` görünümünde yer alır.
+</Callout>

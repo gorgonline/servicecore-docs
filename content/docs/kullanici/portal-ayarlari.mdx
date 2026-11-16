@@ -1,0 +1,172 @@
+---
+title: "Portal Ayarları"
+description: "Son Kullanıcı Ayarları ekranının Ayarlar sekmesi: görünüm ayarları, iş birimi seçim sayfası, modül yetkileri, hızlı çağrı sınırları ve olay, istek, iyileştirme, çağrı ve varlık için son kullanıcı yetkileri."
+reviewed: "2026-11-10"
+owner: berdanasen
+---
+
+`Yönetim ▸ Son Kullanıcı Ayarları` ekranının `Ayarlar` sekmesi, portalın görünümünü ve son
+kullanıcıların portalda neler yapabileceğini belirler. Ayarlar, ekranın üstündeki
+`Kullanıcı Grupları` seçimine göre varsayılan tasarıma ya da seçili gruplara uygulanır (bkz.
+[Portal Tasarımı](/docs/kullanici/portal-tasarimi#kullanıcı-grupları)).
+
+`Sayfa` seçimi `Ana sayfa` iken `Ayarlar` sekmesi yedi bölümden oluşur.
+
+![Ayarlar sekmesinin bölümleri](/img/kullanici/ayarlar-bolumler.png)
+
+| # | Bölüm | İçerik |
+|---|---|---|
+| ❶ | `Görünüm Ayarları` | Başlık metni, renkler, arka plan, logo ve kutu görünümü |
+| ❷ | `Modül Yetkileri` | Portalda hangi modüllerin görüneceği ve hızlı çağrı sınırları |
+| ❸ | `Olay Yetkileri` | Son kullanıcının olaylarda yapabilecekleri |
+| ❹ | `İstek Yetkileri` | Son kullanıcının isteklerde yapabilecekleri |
+| ❺ | `Sürekli İyileştirme Yetkileri` | Son kullanıcının iyileştirmelerde yapabilecekleri |
+| ❻ | `Çağrı Yetkileri` | Son kullanıcının çağrılarda yapabilecekleri |
+| ❼ | `Varlık Yetkileri` | Varlıklarım sayfasındaki olay açma |
+
+Bölüm başlığındaki `+` bölümü açar, `−` kapatır. Yetki satırlarında yeşil onay işareti ayarın
+**açık**, kırmızı çarpı **kapalı** olduğunu gösterir; satıra tıklayınca durum değişir. Yaptığınız
+değişiklikler `Kaydet`e basınca portala uygulanır.
+
+## Görünüm ayarları
+
+![Görünüm Ayarları](/img/kullanici/ayarlar-gorunum.png)
+
+| Ayar | Açıklama |
+|---|---|
+| Kullanıcı başlık yazısı | Listede ilk satır; şu anki değeri gösterir (görselde `Size nasıl yardımcı olabiliriz?`). Ana sayfadaki `Başlık` kutusunun metnidir. Tıklayınca değiştirilir |
+| Sekme başlık yazısı | İkinci satır (görselde `Servicecore`). Portalın tarayıcı sekmesi için kaydedilen metindir; bu sürümde portalın sekme başlığına uygulanmıyor |
+| `Başlık rengi` | `Başlık` kutusundaki metnin rengi. Parantez içinde seçili renk kodu yazar |
+| `Üst Menü Rengi` | Portalın üst menüsünün zemin rengi |
+| `Arka Plan Resmi Seç` | Portal sayfalarının arkasına konacak görsel |
+| `Logo Seç` | Üst menünün solundaki logo. Seçilmezse ServiceCore logosu kullanılır |
+| `Kenar Yumuşaklığı` | Kutuların köşe yuvarlaklığı (piksel). Varsayılan 16 |
+| `Kutular Arası Boşluk` | Ana sayfadaki kutuların arasındaki boşluk (piksel). Varsayılan 16 |
+| `Duyuruları Resim Olarak Göster` | Duyuruların resim olarak gösterilmesi için kaydedilen ayar; bu sürümde portal sayfalarına uygulanmıyor |
+| `Duyuru Filigranı Etkinleştir` | Duyurulara filigran eklenmesi için kaydedilen ayar; bu sürümde portal sayfalarına uygulanmıyor |
+
+### Portaldaki iş birimi seçim sayfası
+
+İş birimli kurulumlarda `Görünüm Ayarları` listesinin başında iki satır daha bulunur. Bu satırlar,
+portalın girişte gösterdiği iş birimi seçim sayfasının metinleridir (bkz.
+[Genel Bakış](/docs/kullanici/genel-bakis#portalda-iş-birimi-seçimi)).
+
+![Görünüm Ayarları, iş birimi seçim sayfası satırları](/img/kullanici/ayarlar-gorunum-is-birimi.png)
+
+| # | Ayar | Açıklama |
+|---|---|---|
+| ❶ | `MultiTenant Başlık Yazısı` | Seçim sayfasının başlığı. Boş bırakılırsa `Müşteri Destek ve Hizmet Merkezi` yazar |
+| ❷ | `MultiTenant Tab Açıklaması` | Başlığın altındaki açıklama (ör. `Devam etmek için hizmet almak istediğiniz iş birimini seçin`) |
+
+Başlık ve açıklama beyaz yazılır; okunabilmeleri için `Arka Plan Resmi Seç` ile portala bir arka
+plan resmi seçin.
+
+<Callout type="warn" title="Açıklamayı boş bırakmayın">
+Bu sürümde `MultiTenant Tab Açıklaması` boş bırakılırsa seçim sayfasında açıklama yerine çevrilmemiş
+bir metin anahtarı görünür.
+</Callout>
+
+Her iş biriminin portal ayarları ayrıdır; ekran, teknisyen ekranında o an seçili olan iş biriminin
+ayarlarını açar ve `Kaydet` yalnız o iş birimine uygulanır.
+
+## Modül yetkileri
+
+Bu bölüm, portalın hangi bölümlerinin son kullanıcılara görüneceğini belirler. Kapattığınız
+modül üst menüden ve ilgili sekme ya da butonlardan kalkar.
+
+![Modül Yetkileri](/img/kullanici/ayarlar-modul.png)
+
+| Ayar | Açık olduğunda portalda |
+|---|---|
+| `Katalog` | `Katalog` menüsü ve `Veriler` tablosundaki `İstek` sekmesi görünür |
+| `Projeler` | `Proje` menüsü görünür |
+| `Çözümler` | `Çözümler` menüsü görünür |
+| `Varlıklarım` | `Varlıklarım` menüsü görünür |
+| `Hizmetlerim` | `Hizmetlerim` menüsü görünür |
+| `Çağrılar` | `Veriler` tablosundaki `Çağrı` sekmesi görünür |
+| `Çağrı Yap` | Ana sayfadaki `Yeni Çağrı` butonu görünür |
+| `Olaylar` | `Veriler` tablosundaki `Olay` sekmesi görünür |
+| `Değişiklikler` | `Veriler` tablosundaki `Değişiklik` sekmesi görünür |
+| `İyileştirmeler` | `Veriler` tablosundaki `İyileştirme` sekmesi görünür |
+| `Duyurular` | `Duyurular` menüsü görünür |
+| `Onaylarım` | `Onaylarım` menüsü görünür |
+
+Bölümün altındaki iki sayı `Hızlı Çağrı` kutusunu sınırlar:
+
+| Ayar | Açıklama |
+|---|---|
+| `Hızlı Çağrı Karakter Limiti` | Hızlı çağrıya yazılabilecek en fazla karakter. `0` bırakılırsa portal 64 karakter uygular |
+| `Bekleme Süresi (sn)` | Bir kullanıcının iki hızlı çağrı arasında beklemesi gereken süre, saniye cinsinden. `0` bırakılırsa portal 180 saniye uygular |
+
+Bekleme süresi, aynı kullanıcının arka arkaya çok sayıda çağrı açmasını önler.
+
+## Olay yetkileri
+
+![Olay Yetkileri](/img/kullanici/ayarlar-olay.png)
+
+| Yetki | Açık olduğunda son kullanıcı |
+|---|---|
+| `Kapatabilir` | Olay detayındaki `Kapat` ile olayını kapatabilir |
+| `Yeniden açabilir` | Kapalı olayını `Yeniden Aç` ile açabilir |
+| `Paylaşabilir` | Olayını `Paylaş` ile başka kullanıcılarla paylaşabilir |
+| `Dosya ekleyebilir` | Olaya dosya ekleyebilir |
+| `Not ekleyebilir` | Olaya not yazabilir |
+| `Açıklamayı düzenleyebilir` | Olayın açıklamasını değiştirebilir |
+
+## İstek yetkileri
+
+![İstek Yetkileri](/img/kullanici/ayarlar-istek.png)
+
+| Yetki | Açık olduğunda son kullanıcı |
+|---|---|
+| `Kapatabilir` | İsteğini kapatabilir |
+| `Yeniden açabilir` | Kapalı isteğini yeniden açabilir |
+| `Paylaşabilir` | İsteğini paylaşabilir |
+| `Dosya ekleyebilir` | İsteğe dosya ekleyebilir |
+| `Not ekleyebilir` | İsteğe not yazabilir |
+| `Açıklamayı düzenleyebilir` | İsteğin açıklamasını değiştirebilir |
+| `Form alanlarını güncelleyebilir` | Onaycı isteği revizeye gönderdiğinde isteğin form alanlarını düzeltebilir |
+
+`Form alanlarını güncelleyebilir` yalnız revize sırasında geçerlidir. İstek normal durumdayken,
+onay beklerken ya da tekrar onaya gönderildikten sonra form salt okunurdur. Revizede de kayıt
+sahibi, teknisyen, durum ve katalog kalemi gibi alanlar portaldan değiştirilemez; yalnız formun
+son kullanıcıya açık içerik alanları düzeltilebilir.
+
+## Sürekli iyileştirme yetkileri
+
+![Sürekli İyileştirme Yetkileri](/img/kullanici/ayarlar-iyilestirme.png)
+
+| Yetki | Açık olduğunda son kullanıcı |
+|---|---|
+| `Paylaşabilir` | İyileştirmesini paylaşabilir |
+| `Dosya ekleyebilir` | İyileştirmeye dosya ekleyebilir |
+| `Not ekleyebilir` | İyileştirmeye not yazabilir |
+| `Açıklamayı düzenleyebilir` | İyileştirmenin açıklamasını değiştirebilir |
+| `Form alanlarını güncelleyebilir` | İyileştirme revizeye gönderildiğinde form alanlarını düzeltebilir |
+
+İyileştirmeler portaldan kapatılamaz; bu yüzden bu bölümde kapatma ve yeniden açma yetkisi yoktur.
+
+## Çağrı yetkileri
+
+![Çağrı Yetkileri](/img/kullanici/ayarlar-cagri.png)
+
+| Yetki | Açık olduğunda son kullanıcı |
+|---|---|
+| `Düzenleyebilir` | Çağrı detayındaki `Düzenleme ▸ Düzenle` ile çağrının açıklamasını değiştirebilir |
+
+## Varlık yetkileri
+
+![Varlık Yetkileri](/img/kullanici/ayarlar-varlik.png)
+
+| Ayar | Açıklama |
+|---|---|
+| `Varlıktan Olay Oluşturmayı Gizle` | Açıkken `Varlıklarım` sayfasındaki `Olay Oluştur` kolonu gizlenir; kullanıcılar varlığa bağlı olay açamaz, olayı ana sayfadan açar |
+
+Bu ayar diğerlerinden farklı olarak bir **gizleme** ayarıdır: yeşil onay işareti kolonun
+gizlendiğini, kırmızı çarpı kolonun göründüğünü gösterir.
+
+## Genel Ayarlar'daki portal ayarı
+
+Yeni portalın kullanılıp kullanılmayacağı `Son Kullanıcı Ayarları` ekranında değil,
+`Genel Ayarlar ▸ Uygulama Ayarları` sekmesindeki **Yeni son kullanıcı sayfalarına yönlendir (beta)**
+seçeneğiyle belirlenir. Bkz. [Genel Bakış](/docs/kullanici/genel-bakis#yeni-portalı-açmak).

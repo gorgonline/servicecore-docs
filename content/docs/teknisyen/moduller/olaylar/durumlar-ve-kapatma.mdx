@@ -1,0 +1,81 @@
+---
+title: "Durumlar ve Kapatma"
+description: "Olayın aşamaları ve durumları, kapatma penceresi, kapatma kuralları, çözme, reddetme, otomatik kapanma ve yeniden açma."
+reviewed: "2026-11-09"
+owner: berdanasen
+---
+
+Olayın süreçteki yeri **durum** ile gösterilir. Durumlar kurumunuza göre tanımlanır ve her durum
+üç **aşamadan** birine bağlıdır:
+
+| Aşama | Anlamı |
+|---|---|
+| `Açık` | Olay üzerinde çalışılıyor; SLA süresi işliyor |
+| `Beklemede` | Kullanıcıdan bilgi, parça ya da üçüncü taraf bekleniyor. SLA süresi durur; beklemede geçen süre hedef tarihe eklenir. Kurumunuzda "çözüldü" kabul edilen durum da bu aşamadadır |
+| `Kapalı` | Olay kapatıldı, reddedildi, birleştirildi ya da silindi |
+
+Durum, `Özellikler` panelinden ya da kart üzerindeki `Hızlı Güncelleme`den değiştirilir. Açık bir
+olayda yalnızca açık ve beklemedeki durumlar listelenir; olayı kapatmak için `Kapat` kullanılır.
+
+## Olayı kapatma
+
+Araç çubuğundaki `Kapat` butonu `Kapatma Bilgileri` penceresini açar.
+
+![Kapatma Bilgileri penceresi](/img/teknisyen/olay-kapat-penceresi.png)
+
+| # | Alan | Açıklama |
+|---|---|---|
+| ❶ | `Gerekçe` | Kapatma gerekçesi; kurumunuzda tanımlı gerekçelerden seçilir |
+| ❷ | `Durum` | **Zorunlu.** Olayın alacağı kapalı durum |
+| ❸ | `Kapatma Açıklaması` | Yapılan işin kısa açıklaması. Kurumunuzun ayarına göre zorunludur ve en az belirli sayıda karakter ister |
+| ❹ | `Kapat` | Olayı kapatır; kullanıcıya kapanış bildirimi gider |
+
+Kurumunuzda **Bildirimsiz Kapatma Özelliği** açıksa ve yetkiniz varsa pencerede `Bildirimsiz Kapat/Çöz`
+kutusu da çıkar; işaretlenirse kullanıcıya bildirim gönderilmez. Formda değişiklik yapıp
+kaydetmediyseniz `Kapat` önce değişiklikleri kaydeder.
+
+### Kapatma kuralları
+
+Yöneticiniz `Kapatma Kuralları` ekranında olayın kapatılabilmesi için bazı bilgilerin girilmiş
+olmasını şart koşabilir: teknisyen, teknisyen grubu, kategori, açıklama, etki, aciliyet, not,
+kayıt kaynağı, varlık, nihai çözüm, iş günlüğü ya da görevlerin kapatılmış olması gibi. Eksik bir
+kural varsa kapatma penceresi açılmaz, sağ altta eksik kuralları listeleyen bir uyarı çıkar. Olayın
+özel formunda zorunlu bir alan boşsa `Kapat` pasif olur; üzerine gelince eksik alanlar görünür.
+
+Tek eksik kural "olayın görevleri kapatılmış olmalı" ise önce `Görevler Kapatılacaktır!` penceresi
+açılır; onaylarsanız olayın açık görevleri kapatılır ve ardından kapatma penceresi gelir.
+
+### Çözme
+
+Kurumunuzda **Çöz Butonunu Görünür Yap** ayarı açıksa araç çubuğunda `Çöz` butonu da bulunur.
+`Çözüm Bilgileri` penceresinde `Gerekçe`, `Durum` ve `Çözüm Açıklaması` istenir. Çözülen olay
+beklemedeki "çözüldü" durumuna geçer ve kullanıcının kapatması beklenir. Olay, `Çözüm Ekle`
+penceresindeki `Kaydet ve Durumu Değiştir` ile ya da `Özellikler`den durum seçilerek de çözüldü
+durumuna alınabilir.
+
+### Otomatik kapanma
+
+Yöneticiniz **Olay Otomatik Kapatma Süresi** tanımladıysa, çözüldü durumuna alınan olay bu süre
+dolduğunda kendiliğinden kapanır. Süre dolmadan olay çözüldü durumundan çıkarılırsa otomatik
+kapanma iptal olur.
+
+### Reddetme
+
+`⋮` menüsündeki `Reddet`, olayı bir gerekçe ve kapatma açıklamasıyla kapatır; penceresi kapatma
+penceresiyle aynı alanları taşır. Kurumunuzda **Reddet Butonunu Gizli Yap** ayarı açıksa menüde
+görünmez.
+
+### Yeniden açma
+
+Kapalı bir olayda araç çubuğunda `Kapat` yerine `Yeniden Aç` çıkar. Pencerede olayın alacağı açık ya
+da beklemedeki `Durum` seçilir. Birden fazla kapalı olay, listede seçilip toplu işlem çubuğundaki
+`Yeniden Aç` ile birlikte açılabilir.
+
+Kullanıcının kapalı bir olaya e-postayla yanıt vermesi de kurumunuzun ayarına göre olayı yeniden
+açar: yönetici, kapanıştan sonra belirli bir süre geçmişse yanıtın yeni bir olay olarak açılmasını
+ve yeniden açılan olayın alacağı durumu tanımlayabilir.
+
+<Callout type="info" title="ÖNEMLİ">
+`Kapat`, `Bana Ata` ve `Reddet` butonları yöneticinizin `Genel Ayarlar`daki seçimleriyle gizlenebilir.
+Ekranınızda bu butonlardan biri yoksa ayarı yöneticinize sorun.
+</Callout>
