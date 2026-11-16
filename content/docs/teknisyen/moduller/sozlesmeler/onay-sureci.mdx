@@ -1,68 +1,86 @@
 ---
 title: "Onay Süreci"
-description: "Sözleşme detayındaki Tavsiyeler sekmesinden onaycı ekleme, onaya gönderme, onaylama ve reddetme adımları."
-reviewed: "2026-08-20"
-owner: berdanasen
+description: "Sözleşmenin Tavsiyeler sekmesi: onaycı ekleme, onaya gönderme, onaylama ve reddetme; ilk kararın sözleşmenin onay durumunu belirlemesi."
+reviewed: "2026-11-17"
+owner: necatikekec
 ---
 
-Sözleşmenin onaya sunulması, detay ekranındaki `Tavsiyeler` sekmesinden yürütülür.
-Onay süreci; danışma kurulundan, kurum içi kişilerden ve kurum dışı e-posta
-adreslerinden oluşabilir.
+Sözleşmenin onaya sunulması `Tavsiyeler` sekmesinden yürütülür. Onaycı bir danışma kurulu, kurum içi bir kullanıcı ya da kurum dışı bir e-posta adresi olabilir.
 
-![Tavsiyeler sekmesi: onaycı listesi ve durumları](/img/teknisyen/sozlesme-v2-onay-sureci.png)
+```mermaid
+flowchart LR
+  A["Onay Gerektirmez"] -->|Onaycı eklenir| B["Onay Bekleniyor"]
+  B -->|İlk karar: onay| C["Onaylandı"]
+  B -->|İlk karar: ret| D["Reddedildi"]
+```
+
+**İlk karar sonucu belirler.** Onaycılardan biri onaylarsa sözleşme `Onaylandı` olur ve diğer onaycıların satırı **Onay Süresi Doldu** durumuna geçer. Biri reddederse sözleşme `Reddedildi` olur ve salt okunur kalır. Sonuçlanan süreçte onaycı eklenemez, çıkarılamaz, onaya gönderilemez.
+
+## Tavsiyeler sekmesi
+
+![Tavsiyeler sekmesi](/img/teknisyen/soz-onay-tablo.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | Onay durumu | Sözleşmenin onay durumu. İlk onaycı eklenince **Onay Bekleniyor** olur. |
+| ❷ | **Sözleşmeyi Onaylayacak Kişileri Ekle** | Onaycı ekleme penceresini açar. |
+| ❸ | **Danışılan Kişi** | Onaycının adı ya da e-posta adresi. |
+| ❹ | `Durum` | Onaycının satırının durumu; aşağıya bakın. |
+| ❺ | **Onayla / Reddet** | Kararı onaycı adına sizin vermenizi sağlar. |
+| ❻ | **Onay İçin Gönder** | Onay isteğini onaycıya gönderir. |
+| ❼ | Sil | Onaycıyı çıkarır. |
+
+Tablonun öbür sütunları **Gönderme Açıklaması** (gönderirken yazılan not), `Açıklama` (karar notu), **İstek Tarihi** ve **Sonuç tarihi**dir.
+
+| Satır durumu | Anlamı |
+|---|---|
+| **Onaya gönderilmeyi bekliyor.** | Onaycı eklendi, istek henüz gönderilmedi. |
+| **Cevap bekleniyor.** | İstek gönderildi, karar bekleniyor. |
+| **Onayladı veya tamamladı.** | Onaycı onayladı. |
+| `Reddetti.` | Onaycı reddetti. |
+| **Onay Süresi Doldu** | Başka bir onaycının kararı süreci sonuçlandırdı. |
 
 ## Onaycı ekleme
 
-`Sözleşmeyi Onaylayacak Kişileri Ekle` butonu `Danışılacak Kişileri Ekle` penceresini
-açar. Pencerede üç alan bulunur:
+![Danışılacak Kişileri Ekle penceresi](/img/teknisyen/soz-onay-ekle.png)
 
-- `Danışma Kurulu` — tanımlı bir kurul seçilir.
-- `Danışılacak Kişiler` — kurum içi kullanıcılar seçilir.
-- `Danışılacak Diğer Üyeler (Dış Kaynaklar, Danışmanlar vb)` — kurum dışı e-posta adresleri girilir.
+| # | Alan | Ne işe yarar |
+|---|---|---|
+| ❶ | **Danışma Kurulu** | Tanımlı bir danışma kurulu. |
+| ❷ | **Danışılacak Kişiler** | Kurum içi kullanıcılar. |
+| ❸ | **Danışılacak Diğer Üyeler** | Kurum dışı e-posta adresleri (danışman, tedarikçi vb.). |
 
-![Onaycı ekleme penceresi](/img/teknisyen/sozlesme-v2-onay-uye-ekle.png)
+En az bir onaycı seçilmelidir. Aynı e-posta adresi iki kez eklenmez.
 
-En az bir kişi seçilmelidir. Aynı e-posta adresi birden fazla kez eklenemez; daha önce
-eklenmiş kurum dışı adresler tekrar eklenmez.
+## Onaya gönderme
 
-<Callout type="info" title="ÖNEMLİ">
-İlk onaycı eklendiğinde sözleşmenin onay durumu **Onay Bekleniyor** olur ve sekme
-çubuğunun sağındaki onay rozetinde görünür.
-</Callout>
+![Onay İçin Gönder penceresi](/img/teknisyen/soz-onay-gonder.png)
 
-## Onay adımları
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | `Açıklama` | Onaycıya gidecek not. Zorunlu, en az 3 karakter. |
+| ❷ | `Gönder` | İsteği e-postayla gönderir; satır **Cevap bekleniyor.** olur. |
 
-Onaycı listesindeki her satır kendi durumunu taşır ve şu sırayı izler:
+Kurum içi onaycı isteği son kullanıcı portalındaki **Onaylarım** listesinde de görür. Kurum dışı onaycı kararını e-postadaki bağlantıdan açılan sayfada verir.
 
-1. **Gönderim bekliyor** — onaycı eklenmiştir, henüz kendisine gönderilmemiştir.
-   Satırdaki `Onay İçin Gönder` butonu ile onay talebi iletilir.
-2. **Cevap bekleniyor** — talep iletilmiştir, onaycının kararı beklenir. Bu satırda
-   `Onayla / Reddet` butonu etkinleşir.
-3. **Onayladı veya tamamladı** / **Reddedildi** — karar verilmiştir; satırda sonuç tarihi
-   görünür ve her iki buton da pasifleşir.
+## Onaylama ve reddetme
 
-Tabloda onaycının adı (`Advisor` kolonu) ile birlikte `Durum`, `Gönderme Açıklaması`,
-`Açıklama`, `İstek Tarihi` ve `Sonuç tarihi` bilgileri listelenir. `Gönderme Açıklaması`
-onay talebi gönderilirken, `Açıklama` ise karar verilirken girilir.
+![Danışmayı Onayla penceresi](/img/teknisyen/soz-onay-karar.png)
 
-Onaycılar kararlarını sözleşme ekranından verebileceği gibi, kendilerine gönderilen
-onay e-postasındaki bağlantı üzerinden de onaylayabilir veya reddedebilir.
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | `Açıklama` | Kararın gerekçesi. Zorunlu, en az 3 karakter. |
+| ❷ | `Reddet` | Onaycı adına reddeder. |
+| ❸ | `Onayla` | Onaycı adına onaylar. |
 
-## Süreç tamamlandığında
-
-- Sözleşmenin onay durumu **Onaylandı** veya **Reddedildi** olduğunda
-  `Sözleşmeyi Onaylayacak Kişileri Ekle` butonu pasifleşir; yeni onaycı eklenemez.
-- Onay süreci **reddedildiyse** sözleşmenin tamamı salt okunur hâle gelir.
-- Sözleşme pasif veya iptal edilmiş durumdaysa da onaycı eklenemez.
-
-Onay ve ret işlemleri sözleşmenin `Geçmiş` sekmesine kaydedilir.
+**Onayla / Reddet** düğmesi, istek gönderilmeden önce de etkindir.
 
 ## Yetkiler
 
 | İşlem | Gerekli yetki |
 |---|---|
-| Onaycı ekleme, onaycı çıkarma, onay için gönderme | `Sözleşme Düzenleyebilir` |
-| Ekrandaki `Onayla` / `Reddet` butonlarının görünmesi | `Sözleşme Düzenleyebilir` |
-| Onaycı satırının silinebilmesi | `Sözleşme Silebilir` |
+| Onaycı ekleme, onaya gönderme | **Sözleşme Düzenleyebilir** |
+| **Onayla / Reddet** düğmesinin görünmesi | **Sözleşme Düzenleyebilir** |
+| Onaycı satırını silme | **Sözleşme Silebilir** |
 
-`SuperAdmin` yetkisine sahip kullanıcılar bu işlemlerin tamamını yapabilir.
+Onay olayları sözleşmenin `Geçmiş` sekmesine yazılır.

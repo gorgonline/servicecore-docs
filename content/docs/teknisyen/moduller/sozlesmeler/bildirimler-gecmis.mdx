@@ -1,88 +1,67 @@
 ---
 title: "Bildirimler ve Geçmiş"
-description: "Sözleşme bitiş tarihine bağlı bildirim alıcıları ve gün ayarları, yetkili teknisyen grupları ve sözleşme geçmişi."
-reviewed: "2026-08-20"
-owner: berdanasen
+description: "Sözleşme bitişine bağlı hatırlatmaların alıcıları ve günleri, yetkili teknisyen grupları ve sözleşmenin değişiklik geçmişi."
+reviewed: "2026-11-17"
+owner: necatikekec
 ---
 
-## Bildirimler sekmesi
+## Bildirimler
 
-`Bildirimler` sekmesi, sözleşmenin bitiş tarihine bağlı hatırlatmaların kime ve kaç gün
-önce/sonra gideceğini belirler.
+`Bildirimler` sekmesi, sözleşmenin bitiş tarihine bağlı hatırlatmaların kime ve kaç gün önce ya da sonra gideceğini belirler. Sözleşmeyi görecek teknisyen grupları da buradan seçilir.
 
-<Callout type="info" title="ÖNEMLİ">
-Bu sekmenin **kendi `Kaydet` butonu** vardır ve sağ paneldeki araç çubuğu `Kaydet`
-butonu bu sekme açıkken pasiftir. Bildirim ayarlarını sekmenin sağ üstündeki
-`Kaydet` ile kaydedin.
-</Callout>
+![Bildirimler sekmesi](/img/teknisyen/soz-bildirimler.png)
 
-![Bildirimler sekmesi](/img/teknisyen/sozlesme-v2-bildirimler.png)
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | `Kaydet` | Bu sekmedeki ayarları kaydeder. Sekme açıkken sağdaki araç çubuğunun `Kaydet`'i pasiftir. |
+| ❷ | Karşı taraf alıcıları | **Süresi Dolmadan Önce Kullanıcıyı Bilgilendir** ve **Süresi Geçtikten Sonra Kullanıcıyı Bilgilendir**. |
+| ❸ | Bizim taraftaki alıcılar | **Süresi Dolmadan Önce Bizim Kullanıcımızı Bilgilendir** ve **Süresi Geçtikten Sonra Bizim Kullanıcımızı Bilgilendir**; kurum içi kullanıcılar. |
+| ❹ | Günler | Bitişten kaç gün önce ve kaç gün sonra hatırlatma gideceği. |
+| ❺ | **Teknisyen Grupları** | Sözleşmeyi görecek yetkili teknisyen grupları. |
 
-### Alıcılar
+Karşı taraf alıcıları sözleşmenin türüne göre seçilir:
 
-Bildirim alıcıları iki gruba ayrılır:
-
-- **Karşı taraf** — `Süresi Dolmadan Önce Kullanıcıyı Bilgilendir` ve
-  `Süresi Geçtikten Sonra Kullanıcıyı Bilgilendir` alanları. Seçilebilecek kişiler
-  sözleşme modeline göre değişir:
-
-  | Sözleşme modeli | Karşı taraf listesi |
-  |---|---|
-  | Kurum İçi Destek | Sözleşmenin bağlı olduğu **bölümün** kullanıcıları |
-  | Tedarikçi | Sözleşmenin **tedarikçisine** tanımlı iletişim kişileri |
-  | Müşteri Hizmet | Sözleşmenin bağlı olduğu **destek müşteri hesabının** kullanıcıları |
-
-- **Bizim tarafımız** — `Süresi Dolmadan Önce Bizim Kullanıcımızı Bilgilendir` ve
-  `Süresi Geçtikten Sonra Bizim Kullanıcımızı Bilgilendir` alanları. Kurum içi
-  kullanıcılar arasından seçim yapılır.
-
-<Callout type="warn" title="DİKKAT">
-Kurum içi destek sözleşmesinde **bölüm**, müşteri hizmet sözleşmesinde **destek müşteri
-hesabı** seçilmemişse karşı taraf listesi boş kalır ve seçim yapılamaz. Önce
-`Özellikler` panelinden ilgili alanı doldurun.
-</Callout>
+| Sözleşme türü | Seçilebilen kişiler |
+|---|---|
+| Kurum içi destek | Sözleşmenin departmanının kullanıcıları |
+| Tedarikçi | Tedarikçiye tanımlı iletişim kişileri |
+| Müşteri hizmet | Sözleşmenin müşteri hesabının kullanıcıları |
 
 ### Gün ayarları
 
-`Süresi Dolmadan Önce Bilgilendir (Gün)` ve `Süresi Geçtikten Sonra Bilgilendir (Gün)`
-alanlarına **birden fazla gün** girilebilir; her değer bir etiket olarak eklenir.
-Yalnızca sayı kabul edilir ve aynı gün iki kez eklenmez. Örneğin `30`, `7` ve `1`
-girildiğinde bitişten 30, 7 ve 1 gün önce hatırlatma gönderilir.
+Gün alanlarına birden çok gün girebilirsiniz; her değer ayrı bir etiket olur. Yalnız sayı kabul edilir ve aynı gün iki kez eklenmez. Ör. önce alanına `30`, `7` ve `1` girerseniz bitişten 30, 7 ve 1 gün önce hatırlatma gider.
 
-Bu alanlar, `Özellikler` panelindeki aynı adlı alanlarla aynı veriyi gösterir;
-hangisinden değiştirirseniz diğerinde de görünür.
+Bu alanlar `Özellikler` panelindeki **Süresi Dolmadan Önce Bilgilendir (Gün)** ve **Süresi Geçtikten Sonra Bilgilendir (Gün)** alanlarıyla aynı veridir.
 
-### Yetkili Teknisyen Grupları
+### Hatırlatmalar nasıl gönderilir
 
-`Yetkili Teknisyen Grupları` alanı, sözleşmeyi hangi teknisyen gruplarının göreceğini
-belirler.
+- Sözleşme her kaydedildiğinde hatırlatmalar yeniden planlanır.
+- "Önce" hatırlatması bitiş tarihinden o kadar gün önceye kurulur; bu tarih geçmişte kalıyorsa kurulmaz.
+- "Sonra" hatırlatması bitiş tarihinden o kadar gün sonraya kurulur.
+- Hatırlatma her iki taraftaki alıcıların her birine e-postayla gider ve `Geçmiş`'e **Sözleşme Bildirimi Gönderildi** olarak yazılır.
+- İptal edilmiş sözleşmeye hatırlatma gitmez.
 
-- Alan boş bırakılan sözleşmeler **herkes** tarafından görülür.
-- Bir veya daha fazla grup seçilirse, grup kısıtına tabi kullanıcılar bu sözleşmeyi
-  yalnızca seçilen gruplardan birine üyeyse görür.
-- Kısıt hem sözleşme listelerine hem de `Pano` sayılarına uygulanır.
-- `SuperAdmin` yetkisine sahip kullanıcılar bu kısıttan etkilenmez.
+### Yetkili teknisyen grupları
 
-## Geçmiş sekmesi
+**Teknisyen Grupları** alanı sözleşmeyi kimlerin göreceğini sınırlar:
 
-`Geçmiş` sekmesi, sözleşme üzerinde yapılan tüm değişiklikleri zaman çizelgesi olarak
-listeler: alan güncellemeleri, onay üyesi ekleme, finansal kayıt ve yenileme işlemleri,
-ilişkilendirmeler, dosya ekleme/silme ve durum değişiklikleri. Her satırda **tarih-saat,
-yapılan işlem ve işlemi yapan kişi** yer alır. Sekme başlığındaki rozet, kayıt sayısını gösterir.
+- Alan boşsa sözleşmeyi herkes görür.
+- Grup seçilirse, grup kısıtına tabi kullanıcılar sözleşmeyi yalnız seçilen gruplardan birinin üyesiyse görür.
+- Kısıt listelere ve pano sayılarına uygulanır; süper yöneticiler etkilenmez.
 
-![Geçmiş sekmesi: filtreler ve zaman çizelgesi](/img/teknisyen/sozlesme-v2-gecmis.png)
+Kısıtın kimlere uygulandığı için bkz. [Genel Bakış](/docs/teknisyen/moduller/sozlesmeler/genel-bakis#yetkili-teknisyen-grupları).
 
-### Geçmişi filtreleme
+## Geçmiş
 
-Zaman çizelgesinin üstünde üç filtre bulunur:
+`Geçmiş` sekmesi sözleşme üzerinde yapılan her işlemi zaman sırasıyla listeler: alan güncellemeleri, onaycı işlemleri, finansal kayıtlar, yenilemeler, ilişkiler, dosyalar, gönderilen hatırlatmalar. Sekme başlığındaki rozet kayıt sayısıdır.
 
-| Filtre | İşlevi |
-|---|---|
-| `Operasyon Tipi` | İşlemin hangi kayıt üzerinde yapıldığını seçer (sözleşme, yenileme, finansal bilgi, ilişki, onay üyesi …) |
-| `İşlem Tipi` | İşlemin türünü seçer (ekleme, güncelleme, silme) |
-| `Başlangıç Tarihi` – `Bitiş Tarihi` | Belirli bir tarih aralığındaki kayıtları gösterir |
+![Geçmiş sekmesi](/img/teknisyen/soz-gecmis.png)
 
-Filtreler birlikte çalışır ve listeyi anında daraltır; tarih aralığı için **iki ucun da**
-seçilmesi gerekir. Filtreleme yalnızca ekrandaki görünümü etkiler, kayıtlara dokunmaz.
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | **Operasyon Tipi** | İşlemin hangi kayıt üzerinde yapıldığı: sözleşme, yenileme, finansal bilgi, ilişki, onaycı vb. |
+| ❷ | **İşlem Tipi** | Ekleme, güncelleme ya da silme. |
+| ❸ | Tarih aralığı | **Başlangıç Tarihi** ile **Bitiş Tarihi** arasındaki kayıtlar. İki uç da seçilmelidir. |
+| ❹ | Kayıtlar | Tarih ve saat, işlem ve işlemi yapan kişi. Sistemin yaptığı işlemlerde kişi yerine `Sistem` yazar. |
 
-Geçmiş kayıtları yalnızca okunur; buradan bir işlem geri alınamaz.
+Süzgeçler birlikte çalışır ve yalnız görünümü daraltır. Geçmiş salt okunurdur.

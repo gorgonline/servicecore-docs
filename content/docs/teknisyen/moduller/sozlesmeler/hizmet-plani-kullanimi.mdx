@@ -1,0 +1,48 @@
+---
+title: "Hizmet Planı Kullanımı"
+description: "Müşteri hizmet sözleşmesine bağlı destek planının kota kullanımı, kota durumları, ek kota ekleme ve yeni plana devretme."
+reviewed: "2026-11-17"
+owner: necatikekec
+---
+
+`Hizmet Planı Kullanımı` sekmesi, müşteri hizmet sözleşmesine bağlı destek hizmet planının kotasının ne kadarının kullanıldığını gösterir. Sekme yalnız `Destek Planı` alanı dolu müşteri hizmet sözleşmelerinde görünür. Planların tanımı için bkz. [Hizmet Planları](/docs/yonetici/hizmet-planlari/genel-bakis).
+
+![Hizmet Planı Kullanımı sekmesi](/img/teknisyen/soz-plan-kullanim.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | Plan | Sözleşmeye bağlı destek hizmet planı; basınca plan açılır. |
+| ❷ | **Ek kota ekle** | Mevcut hakkı bir ek kota planıyla yükseltir. |
+| ❸ | **Yeni plana devret** | Sözleşmeyi başka bir plana taşır. |
+| ❹ | **+10 ek kota** | Bu kayıt türüne eklenmiş ek kota. Önceki plandan devreden kota **+n Devir** olarak görünür. |
+| ❺ | **Düşük bakiye** | Kalan kota yüzde 20'nin altına inmiştir. |
+| ❻ | `Aşıldı` | Kullanım kotayı geçmiştir. |
+| ❼ | `Sınırsız` | Bu kayıt türü için kota tanımlı değildir. |
+| ❽ | `Hareketler`, `Ücretlendirme` | Kotayı hangi kaydın ne kadar tükettiği; iş günlüklerinin kurala göre hesaplanan tutarı. Başlığa basınca açılır. |
+
+Her kayıt türü (`Olay`, `İstek`, `Görev`, **İş Günlüğü**) için kullanılan ve toplam hak `kullanılan / hak` biçiminde, yanında yüzde ile gösterilir. Kotası sağlıklı olan satırda `Sağlıklı` yazar. **İş Günlüğü** satırındaki `Efor` etiketi, iş günlüğü kotasının harcanan süreyle ölçüldüğünü gösterir.
+
+## Ek kota ekleme
+
+![Ek kota ekle penceresi](/img/teknisyen/soz-plan-ek-kota.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | **Ek Kota Planı** | Eklenecek ek kota planı. |
+| ❷ | Bilgi notu | Ek kota mevcut hakkı yükseltir; tüketim sıfırlanmaz ve sözleşme süresi uzamaz. |
+| ❸ | `Uygula` | Ek kotayı ekler. |
+
+## Yeni plana devretme
+
+![Yeni plana devret penceresi](/img/teknisyen/soz-plan-devret.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | **Hedef plan** ve devir seçeneği | Sözleşmenin geçeceği plan. **Kalan kotayı yeni plana devret** işaretliyse kalan kota yeni planın kotasına kredi olarak eklenir. Devirde tüketim sıfırlanır. |
+| ❷ | `Devret` | Sözleşmeyi yeni plana taşır. |
+
+Planı `Özellikler` panelindeki `Destek Planı` alanından değiştirip kaydettiğinizde de **Kalan kotayı devret?** diye sorulur: **Evet, devret** ya da `Hayır`.
+
+## Yetki
+
+Sekmenin verisi, ek kota ve devir için **Servis Planlarını Yönetebilir** yetkisi gerekir. Bu yetki olmadan sekme boş kalır.

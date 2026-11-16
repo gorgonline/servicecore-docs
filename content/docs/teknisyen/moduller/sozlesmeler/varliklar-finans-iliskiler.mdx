@@ -1,79 +1,81 @@
 ---
 title: "Varlıklar, Finansal Bilgiler ve İlişkiler"
-description: "Sözleşmeye varlık ve hizmet bağlama, maliyet kaydı girme ve sözleşmeler arasında alt/üst ilişki kurma."
-reviewed: "2026-08-20"
-owner: berdanasen
+description: "Sözleşmeye varlık ve hizmet bağlama, ödeme ve maliyet kaydı, alt ve kapsamı genişletilmiş sözleşme ilişkileri, müşteri hesabının süreçleri."
+reviewed: "2026-11-17"
+owner: necatikekec
 ---
 
-Sözleşme detayındaki üç sekme, sözleşmenin kapsamını tanımlar: hangi varlıkları
-kapsadığı, ne kadara mal olduğu ve hangi sözleşmelerle ilişkili olduğu.
-Bu sekmelerdeki tüm ekleme, düzenleme ve silme işlemleri `Sözleşme Düzenleyebilir`
-yetkisi ister ve sözleşme salt okunur durumdayken kapalıdır.
+Bu sayfa sözleşmenin kapsamını tanımlayan sekmeleri anlatır: hangi varlıkları kapsadığı, ne kadara mal olduğu, hangi sözleşmelerle ilişkili olduğu. Bu sekmelerdeki ekleme, düzenleme ve silme işlemleri **Sözleşme Düzenleyebilir** yetkisi ister ve salt okunur sözleşmede kapalıdır.
 
 ## Varlıklar
 
-`Varlıklar` sekmesinde iki ayrı tablo bulunur: üstte sözleşmeye bağlı **varlıklar**,
-altta bağlı **hizmetler**.
+`Varlıklar` sekmesinde üstte sözleşmeye bağlı varlıklar, altta bağlı hizmetler listelenir. Henüz bağ yoksa sekmede yalnız iki ekleme düğmesi görünür.
 
-![Varlıklar sekmesi: varlık ve hizmet tabloları](/img/teknisyen/sozlesme-v2-varliklar.png)
+![Varlıklar sekmesi](/img/teknisyen/soz-varliklar.png)
 
-- `Varlık Ekle` — henüz bir sözleşmeye bağlanmamış varlıkların listesini açar; seçilen
-  varlıklar sözleşmeye bağlanır.
-- `Hizmet Ekle` — aynı akışı varlık hizmetleri için çalıştırır.
-- Tablodaki satırlar üzerinden bağlantı kaldırılabilir.
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | **Varlık Ekle** | Varlık seçme panelini açar. |
+| ❷ | **Hizmet Ekle** | Aynı akışı varlık hizmetleri için açar. |
+| ❸ | Varlık sütunları | Numara, seri no, ad, tür, varlık durumu, bağlı sözleşme ve sözleşmenin durumu, barkod. |
+| ❹ | Kaldır | Varlığın sözleşmeyle bağını kaldırır. |
 
-Henüz hiçbir bağlantı yoksa sekmede boş içerik ekranı ve aynı iki buton görünür.
+### Varlık bağlama
 
-<Callout type="info" title="ÖNEMLİ">
-Bağlanabilir varlık ve hizmet listelerini görebilmek için CMDB tarafındaki varlık
-hizmetlerini görüntüleme yetkisi de gerekir. Bu yetki yoksa listeler boş gelir.
-</Callout>
+![Varlık Ekle paneli](/img/teknisyen/soz-varlik-ekle.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | Arama kapsamı | **Kullanıcıya ait varlıklarda ara**, **Kullanıcı departmanına ait varlıklarda ara** ya da **Kurum varlıklarında ara**. |
+| ❷ | Tümünü seç | Sayfadaki varlıkların hepsini seçer. |
+| ❸ | Varlık satırı | Kutuyu işaretleyerek varlığı seçin. Sütun başlıklarındaki kutularla listeyi süzebilirsiniz. |
+
+Seçimden sonra panelin altındaki `Kaydet` ile varlıkları bağlayın. Bağlanabilir varlık ve hizmetleri görmek için CMDB'de varlık hizmetlerini görme yetkiniz de olmalıdır; yoksa liste boş gelir.
 
 ## Finansal Bilgiler
 
-`Finansal Bilgiler` sekmesi, sözleşmeye ait ödeme ve maliyet kayıtlarını tutar.
+`Finansal Bilgiler` sekmesi sözleşmenin ödeme ve maliyet kayıtlarını tutar. Kayıt yoksa sekmede **Yeni Bir Finansal Bilgi Ekleyiniz** yazar; **Finansal Bilgi Ekle** ile yeni kayıt açılır.
 
-![Finansal Bilgiler sekmesi](/img/teknisyen/sozlesme-v2-finansal.png)
+![Finansal bilgi ekleme penceresi](/img/teknisyen/soz-finans-ekle.png)
 
-`Finansal Bilgi Ekle` butonu ile açılan pencerede şu alanlar bulunur:
-
-| Alan | Zorunlu | Açıklama |
+| # | Alan | Ne işe yarar |
 |---|---|---|
-| `Ödeme Adı` | Evet | Ödemenin tanımı |
-| `Maliyet` | Evet | Yalnızca sayı girilebilir; harf ve ondalık kabul edilmez |
-| `Para Birimi` | Evet | Tanımlı para birimleri arasından seçilir |
-| `Ödeme Tarihi` | Hayır | |
-| `Sipariş Numarası` | Hayır | |
-| `Fatura Numarası` | Hayır | |
-| `Dekont Numarası` | Hayır | |
-| `Açıklama` | Hayır | |
+| ❶ | **Sipariş Numarası** | İsteğe bağlı. |
+| ❷ | **Fatura Numarası** | İsteğe bağlı. |
+| ❸ | **Dekont Numarası** | İsteğe bağlı. |
+| ❹ | **Ödeme Adı** | Ödemenin tanımı. Zorunlu. |
+| ❺ | `Maliyet`, **Para Birimi** | Tutar ve para birimi. İkisi de zorunlu; maliyete yalnız tam sayı girilir. |
+| ❻ | **Ödeme Tarihi** | İsteğe bağlı. |
+| ❼ | `Açıklama` | İsteğe bağlı. |
 
-Kayıtlar tabloda listelenir; satır üzerinden düzenlenebilir veya silinebilir.
-Silme işleminden önce onay sorulur.
+Kayıtlar tabloda **Ödeme Adı**, **Fatura Numarası**, **Sipariş Numarası**, **Dekont Numarası**, `Maliyet`, **Ödeme Tarihi** ve `Açıklama` sütunlarıyla listelenir; satırdan düzenlenir ya da onayla silinir.
 
 ## İlişkili Sözleşmeler
 
-`İlişkili Sözleşmeler` sekmesi, sözleşmeler arasında hiyerarşi ve ek sözleşme ilişkisi
-kurmak için kullanılır. `İlişkili Sözleşme Ekle` menüsünde iki seçenek vardır:
+Sözleşmeler arasında hiyerarşi ve ek sözleşme ilişkisi kurulur.
 
-- `Alt Sözleşme İlişkilendir` — bu sözleşmenin altına bağlı bir sözleşme eklenir.
-- `Kapsamı Genişletilmiş Sözleşme ile İlişkilendir` — bu sözleşmenin kapsamını genişleten
-  bir ek sözleşme eklenir.
+![İlişkili Sözleşme Ekle menüsü](/img/teknisyen/soz-iliski-menu.png)
 
-![İlişkili Sözleşmeler sekmesi](/img/teknisyen/sozlesme-v2-iliskili.png)
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | **İlişkili Sözleşme Ekle** | İlişki türü menüsünü açar. |
+| ❷ | **Alt Sözleşme İlişkilendir** | Seçtiğiniz sözleşmeler bu sözleşmenin alt sözleşmesi olur. |
+| ❸ | **Kapsamı Genişletilmiş Sözleşme ile İlişkilendir** | Seçtiğiniz sözleşmeler bu sözleşmenin kapsamını genişleten ek sözleşme olur. |
 
-Kurulan ilişkiler dört ayrı tabloda listelenir; **yalnızca kayıt bulunan tablolar görünür**:
+Açılan pencerede sözleşmeleri seçip **Bağlantı Ekle**'ye basın. Listede yalnız henüz ilişkilendirilmemiş sözleşmeler görünür.
 
-- `Alt Sözleşmeler`
-- `Üst Sözleşmeler`
-- `Kapsamı Genişletilmiş Sözleşmeler`
-- `Üst Ek Sözleşmeler`
+Kurulan ilişkiler dört tabloda listelenir; yalnız kaydı olan tablolar görünür: **Alt Sözleşmeler**, **Üst Sözleşmeler**, **Kapsamı Genişletilmiş Sözleşmeler**, **Üst Ek Sözleşmeler**. Bir ilişki satırdaki silme işlemiyle, onaydan sonra kaldırılır.
 
-Her tabloda `Sözleşme No`, `Sözleşme Türü Adı`, `Başlangıç Tarihi`, `Bitiş Tarihi`,
-`Durum` ve `Düzenleme` kolonları bulunur; başlıkta kayıt sayısı gösterilir. İlişki,
-satırdaki silme işlemiyle kaldırılır; kaldırmadan önce onay sorulur.
+## Süreçler
 
-<Callout type="info" title="ÖNEMLİ">
-İlişki kurulacak sözleşme listesinde yalnızca bu sözleşmeyle **henüz ilişkilendirilmemiş**
-sözleşmeler görünür.
-</Callout>
+`Süreçler` sekmesi yalnız müşteri hesabı seçili müşteri hizmet sözleşmelerinde görünür. Sözleşmenin müşteri hesabına ait kayıtları türlerine göre listeler.
+
+![Süreçler sekmesi](/img/teknisyen/soz-surecler.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | Kayıt türleri | `Çağrı`, `Olay`, `Problem`, `İstek`, `Değişiklik`, `SI`, `Görev`, `Proje`. |
+| ❷ | **Excel'e Aktar** | Listeyi Excel dosyası olarak indirir. |
+| ❸ | **Bağıntı Ekle** | Seçili türde yeni kayıt oluşturur. |
+
+Bir kaydın listede görünmesi için talep sahibinin müşteri hesabının kişisi olması gerekir. Hesabın kişileri için bkz. [Müşteri Detayı](/docs/teknisyen/moduller/musteriler/detay).

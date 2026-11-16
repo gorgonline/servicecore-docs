@@ -1271,32 +1271,32 @@
   },
   {
     "source": "/docs/teknisyenkullanımkilavuzu/moduller/Sözleşmeler/sozlesmeler",
-    "destination": "/docs/teknisyen/moduller/sozlesmeler/sozlesmeler",
+    "destination": "/docs/teknisyen/moduller/sozlesmeler/olusturma",
     "permanent": true
   },
   {
     "source": "/docs/teknisyenkullan%C4%B1mkilavuzu/moduller/S%C3%B6zle%C5%9Fmeler/sozlesmeler",
-    "destination": "/docs/teknisyen/moduller/sozlesmeler/sozlesmeler",
+    "destination": "/docs/teknisyen/moduller/sozlesmeler/olusturma",
     "permanent": true
   },
   {
     "source": "/docs/teknisyenkullan%C4%B1mkilavuzu/moduller/So%CC%88zles%CC%A7meler/sozlesmeler",
-    "destination": "/docs/teknisyen/moduller/sozlesmeler/sozlesmeler",
+    "destination": "/docs/teknisyen/moduller/sozlesmeler/olusturma",
     "permanent": true
   },
   {
     "source": "/docs/teknisyenkullanımkilavuzu/moduller/Sözleşmeler/sozlesmeler2",
-    "destination": "/docs/teknisyen/moduller/sozlesmeler/sozlesmeler2",
+    "destination": "/docs/teknisyen/moduller/sozlesmeler/genel-bakis",
     "permanent": true
   },
   {
     "source": "/docs/teknisyenkullan%C4%B1mkilavuzu/moduller/S%C3%B6zle%C5%9Fmeler/sozlesmeler2",
-    "destination": "/docs/teknisyen/moduller/sozlesmeler/sozlesmeler2",
+    "destination": "/docs/teknisyen/moduller/sozlesmeler/genel-bakis",
     "permanent": true
   },
   {
     "source": "/docs/teknisyenkullan%C4%B1mkilavuzu/moduller/So%CC%88zles%CC%A7meler/sozlesmeler2",
-    "destination": "/docs/teknisyen/moduller/sozlesmeler/sozlesmeler2",
+    "destination": "/docs/teknisyen/moduller/sozlesmeler/genel-bakis",
     "permanent": true
   },
   {
@@ -1801,12 +1801,12 @@
   },
   {
     "source": "/docs/teknisyenkullanımkilavuzu/moduller/Sözleşmeler/sozlesmeler",
-    "destination": "/docs/teknisyen/moduller/sozlesmeler/sozlesmeler",
+    "destination": "/docs/teknisyen/moduller/sozlesmeler/olusturma",
     "permanent": true
   },
   {
     "source": "/docs/teknisyenkullanımkilavuzu/moduller/Sözleşmeler/sozlesmeler2",
-    "destination": "/docs/teknisyen/moduller/sozlesmeler/sozlesmeler2",
+    "destination": "/docs/teknisyen/moduller/sozlesmeler/genel-bakis",
     "permanent": true
   },
   {
@@ -2002,6 +2002,16 @@
   {
     "source": "/docs/kullanici/flexiportal",
     "destination": "/docs/kullanici/genel-bakis",
+    "permanent": true
+  },
+  {
+    "source": "/docs/teknisyen/moduller/sozlesmeler/sozlesmeler2",
+    "destination": "/docs/teknisyen/moduller/sozlesmeler/genel-bakis",
+    "permanent": true
+  },
+  {
+    "source": "/docs/teknisyen/moduller/sozlesmeler/sozlesmeler",
+    "destination": "/docs/teknisyen/moduller/sozlesmeler/olusturma",
     "permanent": true
   }
 ]

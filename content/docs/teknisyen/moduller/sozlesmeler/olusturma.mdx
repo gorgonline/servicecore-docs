@@ -1,0 +1,39 @@
+---
+title: "Sözleşme Oluşturma"
+description: "Sözleşme Ekle paneli: özel form seçimi, sözleşme türü ve karşı taraf, tarihler, bitiş hatırlatmaları, otomatik yenileme ve yetkili gruplar."
+reviewed: "2026-11-17"
+owner: necatikekec
+---
+
+Yeni sözleşme, sağ üstteki **Sözleşme Ekle** ile açılan yan panelden oluşturulur.
+
+<Callout type="info" title="ÖNEMLİ">Paneldeki alanlar, yönetim panelinde sözleşmeler için tasarlanmış özel formdan gelir. Görseldeki form ürünle gelen varsayılan sözleşme formudur; kurumunuzun formu farklı alanlar içerebilir. Sözleşmeler için hiç form tanımlı değilse panelde **Uygun custom form bulunamadı.** yazar.</Callout>
+
+![Sözleşme Ekle paneli](/img/teknisyen/soz-olustur-form.png)
+
+| # | Alan | Ne işe yarar |
+|---|---|---|
+| ❶ | **Özel Form** | Kullanılacak form. Varsayılan form kendiliğinden seçilir. |
+| ❷ | **Sözleşme Türü** ve karşı taraf | Sözleşmenin türü (kurum içi destek, tedarikçi, müşteri hizmet). Türe göre karşı taraf alanı çıkar: departman, tedarikçi ya da `Müşteri`. Zorunlu. |
+| ❸ | **Sözleşme Türleri**, **Sözleşme Adı**, plan | Yönetim panelinde tanımlı sözleşme türü (zorunlu), sözleşmenin adı ve müşteri hizmet sözleşmesinde destek hizmet planı. |
+| ❹ | `Açıklama`, **Dosya Ekle** | Sözleşmenin açıklaması ve ekleri. |
+| ❺ | **Başlangıç Tarihi**, **Bitiş Tarihi** | Geçerlilik aralığı. Zorunlu. |
+| ❻ | Bitiş hatırlatmaları | Bitişten kaç gün önce ve sonra hatırlatma gideceği, bizim taraftan kimlere gideceği. Karşı taraf seçildikten sonra karşı taraftan alıcı alanları da çıkar. |
+| ❼ | **Otomatik Yenilensin** | Açılırsa **Bitiş tarihine otomatik eklenecek süre** çıkar (1 ay ile 60 ay arası). |
+| ❽ | **Yetkili Teknisyen Grupları** | Sözleşmeyi görecek teknisyen grupları. Boş bırakılırsa herkes görür. |
+| ❾ | `Kaydet` | Sözleşmeyi oluşturur. |
+
+Gün alanlarına birden çok gün yazabilirsiniz; her gün ayrı bir etiket olur. Hatırlatmaların nasıl gönderildiği için bkz. [Bildirimler ve Geçmiş](/docs/teknisyen/moduller/sozlesmeler/bildirimler-gecmis).
+
+## Adımlar
+
+1. **Sözleşme Ekle**'ye basın.
+2. Gerekirse **Özel Form**'dan başka bir form seçin.
+3. **Sözleşme Türü**'nü ve karşı tarafı seçin.
+4. **Sözleşme Türleri**'ni seçin, adı ve tarihleri girin.
+5. Hatırlatma günlerini, alıcıları ve yetkili grupları belirleyin.
+6. `Kaydet`'e basın.
+
+Yeni sözleşme aktif ve **Onay Gerektirmez** durumuyla oluşur.
+
+<Callout type="warn" title="DİKKAT">Sözleşmenin türü ve karşı tarafı (departman, tedarikçi ya da müşteri) kayıttan sonra değiştirilemez; sözleşme sayfasında bu alanlar kilitlidir.</Callout>

@@ -1,13 +1,14 @@
 {
   "title": "SÖZLEŞMELER",
   "pages": [
-    "sozlesmeler2",
+    "genel-bakis",
     "pano",
     "liste",
+    "olusturma",
     "detay",
     "onay-sureci",
+    "hizmet-plani-kullanimi",
     "varliklar-finans-iliskiler",
-    "bildirimler-gecmis",
-    "sozlesmeler"
+    "bildirimler-gecmis"
   ]
 }

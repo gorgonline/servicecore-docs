@@ -1,0 +1,86 @@
+---
+title: "Genel Bakış"
+description: "Sözleşmeler modülü: kurum içi destek, tedarikçi ve müşteri hizmet sözleşmeleri, ekranın bölümleri, onay ve aktiflik durumları, yetkiler."
+reviewed: "2026-11-17"
+owner: necatikekec
+---
+
+Sözleşmeler modülü, kurumunuzun yaptığı üç tür sözleşmeyi tek yerde tutar: iç birimlere verilen destek, tedarikçilerden alınan hizmet ve müşterilere sunulan hizmet. Her sözleşmenin geçerlilik tarihleri, bitiş hatırlatmaları, onay süreci, maliyetleri ve kapsadığı varlıklar sözleşme sayfasında izlenir.
+
+Modüle üst menüdeki `Sözleşme` ile girilir. Hızlı oluşturma menüsündeki sözleşme kısayolu, ekleme panelini doğrudan açar.
+
+<Callout type="info" title="ÖNEMLİ">Bu bölüm sözleşmelerin yeni ekranlarını anlatır. Yeni ekranlar `Genel Ayarlar` altındaki **Yeni sözleşme sayfalarına yönlendir (beta)** seçeneğiyle açılır. Seçenek bir kez açıldıktan sonra ayar ekranından kapatılamaz. Seçenek kapalıysa sözleşmeler eski ekranlarda açılır.</Callout>
+
+## Ekranın bölümleri
+
+![Sözleşmeler modülünün bölümleri](/img/teknisyen/soz-genel-yerlesim.png)
+
+| # | Bölüm | Ne işe yarar |
+|---|---|---|
+| ❶ | Sekmeler | `Pano`, `Sözleşmeler` ve açtığınız her sözleşme için bir sekme. Sözleşme sekmeleri `×` ile kapanır. |
+| ❷ | **Sözleşme Ekle** | Yeni sözleşme panelini açar. Bkz. [Sözleşme Oluşturma](/docs/teknisyen/moduller/sozlesmeler/olusturma). |
+| ❸ | Tür sekmeleri | Üç sözleşme türünün listeleri; parantez içinde kayıt sayısı. |
+| ❹ | Araç çubuğu | Arama, sütun seçimi, Excel'e aktarma, görünüm kaydetme ve yenileme. |
+| ❺ | Liste | Sözleşmeler; sütun başlıklarındaki kutularla süzülür. Bkz. [Sözleşme Listesi](/docs/teknisyen/moduller/sozlesmeler/liste). |
+
+Açtığınız sözleşme sekmeleri tarayıcınızda saklanır; sayfayı yenilediğinizde aynı sekmeler geri gelir.
+
+## Sözleşme türleri
+
+| Tür | Karşı taraf | Kullanım |
+|---|---|---|
+| **Kurum İçi Destek Sözleşmeleri** | Kurumun bir departmanı | BT biriminin iç birimlere verdiği hizmetin koşulları (OLA). |
+| **Tedarikçi Sözleşmeleri** | Tedarikçi firma | Dışarıdan alınan malzeme, hizmet ve lisans sözleşmeleri. Tedarikçi önce tedarikçiler bölümünde tanımlanmalıdır. |
+| **Müşteri Hizmet Sözleşmeleri** | Destek müşteri hesabı | Müşterilere sunulan hizmetin anlaşması (SLA). Sözleşmeye bir destek hizmet planı bağlanabilir. |
+
+Sözleşmenin türü ve karşı tarafı oluştururken seçilir, sonradan değiştirilemez.
+
+## Durumlar
+
+Bir sözleşmenin iki ayrı durumu vardır.
+
+**Aktiflik:** Listede `Aktif` ya da `Devre Dışı` olarak görünür. Devre dışı sözleşme salt okunurdur.
+
+**Onay durumu:** Sözleşme sayfasının sağ üstünde görünür.
+
+| Onay durumu | Anlamı |
+|---|---|
+| **Onay Gerektirmez** | Sözleşmeye onaycı eklenmemiştir. Yeni sözleşmeler bu durumla başlar. |
+| **Onay Bekleniyor** | İlk onaycı eklenmiştir; karar beklenir. |
+| `Onaylandı` | Onaycılardan biri onaylamıştır. |
+| `Reddedildi` | Onaycılardan biri reddetmiştir. Sözleşme salt okunur olur. |
+
+Onay akışı için bkz. [Onay Süreci](/docs/teknisyen/moduller/sozlesmeler/onay-sureci).
+
+Devre dışı, iptal edilmiş ya da onayı reddedilmiş sözleşmede alanlar ve sekmelerdeki ekleme, düzenleme, silme işlemleri kapanır.
+
+## Yetkiler
+
+Yetkiler `Yönetici ▸ Roller` altında, rolün sözleşme yetkilerinden verilir.
+
+| Yetki | Ne sağlar |
+|---|---|
+| **Sözleşmeleri Görebilir** | Modüle girme, pano ve listeler. |
+| **Sözleşme Düzenleyebilir** | Yenileme, finansal bilgi, varlık ve hizmet bağlama, ilişkili sözleşme ve onaycı işlemleri. |
+| **Sözleşme Silebilir** | Onaycı satırını silme. |
+| **Servis Planlarını Yönetebilir** | `Hizmet Planı Kullanımı` sekmesinin verisi, ek kota ve plan devri. |
+| **Sözleşme yetkili teknisyen gruplarını yönetebilir** | Teknisyen grubu kısıtının uygulandığı yetki; aşağıya bakın. |
+
+### Yetkili teknisyen grupları
+
+Bir sözleşmeye yetkili teknisyen grubu atanabilir (bkz. [Bildirimler ve Geçmiş](/docs/teknisyen/moduller/sozlesmeler/bildirimler-gecmis#yetkili-teknisyen-grupları)). Grup kısıtı, **Sözleşme yetkili teknisyen gruplarını yönetebilir** yetkisi olan ve en az bir teknisyen grubuna üye olan kullanıcılara uygulanır. Bu kullanıcılar listede, panoda ve sayılarda yalnız şunları görür:
+
+- hiçbir gruba atanmamış sözleşmeleri,
+- üyesi oldukları gruplardan birine atanmış sözleşmeleri.
+
+Süper yöneticiler bu kısıttan etkilenmez. Bu yüzden iki kullanıcının panosundaki sayılar farklı olabilir.
+
+## Son kullanıcı tarafı
+
+Son kullanıcı portalında sözleşme listesi yoktur. Kurum içi bir kullanıcı onaycı olarak eklendiyse onay isteği portalda **Onaylarım** altında görünür. Kurum dışından eklenen onaycılar kararlarını kendilerine gelen e-postadaki bağlantıdan verir.
+
+## Diğer modüllerle bağlantı
+
+- **Müşteriler:** Müşteri hesabının `Sözleşmeler` sekmesi o hesabın müşteri hizmet sözleşmelerini listeler. Bkz. [Müşteriler](/docs/teknisyen/moduller/musteriler).
+- **Hizmet planları:** Müşteri hizmet sözleşmesine bağlanan planın kotası sözleşmenin `Hizmet Planı Kullanımı` sekmesinde izlenir. Bkz. [Hizmet Planı Kullanımı](/docs/teknisyen/moduller/sozlesmeler/hizmet-plani-kullanimi).
+- **CMDB:** Sözleşmeye varlık ve hizmet bağlanır. Bkz. [Varlıklar, Finansal Bilgiler ve İlişkiler](/docs/teknisyen/moduller/sozlesmeler/varliklar-finans-iliskiler).
