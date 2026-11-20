@@ -1,0 +1,144 @@
+---
+title: "Uygulama Stüdyosu"
+description: "Özel modüllerin tasarlandığı tam ekran düzenleyici: bölümler, üst çubuk, durum çubuğu, komut paleti, önizleme ve kısayollar."
+reviewed: "2026-11-11"
+owner: DevTahsin
+---
+
+Uygulama Stüdyosu, bir modülün bütün parçalarının (veri, ekranlar, kod ve ayarlar) tek ekranda tasarlandığı düzenleyicidir. Modül listesinde modülün adına ya da kalem simgesine basınca açılır. Adresi `/AdminCustomModule/Studio/<id>`'dir; kimlik yerine modül anahtarı da yazılabilir (ör. `/AdminCustomModule/Studio/yetenek_galerisi`).
+
+Stüdyo tam ekrandır. Kaydedilmemiş değişiklik varken sayfadan çıkmaya çalışırsanız tarayıcı uyarır.
+
+## Ekranın bölümleri
+
+![Uygulama Stüdyosu'nun bölümleri](/img/yonetici/om-studyo-yerlesim.png)
+
+| # | Bölüm | Ne işe yarar |
+|---|---|---|
+| ❶ | Üst çubuk | Modül adı, durum rozeti, arama, sürümler, önizleme, yayın ve kaydetme. |
+| ❷ | Sol şerit | Dört alan: `Ekranlar`, `Veri`, `Kod`, `Ayarlar`. Açık alanın düğmesine yeniden basmak kenar listesini kapatır. |
+| ❸ | Kenar listesi | Seçili alandaki öğeler ve arama kutusu. |
+| ❹ | Orta bölge | Seçili öğenin düzenleyicisi: alan tablosu, sayfa tuvali, form, kod düzenleyici… |
+| ❺ | Sağ panel | Seçili alanın, bloğun ya da aşamanın özellikleri. |
+| ❻ | Durum çubuğu | Sorunlar, şema değişikliği, sorgular, veri kaynakları, sunucu betikleri ve konsol. |
+
+## Üst çubuk
+
+![Üst çubuk](/img/yonetici/om-studyo-ust-cubuk.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | `Özel Modüller` | Modül listesine döner. |
+| ❷ | Durum rozeti | Modülün durumu (aşağıdaki tablo). |
+| ❸ | **Öğe ya da komut ara…** | Komut paletini açar (Ctrl K). |
+| ❹ | Geri al, Yinele | Son değişiklikleri geri alır ya da yineler (100 adım). |
+| ❺ | `Sürümler` | Sürüm geçmişini açar (bkz. [Yayın ve sürümler](/docs/yonetici/ozel-moduller/yayin-ve-surumler#sürümler)). |
+| ❻ | **Diğer işlemler** | Aşağıdaki menüyü açar. |
+| ❼ | `Önizle`, `Yayına gönder`, `Kaydet` | Taslağı önizler, yayın çekmecesini açar, taslağı kaydeder. |
+
+Durum rozetinin alabileceği değerler:
+
+| Rozet | Anlamı |
+|---|---|
+| **Taslak · henüz yayınlanmadı** | Modül hiç yayınlanmadı. |
+| **Yayındaki sürüm v9 · değişiklik yok** | Yayındaki sürüm açık, taslak yok. |
+| **Taslak kaydedildi · yayında v9** | Yayındaki sürümün üzerinde kaydedilmiş bir taslak var. |
+| **Kaydedilmemiş değişiklik var** | Ekranda kaydedilmemiş değişiklik var. |
+| **Onay bekliyor · düzenlenemez** | Taslak onaya gönderildi; geri çekilmeden düzenlenemez. |
+| **Salt okunur** | Tasarım izniniz yok (yalnız yayın onaycısısınız). |
+
+![Diğer işlemler menüsü](/img/yonetici/om-studyo-diger.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | **Diğer işlemler** | Menüyü açar. |
+| ❷ | Menü | `Değişiklikleri geri al` kaydedilmemiş değişiklikleri atar; `Dışa aktar` modül paketini indirir; `Yerel geliştirme (cm-cli)` kurulum penceresini açar; `Örnek verileri yükle` pazar yeri uygulamalarında örnek kayıt yazar. Yayındaki modülün taslağında `Taslağı at` da görünür. |
+
+<Callout type="info" title="İPUCU">
+Taslağı başkası da düzenliyorsa ve siz kaydederken taslak değişmişse Stüdyo uyarır: "Taslak siz düzenlerken başka biri tarafından değiştirildi." Değişikliklerinizi not alıp sayfayı yenileyin.
+</Callout>
+
+## Dört alan
+
+- **Ekranlar:** Modülün sayfaları, formları ve listeleri. Her öğenin yanında türü yazar. Ayrıntı: [Ekranlar](/docs/yonetici/ozel-moduller/ekranlar).
+- **Veri:** Veri setleri (alt veri setleri girintili, yanında alan sayısı), sorgular ve veri kaynakları. Ayrıntı: [Veri setleri ve alanlar](/docs/yonetici/ozel-moduller/veri-setleri), [Sorgular ve veri kaynakları](/docs/yonetici/ozel-moduller/sorgular-ve-veri-kaynaklari).
+- **Kod:** Modülün dosya ağacı ve kod düzenleyicisi.
+- **Ayarlar:** Gezinme ve tema, ad ve menü, yetkiler, ham JSON.
+
+![Kod alanı ve Yeni menüsü](/img/yonetici/om-studyo-kod.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | `Yeni` | Yeni dosya menüsünü açar. |
+| ❷ | Yeni menüsü | `Bileşen (TSX)`, `Ortak kod dosyası`, `Sunucu betiği`. |
+| ❸ | Dosya ağacı | `components`, `datasets`, `lib`, `scripts` gibi klasörler (bkz. [Kaynak kodlu modül](/docs/yonetici/ozel-moduller/gelistirici/kaynak-kodlu-modul#dosya-yapısı)). |
+
+![Ayarlar alanı](/img/yonetici/om-studyo-ayarlar.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | Ayarlar listesi | `Gezinme ve tema` ve `Ad ve menü` (bkz. [Ekranlar](/docs/yonetici/ozel-moduller/ekranlar#gezinme-ve-tema)), `Yetkiler` (bkz. [Yetkiler](/docs/yonetici/ozel-moduller/yetkiler)), `Ham JSON` (`module.json` dosyasını açar). |
+
+## Durum çubuğu ve alt panel
+
+Alt panel varsayılan olarak kapalıdır; durum çubuğundaki öğelere basınca açılır.
+
+![Durum çubuğu](/img/yonetici/om-studyo-durum-cubugu.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | `Sorun yok` / **Sorunlar** | Taslağın yayına engel eksikleri ve veritabanında yapılamayacak değişiklikler. Satıra tıklamak ilgili öğeyi seçer; kod hatasında `Dosyada aç` bağlantısı vardır. |
+| ❷ | `Şema değişikliği` | Yayınlanınca veritabanında yapılacaklar. |
+| ❸ | `Sorgular`, `Veri kaynakları` | Sorgu ve veri kaynağı düzenleyicileri (bkz. [Sorgular ve veri kaynakları](/docs/yonetici/ozel-moduller/sorgular-ve-veri-kaynaklari)). |
+| ❹ | `Sunucu betikleri` | Betik dosyalarını Kod alanında açar. |
+| ❺ | `Konsol` | Betik denemelerinin sonuçları, adım adım hata ayıklayıcı ve yayındaki modülün başarısız çalışmaları (bkz. [Sunucu betikleri](/docs/yonetici/ozel-moduller/gelistirici/sunucu-betikleri#konsol)). |
+| ❻ | `Değişkenler` | Yalnız sayfa tasarımcısında: sayfa değişkenleri. |
+
+## Komut paleti
+
+Ctrl K (Mac'te Cmd K) komut paletini açar. Buradan komut çalıştırabilir ya da modüldeki herhangi bir öğeye (sayfa, veri seti, alan, aşama…) gidebilirsiniz. Arama Türkçe karakterlere duyarsızdır ve birden çok kelimeyle çalışır.
+
+![Komut paleti](/img/yonetici/om-studyo-palet.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | Arama kutusu | Komut ya da öğe adı yazılır. |
+| ❷ | Sonuçlar | `Komut` satırları işlem yapar (Taslağı kaydet, Yayına gönder, Dışa aktar…); `Git` satırları öğeye gider. Oklarla seçip Enter'a basın, Esc kapatır. |
+
+## Önizleme
+
+`Önizle`, taslak ekranları ve betikleri **yayındaki veriyle** sağdaki ayarlanabilir bir bölmede gösterir.
+
+![Önizleme bölmesi](/img/yonetici/om-studyo-onizleme.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | `Önizle` | Önizleme bölmesini açar ve kapatır. |
+| ❷ | `Yazmaya izin ver` | Açılırsa önizlemedeki işlemler gerçek kayıt oluşturur; onay akışı gerçek e-posta gönderebilir, veri kaynakları dış sisteme gider. Bölme kapanınca izin kalkar. |
+| ❸ | Salt okunur uyarısı | Varsayılan durum: kayıt yazılmaz, dış sisteme gidilmez. |
+| ❹ | `Yayındaki uygulamayı aç` | Yayındaki uygulamayı açar; yanındaki `Yeni sekmede önizle` simgesi taslak önizlemesini yeni sekmede açar. |
+
+- Sunucu betikleri ve sorgular **kayıtlı taslaktan** çalışır; kaydedilmemiş değişiklik önizlemeye yansımaz.
+- Hiç yayınlanmamış modülde tablolar olmadığı için kayıt görünmez; yeni eklenen alan ve veri setleri yayına kadar boş görünür.
+
+<Callout type="warn" title="DİKKAT">
+Önizlemenin salt okunur kapısı bir kolaylıktır, güvenlik sınırı değildir. Kod bileşenleri sayfayı açan kullanıcının yetkisiyle çalışır; yayın onayında kodu inceleyin.
+</Callout>
+
+## Kısayollar
+
+| Kısayol | Ne yapar |
+|---|---|
+| Ctrl/Cmd K | Komut paleti |
+| Ctrl/Cmd S | Taslağı kaydet |
+| Ctrl/Cmd Z | Geri al |
+| Ctrl/Cmd Shift Z, Ctrl Y | Yinele |
+| Ctrl C / Ctrl V | Sayfa tasarımcısında blok kopyala / yapıştır (sayfalar arası da çalışır) |
+| Ctrl D | Sayfa tasarımcısında bloğu çoğalt |
+
+## Adresle açma
+
+Stüdyo adresine eklenen parametrelerle belirli bir öğe ya da çekmece doğrudan açılır:
+
+- `?sel=dataset:ornek`, `?sel=field:ornek/kategori`, `?sel=stage:ornek/taslak`, `?sel=page:alan_turleri`, `?sel=form:ornek`, `?sel=script:ornek_kurali`, `?sel=app`, `?sel=menu`, `?sel=permissions`
+- `?open=publish` (yayın çekmecesi), `?open=history` (sürümler), `?open=preview` (önizleme)

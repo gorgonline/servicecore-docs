@@ -1,0 +1,69 @@
+---
+title: "Sınırlar ve bilinen kısıtlar"
+description: "Özel modüllerin sayısal sınırları ve bilinmesi gereken davranışlar."
+reviewed: "2026-11-11"
+owner: DevTahsin
+---
+
+## Sayısal sınırlar
+
+| Öğe | En çok |
+|---|---|
+| Modülde veri seti | 50 |
+| Veri setinde alan | 300 |
+| Görünüm | 100 (görünümde 30 kolon, kartta 6 alan) |
+| Form / sayfa | 100 / 100 |
+| Gezinme öğesi | 30 |
+| Sorgu | 100 (sorguda 20 parametre, 20 süzgeç) |
+| Veri kaynağı | 50 |
+| Sunucu betiği | 50 (zamanlanmış 5) |
+| Kod bileşeni | 50 |
+| Modül CSS'i | 50.000 karakter |
+| Ana kayıtta kalem | 200 |
+| Dosya alanında dosya | 20 (dosya başına en çok 25 MB) |
+| Excel'e aktarma | 10.000 satır |
+| Pano / takvimde kayıt | 500 |
+| Dışa aktarılan paket | 5 MB, 50 onay akışı |
+
+## Bilinmesi gerekenler
+
+### Yayın
+
+- Yayın için en az iki yetkili kişi gerekir; taslağı onaya gönderen onaylayamaz (süper yönetici dahil).
+- Onaya gönderilen taslak için onaycıya bildirim gitmez.
+
+### Modülün yaşam döngüsü
+
+- Yayınlanmış bir modül silinemez ve pasife alınamaz; yalnız hiç yayınlanmamış modül silinir.
+- Veritabanı değişiklikleri yalnız ekleme yapar: Kaldırılan alan ve veri seti gizlenir, veri kalır.
+- Yayınlanmış alan daraltılamaz, tip ailesi değiştirilemez; ilişki alanının hedefi ve anahtarlar değişmez.
+
+### Alanlar
+
+- Ekranda "varsayılan değer" ve "benzersiz" ayarı yoktur; benzersizlik tanımın JSON'unda indeksle verilir.
+- Hassas alan sıralama, süzgeç, gösterge, sahiplik, takvim tarihi ve onay akışı koşulunda kullanılamaz.
+
+### Kayıt ekranları
+
+- Uygulamaları yalnız teknisyenler kullanır; portal ekranı yoktur.
+- Uygulamaların menüde görünmesi **Uygulamaları menüde göster** genel ayarına bağlıdır (varsayılan kapalı).
+- Listede kolon filtresi yoktur; arama kayıt numarası ve başlıkta yapılır.
+
+### Betikler ve bildirim
+
+- Betikle kayıt silinemez.
+- `ctx.notify` çalışma başına en çok 5 bildirim gönderir, düz metindir ve yalnız ServiceCore kullanıcılarına gider. Onay akışı e-postaları HTML'dir.
+- Zamanlanmış betik en sık saatte bir çalışır, sunucunun yerel saatini kullanır ve hata olursa yeniden denenmez.
+- Tetikleyici onay sonucunda çalışmaz; zincir derinliği 2'dir.
+
+### Taşıma
+
+- Dışa aktarılan paket kayıt, ek, sır ve Custom Endpoint taşımaz; sırlar hedef ortamda yeniden girilir.
+- Belirli kişiye, gruba ya da kayıt değerine bağlı onay akışı başka ortama taşınamaz.
+- Pazar yeri paketi rol yetkisi taşımaz; kurulumdan sonra yetki verilir.
+
+### Güvenlik
+
+- Önizlemenin salt okunur kapısı bir kolaylıktır, güvenlik sınırı değildir.
+- Kod bileşenleri sayfayı açan kullanıcının oturumuyla çalışır; kod içeren taslakları onaylamadan önce inceleyin.
+- Benzersiz indeks hatası, kullanıcının göremediği bir kaydın varlığını sezdirebilir.

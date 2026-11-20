@@ -1,0 +1,149 @@
+---
+title: "Sunucu betikleri"
+description: "Doğrulama, uç, tetikleyici ve zamanlanmış betikler; ctx API'si, yazma kuralları, sınırlar, Dene penceresi, Konsol ve adım adım hata ayıklayıcı."
+reviewed: "2026-11-11"
+owner: DevTahsin
+---
+
+Sunucu betikleri modülün iş kurallarını sunucuda çalıştırır. JavaScript ya da TypeScript ile yazılır ve kısıtlı bir çalışma ortamında (dosya, ağ ve sistem erişimi olmadan) çalışır. Betikler Stüdyo'da `Kod` alanında `scripts/` klasöründedir; yeni betik `Yeni ▸ Sunucu betiği` ile eklenir.
+
+![Doğrulama betiği düzenleyicisi](/img/yonetici/om-betik-editor.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | Dosya ağacı | `scripts/` klasöründe betik dosyaları. |
+| ❷ | Dosya çubuğu | Betiğin yolu, adı, **Tür**ü, (doğrulamada) bağlı veri seti ve dili (TypeScript). |
+| ❸ | Kod düzenleyici | Betiğin kaynağı; `ctx` üyelerinin açıklaması fareyle üzerine gelince görünür. |
+| ❹ | `Dene` | Betiği kaydetmeden çalıştırma penceresini açar (aşağıda). Yanındaki simge betiği kaldırır. |
+
+## Betik türleri
+
+| Tür | Fonksiyon | Ne zaman çalışır |
+|---|---|---|
+| **Doğrulama** | `validate(record, old, ctx)` | Kayıt kaydedilmeden önce (aşama düğmesinde de). Veri seti başına bir tane. Hata iletisi ya da `[{ field, message }]` listesi döndürürse kayıt reddedilir. |
+| **Uç** | `endpoint(request, ctx)` | Ekrandan ya da koddan çağrılınca (`cm.script(anahtar, istek)`). Çağıranın sahip olması gereken eylem ayarlanır. |
+| **Tetikleyici** | `trigger(event, ctx)` | Kayıt yazıldıktan sonra: Oluşturulunca, Güncellenince, Aşama değişince ya da belirli bir aşamaya girince. |
+| **Zamanlanmış** | `schedule(run, ctx)` | Belirlenen sıklıkta: saatte bir, her gün, hafta içi her gün ya da haftada bir; saat ve gün seçilir. |
+
+Örnek doğrulama betiği:
+
+```ts
+export const validate: CmValidate<"ornek"> = (record, old, ctx) => {
+  const hatalar = [];
+  // Geçişe bağlı kural: incelemeye giden kayıtta en az bir kalem olmalı.
+  if (record.asama === "incelemede" && (!old || old.asama !== "incelemede")) {
+    if (!ctx.value("kalem_sayisi")) {
+      hatalar.push({ field: "asama", message: "İncelemeye göndermek için en az bir kalem ekleyin." });
+    }
+  }
+  // Başka veri setini okuma: seçilen kategori hâlâ var mı.
+  const kategori = ctx.value("kategori");
+  if (kategori && !ctx.records.get("kategori", kategori)) {
+    hatalar.push({ field: "kategori", message: "Seçilen kategori artık yok." });
+  }
+  return hatalar;
+};
+```
+
+<Callout type="info" title="İPUCU">
+Basit kurallar için önce bildirimsel ayarları kullanın: zorunlu alan, geçişte zorunlu alan ve gerekçe [aşama geçişlerinde](/docs/yonetici/ozel-moduller/asamalar-ve-onay#geçiş-kuralları) tanımlanır. Betik, hesaplanan koşullar için gereklidir.
+</Callout>
+
+### Tetikleyici
+
+- Olay nesnesi: `{ type, dataset, id, record, old, stage: { from, to } | null, comment | null }`.
+- Onay akışının sonucu tetikleyiciyi çalıştırmaz. Kalem veri setinde tetikleyici seçilemez.
+- Veri seti başına en çok 5 tetikleyici; tetikleyicinin yazdığı kayıt başka bir tetikleyiciyi en çok 2 düzey çalıştırır.
+- Tetikleyici hata verirse kayıt geri alınmaz; kullanıcı başvuru numaralı bir uyarı görür.
+
+### Zamanlanmış betik
+
+- Saat sunucunun yerel saatidir; en sık saatte bir. Modül başına en çok 5 zamanlanmış betik.
+- İş, modül yayınlanınca kurulur; betik kaldırılınca silinir. Hata olursa yeniden denenmez.
+- Bir kullanıcının değil **modülün kimliğiyle** çalışır (`ctx.user` "Sistem"dir); yalnız kendi modülüne erişir, hassas alanları açamaz, kayıt kapsamı uygulanmaz.
+
+## ctx API'si
+
+| Üye | Açıklama |
+|---|---|
+| `ctx.user`, `ctx.now` | Çalıştıran kullanıcı ve sunucu zamanı. |
+| `ctx.value(alan)`, `ctx.title(kayıt, alan)` | Kaydın (kayıtlı hâliyle birleşik) alan değeri ve referansın görünen adı. |
+| `ctx.records.get(veriSeti, id)` | Tek kayıt; yoksa `null`. |
+| `ctx.records.list(veriSeti, { search, filters, sort, descending, page, pageSize })` | Kayıt listesi (sayfa başına varsayılan 50, en çok 500). |
+| `ctx.records.getMany(veriSeti, idler)` | En çok 100 kayıt. |
+| `ctx.records.aggregate(veriSeti, { measure, field, groupBy, bucket, filters, limit })` | Özet: `[{ key, label, value }]`. |
+| `ctx.records.create(veriSeti, değerler)` | Kayıt oluşturur. |
+| `ctx.records.update(veriSeti, id, değerler, rowVersion?)` | Kaydı günceller. |
+| `ctx.query(anahtar, parametreler)` | Modülün adlandırılmış sorgusunu çalıştırır. |
+| `ctx.http.call(kaynak, parametreler)` | Veri kaynağını çağırır. |
+| `ctx.notify({ to: { users, agents, groups }, subject, body })` | ServiceCore kullanıcılarına e-posta bildirimi gönderir; alıcı sayısını döndürür. |
+| `ctx.log(...)` | Konsol'a satır yazar. |
+| `ctx.date.today / parse / diffDays / addDays` | Tarih yardımcıları. |
+
+Hatalar `CmError { code, status, errors }` olarak fırlatılır.
+
+### Yazma kuralları
+
+- `create`, `update` ve `notify` yalnız **uç**, **tetikleyici** ve **zamanlanmış** betikte çalışır; doğrulama betiği yazamaz. Betikle kayıt silinemez.
+- Önizlemede ve Dene'de yazma yalnız **Yazmaya izin ver** açıkken yapılır.
+- Her yazım ayrı bir işlemdir; betik sonradan hata verse de önceki yazımlar kalır.
+- Betik isteği yapan kullanıcının yetkisi ve kayıt kapsamıyla çalışır; yetki yükseltmez.
+- `ctx.notify` e-postası düz metindir; alıcılar yalnız ServiceCore kullanıcıları, teknisyenleri ve gruplarıdır; serbest adres verilemez.
+
+## Sınırlar
+
+| Öğe | Sınır |
+|---|---|
+| Çalışma süresi | 10 sn |
+| Bellek | 16 MB |
+| ctx çağrısı | 20 (`log` hariç) |
+| Kayıt yazımı | 10 |
+| Bildirim | çalışma başına 5; çağrı başına 50 alıcı |
+| Bildirim konusu / gövdesi | 200 / 10.000 karakter |
+| Günlük | 100 satır |
+| Modül başına betik | 50 |
+| Hata ayıklama | 1000 adım |
+
+## Dene
+
+`Dene` betiği kayıtlı taslaktan, tasarımcının kimliğiyle çalıştırır; önce taslağı kaydeder.
+
+![Dene penceresi: doğrulama betiği](/img/yonetici/om-betik-dene.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | `Örnek kayıt`, `Kayıtlı kayıt` | Doğrulamada girdi: elle yazılan örnek kayıt ya da veritabanındaki bir kayıt ve değişiklikleri. |
+| ❷ | **Gönderilen değerler: record (JSON)** | Doğrulanacak değerler. |
+| ❸ | **Eski kayıt: old (JSON)** | Boşsa yeni kayıt sayılır (`old` null). |
+| ❹ | **Adım adım** | Çalışmayı her deyimiyle kaydeder; Konsol'da oynatılır. |
+| ❺ | `Çalıştır` | Betiği çalıştırır; sonuç Konsol'da açılır. |
+
+Uç, tetikleyici ve zamanlanmış betiklerde pencerede ayrıca **Yazmaya izin ver** kutusu vardır: İşaretlenirse betik gerçek kayıt yazar, e-posta gönderir ve dış sistem çağırır.
+
+## Konsol
+
+Alt paneldeki `Konsol` iki görünüm sunar: **Önizleme** ve **Çalışma anı**.
+
+![Konsol: Önizleme](/img/yonetici/om-betik-sonuc.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | Çalışma listesi | Dene ve önizlemede yapılan çalışmalar: saat, betik, sonuç (`Geçti` / `Hata`), süre ve çağrı sayısı. |
+| ❷ | **Doğrulama iletileri** | Betiğin döndürdüğü iletiler; boşsa kayıt geçer. |
+| ❸ | **Günlük (ctx.log)** | Betiğin yazdığı satırlar. |
+| ❹ | **Girdi** | Betiğe verilen değerler. |
+
+Ayrıntıda ayrıca sonuç, yazılan kayıtlar ve gönderilen bildirimler görünür. Adım adım kaydedilen çalışmada **oynatıcı** açılır: İlk adım, önceki ve sonraki adım, durma noktaları (satır numarasına tıklayarak) ve devam; yanda **Değişkenler** (yerel ve genel) ve **Çağrı yığını**.
+
+![Konsol: Çalışma anı](/img/yonetici/om-betik-calisma-ani.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | `Çalışma anı` | Yayındaki modülde **başarısız** olan betik çalışmaları (son 30 gün, en yeni 100). |
+| ❷ | Arama, `Yenile` | Kullanıcıya gösterilen başvuru numarasıyla ya da betik adıyla arar; iz kayıt içeriği taşımaz. |
+
+## TypeScript ve ortak kod
+
+- `.ts` uzantılı betikler kaydedilince Stüdyo'da derlenir.
+- `lib/` klasöründeki ortak kod hem betiklerden hem kod bileşenlerinden içe aktarılabilir; böylece aynı kural ekranda canlı uyarı olarak, sunucuda da doğrulama olarak çalışır.
+- Betiklerde npm paketi kullanılamaz.

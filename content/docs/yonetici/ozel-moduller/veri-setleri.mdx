@@ -1,0 +1,155 @@
+---
+title: "Veri setleri ve alanlar"
+description: "Veri setleri, 23 alan tipi, alan ayarları, kayıt numarası, ana-alt kayıt, erişim (sahiplik) ve yayının şemaya etkisi."
+reviewed: "2026-11-11"
+owner: DevTahsin
+---
+
+Veri seti bir kayıt tipidir (ör. "Talep", "Tedarikçi", "Bina"). Her veri setinin veritabanında kendi tablosu, her alanın kendi kolonu vardır. Veri setleri Stüdyo'da `Veri` alanında listelenir; birini seçince orta bölgede sekmeleri açılır.
+
+## Veri seti ekranı
+
+![Veri seti ekranı](/img/yonetici/om-veri-yerlesim.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | Başlık | Veri setinin adı, anahtarı ve yayın durumu. Başka veri setleri ona bağlıysa altında yazar. |
+| ❷ | `Veri seti ekle` | Modüle yeni veri seti ekler. |
+| ❸ | Sekmeler | `Alanlar`, `Aşamalar ve onay` (bkz. [Aşamalar ve onay](/docs/yonetici/ozel-moduller/asamalar-ve-onay)), `Veri seti ayarları`. |
+| ❹ | Yayın uyarısı | Yayınlanmış veri setinde: anahtar ve tip ailesi değişmez; silinen alan gizlenir, verisi kalır. |
+| ❺ | Alan tablosu | `Alan adı` (altında anahtar), `Alan tipi`, `Zorunlu` ve `Rolü` kolonları. Satırları tutamaçtan sürükleyerek sıralarsınız; yayınlanmış alanlarda kilit simgesi görünür. |
+| ❻ | `Başlık alanı` | Alanın rolü: `Başlık alanı`, `Hesaplanan` ya da `Hassas`. |
+
+Yeni alan, tablonun son satırından eklenir (bkz. [İlk modülünüzü oluşturun](/docs/yonetici/ozel-moduller/baslangic#2-alanları-ekleyin)). Bir alana tıklayınca ayarları sağ panelde açılır.
+
+## Alan tipleri
+
+Tip listesi yedi gruba ayrılmıştır.
+
+![Alan tipi listesinde Seçim ve Kişi ve kurum grupları](/img/yonetici/om-veri-alan-tipleri.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | Tip listesi | Gruplar altında tipler; yazarak süzülür. |
+
+| Grup | Tipler | Notlar |
+|---|---|---|
+| Metin | **Kısa metin** | Varsayılan 255 karakter; en fazla karakter ayarlanabilir. |
+| Metin | **Uzun metin**, **Zengin metin** | Sınırsız metin; zengin metin biçimlidir. |
+| Metin | **E-posta**, **Telefon**, **Web adresi** | Biçimi denetlenir. |
+| Sayı | **Tam sayı**, **Ondalık sayı** | Ondalıkta varsayılan 18 basamak, 2 ondalık. |
+| Tarih | **Tarih**, **Tarih ve saat** | |
+| Seçim | **Evet / Hayır**, **Tek seçim**, **Çoklu seçim** | Tek ve çoklu seçimde seçenek listesi tanımlanır. Aşama alanı tek seçimdir. |
+| Kişi ve kurum | **Kullanıcı**, **Teknisyen**, **Teknisyen grubu**, **Şirket**, **Departman**, **Lokasyon** | Değer ServiceCore'un kendi kayıtlarından seçilir. |
+| İlişki | **Bu modülde başka kayıt** | Aynı modüldeki başka bir veri setine bağlantı. |
+| İlişki | **ServiceCore kaydı** | Olay, İstek, Problem, Değişiklik, Sürekli iyileştirme ya da Varlık kaydına bağlantı. Seçici yalnız kullanıcının görebildiği kayıtları listeler. |
+| Dosya | **Dosya**, **Görsel** | Kayda dosya ya da görsel eklenir. |
+
+## Alan ayarları
+
+Bir ilişki alanının ayarları:
+
+![İlişki alanının ayarları](/img/yonetici/om-veri-iliski.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | **Alan adı** | Görünen ad. Anahtar addan üretilir ve kayıttan sonra değişmez; ad serbestçe değişebilir. |
+| ❷ | **Alan tipi** | Yayınlanmış alanda yalnız verisini koruyan tiplere çevrilebilir. |
+| ❸ | `Zorunlu`, `Hassas` | Boş bırakılamaz; değer maskeli görünür. Hesaplanan alanda Zorunlu kapalıdır. |
+| ❹ | **Bağlandığı veri seti** | İlişki alanının hedefi; yayından sonra değiştirilemez. ServiceCore kaydında **Bağlandığı kayıt tipi** seçilir. |
+
+Panelin en altında `Alanı kaldır` bulunur (aşağıda).
+
+Hassas işaretli bir kısa metin alanı:
+
+![Hassas kısa metin alanı](/img/yonetici/om-veri-hassas.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | `Hassas` | Değer herkese maskeli (•••) görünür; yalnız yetkili kişi açar ve açma geçmişe yazılır (bkz. [Hassas alanlar](/docs/yonetici/ozel-moduller/kayit-ekranlari#hassas-alanlar)). |
+| ❷ | **En fazla karakter** | Kısa metin, e-posta, telefon ve web adresinde 1–4000. Boşsa tipin varsayılanı kullanılır; yayından sonra yalnız artırılabilir. |
+
+Hesaplanan bir ondalık alan:
+
+![Hesaplanan alan](/img/yonetici/om-veri-hesaplanan.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | **Toplam basamak**, **Ondalık basamak** | Ondalık sayının duyarlılığı. |
+| ❷ | **Hesaplama (formül)** | Tam sayı, ondalık sayı ve kısa metinde. Değeri sunucu hesaplar, formda salt okunurdur. Yardımcılar: `sum(satırlar, "alan")`, `count`, `round`, `min`, `max`, `abs`. |
+
+Diğer tipe özel ayarlar:
+
+| Ayar | Açıklama |
+|---|---|
+| **Seçenekler** | Tek ve çoklu seçimde; en az bir seçenek gerekir (bkz. [Seçenekleri tanımlayın](/docs/yonetici/ozel-moduller/baslangic#3-seçenekleri-tanımlayın)). |
+| **Veri kaynağından seç** | Kısa metin alanını bir dış sistem listesinden doldurur (bkz. [Veri kaynakları](/docs/yonetici/ozel-moduller/sorgular-ve-veri-kaynaklari#veri-kaynakları)). |
+| **Dosya ayarları** | Birden çok dosya (en çok 20), dosya başına boyut (dosyada 10 MB, görselde 5 MB varsayılan; üst sınır 25 MB), izin verilen uzantılar. Görsel yalnız PNG, JPEG, GIF ve WebP kabul eder. |
+
+### Alanı kaldırmak
+
+- **Yayınlanmamış alanda** alan; görünüm ve formlardan da kaldırılır.
+- **Yayınlanmış alanda** alan gizlenir; verisi silinmez. Aynı adla ve uyumlu tiple geri eklenirse eski veriyle geri gelir.
+
+## Veri seti ayarları
+
+![Veri seti ayarları](/img/yonetici/om-veri-ayarlar.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | **Veri seti adı** | Görünen ad. |
+| ❷ | **Kayıt numarası öneki** | 2–6 büyük harf (ör. `TAL`). Boşsa anahtardan önerilir. Kayıt numaraları `ÖNEK-000123` biçimindedir ve veri seti başına sayılır. |
+| ❸ | **Başlık alanı** | Kaydı listede ve sekme başlığında adlandıran metin alanı. |
+| ❹ | **Ana veri seti** | Varsayılan **Yok (bağımsız veri seti)**. Seçilirse bu veri setinin kayıtları ana kaydın satırları olur. |
+
+Sekmenin altındaki `Veri setini kaldır`, başka bir veri seti ona bağlıysa ya da modülün tek veri setiyse kapalıdır. Yayındaki veri seti kaldırılınca gizlenir; tablosu ve kayıtları silinmez.
+
+### Ana-alt kayıt (kalemler)
+
+Bir veri setinde **Ana veri seti** seçilirse o veri seti kalem (satır) veri seti olur. Örnek: "Talep" ana kayıt, "Talep Kalemi" satırları.
+
+![Kalem veri seti](/img/yonetici/om-veri-alt.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | Girintili veri seti | Kalem veri setleri kenar listesinde ana veri setinin altında girintili görünür. |
+| ❷ | Sekmeler | Kalem veri setinde `Aşamalar ve onay` sekmesi yoktur. |
+| ❸ | Ana kayıt alanı | Satırı ana kayda bağlayan ilişki alanı. |
+
+- Satırlar ana kaydın formunda bir **kalem tablosuyla** girilir; ana kayıtla birlikte (aynı işlemde) kaydedilir ve silinir.
+- Tek seviyedir; bir ana kayıtta en çok 200 satır olur.
+- Kalem tablosuna başka kayıtlardan seçerek satır eklenebilir.
+- Hesaplanan alanlar satırları toplayabilir (ör. `sum(ornek_kalem, "tutar")`).
+
+### Erişim (sahiplik)
+
+Rol kapsamının (**Kendi**, **Grubunun**) çalışması için veri setinin kimin kaydı olduğunu bildirmesi gerekir.
+
+![Erişim bölümü](/img/yonetici/om-veri-erisim.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | **Sahip alanları** | Oluşturan ile hassas olmayan Kullanıcı ve Teknisyen alanları. Bu alanlardan birinde kullanıcının kendisi varsa kayıt onun kaydıdır. |
+| ❷ | **Grup alanları** | Hassas olmayan Teknisyen grubu alanları. Bu alanlardan birinde kullanıcının üyesi olduğu grup varsa kayıt grubunun kaydıdır. |
+
+- Her biri en çok 5 alan. Boş bırakılırsa modülü görebilen herkes bütün kayıtları görür.
+- Kalem veri seti ana kaydın erişimini izler.
+
+Ayrıntı: [Yetkiler ve kayıt görünürlüğü](/docs/yonetici/ozel-moduller/yetkiler#kayıt-görünürlüğü-kapsam).
+
+## Yayının şemaya etkisi
+
+- Veritabanı değişiklikleri **yalnız ekleme** yapar: tablo, kolon ve kısıt hiç silinmez.
+- Kaldırılan alan ya da veri seti **gizlenir**; verisi kalır.
+- Alanı yeniden adlandırmak yalnız görünen adı değiştirir.
+- İzin verilen genişletmeler: metin uzunluğunu artırmak, ondalık basamağı büyütmek.
+- Engellenen değişiklikler: alanı daraltmak ("Yayınlanmış alan daraltılamaz") ve tip ailesini değiştirmek ("Yayınlanmış alanın tipi bu tipe çevrilemez"). Metin tipleri arasında geçiş ve tek seçimden metne geçiş serbesttir; metinden seçime, kullanıcıdan teknisyene geçiş yapılamaz.
+
+## Anahtarlar
+
+- Anahtarlar küçük harf, rakam ve `_` içerir; harfle başlar, en çok 40 karakterdir. Türkçe harfler ASCII'ye çevrilir (`Ekipman türü` → `ekipman_turu`).
+- Şu anahtarlar sisteme ayrılmıştır: `id`, `record_no`, `instance_id`, `created_date`, `created_by`, `updated_date`, `updated_by`, `is_deleted`, `deleted_date`, `deleted_by`, `row_version`.
+
+<Callout type="info" title="ÖNEMLİ">
+Ekranda "varsayılan değer" ve "benzersiz" ayarı yoktur. Benzersizlik, modül tanımının JSON'unda indeks olarak verilir (`indexes[].unique`); bkz. [Kaynak kodlu modül](/docs/yonetici/ozel-moduller/gelistirici/kaynak-kodlu-modul#dosya-yapısı).
+</Callout>

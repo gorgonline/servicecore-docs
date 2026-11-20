@@ -1,0 +1,93 @@
+---
+title: "Sorgular ve veri kaynakları"
+description: "Adlandırılmış özet ve kayıt sorguları, parametreler, dış sistem çağrıları (Dış adres, Custom Endpoint) ve sırlar."
+reviewed: "2026-11-11"
+owner: DevTahsin
+---
+
+## Sorgular
+
+Sorgu, bir veri setinden adlandırılmış ve yeniden kullanılabilir bir veri okumasıdır. Bloklar (gösterge, grafik, liste), kod bileşenleri ve sunucu betikleri sorguyu anahtarıyla kullanır. Sorgular Stüdyo'da `Veri` alanında listelenir; durum çubuğundaki `Sorgular`'a basınca alt panelde düzenleyici açılır.
+
+![Sorgu düzenleyicisi](/img/yonetici/om-sorgu-ozet.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | Sorgu listesi | Modülün sorguları ve türleri (`Özet`, `Kayıt listesi`). |
+| ❷ | Yeni sorgu | **Yeni sorgunun adı**, veri seti, tür ve `Sorgu ekle`. |
+| ❸ | Düzenleyici | Sorgunun anahtarı, **Adı**, **Veri seti**, **Tür** ve türe göre ayarlar; altında **Parametreler**. |
+| ❹ | `Çalıştır` | Sorguyu **yayındaki veriyle ve sizin yetkinizle** çalıştırır, hiçbir şey kaydetmez. |
+
+### Sorgu türleri
+
+| Tür | Ayarlar | Tipik kullanım |
+|---|---|---|
+| **Özet** | Ölçü (Kayıt sayısı / Toplam / Ortalama / En küçük / En büyük), ölçülen alan, gruplama, tarih aralığı (Gün / Hafta / Ay), en çok grup (1–200) | Gösterge, grafik, aşama çubuğu |
+| **Kayıt listesi** | Sıralama, azalan, gösterilecek kayıt (1–20), kolonlar | Liste blokları, betikler |
+
+### Parametreler ve süzgeçler
+
+- **Parametre ekle:** ad, tür (Metin / Sayı), zorunlu. Süzgeç değerinde `@param.ad` olarak kullanılır; isteğe bağlı parametre boşsa süzgeç uygulanmaz.
+- Parametreli sorguya blok bağlanamaz; kod bileşeninden ve betikten anahtarıyla çalıştırılır.
+- **Süzgeç ekle:** alan, operatör (eşit, eşit değil, içerir, ile başlar, büyük, küçük, içinde, boş, dolu…) ve değer.
+- Süzgeçte özel belirteçler kullanılabilir: `@me` (giriş yapan kullanıcı), `@today`, `@today-7d`, `@today+30d`, `@today-3m`.
+- **Kullanıldığı yerler** bölümü sorgunun hangi bloklarda kullanıldığını gösterir. **Sorguyu kaldır** sorguya bağlı blokları kendi veri ayarlarına döndürür.
+
+<Callout type="info" title="ÖNEMLİ">
+Hassas bir alanla süzme, sıralama ve gruplama yalnız **Hassas alanları gör** yetkisi olan kullanıcılar için çalışır.
+</Callout>
+
+## Veri kaynakları
+
+Veri kaynağı, uygulamanın bir dış sistemi çağırmasıdır: tedarikçi listesi almak, döviz kuru okumak, ERP'de sipariş açmak gibi. Durum çubuğundaki `Veri kaynakları`'ndan düzenlenir.
+
+![Veri kaynağı düzenleyicisi](/img/yonetici/om-sorgu-kaynak.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | Kaynak listesi | Modülün veri kaynakları ve türleri. |
+| ❷ | Yeni kaynak | **Yeni veri kaynağı** adı, tür (`Dış adres` / `Custom Endpoint`) ve `Kaynak ekle`. |
+| ❸ | Düzenleyici | Kaynağın ayarları (aşağıdaki tablo). |
+
+### Türler
+
+| Tür | Açıklama |
+|---|---|
+| **Dış adres** | Bir HTTP adresi çağrılır. Adreste `{parametre}`, gövde ve başlıklarda `{parametre}` ile `{secret:ad}` kullanılabilir. |
+| **Custom Endpoint** | ServiceCore'da tanımlı bir Custom Endpoint'in rotası (`/` ile başlar) çağrılır. Yöntem, ucun yöntemiyle aynı olmalıdır. |
+
+### Ayarlar
+
+| Ayar | Açıklama |
+|---|---|
+| **Eylem** | Çağıranın modülde sahip olması gereken yetki: Görüntüleme / Oluşturma / Düzenleme. |
+| **Yöntem** | GET, POST, PUT, PATCH, DELETE |
+| **Adres** / **Rota** | Dış adres ya da Custom Endpoint rotası. Adreste sır kullanılamaz. |
+| **Gövde**, **Başlıklar** | Yalnız Dış adres türünde. |
+| **Parametreler** | Çağrıya gönderilen değerler. |
+| **Yanıt eşlemesi** | **Satır yolu (JSONPath)**: liste döndüren yanıtın satırları. Yazılmazsa yanıt tek kayıttır ve form alanına bağlanamaz. Alan adı ile satır içindeki yol eşlenir. |
+| **Sırlar** | Şablonda kullanılan sırların değerleri (aşağıda). |
+| **Kullanıldığı yerler** | Kaynağı kullanan alanlar ve bloklar. |
+
+Kimlik doğrulama için ayrı bir seçim yoktur; kimlik başlıkta sırla verilir, örneğin `Authorization: Bearer {secret:token}`.
+
+### Sırlar
+
+- Yalnız Dış adres türünde ve şablonda bir sır geçiyorsa görünür. Her sırrın yanında **Girildi / Girilmedi** yazar.
+- Sırlar modül başınadır ve doğrudan sunucuya **şifreli** yazılır. Taslağa ve dışa aktarılan pakete girmez, değeri geri okunmaz; hedef ortamda yeniden girilir.
+- Eksik sır yayını engellemez; çağrı anında "Veri kaynağının kullandığı sır girilmemiş ya da okunamıyor." hatası verir.
+
+### Güvenlik
+
+- Kaynak yalnız **yayındaki** tanımdan çağrılır; adres ve sırlar tarayıcıya gelmez.
+- Çağıranın modülde Görüntüle yetkisi ve kaynağın **Eylem** yetkisi olmalıdır.
+- Yerel adresler (localhost, 127.x), bağlantı-yerel adresler (169.254.x, bulut metadata adresi), ServiceCore'un kendi adresi ve http/https dışı şemalar her zaman kapalıdır. Yönlendirme izlenmez.
+- Zaman aşımı 15 saniye, yanıt boyutu en çok 1 MB'tır.
+
+### Nerede kullanılır
+
+1. **Kısa metin alanı ▸ Veri kaynağından seç:** Form alanı dış listeden doldurulur; yazdıkça arama yapılabilir, seçilen satır başka alanları da doldurabilir.
+2. Sayfada **Tıklayınca ▸ Veri kaynağını çağır** eylemi.
+3. Sunucu betiğinde `ctx.http.call(...)`.
+4. Kod bileşeninde `cm.call(...)`.
+5. Özel modül onay akışında **Veri kaynağını çağır** düğümü (ör. onaydan sonra ERP'de sipariş aç).

@@ -1,0 +1,110 @@
+---
+title: "Kaynak kodlu modül ve cm-cli"
+description: "Modülün dosya yapısı, Kod alanı, kod bileşenleri ve cm-sdk, cm-cli ile yerelde geliştirme."
+reviewed: "2026-11-11"
+owner: DevTahsin
+---
+
+Bir özel modülün tanımı bir dosya ağacı olarak da görülebilir. Stüdyo'nun `Kod` alanı bu ağacı tarayıcıda gösterir; **cm-cli** aynı ağacı bilgisayarınıza çeker. İki yol aynı taslağa yazar.
+
+## Kod alanı
+
+![Kod alanı: bileşen dosyası](/img/yonetici/om-kod-bilesen.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | Dosya ağacı | Modülün klasörleri ve dosyaları; arama kutusu ve `Yeni` menüsüyle. |
+| ❷ | Dosya çubuğu | Dosyanın yolu, bileşenin adı ve derleme durumu: **Derlendi**, **Derleme hatası** ya da **Kaynak değişti, derlenmedi**. |
+| ❸ | `Derle`, `Önizleme` | Bileşeni derler; bileşenin önizlemesini açar. |
+| ❹ | Kod düzenleyici | Açık dosyalar sekmeler hâlinde tek düzenleyicide açılır; düzenleme doğrudan taslağa yazılır. |
+
+- `lib/` dosyasında **Yeniden adlandır**, **Kullanan bileşenler**, **Derlenmemiş bileşenleri derle** ve **Dosyayı sil** işlemleri vardır.
+- Derleme ve tanım hataları durum çubuğundaki **Sorunlar**'da dosya ve satırıyla listelenir; `Dosyada aç` ilgili satıra gider.
+
+### Dosya yapısı
+
+| Yol | İçerik |
+|---|---|
+| `module.json` | Modülün anahtarı, adı, menüsü, uygulama ayarları ve bölümlerin sırası. `Ayarlar ▸ Ham JSON` bu dosyayı açar. |
+| `styles.css` | Modülün CSS'i |
+| `datasets/<anahtar>.json` | Veri seti: alanlar, aşamalar, geçişler, erişim, indeksler |
+| `forms/`, `views/`, `pages/`, `queries/`, `dataSources/` | Formlar, görünümler, sayfalar, sorgular, veri kaynakları |
+| `components/<ad>.tsx` | Kod bileşeni |
+| `shell/<ad>.tsx` | Uygulama düzeni bileşeni |
+| `scripts/<ad>.ts` / `.js` | Sunucu betiği |
+| `lib/**` | Ortak kod |
+
+Ekranda bulunmayan bazı ayarlar yalnız JSON'da verilir; örneğin benzersiz indeks (`datasets/<anahtar>.json` içinde `indexes[].unique`; indeks başına en çok 15 alan, veri seti başına en çok 20 indeks; silinmiş ve boş değerler sayılmaz) ve para birimi alanı.
+
+## Kod bileşenleri ve cm-sdk
+
+Kod bileşenleri React ile yazılır ve üç yerde kullanılır: sayfa tasarımcısındaki **Kod bileşenleri** paleti, **Kod sayfası** ve uygulamanın **Kod bileşeni** yerleşimi.
+
+`useCm()` ile alınan `cm` nesnesi:
+
+| Grup | Üyeler |
+|---|---|
+| Bilgi | `module`, `lang`, `user`, `theme`, `definition`, `app` |
+| Veri | `query`, `aggregate`, `records.create / update / remove`, `call` (veri kaynağı), `runQuery` (adlandırılmış sorgu), `script` (uç betiği) |
+| Gezinme | `navigate`, `openRecord`, `openCreate` |
+| Diğer | `notify.success / error / info`, `format.money / recordLabel` |
+
+- Hook'lar: `useRecords`, `useAggregate`. Bileşenler: `BarChart`, `LineChart`, `DonutChart`, `MenuIcon`.
+- Bileşenin tasarımcıda görünen ayarları `export const cmProps` ile tanımlanır (metin, sayı, evet/hayır, seçim, veri seti, sayfa).
+- Kullanılabilen paylaşılan modüller: `react`, `react-dom`, `antd-latest`, `cm-sdk`. Modül projesinde npm paketi kullanılamaz; `lib/` altındaki ortak kod içe aktarılabilir.
+- Kod, sayfayı açan kullanıcının oturumu ve yetkisiyle çalışır.
+
+## Yerelde geliştirme (cm-cli)
+
+Stüdyo'da `Diğer işlemler ▸ Yerel geliştirme (cm-cli)` penceresi bu sunucunun sürümüne uygun paketleri ve komutları gösterir.
+
+![Yerel geliştirme (cm-cli)](/img/yonetici/om-kod-cli.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | **Paketler** | `servicecore-cm-cli` ve `servicecore-cm-sdk` paketlerini indirir. Paketler sunucudan gelir; internete kapalı kurulumlarda da çalışır. |
+| ❷ | **Komutlar** | Bu sunucunun adresi ve modülün anahtarıyla hazırlanmış kurulum komutları; altındaki simge kopyalar. |
+| ❸ | Not | Bileşenlerde npm paketi kullanılamadığını ve yalnız `lib/` altındaki ortak kodun içe aktarılabildiğini hatırlatır. |
+
+### Kurulum
+
+1. Penceredeki **Paketler** bölümünden iki paketi indirin. Node.js 18.17 ya da üstü gerekir.
+2. **Profil ▸ API erişimi** ekranında `custommodule:write` kapsamıyla kişisel bir erişim anahtarı (token) açın. Anahtarın sahibinin rolünde `Özel modülleri tasarlayabilir` izni olmalıdır.
+3. Komutları çalıştırın:
+
+```bash
+npm install -g ./servicecore-cm-cli-<sürüm>.tgz
+cm-cli login --server https://<sunucu>
+cm-cli pull <modül-anahtarı> --server https://<sunucu>
+cd <modül-anahtarı>
+npm install
+cm-cli dev
+cm-cli open
+```
+
+Çekilen klasördeki `AGENTS.md` dosyası komutları ve kuralları anlatır; yapay zekâ kod asistanları da bu dosyayı okuyarak çalışabilir.
+
+### Komutlar
+
+| Komut | Ne yapar |
+|---|---|
+| `login --server <adres>` | Sunucuya giriş yapar (token sorar). |
+| `whoami`, `modules` | Giriş yapan kullanıcıyı ve erişilebilen modülleri gösterir. |
+| `pull <modül> [klasör]` | Modülü dosya ağacı olarak çeker. `--force` yerel değişiklikleri siler, `--keep-local` yalnız tabanı günceller. |
+| `status` | Yerel değişiklikleri listeler (eklenen / değişen / silinen). |
+| `build` | Yerelde derler. |
+| `check` | Sunucuda doğrular, yazmaz. |
+| `push` | Değişiklikleri taslağa yazar. Taslağı Stüdyo'da başkası değiştirdiyse çakışma bildirir ve yazmaz. |
+| `dev` | Dosyaları izler, her kaydetmede taslağa yükler; önizleme birkaç saniyede güncellenir. |
+| `types` | Modülün veri setlerinden tip tanımlarını (`cm-module.d.ts`) üretir. |
+| `open` | Stüdyo'yu önizleme açık olarak açar. |
+| `run <betik>` | Kayıtlı taslaktaki betiği çalıştırır (`--input`, `--record`, `--writes`, `--debug`…). |
+| `test [ad]` | `tests/` klasöründeki testleri çalıştırır. |
+
+<Callout type="info" title="ÖNEMLİ">
+cm-cli ile yayın yapılamaz ve taslak onaya gönderilemez: Yayın her zaman Stüdyo'da dört göz onayıyla olur. Sırlar tanıma yazılmaz; Stüdyo'da girilir.
+</Callout>
+
+### Betik testleri
+
+`@servicecore/cm-sdk/testing` betikleri bellekte, gerçek veri ve e-posta olmadan test etmeyi sağlar: `createTestContext`, `runValidate`, `runEndpoint`, `runTrigger`, `runSchedule`. Test bağlamına kayıtlar, sorgu sonuçları, veri kaynağı yanıtları, kullanıcı ve kapsam verilebilir.

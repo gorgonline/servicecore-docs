@@ -1,0 +1,102 @@
+---
+title: "Pazar yeri"
+description: "Ürünle gelen hazır uygulamalar: Satın Alma, Tesis, Sözleşme, İnsan Kaynakları ve öğretici Yetenek Galerisi; kurulum ve örnek veri."
+reviewed: "2026-11-11"
+owner: DevTahsin
+---
+
+Pazar yeri ürünle birlikte gelen hazır uygulamaları listeler. Bir uygulamayı kurup olduğu gibi kullanabilir ya da kendi uygulamanıza başlangıç olarak alıp Stüdyo'da değiştirebilirsiniz. Katalog ürünün içindedir; internete kapalı kurulumlarda da çalışır.
+
+Modül listesinde `Pazar yeri` düğmesiyle açılır (`/AdminCustomModule/IndexV2/marketplace`). Tasarım izni gerekir.
+
+![Pazar yeri](/img/yonetici/om-pazar-yerlesim.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | Süzgeç | `Tümü`, `Kurumsal hizmet (ESM)`, `İş süreci (BPM)`, `Rehber`. |
+| ❷ | Kart başlığı | Uygulamanın adı, türü ve kuruluysa yayın durumu. |
+| ❸ | Öne çıkanlar | Uygulamanın yetenekleri; altında "N veri seti · M sayfa". |
+| ❹ | `Örnek verileri yükle` | Kurulu ve yayındaki uygulamanın boş tablolarına kurgu kayıtlar yazar. Tablolarda kayıt varsa kapalıdır. |
+| ❺ | `Yeniden kur` | Paketin güncel hâlini modülde yeni bir taslak olarak açar. |
+| ❻ | `Stüdyo'da aç` | Kurulu uygulamayı Stüdyo'da açar. |
+
+Kurulu olmayan uygulamanın kartında `Kur` düğmesi vardır. Bu ortamda aynı anahtarlı başka bir modül varsa kartta **Anahtar kullanımda** yazar ve uygulama onun üzerine kurulmaz.
+
+`Yeniden kur` önce onay ister:
+
+![Yeniden kur onayı](/img/yonetici/om-pazar-yeniden-kur.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | Onay penceresi | Paketin yeni bir taslak açacağını, yayındaki sürümün onaya kadar değişmeyeceğini ve taslakta paketten sonra yaptığınız değişikliklerin yer almayacağını hatırlatır. |
+| ❷ | `Yeniden kur` | Pencereyi açan düğme. Modülde açık taslak varken kapalıdır. |
+
+## Kurulum adımları
+
+1. Kartta `Kur`'a basın. Uygulama bu ortamda **taslak** olarak kurulur ve Stüdyo yayın çekmecesi açık olarak açılır.
+2. Yayın çekmecesinden `Onaya gönder`'e basın.
+3. Yayın izni olan başka bir kişi `Onayla ve yayınla` der.
+4. Rollere modül yetkisi verin: Stüdyo ▸ `Ayarlar ▸ Yetkiler` ya da rol ekranı. Paket rol yetkisi taşımaz.
+5. İsterseniz `Örnek verileri yükle`.
+
+Paket uygulamayla birlikte onay akışını ve gerekiyorsa **Custom Endpoint**'leri de getirir. Custom Endpoint açmak için kuranın rolünde Custom Endpoint yönetim izni olmalıdır; yoksa uçlar atlanır, modül yine kurulur. Mevcut bir uç silinmez ya da değiştirilmez.
+
+### Örnek veri
+
+- Yalnız yayındaki ve tabloları boş uygulamaya yüklenir; kullanıcının modülde kayıt açma yetkisi olmalıdır.
+- Kayıtlar kurgudur, normal kayıtlar gibi silinir; onay akışı başlatmaz, e-posta göndermez, tetikleyici çalıştırmaz.
+- Tarihler yükleme gününe göre kaydırılır.
+
+## Hazır uygulamalar
+
+### Satın Alma Yönetimi (ESM)
+
+Katalogdan alışveriş, bütçeye takılan onay, tedarikçi karnesi ve yöneticinin açılış ekranı; talepten teslime tek modül.
+
+![Satın Alma Yönetimi: Merkez](/img/yonetici/om-pazar-satin-alma.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | Yan menü | Merkez, Katalogdan al, Talepler, Talep panosu, Bütçe, Tedarikçi karnesi, Raporlar ve tanımlar. Menü ve ekranlar kod bileşenidir. |
+| ❷ | **Süreç hattı** | Taleplerin aşamalara göre sayısı ve tutarı. |
+| ❸ | `Yeni talep` | Yeni satın alma talebi açar. |
+
+- Veri setleri: Talep, Talep Kalemi, Katalog Kalemi, Tedarikçi, Bütçe.
+- Aşamalar: Taslak, Onayda, Onaylandı, Sipariş verildi, Teslim alındı, Kapandı, Reddedildi, İptal.
+- Onay: yönetici; yüksek tutarda ayrıca departman yöneticisi.
+
+### Tesis Yönetimi (ESM)
+
+Bina ve bölüm bazında bakım iş emirleri: teknisyen dağıtımı, acil kayıt ve maliyet raporları.
+
+![Tesis Yönetimi: Pano](/img/yonetici/om-pazar-tesis.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | Üst sekmeler | Pano, İş emirleri, Teknisyen dağıtımı, Acil kayıt, Raporlar, Binalar, Özet. |
+| ❷ | Göstergeler | Toplam, açık, geciken ve bu ay tamamlanan iş emri. |
+
+- Veri setleri: Bina, İş Emri.
+- Aşamalar: Yeni, Atandı, Devam ediyor, Beklemede, Tamamlandı, İptal.
+
+### İnsan Kaynakları (ESM)
+
+İşe giriş sihirbazı, çalışan kartı, organizasyon şeması ve izin takibi.
+
+- Veri setleri: Çalışan, Birim, İzin.
+- 4 adımlı işe giriş sihirbazı, fotoğraf, hassas ve koşullu alanlar, kodla çizilen organizasyon şeması.
+
+### Sözleşme Yönetimi (BPM)
+
+Talepten arşive sözleşme yaşam döngüsü: hukuk onayı akışı, paydaşlar, görevler ve bitiş takibi.
+
+- Veri setleri: Sözleşme, Paydaş, Görev.
+- 8 aşama: Talep, Taslak, Müzakere, Hukuk onayı, İmza, Yürürlükte, Yenileme, Arşiv.
+- Onay: sahibin yöneticisi; büyük bedelde şirket yöneticisi.
+
+### Yetenek Galerisi (Rehber)
+
+Platformun öğretici örneğidir: Her yetenek canlı bir sayfada gösterilir. Her sayfanın altındaki **Nasıl yapıldı** kartı, o ekranın hangi dosyalardan geldiğini yazar ve dosyayı tek tıkla Stüdyo'da açar. Kendi modülünüze başlamadan önce kurup incelemeniz önerilir. Bu belgedeki Stüdyo görsellerinin çoğu Yetenek Galerisi'nden alınmıştır.
+
+- Konular: Veri (alan türleri, ana-alt kayıt, aşama ve onay, geçiş kuralları, kayıt görünürlüğü), Ekran (formlar, bloklar, etkileşim, pano ve takvim), Kod (kod bileşeni, koddan düzen), Sunucu (doğrulama, uç, tetikleyici, bildirim, zamanlanmış betik, TypeScript), Entegrasyon (dış sistem).
+- 5 veri seti, 20 sayfa, liste / pano / takvim görünümleri, sorgular, veri kaynakları ve sunucu betikleri içerir.

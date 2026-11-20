@@ -1,0 +1,23 @@
+---
+title: "Geliştirici kılavuzu"
+description: "Özel modüllerde kod: sunucu betikleri, kod bileşenleri, kaynak kodlu modül ve cm-cli."
+reviewed: "2026-11-11"
+owner: DevTahsin
+---
+
+Özel modüllerin çoğu kod yazmadan kurulur. Kod, kuralı ya da ekranı bildirimsel ayarların ötesine taşımanız gerektiğinde devreye girer:
+
+- **Sunucu betikleri:** Kayıt kaydedilmeden önce doğrulama, kayıt yazıldıktan sonra tetikleyici, ekrandan çağrılan uç ve belirli saatte çalışan zamanlanmış iş. JavaScript ya da TypeScript ile yazılır, sunucuda kısıtlı bir ortamda çalışır.
+- **Kod bileşenleri:** React ile yazılan sayfa, blok ya da uygulamanın bütün düzeni. `cm-sdk` ile veri okur, kayıt yazar, sorgu ve veri kaynağı çağırır.
+- **Kaynak kodlu modül:** Modülün tamamını dosya ağacı olarak `cm-cli` ile bilgisayarınıza çekip kendi düzenleyicinizde geliştirmek.
+
+<Callout type="warn" title="DİKKAT">
+Kod, sayfayı açan kullanıcının oturumu ve yetkisiyle çalışır; yetki yükseltmez. Yine de kod içeren bir taslağı onaylamadan önce yayın çekmecesindeki dosya farkını inceleyin.
+</Callout>
+
+## Bu bölümdeki sayfalar
+
+<Cards>
+  <Card title="Sunucu betikleri" href="/docs/yonetici/ozel-moduller/gelistirici/sunucu-betikleri">Betik türleri, ctx API'si, sınırlar, Dene penceresi, Konsol ve adım adım hata ayıklayıcı</Card>
+  <Card title="Kaynak kodlu modül ve cm-cli" href="/docs/yonetici/ozel-moduller/gelistirici/kaynak-kodlu-modul">Kod alanı, dosya yapısı, kod bileşenleri, cm-sdk, cm-cli kurulumu ve komutları</Card>
+</Cards>
