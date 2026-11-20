@@ -1,0 +1,114 @@
+---
+title: "Kayıt Detayı"
+description: "Kayıt detay ekranı: üst çubuk, sekmeler, durum ve alan düzenleme, ekler, dosya ekleme ve Diğer işlemler menüsü."
+reviewed: "2026-11-05"
+owner: boracetinservicecore
+---
+
+Listede bir kayda dokunduğunuzda kaydın detay ekranı açılır. Bu sayfa bütün kayıt türlerinde ortak olan düzeni bir olay kaydı (`#INC298`) üzerinden anlatır. Türe özgü sekmeler ve farklar için bkz. [Kayıt Türleri](/docs/teknisyen/mobil/kayit-turleri).
+
+## Ekranın bölümleri
+
+![Kayıt detay ekranının bölümleri](/img/teknisyen/mobil-detay-yerlesim.png)
+
+| # | Bölüm | Ne işe yarar |
+|---|---|---|
+| ❶ | Geri | Bir önceki ekrana döner. |
+| ❷ | Kayıt numarası | Tür simgesi ve kayıt numarası. Kayıt bir çağrıdan dönüştürüldüyse altında dönüştürüldüğü çağrının numarası yazar. |
+| ❸ | Durum | Kaydın durumu. Düzenleme yetkiniz varsa dokununca durum listesi açılır (aşağıda). |
+| ❹ | Sekmeler | Kaydın bölümleri: `Detay`, `SLA`, `Görüşmeler`, `Çözümler`, `Görevler`, `İş günlükleri`, `Süreçler`, `Geçmiş`. Sekme çubuğu yana kaydırılır; adın yanındaki sayı o sekmedeki kayıt sayısıdır, örneğin **Görüşmeler (5)**. |
+| ❺ | Konu ve açıklama | Kaydın konusu ve açıklaması. Konunun yanındaki kalem simgesi (`Konuyu düzenle`) konuyu değiştirir. Uzun açıklamalarda `Devamını oku` ile tamamı açılır. |
+| ❻ | **Temel Bilgiler** | Öncelik, aciliyet, iş etkisi, kaynak, kategori gibi alanlar. Kalem simgeli satırlar düzenlenebilir. |
+| ❼ | İşlem çubuğu | Kayıt üzerinde en sık kullanılan işlemler (aşağıda). |
+
+`Detay` sekmesinde Temel Bilgiler'in altında sırasıyla kullanıcı (kaydı açan kişi ve iletişim bilgileri), atama bilgileri, kurumunuza özel ek alanlar ve ekler bulunur:
+
+![Detay sekmesinin alt kartları](/img/teknisyen/mobil-detay-alt-kartlar.png)
+
+| # | Kart | Açıklama |
+|---|---|---|
+| ❶ | **Atama Bilgileri** | Kaydın atandığı `Teknisyen Grubu` ve `Teknisyen`. Kalem simgesiyle değiştirilir. |
+| ❷ | **Özel Ek Alanlar** | Kurumunuzun bu kayıt türüne eklediği alanlar ve değerleri. |
+| ❸ | `Ekler` | Kayda eklenmiş dosyalar ve sayısı. Dosya adına dokununca önizleme açılır. |
+| ❹ | Tarayıcıda aç | Dosyayı telefonun tarayıcısında açar. |
+| ❺ | Eki sil | Dosyayı kayıttan kaldırır; önce onay sorulur. |
+
+Kapalı bir kayıtta açıklamanın altında ayrıca **Kapatma Nedeni** kartı görünür.
+
+## İşlem çubuğu
+
+Açık bir kaydın alt kısmındaki simgeler soldan sağa şunlardır:
+
+| Simge | İşlem | Bkz. |
+|---|---|---|
+| Konuşma balonu | `Not ekle` | [Görüşmeler ve E-posta](/docs/teknisyen/mobil/gorusmeler) |
+| Saat | `İş günlüğü ekle` | [Görevler ve İş Günlükleri](/docs/teknisyen/mobil/gorevler-ve-is-gunlukleri) |
+| Onay kutusu | `Görev ekle` | [Görevler ve İş Günlükleri](/docs/teknisyen/mobil/gorevler-ve-is-gunlukleri) |
+| Ataç | `Dosya ekle` | [Dosya ekleme](#dosya-ekleme) |
+| Üç nokta | `Diğer işlemler` | [Diğer işlemler](#diğer-işlemler) |
+
+Kayıt türüne göre bazı simgeler bulunmaz ya da yerine türe özgü düğmeler gelir; örneğin çağrıda dönüştürme düğmeleri vardır. Kapalı bir kayıtta çubukta yalnız `Diğer işlemler` kalır.
+
+## Durumu değiştirme
+
+![Durum seç listesi](/img/teknisyen/mobil-detay-durum.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | Arama | Uzun listelerde durumu adıyla bulur. |
+| ❷ | Bilgi notu | Kaydı çözmek ya da kapatmak için bu listenin değil, işlem çubuğundaki düğmelerin kullanılacağını hatırlatır. |
+| ❸ | Mevcut durum | Kaydın şu anki durumu onay işaretiyle görünür. |
+| ❹ | Diğer durumlar | Bu kayıt için seçilebilecek durumlar. Birine dokununca durum hemen değişir. |
+
+Listede bu kayıt için seçebileceğiniz durumlar bulunur; liste kurumunuzun tanımlarına göre değişir.
+
+## Alanları düzenleme
+
+Kalem simgeli bir satıra dokunduğunuzda o alanın seçim listesi açılır:
+
+![Alan düzenleme listesi](/img/teknisyen/mobil-detay-alan-duzenleme.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | Başlık | Düzenlenen alan, örneğin **Öncelik seç**. |
+| ❷ | Mevcut değer | Onay işaretiyle görünür. Başka bir değere dokununca alan güncellenir. |
+
+`Teknisyen`, `Kullanıcı` ve `Kategori` gibi uzun listelerde arama kutusu bulunur. Kayda bir teknisyen grubu seçiliyse teknisyen listesi o gruptaki teknisyenlerle sınırlanır. Kurumunuzda öncelik aciliyet ve etkiden hesaplanıyorsa `Öncelik` elle değiştirilemez; bunu belirten bir not çıkar.
+
+## Dosya ekleme
+
+İşlem çubuğundaki ataç simgesi **Dosya ekle** penceresini açar:
+
+![Dosya ekle penceresi](/img/teknisyen/mobil-detay-dosya-ekle.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | Kaynak | `Kamera` ile fotoğraf çekin, `Galeri`'den görsel ya da `Dosyalar`'dan belge seçin, `Yapıştır` ile panoya kopyaladığınız içeriği ekleyin. Birden çok dosya seçebilirsiniz. |
+| ❷ | **Seçilen dosyalar** | Yüklenecek dosyalar. Dosyaya dokununca önizlenir, çarpı simgesiyle listeden çıkarılır. |
+| ❸ | `Yükle` | Seçilen dosyaları kayda yükler. Yükleme bitince **Dosya yüklendi** bildirimi çıkar ve dosya `Ekler` kartında görünür. |
+
+## Diğer işlemler
+
+İşlem çubuğundaki üç nokta **Kayıt işlemleri** menüsünü açar:
+
+![Kayıt işlemleri menüsü](/img/teknisyen/mobil-detay-diger-islemler.png)
+
+| # | İşlem | Açıklama |
+|---|---|---|
+| ❶ | `E-posta gönder` | Kayıt üzerinden e-posta yazar. Bkz. [E-posta gönderme](/docs/teknisyen/mobil/gorusmeler#e-posta-gönderme). |
+| ❷ | `Çöz` | Onay sorusundan sonra kaydı çözüldü durumuna geçirir. |
+| ❸ | `Kapat` | Kaydı kapatma penceresini açar (aşağıda). |
+| ❹ | `Kaydı sil` | Kaydı silme penceresini açar. **Silme Gerekçesi** yazmanız istenir; silinen kayıt geri alınamaz. |
+
+Menüdeki işlemler kayıt türüne ve yetkilerinize göre değişir; örneğin problem ve değişiklikte `Çöz` bulunmaz, görevde `Tamamla` vardır. Kapalı bir kayıtta menüde yalnız `Yeniden aç` bulunur. Olaylarda ayrıca kullanıcıya bildirim göndermeden yeniden açma seçeneği vardır.
+
+### Kaydı kapatma
+
+![Olayı kapat penceresi](/img/teknisyen/mobil-detay-kapat.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | **Kapatma Yorumu** | Kaydın neden kapatıldığını yazın. Bu metin kapalı kaydın detayında **Kapatma Nedeni** olarak görünür. |
+| ❷ | `Kapat` | Kaydı kapatır. `Vazgeç` pencereyi kayıt değişmeden kapatır. |
+
+Pencerenin başlığı kayıt türüne göre değişir: **Olayı kapat**, **Talebi kapat**, **Problemi kapat** gibi.

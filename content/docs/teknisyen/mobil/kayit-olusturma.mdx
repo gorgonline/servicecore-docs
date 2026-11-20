@@ -1,0 +1,85 @@
+---
+title: "Kayıt Oluşturma"
+description: "Mobilde yeni kayıt açma: Oluştur menüsü, tasarlanabilir kayıt formları, hizmet kataloğundan istek açma."
+reviewed: "2026-11-05"
+owner: boracetinservicecore
+---
+
+Yeni bir kayıt açmak için alt sekme çubuğundaki `Oluştur` düğmesine dokunun. Açılan menüden kayıt türünü seçtiğinizde o türün formu gelir.
+
+## Oluştur menüsü
+
+![Oluştur menüsü](/img/teknisyen/mobil-olusturma-menu.png)
+
+| # | Satır | Ne açar |
+|---|---|---|
+| ❶ | `Çağrı aç` | Yeni çağrı formu. |
+| ❷ | `Olay bildir` | Yeni olay formu (**Olay Kaydı Aç**). |
+| ❸ | `Problem oluştur` | Yeni problem formu. |
+| ❹ | `İstek seç` | Hizmet kataloğu; istek bir katalog hizmeti seçilerek açılır (aşağıda). |
+| ❺ | `Öneri gönder` | Yeni sürekli iyileştirme formu (**Yeni İyileştirme**). |
+| ❻ | `Değişiklik oluştur` | Yeni değişiklik formu. |
+| ❼ | `Görev ekle` | Herhangi bir kayda bağlı olmayan yeni görev. |
+| ❽ | `Varlık ekle` | Yeni varlık formu. |
+
+Menüde yalnız yetkiniz olan satırlar görünür. Örneğin `Problem oluştur` problem oluşturma, `Değişiklik oluştur` değişiklik oluşturma yetkisi ister.
+
+## Kayıt formu
+
+Olay, problem, değişiklik, iyileştirme, görev ve varlık formları, kurumunuzun web uygulamasında tasarladığı formlardan oluşur. Bu yüzden alanlar kurumdan kuruma değişebilir. Aşağıdaki örnek **Olay Kaydı Aç** formudur.
+
+![Olay Kaydı Aç formu](/img/teknisyen/mobil-olusturma-form-yerlesim.png)
+
+| # | Alan | Açıklama |
+|---|---|---|
+| ❶ | `Konu` | Kaydın başlığı. Yıldızlı alanlar zorunludur; boş bırakılırsa alanın altında uyarı çıkar. |
+| ❷ | `Açıklama` | Biçimlendirilebilir metin alanı. Üstteki araç çubuğuyla kalın, italik, altı çizili ve üstü çizili yazabilir, liste oluşturabilir ve görsel ekleyebilirsiniz. |
+| ❸ | `Dosya Yükle` | `Kamera` ile fotoğraf çekip, `Galeri`'den görsel seçip ya da `Dosya` ile telefondaki bir dosyayı seçip kayda ekler. |
+| ❹ | `Diğer Alanlar` | Katlanabilir alan grubu. Başlığa dokununca açılır ya da kapanır. |
+| ❺ | Seçim alanları | `Kullanıcı`, `Teknisyen Grubu`, `Teknisyen`, `Kategori`, `Durum`, `Kaynak`, `Öncelik`, `İş Etkisi`, `Aciliyet` gibi alanlara dokununca arama yapılabilen bir seçim listesi açılır. |
+
+Formun sonunda kurumunuzun eklediği ek alanlar ve gönderme düğmesi bulunur:
+
+![Formun alt kısmı](/img/teknisyen/mobil-olusturma-form-alt.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | `Ek Bilgiler` | Kurumunuza özel alanlar, örneğin `Etkilenen Hizmet`, `Ortam`. |
+| ❷ | `Olay kaydı aç` | Kaydı oluşturur. Kayıt açılınca bildirim çıkar ve yeni kaydın detayı açılır. |
+
+Kurumunuzda bir kayıt türü için birden fazla form tanımlıysa formun üstünde **Form Seçimi** alanı çıkar; doldurmaya başladıktan sonra formu değiştirirseniz girdiğiniz bilgilerin silineceği uyarısı gelir. Formu kaydetmeden geri dönmek isterseniz **Değişiklikler silinsin mi?** sorusu sorulur.
+
+<Callout type="warn" title="DİKKAT">
+Bir kayıt türü için kurumunuzda hiç form tanımlı değilse formun yerine **Bu kayıt tipi için henüz form tanımlanmamış** mesajı görünür. Bu durumda sistem yöneticinizden form tanımlamasını isteyin.
+</Callout>
+
+## İstek açma (hizmet kataloğu)
+
+İstekler hizmet kataloğundan açılır. `İstek seç` satırına dokununca **Katalog Seç** ekranı gelir.
+
+![Katalog Seç ekranı](/img/teknisyen/mobil-olusturma-katalog-yerlesim.png)
+
+| # | Öğe | Ne işe yarar |
+|---|---|---|
+| ❶ | `Hizmet ara` | Hizmet adına göre arar. |
+| ❷ | `Filtrele` | Kategori ağacını açar; bir kategori seçince yalnız o kategorinin hizmetleri listelenir. |
+| ❸ | **Sayfa başına** | Bir sayfada kaç hizmet gösterileceğini seçer: 6, 10 ya da 20. |
+| ❹ | Hizmet kartı | Hizmetin adı ve kısa açıklaması. Dokununca bu hizmet için istek formu açılır. |
+| ❺ | Sayfalama | Hizmet sayfaları arasında geçiş. |
+
+Hizmeti seçtiğinizde **Yeni İstek** formu, hizmetin bilgileriyle önceden doldurulmuş olarak açılır:
+
+![Yeni İstek formu](/img/teknisyen/mobil-olusturma-istek-yerlesim.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | Hizmet | Seçtiğiniz katalog hizmeti ve kısa açıklaması. |
+| ❷ | `Konu` | `Yeni İstek : <hizmet adı>` biçiminde önceden doldurulur; değiştirebilirsiniz. |
+| ❸ | `Açıklama` | Hizmetin katalogdaki açıklamasıyla gelir. |
+| ❹ | Hizmete özel alanlar | Hizmetin kendi formundaki alanlar, örneğin `Cihaz Paketi`, `Bellek (RAM)`, `Talep Nedeni`. |
+
+Formu doldurup en alttaki `Kaydet` düğmesine dokunduğunuzda istek oluşturulur.
+
+## Çağrıyı başka bir kayda dönüştürme
+
+Açık bir çağrının detayındaki dönüştürme düğmeleriyle çağrıdan olay, istek ya da iyileştirme açabilirsiniz. Bu durumda ilgili oluşturma formu çağrının bilgileriyle açılır ve formun üstünde çağrının dönüştürüldüğü belirtilir; gönderme düğmesinin adı `Dönüştür` olur. Kaydettiğinizde çağrı kapanır ve yeni kayıt açılır. Bkz. [Kayıt Türleri › Çağrı](/docs/teknisyen/mobil/kayit-turleri#çağrı).

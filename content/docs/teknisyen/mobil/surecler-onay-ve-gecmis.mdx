@@ -1,0 +1,74 @@
+---
+title: "Süreçler, Onay ve Geçmiş"
+description: "Kaydı başka kayıtlara ve varlıklara bağlama (Süreçler), onay aşamalarını izleme (Onay) ve kaydın zaman çizelgesi (Geçmiş)."
+reviewed: "2026-11-05"
+owner: boracetinservicecore
+---
+
+Bu sayfa kayıt detayındaki üç sekmeyi anlatır: kaydın diğer kayıtlarla ilişkilerini gösteren `Süreçler`, onay akışını gösteren `Onay` ve önemli tarihleri gösteren `Geçmiş`.
+
+## Süreçler
+
+`Süreçler` sekmesi kaydın bağlı olduğu kayıtları ve varlıkları gruplar hâlinde listeler. Sekme olay, istek, problem, değişiklik ve iyileştirme kayıtlarında, yalnız teknisyenlerde bulunur.
+
+![Süreçler sekmesi](/img/teknisyen/mobil-surecler-liste.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | `Bağıntı Ekle` | Kayda yeni bir ilişki ekler (aşağıda). |
+| ❷ | `Problem` grubu | Olayın bağlı olduğu problem. Bir olay en fazla bir probleme bağlanabilir. |
+| ❸ | `İlişkiler` grubu | Aynı türden ilişkili kayıtlar. Kartın altında ilişkinin yönü yazar: **İlişkilenen Kayıt** ya da **İlişkinin Geldiği Kayıt**. |
+| ❹ | `Varlık` grubu | Kayıtla ilişkili varlıklar; varlık numarası, durumu, türü, kullanıcısı ve konumu. |
+| ❺ | `Değiştir` | Tek kayıt alabilen bir gruptaki bağlantıyı başka bir kayıtla değiştirir. |
+| ❻ | `Bağlantıyı kaldır` | İlişkiyi kaldırır. Onay sorulur; yalnız bağlantı silinir, kayıt silinmez. |
+
+Bir karta dokunduğunuzda bağlı kaydın detayı açılır. Kayıt bir çağrıdan dönüştürüldüyse listede ayrıca **Dönüştürüldüğü kayıt** olarak işaretlenmiş çağrı bulunur; bu bağlantı değiştirilemez.
+
+### Bağıntı ekleme
+
+`Bağıntı Ekle`'ye dokunduğunuzda kayda hangi türde ilişki ekleyebileceğiniz listelenir:
+
+![Bağıntı Ekle menüsü](/img/teknisyen/mobil-surecler-baginti-ekle.png)
+
+| # | Satır | Açıklama |
+|---|---|---|
+| ❶ | **Problem (değiştir)** | Tek kayıt alabilen ve dolu olan gruplar `(değiştir)` ekiyle görünür; seçilen kayıt mevcut bağlantının yerine geçer. |
+| ❷ | Diğer gruplar | `İstek`, `Değişiklik`, `Sürekli İyileştirme`, `İlişkiler`, `Varlık` gibi kayda eklenebilecek ilişki türleri. Liste kaydın türüne göre değişir. |
+| ❸ | **Varlık için QR / barkod okut** | Kamerayı açar; varlığın etiketindeki QR kodu ya da barkodu okutarak varlığı doğrudan bağlarsınız. |
+
+Bir grup seçtiğinizde o türdeki kayıtların listesi açılır:
+
+![Bağlanacak kaydı seçme](/img/teknisyen/mobil-surecler-kayit-sec.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | `Kod ya da konu ara` | Kaydı numarası ya da konusuyla bulur. |
+| ❷ | Kayıt | Konu, numara ve durum. Dokununca kayıt bağlanır. Zaten bağlı olan kayıtlar listede görünmez. |
+
+## Onay
+
+`Onay` sekmesi istek, değişiklik, iyileştirme ve sözleşme kayıtlarında, kayıt için bir onay akışı varsa görünür. Akışın aşamalarını ve her onaycının kararını gösterir.
+
+![Onay sekmesi](/img/teknisyen/mobil-detay-onay.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | Aşama sayısı | Onay akışındaki toplam aşama. |
+| ❷ | Aşama | Aşamanın sırası, adı ve sonucu, örneğin **Yönetici Onayı** `Onaylandı`. |
+| ❸ | Onaycı | Aşamadaki onaycı, kararı ve karar tarihi. |
+| ❹ | Çok onaycılı aşama | Bir aşamada birden fazla onaycı olabilir; her biri ayrı satırda listelenir. |
+
+Onaycı durumları: `Onaylandı`, `Reddedildi`, **Cevap bekleniyor**, **Zaman aşımına uğradı** ve **Onaya gönderilmeyi bekliyor**. Size gönderilen onayları [Onaylar](/docs/teknisyen/mobil/onaylar) ekranından sonuçlandırırsınız.
+
+## Geçmiş
+
+`Geçmiş` sekmesi kaydın önemli tarihlerini bir zaman çizelgesinde gösterir.
+
+![Geçmiş sekmesi](/img/teknisyen/mobil-detay-gecmis.png)
+
+| # | Öğe | Açıklama |
+|---|---|---|
+| ❶ | Gerçekleşmiş adım | Gerçekleşen tarihler yeşil noktayla ve **Tamamlandı** etiketiyle görünür, örneğin **Oluşturulma Tarihi**. |
+| ❷ | Gecikmiş adım | Hedef tarihi geçmiş ama gerçekleşmemiş adımlar **Tarihi geçti** etiketiyle işaretlenir. |
+
+Henüz gelmemiş hedef tarihler **Planlandı** etiketiyle görünür. Çizelgedeki adımlar kayıt türüne göre değişir; olayda oluşturulma, ilk yanıt hedefi, ilk yanıt, çözüm hedefi ve son güncelleme bulunur.
